@@ -5,10 +5,6 @@ theme:
     name: material
     logo: 'img/newlogo.png'
 
-    features:
-        - navigation.sections
-        - navigation.tabs.sticky
-        - navigation.tabs
 extra_css:
     - stylesheets/extra.css
 
