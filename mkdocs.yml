@@ -14,5 +14,6 @@ extra_css:
 
 nav:
     - About : about/about.md
-    - HPC User Guide : hpc-user-guide/hpc-user-guide.md
-    - Data & Storage
+    - HPC User Guide : 
+        - hpc-user-guide/what-is-the-cluster.md
+        - hpc-user-guide/navigate-to-cluster.md
