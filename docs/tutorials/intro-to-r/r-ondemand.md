@@ -186,14 +186,14 @@ someVector
 
 As you may have noticed we have been assigning variables and they have been added to your `Environment` window:
 
-![](environment.png)
+![](images/environment.png)
 
 If you would like to declutter your environment, you have a few options:
 
 - You can use the `rm()` function to remove which ever variables you'd like. To remove more than one just put a comma between variable names.
 - You can clear all variables by clicking the broom icon:
 
-![](remove-all.png)
+![](images/remove-all.png)
 
 
 ## R Packages
