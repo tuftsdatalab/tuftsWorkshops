@@ -14,5 +14,5 @@ extra_css:
 
 nav:
     - About : about/about.md
-    - HPC User Guide
+    - HPC User Guide : hpc-user-guide/hpc-user-guide.md
     - Data & Storage
