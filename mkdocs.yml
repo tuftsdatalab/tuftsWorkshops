@@ -1,5 +1,5 @@
 site_name: Tufts Research Technology Bioinformatics
-site_url: https://rt.bio.io
+repo_url: https://github.com/BioNomad/tuftsTutorials
 
 theme:
     name: material
