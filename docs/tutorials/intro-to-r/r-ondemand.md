@@ -41,7 +41,27 @@ Now we will create an R script. R commands can be entered into the console, but 
 
 ![](images/newFile.png)
 
+## Running R Code
+
+When running R code you have a few options:
+
+  Running One Line/Chunk:
+  
+  - Put your cursor at the beginning of the line of code and hit `Ctrl + Enter` on Windows or  &#8984; + `Enter` on MacOSX.
+    
+  - Highlight the line/chunk of code and hit `Ctrl + Enter` or &#8984; + `Enter`.
+    
+  Running The Entire Script:
+  
+  - Clicking `Source` at the top of the script window.
+    
 ## Calculations
+
+Let's try running some R code! R can be used to run all sorts of calculations just like a calculator:
+
+![](images/line-of-code.png)
+
+You will notice that we ran this code in the script window but you can see the output in the console. 
 
 ## Comparisons
 
