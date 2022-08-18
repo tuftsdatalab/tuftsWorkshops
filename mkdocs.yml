@@ -19,7 +19,7 @@ nav:
         - "Navigate To The Cluster": hpc-user-guide/navigate-to-cluster.md
     - Tutorials:
         - Intro To R: 
-            - "Introduction To R OnDemand":tutorials/intro-to-r/r-ondemand.md
+            - "Introduction To R OnDemand": tutorials/intro-to-r/r-ondemand.md
             - "Project Management": tutorials/intro-to-r/project-management.md
             - "Data Structures": tutorials/intro-to-r/data-structures.md
             - "Data Frames": tutorials/intro-to-r/data-frames.md
