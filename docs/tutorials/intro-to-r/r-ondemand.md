@@ -34,3 +34,19 @@ RStudio is what is known as an Integrated Development Environment or IDE. Here y
 
 ![](images/rstudio1.png)
 
+Now we will create an R script. R commands can be entered into the console, but saving these commands in a script will allow us to rerun these commands at a later date. To create an R script we will need to either:
+
+- Go to `File > New File > R script`
+- Click the `New File` icon and select R script
+
+![](images/newFile.png)
+
+## Calculations
+
+## Comparisons
+
+## Variables & Vectors
+
+## Environment
+
+## R Packages
