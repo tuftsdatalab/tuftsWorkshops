@@ -17,6 +17,7 @@ nav:
     - About : index.md
     - HPC User Guide : 
         - "What Is The Cluster?": hpc-user-guide/what-is-the-cluster.md
+        - "Request an Account": https://access.tufts.edu/research-cluster-account
         - "Navigate To The Cluster": hpc-user-guide/navigate-to-cluster.md
     - Tutorials:
         - Intro To R: 
