@@ -13,6 +13,6 @@ extra_css:
     - stylesheets/extra.css
 
 nav:
-    - About
+    - About : about/about.md
     - HPC User Guide
     - Data & Storage
