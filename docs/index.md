@@ -1,17 +1,5 @@
-# Welcome to MkDocs
+# About Tufts Research Technology Bioinformatics
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Research Technology Bioinformatics provides consultations to Tufts students, faculty and researchers. 
+In addition we maintain bioinformatics tools on the Tufts HPC Cluster and the Tufts Galaxy Platform. 
+We also lead in-class sessions, partner on grants, and develop workshops.
