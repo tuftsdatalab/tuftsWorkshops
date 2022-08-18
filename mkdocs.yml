@@ -1,0 +1,17 @@
+site_name: Tufts Research Technology Bioinformatics
+site_url: https://rt.bio.io
+
+theme:
+    name: material
+
+    features:
+        - navigation.sections
+        - navigation.tabs.sticky
+        - navigation.tabs
+extra_css:
+    - stylesheets/extra.css
+
+nav:
+    - About
+    - HPC User Guide
+    - Data & Storage
