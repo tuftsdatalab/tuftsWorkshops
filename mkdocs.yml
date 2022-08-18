@@ -13,7 +13,7 @@ extra_css:
     - stylesheets/extra.css
 
 nav:
-    - About : about/about.md
+    - About : index.md
     - HPC User Guide : 
         - hpc-user-guide/what-is-the-cluster.md
         - hpc-user-guide/navigate-to-cluster.md
