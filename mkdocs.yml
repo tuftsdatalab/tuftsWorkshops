@@ -19,7 +19,9 @@ nav:
         - "What Is The Cluster?": hpc-user-guide/what-is-the-cluster.md
         - "Request an Account": https://access.tufts.edu/research-cluster-account
         - "Navigate To The Cluster": hpc-user-guide/navigate-to-cluster.md
-    - Tutorials:
+    - Software Tutorials:
+        - Intro To Unix:
+            - "Introduction To Unix" : tutorials/intro-to-unix/unix.md
         - Intro To R: 
             - "Introduction To R OnDemand": tutorials/intro-to-r/r-ondemand.md
             - "Project Management": tutorials/intro-to-r/project-management.md
@@ -27,3 +29,6 @@ nav:
             - "Data Frames": tutorials/intro-to-r/data-frames.md
             - "Subsetting": tutorials/intro-to-r/subsetting.md
             - "Visualization": tutorials/intro-to-r/visualization.md
+        - Intro To Python:
+            - "Introduction To Python OnDemand": tutorials/intro-to-python/python-ondemand.md
+        
