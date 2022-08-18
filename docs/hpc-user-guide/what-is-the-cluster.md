@@ -1,6 +1,4 @@
-# HPC User Guide
-
-## What is the Cluster?
+# What is the Cluster?
 
 Before getting to the cluster it is worth discussing what a cluster is and some of the terminology. First, let's discuss the difference between a CPU and a GPU.
 
@@ -26,9 +24,5 @@ Now that we now the components we can put together an image of what a computer c
 
 ![](images/hpcImage.png)
 
-## Navigate to the Cluster
 
-To get the Tufts HPC cluster you'll first need an account. If you haven't already done so please [request an account](https://tufts.qualtrics.com/jfe/form/SV_5bUmpFT0IXeyEfj) with Research Technology. You will also need to either be on a Tufts network or be connected to the [VPN](https://access.tufts.edu/vpn). Once you have an account and are connected to the VPN/Tufts Network, navigate to the [OnDemand Website](https://ondemand.pax.tufts.edu) and log in with your tufts credentials. Once you are logged in you'll notice a few navigation options:
-
-![](images/ondemandLayout.png)
 
