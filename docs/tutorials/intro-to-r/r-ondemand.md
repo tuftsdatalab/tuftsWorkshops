@@ -32,5 +32,5 @@ RStudio is what is known as an Integrated Development Environment or IDE. Here y
 - **Environment/History/Connections (upper right)**
 - **Files/Plots/Packages/Help/Viewer (lower right)**
 
-![](images/rstudio.png)
+![](images/rstudio1.png)
 
