@@ -3,7 +3,7 @@ site_url: https://rt.bio.io
 
 theme:
     name: material
-    logo: 'img/logo.png'
+    logo: 'img/newlogo.png'
 
     features:
         - navigation.sections
