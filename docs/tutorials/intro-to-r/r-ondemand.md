@@ -133,11 +133,9 @@ R can also be used to make comparisons. Here we note the operators used to do so
 ```
 > [1] TRUE
 
-
 !!! note
-
-    Unless the number is an integer, do not use `==` to compare. This is due to the fact that the decimal value may appear the same 
-in R but from a machine level the two values can be very different. 
+   Unless the number is an integer, do not use `==` to compare. This is due to the fact that the decimal value may appear the same 
+in R but from a machine level the two values can be very different.
 
 ## Variables & Vectors
 
@@ -176,9 +174,8 @@ biggest.value
 > [1] 55
 
 !!! note
-
     Take note that the spelling needs to be consistent to call the variable correctly.
-
+    
 We can also assign a series of values in a specific order to a variable to create what is called a **vector**:
 
 ```
