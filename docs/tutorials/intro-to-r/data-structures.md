@@ -106,26 +106,3 @@ $characters
 [1] "past"    "present" "future" 
 ```
 
-## Functions
-
-Functions are operations we can perform on our various data structures to get some result. We typically like to make functions modular so they perform one specific task and not whole pipelines. Here is the general format for a function:
-
-```
-functionName <- function(x){
-  result <- operation(x)
-  return(result)
-}
-```
-
-So here we see that we assign some operation to a name, here it we just call it ```functionName```. Then the function takes an input, ```x```. Inside the function our result is obtained by doing some operation on our input. Finally we then use ```return()``` to return that result. Let's try making a function that will square the input:
-
-```
-squareInput <- function(x){
-  result <- x * x
-  return(result)
-}
-
-squareInput(5)
-> 25
-```
-
