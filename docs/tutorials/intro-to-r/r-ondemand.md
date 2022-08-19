@@ -198,5 +198,10 @@ If you would like to declutter your environment, you have a few options:
 
 ## R Packages
 
-Aside from the base functions there are thousands of custom fuctions which are bundled in R packages. We can access these functions installing them and loading them. On the Tufts HPC libraries of packages have been made available 
+Aside from the base functions there are thousands of custom fuctions which are bundled in R packages. We can access these functions installing them and loading them. On the Tufts HPC, libraries of packages are available. To access them you will need to specify where these packages are with the `.libPaths()` function:
+
+```
+.libPaths("/cluster/tufts/hpc/R/4.0.0")
+```
+
 
