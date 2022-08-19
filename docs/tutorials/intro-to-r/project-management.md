@@ -18,4 +18,23 @@ To Create a new R project:
 
 You will notice that your RStudio console switches to this project directory. When you log out of RStudio you can open this project again by clicking the `.Rproj` file in the project directory. 
 
-!!!
+!!! note
+
+    The paths will be relative to this project directory as a safe guard against referencing data from outside sources. 
+
+## File Organization
+
+When working on a scientific project it is recommended that you put each project in its own directory and give it a name that is descriptive. Similarly, when naming scripts it is recommended that you also name these scripts after the function they are performing. When it comes to file structure within your project try following this folder structure:
+
+- `doc` : folder for text documents associated with the project
+- `data` : folder for your raw data/metadata
+- `results` : folder for files generated from data/metadata
+- `src` : folder for project's custom scripts/programs
+- `bin` : folder for outside programs used in project
+
+## Data Principles
+
+When you deal with data treat it as read-only. Working with data files in something like excel can modify your original data source without any record of what was done to it. That being said, often times you will need to do some data cleaning. When you need to significantly modify your data source make a separate folder withing `data` for the `raw_data` and the `cleaned_data`. Also ensure that the scripts you used to clean the data are placed in a separate folder (e.g. `src/data_cleaning_scripts/`).
+
+## Script Management
+
