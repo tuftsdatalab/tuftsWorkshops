@@ -201,7 +201,14 @@ If you would like to declutter your environment, you have a few options:
 Aside from the base functions there are thousands of custom fuctions which are bundled in R packages. We can access these functions installing them and loading them. On the Tufts HPC, libraries of packages are available. To access them you will need to specify where these packages are with the `.libPaths()` function:
 
 ```
-.libPaths("/cluster/tufts/hpc/R/4.0.0")
+.libPaths("","/cluster/tufts/hpc/R/4.0.0")
 ```
+You'll can see what packagews are available in the`Packages` window:
 
+![](images/packages.png)
 
+To load a package you can use the `library()` function:
+
+```
+library(ggplot2)
+```
