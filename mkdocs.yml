@@ -23,6 +23,11 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  
 extra_css:
     - stylesheets/extra.css
 
