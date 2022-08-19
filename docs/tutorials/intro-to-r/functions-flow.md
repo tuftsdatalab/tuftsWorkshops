@@ -1,4 +1,4 @@
-# Functions and Control Flow
+# Functions and Flow
 
 ## Functions
 
