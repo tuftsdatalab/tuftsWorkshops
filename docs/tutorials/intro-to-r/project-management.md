@@ -19,7 +19,6 @@ To Create a new R project:
 You will notice that your RStudio console switches to this project directory. When you log out of RStudio you can open this project again by clicking the `.Rproj` file in the project directory. 
 
 !!! note
-
     The paths will be relative to this project directory as a safe guard against referencing data from outside sources. 
 
 ## File Organization
