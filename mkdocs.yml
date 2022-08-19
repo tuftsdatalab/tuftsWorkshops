@@ -44,7 +44,7 @@ nav:
             - "Introduction To R OnDemand": tutorials/intro-to-r/r-ondemand.md
             - "Project Management": tutorials/intro-to-r/project-management.md
             - "Data Structures": tutorials/intro-to-r/data-structures.md
-            - "Data Frames": tutorials/intro-to-r/data-frames.md
+            - "Functions & Flow": tutorials/intro-to-r/data-frames.md
             - "Subsetting": tutorials/intro-to-r/subsetting.md
             - "Visualization": tutorials/intro-to-r/visualization.md
         - Intro To Python:
