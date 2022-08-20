@@ -34,9 +34,15 @@ extra_css:
 nav:
     - About : index.md
     - HPC User Guide : 
-        - "What Is The Cluster?": hpc-user-guide/what-is-the-cluster.md
-        - "Request an Account": https://access.tufts.edu/research-cluster-account
-        - "Navigate To The Cluster": hpc-user-guide/navigate-to-cluster.md
+        - Introduction To The Cluster:
+            - "What Is The Cluster?": hpc-user-guide/what-is-the-cluster.md
+            - "Request an Account": https://access.tufts.edu/research-cluster-account
+            - "Navigate To The Cluster": hpc-user-guide/navigate-to-cluster.md
+            - "File Transfer": hpc-user-guide/file-transfer.md
+        - Introduction To SLURM:
+            - "HPC Storage": hpc-user-guide/hpc-storage.md
+            - "Compute Resources": hpc-user-guide/compute-resources.md
+            - "Software On The Cluster": hpc-user-guide/software-cluster.md
     - Software Tutorials:
         - Intro To Unix:
             - "Introduction To Unix" : tutorials/intro-to-unix/unix.md
