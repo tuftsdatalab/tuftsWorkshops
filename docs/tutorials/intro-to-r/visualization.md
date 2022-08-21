@@ -66,3 +66,32 @@ ggplot(data = meta,
   facet_wrap(~AntibioticUsage)+    # create different panels for different types of antibiotic usage
   theme_bw()                   
 ```
+## Modifying Text
+
+To modify your text style you can leverage the `theme()` function:
+
+```
+ggplot(data = meta, mapping = aes(x = AntibioticUsage,fill = AntibioticUsage)) +
+  geom_bar()+
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45,hjust = 1)) # angle the text by 45 degrees and move the text down by 1 point
+```
+
+![](images/text-style.png)
+
+You can also modify the x label, y label, title, and title of the legend:
+
+```
+ggplot(data = meta, mapping = aes(x = AntibioticUsage, y = OtuCount,fill= AntibioticUsage)) +
+  geom_boxplot()+
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45,hjust = 1)) +
+  labs(
+    x = "Antibiotic Usage",      # x axis title
+    y = "OTU Count",             # y axis title
+    title = "Figure 1",          # main title of figure
+    color = "Antibiotic Usage"   # title of legend
+  )
+```
+
+![](images/plot-labels.png)
