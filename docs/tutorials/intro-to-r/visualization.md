@@ -60,8 +60,9 @@ ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +
 Panels and colors are an important cue to highlight differences in your data:
 
 ```
-ggplot(data = meta, mapping = aes(x = Day, y = OtuCount,color = AntibioticUsage)) +  # specify that the plot should be colored by Antibiotic usage
-  geom_point()+                    
-  facet_wrap(~AntibioticUsage)+                                                      # create panels for different types of Antibiotic usage
-  theme_bw()                       
+ggplot(data = meta, 
+       mapping = aes(x = Day, y = OtuCount,color = AntibioticUsage)) +    # color by antibiotic usage
+  geom_point()+
+  facet_wrap(~AntibioticUsage)+    # create different panels for different types of antibiotic usage
+  theme_bw()                   
 ```
