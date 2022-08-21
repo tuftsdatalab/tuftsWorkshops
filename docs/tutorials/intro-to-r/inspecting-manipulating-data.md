@@ -1,5 +1,3 @@
-## Inspecting/ Manipulating Data
-
 ## Importing Data
 
 When importing data we use a few common functions:
@@ -73,27 +71,20 @@ So here we are pulling: the document "/Documents/test.xlsx", the second sheet, s
 
 ## Inspecting Data
 
-You will have noticed that the only data frame we saved to a variable was the `metadata.tsv` file. We are going to now examine this file:
+You might have noticed that the only data frame we saved to a variable was the `metadata.tsv` file. We are going to now examine this file:
 
 To get a summary of each column:
 
 ```
 summary(meta)
 
-SampleID         AntibioticUsage    DaySinceExperimentStart
- Length:9           Length:9           Length:9               
- Class :character   Class :character   Class :character       
- Mode  :character   Mode  :character   Mode  :character       
-                                                              
-                                                              
-                                                              
-   Genotype         Description           OtuCount     
- Length:9           Length:9           Min.   : 175.0  
- Class :character   Class :character   1st Qu.: 279.0  
- Mode  :character   Mode  :character   Median : 452.0  
-                                       Mean   : 777.8  
-                                       3rd Qu.:1451.0  
-                                       Max.   :1492.0  
+   SampleID         AntibioticUsage    DaySinceExperimentStart   Genotype         Description           OtuCount     
+ Length:9           Length:9           Length:9                Length:9           Length:9           Min.   : 175.0  
+ Class :character   Class :character   Class :character        Class :character   Class :character   1st Qu.: 279.0  
+ Mode  :character   Mode  :character   Mode  :character        Mode  :character   Mode  :character   Median : 452.0  
+                                                                                                     Mean   : 777.8  
+                                                                                                     3rd Qu.:1451.0  
+                                                                                                     Max.   :1492.0 
 ```
     
 
@@ -122,63 +113,77 @@ str(meta)
  
 To get the first 6 rows:
 
-    head(iris)
- 
-    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-    1          5.1         3.5          1.4         0.2  setosa
-    2          4.9         3.0          1.4         0.2  setosa
-    3          4.7         3.2          1.3         0.2  setosa
-    4          4.6         3.1          1.5         0.2  setosa
-    5          5.0         3.6          1.4         0.2  setosa
-    6          5.4         3.9          1.7         0.4  setosa
+```
+head(meta)
+  SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
+1   WT.unt.1            None                    DAY0       WT   16S_WT_unt_1_SRR2627457_1     1174
+2   WT.unt.2            None                    DAY0       WT   16S_WT_unt_2_SRR2627461_1     1474
+3   WT.unt.3            None                    DAY0       WT   16S_WT_unt_3_SRR2627463_1     1492
+4   WT.unt.7            None                    DAY0       WT   16S_WT_unt_7_SRR2627465_1     1451
+5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314
+6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189
+```
     
 
 To get the last 6 rows:
 
-    tail(iris)
+```
+tail(meta)
 
-    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
-    145          6.7         3.3          5.7         2.5 virginica
-    146          6.7         3.0          5.2         2.3 virginica
-    147          6.3         2.5          5.0         1.9 virginica
-    148          6.5         3.0          5.2         2.0 virginica
-    149          6.2         3.4          5.4         2.3 virginica
-    150          5.9         3.0          5.1         1.8 virginica
+SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
+4   WT.unt.7            None                    DAY0       WT   16S_WT_unt_7_SRR2627465_1     1451
+5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314
+6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189
+7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279
+8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175
+9  WT.day3.9    Streptomycin                    DAY3       WT  16S_WT_day3_9_SRR2628504_1      452
+```
     
 
 To get the length of a vector:
 
-    length(iris$Sepal.Length)
-    
-    150
+```
+length(meta$Genotype)
+
+[1] 9
+```
 
 To get the dimensions of a matrix/data frame:
 
-    dim(iris)
+```
+dim(meta) # answer is given in number of rows, then number of columns
 
-
-    150 5 #(so this would be 150 rows and 5 columns)
+[1] 9 6
+```
 
 To get the number of columns/rows:
 
-    ncol(iris)
-    
-    5
+```
+ncol(meta)
 
-    nrow(iris)
+[1] 6
 
-    150
+nrow(meta)
+
+[1] 9
+```
 
 To get your column names:
 
-    colnames(iris)
+```
+colnames(meta)
 
-    Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"
+[1] "SampleID"                "AntibioticUsage"        
+[3] "DaySinceExperimentStart" "Genotype"               
+[5] "Description"             "OtuCount" 
+```
 
 To get your row names:
 
-    rownames(iris)
+```
+rownames(meta)
 
-    "1"   "2"   "3"   "4"   "5" ...
+[1] "1" "2" "3" "4" "5" "6" "7" "8" "9"
+```
 
 Now that we know how to import our data and inspect it, we can go ahead and manipulate it!
