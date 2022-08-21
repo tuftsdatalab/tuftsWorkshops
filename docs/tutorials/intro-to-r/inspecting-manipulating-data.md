@@ -289,6 +289,26 @@ meta[,c("SampleID","Genotype","OtuCount")]
 9  WT.day3.9       WT      452
 ```
 
+Now if we wanted to add a new column we could add one like so:
+
+```
+meta$Day <- c(0,0,0,0,3,3,3,3,3) # name of new column comes after the $ sign
+meta
+```
+
+```
+    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount Day
+1   WT.unt.1            None                    DAY0       WT   16S_WT_unt_1_SRR2627457_1     1174   0
+2   WT.unt.2            None                    DAY0       WT   16S_WT_unt_2_SRR2627461_1     1474   0
+3   WT.unt.3            None                    DAY0       WT   16S_WT_unt_3_SRR2627463_1     1492   0
+4   WT.unt.7            None                    DAY0       WT   16S_WT_unt_7_SRR2627465_1     1451   0
+5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314   3
+6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189   3
+7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279   3
+8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175   3
+9  WT.day3.9    Streptomycin                    DAY3       WT  16S_WT_day3_9_SRR2628504_1      452   3
+```
+
 ## Subsetting Data
 
 To subset our data we need to know a little bit about the different logical operators:
@@ -313,11 +333,11 @@ meta[meta$OtuCount > 1000,]
 ```
 
 ```
-  SampleID AntibioticUsage DaySinceExperimentStart Genotype               Description OtuCount
-1 WT.unt.1            None                    DAY0       WT 16S_WT_unt_1_SRR2627457_1     1174
-2 WT.unt.2            None                    DAY0       WT 16S_WT_unt_2_SRR2627461_1     1474
-3 WT.unt.3            None                    DAY0       WT 16S_WT_unt_3_SRR2627463_1     1492
-4 WT.unt.7            None                    DAY0       WT 16S_WT_unt_7_SRR2627465_1     1451
+  SampleID AntibioticUsage DaySinceExperimentStart Genotype               Description OtuCount Day
+1 WT.unt.1            None                    DAY0       WT 16S_WT_unt_1_SRR2627457_1     1174   0
+2 WT.unt.2            None                    DAY0       WT 16S_WT_unt_2_SRR2627461_1     1474   0
+3 WT.unt.3            None                    DAY0       WT 16S_WT_unt_3_SRR2627463_1     1492   0
+4 WT.unt.7            None                    DAY0       WT 16S_WT_unt_7_SRR2627465_1     1451   0
 ```
 
 Subsetting so that we only have rows where `OtuCount` is less than 400:
@@ -327,40 +347,40 @@ meta[meta$OtuCount < 400,]
 ```
 
 ```
-    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
-5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314
-6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189
-7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279
-8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175
+    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount Day
+5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314   3
+6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189   3
+7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279   3
+8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175   3
 ```
 
 Subsetting so that we only have rows where the `AntibioticUsage` is equal to `Stretomycin`:
 
 ```
  meta[meta$AntibioticUsage == "Streptomycin",]
- ```
+```
  
- ```
-    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
-5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314
-6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189
-7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279
-8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175
-9  WT.day3.9    Streptomycin                    DAY3       WT  16S_WT_day3_9_SRR2628504_1      452
+```
+    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount Day
+5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314   3
+6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189   3
+7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279   3
+8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175   3
+9  WT.day3.9    Streptomycin                    DAY3       WT  16S_WT_day3_9_SRR2628504_1      452   3
 ```
 
 Subsetting so that we only have rows where the `AntibioticUsage` is not equal to `Stretomycin`:
 
 ```
- meta[meta$AntibioticUsage != "Streptomycin",]
- ```
+meta[meta$AntibioticUsage != "Streptomycin",]
+```
  
- ```
-  SampleID AntibioticUsage DaySinceExperimentStart Genotype               Description OtuCount
-1 WT.unt.1            None                    DAY0       WT 16S_WT_unt_1_SRR2627457_1     1174
-2 WT.unt.2            None                    DAY0       WT 16S_WT_unt_2_SRR2627461_1     1474
-3 WT.unt.3            None                    DAY0       WT 16S_WT_unt_3_SRR2627463_1     1492
-4 WT.unt.7            None                    DAY0       WT 16S_WT_unt_7_SRR2627465_1     1451
+```
+  SampleID AntibioticUsage DaySinceExperimentStart Genotype               Description OtuCount Day
+1 WT.unt.1            None                    DAY0       WT 16S_WT_unt_1_SRR2627457_1     1174   0
+2 WT.unt.2            None                    DAY0       WT 16S_WT_unt_2_SRR2627461_1     1474   0
+3 WT.unt.3            None                    DAY0       WT 16S_WT_unt_3_SRR2627463_1     1492   0
+4 WT.unt.7            None                    DAY0       WT 16S_WT_unt_7_SRR2627465_1     1451   0
 ```
 
 Subsetting so that we only have rows where the `AntibioticUsage` equals `Steptomycin` or the `OtuCount` is less than `300`:
@@ -370,12 +390,12 @@ meta[meta$AntibioticUsage == "Streptomycin" | meta$OtuCount < 300,]
 ```
 
 ```
-    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
-5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314
-6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189
-7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279
-8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175
-9  WT.day3.9    Streptomycin                    DAY3       WT  16S_WT_day3_9_SRR2628504_1      452
+    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount Day
+5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314   3
+6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189   3
+7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279   3
+8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175   3
+9  WT.day3.9    Streptomycin                    DAY3       WT  16S_WT_day3_9_SRR2628504_1      452   3
 ```
 
 ## Using Dplyr
