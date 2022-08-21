@@ -77,7 +77,9 @@ To get a summary of each column:
 
 ```
 summary(meta)
+```
 
+```
    SampleID         AntibioticUsage    DaySinceExperimentStart   Genotype         Description           OtuCount     
  Length:9           Length:9           Length:9                Length:9           Length:9           Min.   : 175.0  
  Class :character   Class :character   Class :character        Class :character   Class :character   1st Qu.: 279.0  
@@ -94,13 +96,17 @@ To get the data's class:
 class(meta)
 ```
 
-> [1] data.frame
+```
+[1] data.frame
+```
 
 To get a display of the data's contents:
 
 ```
 str(meta)
+```
 
+```
 'data.frame':	9 obs. of  6 variables:
  $ SampleID               : chr  "WT.unt.1" "WT.unt.2" "WT.unt.3" "WT.unt.7" ...
  $ AntibioticUsage        : chr  "None" "None" "None" "None" ...
@@ -115,6 +121,9 @@ To get the first 6 rows:
 
 ```
 head(meta)
+```
+
+```
   SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
 1   WT.unt.1            None                    DAY0       WT   16S_WT_unt_1_SRR2627457_1     1174
 2   WT.unt.2            None                    DAY0       WT   16S_WT_unt_2_SRR2627461_1     1474
@@ -129,7 +138,9 @@ To get the last 6 rows:
 
 ```
 tail(meta)
+```
 
+```
 SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
 4   WT.unt.7            None                    DAY0       WT   16S_WT_unt_7_SRR2627465_1     1451
 5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314
@@ -144,7 +155,9 @@ To get the length of a vector:
 
 ```
 length(meta$Genotype)
+```
 
+```
 [1] 9
 ```
 
@@ -152,7 +165,9 @@ To get the dimensions of a matrix/data frame:
 
 ```
 dim(meta) # answer is given in number of rows, then number of columns
+```
 
+```
 [1] 9 6
 ```
 
@@ -160,11 +175,17 @@ To get the number of columns/rows:
 
 ```
 ncol(meta)
+```
 
+```
 [1] 6
+```
 
+```
 nrow(meta)
+```
 
+```
 [1] 9
 ```
 
@@ -172,7 +193,9 @@ To get your column names:
 
 ```
 colnames(meta)
+```
 
+```
 [1] "SampleID"                "AntibioticUsage"        
 [3] "DaySinceExperimentStart" "Genotype"               
 [5] "Description"             "OtuCount" 
@@ -182,7 +205,9 @@ To get your row names:
 
 ```
 rownames(meta)
+```
 
+```
 [1] "1" "2" "3" "4" "5" "6" "7" "8" "9"
 ```
 
