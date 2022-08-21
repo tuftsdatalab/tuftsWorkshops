@@ -23,7 +23,7 @@ ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +
   theme_bw()
 ```
 
-![](theme-bw.png)
+![](images/theme-bw.png)
 
 !!! tip
     For a complete list of themes, visit the [Complete ggplot2 Themes page](https://ggplot2.tidyverse.org/reference/ggtheme.html)
@@ -39,7 +39,7 @@ ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +
   scale_y_log10()
 ```
 
-![](scaling.png)
+![](images/scaling.png)
 
 ## Relationships
 
