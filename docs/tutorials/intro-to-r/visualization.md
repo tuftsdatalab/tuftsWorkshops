@@ -66,6 +66,9 @@ ggplot(data = meta,
   facet_wrap(~AntibioticUsage)+    # create different panels for different types of antibiotic usage
   theme_bw()                   
 ```
+
+![](images/facet.png)
+
 ## Modifying Text
 
 To modify your text style you can leverage the `theme()` function:
