@@ -212,3 +212,200 @@ rownames(meta)
 ```
 
 Now that we know how to import our data and inspect it, we can go ahead and manipulate it!
+
+## Manipulating Data
+
+So now that we have downloaded and inspected our data we can get to manipulating it! So to start, let's talk about accessing parts of your data. To grab the first column in a data frame/matrix you can do so like:
+
+```
+meta[,1]
+```
+
+```
+[1] "WT.unt.1"   "WT.unt.2"   "WT.unt.3"   "WT.unt.7"   "WT.day3.11"
+[6] "WT.day3.13" "WT.day3.15" "WT.day3.14" "WT.day3.9" 
+```
+
+To grab the first row:
+
+```
+meta[1,]
+```
+
+```
+  SampleID AntibioticUsage DaySinceExperimentStart Genotype
+1 WT.unt.1            None                    DAY0       WT
+                Description OtuCount
+1 16S_WT_unt_1_SRR2627457_1     1174
+```
+    
+
+Now if your data is a data frame you have a special way of accessing coluns with the ```$``` operator:
+
+```
+meta$AntibioticUsage
+```
+
+```
+[1] "None"         "None"         "None"         "None"         "Streptomycin"
+[6] "Streptomycin" "Streptomycin" "Streptomycin" "Streptomycin"
+```
+
+This comes in handy for readability. While you can grab your data by column number, it is much easier to read that you are grabbing Sepal Length. To grab mulitple columns/rows, you can do the following for both data frames and matrices:
+
+```
+meta[,c(2,4,6)] # grabbing the 2nd, 4th, and 6th columns
+```
+
+```
+  AntibioticUsage Genotype OtuCount
+1            None       WT     1174
+2            None       WT     1474
+3            None       WT     1492
+4            None       WT     1451
+5    Streptomycin       WT      314
+6    Streptomycin       WT      189
+7    Streptomycin       WT      279
+8    Streptomycin       WT      175
+9    Streptomycin       WT      452
+```
+
+In a data frame, to access columns you can be more specific and specify by column name:
+
+```
+meta[,c("SampleID","Genotype","OtuCount")]
+```
+
+```
+    SampleID Genotype OtuCount
+1   WT.unt.1       WT     1174
+2   WT.unt.2       WT     1474
+3   WT.unt.3       WT     1492
+4   WT.unt.7       WT     1451
+5 WT.day3.11       WT      314
+6 WT.day3.13       WT      189
+7 WT.day3.15       WT      279
+8 WT.day3.14       WT      175
+9  WT.day3.9       WT      452
+```
+
+## Subsetting Data
+
+To subset our data we need to know a little bit about the different logical operators:
+
+| Operator | Description |
+:-------|:-----|
+| > | greater than | 
+| >= | greater than or equal |
+| < | less than |
+| <= | less than or equal |
+| == | equals | 
+| != | not equal |
+| & | and |
+| \| | or|
+
+Let's go through a few of these!
+
+Subsetting so that we only have rows where the `OtuCount` is greater than 1000:
+
+```
+meta[meta$OtuCount > 1000,]
+```
+
+```
+  SampleID AntibioticUsage DaySinceExperimentStart Genotype               Description OtuCount
+1 WT.unt.1            None                    DAY0       WT 16S_WT_unt_1_SRR2627457_1     1174
+2 WT.unt.2            None                    DAY0       WT 16S_WT_unt_2_SRR2627461_1     1474
+3 WT.unt.3            None                    DAY0       WT 16S_WT_unt_3_SRR2627463_1     1492
+4 WT.unt.7            None                    DAY0       WT 16S_WT_unt_7_SRR2627465_1     1451
+```
+
+Subsetting so that we only have rows where `OtuCount` is less than 400:
+
+```
+meta[meta$OtuCount < 400,]
+```
+
+```
+    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
+5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314
+6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189
+7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279
+8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175
+```
+
+Subsetting so that we only have rows where the `AntibioticUsage` is equal to `Stretomycin`:
+
+```
+ meta[meta$AntibioticUsage == "Streptomycin",]
+ ```
+ 
+ ```
+    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
+5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314
+6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189
+7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279
+8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175
+9  WT.day3.9    Streptomycin                    DAY3       WT  16S_WT_day3_9_SRR2628504_1      452
+```
+
+Subsetting so that we only have rows where the `AntibioticUsage` is not equal to `Stretomycin`:
+
+```
+ meta[meta$AntibioticUsage != "Streptomycin",]
+ ```
+ 
+ ```
+  SampleID AntibioticUsage DaySinceExperimentStart Genotype               Description OtuCount
+1 WT.unt.1            None                    DAY0       WT 16S_WT_unt_1_SRR2627457_1     1174
+2 WT.unt.2            None                    DAY0       WT 16S_WT_unt_2_SRR2627461_1     1474
+3 WT.unt.3            None                    DAY0       WT 16S_WT_unt_3_SRR2627463_1     1492
+4 WT.unt.7            None                    DAY0       WT 16S_WT_unt_7_SRR2627465_1     1451
+```
+
+Subsetting so that we only have rows where the `AntibioticUsage` equals `Steptomycin` or the `OtuCount` is less than `300`:
+
+```
+meta[meta$AntibioticUsage == "Streptomycin" | meta$OtuCount < 300,]
+```
+
+```
+    SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Description OtuCount
+5 WT.day3.11    Streptomycin                    DAY3       WT 16S_WT_day3_11_SRR2628505_1      314
+6 WT.day3.13    Streptomycin                    DAY3       WT 16S_WT_day3_13_SRR2628506_1      189
+7 WT.day3.15    Streptomycin                    DAY3       WT 16S_WT_day3_15_SRR2628507_1      279
+8 WT.day3.14    Streptomycin                    DAY3       WT 16S_WT_day3_14_SRR2627471_1      175
+9  WT.day3.9    Streptomycin                    DAY3       WT  16S_WT_day3_9_SRR2628504_1      452
+```
+
+## Using Dplyr
+
+When subsetting data we should also mention the R package `dplyr`. This package has functionality to neatly modify data frames using the `%>%` operator to separate your subsetting operations. Let's go through a quick example:
+
+```
+library(dplyr)
+
+meta %>%
+  filter(OtuCount < 1400) %>%    # filter rows with OtuCount less than 1400
+  select(c(SampleID,AntibioticUsage,Genotype,OtuCount)) %>%   # Select certain rows
+  group_by(AntibioticUsage) %>%   # group data by some column
+  mutate(HighOtuCount = OtuCount > 1000)   # add a new column 
+```
+
+```
+# A tibble: 6 × 5
+# Groups:   AntibioticUsage [2]
+  SampleID   AntibioticUsage Genotype OtuCount HighOtuCount
+  <chr>      <chr>           <chr>       <int> <lgl>       
+1 WT.unt.1   None            WT           1174 TRUE        
+2 WT.day3.11 Streptomycin    WT            314 FALSE       
+3 WT.day3.13 Streptomycin    WT            189 FALSE       
+4 WT.day3.15 Streptomycin    WT            279 FALSE       
+5 WT.day3.14 Streptomycin    WT            175 FALSE       
+6 WT.day3.9  Streptomycin    WT            452 FALSE  
+```
+
+!!! tip
+    For more dplyr data wrangling tips check out the [Data Wrangling with dplyr and tidyr Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+ 
+
