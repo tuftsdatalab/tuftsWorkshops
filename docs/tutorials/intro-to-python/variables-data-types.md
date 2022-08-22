@@ -114,4 +114,44 @@ antibiotic * 4
 'StreptomycinStreptomycinStreptomycinStreptomycin'
 ```
 
+## Indexing
 
+Unlike the other data types, strings have lengths. We can use the `len()` function to  check how long  a string is:
+
+```
+print(antibiotic)
+len(antibiotic)
+```
+
+```
+'Streptomycin'
+12
+```
+
+We can slice strings if needed to! However, the letters you are grabbing are **0-indexed** meaning that the first letter is letter 0, the second letter is letter 1, and so on:
+
+```
+antibiotic[0]
+```
+
+```
+'S'
+```
+
+```
+antibiotic[1]
+```
+
+```
+'t'
+```
+
+We can grab more letters using the format `[start:stop]`:
+
+```
+antibiotic[1:5]
+```
+
+```
+'trep'
+```
