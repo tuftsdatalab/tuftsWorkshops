@@ -45,4 +45,51 @@ You will notice when you open up your notebook that you are working in blocks:
 
 ![](images/blocks.png)
 
-These blocks can either be raw blocks, code blocks, or markdown blocks. R
+These blocks can either be:
+
+- **raw blocks:** raw data that can be converted into HTML/Latex formats
+- **code blocks:** python code that can be run in chunks
+- **markdown blocks:** a plain text format that can render links, lists, and images like what you might find on a website
+
+Here we will focus on code blocks to run chunks of python code, and markdown blocks which can add in images, links, etc. to annotate our code.
+
+## Markdown Basics
+
+**markdown code:**
+
+```
+- list item 1
+- list item 2
+```
+**output:**
+- list item 1
+- list item 2
+
+**markdown code:**
+
+```
+1. numbered list item 1
+2. numbered list item 2
+```
+**output:**
+1. numbered list item 1
+2. numbered list item 2
+
+**markdown code:**
+
+```
+# Level 1 Heading
+## Level 2 Heading
+```
+**output:**
+# Level 1 Heading
+## Level 2 Heading
+
+**markdown code:**
+
+```
+[google link](https://www.google.com/)
+```
+**output:**
+[google link](https://www.google.com/)
+
