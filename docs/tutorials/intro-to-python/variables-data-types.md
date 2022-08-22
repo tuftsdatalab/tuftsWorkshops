@@ -24,5 +24,5 @@ The maximum coverage is  6000
 ```
 
 !!! note
-    variables are available to use between blocks as well!
+    variables are available to use between blocks. However, the order in which you run blocks matters so make sure to run your code blocks in order!
     
