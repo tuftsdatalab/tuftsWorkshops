@@ -26,3 +26,92 @@ The maximum coverage is  6000
 !!! note
     variables are available to use between blocks. However, the order in which you run blocks matters so make sure to run your code blocks in order!
     
+## Data Types
+
+- `integer`: a positive/negative whole number (34, -675)
+- `float`: a floating point number (4.67, -2034.67)
+- `string`: a character string written with either single or double quotes ('Streptomycin', "antibiotic")
+- `bool`: a TRUE/FALSE value
+
+So you have a variable, how do you determine the type? Well we can use the `type()` function:
+
+```
+type(max_coverage)
+```
+
+```
+int
+```
+
+If you want to convert between data types you can specify with the following functions:
+
+- `int()`: to convert to an integer
+- `float()`: to convert to a floating point number
+- `str()`: to convert to a string
+
+
+## Calculations
+
+You can use Python like a calculator using the following symbols:
+
+|Operator	|Name	|Example	|
+|-|-|-|
+|+	|Addition	|x + y|
+|-	|Subtraction	|x - y|
+|*	|Multiplication	|x * y|
+|/	|Division	|x / y|
+|%	|Modulus	|x % y|
+|**	|Exponentiation	|x ** y|
+|//	|Floor division	|x // y|
+
+Let's try an few example:
+
+```
+35 / 7 - 5 + 4 * 4 + 2**2
+```
+
+```
+20.0
+```
+
+We note that Python calculations follow the order of operations when performing a calculation. We should also bring up two non-standard operations that you may or may not be familiar with: Modulus and Floor division. Modulus is the remainder after division so:
+
+```
+7 % 2
+```
+
+```
+1
+```
+
+Floor division is a division operation for which you round the result down to a whole number:
+
+```
+7 // 2
+```
+
+```
+3
+```
+
+## Strings & Operators
+
+You can use `+` and `*` with string data as well to add and multiply, take for instance:
+
+```
+antibiotic + antibiotic
+```
+
+```
+'StreptomycinStreptomycin'
+```
+
+```
+antibiotic * 4
+```
+
+```
+'StreptomycinStreptomycinStreptomycinStreptomycin'
+```
+
+
