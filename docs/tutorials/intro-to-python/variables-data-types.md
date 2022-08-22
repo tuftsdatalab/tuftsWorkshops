@@ -14,7 +14,7 @@ You will note a few things about variables:
 - cannot start with a digit
 - these are case sensitive
 
-Variables, once we assign them to some value, can be passed into functions to accomplish certain tasks. Let's use the simplist use case, the `print()` function:
+Variables, once we assign them to some value, can be passed into functions to accomplish certain tasks. Functions, generally speaking, take in some input and spit out some output. Let's use the simplist use case, the `print()` function:
 
 ```
 print('The maximum coverage is ', max_coverage)
@@ -22,6 +22,8 @@ print('The maximum coverage is ', max_coverage)
 ```
 The maximum coverage is  6000
 ```
+
+Here the function `print()` took in two character values and printed a combined string of words.
 
 !!! note
     variables are available to use between blocks. However, the order in which you run blocks matters so make sure to run your code blocks in order!
