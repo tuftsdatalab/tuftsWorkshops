@@ -93,3 +93,17 @@ Here we will focus on code blocks to run chunks of python code, and markdown blo
 **output:**
 [google link](https://www.google.com/)
 
+Now that we have a basic understanding of markdown, let's create some annotations. In your first code block change the type to markdown and enter:
+
+```
+# Introduction to Python 
+
+Here are a few helpful links to get started:
+
+- [Python Cheatsheet](https://www.pythoncheatsheet.org/cheatsheet/basics)
+- [JupyterLab Documentation](https://jupyterlab.readthedocs.io/en/stable/)
+```
+
+Now hit either the play button at the top of the screen or hit `Shift + Enter` to run the block:
+
+![](images/markdown-block.png)
