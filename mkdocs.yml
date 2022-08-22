@@ -59,4 +59,10 @@ nav:
             - "Visualization": tutorials/intro-to-r/visualization.md
         - Intro To Python:
             - "Introduction To Python OnDemand": tutorials/intro-to-python/python-ondemand.md
+            - "Variables & Data Types": tutorials/intro-to-python/variables-data-types.md
+            - "Libraries & Data Frames": tutorials/intro-to-python/libraries-data-frames.md
+            - "Plotting with Plotly": tutorials/intro-to-python/plotting-plotly.md
+            - "Lists": tutorials/intro-to-python/lists.md
+            - "Loops & Conditionals": tutorials/intro-to-python/loops-conditionals.md
+            - "Functions & Scope": tutorials/intro-to-python/functions-scope.md
         
