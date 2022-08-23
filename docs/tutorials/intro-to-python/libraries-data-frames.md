@@ -20,6 +20,7 @@ math.log2(25)
 ```
 4.643856189774724
 ```
+We want to point out that here we call the value `e` after `math`. This is called a **member value**. On the contrary we see that `.log2()` comes after `math`. The parentheses make this a **method** or function in a given package. 
 
 !!! tip
     If you ever need assistance with a library, try using the `help()` function to grab more information (e.g. `help(math)`).
@@ -157,3 +158,40 @@ max    1492.000000
 
 ## Data Manipulation
 
+Say you want to grab certain values in a data frame using the number location. So the value in the second row and third column:
+
+```
+df.iloc[2,3]
+```
+
+```
+'WT'
+```
+Here we see that the formula to grab values is `[row, column]`. If we wanted to use row/column names to specify the value:
+
+```
+df.loc[1,"OtuCount"]
+```
+
+```
+1174
+```
+
+To grab all values in a row or column we use `:` to specify every value:
+
+```
+df.loc[:,"OtuCount"]
+```
+
+```
+1    1174
+2    1474
+3    1492
+4    1451
+5     314
+6     189
+7     279
+8     175
+9     452
+Name: OtuCount, dtype: int64
+```
