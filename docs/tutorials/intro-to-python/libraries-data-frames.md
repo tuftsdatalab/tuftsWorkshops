@@ -121,7 +121,39 @@ Int64Index([1, 2, 3, 4, 5, 6, 7, 8, 9], dtype='int64')
 To transpose (flip the columns and rows) the data frame:
 
 ```
+df.T
 ```
 
 ```
+                                                 1                          2  
+SampleID                                  WT.unt.1                   WT.unt.2   
+AntibioticUsage                               None                       None   
+DaySinceExperimentStart                       DAY0                       DAY0   
+Genotype                                        WT                         WT   
+Description              16S_WT_unt_1_SRR2627457_1  16S_WT_unt_2_SRR2627461_1   
+OtuCount                                      1174                       1474   
 ```
+
+If we wanted a numeric summary we can use:
+
+```
+df.describe()
+```
+
+```
+          OtuCount
+count     9.000000
+mean    777.777778
+std     600.526806
+min     175.000000
+25%     279.000000
+50%     452.000000
+75%    1451.000000
+max    1492.000000
+```
+
+!!! note
+    the `.describe()` method will only summarizes numeric data. So here we only have one column of numeric data that get's summarized.
+
+## Data Manipulation
+
