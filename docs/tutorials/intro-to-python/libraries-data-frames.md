@@ -51,3 +51,9 @@ math.l2(25)
 Here we abbreviate `log2` from the `math` package to `l2`.
 
 ## Data Frames 
+
+In data analysis we often work with tabular data, or two dimensional data with columns and rows. Columns will typically contain the same type of data and rows will be one sample with different observations. We commonly read in tabular data using the `pandas` module:
+
+```
+dataframe <- 
+```
