@@ -6,6 +6,8 @@ While there are other plotting libraries, we will focus on `plotly` for the foll
 - images can be downloaded as `png` files
 - select features can highlight features of the plot
 
+## Basic Plot
+
 Let's make a scatterplot:
 
 ```
@@ -19,6 +21,8 @@ fig.show()
 ```
 
 ![](images/scatterplot.png)
+
+## Adding A TrendLine
 
 We can add a trend line as well:
 
@@ -35,3 +39,54 @@ fig.show()
 
 ![](images/trend-line.png)
 
+## Scaling
+
+Now if one of your axes spans multiple magnitudes you can scale your data using the `log_x` or `log_y` arguements:
+
+```
+fig = px.scatter(df,                                   
+                 x="Day",                              
+                 y="OtuCount",                          
+                 color='Day',                           
+                 template="simple_white",
+                 trendline="ols",
+                 log_y = True) # split plots by variable
+fig.show()
+```
+
+![](images/scaling.png)
+
+## Panels
+
+Sometimes it is useful to separate data by some variable and create panels. We can easily do this by specifying the `facet_row` or `facet_col` arguements - where plots are stacked one on top of the other or side-by-side, respectively:
+
+```
+fig = px.scatter(df,                                   
+                 x="Day",                              
+                 y="OtuCount",                          
+                 color='Day',                           
+                 template="simple_white",
+                 facet_col = "DaySinceExperimentStart") # split plots by variable
+fig.show()
+```
+
+![](images/panels.png)
+
+# Modifying Text
+
+To modify text we can use the `labels` and `title` option:
+
+```
+fig = px.scatter(df,                                   
+                 x="Day",                              
+                 y="OtuCount",                          
+                 color='Day',                           
+                 template="simple_white",
+                 labels={
+                     "OtuCount": "OTU count"
+                 },
+                 title = "Figure 1") 
+fig.show()
+```
+
+![](images/text.png)
