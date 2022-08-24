@@ -50,7 +50,7 @@ fig = px.scatter(df,
                  color='Day',                           
                  template="simple_white",
                  trendline="ols",
-                 log_y = True) # split plots by variable
+                 log_y = True)             # scale y axis
 fig.show()
 ```
 
@@ -82,10 +82,10 @@ fig = px.scatter(df,
                  y="OtuCount",                          
                  color='Day',                           
                  template="simple_white",
-                 labels={
-                     "OtuCount": "OTU count"
+                 labels={                        
+                     "OtuCount": "OTU count"     # add in a space and capitalize
                  },
-                 title = "Figure 1") 
+                 title = "Figure 1")             # add in figure title
 fig.show()
 ```
 
