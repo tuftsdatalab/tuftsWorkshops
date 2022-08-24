@@ -36,7 +36,7 @@ nav:
     - HPC User Guide : 
         - Introduction To The Cluster:
             - "What Is The Cluster?": hpc-user-guide/what-is-the-cluster.md
-            - "Request an Account": https://access.tufts.edu/research-cluster-account
+            - "Request an Account": hpc-user-guide/request-account.md
             - "Navigate To The Cluster": hpc-user-guide/navigate-to-cluster.md
             - "File Transfer": hpc-user-guide/file-transfer.md
         - Cluster Resources:
