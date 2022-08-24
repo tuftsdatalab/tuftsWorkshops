@@ -195,3 +195,43 @@ df.loc[:,"OtuCount"]
 9     452
 Name: OtuCount, dtype: int64
 ```
+
+We can also subset our data with a few operators:
+
+| Operator | Description |
+:-------|:-----|
+| > | greater than | 
+| >= | greater than or equal |
+| < | less than |
+| <= | less than or equal |
+| == | equals | 
+| != | not equal |
+| & | and |
+| \| | or|
+
+Let's go through a few of these:
+
+```
+df[df["AntibioticUsage"] == "None"]    # select samples with no antibiotic useage
+```
+
+```
+SampleID	AntibioticUsage	DaySinceExperimentStart	Genotype	Description	OtuCount
+1	WT.unt.1	None	DAY0	WT	16S_WT_unt_1_SRR2627457_1	1174
+2	WT.unt.2	None	DAY0	WT	16S_WT_unt_2_SRR2627461_1	1474
+3	WT.unt.3	None	DAY0	WT	16S_WT_unt_3_SRR2627463_1	1492
+4	WT.unt.7	None	DAY0	WT	16S_WT_unt_7_SRR2627465_1	1451
+```
+
+```
+df[df["OtuCount"] > 400]   # select samples with an otu count over 400
+```
+
+```
+SampleID	AntibioticUsage	DaySinceExperimentStart	Genotype	Description	OtuCount
+1	WT.unt.1	None	DAY0	WT	16S_WT_unt_1_SRR2627457_1	1174
+2	WT.unt.2	None	DAY0	WT	16S_WT_unt_2_SRR2627461_1	1474
+3	WT.unt.3	None	DAY0	WT	16S_WT_unt_3_SRR2627463_1	1492
+4	WT.unt.7	None	DAY0	WT	16S_WT_unt_7_SRR2627465_1	1451
+9	WT.day3.9	Streptomycin	DAY3	WT	16S_WT_day3_9_SRR2628504_1	452
+```
