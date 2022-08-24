@@ -90,3 +90,7 @@ fig.show()
 ```
 
 ![](images/text.png)
+
+!!! tip
+    For more plots and plot customization options, checkout the [Plotly Graphing Library Page](https://plotly.com/python/) for more information
+    
