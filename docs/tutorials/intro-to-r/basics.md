@@ -198,11 +198,14 @@ As you may have noticed we have been assigning variables and they have been adde
 If you would like to declutter your environment, you have a few options:
 
 - You can use the `rm()` function to remove which ever variables you'd like. To remove more than one just put a comma between variable names.
-- You can clear all variables by clicking the broom icon:
+- You can clear **all variables** by clicking the broom icon:
 
 ![](images/remove-all.png)
 
+!!! warning
+     Be careful when removing variables, especially if these values took a long time to generate!
 
+     
 ## R Packages
 
 Aside from the base functions there are thousands of custom fuctions which are bundled in R packages. We can access these functions by loading the package that contains them. On the Tufts HPC, groups of packages are available. To access them you will need to specify the path where these packages are held. To identify the base group of packages, we can use the `libPaths()` function:
