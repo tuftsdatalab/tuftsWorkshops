@@ -52,7 +52,7 @@ nav:
             - "Introduction To Unix" : tutorials/intro-to-unix/unix.md
         - Intro To R: 
             - "Introduction To R OnDemand": tutorials/intro-to-r/r-ondemand.md
-            - "Project Management": tutorials/intro-to-r/project-management.md
+            - "The Basics": tutorials/intro-to-r/basics.md
             - "Data Structures": tutorials/intro-to-r/data-structures.md
             - "Functions & Flow": tutorials/intro-to-r/functions-flow.md
             - "Inspecting/Manipulating Data": tutorials/intro-to-r/inspecting-manipulating-data.md
