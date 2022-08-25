@@ -166,3 +166,5 @@ When assigning variables we can add descriptions to our code to give our code co
 # creating a variable for time of day
 time_of_day = 'Morning'
 ```
+
+Everything after the `#` is not processed as Python code even within a code block in a Jupyter notebook.
