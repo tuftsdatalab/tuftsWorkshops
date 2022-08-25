@@ -19,7 +19,7 @@ coverage[2]
 ```
 ## Adding/Deleting Values
 
-We can change items in the list as well by assigning them to different values:
+To add values we can use the `.append()` method to add items to the end of a list:
 
 ```
 coverage.append(542)
@@ -28,4 +28,15 @@ coverage
 
 ```
 [200, 34, 300, 423, 98, 789, 542]
+```
+
+Additionally, we can also remove items from a list as well with the `del` statement:
+
+```
+del coverage[3]
+coverage
+```
+
+```
+[200, 34, 300, 98, 789, 542]
 ```
