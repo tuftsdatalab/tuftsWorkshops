@@ -65,6 +65,9 @@ abs(10) # absolute value
 [1] 10
 ```
 
+<details>
+<summary>More Examples</summary>
+<br>
 ```
 sqrt(25) # square root
 ```
@@ -88,6 +91,7 @@ log10(10) # log base 10
 ```
 [1] 1
 ```
+</details>
 
 ## Comparisons
 
