@@ -112,6 +112,9 @@ R can also be used to make comparisons. Here we note the operators used to do so
 [1] TRUE
 ```
 
+<details>
+<summary>More Examples</summary>
+<br>
 ```
 2 != 2
 ```
@@ -127,6 +130,7 @@ R can also be used to make comparisons. Here we note the operators used to do so
 ```
 [1] TRUE
 ```
+</details>
 
 !!! note
    Unless the number is an integer, do not use `==` to compare. This is due to the fact that the decimal value may appear the same 
