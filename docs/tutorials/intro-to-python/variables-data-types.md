@@ -157,3 +157,12 @@ antibiotic[1:5]
 ```
 'trep'
 ```
+
+## Comments
+
+When assigning variables we can add descriptions to our code to give our code context. We do this by writing our description after a `#` symbol:
+
+```
+# creating a variable for time of day
+time_of_day = 'Morning'
+```
