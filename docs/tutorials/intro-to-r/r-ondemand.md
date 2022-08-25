@@ -1,5 +1,3 @@
-# Introduction To R OnDemand
-
 ## Setup
 
 Before getting started you will need:
@@ -75,4 +73,44 @@ When you deal with data treat it as read-only. Working with data files in someth
 
 When performing analyses you'll note that some code blocks are useful in multiple scenarios. It is a good idea to store these reusable chunks in a separate folder to use in other analysis scripts. 
 
+## Setting The Directory
 
+When we create a project all the paths are now relative to the project. This helps when you need to specify where a file is. So for example instead of:
+
+```
+cluster/home/user/new-project/data/file.txt
+```
+
+We only need to specify where things are with respect to our project:
+
+```
+data/file.txt
+```
+
+We can tell where we are using `getwd()`, so if we were in `new-project`:
+
+```
+getwd()
+```
+
+```
+cluster/home/user/new-project/
+```
+
+If we want to specify a **new** base directory we can use `setwd()`:
+
+```
+setwd("cluster/home/user/new-project/data")
+```
+
+Here we set it to `data` so that if we were to pull that file again, the path would be:
+
+```
+file.txt
+```
+
+But let's set it back to the project directory for now:
+
+```
+setwd("cluster/home/user/new-project")
+```
