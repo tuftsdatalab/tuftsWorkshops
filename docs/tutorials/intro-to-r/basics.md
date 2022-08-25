@@ -197,12 +197,28 @@ If you would like to declutter your environment, you have a few options:
 
 ## R Packages
 
-Aside from the base functions there are thousands of custom fuctions which are bundled in R packages. We can access these functions installing them and loading them. On the Tufts HPC, libraries of packages are available. To access them you will need to specify where these packages are with the `.libPaths()` function:
+Aside from the base functions there are thousands of custom fuctions which are bundled in R packages. We can access these functions by loading the package that contains them. On the Tufts HPC, groups of packages are available. To access them you will need to specify the path where these packages are held. To identify the base group of packages, we can use the `libPaths()` function:
 
 ```
-.libPaths("","/cluster/tufts/hpc/R/4.0.0")
+.libPaths()
 ```
-You'll can see what packagews are available in the`Packages` window:
+
+```
+[1] "/opt/shared/R/4.0.0/lib64/R/library"
+```
+
+This is the base R library for OnDemand and it is rather limited. We will pull in a more complete library by pointing to it:
+
+```
+.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0'))
+.libPaths()
+```
+
+```
+[1] "/cluster/tufts/hpc/tools/R/4.0.0"    "/opt/shared/R/4.0.0/lib64/R/library"
+```
+
+Now you'll note we are first pointing to the `/cluster/tufts/hpc/tools/R/4.0.0` library first for packages! You'll can see what packagews are available in the`Packages` window:
 
 ![](images/packages.png)
 
