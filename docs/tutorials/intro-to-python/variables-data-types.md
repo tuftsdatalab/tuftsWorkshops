@@ -130,7 +130,7 @@ len(antibiotic)
 12
 ```
 
-We can slice strings if needed to! However, the letters you are grabbing are **0-indexed** meaning that the first letter is letter 0, the second letter is letter 1, and so on:
+We can slice strings if needed to! However, the letters you are grabbing are **zero-indexed** meaning that the first letter is letter 0, the second letter is letter 1, and so on:
 
 ```
 antibiotic[0]
