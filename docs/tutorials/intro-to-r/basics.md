@@ -179,3 +179,4 @@ To load a package you can use the `library()` function:
 
 ```
 library(ggplot2)
+```
