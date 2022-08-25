@@ -42,12 +42,17 @@ Let's look at some examples:
 ```
 10 * 3^3
 ```
-> [1] 270
+
+```
+[1] 270
+```
 
 ```
 (400 / 10) * (4e2) # 4e2 is the same as 4^2
 ```
-> [1] 16000
+```
+[1] 16000
+```
 
 You'll notice that in the last equation we added words after a `#` and the equation still ran. This is what is known as a comment, where everything after the `#` is not registered as R code. Commenting is immensely valuable for giving your code context so that you and whoever else reads it knows the purpose of a given chunk of code.
 
@@ -55,23 +60,34 @@ Additionally there are functions built in R to perform mathematical calculations
 ```
 abs(10) # absolute value
 ```
-> [1] 10
+
+```
+[1] 10
+```
 
 ```
 sqrt(25) # square root
 ```
->[1] 5
+
+```
+[1] 5
+```
 
 ```
 log(10) # natural logarithm
 ```
 
->[1] 2.302585
+```
+[1] 2.302585
+```
 
 ```
 log10(10) # log base 10
 ```
-> [1] 1
+
+```
+[1] 1
+```
 
 ## Comparisons
 
@@ -87,17 +103,26 @@ R can also be used to make comparisons. Here we note the operators used to do so
 ```
 2 == 2
 ```
-> [1] TRUE
+
+```
+[1] TRUE
+```
 
 ```
 2 != 2
 ```
-> [1] FALSE
+
+```
+[1] FALSE
+```
 
 ```
 3 <= 10
 ```
-> [1] TRUE
+
+```
+[1] TRUE
+```
 
 !!! note
    Unless the number is an integer, do not use `==` to compare. This is due to the fact that the decimal value may appear the same 
@@ -113,10 +138,13 @@ x
 x <- 40 # changing value to 40
 x
 ```
-> [1] 35
 
-> [1] 40
-
+```
+[1] 35
+```
+```
+[1] 40
+```
 You'll notice that we initially assigned `x` to a value of `35` and then updated value to `40`. This is important to keep in mind because the last value assigned to `x` will be kept. Variables can I have a combination lowercase letters, uppercase letters, underscores and periods:
 
 ```
@@ -131,13 +159,13 @@ biggerValue
 even_bigger_value
 biggest.value
 ```
-> [1] 40
 
-> [1] 45
-
-> [1] 50
-
-> [1] 55
+```
+[1] 40
+[1] 45
+[1] 50
+[1] 55
+```
 
 !!! note
     Take note that the spelling needs to be consistent to call the variable correctly.
@@ -148,7 +176,10 @@ We can also assign a series of values in a specific order to a variable to creat
 someVector <- 5:10
 someVector
 ```
-> [1]  5  6  7  8  9 10
+
+```
+[1]  5  6  7  8  9 10
+```
 
 ## Environment
 
