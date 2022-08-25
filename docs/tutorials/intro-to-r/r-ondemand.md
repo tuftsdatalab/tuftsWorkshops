@@ -116,7 +116,7 @@ R can also be used to make comparisons. Here we note the operators used to do so
 - **Less Than Or Equal** `<=`
 - **Greater Than Or Equal** `>=`
 - **Greater Than** `>`
-- **Less Than* `<`
+- **Less Than** `<`
 
 ```
 2 == 2
