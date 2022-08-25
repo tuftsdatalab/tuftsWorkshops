@@ -68,6 +68,7 @@ abs(10) # absolute value
 <details>
 <summary>More Examples</summary>
 <br>
+  
 ```
 sqrt(25) # square root
 ```
@@ -91,6 +92,7 @@ log10(10) # log base 10
 ```
 [1] 1
 ```
+  
 </details>
 
 ## Comparisons
@@ -115,6 +117,7 @@ R can also be used to make comparisons. Here we note the operators used to do so
 <details>
 <summary>More Examples</summary>
 <br>
+  
 ```
 2 != 2
 ```
@@ -130,6 +133,7 @@ R can also be used to make comparisons. Here we note the operators used to do so
 ```
 [1] TRUE
 ```
+      
 </details>
 
 !!! note
