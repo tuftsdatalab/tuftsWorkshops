@@ -242,3 +242,8 @@ To load a package you can use the `library()` function:
 ```
 library(ggplot2)
 ```
+
+!!! note
+     If you need a package installed in this shared library, reach out to [TTS Reasarch Technology](http://research.uit.tufts.edu/) 
+     
+     
