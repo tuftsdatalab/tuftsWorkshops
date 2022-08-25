@@ -10,7 +10,7 @@ import numpy as np
 def geometric_mean(values):
     return np.exp(np.mean(np.log(values)))
    
-# apply our function
+# call our function
 geometric_mean(coverage)                 
     
 ```
@@ -19,7 +19,7 @@ geometric_mean(coverage)
 209.88855396892262
 ```
 
-Here we see that we use `def` to define the function and `return` to specify what value you'd like to return. 
+Here we see that we use `def` to define the function and `return` to specify what value you'd like to return. We then call our function and use our `coverage` variable as our set of values. The geometric mean of the set of values in `coverage` are then returned.
 
 ### Function Documentation
 
@@ -47,4 +47,32 @@ geometric_mean(values)
     This function takes a list of
     values and returns the geometric mean 
     of those values
+```
+
+## Variable Scope
+
+Variable naming can be difficult and sometimes variable names might need to be reused. Normally, when we use a variable name over again, we change the value of that variable. However, if we assign the same variable in and outside a function the values do not get overwritten:
+
+```
+x = 45
+
+def print_x():
+    x = 30
+    return x
+```
+
+```
+x
+```
+
+```
+45
+```
+
+```
+print_x()
+```
+
+```
+30
 ```
