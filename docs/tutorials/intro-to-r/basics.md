@@ -244,6 +244,6 @@ library(ggplot2)
 ```
 
 !!! note
-     If you need a package installed in this shared library, reach out to [TTS Reasarch Technology](http://research.uit.tufts.edu/) 
+     If you need a package installed in this shared library, reach out to TTS Reasarch Technology, at tts-research@tufts.edu
      
      
