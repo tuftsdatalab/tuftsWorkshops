@@ -65,4 +65,7 @@ nav:
             - "Lists": tutorials/intro-to-python/lists.md
             - "Loops & Conditionals": tutorials/intro-to-python/loops-conditionals.md
             - "Functions & Scope": tutorials/intro-to-python/functions-scope.md
+    - Omics Tutorials:
+        - Intro To 16S Metabarcoding: 
+            - "Background": omics/intro-to-16S/background.md
         
