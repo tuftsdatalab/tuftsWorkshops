@@ -68,7 +68,8 @@ JobId=24063163 JobName=job
 
 *You can no longer see these jobs in `squeue` command output.*
 
-**Querying finished jobs helps users make better decisions on requesting resources for future jobs. **
+!!! tip
+    Querying finished jobs helps users make better decisions on requesting resources for future jobs.
 
 Display job CPU and memory usage:
 
@@ -103,10 +104,7 @@ Display job detailed accounting data:
            OUT_OF_ME+            2022-07-20T12:33:15 2022-07-20T12:36:15   00:03:00          0        8Gn    108052K        1          2        c1cmp044 
 ```
 
-NOTE: there are more format options, see [sacct](https://slurm.schedmd.com/sacct.html)
+!!! note
+    For more format options, see [sacct](https://slurm.schedmd.com/sacct.html)
 
----
-If you have any HPC related questions, please feel free to contact us at **tts-research@tufts.edu**.
-
-*End of Day 1*
 
