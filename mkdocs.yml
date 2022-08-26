@@ -69,4 +69,5 @@ nav:
         - Intro To 16S Metabarcoding: 
             - "Background": omics/intro-to-16S/background.md
             - "Setup": omics/intro-to-16S/setup.md
+            - "Quality Control": omics/intro-to-16S/quality-control.md
         
