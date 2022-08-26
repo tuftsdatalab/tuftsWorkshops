@@ -68,4 +68,5 @@ nav:
     - Omics Tutorials:
         - Intro To 16S Metabarcoding: 
             - "Background": omics/intro-to-16S/background.md
+            - "Setup": omics/intro-to-16S/setup.md
         
