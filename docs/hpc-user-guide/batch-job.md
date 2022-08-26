@@ -38,8 +38,5 @@ blastp -query mm-second.faa -db zebrafish.1.protein.faa -out mm-second.x.zebrafi
 
 `/cluster/tufts/hpc/tools/slurm_scripts`
 
-**Useful Link**
-
-https://tufts.box.com/v/HPC-New-User
 
 
