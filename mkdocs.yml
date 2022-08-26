@@ -73,4 +73,5 @@ nav:
             - "Error Model & ASVs": omics/intro-to-16S/error-asv.md
             - "Merging, Chimeras & Taxonomy": omics/intro-to-16S/merging-chimeras-taxonomy.md
             - "Diversity Analysis": omics/intro-to-16S/diversity-analysis.md
+            - "Differential Abundance": omics/intro-to-16S/differential-abundance.md
         
