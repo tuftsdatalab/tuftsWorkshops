@@ -71,4 +71,5 @@ nav:
             - "Setup": omics/intro-to-16S/setup.md
             - "Quality Control": omics/intro-to-16S/quality-control.md
             - "Error Model & ASVs": omics/intro-to-16S/error-asv.md
+            - "Merging, Chimeras & Taxonomy": omics/intro-to-16S/merging-chimeras-taxonomy.md
         
