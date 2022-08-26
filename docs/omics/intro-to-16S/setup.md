@@ -21,3 +21,47 @@ Click on `Interactive Apps > RStudio Pax` and you will see a form to fill out to
 - `Load Supporting Modules`: `curl/7.47.1 gcc/7.3.0 hdf5/1.10.4 boost/1.63.0-python3 libpng/1.6.37 java/1.8.0_60 libxml2/2.9.10 libiconv/1.16 fftw/3.3.2 gsl/2.6`
 
 Click `Lauch` and wait until your session is ready. Click `Connect To RStudio Server`, and you will notice a new window will pop up with RStudio. 
+
+## Project Setup
+
+We are going to create a new project to begin:
+
+1. Go to `File` > `New Project`
+2. `New Directory`
+3. `New Project`
+4. Create a name for your project (e.g. `intro-to-16S`)
+5. `Create Project`
+
+In the `Terminal` tab we will set up our project space:
+
+```
+mkdir data
+mkdir results
+mkdir scripts
+```
+
+We will copy over our sample data:
+
+```
+cp -r /cluster/tufts/bio/tools/training/microbiome16S/subsampled/ ./data/
+```
+## Script Setup
+
+Now to get started we will need to setup a script:
+
+- Go to `File > New File > R script`
+- Click the `New File` icon and select R script
+
+In the R script, start by loading the libraries we need:
+
+```
+#LIB='/cluster/tufts/bio/tools/R_libs/4.0.0'
+LIB='/cluster/home/jlaird01/R/x86_64-pc-linux-gnu-library/4.0/'
+.libPaths(c(LIB))
+library(dada2)
+library(phyloseq)
+library(ggplot2)
+library(DESeq2)
+```
+
+
