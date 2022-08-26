@@ -76,6 +76,4 @@ __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
     - In "preempt" partition
     - Request with: `--gres=gpu:a100:1`(one A100 GPU, can request up to 8 on one node)
 
----
 
-NEXT - [Software](Software.md)
