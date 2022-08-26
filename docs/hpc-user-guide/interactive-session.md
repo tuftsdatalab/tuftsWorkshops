@@ -45,6 +45,4 @@ In that case, you can simply omit the `--reservation=bioworkshop` option in the 
 [your_utln@i2cmp003 ~]$ exit
 
 ```
----
 
-NEXT - [Batch Job](Batch_Job.md)
