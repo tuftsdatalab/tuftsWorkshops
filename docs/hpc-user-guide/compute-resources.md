@@ -40,10 +40,9 @@ preempt         up 7-00:00:00     20   idle p1cmp[016-017,031-037,039-042,081-08
 
 [**OnDemand**](https://ondemand.pax.tufts.edu) `Misc`-->`Inventory ` shows more node details (core count & memory)
 
-<img src="../images/Misc2.png" alt="Misc" width="60%">
+![](images/Misc2.png)
 
-<img src="../images/Inventory.png" alt="Inventory" width="60%">
-
+![](images/Inventory.png)
 
 ### GPUs
 
