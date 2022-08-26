@@ -1,27 +1,17 @@
-## Software On The Cluster
+## Modules
 
-### Modules
+- A tool that **simplifies** shell initialization and lets users easily modify their environment during the session with modulefiles
+- Each modulefile contains the **information** needed to configure the shell for an application. (PATH, LD_LIBRARY_PATH, CPATH, etc.)
+- Modules are useful in managing **different versions** of applications. 
+- Modules can also be bundled into metamodules that will load an entire **set of different applications (dependencies)**. 
 
-**What are modules**
 
-  - A tool that **simplifies** shell initialization and lets users easily modify their environment during the session with modulefiles
-  - Each modulefile contains the **information** needed to configure the shell for an application. (PATH, LD_LIBRARY_PATH, CPATH, etc.)
-  - Modules are useful in managing **different versions** of applications. 
-  - Modules can also be bundled into metamodules that will load an entire **set of different applications (dependencies)**. 
+### Module  Commands
 
-  
-> List of Useful Commands:
-> 
-> module av
-> 
-> module load
-> 
-> module list
-> 
-> module unload
-> 
-> module purge
-
+    - `module av` : to check all available modules
+    - `module load` : to load a particular module
+    - `module list` : to list modules that are loaded
+    - `module purge` : purge any loaded modules
 
 To check **ALL available modules** installed on the cluster:
 
@@ -109,28 +99,3 @@ No Modulefiles Currently Loaded.
 
 ```
 
-  
-
-**Install Software/Packages**
-
-  - [R](https://tufts.box.com/s/qximkv5ke2y4k0vbg6m04m6fc6exh88h) (R command line recommanded)
-    - R/4.0.0
-    - gcc 
-    - gdal
-    - curl
-  - [Python](https://tufts.box.com/v/CondaEnvonHPC) (Conda env recommanded)
-    - anaconda/3 (older version, source activate)
-    - anaconda/2021.11 or anaconda/2021.05 (newer version, source activate)
-    - Never run "conda activate" or "conda init"
-    - Use the same version of conda on one conda env every time
-  - Other software compiled from source
-    - gcc
-    - cmake
-    - ... any dependencies, load if available, install if not.
-    - Follow instructions (read it through)
-    - Use "--prefix=" to install in non-standard locations
-    - Modify the environment variables !!! (such as PATH, LD_LIBRARY_PATH, CPATH, .etc)
-
----
-
-NEXT - [Tufts HPC Cluster SLURM](../Tufts_HPC_Cluster_SLURM/README.md)
