@@ -70,4 +70,5 @@ nav:
             - "Background": omics/intro-to-16S/background.md
             - "Setup": omics/intro-to-16S/setup.md
             - "Quality Control": omics/intro-to-16S/quality-control.md
+            - "Error Model & ASVs": omics/intro-to-16S/error-asv.md
         
