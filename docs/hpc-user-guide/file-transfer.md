@@ -25,11 +25,11 @@ Go to **[OnDemand]( https://ondemand.pax.tufts.edu/)**
 
 Under **`Files`**
 
-<img src="../images/Home.png" alt="Files" width="60%">
+![](images/Home.png)
 
 Using the **`Upload`** or **`Download`** buttons to transfer. 
 
-<img src="../images/Home.png" alt="Home" width="60%">
+![](images/Home.png)
 
 ---
 ### File Transfer Client
@@ -86,4 +86,4 @@ Using the **`Upload`** or **`Download`** buttons to transfer.
 
     `$ rsync -azP Local_Path your_utln@xfer.cluster.tufts.edu:Cluster_Path`
     
----    
+
