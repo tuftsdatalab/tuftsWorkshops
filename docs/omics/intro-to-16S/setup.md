@@ -34,7 +34,7 @@ We are going to create a new project to begin:
 
 In the `Terminal` tab we will set up our project space:
 
-```
+```bash
 mkdir data
 mkdir results
 mkdir scripts
@@ -42,7 +42,7 @@ mkdir scripts
 
 We will copy over our sample data:
 
-```
+```bash
 cp -r /cluster/tufts/bio/tools/training/microbiome16S/subsampled/ ./data/
 ```
 ## Script Setup
@@ -54,7 +54,7 @@ Now to get started we will need to setup a script:
 
 In the R script, start by loading the libraries we need:
 
-```
+```R
 #LIB='/cluster/tufts/bio/tools/R_libs/4.0.0'
 LIB='/cluster/home/jlaird01/R/x86_64-pc-linux-gnu-library/4.0/'
 .libPaths(c(LIB))
