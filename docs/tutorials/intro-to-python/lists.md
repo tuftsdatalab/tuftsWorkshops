@@ -2,7 +2,7 @@
 
 A data frame is not the only way to store data, we can also create lists of values which can be the same data type or different data types. Here is an example:
 
-```
+```py
 coverage = [200, 34, 900, 423, 98, 789]
 ```
 
@@ -21,7 +21,7 @@ coverage[2]
 
 To add values we can use the `.append()` method to add items to the end of a list:
 
-```
+```py
 coverage.append(542)
 coverage
 ```
@@ -32,7 +32,7 @@ coverage
 
 Additionally, we can also remove items from a list as well with the `del` statement:
 
-```
+```py
 del coverage[3]
 coverage
 ```
