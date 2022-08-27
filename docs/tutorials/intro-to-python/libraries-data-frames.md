@@ -2,7 +2,7 @@
 
 Libraries are collections of functions called modules that can be imported and used in your script. Let's use the `math` library to grab constants:
 
-```
+```py
 import math
 math.e
 ```
@@ -13,7 +13,7 @@ math.e
 
 Now how about functions:
 
-```
+```py
 math.log2(25)
 ```
 
@@ -29,7 +29,7 @@ We want to point out that here we call the value `e` after `math`. This is calle
 
 Sometimes you'll only need a few things from a library. To grab just those few things use the following approach:
 
-```
+```py
 from math import log2, e
 math.log2(25)
 ```
@@ -40,7 +40,7 @@ math.log2(25)
 
 Now sometimes the name of a library is just too long to continuously type out. For this we can use an **alias**
 
-```
+```py
 from math import log2 as l2
 math.l2(25)
 ```
@@ -55,7 +55,7 @@ Here we abbreviate `log2` from the `math` package to `l2`.
 
 In data analysis we often work with tabular data, or two dimensional data with columns and rows. Columns will typically contain the same type of data and rows will be one sample with different observations. We commonly read in tabular data using the `pandas` module:
 
-```
+```py
 import pandas as pd
 import csv
 df = pd.read_csv('/cluster/tufts/bio/tools/training/intro-to-r/metadata.tsv' , sep = '/t', engine = 'python')
@@ -77,7 +77,7 @@ print(df)
 
 If we want to inspect this data frame we can use a few useful commands. To get a quick summary of the data frame we can use:
 
-```
+```py
 df.info() # reveals that we have 6 columns, 9 rows, uses 504.0+ bytes of memory, and has one integer column
 ```
 
@@ -99,7 +99,7 @@ memory usage: 504.0+ bytes
 
 To get column names:
 
-```
+```py
 df.columns
 ```
 
@@ -111,7 +111,7 @@ Index(['SampleID', 'AntibioticUsage', 'DaySinceExperimentStart', 'Genotype',
 
 To get row names:
 
-```
+```py
 df.index
 ```
 
@@ -121,7 +121,7 @@ Int64Index([1, 2, 3, 4, 5, 6, 7, 8, 9], dtype='int64')
 
 To transpose (flip the columns and rows) the data frame:
 
-```
+```py
 df.T
 ```
 
@@ -137,7 +137,7 @@ OtuCount                                      1174                       1474
 
 If we wanted a numeric summary we can use:
 
-```
+```py
 df.describe()
 ```
 
@@ -160,7 +160,7 @@ max    1492.000000
 
 Say you want to grab certain values in a data frame using the number location. So the value in the second row and third column:
 
-```
+```py
 df.iloc[2,3]
 ```
 
@@ -169,7 +169,7 @@ df.iloc[2,3]
 ```
 Here we see that the formula to grab values is `[row, column]`. If we wanted to use row/column names to specify the value:
 
-```
+```py
 df.loc[1,"OtuCount"]
 ```
 
@@ -179,7 +179,7 @@ df.loc[1,"OtuCount"]
 
 To grab all values in a row or column we use `:` to specify every value:
 
-```
+```py
 df.loc[:,"OtuCount"]
 ```
 
@@ -211,7 +211,7 @@ We can also subset our data with a few operators:
 
 Let's go through a few of these:
 
-```
+```py
 df[df["AntibioticUsage"] == "None"]    # select samples with no antibiotic useage
 ```
 
@@ -223,7 +223,7 @@ SampleID	AntibioticUsage	DaySinceExperimentStart	Genotype	Description	OtuCount
 4	WT.unt.7	None	DAY0	WT	16S_WT_unt_7_SRR2627465_1	1451
 ```
 
-```
+```py
 df[df["OtuCount"] > 400]   # select samples with an otu count over 400
 ```
 
