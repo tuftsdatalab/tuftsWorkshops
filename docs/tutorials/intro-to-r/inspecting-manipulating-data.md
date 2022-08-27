@@ -10,20 +10,20 @@ You'll note that ```read.xlsx()``` has the prefix ```openxlsx::```. This is beca
 
 - specify the package that the function comes from:
   
-```
+```R
 openxlsx::read.xlsx()
 ```
   
 - load the library with the package:
   
-```
+```R
 library(openxlsx)
 read.xlsx()
 ```
 
 We will now practice inspecting data frames that we will copy over from a shared location. In the `Terminal` tab enter the following command:
 
-```
+```bash
 cp /cluster/tufts/bio/tools/training/intro-to-r/data/* data/
 ```
 
@@ -31,13 +31,13 @@ cp /cluster/tufts/bio/tools/training/intro-to-r/data/* data/
 
 When importing `.csv` files you'll need to specify the path to where you're file is located. So if your `.csv` file is in `data/test.csv`, you can download it like so:
 
-```
+```R
 read.csv("data/test.csv")
 ```
 
 We can also extend this to URL's as well:
 
-```
+```R
 read.csv(url("https://zenodo.org/api/files/739025d8-5111-476a-9bb9-7f28a200ce8e/linked-ee-dataset-v20220524-QT_2022-07-13-sdev.csv"))
 ```
 
@@ -45,7 +45,7 @@ read.csv(url("https://zenodo.org/api/files/739025d8-5111-476a-9bb9-7f28a200ce8e/
 
 Like ```read.csv()```, ```read.table()``` can also import data. The latter function is very useful in that it can download files not delimted (a.k.a separated) by commas. So to open a ".tsv" file (a.k.a a file delimeted by a tab ```"\t"```):
 
-```
+```R
 meta <- read.table("data/metadata.tsv",sep="\t",stringsAsFactors=FALSE)
 ```
 
@@ -55,14 +55,14 @@ You'll notice in the code above that we include the option, ```stringsAsFactors=
 
 While files like the ones mentioned above are popular, so are excel spreadsheets. So it is worth mentioning how to read in excel data as well:
 
-```
+```R
 library(openxlsx)      
 read.xlsx("data/test.xlsx")
 ```
 
 Now in excel spreadsheets you may only want to pull out one page or start from a row that isn't the first. To do so you can use:
 
-```
+```R
 library(openxlsx)
 read.xlsx("data/test.xlsx",sheet=1,startRow = 1,colNames = TRUE,rowNames = FALSE)
 ```
@@ -75,7 +75,7 @@ You might have noticed that the only data frame we saved to a variable was the `
 
 To get a summary of each column:
 
-```
+```R
 summary(meta)
 ```
 
@@ -92,7 +92,7 @@ summary(meta)
 
 To get the data's class:
 
-```
+```R
 class(meta)
 ```
 
@@ -102,7 +102,7 @@ class(meta)
 
 To get a display of the data's contents:
 
-```
+```R
 str(meta)
 ```
 
@@ -119,7 +119,7 @@ str(meta)
  
 To get the first 6 rows:
 
-```
+```R
 head(meta)
 ```
 
@@ -136,7 +136,7 @@ head(meta)
 
 To get the last 6 rows:
 
-```
+```R
 tail(meta)
 ```
 
@@ -153,7 +153,7 @@ SampleID AntibioticUsage DaySinceExperimentStart Genotype                 Descri
 
 To get the length of a vector:
 
-```
+```R
 length(meta$Genotype)
 ```
 
@@ -163,7 +163,7 @@ length(meta$Genotype)
 
 To get the dimensions of a matrix/data frame:
 
-```
+```R
 dim(meta) # answer is given in number of rows, then number of columns
 ```
 
@@ -173,7 +173,7 @@ dim(meta) # answer is given in number of rows, then number of columns
 
 To get the number of columns/rows:
 
-```
+```R
 ncol(meta)
 ```
 
@@ -181,7 +181,7 @@ ncol(meta)
 [1] 6
 ```
 
-```
+```R
 nrow(meta)
 ```
 
@@ -191,7 +191,7 @@ nrow(meta)
 
 To get your column names:
 
-```
+```R
 colnames(meta)
 ```
 
@@ -203,7 +203,7 @@ colnames(meta)
 
 To get your row names:
 
-```
+```R
 rownames(meta)
 ```
 
@@ -217,7 +217,7 @@ Now that we know how to import our data and inspect it, we can go ahead and mani
 
 So now that we have downloaded and inspected our data we can get to manipulating it! So to start, let's talk about accessing parts of your data. To grab the first column in a data frame/matrix you can do so like:
 
-```
+```R
 meta[,1]
 ```
 
@@ -228,7 +228,7 @@ meta[,1]
 
 To grab the first row:
 
-```
+```R
 meta[1,]
 ```
 
@@ -242,7 +242,7 @@ meta[1,]
 
 Now if your data is a data frame you have a special way of accessing coluns with the ```$``` operator:
 
-```
+```R
 meta$AntibioticUsage
 ```
 
@@ -253,7 +253,7 @@ meta$AntibioticUsage
 
 This comes in handy for readability. While you can grab your data by column number, it is much easier to read that you are grabbing Sepal Length. To grab mulitple columns/rows, you can do the following for both data frames and matrices:
 
-```
+```R
 meta[,c(2,4,6)] # grabbing the 2nd, 4th, and 6th columns
 ```
 
@@ -272,7 +272,7 @@ meta[,c(2,4,6)] # grabbing the 2nd, 4th, and 6th columns
 
 In a data frame, to access columns you can be more specific and specify by column name:
 
-```
+```R
 meta[,c("SampleID","Genotype","OtuCount")]
 ```
 
@@ -291,7 +291,7 @@ meta[,c("SampleID","Genotype","OtuCount")]
 
 Now if we wanted to add a new column we could add one like so:
 
-```
+```R
 meta$Day <- c(0,0,0,0,3,3,3,3,3) # name of new column comes after the $ sign
 meta
 ```
@@ -328,7 +328,7 @@ Let's go through a few of these!
 
 Subsetting so that we only have rows where the `OtuCount` is greater than 1000:
 
-```
+```R
 meta[meta$OtuCount > 1000,]
 ```
 
@@ -342,7 +342,7 @@ meta[meta$OtuCount > 1000,]
 
 Subsetting so that we only have rows where `OtuCount` is less than 400:
 
-```
+```R
 meta[meta$OtuCount < 400,]
 ```
 
@@ -356,7 +356,7 @@ meta[meta$OtuCount < 400,]
 
 Subsetting so that we only have rows where the `AntibioticUsage` is equal to `Stretomycin`:
 
-```
+```R
  meta[meta$AntibioticUsage == "Streptomycin",]
 ```
  
@@ -371,7 +371,7 @@ Subsetting so that we only have rows where the `AntibioticUsage` is equal to `St
 
 Subsetting so that we only have rows where the `AntibioticUsage` is not equal to `Stretomycin`:
 
-```
+```R
 meta[meta$AntibioticUsage != "Streptomycin",]
 ```
  
@@ -385,7 +385,7 @@ meta[meta$AntibioticUsage != "Streptomycin",]
 
 Subsetting so that we only have rows where the `AntibioticUsage` equals `Steptomycin` or the `OtuCount` is less than `300`:
 
-```
+```R
 meta[meta$AntibioticUsage == "Streptomycin" | meta$OtuCount < 300,]
 ```
 
@@ -402,7 +402,7 @@ meta[meta$AntibioticUsage == "Streptomycin" | meta$OtuCount < 300,]
 
 When subsetting data we should also mention the R package `dplyr`. This package has functionality to neatly modify data frames using the `%>%` operator to separate your subsetting operations. Let's go through a quick example:
 
-```
+```R
 library(dplyr)
 
 meta %>%
