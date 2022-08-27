@@ -57,7 +57,7 @@ Here we will focus on code blocks to run chunks of python code, and markdown blo
 
 **markdown code:**
 
-```
+```md
 - list item 1
 - list item 2
 ```
@@ -67,7 +67,7 @@ Here we will focus on code blocks to run chunks of python code, and markdown blo
 
 **markdown code:**
 
-```
+```md
 1. numbered list item 1
 2. numbered list item 2
 ```
@@ -77,7 +77,7 @@ Here we will focus on code blocks to run chunks of python code, and markdown blo
 
 **markdown code:**
 
-```
+```md
 # Level 1 Heading
 ## Level 2 Heading
 ```
@@ -87,7 +87,7 @@ Here we will focus on code blocks to run chunks of python code, and markdown blo
 
 **markdown code:**
 
-```
+```md
 [google link](https://www.google.com/)
 ```
 **output:**
@@ -95,7 +95,7 @@ Here we will focus on code blocks to run chunks of python code, and markdown blo
 
 Now that we have a basic understanding of markdown, let's create some annotations. In your first code block change the type to markdown and enter:
 
-```
+```md
 # Introduction to Python 
 
 Here are a few helpful links to get started:
