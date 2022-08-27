@@ -7,7 +7,7 @@
 
 Let's do this with code now!
 
-```
+```R
 # Merge Read Pairs
 
 ## so far we have "denoised", so to speak, 
@@ -25,7 +25,7 @@ mergers <- mergePairs(
 
 Now that our sequences are merged we can create an ASV counts table, basically telling us how which samples contain which ASV's:
 
-```
+```R
 # Making a Sequence Table
 
 ## now that we have merged sequences we can construct
@@ -44,7 +44,7 @@ seqtab <- makeSequenceTable(mergers)
 
 Now in code:
 
-```
+```R
 # Removing Chimeras
 
 ## Chimeric sequences occur as errors during PCR 
@@ -56,7 +56,7 @@ seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", verbose=TRUE)
 
 We will also take a moment to do some final QC:
 
-```
+```R
 # Final QC
 
 ## we have performed quite a few steps 
@@ -91,7 +91,7 @@ SRR5690822  1000      940       802       669    300     300
 - To determine which taxon each  ASV belongs to DADA2 uses a naïve bayes classifier 
 - This classifier uses a set of reference sequences with known taxonomy, here we use the SILVA database, as the training set and and outputs taxonomic assignments with bootstrapped confidence
 
-```
+```R
 # Assigning Taxonomy
 
 ## dada2 uses a naive Bayes classifier when
