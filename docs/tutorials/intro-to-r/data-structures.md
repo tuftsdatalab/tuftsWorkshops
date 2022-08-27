@@ -29,19 +29,25 @@ Vectors are collections of data, like a:
 
 Factors can be used to store categorical data and can be created like this:
 
-  ```
+  ```R
   size <- c("small", "medium", "small", "large", "medium")
   size
   ```
-  > [1] "small"  "medium" "small"  "large"  "medium"
   
   ```
+  [1] "small"  "medium" "small"  "large"  "medium"
+  ```
+  
+  ```R
   size <- factor(size,levels = c("small","medium","large"))
   size
   ```
-  > [1] small  medium small  large  medium
   
-  > Levels: small medium large
+  ```
+  [1] small  medium small  large  medium
+  
+  Levels: small medium large
+  ```
   
 Now we have turned this character vector into a factor vector! These will come in handy when we start breaking down data by category.
 
@@ -49,7 +55,7 @@ Now we have turned this character vector into a factor vector! These will come i
 
 A matrix can be created by combining vectors of the **same length and same data type**. They are used frequently when performing operations on numeric data but can include other data types. In R we can create a matrix with the `matrix()` function:
 
-```
+```R
 matrix(data=1:9,nrow = 3,ncol=3)
 ```
 ```
@@ -65,7 +71,7 @@ Here we take a vector and specify how many columns and how many rows we'd like.
 
 Data frames are also collections of vectors of the **same length**. However, they do not need to be the same data type. Here we create a data.frame with the `data.frame()` function:
 
-```
+```R
 data.frame(
 characters=c("past","present","future"),
 numbers=c(1,2,3),
@@ -85,7 +91,7 @@ integer=c(1L,2L,3L)
 
 Lists are collections of data that **do not** need to be the same type or length. We can create lists with the `list()` function:
 
-```
+```R
 list(
 data.frame=data.frame(numbers=1:3,characters=c("past","present","future")),
 numbers=1:5,
