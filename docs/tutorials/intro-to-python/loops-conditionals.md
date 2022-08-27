@@ -2,7 +2,7 @@
 
 Loops perform some operation on a value in a set of values. Let's go through an example using our `coverage` list from the previous note:
 
-```
+```py
 for i in coverage:
     print(i)
 ```
@@ -22,7 +22,7 @@ Here we see that `i` is a substitute for some value in the sequence provided - i
 
 Loops can also **nested** where a loop is placed inside a loop:
 
-```
+```py
 for i in [1,2]:
     for j in coverage:
         print(j*2)
@@ -49,7 +49,7 @@ Here we move through the loop and for every value in the first list (`[1,2]`), T
 
 If you want a placeholder for your loop, meaning no operation is performed, use the `pass` statement:
 
-```
+```py
 for i in coverage:
     pass
 ```
@@ -58,7 +58,7 @@ for i in coverage:
 
 If we were interested in performing some operation on a value only if a condition is met, we can use an `if` statement:
 
-```
+```py
 for i in coverage:
     if i > 500:
         print(i)
@@ -77,7 +77,7 @@ Here we use the comparison operators we mentioned in the [Libraries & Data Frame
 
 To perform operations based on multiple conditions you can add in `elif` statements:
 
-```
+```py
 for i in coverage:
     if i > 500:
         print(i)
