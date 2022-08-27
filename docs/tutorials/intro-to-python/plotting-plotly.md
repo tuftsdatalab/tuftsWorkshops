@@ -10,7 +10,7 @@ While there are other plotting libraries, we will focus on `plotly` for the foll
 
 Let's make a scatterplot:
 
-```
+```py
 import plotly.express as px
 fig = px.scatter(df,                      # the data we are using
                  x="Day",                 # x axis data
@@ -26,7 +26,7 @@ fig.show()
 
 We can add a trend line as well:
 
-```
+```py
 import plotly.express as px
 fig = px.scatter(df,
                  x="Day",
@@ -43,7 +43,7 @@ fig.show()
 
 Now if one of your axes spans multiple magnitudes you can scale your data using the `log_x` or `log_y` arguements:
 
-```
+```py
 fig = px.scatter(df,                                   
                  x="Day",                              
                  y="OtuCount",                          
@@ -60,7 +60,7 @@ fig.show()
 
 Sometimes it is useful to separate data by some variable and create panels. We can easily do this by specifying the `facet_row` or `facet_col` arguements - where plots are stacked one on top of the other or side-by-side, respectively:
 
-```
+```py
 fig = px.scatter(df,                                   
                  x="Day",                              
                  y="OtuCount",                          
@@ -76,7 +76,7 @@ fig.show()
 
 To modify text we can use the `labels` and `title` option:
 
-```
+```py
 fig = px.scatter(df,                                   
                  x="Day",                              
                  y="OtuCount",                          
