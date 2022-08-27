@@ -91,7 +91,7 @@ data/file.txt
 
 We can tell where we are using `getwd()`, so if we were in `new-project`:
 
-```
+```R
 getwd()
 ```
 
@@ -101,7 +101,7 @@ cluster/home/user/new-project/
 
 If we want to specify a **new** base directory we can use `setwd()`:
 
-```
+```R
 setwd("cluster/home/user/new-project/data")
 ```
 
@@ -113,6 +113,6 @@ file.txt
 
 But let's set it back to the project directory for now:
 
-```
+```R
 setwd("cluster/home/user/new-project")
 ```
