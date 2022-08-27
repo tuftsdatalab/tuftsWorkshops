@@ -42,7 +42,7 @@
    
 We begin by specifying the path to our data, sorting by forward and reverse strands, and grabbing our sample names:
 
-```
+```R
 ## path to files
 path <- "/cluster/tufts/bio/tools/tool_examples/microbiome16S/subsampled/"
 
@@ -70,7 +70,7 @@ sampleNames <- sapply(
 
 DADA2 has built in plotting features that allow you to inspect your fastq files:
 
-```
+```R
 dada2::plotQualityProfile(path2Forward[1:2])+
   guides(scale = "none")
 ```
@@ -79,7 +79,7 @@ dada2::plotQualityProfile(path2Forward[1:2])+
 
 Here we notice a dip in quality scores and will trim using the base DADA2 filters:
 
-```
+```R
 ## create new file names for filtered forward/reverse fastq files
 ## name each file name in the vector with the sample name
 ## this way we can compare the forward and reverse files 
