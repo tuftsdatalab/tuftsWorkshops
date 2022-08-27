@@ -2,7 +2,7 @@
 
 Write a batch submission script e.g. **sbatch.sh**
 
-```bash
+```sh
 #!/bin/bash
 #SBATCH --job-name=job            # job name is "job"
 #SBATCH --nodes=1                 # 1 nodes #for many shared-memory programs,please leave -N as 1.
