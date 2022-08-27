@@ -39,7 +39,7 @@ When we work with calculations it is useful to remember the order of operations 
 
 Let's look at some examples:
 
-```
+```R
 10 * 3^3
 ```
 
@@ -47,7 +47,7 @@ Let's look at some examples:
 [1] 270
 ```
 
-```
+```R
 (400 / 10) * (4e2) # 4e2 is the same as 4^2
 ```
 ```
@@ -57,7 +57,8 @@ Let's look at some examples:
 You'll notice that in the last equation we added words after a `#` and the equation still ran. This is what is known as a comment, where everything after the `#` is not registered as R code. Commenting is immensely valuable for giving your code context so that you and whoever else reads it knows the purpose of a given chunk of code.
 
 Additionally there are functions built in R to perform mathematical calculations:
-```
+
+```R
 abs(10) # absolute value
 ```
 
@@ -69,7 +70,7 @@ abs(10) # absolute value
 <summary>More Examples</summary>
 <br>
   
-```
+```R
 sqrt(25) # square root
 ```
 
@@ -77,7 +78,7 @@ sqrt(25) # square root
 [1] 5
 ```
 
-```
+```R
 log(10) # natural logarithm
 ```
 
@@ -85,7 +86,7 @@ log(10) # natural logarithm
 [1] 2.302585
 ```
 
-```
+```R
 log10(10) # log base 10
 ```
 
@@ -106,7 +107,7 @@ R can also be used to make comparisons. Here we note the operators used to do so
 - **Greater Than** `>`
 - **Less Than** `<`
 
-```
+```R
 2 == 2
 ```
 
@@ -118,7 +119,7 @@ R can also be used to make comparisons. Here we note the operators used to do so
 <summary>More Examples</summary>
 <br>
   
-```
+```R
 2 != 2
 ```
 
@@ -126,7 +127,7 @@ R can also be used to make comparisons. Here we note the operators used to do so
 [1] FALSE
 ```
 
-```
+```R
 3 <= 10
 ```
 
@@ -144,7 +145,7 @@ in R but from a machine level the two values can be very different.
 
 Dealing with values can be cumbersome. In R, values can be assigned to words using the `<-` operator:
 
-```
+```R
 x <- 35 # assigning a value of 35
 x
 x <- 40 # changing value to 40
@@ -159,13 +160,13 @@ x
 ```
 You'll notice that we initially assigned `x` to a value of `35` and then updated value to `40`. This is important to keep in mind because the last value assigned to `x` will be kept. Variables can I have a combination lowercase letters, uppercase letters, underscores and periods:
 
-```
+```R
 value <- 40
 biggerValue <- 45
 even_bigger_value <- 50
 biggest.value <- 55
 ```
-```
+```R
 value
 biggerValue
 even_bigger_value
@@ -184,7 +185,7 @@ biggest.value
     
 We can also assign a series of values in a specific order to a variable to create what is called a **vector**:
 
-```
+```R
 someVector <- 5:10
 someVector
 ```
@@ -214,7 +215,7 @@ If you would like to declutter your environment, you have a few options:
 
 Aside from the base functions there are thousands of custom fuctions which are bundled in R packages. We can access these functions by loading the package that contains them. On the Tufts HPC, groups of packages are available. To access them you will need to specify the path where these packages are held. To identify the base group of packages, we can use the `libPaths()` function:
 
-```
+```R
 .libPaths()
 ```
 
@@ -224,7 +225,7 @@ Aside from the base functions there are thousands of custom fuctions which are b
 
 This is the base R library for OnDemand and it is rather limited. We will pull in a more complete library by pointing to it:
 
-```
+```R
 .libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0'))
 .libPaths()
 ```
@@ -239,7 +240,7 @@ Now you'll note we are first pointing to the `/cluster/tufts/hpc/tools/R/4.0.0` 
 
 To load a package you can use the `library()` function:
 
-```
+```R
 library(ggplot2)
 ```
 
