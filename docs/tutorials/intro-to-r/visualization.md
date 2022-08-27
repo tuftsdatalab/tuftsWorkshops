@@ -2,7 +2,7 @@
 
 While it is possible to use the base plotting system in R, we are going to focus on using the `ggplot2` library to create plots due to it's widespread use in scientific figure generation and the versitility of the package. The basic formula for creating a plot is as such:
 
-```
+```R
 library(ggplot2)
 
 ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +    # specify what data you are using and what your x and y columns are
@@ -17,7 +17,7 @@ While we will go through a few plot types in this topic note, we reccomend you c
 
 You are not just limited to a grey background theme when plotting with `ggplot2`. A poplular theme used in scientific figures is the dark-on-light theme:
 
-```
+```R
 ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +
   geom_point()+
   theme_bw()
@@ -32,7 +32,7 @@ ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +
 
 Oftentimes your data will span mulitple magnitudes and this can result in an awkward distribution of data. We can scale either your x or y axes using a log scale to remedy this:
 
-```
+```R
 ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +
   geom_point()+
   theme_bw()+
@@ -45,7 +45,7 @@ ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +
 
 When plotting two numeric data columns against one another, it might be useful to have a representation of their relationship. Here we show how to add a best fit line:
 
-```
+```R
 ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +
   geom_point()+
   theme_bw() +
@@ -59,7 +59,7 @@ ggplot(data = meta, mapping = aes(x = Day, y = OtuCount)) +
 
 Panels and colors are an important cue to highlight differences in your data:
 
-```
+```R
 ggplot(data = meta, 
        mapping = aes(x = Day, y = OtuCount,color = AntibioticUsage)) +    # color by antibiotic usage
   geom_point()+
@@ -73,7 +73,7 @@ ggplot(data = meta,
 
 To modify your text style you can leverage the `theme()` function:
 
-```
+```R
 ggplot(data = meta, mapping = aes(x = AntibioticUsage,fill = AntibioticUsage)) +
   geom_bar()+
   theme_bw() +
@@ -84,7 +84,7 @@ ggplot(data = meta, mapping = aes(x = AntibioticUsage,fill = AntibioticUsage)) +
 
 You can also modify the x label, y label, title, and title of the legend:
 
-```
+```R
 ggplot(data = meta, mapping = aes(x = AntibioticUsage, y = OtuCount,fill= AntibioticUsage)) +
   geom_boxplot()+
   theme_bw() +
