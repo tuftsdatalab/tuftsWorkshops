@@ -2,7 +2,7 @@
 
 In Python, we store values using names called variables. We can assign a variable with an `=` sign:
 
-```
+```py
 max_coverage = 6000
 minCoverage = 35
 antibiotic = 'Streptomycin'
@@ -16,7 +16,7 @@ You will note a few things about variables:
 
 Variables, once we assign them to some value, can be passed into functions to accomplish certain tasks. Functions, generally speaking, take in some input and spit out some output. Let's use the simplist use case, the `print()` function:
 
-```
+```py
 print('The maximum coverage is ', max_coverage)
 ```
 ```
@@ -37,7 +37,7 @@ Here the function `print()` took in two character values and printed a combined 
 
 So you have a variable, how do you determine the type? Well we can use the `type()` function:
 
-```
+```py
 type(max_coverage)
 ```
 
@@ -68,7 +68,7 @@ You can use Python like a calculator using the following symbols:
 
 Let's try an few example:
 
-```
+```py
 35 / 7 - 5 + 4 * 4 + 2**2
 ```
 
@@ -78,7 +78,7 @@ Let's try an few example:
 
 We note that Python calculations follow the order of operations when performing a calculation. We should also bring up two non-standard operations that you may or may not be familiar with: Modulus and Floor division. Modulus is the remainder after division so:
 
-```
+```py
 7 % 2
 ```
 
@@ -88,7 +88,7 @@ We note that Python calculations follow the order of operations when performing 
 
 Floor division is a division operation for which you round the result down to a whole number:
 
-```
+```py
 7 // 2
 ```
 
@@ -100,7 +100,7 @@ Floor division is a division operation for which you round the result down to a 
 
 You can use `+` and `*` with string data as well to add and multiply, take for instance:
 
-```
+```py
 antibiotic + antibiotic
 ```
 
@@ -108,7 +108,7 @@ antibiotic + antibiotic
 'StreptomycinStreptomycin'
 ```
 
-```
+```py
 antibiotic * 4
 ```
 
@@ -120,7 +120,7 @@ antibiotic * 4
 
 Unlike the other data types, strings have lengths. We can use the `len()` function to  check how long  a string is:
 
-```
+```py
 print(antibiotic)
 len(antibiotic)
 ```
@@ -132,7 +132,7 @@ len(antibiotic)
 
 We can slice strings if needed to! However, the letters you are grabbing are **zero-indexed** meaning that the first letter is letter 0, the second letter is letter 1, and so on:
 
-```
+```py
 antibiotic[0]
 ```
 
@@ -140,7 +140,7 @@ antibiotic[0]
 'S'
 ```
 
-```
+```py
 antibiotic[1]
 ```
 
@@ -150,7 +150,7 @@ antibiotic[1]
 
 We can grab more letters using the format `[start:stop]`:
 
-```
+```py
 antibiotic[1:5]
 ```
 
@@ -162,7 +162,7 @@ antibiotic[1:5]
 
 When assigning variables we can add descriptions to our code to give our code context. We do this by writing our description after a `#` symbol:
 
-```
+```py
 # creating a variable for time of day
 time_of_day = 'Morning'
 ```
