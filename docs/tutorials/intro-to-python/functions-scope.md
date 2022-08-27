@@ -2,7 +2,7 @@
 
 So far we have used functions in base python or python modules. But what if we want to create our own? Well here is the general formula to do so:
 
-```
+```py
 # load the module we need
 import numpy as np 
 
@@ -25,7 +25,7 @@ Here we see that we use `def` to define the function and `return` to specify wha
 
 To clarify the purpose of your function you can add a **multiline string** to your function using three quotes `'''`:
 
-```
+```py
 # define a function to return geometric mean
 def geometric_mean(values):
     ''' This function takes a list of
@@ -36,11 +36,11 @@ def geometric_mean(values):
 
 This multiline string is also accessible when we run our function through the `help` function:
 
-```
+```py
 help(geometric_mean)
 ```
 
-```
+```py
 Help on function geometric_mean in module __main__:
 
 geometric_mean(values)
@@ -53,7 +53,7 @@ geometric_mean(values)
 
 Variable naming can be difficult and sometimes variable names might need to be reused. Normally, when we use a variable name over again, we change the value of that variable. However, if we assign the same variable in and outside a function the values do not get overwritten:
 
-```
+```py
 x = 45
 
 def print_x():
@@ -69,7 +69,7 @@ x
 45
 ```
 
-```
+```py
 print_x()
 ```
 
