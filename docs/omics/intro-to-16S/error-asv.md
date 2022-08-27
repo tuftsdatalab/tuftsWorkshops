@@ -11,7 +11,7 @@ sequence j over L aligned nucleotides with a quality score q?
 
 Here we will leverage the parametric model to learn error rates and then plot them:
 
-```
+```R
 # Learn Error Rates
 
 ## dada2 uses a parametric model to learn the error rates
@@ -31,7 +31,7 @@ plotErrors(errForward)
 
 ![](images/infer-asv.png)
 
-```
+```R
 # Sample Inference
 
 ## we will now run the dada2 algorithm 
