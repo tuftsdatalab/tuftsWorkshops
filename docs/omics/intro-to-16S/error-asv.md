@@ -54,7 +54,7 @@ Traditional 16S metagenomic approaches use OTUs or operational taxonomic units i
 ![](images/otu.png)
 
 Originally, OTUs were used to mitigate possible sequence errors by clustering similar sequences and getting a consensus sequence. 
-However, this method has been found to inflate the number of unique sequences 
+However, this method has been found to inflate the number of unique sequences. 
 By contrast, ASV analysis derives an error term to assess the possibility of a sequencing error. 
 These sequences are then mapped directly to the organism of interest - giving nucleotide resolution. 
 
