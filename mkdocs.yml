@@ -74,4 +74,9 @@ nav:
             - "Merging, Chimeras & Taxonomy": omics/intro-to-16S/merging-chimeras-taxonomy.md
             - "Diversity Analysis": omics/intro-to-16S/diversity-analysis.md
             - "Differential Abundance": omics/intro-to-16S/differential-abundance.md
+    - Machine Learning:
+        - Unsupervised Learning:
+            - "Dimension Reduction": machine-learning/unsupervised/dimension-reduction.md
+            
+    
         
