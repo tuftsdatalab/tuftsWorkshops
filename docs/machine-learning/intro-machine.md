@@ -3,7 +3,7 @@
 Machine learning, broadly speaking are algorithms and statistical models to analyze and draw inferences from patterns in data. We find the following cheatsheet useful to understand when to use what method:
 
 
-![](machine-learning-cheatsheet.png)
+![](images/machine-learning-cheatsheet.png)
 
 ## References 
 
