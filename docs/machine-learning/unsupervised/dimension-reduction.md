@@ -3,7 +3,7 @@
 - Process of reducing the number of variables to a set of principal values where variation in your data becomes apparent. Here is an example with three dimensions:
 
 <figure markdown>
-  ![Dimension Reduction Example](images/example-dim-red.png){ width="600" }
+  ![Dimension Reduction Example](images/example-dim-red.png){ height="400" }
   <figcaption>Dimension Reduction Example</figcaption>
 </figure>
 
