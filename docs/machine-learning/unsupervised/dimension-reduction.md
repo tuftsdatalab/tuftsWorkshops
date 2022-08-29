@@ -4,6 +4,9 @@
 
 ![](images/example-dim-red.png){height = "100"}
 
+
+<img src="images/example-dim-red.png" height="100" />
+
 - Here we see that most of the variation is visible along the x-y axes
 - So what are the advantages:
   - simplification
