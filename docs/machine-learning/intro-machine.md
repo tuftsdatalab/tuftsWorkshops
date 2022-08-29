@@ -7,6 +7,6 @@ Machine learning, broadly speaking are algorithms and statistical models to anal
 
 ## References 
 
-https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjQnZbc2On5AhVuEVkFHY1QBMEQvecEegQIBRAE&url=https%3A%2F%2Flanguages.oup.com%2Fgoogle-dictionary-en&usg=AOvVaw3kNBXVjbAIAFeyFQVCJmJF
+- [Oxford Languages](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjQnZbc2On5AhVuEVkFHY1QBMEQvecEegQIBRAE&url=https%3A%2F%2Flanguages.oup.com%2Fgoogle-dictionary-en&usg=AOvVaw3kNBXVjbAIAFeyFQVCJmJF)
 
-https://blogs.sas.com/content/subconsciousmusings/2020/12/09/machine-learning-algorithm-use/
+- [SAS Blogs](https://blogs.sas.com/content/subconsciousmusings/2020/12/09/machine-learning-algorithm-use/)
