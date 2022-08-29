@@ -33,11 +33,15 @@
 
 Let's try this in code!
 
-    === "R"
-    
-        ```R
-        ## load gene expression data and meta data
-        
-        
-        ```
-        
+=== "R"
+
+    First
+    ``` R
+    testing
+    ```
+
+=== "Python"
+
+    ``` py
+    # still in development - sorry!
+    ```
