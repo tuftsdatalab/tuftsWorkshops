@@ -35,7 +35,7 @@ Let's try this in code!
 
 === "R"
 
-    First
+    First ensure that the `machine-learning` project created in the [Introduction To Machine Learning](../intro-machine.md) section. Now we will load the
     ``` R
     testing
     ```
