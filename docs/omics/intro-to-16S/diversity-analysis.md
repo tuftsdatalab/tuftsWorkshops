@@ -66,3 +66,5 @@ plot_ordination(ps.prop, ord.nmds.bray, color="Host", title="Bray NMDS")+
 
 ![](images/bray-curtis-plot.png)
 
+Here we note that the wild type and C57BL/6NTac cluster together.
+
