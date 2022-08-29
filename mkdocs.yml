@@ -75,7 +75,8 @@ nav:
             - "Diversity Analysis": omics/intro-to-16S/diversity-analysis.md
             - "Differential Abundance": omics/intro-to-16S/differential-abundance.md
     - Machine Learning: 
-        - Introduction To Machine Learning: machine-learning/intro-machine.md
+        - Introduction To Machine Learning: 
+            - machine-learning/intro-machine.md
         - Unsupervised Learning:
             - "Dimension Reduction": machine-learning/unsupervised/dimension-reduction.md
             - "Clustering": machine-learning/unsupervised/clustering.md
