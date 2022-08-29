@@ -6,7 +6,20 @@ Machine learning, broadly speaking are algorithms and statistical models to anal
 
 ## Setup 
 
-For the following machine learning tutorials we will be using glioblastoma data from cBioPortal. So let's get started 
+For the following machine learning tutorials we will be using glioblastoma data from cBioPortal. So let's get started:
+
+=== "R"
+
+    ``` R
+    testing
+    ```
+
+=== "Python"
+
+    ``` py
+    # still in development - sorry!
+    ```
+
 
 ## References 
 
