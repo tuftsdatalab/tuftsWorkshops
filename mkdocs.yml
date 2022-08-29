@@ -49,7 +49,7 @@ nav:
             - "Checking Job Status": hpc-user-guide/job-status.md
     - Software Tutorials:
         - Intro To Unix:
-            - "Introduction To Unix" : tutorials/intro-to-unix/unix.md
+            - "Introduction To Unix": tutorials/intro-to-unix/unix.md
         - Intro To R: 
             - "Introduction To R OnDemand": tutorials/intro-to-r/r-ondemand.md
             - "The Basics": tutorials/intro-to-r/basics.md
@@ -81,11 +81,11 @@ nav:
             - "Dimension Reduction": machine-learning/unsupervised/dimension-reduction.md
             - "Clustering": machine-learning/unsupervised/clustering.md
         - Supervised Learning:
-            - Regression:
-            - Regularization:
-            - Decision Trees/Ensemble Methods:
-            - Neural Networks:
-            - Deep Learning:
-            - Bayesian:
+            - Regression: machine-learning/unsupervised/clustering.md
+            - Regularization: machine-learning/unsupervised/clustering.md
+            - Decision Trees/Ensemble Methods: machine-learning/unsupervised/clustering.md
+            - Neural Networks: machine-learning/unsupervised/clustering.md
+            - Deep Learning: machine-learning/unsupervised/clustering.md
+            - Bayesian Modelling: machine-learning/unsupervised/clustering.md
     
         
