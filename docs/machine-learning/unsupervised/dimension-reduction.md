@@ -32,4 +32,6 @@
 - susceptible to outliers
 
     == R
+    
+        
         
