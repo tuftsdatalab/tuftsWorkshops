@@ -55,5 +55,14 @@ plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
 
 We can plot this in R code:
 
+```R
+## Transform data to proportions 
+## as appropriate for Bray-Curtis distances
+ps.prop <- transform_sample_counts(ps, function(otu) otu/sum(otu))
+ord.nmds.bray <- ordinate(ps.prop, method="NMDS", distance="bray")
+plot_ordination(ps.prop, ord.nmds.bray, color="Host", title="Bray NMDS")+
+  theme_bw()
 ```
+
+![](images/bray-curtis-plot.png)
 
