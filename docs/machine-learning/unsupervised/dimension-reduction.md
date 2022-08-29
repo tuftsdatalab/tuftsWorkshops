@@ -33,10 +33,11 @@
 
 Let's try this in code!
 
-    == R
+    === "R"
     
         ```R
-        ## load data
+        ## load gene expression data and meta data
+        
         
         ```
         
