@@ -31,7 +31,12 @@
 - points can be crowded with large numbers of observations and reveal no pattern
 - susceptible to outliers
 
+Let's try this in code!
+
     == R
     
+        ```R
+        ## load data
         
+        ```
         
