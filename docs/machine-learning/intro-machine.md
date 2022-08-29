@@ -2,8 +2,11 @@
 
 Machine learning, broadly speaking are algorithms and statistical models to analyze and draw inferences from patterns in data. We find the following cheatsheet useful to understand when to use what method:
 
-
 ![](images/machine-learning-cheatsheet.png)
+
+## Setup 
+
+For the following machine learning tutorials we will be using glio
 
 ## References 
 
