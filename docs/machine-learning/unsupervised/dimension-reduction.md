@@ -3,7 +3,7 @@
 - Process of reducing the number of variables to a set of principal values where variation in your data becomes apparent. Here is an example with three dimensions:
 
 <figure markdown>
-  ![Dimension Reduction Example](images/example-dim-red.png){ height="400" }
+  ![Dimension Reduction Example](images/example-dim-red.png){ height="200" }
   <figcaption>Dimension Reduction Example</figcaption>
 </figure>
 
@@ -31,3 +31,5 @@
 - points can be crowded with large numbers of observations and reveal no pattern
 - susceptible to outliers
 
+    == R
+        
