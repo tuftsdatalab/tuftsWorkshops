@@ -9,8 +9,8 @@ Machine learning, broadly speaking are algorithms and statistical models to anal
 For the following machine learning tutorials we will be using glioblastoma data from cBioPortal.
 Before getting started you will need:
 
-        - Account on [Tufts HPC](https://access.tufts.edu/research-cluster-account)
-        - [VPN](https://access.tufts.edu/vpn) if accessing the HPC from off campus
+    - Account on [Tufts HPC](https://access.tufts.edu/research-cluster-account)
+    - [VPN](https://access.tufts.edu/vpn) if accessing the HPC from off campus
 
 ## Navigate To The Cluster
 
