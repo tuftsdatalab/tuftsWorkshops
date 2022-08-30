@@ -7,7 +7,7 @@ theme:
         - navigation.tabs
         - navigation.tabs.sticky
         - navigation.sections
-  logo: 'img/logo1.png'
+  logo: 'img/logo2.png'
   icon:
     admonition:
       note: octicons/tag-16
