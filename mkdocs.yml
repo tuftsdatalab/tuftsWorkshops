@@ -56,7 +56,7 @@ nav:
         - Intro To Unix: basic/intro-to-unix/unix.md
         - Intro To R: 
             - "Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
-            - "The Basics": basic/intro-to-r/basics.md
+            - "R Basics": basic/intro-to-r/basics.md
             - "Data Structures": basic/intro-to-r/data-structures.md
             - "Functions & Flow": basic/intro-to-r/functions-flow.md
             - "Inspecting/Manipulating Data": basic/intro-to-r/inspecting-manipulating-data.md
