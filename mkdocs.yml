@@ -55,37 +55,37 @@ nav:
     - Software Tutorials:
         - Intro To Unix: basic/intro-to-unix/unix.md
         - Intro To R: 
-            - "R: Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
-            - "R: The Basics": basic/intro-to-r/basics.md
-            - "R: Data Structures": basic/intro-to-r/data-structures.md
-            - "R: Functions & Flow": basic/intro-to-r/functions-flow.md
-            - "R: Inspecting/Manipulating Data": basic/intro-to-r/inspecting-manipulating-data.md
-            - "R: Visualization": basic/intro-to-r/visualization.md
+            - "Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
+            - "The Basics": basic/intro-to-r/basics.md
+            - "Data Structures": basic/intro-to-r/data-structures.md
+            - "Functions & Flow": basic/intro-to-r/functions-flow.md
+            - "Inspecting/Manipulating Data": basic/intro-to-r/inspecting-manipulating-data.md
+            - "Visualization": basic/intro-to-r/visualization.md
         - Intro To Python:
-            - "Python: Introduction To Python OnDemand": basic/intro-to-python/python-ondemand.md
-            - "Python: Variables & Data Types": basic/intro-to-python/variables-data-types.md
-            - "Python: Libraries & Data Frames": basic/intro-to-python/libraries-data-frames.md
-            - "Python: Plotting with Plotly": basic/intro-to-python/plotting-plotly.md
-            - "Python: Lists": basic/intro-to-python/lists.md
-            - "Python: Loops & Conditionals": basic/intro-to-python/loops-conditionals.md
-            - "Python: Functions & Scope": basic/intro-to-python/functions-scope.md
+            - "Introduction To Python OnDemand": basic/intro-to-python/python-ondemand.md
+            - "Variables & Data Types": basic/intro-to-python/variables-data-types.md
+            - "Libraries & Data Frames": basic/intro-to-python/libraries-data-frames.md
+            - "Plotting with Plotly": basic/intro-to-python/plotting-plotly.md
+            - "Lists": basic/intro-to-python/lists.md
+            - "Loops & Conditionals": basic/intro-to-python/loops-conditionals.md
+            - "Functions & Scope": basic/intro-to-python/functions-scope.md
     - NGS Tutorials:
         - Intro To NGS: 
-            - "NGS: Background": omics/intro-to-ngs/background.md
-            - "NGS: Setup": omics/intro-to-ngs/01_Setup.md
-            - "NGS: Quality Control": omics/intro-to-ngs/02_Quality_Control.md
-            - "NGS: Alignment": omics/intro-to-ngs/03_Alignment.md
-            - "NGS: Alignment Cleanup": omics/intro-to-ngs/04_Alignment_Cleanup.md
-            - "NGS: Variant Calling": omics/intro-to-ngs/05_Variant_Calling.md
-            - "NGS: Variant Annotation": omics/intro-to-ngs/06_Variant_Annotation.md
+            - "Background": omics/intro-to-ngs/background.md
+            - "Setup": omics/intro-to-ngs/01_Setup.md
+            - "Quality Control": omics/intro-to-ngs/02_Quality_Control.md
+            - "Alignment": omics/intro-to-ngs/03_Alignment.md
+            - "Alignment Cleanup": omics/intro-to-ngs/04_Alignment_Cleanup.md
+            - "Variant Calling": omics/intro-to-ngs/05_Variant_Calling.md
+            - "Variant Annotation": omics/intro-to-ngs/06_Variant_Annotation.md
         - Intro To RNA-Seq: 
-            - "RNA-Seq: Background": omics/intro-to-rnaseq/background.md
-            - "RNA-Seq: Setup": omics/intro-to-rnaseq/01_Setup.md
-            - "RNA-Seq: Quality Control": omics/intro-to-rnaseq/02_Quality_Control.md
-            - "RNA-Seq: Read Alignment": omics/intro-to-rnaseq/03_Read_Alignment.md
-            - "RNA-Seq: Gene Quantification": omics/intro-to-rnaseq/04_Gene_Quantification.md
-            - "RNA-Seq: Differential Expression": omics/intro-to-rnaseq/05_Differential_Expression.md
-            - "RNA-Seq: Pathway Enrichment": omics/intro-to-rnaseq/06_Pathway_Enrichment.md
+            - "Background": omics/intro-to-rnaseq/background.md
+            - "Setup": omics/intro-to-rnaseq/01_Setup.md
+            - "Quality Control": omics/intro-to-rnaseq/02_Quality_Control.md
+            - "Read Alignment": omics/intro-to-rnaseq/03_Read_Alignment.md
+            - "Gene Quantification": omics/intro-to-rnaseq/04_Gene_Quantification.md
+            - "Differential Expression": omics/intro-to-rnaseq/05_Differential_Expression.md
+            - "Pathway Enrichment": omics/intro-to-rnaseq/06_Pathway_Enrichment.md
     - Metagenomics Tutorials:
         - Intro To 16S Metabarcoding: 
             - "Background": omics/intro-to-16S/background.md
