@@ -4,7 +4,7 @@ Approximate time: 20 minutes
 
 Use Genome Analysis Tool Kit (GATK) to call variants
 
-<img src="../img/workflow_vc.png" width="200">
+![](images/workflow_vc.png)
 
 ## Prepare the reference sequence for GATK
 
@@ -61,7 +61,7 @@ GATK has two main goals:
 The figure below described the 4 stages of the GATK HaplotypeCaller algorithm (from [software.broadinstitute.org](https://gatkforums.broadinstitute.org/gatk/discussion/11068/haplotypecaller-in-a-nutshell)
 ).
 
-<img src="../img/gatk_hc.png" width="600">
+![](images/gatk_hc.png)
 
 Paraphrasing from the GATK documentation, the four stages are as follows:
 
@@ -220,18 +220,12 @@ We can add a VCF track to our IGV windows.
 2. Click the `File` menu and select `Load from File`
 3. Select the file `na12878.vcf`
 
-<img src="../img/igv_vcf_1.png" width="500">
+![](images/igv_vcf_1.png)
 
 3. We'll see a variant track appear above the coverage track.
 Hover over the colored blocks on the variant track in order to see the information in the VCF.
 
-<img src="../img/igv_vcf_2.png" width="500">
+![](images/igv_vcf_2.png)
 
 ## Summary
-<img src="../img/summary_vcf.png" width="500">
-
-[Next: Variant Annotation](06_Variant_Annotation.md)
-
-[Previous: Alignment Cleanup](04_Alignment_Cleanup.md)
-
-[Main Page](../README.md)
+![](images/summary_vcf.png)
