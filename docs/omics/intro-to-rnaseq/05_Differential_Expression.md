@@ -13,7 +13,9 @@ Approximate time: 60 minutes
 1. Open a Chrome browser and visit [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
 2. Log in with your Tufts Credentials
 3. On the top menu bar choose `Interactive Apps -> Rstudio`
-<img src="../img/rstudio.png" width="400">
+
+![](img/rstudio.png)
+
 4. Choose:
 
 ```
