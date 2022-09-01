@@ -1,7 +1,7 @@
 # Introduction To Linear Regression
 
 !!! danger
-    Please be sure to have followed the instructions on the [setup page](setup.md)
+    Please be sure to have followed the instructions on the [setup page](../setup.md)
     
 ## Linear Regression
 
