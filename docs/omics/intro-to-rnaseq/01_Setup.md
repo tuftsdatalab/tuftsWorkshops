@@ -11,7 +11,8 @@ Approximate time: 20 minutes
 - Log in with your Tufts Credentials
 - On the top menu bar choose Clusters->HPC Shell Access
 
-<img src="../img/od_terminal.png" width="500">
+![](img/od_terminal.png)
+
 
 - Type your password at the prompt (the password will be hidden for security purposes):
 
@@ -127,12 +128,3 @@ Organism: Saccharomyces cerevisiae
 
 Sequencing: Illumina HiSeq, Single End, 50bp read length
 
-## Workshop Schedule
-- [Course Home](../README.md)
-- [Introduction](slides/RNAseq_intro_RB_28May20.pdf)
-- Currently at: Setup using Tufts HPC
-- Next: [Quality Control](02_Quality_Control.md)
-- [Read Alignment](03_Read_Alignment.md)
-- [Gene Quantification](04_Gene_Quantification.md)
-- [Differential Expression](05_Differential_Expression.md)
-- [Pathway Enrichment](06_Pathway_Enrichment.md)
