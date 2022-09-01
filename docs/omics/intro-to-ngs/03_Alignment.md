@@ -4,7 +4,8 @@ Approximate time: 20 minutes
 - Align short reads to a references genome with BWA
 - View alignment using IGV
 
-<img src="../img/workflow_align.png" width="200">
+![](images/workflow_align.png)
+
 
 ## BWA Overview
 
@@ -21,7 +22,7 @@ reference genome. When BWA encounters a new read, it looks up the seed sequence 
 and retrieves a set of positions that are potential alignment positions for that read. 
 This speeds up the search by reducing the number of positions to check for a good match.
 
-<img src="../img/index.png" width="300">
+![](images/index.png)
 
 BWA has three algorithms:
 
@@ -314,10 +315,5 @@ In this case, >99% properly paired and mapped indicates a high quality alignment
 
 ## Summary
 
-<img src="../img/alignment_summary.png" width="500">
+![](images/alignment_summary.png)
 
-[Next: Alignment Cleanup](04_Alignment_Cleanup.md) 
-
-[Previous: Quality Control](02_Quality_Control.md)
-
-[Main Page](../README.md)
