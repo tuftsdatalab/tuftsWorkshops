@@ -6,7 +6,7 @@ Approximate time: 20 minutes
 
 - Use the `featureCounts` function from the `Subread` package to perform feature quantification
 
-<img src="../img/workflow_gene_quant.png" width="400">
+![](img/workflow_gene_quant.png)
 
 ## Introduction to featureCounts
 
@@ -14,7 +14,7 @@ The mapped coordinates of each read are compared with the features in the GTF fi
 Reads that overlap with a gene by >=1 bp are counted as belonging to that feature.
 Ambiguous reads will be discarded and the output will be a matrix of genes and samples.
 
-<img src="../img/featurecount_ambiguous.png" width="400">
+![](img/featurecount_ambiguous.png)
 
 By default featurecounts will
 1) count reads in features labeled as 'exon' in the GTF and
@@ -22,7 +22,7 @@ By default featurecounts will
 
 An example of a transcript with multiple exons:
 
-<img src="../img/featurecount_multi_exons.png" width="600">
+![](img/featurecount_multi_exons.png)
 
 ## Step 1: write and run the script
 Get an interaction session on a compute node by typing:
@@ -227,7 +227,7 @@ cat featurecounts/featurecounts_results.txt.summary
 
 Result:
 
-<img src="../img/featurecount_txt_summary.png" width="800">
+![](featurecount_txt_summary.png)
 
 The top line is the column names for this table. They are the name of each individule aligned file. The left most line is the row names, or the statistics of the alignment. From the table, we see that most of the reads fall within "assigned" features, meaning most of the aligned reads were transformed into gene expression value.
 
@@ -244,8 +244,7 @@ null device
 ```
 This code will generate a pdf file named `Featurecount_stat.pdf`.
 
-<img src="../img/optional_featurecount_stat.png" width="400">
-
+![](optional_featurecount_stat.png)
 
 ## Step 3: View the feature count result
 To take a look at the calculated feature count, type:
@@ -255,7 +254,7 @@ head featurecounts/featurecounts_results.txt
 Here, we are only looking at the top 10 lines in the featurecounts_results.txt file using `head` command.
 Result:
 
-<img src="../img/featurecount_txt_head.png" width="800">
+![](img/featurecount_txt_head.png)
 
 The very top line started with # shows the command that was used to run featurecount. Starting on the second line, it shows a table with sample names as column names and transcript names as row names. Each cell within the table shows how many reads from a sample were assigned to that transcript.
 
@@ -265,12 +264,3 @@ cat featurecounts/featurecounts_results.txt |sed "2s/STAR\///g" | sed "2s/\_Alig
 ```
 This line of command will modify the column names to simplified names. Now you are ready for the next step.
 
-## Workshop Schedule
-- [Course Home](../README.md)
-- [Introduction](slides/RNAseq_intro_RB_28May20.pdf)
-- [Setup using Tufts HPC](01_Setup.md)
-- [Process Raw Reads](02_Quality_Control.md)
-- [Read Alignment](03_Read_Alignment.md)
-- Currently at: Gene Quantification
-- Next: [Differential Expression](05_Differential_Expression.md)
-- [Pathway Enrichment](06_Pathway_Enrichment.md)
