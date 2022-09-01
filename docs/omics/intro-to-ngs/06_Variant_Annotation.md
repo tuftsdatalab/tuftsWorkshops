@@ -5,7 +5,8 @@ Approximate time: 20 minutes
 - Use the Variant Effect Predictor (VEP) online web server to annotate variants  
 - Identify amino acid changing substitutions in our VCF
 
-<img src="../img/workflow_ann.png" width="200">
+![](images/workflow_ann.png)
+
 
 ## VEP overview
 VEP will add annotation from a number of sources for each variant that we upload.
@@ -34,7 +35,7 @@ The clinical significances reported in VEP range from `Benign` to `Pathogenic` a
 For each variant, VEP identifies all transcripts in the selected database (Ensembl or Refseq) that overlaps with the variant coordinates.
 The consequence of the variant with respect to the transcript is then evaluated based on the following diagram.
 
-<img src="../img/vep_consequence.jpg" width="600">
+![](images/vep_consequence.jpg)
 
 These consequences are then binned into impact groups: LOW, MODERATE, MODIFIER, HIGH.
 For a full mapping to consequence to impact, see [VEP](https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html)
@@ -47,11 +48,11 @@ First, we'll download the VCF from the cluster to our local computer.
 1. Go back to [https://ondemand.cluster.tufts.edu](https://ondemand.cluster.tufts.edu)
 2. In the top grey menu, click `Files` and select `Home Directory`.
 
-<img src="../img/od_files.png" width="500">
+![](images/od_files.png)
 
 3. Select `intro-to-ngs/results/na12878.vcf`
 
-<img src="../img/od_files_2.png" width="500">
+![](images/od_files_2.png)
 
 4. Click `Download`
 
@@ -67,14 +68,15 @@ For single VCF analysis, the web server is recommended in order to take advantag
 3. In the `Input data` section choose `Or upload file:` and navigate to the downloaded file `na12878.vcf`
 
 3. Under `Transcript database to use` select `RefSeq transcripts`
-<img src="../img/vep.png" width="600">
+
+![](images/vep.png)
 
 4. Click `Run`
 
 ### Viewing VEP results
 When your job is done, click `View Results`
 
-<img src="../img/vep_results_1.png" width=900">
+![](images/vep_results_1.png)
 
 Our goal is to identify variants that change the coding sequence.
 We can see in the `Coding Consequences` box on the right that 20% of the variants are `missense`, which means that they
@@ -102,8 +104,5 @@ Finally, the maximum allele frequency found for this variant in the `1000 Genome
 very common variant and unlikely to be pathogenic.
 
 ## summary
-<img src="../img/summary_vep.png" width="200">
 
-[Previous: Variant Calling](05_Variant_Calling.md)
-                                             
-[Main Page](../README.md)
+![](images/summary_vep.png)
