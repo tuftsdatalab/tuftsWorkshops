@@ -6,7 +6,8 @@ Approximate time: 60 minutes
 
 - Use R to perform differential expression analysis
 
-<img src="../img/workflow_DESeq2.png" width="400">
+![](img/workflow_DESeq2.png)
+
 
 ## Step 1. Setup Rstudio on the Tufts HPC cluster via "On Demand"
 1. Open a Chrome browser and visit [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
@@ -34,7 +35,7 @@ Reservation      : Bioworkshop
 ## Step 2. Working with Rstudio Interface
 Go to the File menu -> New File -> R Script, you should see:
 
-<img src="../img/rstudio_interface.png" width="400">
+![](img/rstudio_interface.png)
 
 To save current session, click: File menu -> Save your file as intro.R
 
@@ -72,7 +73,7 @@ meta <- read.table("./raw_data/sample_info.txt", header=TRUE)
 
 You can view the data by typing `meta` or `view(meta)`
 
-<img src="../img/rstudio_meta.png" width="200">
+![](img/rstudio_meta.png)
 
 Load preprocessed data set of 7 WT replicates and 7 SNF2 knockouts
 ```markdown
@@ -85,7 +86,7 @@ view(data)
 
 Similarly, you can view the data by typing `data` or `view(data)`
 
-<img src="../img/rstudio_data.png" width="500">
+![](img/rstudio_data.png)
 
 ## DESeq2: Create DESeq2 Dataset object
 Before running DESeq2, load all required libraries by running below:
@@ -127,12 +128,14 @@ The number of sequenced reads mapped to a gene depends on: Gene Length, Sequenci
 Step 1: creates a pseudo-reference sample (row-wise geometric mean).
 For each gene, a pseudo-reference sample is created that is equal to the geometric mean across all samples.
 
-<img src="../img/DESeq2_step1.png" width="400">
+![](img/DESeq2_step1.png)
+
 
 Step 2: calculates ratio of each sample to the reference.
 Calculate the ratio of each sample to the pseudo-reference. Since most genes aren't differentially expressed, ratios should be similar.
 
-<img src="../img/DESeq2_step2.png" width="600">
+![](img/DESeq2_step2.png)
+
 
 Step 3: calculate the normalization factor for each sample (size factor).
 The median value of all ratios for a given sample is taken as the normalization factor (size factor) for that sample:
@@ -147,7 +150,8 @@ This is performed by dividing each raw count value in a given sample by that sam
 SampleA normalization factor = 2.08
 SampleB normalization factor = 0.66
 ```
-<img src="../img/DESeq2_normalization.png" width="600">
+
+![](img/DESeq2_normalization.png)
 
 - **Unsupervised Clustering**
 
@@ -163,7 +167,8 @@ This uses the built in function plotPCA from DESeq2 (built on top of ggplot). Th
 rld <- rlog(dds, blind=TRUE)
 plotPCA(rld, intgroup="condition") + geom_text(aes(label=name))
 ```
-<img src="../img/PCA.png" width="800">
+
+![](img/PCA.png)
 
 
 - **Creating contrasts and running a Wald test**
@@ -176,7 +181,7 @@ summary(res_unshrunken)
 ```
 Here shows a summary of up- or down-regulated genes:
 
-<img src="../img/result_unshrunken.png" width="400">
+![](img/result_unshrunken.png)
 
 - **Shrinkage of the log2 fold changes**
 
@@ -189,14 +194,15 @@ res <- lfcShrink(dds, contrast=contrast, res=res_unshrunken)
 
 The summary of results after shrinkage can be viewed by typing `summary(res)` or `head(res)`. If you used `head(res)` you will be viewing the top few lines of the result containing log2 fold change and p-value. log2FoldChange = log2(SNF2count/WTcount)Estimated from the model. padj - Adjusted pvalue for the probability that the log2FoldChange is not zero.
 
-<img src="../img/DESeq2_res.png" width="600">
+![](img/DESeq2_res.png)
 
   1. Plot single gene
 Now, you can explore individual genes that you might be interested in. A simple plot can be made to compare the expression level of a particular gene. For example, for gene "YOR290C":
 ```markdown
 plotCounts(dds, gene="YOR290C", intgroup="condition")
 ```
-<img src="../img/DESeq2_YOR290C.png" width="400">
+
+![](img/DESeq2_YOR290C.png)
 
   2. Saving the result
 Now you have the table with log2 fold change and you might want to save it for future analysis. A adj value cutoff can be applied here. For example, here p-adj 0.05 is used.
@@ -233,12 +239,3 @@ res <- lfcShrink(dds, contrast=contrast, res=res_unshrunken)
 rld <- rlog(dds, blind=TRUE)
 ```
 
-## Workshop Schedule
-- [Course Home](../README.md)
-- [Introduction](slides/RNAseq_intro_RB_28May20.pdf)
-- [Setup using Tufts HPC](01_Setup.md)
-- [Process Raw Reads](02_Quality_Control.md)
-- [Read Alignment](03_Read_Alignment.md)
-- [Gene Quantification](04_Gene_Quantification.md)
-- Currently at: Differential Expression
-- Next: [Pathway Enrichment](06_Pathway_Enrichment.md)
