@@ -71,3 +71,7 @@ Here we will analyze a DNA sequence using next generation sequencing data. Here 
 
 ![](images/het-homo.jpg)
 
+## References
+
+- [Illumina](https://www.illumina.com/content/dam/illumina-marketing/documents/products/illumina_sequencing_introduction.pdf)
+- [Ploidy](https://en.wikipedia.org/wiki/Ploidy)
