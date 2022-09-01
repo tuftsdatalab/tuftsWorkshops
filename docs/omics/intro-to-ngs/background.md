@@ -2,7 +2,7 @@
 
 Sequencing data analysis typically focuses on either assessing DNA or RNA. As a reminder here is the interplay between DNA, RNA, and protein:
 
-![](images/dna-rna.png)
+![](images/dna-rna.jpg)
 
 ### DNA Sequencing
 
