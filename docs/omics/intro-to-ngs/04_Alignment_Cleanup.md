@@ -5,7 +5,7 @@ Approximate time: 20 minutes
 - Sort and Index SAM/BAM files
 - Mark duplicate reads in BAM file
 
-<img src="../img/workflow_cleanup.png" width="200">
+![](images/workflow_cleanup.png)
 
 ## Sort SAM file
 
@@ -71,11 +71,11 @@ Therefore, we mark the duplicates so the variant caller can focus on the unique 
 Duplicate reads are identified based on their alignment coordinates and CIGAR string.
 For example, the below alignment appears to have a G to A mutation in the majority of reads:
 
-<img src="../img/dup_pre.png" width="500">
+![](images/dup_pre.png)
 
 However, when the duplicates are removed, the number of reads supporting the mutation drops to one.
 
-<img src="../img/dup_post.png" width="500">
+![](images/dup_post.png)
 
 
 Let's add this step to our `picard.sh` script in order to illustrate how to include multiple steps in a single script.
@@ -199,23 +199,25 @@ na12878.srt.markdup.bai     <--- Index file
 <img src="../img/od_igv_1.png" width="500">
 4. Choose the following compute resource parameters: 1 hour, 2 cores, 4 GB memory, Default Batch Parition, Default Reservation
 
-<img src="../img/od_igv_2.png" width="500">
+![](images/od_igv_2.png)
+
 5. Click the blue button `Launch NoVNC in New Tab` when it appears
 
 After this the IGV window will appear, probably as a small window on a grey background.
 Click the square icon in the top right corner to maximize the window.
 
-<img src="../img/igv_start.png" width="500">
+![](images/igv_start.png)
 
 ### Load reference genome and BAM file
 
 1. Choose reference genome by clicking the `Genomes` menu and selecting `Load Genome from Server...`
 
-<img src="../img/igv_1.png" width="500">
+![](images/igv_1.png)
+
 
 2. Scroll down to `Human hg38`
 
-<img src="../img/igv_2.png" width="500">
+![](images/igv_2.png)
 
 3. DO NOT check `Download Sequnence`
 
@@ -223,17 +225,17 @@ Click the square icon in the top right corner to maximize the window.
 
 5. Load the BAM file by clicking the `File` menu and select `Load from File...`
 
-<img src="../img/igv_3.png" width="500">
+![](images/igv_3.png)
 
 6. Navigate to the results folder in the course directory, e.g. `/cluster/home/your-user-name/intro-to-ngs/results`.  
 
 7. Select `na12878.srt.markdup.bam`
 
-<img src="../img/igv_4.png" width="500">
+![](images/igv_4.png)
 
 You will have the following view:
 
-<img src="../img/igv_genome.png" width="500">
+![](images/igv_genome.png)
 
 Each row of data is called a track. There are five tracks visible: the top track shows the pq bands of the entire
 chromosome, followed by the reference genome coordinate track, followed by two tracks of our alignment (coverage and reads,
@@ -244,7 +246,7 @@ respectively) which don't yet show data, followed by a reference genome annotati
 1. In the box indicated in green below, type gene name "Cyp2c19" and hit enter.
 You will see the gene model display in the “Genes” track, showing vertical bars where exons are located
 
-<img src="../img/igv_5.png" width="500">
+![](images/igv_5.png)
 
 Troubleshooting tip: At times IGV on demand will stop allowing the user to type input.
 If that happens, close the tab, go back to the on demand window, rejoin the session by clicking `Launch NoVNC in New Tab`.
@@ -252,27 +254,22 @@ If that happens, close the tab, go back to the on demand window, rejoin the sess
 2. Let's zoom in on exon 7. You can hover over exons in the `Genes` track to get information such as exon number.
 Click and drag over a region in the reference coordinate track to zoom in on exon 7 (highlighted in green below.)
 
-<img src="../img/igv_10.png" width="500">
+![](images/igv_10.png)
 
 3. We can see that there is a variant in this exon.
 
-<img src="../img/igv_11.png" width="500">
+![](images/igv_11.png)
 
 4. Zoom in even further until the nucleotide letters are clear.
 Then, hover with your mouse over the coverage track to find out more information about this variant.
 
-<img src="../img/igv_12.png" width="500">
+![](images/igv_12.png)
 
 
 It appear there are two variants next to each other: heterozygous`C>T` at position `chr10:94,842,865` and homozygous
 `A>G` at position `chr10:94,842,866`. Next, we'll explore the meaning of these variants.
 
-<img src="../img/alignment_cleanup_summary.png" width="200">
+![](images/alignment_cleanup_summary.png)
+
 
 This lesson adapted from [HBC NGS Data Analysis](https://github.com/hbc/NGS_Data_Analysis_Course/blob/master/sessionVI/lessons/01_alignment.md)
-
-[Next: Variant Calling](05_Variant_Calling.md)
-
-[Previous: Alignment ](03_Alignment.md)
-
-[Main Page](../README.md)
