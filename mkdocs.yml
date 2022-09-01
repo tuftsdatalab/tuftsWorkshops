@@ -54,22 +54,22 @@ nav:
             - "Checking Job Status": hpc-user-guide/job-status.md
     - Software Tutorials:
         - Intro To Unix:
-            - "Introduction To Unix": tutorials/intro-to-unix/unix.md
+            - "Introduction To Unix": basic/intro-to-unix/unix.md
         - Intro To R: 
-            - "Introduction To R OnDemand": tutorials/intro-to-r/r-ondemand.md
-            - "The Basics": tutorials/intro-to-r/basics.md
-            - "Data Structures": tutorials/intro-to-r/data-structures.md
-            - "Functions & Flow": tutorials/intro-to-r/functions-flow.md
-            - "Inspecting/Manipulating Data": tutorials/intro-to-r/inspecting-manipulating-data.md
-            - "Visualization": tutorials/intro-to-r/visualization.md
+            - "Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
+            - "The Basics": basic/intro-to-r/basics.md
+            - "Data Structures": basic/intro-to-r/data-structures.md
+            - "Functions & Flow": basic/intro-to-r/functions-flow.md
+            - "Inspecting/Manipulating Data": basic/intro-to-r/inspecting-manipulating-data.md
+            - "Visualization": basic/intro-to-r/visualization.md
         - Intro To Python:
-            - "Introduction To Python OnDemand": tutorials/intro-to-python/python-ondemand.md
-            - "Variables & Data Types": tutorials/intro-to-python/variables-data-types.md
-            - "Libraries & Data Frames": tutorials/intro-to-python/libraries-data-frames.md
-            - "Plotting with Plotly": tutorials/intro-to-python/plotting-plotly.md
-            - "Lists": tutorials/intro-to-python/lists.md
-            - "Loops & Conditionals": tutorials/intro-to-python/loops-conditionals.md
-            - "Functions & Scope": tutorials/intro-to-python/functions-scope.md
+            - "Introduction To Python OnDemand": basic/intro-to-python/python-ondemand.md
+            - "Variables & Data Types": basic/intro-to-python/variables-data-types.md
+            - "Libraries & Data Frames": basic/intro-to-python/libraries-data-frames.md
+            - "Plotting with Plotly": basic/intro-to-python/plotting-plotly.md
+            - "Lists": basic/intro-to-python/lists.md
+            - "Loops & Conditionals": basic/intro-to-python/loops-conditionals.md
+            - "Functions & Scope": basic/intro-to-python/functions-scope.md
     - Omics Tutorials:
         - Intro To NGS: 
             - "Background": omics/intro-to-ngs/background.md
