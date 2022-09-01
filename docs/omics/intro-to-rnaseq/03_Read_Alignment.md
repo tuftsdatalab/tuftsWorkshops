@@ -7,7 +7,9 @@ Approximate time: 60 minutes
 - Review Gene annotation and GTF format
 - View alignment using Integrative Genome Viewer (IGV)
 
-<img src="../img/workflow_align.png" width="400">
+
+![](img/workflow_align.png)
+
 
 ## STAR Aligner
 
@@ -19,7 +21,7 @@ STAR algorithm consists of two major steps:
 - seed searching step: Find Maximum Mappable Prefixes (MMP) in a read. MMP can be extended by a. mismatches b. indels or c. soft-clipping
 - clustering/stitching/scoring step: determine finl read location and deal with a large number of mismatches, indels and splice junctions, as well as scalable with the read length.
 
-<img src="../img/STAR_mapping.jpeg" width="300">
+![](img/STAR_mapping.jpeg)
 
 More information can be found on the publication: ["STAR: ultrafast universal RNA-seq aligner"](https://academic.oup.com/bioinformatics/article/29/1/15/272537).
 
@@ -114,7 +116,7 @@ Annotation is dynamic and there are at least three major sources of annotation: 
 The intersection among the three sources is shown in the figure below.
 RefGene has the fewest unique genes, while more than 50% of genes in Ensembl are unique
 
-<img src="../img/ann_0.png" width="250">
+![](img/ann_0.png)
 
 (Figure references [Zhao et al Bioinformatics 2015](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-015-1308-8))
 
@@ -309,7 +311,8 @@ Further QC options are available with `RSEQC` and `samtools` packages (see scrip
 - **Bam format**
 
 The BAM file is a binary compressed version of a Sequence Alignment Map (SAM) file.
-<img src="../img/BAM_format.png" width="700">
+
+![](img/BAM_format.png)
 
 Take a look at the output file:
 ```markdown
@@ -370,26 +373,26 @@ directory: < leave default >`
 
 - Click: `Launch noVNC in New Tab` when it appears.
 
-<img src="../img/IGV_launch.png" width="500">
+![](img/IGV_launch.png)
 
 - If the genome browser is cut off, resize using Chrome:
 
-<img src="../img/IGV_zoom.png" width="500">
+![](img/IGV_zoom.png)
 
 - Enable RNA-seq-specific Splice Junction track by making the following selections in the IGV menu:
   1. `View -> Preferences`
 
-<img src="../img/IGV_preference.png" width="500">
+![](img/IGV_preference.png)
 
   2.`Alignments -> Track Display Options -> Splice Junction Track -> OK`
 
-<img src="../img/IGV_alignment.png" width="500">
+![](img/IGV_alignment.png)
 
 - Choose reference genome by clicking the `Genomes` menu and selecting `Load Genome from Server...`
 
 - Scroll down to `Sacromyces ceerevicea (sacCer3)` -> leave `Download Sequence` UNchecked -> click `OK`
 
-<img src="../img/IGV_select_genome.png" width="300">
+![](img/IGV_select_genome.png)
 
 - Load BAM file:
 
@@ -397,14 +400,14 @@ Click `File-> Load from File`
 Choose the sorted and indexed BAM files we generated:
 `/cluster/tufts/bio/tools/training/users/YOUR_USERNAME/intro-to-RNA-seq/STAR/WT_ERR458493_Aligned.sortedByCoord.out.bam`
 
-<img src="../img/IGV_select_bam.png" width="500">
+![](img/IGV_select_bam.png)
 
 In the genome coordinate box (shown below) type the gene name `SUS1`.
 We can see that another name of this gene is `YBR111W-A`.
 
 Here is a summary of the fields and tracks present in IGV:
 
-<img src="../img/IGV_track.png" width="700">
+![](img/IGV_track.png)
 
 If we zoom in on the `YBR111W-A` gene, we see in the `Gene` track at the bottom that the gene contains two introns.
 We see in the `BAM` track that reads are spiced across the introns and that coverage track that read coverage in the area of the intron is missing as expected.  
@@ -510,21 +513,12 @@ null device
 ```
 This code will generate a pdf file named `Mapping_stat.pdf`.
 
-<img src="../img/optional_mapping_stat.png" width="500">
+![](img/optional_mapping_stat.png)
 
 
 Now you are ready for the next step.
 
 ## Summary
 
-<img src="../img/alignment_summary.png" width="500">
+![](img/alignment_summary.png)
 
-## Workshop Schedule
-- [Course Home](../README.md)
-- [Introduction](slides/RNAseq_intro_RB_28May20.pdf)
-- [Setup using Tufts HPC](01_Setup.md)
-- [Process Raw Reads](02_Quality_Control.md)
-- Currently at: Read Alignment
-- Next: [Gene Quantification](04_Gene_Quantification.md)
-- [Differential Expression](05_Differential_Expression.md)
-- [Pathway Enrichment](06_Pathway_Enrichment.md)
