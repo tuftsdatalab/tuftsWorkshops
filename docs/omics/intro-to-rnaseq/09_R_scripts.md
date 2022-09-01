@@ -125,13 +125,3 @@ dotplot(ego, showCategory=50)
 emapplot(ego, showCategory = 50)
 ```
 
-- [Review bash scripts](08_bash_scripts.md)
-
-## Go back to workshop schedule
-- [Introduction](../README.md)
-- [Setup using Tufts HPC](01_Setup.md)
-- [Process Raw Reads](02_Quality_Control.md)
-- [Read Alignment](03_Read_Alignment.md)
-- [Gene Quantification](04_Gene_Quantification.md)
-- [Differential Expression](05_Differential_Expression.md)
-- [Pathway Enrichment](06_Pathway_Enrichment.md)
