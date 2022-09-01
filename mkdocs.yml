@@ -71,7 +71,7 @@ nav:
             - "Loops & Conditionals": tutorials/intro-to-python/loops-conditionals.md
             - "Functions & Scope": tutorials/intro-to-python/functions-scope.md
     - Omics Tutorials:
-    - Intro To NGS: 
+        - Intro To NGS: 
             - "Background": omics/intro-to-ngs/background.md
             - "Setup": omics/intro-to-ngs/01_Setup.md
             - "Quality Control": omics/intro-to-ngs/02_Quality_Control.md
