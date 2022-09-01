@@ -79,6 +79,14 @@ nav:
             - "Alignment Cleanup": omics/intro-to-ngs/04_Alignment_Cleanup.md
             - "Variant Calling": omics/intro-to-ngs/05_Variant_Calling.md
             - "Variant Annotation": omics/intro-to-ngs/06_Variant_Annotation.md
+        - Intro To RNA-Seq: 
+            - "Background": omics/intro-to-rnaseq/background.md
+            - "Setup": omics/intro-to-rnaseq/01_Setup.md
+            - "Quality Control": omics/intro-to-rnaseq/02_Quality_Control.md
+            - "Read Alignment": omics/intro-to-rnaseq/03_Read_Alignment.md
+            - "Gene Quantification": omics/intro-to-rnaseq/04_Gene_Quantification.md
+            - "Differential Expression": omics/intro-to-rnaseq/05_Differential_Expression.md
+            - "Pathway Enrichment": omics/intro-to-rnaseq/06_Pathway_Enrichment.md
         - Intro To 16S Metabarcoding: 
             - "Background": omics/intro-to-16S/background.md
             - "Setup": omics/intro-to-16S/setup.md
