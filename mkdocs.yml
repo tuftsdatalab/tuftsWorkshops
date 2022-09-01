@@ -53,8 +53,7 @@ nav:
             - "Submitting A Batch Job": hpc-user-guide/batch-job.md
             - "Checking Job Status": hpc-user-guide/job-status.md
     - Software Tutorials:
-        - Intro To Unix:
-            - "Introduction To Unix": basic/intro-to-unix/unix.md
+        - Intro To Unix: basic/intro-to-unix/unix.md
         - Intro To R: 
             - "Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
             - "The Basics": basic/intro-to-r/basics.md
