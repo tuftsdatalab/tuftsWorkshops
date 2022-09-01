@@ -102,7 +102,7 @@ nav:
             - "Dimension Reduction": machine-learning/unsupervised/dimension-reduction.md
             - "Clustering": machine-learning/unsupervised/clustering.md
         - Supervised Learning:
-            - Regression: machine-learning/unsupervised/clustering.md
+            - Regression: machine-learning/supervised/linear-model.md
             - Regularization: machine-learning/unsupervised/clustering.md
             - Decision Trees/Ensemble Methods: machine-learning/unsupervised/clustering.md
             - Neural Networks: machine-learning/unsupervised/clustering.md
