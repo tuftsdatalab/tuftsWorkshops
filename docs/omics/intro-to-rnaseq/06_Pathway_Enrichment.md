@@ -7,14 +7,16 @@ Approximate time: 40 minutes
 - Use R to visulize DESeq2 results
 - A few recommendations for functional enrichment analysis
 
-<img src="../img/workflow_cluster_profiler.png" width="400">
+![](img/workflow_cluster_profiler.png)
+
 
 ## Step 1. Start Rstudio on the Tufts HPC cluster via "On Demand"
 1. Open a Chrome browser and visit [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
 2. Log in with your Tufts Credentials
 3. On the top menu bar choose Interactive Apps -> Rstudio
 
-<img src="../img/rstudio.png" width="400">
+![](img/rstudio.png)
+
 4. Choose:
 
 ```markdown
@@ -59,7 +61,7 @@ ggplot(res_table) +
 ```
 The commands will generate a volcano plot as shown below
 
-<img src="../img/volcanoplot.png" width="400">
+![](img/volcanoplot.png)
 
 ##### Plot top 50 significant genes in a heatmap
 Sort the rows from smallest to largest padj and take the top 50 genes:
@@ -87,7 +89,7 @@ scale = "row",
 fontsize_row = 8,
 height = 20)
 ```
-<img src="../img/heatmap.png" width="400">
+![](img/heatmap.png)
 
 ## Next step: Functional Enrichment
 
@@ -120,17 +122,17 @@ After you ran these codes, a dotplot and a emapplot will be generated.
 
 - **Dotplot: pathway enrichment**
 
-<img src="../img/clusterprofiler_dotplot.png" width="600">
+![](img/clusterprofiler_dotplot.png)
 
 
 - **emapplot: pathway interaction**
 
-<img src="../img/emapplot.png" width="600">
+![](img/emapplot.png)
 
 
 If your organism happens to be within the clusterprofiler database as shown below, you can easily use the code above for functional enrichment analysis.
 
-<img src="../img/orgdb_annotation_databases.png" width="500">
+![](img/orgdb_annotation_databases.png)
 
 A great tutorial to follow for functional enrichment can be found at
 [https://hbctraining.github.io/DGE_workshop/lessons/09_functional_analysis.html](https://hbctraining.github.io/DGE_workshop/lessons/09_functional_analysis.html)
@@ -144,12 +146,3 @@ If your organism is not within the above database, you will have to pick your ge
 - [Command line scripts](08_bash_scripts.md)
 - [R scripts](09_R_scripts.md)
 
-## Workshop Schedule
-- [Course Home](../README.md)
-- [Introduction](slides/RNAseq_intro_RB_28May20.pdf)
-- [Setup using Tufts HPC](01_Setup.md)
-- [Process Raw Reads](02_Quality_Control.md)
-- [Read Alignment](03_Read_Alignment.md)
-- [Gene Quantification](04_Gene_Quantification.md)
-- [Differential Expression](05_Differential_Expression.md)
-- Currently at: Pathway Enrichment
