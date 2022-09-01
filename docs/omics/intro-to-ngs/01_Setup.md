@@ -8,7 +8,9 @@ Approximate time: 20 minutes
 - Open a Chrome browser and enter the URL [https://ondemand.cluster.tufts.edu](https://ondemand.cluster.tufts.edu)
 - Log in with your Tufts Credentials
 - On the top menu bar choose `Clusters->Tufts HPC Shell Access`
-<img src="../img/od_terminal.png" width="500">
+
+![](images/od_terminal.png)
+
 - Type your password at the prompt (the password will be hidden for security purposes):
 `tutln01@login.cluster.tufts.edu's password:`
 - You'll see a welcome message and a bash prompt, for example for user `tutln01`:
@@ -89,7 +91,7 @@ intro-to-ngs
 Genome In a Bottle (GIAB) was initiated in 2011 by the National Institute of Standards and Technology "to develop the technical infrastructure (reference standards, reference methods, and reference data) to enable translation of whole human genome sequencing to clinical practice"
 ([Zook et al 2012](https://www.nist.gov/programs-projects/genome-bottle)).  We'll be using a DNA Whole Exome Sequencing (WES) dataset released by GIAB for the purposes of benchmarking bioinformatics tools.
 
-<img src="../img/giab.png" width="400">
+![](images/giab.png.png)
 
 The source DNA, known as NA12878, was taken from a single person: the daughter in a father-mother-child 'trio'.
 She is also mother to 11 children of her own, for whom sequence data is also available. ([HBC Training](https://hbctraining.github.io/In-depth-NGS-Data-Analysis-Course/sessionVI/lessons/01_alignment.html)).
@@ -97,7 +99,7 @@ Father-mother-child 'trios' are often sequenced to study genetic links between f
 
 As mentioned in the introduction, WES is a method to concentrate the sequenced DNA fragments in coding regions (exons) of the genome.
 
-<img src="../img/NA12878.png" width="400">
+![](images/NA12878.png)
 
 For this class, we've created a small dataset of reads that align to a single gene that will allow our commands to finish quickly.
 
@@ -107,6 +109,3 @@ Gene: Cyp2c19 on chromosome 10
 
 Sequencing: Illumina, Paired End, Exome
 
-[Next: Quality Control](02_Quality_Control.md)
-
-[Previous: Repository Home](../README.md)
