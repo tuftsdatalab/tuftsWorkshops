@@ -1,6 +1,6 @@
 # Introduction To Linear Regression
 
-!!! warning
+!!! danger
     Please be sure to have followed the instructions on the [setup page](setup.md)
     
 ## Linear Regression
@@ -14,6 +14,9 @@ and TMB score (a measure of mutational burden). You can use a regression model t
 
 A linear model follows the following formula:
 
+$$ 
+y = \beta_0 + \beta_1 X + \epsilon
+$$
 
 Let's try creating a model!
 
