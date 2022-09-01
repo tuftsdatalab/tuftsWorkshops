@@ -9,7 +9,7 @@ Here we find that we can use machine learning for a few broad tasks:
 - **Dimension Reduction** to reduce the number of variables we need to consider
 - **Unsupervised Learning** identify patterns in data that are unlabelled
 - **Classification** predict which class label an observation might have
-- **Regression** assess the relationship between two variables
+- **Regression** assess the relationship between variables
 
 
 ## References 
