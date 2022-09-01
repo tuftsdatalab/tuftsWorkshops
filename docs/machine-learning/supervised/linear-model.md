@@ -18,6 +18,16 @@ $$
 y = \beta_0 + \beta_1 X + \epsilon
 $$
 
+$y$: dependent variable
+$\beta_0$: intercept (where $y$ = 0)
+$\beta_1$: regression coefficient or slope
+$X$: independent variable
+$\epsilon$: error or our estimate (what is the variation in our regression coefficient)
+
+This formula describes the best fit line for our data that tries to minimizes our error $\epsilon$:
+
+![](images/linear-regression-demo.png)
+
 Let's try creating a model!
 
 === "R"
