@@ -49,5 +49,25 @@ Here we will analyze a DNA sequence using next generation sequencing data. Here 
 
 ![](images/variant-overview.png)
 
+## Ploidy 
 
+- When discussing variant calling it is worth mentioning an organism's **ploidy**. Ploidy is the number of copies of each chromosomes.
+
+    - Humans cells are diploid for autosomal chromosome and haploid for sex chromosomes
+    - Bacteria are haploid
+    - Viruses and Yeast can by haploid or diploid
+
+![](images/ploidy.png)
+
+- Variant callers can use ploidy to improve specificity (avoid false positives) because there are expected variant frequencies, e.g. for a diploid:
+
+    - **Homozygous**
+    - both copies contain variant
+    - fraction of the reads ~1
+
+    - **Heterozygous**
+    - one copy of variant
+    - fraction of reads with variant  ~0.5
+
+![](images/het-homo.jpg)
 
