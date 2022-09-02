@@ -32,6 +32,8 @@ Let's start by loading our data:
 
 === "R"
 
+    Open an R script by going to `File` > `New File` > `R Script`. Save this script using a descriptive name, like `linear-model.R`. In the script use the following code:
+    
     ```R
     ## Loading our packages
     ## Load the counts data
@@ -55,7 +57,7 @@ Let's start by loading our data:
 
 === "Python"
     
-    Open a new notebook by going to `File` > `New` > `Notebook`. In a code block enter:
+    Open a new notebook by going to `File` > `New` > `Notebook`. Save this script using a descriptive name, like `linear-model.ipynb`. In a code block enter:
     
     ```py
     ## Import our libraries
@@ -63,7 +65,11 @@ Let's start by loading our data:
     import pandas as pd
     import numpy as np
     from matplotlib import pyplot as plt
+    import statsmodels.api as sm
     import statsmodels.formula.api as smf
+    from scipy import stats
+    import statsmodels.stats.api as sms
+    from statsmodels.compat import lzip
 
     counts = pd.read_csv(
         'data/gbm_cptac_2021/data_mrna_seq_fpkm.txt' ,
