@@ -271,8 +271,75 @@ Let's cover what a few of these mean:
     - `P>|t|` : pvalue that assesses the effect of IDH1 on TMB score if the null hypothesis of no effect were correct
     - `R-squared` : $r^2$ value of model - how much of the TMB variability is explained by IDH1 - here it is 0.4%
 
-    
+## Recap 
+
+So what have we found? Well the model only explains 0.4% of our outcome variation and increased IDH1 expression seems to be associated with a minimal decrease in TMB. Additionally, our high p-value of `0.523` indicates that we should not reject the possibility that this effect was due to chance. 
+
 ## Assumptions
+
+So we found that IDH1 gene expression is not a great feature to model an outcome of TMB score. However, what if you do get a low p-value, a good $r^2$ value, and a sizeable effect - are you in the clear? Not so fast, a linear model is limited by assumptions in our data:
+
+- The data is normally distributed
+- Homogeneity in the variances (Homoscedacity)
+- Independence of your observations
+
+Mathematically, we can assess Normality and Homoscedacity with the shapiro test and Breusch-Pagan test, respectively:
+
+=== "R"
+
+    ```R
+    shapiro.test(norm$IDH1)
+    ```
+    
+    ```
+    Shapiro-Wilk normality test
+
+    data:  norm$IDH1
+    W = 0.95137, {==p-value = 0.001093==}
+    ```
+    
+=== "Python"
+
+    ```py
+    stats.shapiro(norm['IDH1'])
+    ```
+    
+    ```
+    (0.9513656497001648, {==0.0010935224127024412==})
+    ```
+
+We note here a pvalue (highlighted) of less than `0.05` which indicates that our data deviates from a normal distribution. Now how about our homoscedacity?
+
+=== "R"
+
+    ```R
+    lmtest::bptest(model)
+    ```
+    
+    ```
+    studentized Breusch-Pagan test
+
+    data:  model
+    BP = 0.72081, df = 1, {==p-value = 0.3959==}
+    ```
+    
+=== "Python"
+
+    ```py
+    names = ['Lagrange multiplier statistic', 'p-value',
+        'f-value', 'f p-value']
+    test = sms.het_breuschpagan(model.resid, model.model.exog)
+    lzip(names,test)
+    ```
+    
+    ```
+   [('Lagrange multiplier statistic', 0.7208106123366453),
+    ({=='p-value', 0.39587814229097884)==},
+    ('f-value', 0.7114286333891047),
+    ('f p-value', 0.4010451501525186)]
+    ```
+
+Here we see that our pvalue is well above `0.05` indicating there is not enough evidence to reject the null hypothesis that the variance of the residuals are constant - i.e. we do have Homogeneity in our variances. 
 
 ## References
 
