@@ -33,7 +33,24 @@ Let's start by loading our data:
 === "R"
 
     ```R
-    working on it!
+    ## Loading our packages
+    ## Load the counts data
+    ## Load the meta data
+    .libPaths(c("/cluster/tufts/hpc/tools/R/4.0.0"))
+    library(tidyverse)
+    library(caret)
+    
+    counts <- read.csv(
+      file="data/gbm_cptac_2021/data_mrna_seq_fpkm.txt",
+      header = T,
+      sep = "\t") 
+
+    meta <- read.csv(
+      file = "data/gbm_cptac_2021/data_clinical_sample.txt",
+      skip=4,
+      header = T,
+      sep = "\t"
+    )
     ```
 
 === "Python"
@@ -62,7 +79,24 @@ Now we will need to do some data cleaning before we plug this into our model:
 === "R"
 
     ```R
-    working on it!
+    ## Change the patient id column to match 
+    ## column names in the counts df
+    meta$PATIENT_ID = gsub("-",".",meta$PATIENT_ID)
+    
+    ## grab IDH1 gene expression
+    idh1 = counts %>%
+      filter(Hugo_Symbol == "IDH1") %>%
+      select(-Hugo_Symbol) %>%
+      t() %>%
+      as.data.frame() %>%
+      mutate(PATIENT_ID = rownames(.))
+    
+    ## merge meta data and IDH1 
+    ## gene expression
+    merged <- merge(
+      meta,
+      idh1,
+      by="PATIENT_ID")
     ```
 
 === "Python"
@@ -90,7 +124,15 @@ These data, IDH1 gene expression and TMB score are on two different scales. To e
 === "R"
 
     ```R
-    working on it!
+    ## create a normalization function
+    ## apply this function to our data 
+    ## to get data on a similar scale
+    NormalizeData <- function(data){
+      normalized = (data - min(data)) / (max(data) - min(data))
+      return(normalized)
+    }
+
+    norm = NormalizeData(merged)
     ```
 
 === "Python"
@@ -146,16 +188,39 @@ To assess our model we will generate a summary of some important metrics:
 === "R"
 
     ```R
-    working on it!
+    summary(model)
     ```
-
+    
+    ```
+    Call:
+    lm(formula = TMB_NONSYNONYMOUS ~ IDH1, data = norm)
+    
+    Residuals:
+           Min         1Q     Median         3Q        Max 
+    -1.198e-06 -4.604e-07 -2.363e-07  1.870e-08  1.835e-05 
+    
+    Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)  
+    (Intercept)  1.393e-06  5.759e-07   2.419   0.0174 *
+    IDH1        -7.703e-07  1.202e-06  -0.641   0.5230  
+    ---
+    Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+    
+    Residual standard error: 1.937e-06 on 97 degrees of freedom
+    Multiple R-squared:  0.004218,	Adjusted R-squared:  -0.006048 
+    F-statistic: 0.4109 on 1 and 97 DF,  p-value: 0.523
+    ```
 === "Python"
     
     ```py
     model.summary()
     ```
     
-    ![](images/python-linear-model-results.png))
+    ![](images/python-linear-model-results.png)
+    
+Let's cover what a few of these mean:
+
+
     
 ## Assumptions
 
