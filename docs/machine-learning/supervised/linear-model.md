@@ -63,7 +63,7 @@ Let's start by loading our data:
     import pandas as pd
     import numpy as np
     from matplotlib import pyplot as plt
-    import statsmodels.api as sm
+    import statsmodels.formula.api as smf
 
     counts = pd.read_csv(
         'data/gbm_cptac_2021/data_mrna_seq_fpkm.txt' ,
@@ -134,7 +134,9 @@ These data, IDH1 gene expression and TMB score are on two different scales. To e
       return(normalized)
     }
 
-    norm = NormalizeData(merged %>% select(IDH1,TMB_NONSYNONYMOUS))
+    norm = as.data.frame(
+      apply(merged %>% select(IDH1,TMB_NONSYNONYMOUS), 2,NormalizeData)
+    )
     ```
 
 === "Python"
@@ -192,7 +194,7 @@ Now we can fit our regression model!
     plt.show()
     ```
     
-    ![](images/python-linear-model-data-line.png)
+    ![](images/python-linear-model-data.png)
     
     
 ## Model Results
@@ -254,6 +256,7 @@ Let's cover what a few of these mean:
 === "R"
 
     ```R
+    
     ```
     
 === "Python"
