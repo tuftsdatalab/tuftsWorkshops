@@ -210,20 +210,20 @@ To assess our model we will generate a summary of some important metrics:
     ```
     Call:
     lm(formula = TMB_NONSYNONYMOUS ~ IDH1, data = norm)
-    
+
     Residuals:
-           Min         1Q     Median         3Q        Max 
-    -1.198e-06 -4.604e-07 -2.363e-07  1.870e-08  1.835e-05 
-    
+         Min       1Q   Median       3Q      Max 
+    -0.06145 -0.02361 -0.01212  0.00096  0.94101 
+
     Coefficients:
-                  Estimate Std. Error t value Pr(>|t|)  
-    (Intercept)  {==1.393e-06==}  5.759e-07   2.419   0.0174 *
-    IDH1        {==-7.703e-07  1.202e-06  -0.641   0.5230==}  
+                {==Estimate Std. Error t value Pr(>|t|)==}   
+    (Intercept)  {==0.06631==}    0.02216   2.992  0.00351 **
+    IDH1        {==-0.03437    0.05362  -0.641  0.52305==}   
     ---
     Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-    
-    Residual standard error: 1.937e-06 on 97 degrees of freedom
-    Multiple R-squared:  0.004218,	Adjusted R-squared:  -0.006048 
+
+    Residual standard error: 0.09938 on 97 degrees of freedom
+    {==Multiple R-squared:  0.004218==},	Adjusted R-squared:  -0.006048 
     F-statistic: 0.4109 on 1 and 97 DF,  p-value: 0.523
     ```
 === "Python"
@@ -234,7 +234,7 @@ To assess our model we will generate a summary of some important metrics:
     
     ```markdown
     OLS Regression Results
-    Dep. Variable:	TMB_NONSYNONYMOUS	R-squared:	0.004
+    Dep. Variable:	TMB_NONSYNONYMOUS	{==R-squared:	0.004==}
     Model:	OLS	Adj. R-squared:	-0.006
     Method:	Least Squares	F-statistic:	0.4109
     Date:	Fri, 02 Sep 2022	Prob (F-statistic):	0.523
@@ -243,9 +243,9 @@ To assess our model we will generate a summary of some important metrics:
     Df Residuals:	97	BIC:	-169.0
     Df Model:	1		
     Covariance Type:	nonrobust		
-    coef	std err	t	P>|t|	[0.025	0.975]
-    Intercept	0.0663	0.022	2.992	0.004	0.022	0.110
-    IDH1	-0.0344	0.054	-0.641	0.523	-0.141	0.072
+                {==coef	std err	t	    P>|t|	[0.025	0.975]==}
+    Intercept	{==0.0663==}	0.022	2.992	0.004	0.022	0.110
+    IDH1	   {==-0.0344	0.054	-0.641	0.523	-0.141	0.072==}
     Omnibus:	202.245	Durbin-Watson:	2.072
     Prob(Omnibus):	0.000	Jarque-Bera (JB):	28769.651
     Skew:	8.846	Prob(JB):	0.00
@@ -257,12 +257,19 @@ Let's cover what a few of these mean:
 
 === "R"
 
-    `Estimate` : 
+    - `Estimate` : the model's effect, so here we see that a one unit increase in IDH1 results in a 0.0344 decrease in 
+    - `Std. Error` : standard error of our estimate
+    - `t value` : test stastic - the larger the statistic, the less likely this effect occured by chance
+    - `Pr(>|t|)` : pvalue that assesses the effect of IDH1 on TMB score if the null hypothesis of no effect were correct
+    - `Multiple R-squared:` : $r^2$ value of model - how much of the TMB variability is explained by IDH1 - here it is 0.4%
     
 === "Python"
     
-    ```py
-    ```
+    - `coef` : the model's effect, so here a 
+    - `std` : standard error of our estimate
+    - `t` : test stastic - the larger the statistic, the less likely this effect occured by chance
+    - `P>|t|` : pvalue that assesses the effect of IDH1 on TMB score if the null hypothesis of no effect were correct
+    - `R-squared` : $r^2$ value of model - how much of the TMB variability is explained by IDH1 - here it is 0.4%
 
     
 ## Assumptions
