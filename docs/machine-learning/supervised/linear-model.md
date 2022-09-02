@@ -1,6 +1,6 @@
 # Introduction To Linear Regression
 
-!!! danger
+!!! attention
     Please be sure to have followed the instructions on the [setup page](../setup.md)
     
 ## Linear Regression
@@ -230,10 +230,36 @@ To assess our model we will generate a summary of some important metrics:
     model.summary()
     ```
     
-    ![](images/python-linear-model-results.png)
+    ```
+    OLS Regression Results
+    Dep. Variable:	TMB_NONSYNONYMOUS	R-squared:	0.161
+    Model:	OLS	Adj. R-squared:	0.152
+    Method:	Least Squares	F-statistic:	18.76
+    Date:	Thu, 01 Sep 2022	Prob (F-statistic):	3.58e-05
+    Time:	20:40:33	Log-Likelihood:	84.739
+    No. Observations:	99	AIC:	-167.5
+    Df Residuals:	98	BIC:	-164.9
+    Df Model:	1		
+    Covariance Type:	nonrobust		
+            coef	std err	t	P>|t|	[0.025	0.975]
+    IDH1	0.1089	0.025	4.332	0.000	0.059	0.159
+    Omnibus:	197.980	Durbin-Watson:	2.022
+    Prob(Omnibus):	0.000	Jarque-Bera (JB):	26069.945
+    Skew:	8.511	Prob(JB):	0.00
+    Kurtosis:	80.655	Cond. No.	1.00
+    ```
     
 Let's cover what a few of these mean:
 
+=== "R"
+
+    ```R
+    ```
+    
+=== "Python"
+    
+    ```py
+    ```
 
     
 ## Assumptions
