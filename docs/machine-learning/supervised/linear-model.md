@@ -232,32 +232,32 @@ To assess our model we will generate a summary of some important metrics:
     model.summary()
     ```
     
-    ```
+    ```markdown
     OLS Regression Results
-    Dep. Variable:	TMB_NONSYNONYMOUS	R-squared:	0.161
-    Model:	OLS	Adj. R-squared:	0.152
-    Method:	Least Squares	F-statistic:	18.76
-    Date:	Thu, 01 Sep 2022	Prob (F-statistic):	3.58e-05
-    Time:	20:40:33	Log-Likelihood:	84.739
-    No. Observations:	99	AIC:	-167.5
-    Df Residuals:	98	BIC:	-164.9
+    Dep. Variable:	TMB_NONSYNONYMOUS	R-squared:	0.004
+    Model:	OLS	Adj. R-squared:	-0.006
+    Method:	Least Squares	F-statistic:	0.4109
+    Date:	Fri, 02 Sep 2022	Prob (F-statistic):	0.523
+    Time:	09:38:56	Log-Likelihood:	89.110
+    No. Observations:	99	AIC:	-174.2
+    Df Residuals:	97	BIC:	-169.0
     Df Model:	1		
     Covariance Type:	nonrobust		
-            coef	std err	t	P>|t|	[0.025	0.975]
-    IDH1	0.1089	0.025	4.332	0.000	0.059	0.159
-    Omnibus:	197.980	Durbin-Watson:	2.022
-    Prob(Omnibus):	0.000	Jarque-Bera (JB):	26069.945
-    Skew:	8.511	Prob(JB):	0.00
-    Kurtosis:	80.655	Cond. No.	1.00
+    coef	std err	t	P>|t|	[0.025	0.975]
+    Intercept	0.0663	0.022	2.992	0.004	0.022	0.110
+    IDH1	-0.0344	0.054	-0.641	0.523	-0.141	0.072
+    Omnibus:	202.245	Durbin-Watson:	2.072
+    Prob(Omnibus):	0.000	Jarque-Bera (JB):	28769.651
+    Skew:	8.846	Prob(JB):	0.00
+    Kurtosis:	84.618	Cond. No.	6.12
+
     ```
     
 Let's cover what a few of these mean:
 
 === "R"
 
-    ```R
-    
-    ```
+    `Estimate` : 
     
 === "Python"
     
