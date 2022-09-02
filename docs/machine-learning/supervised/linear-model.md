@@ -107,9 +107,56 @@ These data, IDH1 gene expression and TMB score are on two different scales. To e
 
     norm = NormalizeData(merged)
     ```
+
+Now we can fit our regression model!
+
+=== "R"
+
+    ```R
+    working on it!
+    ```
+
+=== "Python"
+    
+    ```py
+    ## fit our linear regression model
+    tmb = norm['TMB_NONSYNONYMOUS']
+    idh1 = norm['IDH1'].astype(float)
+    model = sm.OLS(tmb,idh1).fit()
+    
+    ## Let's plot our data
+    ## along with the predictions from 
+    ## our model
+    plt.figure(figsize=(12, 6))
+    plt.plot(norm['IDH1'], norm['TMB_NONSYNONYMOUS'], 'o') 
+    plt.plot(norm['IDH1'], model.predict(idh1), 'r', linewidth=2)
+    plt.xlabel('IDH1')
+    plt.ylabel('TMB NONSYNONYMOUS')
+
+    plt.show()
+    ```
+    
+    ![](images/python-linear-model-data-line.png)
+    
     
 ## Model Results
 
+To assess our model we will generate a summary of some important metrics:
+
+=== "R"
+
+    ```R
+    working on it!
+    ```
+
+=== "Python"
+    
+    ```py
+    model.summary()
+    ```
+    
+    ![](images/python-linear-model-results.png))
+    
 ## Assumptions
 
 ## References
