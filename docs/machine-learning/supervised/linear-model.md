@@ -217,8 +217,8 @@ To assess our model we will generate a summary of some important metrics:
     
     Coefficients:
                   Estimate Std. Error t value Pr(>|t|)  
-    (Intercept)  1.393e-06  5.759e-07   2.419   0.0174 *
-    IDH1        -7.703e-07  1.202e-06  -0.641   0.5230  
+    (Intercept)  {==1.393e-06==}  5.759e-07   2.419   0.0174 *
+    IDH1        {==-7.703e-07  1.202e-06  -0.641   0.5230==}  
     ---
     Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
     
