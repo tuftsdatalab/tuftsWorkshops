@@ -90,6 +90,8 @@ Now we will need to do some data cleaning before we plug this into our model:
       t() %>%
       as.data.frame() %>%
       mutate(PATIENT_ID = rownames(.))
+      
+    colnames(idh1) <- c("IDH1","PATIENT_ID")
     
     ## merge meta data and IDH1 
     ## gene expression
@@ -132,7 +134,7 @@ These data, IDH1 gene expression and TMB score are on two different scales. To e
       return(normalized)
     }
 
-    norm = NormalizeData(merged)
+    norm = NormalizeData(merged %>% select(IDH1,TMB_NONSYNONYMOUS))
     ```
 
 === "Python"
@@ -155,9 +157,21 @@ Now we can fit our regression model!
 === "R"
 
     ```R
-    working on it!
+    ## fit our linear regression model
+    model <- lm(TMB_NONSYNONYMOUS ~ IDH1, data = norm)
+    
+    ## let's plot our data
+    ## with the predicted values
+    ggplot(norm, aes(x=IDH1, y=TMB_NONSYNONYMOUS)) + 
+      geom_point() +
+      theme_bw() +
+      ylab("TMB") +
+      xlab("IDH1") +
+      geom_smooth(method=lm)
     ```
-
+    
+    ![](images/r-linear-model-data.png)
+    
 === "Python"
     
     ```py
