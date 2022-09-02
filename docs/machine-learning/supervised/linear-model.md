@@ -339,7 +339,7 @@ We note here a pvalue (highlighted) of less than `0.05` which indicates that our
     ```
     
     ```
-   [('Lagrange multiplier statistic', 0.7208106123366453),
+    [('Lagrange multiplier statistic', 0.7208106123366453),
     ({=='p-value', 0.39587814229097884)==},
     ('f-value', 0.7114286333891047),
     ('f p-value', 0.4010451501525186)]
