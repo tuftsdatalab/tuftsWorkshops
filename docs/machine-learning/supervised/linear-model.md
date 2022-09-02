@@ -32,12 +32,13 @@ Let's start by loading our data:
 
 === "R"
 
-    - Sed sagittis eleifend rutrum
-    - Donec vitae suscipit est
-    - Nulla tempor lobortis orci
+    ```R
+    working on it!
+    ```
 
 === "Python"
-
+    
+    Open a new notebook by going to `File` > `New` > `Notebook`. In a code block enter:
     
     ```py
     ## Import our libraries
@@ -54,6 +55,47 @@ Let's start by loading our data:
         'data/gbm_cptac_2021/data_clinical_sample.txt' , 
         sep = '\t',
         skiprows=4)
+    ```
+
+Now we will need to do some data cleaning before we plug this into our model:
+
+=== "R"
+
+    ```R
+    working on it!
+    ```
+
+=== "Python"
+    
+    ```py
+    ## Grab IDH1 row and transpose 
+    ## ensure that patient id is a column
+    ## and that IDH1 is the column name
+    IDH1= counts.loc[counts["Hugo_Symbol"] == "IDH1",]
+    IDH1 = IDH1.T
+    IDH1["PATIENT_ID"] = IDH1.index
+    IDH1.columns = ["IDH1","PATIENT_ID"]
+
+    ## Grab TMB score
+    ## merge IDH1 gene expression and TMB score
+    ## merging this way ensures data are organized
+    ## by patient 
+    TMB= meta[['PATIENT_ID','TMB_NONSYNONYMOUS']]
+    merged=pd.merge(IDH1,TMB,on="PATIENT_ID")
+    merged = merged.set_index('PATIENT_ID')
+    merged.head()
+    ```
+These data, IDH1 gene expression and TMB score are on two different scales. To ensure a fair comparison of these variables we will normalize (or bring our data to a common scale) our data:
+
+=== "R"
+
+    ```R
+    working on it!
+    ```
+
+=== "Python"
+    
+    ```py
     ## You might notice our data is on two 
     ## drastically different scales
     ## We will normalize our data
@@ -64,20 +106,8 @@ Let's start by loading our data:
         return normalized
 
     norm = NormalizeData(merged)
-    ## Let's visualize our data
-    plt.figure(figsize=(12, 6))
-    plt.plot(norm['IDH1'], norm['TMB_NONSYNONYMOUS'], 'o') 
-    plt.xlabel('IDH1')
-    plt.ylabel('TMB_NONSYNONYMOUS')
-
-    plt.show()
-    ## fit our linear regression model
-    tmb = norm['TMB_NONSYNONYMOUS']
-    idh1 = norm['IDH1'].astype(float)
-    model = sm.OLS(tmb,idh1).fit()
-    model.summary()
     ```
-
+    
 ## Model Results
 
 ## Assumptions
