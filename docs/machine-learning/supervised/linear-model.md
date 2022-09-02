@@ -278,3 +278,4 @@ Let's cover what a few of these mean:
 
 - [scribbr](https://www.scribbr.com/statistics/simple-linear-regression/)
 - [STHDA](http://www.sthda.com/english/articles/40-regression-analysis/165-linear-regression-essentials-in-r/)
+- [Medium](https://medium.com/evidentebm/linear-regression-using-statsmodels-d0db5fef16bb)
