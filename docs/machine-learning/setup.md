@@ -12,6 +12,8 @@ Once you have an account and are connected to the VPN/Tufts Network, navigate to
 
 ![](images/ondemandLayout.png)
 
+## Setting Up A Project Space
+
 We are going to open an interactive app:
 
 === "R"
