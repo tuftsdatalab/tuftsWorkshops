@@ -45,3 +45,8 @@ Let's try this in code!
     ``` py
     # still in development - sorry!
     ```
+
+## References
+
+- [RPubs](https://rpubs.com/Saskia/520216)
+- [STHDA](http://www.sthda.com/english/wiki/factoextra-r-package-easy-multivariate-data-analyses-and-elegant-visualization)
