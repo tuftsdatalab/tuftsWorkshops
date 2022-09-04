@@ -74,6 +74,37 @@ Let's try this in code! First we will need to do some preprocessing:
     # still in development - sorry!
     ```
 
+Now we will ensure our data are on a common scale by log2 transforming it. This will ensure that we don't bias our PCA in the direction of higher magnitude variables. We will also select the top 50 genes with the highest variance as usually high variance genes are more biologically interesting. 
+
+=== "R"
+
+    ``` R
+    ## log2 normalize our data
+    norm = log2(counts %>% select(-Hugo_Symbol)+1)
+
+    ## extract variances
+    vars = apply(
+      counts %>% select(-Hugo_Symbol),
+      1, 
+      function(x){return(var(x,na.rm = T))})
+
+    ## select the genes with the
+    ## top 50 variances
+    selected <- norm %>%
+      filter(rank(-vars)<=50) %>%
+      mutate(gene = counts$Hugo_Symbol[rank(-vars)<=50]) %>%
+      column_to_rownames("gene") %>%
+      t() %>%
+      merge(.,meta,by="row.names",all=TRUE) %>%
+      column_to_rownames("Row.names")
+    ```
+
+=== "Python"
+
+    ``` py
+    # still in development - sorry!
+    ```
+
 ## References
 
 - [RPubs](https://rpubs.com/Saskia/520216)
