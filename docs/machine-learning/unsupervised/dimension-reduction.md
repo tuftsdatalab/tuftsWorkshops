@@ -1,5 +1,8 @@
-## Dimension Reduction
+# Introduction To Dimension Reduction
 
+!!! attention
+    Please be sure to have followed the instructions on the [setup page](../setup.md)
+    
 - Process of reducing the number of variables to a set of principal values where variation in your data becomes apparent. Here is an example with three dimensions:
 
 <figure markdown>
@@ -31,13 +34,38 @@
 - points can be crowded with large numbers of observations and reveal no pattern
 - susceptible to outliers
 
-Let's try this in code!
+Let's try this in code! First we will need to do some preprocessing:
 
 === "R"
 
-    First ensure that the `machine-learning` project created in the [Introduction To Machine Learning](../intro-machine.md) section. Now we will load the
     ``` R
-    testing
+    ## load our libraries via our library path
+    .libPaths(c("/cluster/tufts/hpc/tools/R/4.0.0"))
+    library(tidyverse)
+    library(FactoMineR)
+    library(factoextra)
+    library(ggplot2)
+    library(missMDA)
+    library(patchwork)
+    
+    ## load counts/meta data
+    counts <- read.csv(
+      file="data/gbm_cptac_2021/data_mrna_seq_fpkm.txt",
+      header = T,
+      sep = "\t")
+
+    meta <- read.csv(
+      file = "data/gbm_cptac_2021/data_clinical_patient.txt",
+      skip=4,
+      header = T,
+      sep = "\t"
+    )
+    
+    ## ensure patient IDs match 
+    ## patient IDs in counts data
+    meta <- meta %>%
+      mutate(PATIENT_ID = gsub("-",".",meta$PATIENT_ID)) %>%
+      column_to_rownames("PATIENT_ID")
     ```
 
 === "Python"
