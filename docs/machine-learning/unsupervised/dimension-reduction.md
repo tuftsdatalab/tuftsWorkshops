@@ -13,10 +13,10 @@
 - Here we see that most of the variation is visible along the x-y axes
 - So what are the advantages:
 
-  - simplification
-  - denoising
-  - variable selection
-  - visualization
+    - simplification
+    - denoising
+    - variable selection
+    - visualization
 
 ## Principal Component Analysis (PCA)
 
