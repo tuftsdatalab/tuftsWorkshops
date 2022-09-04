@@ -164,7 +164,7 @@ Here we display our our principal components (`Dim.1`,`Dim.2`, etc.) and their *
     # still in development - sorry!
     ```
 
-Here we note that the gene TIMP1, contributes the most to variance of principal component 1. Interestingly, this gene [has been implicated in immune infiltration in glioblastoma](https://bmcneurol.biomedcentral.com/articles/10.1186/s12883-021-02477-1). We also can see in the variance explanation plot for the second principal component that MT-ATP6 contributes the most to the variance of this dimension. In the plot below we visualize our samples along the first two principal components and color by sex. Here we see not discernable pattern but this kind of coloring is useful say if you want to ensure two conditions are distributed the way you'd expect.
+Here we note that the gene TIMP1, contributes the most to variance of principal component 1. Interestingly, this gene [has been implicated in immune infiltration in glioblastoma](https://bmcneurol.biomedcentral.com/articles/10.1186/s12883-021-02477-1). We also can see in the variance contribution plot for the second principal component that MT-ATP6 contributes the most to the variance of this dimension. In the plot below the variable contribution plot, we visualize our samples along the first two principal components and color by sex. Here we do not see a discernable pattern - but this kind of coloring is useful say if you want to ensure two conditions are distributed the way you'd expect.
 
 !!! example
     An example of using PCA to see if conditions are distributed as expected could be a case-control study. Do your case patients cluster together and do your control patients cluster together.
