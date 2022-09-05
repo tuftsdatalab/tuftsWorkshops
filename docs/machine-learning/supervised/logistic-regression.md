@@ -158,13 +158,21 @@ We see that there isn't a great delineation between the two conditions - smoking
     
 ## Visualizing Predictions
 
+We will now plot our logistic regression curve:
+
 === "R"
 
     ```R
-    ## let's make our model
-    model <- glm( smoking ~ aldh3a1, data = merged, family = binomial)
-    summary(model) 
+    ## let's visualize our predictions
+    ggplot(merged, aes(x=aldh3a1, y=smoking)) + 
+      geom_point() +
+      theme_bw() +
+      ylab("Smoking Status") +
+      xlab("ALDH3A1 Gene Expression") +
+      geom_smooth(method = "glm", method.args = list(family = "binomial")) 
     ```
+    
+    ![](images/r-logistic-model-viz.png)
     
 === "Python"
 
@@ -174,7 +182,11 @@ We see that there isn't a great delineation between the two conditions - smoking
 
 ## Recap
 
-So what have we found? Well it seems that ALDH3A1 expression has a minimal effect on the probability of being a smoker. Additionally, our high p-value of 0.669 indicates that we should not reject the possibility that this effect was due to chance.
+So what have we found? Well it seems that ALDH3A1 expression has a minimal effect on the probability of being a smoker. Additionally, our high p-value of 0.669 indicates that we should not reject the possibility that this effect was due to chance. This is also confirmed in our visual of the logistic regression curve - where it is not S shaped. This is due to the absense of some boundry, where some value of ALDH3A1 expression separates smokers and non smokers.
+
+## Assumptions
+
+
 
 ## References
 
