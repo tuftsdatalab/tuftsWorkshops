@@ -22,7 +22,7 @@ This sigmoid function creates our S-shaped curve! However we'd like our probabil
 
 $$ \frac{p(X)}{1 - p(X)} = e^{\beta_{0} + \beta_{1}X}$$
 
-Where $ \frac{p(X)}{1 - p(X)} $ is known as the **odds ratio** and this can range from $0$ to $\infty$. However, again this doesn't match our 0 to 1 scale, so we take the log of both sides to get:
+Where $\frac{p(X)}{1 - p(X)}$ is known as the **odds ratio** and this can range from $0$ to $\infty$. However, again this doesn't match our 0 to 1 scale, so we take the log of both sides to get:
 
 $$ log(\frac{p(X)}{1 - p(X)}) = \beta_{0} + \beta_{1}X $$
 
