@@ -6,7 +6,18 @@
 ## Multivariate Regression
 
 In the [linear regression](linear-model.md) and [logistic regression](logistic-regression.md) tutorials we cover univariate modelling - 
-or modelling with one variable. Here we discuss how to create multivariate models, or models with multiple independent variables. 
+or modelling with one variable. Here we discuss how to create multivariate models, or models with multiple independent variables. Let's use the 
+
+=== "R"
+    
+    ```R
+    
+    ```
+
+=== "Python"
+
+    ```py
+    ```
 
 ## Overfitting
 
