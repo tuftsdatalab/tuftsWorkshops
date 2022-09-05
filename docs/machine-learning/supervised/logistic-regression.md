@@ -28,4 +28,21 @@ $$ log(\frac{p(X)}{1 - p(X)}) = \beta_{0} + \beta_{1}X $$
 
 Here we get $log(\frac{p(X)}{1 - p(X)})$ or the **logit function** - where a one unity increase in $X$ increases $p(X)$ by $\beta_{0}$. 
 
+## Making the Model
+
+So let's create this in code:
+
+=== "R"
+
+    ```R
+    ```
+=== "Python"
+
+    ```py
+    
+    ```
+
 ## References
+
+- [datacamp](https://www.datacamp.com/tutorial/logistic-regression-R)
+- [STHDA](http://www.sthda.com/english/articles/36-classification-methods-essentials/151-logistic-regression-essentials-in-r/)
