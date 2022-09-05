@@ -116,6 +116,7 @@ nav:
             - "Clustering": machine-learning/unsupervised/clustering.md
         - Supervised Learning:
             - Linear Models: machine-learning/supervised/linear-model.md
+            - Logistic Regression: machine-learning/supervised/logistic-regression.md
             - Regularization: machine-learning/unsupervised/clustering.md
             - Decision Trees/Ensemble Methods: machine-learning/unsupervised/clustering.md
             - Neural Networks: machine-learning/unsupervised/clustering.md
