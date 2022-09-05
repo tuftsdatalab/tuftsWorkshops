@@ -18,8 +18,14 @@ $$ p(X) = \frac{ e^{\beta_{0} + \beta_{1}X} }{1 + e^{\beta_{0} + \beta_{1}X} } $
 - $beta_{0}$ : y intercept
 - $beta_{1}$ : slope of our line
 
-This sigmoid function creates our S-shaped curve! But how do we optimize it? To do this we need to 
+This sigmoid function creates our S-shaped curve! However we'd like our probability to be linear relationship with X. So we can manipulate this equation to get:
 
 $$ \frac{p(X)}{1 - p(X)} = e^{\beta_{0} + \beta_{1}X}$$
+
+Where $ \frac{p(X)}{1 - p(X)} $ is known as the **odds ratio** and this can range from $0$ to $\infty$. However, again this doesn't match our 0 to 1 scale, so we take the log of both sides to get:
+
+$$ log(\frac{p(X)}{1 - p(X)}) = \beta_{0} + \beta_{1}X $$
+
+Here we get $log(\frac{p(X)}{1 - p(X)})$ or the **logit function** - where a one unity increase in $X$ increases $p(X)$ by $\beta_{0}$. 
 
 ## References
