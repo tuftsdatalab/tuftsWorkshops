@@ -28,7 +28,7 @@ $$ log(\frac{p(X)}{1 - p(X)}) = \beta_{0} + \beta_{1}X $$
 
 Here we get $log(\frac{p(X)}{1 - p(X)})$ or the **logit function** - where a one unity increase in $X$ increases $p(X)$ by $\beta_{0}$. 
 
-## Making the Model
+## Pre-processing
 
 First let's do some preprocessing to get our combine ALDH3A1 gene expression with smoking status:
 
@@ -86,7 +86,9 @@ First let's do some preprocessing to get our combine ALDH3A1 gene expression wit
     ```py
     
     ```
-    
+
+## Visualizing Data
+
 Now let's take a look at our data:
 
 === "R"
@@ -107,6 +109,8 @@ Now let's take a look at our data:
     ```py
     
     ```
+
+## Create the Model
 
 We see that there isn't a great delineation between the two conditions - smoking and non-smoking. But let's creat our logistic regression model to confirm:
 
@@ -140,12 +144,37 @@ We see that there isn't a great delineation between the two conditions - smoking
 
     Number of Fisher Scoring iterations: 4
     ```
+    Here we note:
+    Estimate : the model's effect, so here we see that a one unit increase in ALDH3A1 results in a 0.05947 decrease in the probability of being a smoker
+    Std. Error : standard error of our estimate
+    z value : test stastic - the larger the statistic, the less likely this effect occured by chance
+    Pr(>|z|) : pvalue that assesses the effect of ALDH3A1 on Smoking status if the null hypothesis of no effect were correct
     
 === "Python"
 
     ```py
     
     ```
+    
+## Visualizing Predictions
+
+=== "R"
+
+    ```R
+    ## let's make our model
+    model <- glm( smoking ~ aldh3a1, data = merged, family = binomial)
+    summary(model) 
+    ```
+    
+=== "Python"
+
+    ```py
+    
+    ```
+
+## Recap
+
+So what have we found? Well it seems that ALDH3A1 expression has a minimal effect on the probability of being a smoker. Additionally, our high p-value of 0.669 indicates that we should not reject the possibility that this effect was due to chance.
 
 ## References
 
