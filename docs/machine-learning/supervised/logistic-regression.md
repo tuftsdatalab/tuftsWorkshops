@@ -30,11 +30,54 @@ Here we get $log(\frac{p(X)}{1 - p(X)})$ or the **logit function** - where a one
 
 ## Making the Model
 
-So let's create this in code:
+First let's do some preprocessing to get our combine IDH1 gene expression with smoking status:
 
 === "R"
 
     ```R
+    ## load our libraries via our library path
+    .libPaths(c("/cluster/tufts/hpc/tools/R/4.0.0"))
+    library(tidyverse)
+    library(caret)
+    library(ggplot2)
+
+    ## load our counts and meta data
+    counts <- read.csv(
+      file="data/gbm_cptac_2021/data_mrna_seq_fpkm.txt",
+      header = T,
+      sep = "\t") 
+
+    meta <- read.csv(
+      file = "data/gbm_cptac_2021/data_clinical_patient.txt",
+      skip=4,
+      header = T,
+      sep = "\t"
+    )
+
+    ## ensure our patient ID's match between 
+    ## the counts and meta data
+    meta$PATIENT_ID = gsub("-",".",meta$PATIENT_ID)
+
+    ## grab IDH1 gene expression and 
+    ## patient ID 
+    idh1 = counts %>%
+      filter(Hugo_Symbol == "IDH1") %>%
+      select(-Hugo_Symbol) %>%
+      t() %>%
+      as.data.frame() %>%
+      mutate(PATIENT_ID = rownames(.))
+
+    colnames(idh1) <- c("IDH1","PATIENT_ID")
+
+    ## merge counts and meta data
+    merged <- merge(
+      meta,
+      idh1,
+      by="PATIENT_ID")
+
+    ## create smoking status variable
+    merged <- merged %>%
+      mutate(smoking = ifelse(grepl("non-smoker",SMOKING_HISTORY),0,1))
     ```
 === "Python"
 
