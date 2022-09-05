@@ -145,10 +145,10 @@ We see that there isn't a great delineation between the two conditions - smoking
     Number of Fisher Scoring iterations: 4
     ```
     Here we note:
-    Estimate : the model's effect, so here we see that a one unit increase in ALDH3A1 results in a 0.05947 decrease in the probability of being a smoker
-    Std. Error : standard error of our estimate
-    z value : test stastic - the larger the statistic, the less likely this effect occured by chance
-    Pr(>|z|) : pvalue that assesses the effect of ALDH3A1 on Smoking status if the null hypothesis of no effect were correct
+    - `Estimate` : the model's effect, so here we see that a one unit increase in ALDH3A1 results in a 0.05947 decrease in the probability of being a smoker
+    - `Std. Error` : standard error of our estimate
+    - `z value` : test stastic - the larger the statistic, the less likely this effect occured by chance
+    - `Pr(>|z|)` : pvalue that assesses the effect of ALDH3A1 on Smoking status if the null hypothesis of no effect were correct
     
 === "Python"
 
