@@ -194,7 +194,27 @@ When we create a logistic regression model we need to be aware of the limitation
 - no outliers
 - there must be a linear relationship between the logit function and the dependent variable 
 
+While we will cover multicollinearity in the [multivariate regression tutorial](multivariate-regression.md), we will assess here whether or not there is a linear relationship between the logit function and the dependent variable using the Box-Tidwell test:
 
+=== "R"
+
+    ```R
+    ## run the box tidwell test on
+    ## our model
+    car::boxTidwell(model$linear.predictors ~ merged$aldh3a1[!is.na(merged$aldh3a1)])
+    ```
+    
+    ```
+     MLE of lambda Score Statistic (z) {==Pr(>|z|)==}
+             1              0.7139     {==0.4753==}
+
+    iterations =  0 
+    ```
+=== "Python"
+
+    ```py
+    ```
+Here we note that the probability is above 0.05, implying that ALDH3A1 expression and the logit function are linearly related. 
 
 ## References
 
