@@ -14,4 +14,7 @@ or modelling with one variable. Here we discuss how to create multivariate model
 
 ## Multicollinearity
 
+## References
+
+-[]()
 
