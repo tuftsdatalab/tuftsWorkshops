@@ -15,8 +15,8 @@ $$ p(X) = \frac{ e^{\beta_{0} + \beta_{1}X} }{1 + e^{\beta_{0} + \beta_{1}X} } $
 
 - $p(X)$ : probability of smoking status given ALDH3A1 gene expression
 - $X$ : ALDH3A1 gene expression
-- $beta_{0}$ : y intercept
-- $beta_{1}$ : slope of our line
+- $\beta_{0}$ : y intercept
+- $\beta_{1}$ : slope of our line
 
 This sigmoid function creates our S-shaped curve! However we'd like our probability to be linear relationship with X. So we can manipulate this equation to get:
 
@@ -101,6 +101,45 @@ Now let's take a look at our data:
     ```
     
     ![](images/r-aldh3a1-exp.png)
+    
+=== "Python"
+
+    ```py
+    
+    ```
+
+We see that there isn't a great delineation between the two conditions - smoking and non-smoking. But let's creat our logistic regression model to confirm:
+
+=== "R"
+
+    ```R
+    ## let's make our model
+    model <- glm( smoking ~ aldh3a1, data = merged, family = binomial)
+    summary(model) 
+    ```
+    
+    ```
+    Call:
+    glm(formula = smoking ~ aldh3a1, family = binomial, data = merged)
+
+    Deviance Residuals: 
+        Min       1Q   Median       3Q      Max  
+    -1.0299  -0.9776  -0.9364   1.3867   1.4800  
+
+    Coefficients:
+                {==Estimate Std. Error z value Pr(>|z|)==}
+    (Intercept)  {==0.15978==}    1.61680   0.099    0.921
+    aldh3a1     {==-0.05947    0.13897  -0.428    0.669==}
+    
+    (Dispersion parameter for binomial family taken to be 1)
+    
+        Null deviance: 127.95  on 96  degrees of freedom
+    Residual deviance: 127.77  on 95  degrees of freedom
+      (2 observations deleted due to missingness)
+    AIC: 131.77
+
+    Number of Fisher Scoring iterations: 4
+    ```
     
 === "Python"
 
