@@ -13,4 +13,13 @@ Here we see that if we used a linear model, we'd end up predicting values that a
 
 $$ p(X) = \frac{ e^{\beta_{0} + \beta_{1}X} }{1 + e^{\beta_{0} + \beta_{1}X} } $$
 
+- $p(X)$ : probability of smoking status given IDH1 gene expression
+- $X$ : IDH1 gene expression
+- $beta_{0}$ : y intercept
+- $beta_{1}$ : slope of our line
+
+This sigmoid function creates our S-shaped curve! But how do we optimize it? To do this we need to 
+
+$$ \frac{p(X)}{1 - p(X)} = e^{\beta_{0} + \beta_{1}X}$$
+
 ## References
