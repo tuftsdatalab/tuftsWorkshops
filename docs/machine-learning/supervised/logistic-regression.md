@@ -150,6 +150,18 @@ We see that there isn't a great delineation between the two conditions - smoking
     - `z value` : test stastic - the larger the statistic, the less likely this effect occured by chance
     - `Pr(>|z|)` : pvalue that assesses the effect of ALDH3A1 on Smoking status if the null hypothesis of no effect were correct
     
+    You will note that there is not an $r^2$ value for this model like we saw in the [linear regression tutorial](linear-model.md). We will need a special metric known as McFadden's $r^2$:
+    
+    ```R
+    pscl::pR2(model)["McFadden"]
+    ```
+    
+    ```
+    fitting null model for pseudo-r2
+       McFadden 
+    0.001440711 
+    ```
+    
 === "Python"
 
     ```py
@@ -182,7 +194,7 @@ We will now plot our logistic regression curve:
 
 ## Recap
 
-So what have we found? Well it seems that ALDH3A1 expression has a minimal effect on the probability of being a smoker. Additionally, our high p-value of 0.669 indicates that we should not reject the possibility that this effect was due to chance. This is also confirmed in our visual of the logistic regression curve - where it is not S shaped. This is due to the absense of some boundry, where some value of ALDH3A1 expression separates smokers and non smokers.
+So what have we found? Well it seems that ALDH3A1 expression has a minimal effect on the probability of being a smoker. Additionally, our high p-value of 0.669 indicates that we should not reject the possibility that this effect was due to chance. This is also confirmed in our visual of the logistic regression curve - where it is not S shaped. This is due to the absense of some boundry, where some value of ALDH3A1 expression separates smokers and non smokers. We can also see this fit isn't great in McFadden's $r^2$ value of `0.001440711`. McFadden's $r^2$ values close to 0 are indicative of a poor fit while values over 0.4 are indicative of a good fit. 
 
 ## Assumptions
 
