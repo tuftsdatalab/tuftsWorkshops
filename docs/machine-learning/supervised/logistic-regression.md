@@ -186,9 +186,18 @@ So what have we found? Well it seems that ALDH3A1 expression has a minimal effec
 
 ## Assumptions
 
+When we create a logistic regression model we need to be aware of the limitations:
+
+- the response variable must be binary 
+- the observations are independent (i.e. observations can't influence the response of other observations)
+- no multicollinearity (will be covered the [multivariate regression tutorial](multivariate-regression.md)) - if you have multiple dependent variables they cannot be correlated
+- no outliers
+- there must be a linear relationship between the logit function and the dependent variable 
+
 
 
 ## References
 
 - [datacamp](https://www.datacamp.com/tutorial/logistic-regression-R)
 - [STHDA](http://www.sthda.com/english/articles/36-classification-methods-essentials/151-logistic-regression-essentials-in-r/)
+- [Statology](https://www.statology.org/logistic-regression/)
