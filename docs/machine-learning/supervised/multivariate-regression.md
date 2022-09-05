@@ -113,7 +113,51 @@ Here we see that when a model is under fit, it doesn't necessary follow the dire
 
 ## Multicollinearity
 
+Additionally, we need to think carefully about the variables we are plugging into our model. Each variable should add **new** information and should not correlate with one another. Let's try to determine this visually:
+
+=== "R"
+
+    ```R
+    ## grab our correlations
+    ## plot these correlations
+    cors <- cor(merged %>% select(AGE,WEIGHT,BMI))
+    corrplot::corrplot(cors)
+    ```
+    
+    ![](images/r-mutli-cor.png)
+    
+=== "Python"
+
+    ```py
+    ```
+    
+We can also use the **variance inflation factor (VIF)** to assess multicollinearity - with values between 5 and 10 indicating multicollinearity:
+
+=== "R"
+
+    ```R
+    ## use the vif function to
+    ## assess multicollinearity
+    car::vif(model2)
+    car::vif(model3)
+    ```
+    
+    ```
+         AGE   WEIGHT 
+    1.106764 1.106764 
+         AGE   WEIGHT      BMI 
+    1.108918 3.265643 3.123681 
+    ```
+    
+=== "Python"
+
+    ```py
+    ```
+    
+Here we see that while the VIF values of `WEIGHT` and `BMI` do not go over 5, we see in the correlation plot that these variables are indeed highly correlated. Also, when `BMI` is added to `model3` we see that the VIF values for `WEIGHT` and `BMI` are bumped up closer to 5. 
+
 ## References
 
 - [STHDA](http://www.sthda.com/english/articles/38-regression-model-validation/158-regression-model-accuracy-metrics-r-square-aic-bic-cp-and-more/)
-- [Towards Data Science](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d)
+- [Towards Data Science - overfitting](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d)
+- [Towards Data Science - logistic](https://towardsdatascience.com/assumptions-of-logistic-regression-clearly-explained-44d85a22b290)
