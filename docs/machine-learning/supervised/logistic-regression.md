@@ -5,7 +5,7 @@
     
 ## Logistic Regression
 
-A logistic regression model attempts to classify, so for example can IDH1 gene expression to predict smoking status? So how do we do this? We could fit a linear model to our data but we would end up with something like this:
+A logistic regression model attempts to classify, so for example can ALDH3A1 gene expression to predict smoking status? So how do we do this? We could fit a linear model to our data but we would end up with something like this:
 
 ![](images/linear-v-logistic.png)
 
@@ -13,8 +13,8 @@ Here we see that if we used a linear model, we'd end up predicting values that a
 
 $$ p(X) = \frac{ e^{\beta_{0} + \beta_{1}X} }{1 + e^{\beta_{0} + \beta_{1}X} } $$
 
-- $p(X)$ : probability of smoking status given IDH1 gene expression
-- $X$ : IDH1 gene expression
+- $p(X)$ : probability of smoking status given ALDH3A1 gene expression
+- $X$ : ALDH3A1 gene expression
 - $beta_{0}$ : y intercept
 - $beta_{1}$ : slope of our line
 
@@ -30,7 +30,7 @@ Here we get $log(\frac{p(X)}{1 - p(X)})$ or the **logit function** - where a one
 
 ## Making the Model
 
-First let's do some preprocessing to get our combine IDH1 gene expression with smoking status:
+First let's do some preprocessing to get our combine ALDH3A1 gene expression with smoking status:
 
 === "R"
 
@@ -60,25 +60,48 @@ First let's do some preprocessing to get our combine IDH1 gene expression with s
 
     ## grab IDH1 gene expression and 
     ## patient ID 
-    idh1 = counts %>%
-      filter(Hugo_Symbol == "IDH1") %>%
+    aldh3a1 = counts %>%
+      filter(Hugo_Symbol == "ALDH3A1") %>%
       select(-Hugo_Symbol) %>%
       t() %>%
       as.data.frame() %>%
       mutate(PATIENT_ID = rownames(.))
 
-    colnames(idh1) <- c("IDH1","PATIENT_ID")
+    colnames(aldh3a1) <- c("aldh3a1","PATIENT_ID")
 
     ## merge counts and meta data
     merged <- merge(
       meta,
-      idh1,
+      aldh3a1,
       by="PATIENT_ID")
 
     ## create smoking status variable
+    ## and normalize ALDH3A1 expression
     merged <- merged %>%
-      mutate(smoking = ifelse(grepl("non-smoker",SMOKING_HISTORY),0,1))
+      mutate(smoking = ifelse(grepl("non-smoker",SMOKING_HISTORY),0,1)) %>%
+      mutate(aldh3a1 = log2(aldh3a1+1))
     ```
+=== "Python"
+
+    ```py
+    
+    ```
+    
+Now let's take a look at our data:
+
+=== "R"
+
+    ```R
+    ## let's plot our data
+    ggplot(merged, aes(x=aldh3a1, y=smoking)) + 
+      geom_point() +
+      theme_bw() +
+      ylab("Smoking Status") +
+      xlab("ALDH3A1 Gene Expression") 
+    ```
+    
+    ![](images/r-aldh3a1-exp.png)
+    
 === "Python"
 
     ```py
