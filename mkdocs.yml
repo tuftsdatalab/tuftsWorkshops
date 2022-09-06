@@ -21,6 +21,7 @@ theme:
       danger: octicons/zap-16
       bug: octicons/bug-16
       example: octicons/beaker-16
+      prerequisite: octicons/beaker-16
       quote: octicons/quote-16
 
 markdown_extensions:
