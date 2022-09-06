@@ -130,6 +130,8 @@ Now we will need to do some data cleaning before we plug this into our model:
     merged = merged.set_index('PATIENT_ID')
     merged.head()
     ```
+## Normalize/Create the Model
+
 These data, IDH1 gene expression and TMB score are on two different scales. To ensure a fair comparison of these variables we will normalize (or bring our data to a common scale) our data:
 
 === "R"
