@@ -113,6 +113,9 @@ Now let's take a look at our data:
     
     ```
 
+??? question "What problem do you see with creating a logistic regression model with this data?"
+    There is no clear separation of ALDH3A1 gene expression between smokers and non-smokers.
+    
 ## Create the Model
 
 We see that there isn't a great delineation between the two conditions - smoking and non-smoking. But let's creat our logistic regression model to confirm:
