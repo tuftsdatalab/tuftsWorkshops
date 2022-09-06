@@ -158,6 +158,10 @@ We can also use the **variance inflation factor (VIF)** to assess multicollinear
     
 Here we see that while the VIF values of `WEIGHT` and `BMI` do not go over 5, we see in the correlation plot that these variables are indeed highly correlated. Also, when `BMI` is added to `model3` we see that the VIF values for `WEIGHT` and `BMI` are bumped up closer to 5. 
 
+??? question "Why do you think that BMI has a lower VIF than WEIGHT?"
+    Weight is used to calculate BMI. However, BMI also captures information about height which isn't captured by our WEIGHT variable.
+    
+    
 ## References
 
 - [STHDA](http://www.sthda.com/english/articles/38-regression-model-validation/158-regression-model-accuracy-metrics-r-square-aic-bic-cp-and-more/)
