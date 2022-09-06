@@ -111,7 +111,7 @@ nav:
     - Machine Learning: 
         - Introduction To Machine Learning: 
             - "Introduction To Machine Learning": machine-learning/intro-machine.md
-            - "Setup For Machine Learning Tutorials": machine-learning/setup.md
+            - "Tutorial Setup": machine-learning/setup.md
         - Unsupervised Learning:
             - "Dimension Reduction": machine-learning/unsupervised/dimension-reduction.md
             - "Clustering": machine-learning/unsupervised/clustering.md
