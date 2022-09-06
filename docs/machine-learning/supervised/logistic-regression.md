@@ -1,6 +1,6 @@
 # Introduction To Logistic Regression
 
-!!! attention
+!!! prerequisite
     Please be sure to have followed the instructions on the [setup page](../setup.md)
     
 ## Logistic Regression
