@@ -1,7 +1,9 @@
 # Introduction To Dimension Reduction
 
-!!! attention
-    Please be sure to have followed the instructions on the [setup page](../setup.md)
+!!! example "Prerequisites"
+    - [Request an account](http://research.uit.tufts.edu/) on the Tufts HPC Cluster
+    - Connect to the [VPN](https://access.tufts.edu/vpn)
+    - Please be sure to have followed the instructions on the [setup page](../setup.md)
     
 - Process of reducing the number of variables to a set of principal values where variation in your data becomes apparent. Here is an example with three dimensions:
 
@@ -33,6 +35,8 @@
 - if one variable is on a different scale (like kg instead of g) it can bias the results. So ensure data is on one scale!
 - points can be crowded with large numbers of observations and reveal no pattern
 - susceptible to outliers
+
+## Pre-Processing
 
 Let's try this in code! First we will need to do some preprocessing:
 
@@ -73,6 +77,8 @@ Let's try this in code! First we will need to do some preprocessing:
     ``` py
     # still in development - sorry!
     ```
+
+## Normalization
 
 Now we will ensure our data are on a common scale by log2 transforming it. This will ensure that we don't bias our PCA in the direction of higher magnitude variables. We will also select the top 50 genes with the highest variance as usually high variance genes are more biologically interesting. 
 
