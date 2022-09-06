@@ -289,6 +289,8 @@ So we found that IDH1 gene expression is not a great feature to model an outcome
 - Homogeneity in the variances (Homoscedacity)
 - Independence of your observations
 
+### Testing Assumptions
+
 Mathematically, we can assess Normality and Homoscedacity with the shapiro test and Breusch-Pagan test, respectively:
 
 === "R"
