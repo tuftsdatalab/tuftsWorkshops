@@ -15,10 +15,11 @@ Here we see that if we used a linear model, we'd end up predicting values that a
 
 $$ p(X) = \frac{ e^{\beta_{0} + \beta_{1}X} }{1 + e^{\beta_{0} + \beta_{1}X} } $$
 
-- $p(X)$ : probability of smoking status given ALDH3A1 gene expression
-- $X$ : ALDH3A1 gene expression
-- $\beta_{0}$ : y intercept
-- $\beta_{1}$ : slope of our line
+!!! info "What do these terms mean?"
+    - $p(X)$ : probability of smoking status given ALDH3A1 gene expression
+    - $X$ : ALDH3A1 gene expression
+    - $\beta_{0}$ : y intercept
+    - $\beta_{1}$ : slope of our line
 
 This sigmoid function creates our S-shaped curve! However we'd like our probability to be linear relationship with X. So we can manipulate this equation to get:
 
