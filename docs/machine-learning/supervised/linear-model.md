@@ -1,7 +1,9 @@
 # Introduction To Linear Regression
 
-!!! attention
-    Please be sure to have followed the instructions on the [setup page](../setup.md)
+!!! example "Prerequisites"
+    - [Request an account](http://research.uit.tufts.edu/) on the Tufts HPC Cluster
+    - Connect to the [VPN](https://access.tufts.edu/vpn)
+    - Please be sure to have followed the instructions on the [setup page](../setup.md)
     
 ## Linear Regression
 
@@ -28,7 +30,7 @@ This formula describes the best fit line for our data that tries to minimizes ou
 
 ![](images/linear-regression-demo.png)
 
-Let's start by loading our data:
+## Pre-Processing
 
 === "R"
 
