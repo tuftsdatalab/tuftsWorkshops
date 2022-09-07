@@ -84,6 +84,26 @@ Now we will need some data to play with so let's copy some over:
 ```
 cp /cluster/tufts/bio/tools/training/intro-to-r/data/* data/
 ```
+
+To confirm we have created our folder, use the following commands and make sure you have the correct output:
+
+```
+ls
+```
+
+!!! info ""
+    ```
+    data scripts results
+    ```
+```
+ls data
+```
+
+!!! info ""
+    ```
+    test.csv metadata.tsv test.xlsx
+    ```
+    
 ---
 
 ## Data Principles
