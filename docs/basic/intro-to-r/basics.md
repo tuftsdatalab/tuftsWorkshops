@@ -230,7 +230,7 @@ If you would like to declutter your environment, you have a few options:
 
 ![](images/remove-all.png)
 
-!!! warning
+!!! danger
      Be careful when removing variables, especially if these values took a long time to generate!
 
 ---
