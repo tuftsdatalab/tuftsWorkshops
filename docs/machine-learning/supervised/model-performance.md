@@ -5,6 +5,8 @@
     - Connect to the [VPN](https://access.tufts.edu/vpn)
     - Please be sure to have followed the instructions on the [setup page](../setup.md)
 
+## Training and Testing Data
+
 ## Model Error
 
 ## Sensitivity v. Specificity
