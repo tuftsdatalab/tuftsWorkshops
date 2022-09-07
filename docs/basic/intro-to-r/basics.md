@@ -161,16 +161,23 @@ Dealing with values can be cumbersome. In R, values can be assigned to words usi
 ```R
 x <- 35 # assigning a value of 35
 x
+```
+
+!!! info ""
+    ```
+    [1] 35
+    ```
+    
+```R
 x <- x + 5 # changing value to 40
 x
 ```
 
-```
-[1] 35
-```
-```
-[1] 40
-```
+!!! info ""
+    ```
+    [1] 40
+    ```
+    
 You'll notice that we initially assigned `x` to a value of `35` and then updated value to `40`. This is important to keep in mind because the last value assigned to `x` will be kept. Variables can I have a combination lowercase letters, uppercase letters, underscores and periods:
 
 ```R
@@ -186,12 +193,13 @@ even_bigger_value
 biggest.value
 ```
 
-```
-[1] 40
-[1] 45
-[1] 50
-[1] 55
-```
+!!! info ""
+    ```
+    [1] 40
+    [1] 45
+    [1] 50
+    [1] 55
+    ```
 
 !!! note
     Take note that the spelling needs to be consistent to call the variable correctly.
