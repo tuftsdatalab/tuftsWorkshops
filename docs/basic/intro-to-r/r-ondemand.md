@@ -1,11 +1,9 @@
-# Introduction To R OnDemand
+# Introduction To RStudio OnDemand
 
-## Setup
-
-Before getting started you will need:
-
-- Account on [Tufts HPC](https://access.tufts.edu/research-cluster-account)
-- [VPN](https://access.tufts.edu/vpn) if accessing the HPC from off campus
+!!! example "Prerequisites"
+    - [Request an account](http://research.uit.tufts.edu/) on the Tufts HPC Cluster
+    - Connect to the [VPN](https://access.tufts.edu/vpn)
+    - Please be sure to have followed the instructions on the [setup page](../setup.md)
 
 ## Navigate To The Cluster
 
@@ -17,9 +15,9 @@ Click on `Interactive Apps > RStudio Pax` and you will see a form to fill out to
 
 - `Number of hours` : `3`
 - `Number of cores` : `1`
-- `Amount of memory` : `32GB`
+- `Amount of memory` : `4GB`
 - `R version` : `4.0.0`
-- `Reservation for class, training, workshop` : `Default`
+- `Reservation for class, training, workshop` : `GET THIS FROM DELILAH`
 - `Load Supporting Modules`: `curl/7.47.1 gcc/7.3.0 hdf5/1.10.4 boost/1.63.0-python3 libpng/1.6.37 java/1.8.0_60 libxml2/2.9.10 libiconv/1.16 fftw/3.3.2 gsl/2.6`
 
 Click `Lauch` and wait until your session is ready. Click `Connect To RStudio Server`, and you will notice a new window will pop up with RStudio. 
@@ -49,7 +47,7 @@ To Create a new R project:
 1. Go to `File` > `New Project`
 2. `New Directory`
 3. `New Project`
-4. Create a name for your project (e.g. `new-project`)
+4. Create a name for your project (e.g. `R-Practice`)
 5. `Create Project`
 
 You will notice that your RStudio console switches to this project directory. When you log out of RStudio you can open this project again by clicking the `.Rproj` file in the project directory. 
@@ -57,15 +55,15 @@ You will notice that your RStudio console switches to this project directory. Wh
 !!! note
     The paths will be relative to this project directory as a safe guard against referencing data from outside sources. 
 
-## File Organization
+??? tip "Tips on File Organization"
+    ## File Organization
 
-When working on a scientific project it is recommended that you put each project in its own directory and give it a name that is descriptive. Similarly, when naming scripts it is recommended that you also name these scripts after the function they are performing. When it comes to file structure within your project try following this folder structure:
-
-- `doc` : folder for text documents associated with the project
-- `data` : folder for your raw data/metadata
-- `results` : folder for files generated from data/metadata
-- `src` : folder for project's custom scripts/programs
-- `bin` : folder for outside programs used in project
+    When working on a scientific project it is recommended that you put each project in its own directory and give it a name that is descriptive. Similarly, when naming scripts it is recommended that you also name these scripts after the function they are performing. When it comes to file structure within your project try following this folder structure:
+    - `doc` : folder for text documents associated with the project
+    - `data` : folder for your raw data/metadata
+    - `results` : folder for files generated from data/metadata
+    - `src` : folder for project's custom scripts/programs
+    - `bin` : folder for outside programs used in project
 
 ## Data Principles
 
