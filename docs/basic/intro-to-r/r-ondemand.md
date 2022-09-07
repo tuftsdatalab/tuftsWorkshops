@@ -20,7 +20,13 @@ Click on `Interactive Apps > RStudio Pax` and you will see a form to fill out to
 - `Reservation for class, training, workshop` : `GET THIS FROM DELILAH`
 - `Load Supporting Modules`: `curl/7.47.1 gcc/7.3.0 hdf5/1.10.4 boost/1.63.0-python3 libpng/1.6.37 java/1.8.0_60 libxml2/2.9.10 libiconv/1.16 fftw/3.3.2 gsl/2.6`
 
-Click `Lauch` and wait until your session is ready. Click `Connect To RStudio Server`, and you will notice a new window will pop up with RStudio. 
+Click `Launch` and wait until your session is ready. Click `Connect To RStudio Server`, and you will notice a new window will pop up with RStudio. 
+
+??? question "Have you logged into the cluster?"
+    - Yes (put up a green check mark in zoom)
+    - No (raise hand in zoom)
+    
+---
 
 ## Introduction To RStudio
 
@@ -55,18 +61,18 @@ You will notice that your RStudio console switches to this project directory. Wh
 !!! note
     The paths will be relative to this project directory as a safe guard against referencing data from outside sources. 
 
-??? tip "Tips on File Organization"
-    ## File Organization
+??? question "Have you created the project?"
+    - Yes (put up a green check mark in zoom)
+    - No (raise hand in zoom)
 
-    When working on a scientific project it is recommended that you put each project in its own directory and give it a name that is descriptive. Similarly, when naming scripts it is recommended that you also name these scripts after the function they are performing. When it comes to file structure within your project try following this folder structure:
-    - `doc` : folder for text documents associated with the project
-    - `data` : folder for your raw data/metadata
-    - `results` : folder for files generated from data/metadata
-    - `src` : folder for project's custom scripts/programs
-    - `bin` : folder for outside programs used in project
+--- 
 
 ## Data Principles
 
+- Treat data as read-only
+- Store raw data separately from cleaned data if you do need to manipulate it
+- Ensure scripts to clean data are kept in a separate `scripts` folder
+- 
 When you deal with data treat it as read-only. Working with data files in something like excel can modify your original data source without any record of what was done to it. That being said, often times you will need to do some data cleaning. When you need to significantly modify your data source make a separate folder withing `data` for the `raw_data` and the `cleaned_data`. Also ensure that the scripts you used to clean the data are placed in a separate folder (e.g. `src/data_cleaning_scripts/`). Data that is generated from this raw data should be deposited in your `results` folder and should be treated as disposable. These files should be reproducible from your raw data using your scripts and are good candidate files to cut if you are getting low on storage.
 
 ## Script Management
