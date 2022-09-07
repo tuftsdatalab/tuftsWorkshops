@@ -9,6 +9,8 @@ Now we will create an R script. R commands can be entered into the console, but 
 
 ![](images/newFile.png)
 
+---
+
 ## Running R Code
 
 When running R code you have a few options:
@@ -22,6 +24,8 @@ When running R code you have a few options:
   Running The Entire Script:
   
   - Clicking `Source` at the top of the script window.
+
+---
     
 ## Calculations
 
@@ -45,16 +49,19 @@ Let's look at some examples:
 10 * 3^3
 ```
 
-```
-[1] 270
-```
+!!! tip ""
+   ```
+   [1] 270
+   ```
 
 ```R
 (400 / 10) * (4e2) # 4e2 is the same as 4^2
 ```
-```
-[1] 16000
-```
+
+!!! tip ""
+   ```
+   [1] 16000
+   ```
 
 You'll notice that in the last equation we added words after a `#` and the equation still ran. This is what is known as a comment, where everything after the `#` is not registered as R code. Commenting is immensely valuable for giving your code context so that you and whoever else reads it knows the purpose of a given chunk of code.
 
@@ -64,39 +71,42 @@ Additionally there are functions built in R to perform mathematical calculations
 abs(10) # absolute value
 ```
 
-```
-[1] 10
-```
+!!! tip ""
+   ```
+   [1] 10
+   ```
 
-<details>
-<summary>More Examples</summary>
-<br>
-  
-```R
-sqrt(25) # square root
-```
+??? note "More Exampless"
+    
+    ```R
+    sqrt(25) # square root
+    ```
 
-```
-[1] 5
-```
+    !!! tip ""
+       ```
+       [1] 5
+       ```
 
-```R
-log(10) # natural logarithm
-```
+    ```R
+    log(10) # natural logarithm
+    ```
+    
+    !!! tip ""
+       ```
+       [1] 2.302585
+       ```
 
-```
-[1] 2.302585
-```
+    ```
+    [1] 2.302585
+    ```
 
-```R
-log10(10) # log base 10
-```
-
-```
-[1] 1
-```
-  
-</details>
+    ```R
+    log10(10) # log base 10
+    ```
+    !!! tip ""
+       ```
+       [1] 1
+       ```
 
 ## Comparisons
 
