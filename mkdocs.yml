@@ -51,7 +51,7 @@ extra_javascript:
 
 nav:
     - About : index.md
-    - HPC User Guide : 
+    - Intro to HPC/Slurm For Life Sciences: 
         - Introduction To The Cluster:
             - "What Is The Cluster?": hpc-user-guide/what-is-the-cluster.md
             - "Request an Account": hpc-user-guide/request-account.md
@@ -65,8 +65,7 @@ nav:
             - "Interactive Session": hpc-user-guide/interactive-session.md
             - "Submitting A Batch Job": hpc-user-guide/batch-job.md
             - "Checking Job Status": hpc-user-guide/job-status.md
-    - Software Tutorials:
-        - Intro To Unix: basic/intro-to-unix/unix.md
+    - Intro to RStudio For Life Sciences:
         - Intro To R: 
             - "Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
             - "R Basics": basic/intro-to-r/basics.md
@@ -74,56 +73,12 @@ nav:
             - "Functions & Flow": basic/intro-to-r/functions-flow.md
             - "Inspecting/Manipulating Data": basic/intro-to-r/inspecting-manipulating-data.md
             - "Visualization": basic/intro-to-r/visualization.md
-        - Intro To Python:
-            - "Introduction To Python OnDemand": basic/intro-to-python/python-ondemand.md
-            - "Variables & Data Types": basic/intro-to-python/variables-data-types.md
-            - "Libraries & Data Frames": basic/intro-to-python/libraries-data-frames.md
-            - "Plotting with Plotly": basic/intro-to-python/plotting-plotly.md
-            - "Lists": basic/intro-to-python/lists.md
-            - "Loops & Conditionals": basic/intro-to-python/loops-conditionals.md
-            - "Functions & Scope": basic/intro-to-python/functions-scope.md
-    - NGS Tutorials:
-        - Intro To NGS: 
-            - "Background": omics/intro-to-ngs/background.md
-            - "Setup": omics/intro-to-ngs/01_Setup.md
-            - "Quality Control": omics/intro-to-ngs/02_Quality_Control.md
-            - "Alignment": omics/intro-to-ngs/03_Alignment.md
-            - "Alignment Cleanup": omics/intro-to-ngs/04_Alignment_Cleanup.md
-            - "Variant Calling": omics/intro-to-ngs/05_Variant_Calling.md
-            - "Variant Annotation": omics/intro-to-ngs/06_Variant_Annotation.md
-        - Intro To RNA-Seq: 
-            - "Background": omics/intro-to-rnaseq/background.md
-            - "Setup": omics/intro-to-rnaseq/01_Setup.md
-            - "Quality Control": omics/intro-to-rnaseq/02_Quality_Control.md
-            - "Read Alignment": omics/intro-to-rnaseq/03_Read_Alignment.md
-            - "Gene Quantification": omics/intro-to-rnaseq/04_Gene_Quantification.md
-            - "Differential Expression": omics/intro-to-rnaseq/05_Differential_Expression.md
-            - "Pathway Enrichment": omics/intro-to-rnaseq/06_Pathway_Enrichment.md
-    - Metagenomics Tutorials:
-        - Intro To 16S Metabarcoding: 
-            - "Background": omics/intro-to-16S/background.md
-            - "Setup": omics/intro-to-16S/setup.md
-            - "Quality Control": omics/intro-to-16S/quality-control.md
-            - "Error Model & ASVs": omics/intro-to-16S/error-asv.md
-            - "Merging, Chimeras & Taxonomy": omics/intro-to-16S/merging-chimeras-taxonomy.md
-            - "Diversity Analysis": omics/intro-to-16S/diversity-analysis.md
-            - "Differential Abundance": omics/intro-to-16S/differential-abundance.md
-    - Machine Learning: 
-        - Introduction To Machine Learning: 
-            - "Introduction To Machine Learning": machine-learning/intro-machine.md
-            - "Tutorial Setup": machine-learning/setup.md
-        - Unsupervised Learning:
-            - "Dimension Reduction": machine-learning/unsupervised/dimension-reduction.md
-            - "Clustering": machine-learning/unsupervised/clustering.md
-        - Supervised Learning:
-            - Linear Models: machine-learning/supervised/linear-model.md
-            - Logistic Regression: machine-learning/supervised/logistic-regression.md
-            - Multivariate Regression: machine-learning/supervised/multivariate-regression.md
-            - Model Performance: machine-learning/supervised/model-performance.md
-            - Regularization: machine-learning/unsupervised/clustering.md
-            - Decision Trees/Ensemble Methods: machine-learning/unsupervised/clustering.md
-            - Neural Networks: machine-learning/unsupervised/clustering.md
-            - Deep Learning: machine-learning/unsupervised/clustering.md
-            - Bayesian Modelling: machine-learning/unsupervised/clustering.md
-    
+    - Intro To 16S Metabarcoding:
+        - "Background": omics/intro-to-16S/background.md
+        - "Setup": omics/intro-to-16S/setup.md
+        - "Quality Control": omics/intro-to-16S/quality-control.md
+        - "Error Model & ASVs": omics/intro-to-16S/error-asv.md
+        - "Merging, Chimeras & Taxonomy": omics/intro-to-16S/merging-chimeras-taxonomy.md
+        - "Diversity Analysis": omics/intro-to-16S/diversity-analysis.md
+        - "Differential Abundance": omics/intro-to-16S/differential-abundance.md
         
