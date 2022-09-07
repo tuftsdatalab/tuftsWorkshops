@@ -23,7 +23,7 @@ Vectors are collections of data, like a:
   collection of logical values - ```c(TRUE,FALSE,TRUE)```
 
 !!! note
-   It should be noted that a vector needs to be a collection of the **same type** of data. You will also note that each list is separated by commas and surrounded by ```c()```. This is necessary to create vectors so make sure to remember the ```c()```!
+    It should be noted that a vector needs to be a collection of the **same type** of data. You will also note that each list is separated by commas and surrounded by ```c()```. This is necessary to create vectors so make sure to remember the ```c()```!
 
 ### Factors
 
