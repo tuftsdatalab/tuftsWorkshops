@@ -76,6 +76,7 @@ Let's start by adding some directories to store the data and scripts we will use
 ```
 mkdir data
 mkdir scripts
+mkdir results
 ```
 
 Now we will need some data to play with so let's copy some over:
@@ -83,57 +84,16 @@ Now we will need some data to play with so let's copy some over:
 ```
 cp /cluster/tufts/bio/tools/training/intro-to-r/data/* data/
 ```
+---
 
 ## Data Principles
 
 - Treat data as read-only
 - Store raw data separately from cleaned data if you do need to manipulate it
 - Ensure scripts to clean data are kept in a separate `scripts` folder
-- 
-When you deal with data treat it as read-only. Working with data files in something like excel can modify your original data source without any record of what was done to it. That being said, often times you will need to do some data cleaning. When you need to significantly modify your data source make a separate folder withing `data` for the `raw_data` and the `cleaned_data`. Also ensure that the scripts you used to clean the data are placed in a separate folder (e.g. `src/data_cleaning_scripts/`). Data that is generated from this raw data should be deposited in your `results` folder and should be treated as disposable. These files should be reproducible from your raw data using your scripts and are good candidate files to cut if you are getting low on storage.
+- Treat reproducible results as disposable
 
-## Script Management
+!!! tip
+    Result files are good candidate files to cut if you are getting low on storage.
 
-When performing analyses you'll note that some code blocks are useful in multiple scenarios. It is a good idea to store these reusable chunks in a separate folder to use in other analysis scripts. 
-
-## Setting The Directory
-
-When we create a project all the paths are now relative to the project. This helps when you need to specify where a file is. So for example instead of:
-
-```
-cluster/home/user/new-project/data/file.txt
-```
-
-We only need to specify where things are with respect to our project:
-
-```
-data/file.txt
-```
-
-We can tell where we are using `getwd()`, so if we were in `new-project`:
-
-```R
-getwd()
-```
-
-```
-cluster/home/user/new-project/
-```
-
-If we want to specify a **new** base directory we can use `setwd()`:
-
-```R
-setwd("cluster/home/user/new-project/data")
-```
-
-Here we set it to `data` so that if we were to pull that file again, the path would be:
-
-```
-file.txt
-```
-
-But let's set it back to the project directory for now:
-
-```R
-setwd("cluster/home/user/new-project")
-```
+---
