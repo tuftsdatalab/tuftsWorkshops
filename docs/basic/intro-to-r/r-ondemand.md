@@ -5,6 +5,8 @@
     - Connect to the [VPN](https://access.tufts.edu/vpn)
     - Please be sure to have followed the instructions on the [setup page](../setup.md)
 
+---
+
 ## Navigate To The Cluster
 
 Once you have an account and are connected to the VPN/Tufts Network, navigate to the [OnDemand Website](https://ondemand.pax.tufts.edu/) and log in with your tufts credentials. Once you are logged in you'll notice a few navigation options:
@@ -38,7 +40,7 @@ RStudio is what is known as an Integrated Development Environment or IDE. Here y
 
 ![](images/rstudio1.png)
 
-# Project Management
+## Project Management
 
 Before we dive into R it is worth taking a moment to talk about project management. Often times data analysis is incremental and files build up over time resulting in messy directories:
 
@@ -66,6 +68,21 @@ You will notice that your RStudio console switches to this project directory. Wh
     - No (raise hand in zoom)
 
 --- 
+
+## File Organization
+
+Let's start by adding some directories to store the data and scripts we will use. In the `Terminal` tab enter the following commands:
+
+```
+mkdir data
+mkdir scripts
+```
+
+Now we will need some data to play with so let's copy some over:
+
+```
+cp /cluster/tufts/bio/tools/training/intro-to-r/data/* data/
+```
 
 ## Data Principles
 
