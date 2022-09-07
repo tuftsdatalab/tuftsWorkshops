@@ -48,6 +48,8 @@ Before we dive into R it is worth taking a moment to talk about project manageme
 
 Sifting through a non-organized file system can make it difficult to find files, share data/scripts, and identify different versions of scripts. To remedy this, It is reccomended to work within an R Project.
 
+---
+
 ## R Project
 
 To Create a new R project:
