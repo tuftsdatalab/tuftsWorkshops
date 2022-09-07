@@ -270,7 +270,7 @@ To load a package you can use the `library()` function:
 library(ggplot2)
 ```
 
-!!! note
+!!! info
      If you need a package installed in this shared library, reach out to TTS Reasarch Technology, at tts-research@tufts.edu
      
      
