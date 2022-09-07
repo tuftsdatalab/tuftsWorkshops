@@ -65,6 +65,10 @@ nav:
             - "Interactive Session": hpc-user-guide/interactive-session.md
             - "Submitting A Batch Job": hpc-user-guide/batch-job.md
             - "Checking Job Status": hpc-user-guide/job-status.md
+        - Introduction To Linux:
+            - "Interactive Session": hpc-user-guide/interactive-session.md
+            - "Submitting A Batch Job": hpc-user-guide/batch-job.md
+            - "Checking Job Status": hpc-user-guide/job-status.md
     - Intro to RStudio For Life Sciences:
         - Intro To R: 
             - "Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
