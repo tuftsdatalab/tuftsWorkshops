@@ -49,19 +49,19 @@ Let's look at some examples:
 10 * 3^3
 ```
 
-!!! tip ""
-   ```
-   [1] 270
-   ```
+!!! info ""
+    ```
+    [1] 270
+    ```
 
 ```R
 (400 / 10) * (4e2) # 4e2 is the same as 4^2
 ```
 
 !!! tip ""
-   ```
-   [1] 16000
-   ```
+    ```
+    [1] 16000
+    ```
 
 You'll notice that in the last equation we added words after a `#` and the equation still ran. This is what is known as a comment, where everything after the `#` is not registered as R code. Commenting is immensely valuable for giving your code context so that you and whoever else reads it knows the purpose of a given chunk of code.
 
@@ -72,9 +72,9 @@ abs(10) # absolute value
 ```
 
 !!! tip ""
-   ```
-   [1] 10
-   ```
+    ```
+    [1] 10
+    ```
 
 ??? note "More Exampless"
     
@@ -82,19 +82,19 @@ abs(10) # absolute value
     sqrt(25) # square root
     ```
 
-    !!! tip ""
-       ```
-       [1] 5
-       ```
+    !!! info ""
+        ```
+        [1] 5
+        ```
 
     ```R
     log(10) # natural logarithm
     ```
     
-    !!! tip ""
-       ```
-       [1] 2.302585
-       ```
+    !!! info ""
+        ```
+        [1] 2.302585
+        ```
 
     ```
     [1] 2.302585
@@ -103,10 +103,10 @@ abs(10) # absolute value
     ```R
     log10(10) # log base 10
     ```
-    !!! tip ""
-       ```
-       [1] 1
-       ```
+    !!! info ""
+        ```
+        [1] 1
+        ```
 
 ## Comparisons
 
@@ -123,9 +123,10 @@ R can also be used to make comparisons. Here we note the operators used to do so
 2 == 2
 ```
 
-```
-[1] TRUE
-```
+!!! info ""
+        ```
+        [1] TRUE
+        ```
 
 <details>
 <summary>More Examples</summary>
