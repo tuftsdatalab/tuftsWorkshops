@@ -58,7 +58,7 @@ Let's look at some examples:
 (400 / 10) * (4e2) # 4e2 is the same as 4^2
 ```
 
-!!! tip ""
+!!! info ""
     ```
     [1] 16000
     ```
@@ -71,12 +71,12 @@ Additionally there are functions built in R to perform mathematical calculations
 abs(10) # absolute value
 ```
 
-!!! tip ""
+!!! info ""
     ```
     [1] 10
     ```
 
-??? note "More Exampless"
+??? note "More Examples"
     
     ```R
     sqrt(25) # square root
@@ -124,35 +124,32 @@ R can also be used to make comparisons. Here we note the operators used to do so
 ```
 
 !!! info ""
+    ```
+    [1] TRUE
+    ```
+
+??? note "More Examples"
+  
+    ```R
+    2 != 2
+    ```
+    !!! info ""
+        ```
+        [1] FALSE
+        ```
+        
+    ```R
+    3 <= 10
+    ```
+    
+    !!! info ""
         ```
         [1] TRUE
         ```
 
-<details>
-<summary>More Examples</summary>
-<br>
-  
-```R
-2 != 2
-```
-
-```
-[1] FALSE
-```
-
-```R
-3 <= 10
-```
-
-```
-[1] TRUE
-```
-      
-</details>
 
 !!! note
-   Unless the number is an integer, do not use `==` to compare. This is due to the fact that the decimal value may appear the same 
-in R but from a machine level the two values can be very different.
+    Unless the number is an integer, do not use `==` to compare. This is due to the fact that the decimal value may appear the same in R but from a machine level the two values can be very different.
 
 ## Variables & Vectors
 
@@ -161,7 +158,7 @@ Dealing with values can be cumbersome. In R, values can be assigned to words usi
 ```R
 x <- 35 # assigning a value of 35
 x
-x <- 40 # changing value to 40
+x <- x + 5 # changing value to 40
 x
 ```
 
