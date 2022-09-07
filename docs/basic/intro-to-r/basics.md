@@ -107,6 +107,7 @@ abs(10) # absolute value
         ```
         [1] 1
         ```
+---
 
 ## Comparisons
 
@@ -150,6 +151,8 @@ R can also be used to make comparisons. Here we note the operators used to do so
 
 !!! note
     Unless the number is an integer, do not use `==` to compare. This is due to the fact that the decimal value may appear the same in R but from a machine level the two values can be very different.
+
+---
 
 ## Variables & Vectors
 
@@ -199,10 +202,12 @@ We can also assign a series of values in a specific order to a variable to creat
 someVector <- 5:10
 someVector
 ```
+!!! info ""
+    ```
+    [1]  5  6  7  8  9 10
+    ```
 
-```
-[1]  5  6  7  8  9 10
-```
+---
 
 ## Environment
 
@@ -220,7 +225,8 @@ If you would like to declutter your environment, you have a few options:
 !!! warning
      Be careful when removing variables, especially if these values took a long time to generate!
 
-     
+---
+
 ## R Packages
 
 Aside from the base functions there are thousands of custom fuctions which are bundled in R packages. We can access these functions by loading the package that contains them. On the Tufts HPC, groups of packages are available. To access them you will need to specify the path where these packages are held. To identify the base group of packages, we can use the `libPaths()` function:
@@ -229,9 +235,10 @@ Aside from the base functions there are thousands of custom fuctions which are b
 .libPaths()
 ```
 
-```
-[1] "/opt/shared/R/4.0.0/lib64/R/library"
-```
+!!! info ""
+    ```
+    [1] "/opt/shared/R/4.0.0/lib64/R/library"
+    ```
 
 This is the base R library for OnDemand and it is rather limited. We will pull in a more complete library by pointing to it:
 
@@ -240,9 +247,10 @@ This is the base R library for OnDemand and it is rather limited. We will pull i
 .libPaths()
 ```
 
-```
-[1] "/cluster/tufts/hpc/tools/R/4.0.0"    "/opt/shared/R/4.0.0/lib64/R/library"
-```
+!!! info ""
+    ```
+    [1] "/cluster/tufts/hpc/tools/R/4.0.0"    "/opt/shared/R/4.0.0/lib64/R/library"
+    ```
 
 Now you'll note we are first pointing to the `/cluster/tufts/hpc/tools/R/4.0.0` library first for packages! You'll can see what packagews are available in the`Packages` window:
 
