@@ -74,7 +74,6 @@ nav:
             - "Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
             - "R Basics": basic/intro-to-r/basics.md
             - "Data Structures": basic/intro-to-r/data-structures.md
-            - "Functions & Flow": basic/intro-to-r/functions-flow.md
             - "Inspecting/Manipulating Data": basic/intro-to-r/inspecting-manipulating-data.md
             - "Visualization": basic/intro-to-r/visualization.md
     - Intro To 16S Metabarcoding:
