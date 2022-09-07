@@ -1,3 +1,3 @@
-# Tufts Tutorials
+# Tufts Workshops
 
-A Collection of Tufts Research Technology Tutorials 
+A Collection of Tufts Research Technology Workshops
