@@ -46,4 +46,31 @@ To create different sized headers use:
 
 ![](images/r-heading.png)
 
+## Bold/Italics
+
+We can write bold/italics with:
+
+```
+**this is bold**
+*this is italics*
+```
+
+**this is bold**
+*this is italics*
+
+## Hyperlinks/Images
+
+To create a hyperlink you can use:
+
+```
+[GitHub](https://github.com)
+```
+
+[GitHub](https://github.com)
+
+To insert images:
+
+![](https://unsplash.com/photos/T-0EW-SEbsE)
+
+
 ## Markdown Report 
