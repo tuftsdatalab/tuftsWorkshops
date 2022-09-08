@@ -70,6 +70,10 @@ To create a hyperlink you can use:
 
 To insert images:
 
+```
+![](https://cdn.cyberduck.io/img/cyberduck-icon-384.png)
+```
+
 ![](https://cdn.cyberduck.io/img/cyberduck-icon-384.png)
 
 ## Markdown Report 
