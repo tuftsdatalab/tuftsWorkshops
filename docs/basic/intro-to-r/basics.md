@@ -49,19 +49,17 @@ Let's look at some examples:
 10 * 3^3
 ```
 
-!!! info ""
-    ```
-    [1] 270
-    ```
+```
+[1] 270
+```
 
 ```R
 (400 / 10) * (4e2) # 4e2 is the same as 4^2
 ```
 
-!!! info ""
-    ```
-    [1] 16000
-    ```
+```
+[1] 16000
+```
 
 You'll notice that in the last equation we added words after a `#` and the equation still ran. This is what is known as a comment, where everything after the `#` is not registered as R code. Commenting is immensely valuable for giving your code context so that you and whoever else reads it knows the purpose of a given chunk of code.
 
@@ -71,10 +69,9 @@ Additionally there are functions built in R to perform mathematical calculations
 abs(10) # absolute value
 ```
 
-!!! info ""
-    ```
-    [1] 10
-    ```
+```
+[1] 10
+```
 
 ??? note "More Examples"
     
@@ -82,19 +79,17 @@ abs(10) # absolute value
     sqrt(25) # square root
     ```
 
-    !!! info ""
-        ```
-        [1] 5
-        ```
+    ```
+    [1] 5
+    ```
 
     ```R
     log(10) # natural logarithm
     ```
     
-    !!! info ""
-        ```
-        [1] 2.302585
-        ```
+    ```
+    [1] 2.302585
+    ```
 
     ```
     [1] 2.302585
@@ -103,10 +98,10 @@ abs(10) # absolute value
     ```R
     log10(10) # log base 10
     ```
-    !!! info ""
-        ```
-        [1] 1
-        ```
+
+    ```
+    [1] 1
+    ```
 ---
 
 ## Comparisons
@@ -124,29 +119,29 @@ R can also be used to make comparisons. Here we note the operators used to do so
 2 == 2
 ```
 
-!!! info ""
-    ```
-    [1] TRUE
-    ```
+
+```
+[1] TRUE
+```
 
 ??? note "More Examples"
   
     ```R
     2 != 2
     ```
-    !!! info ""
-        ```
-        [1] FALSE
-        ```
+
+    ```
+    [1] FALSE
+    ```
         
     ```R
     3 <= 10
     ```
     
-    !!! info ""
-        ```
-        [1] TRUE
-        ```
+
+    ```
+    [1] TRUE
+    ```
 
 
 !!! note
@@ -163,20 +158,19 @@ x <- 35 # assigning a value of 35
 x
 ```
 
-!!! info ""
-    ```
-    [1] 35
-    ```
+
+```
+[1] 35
+```
     
 ```R
 x <- x + 5 # changing value to 40
 x
 ```
 
-!!! info ""
-    ```
-    [1] 40
-    ```
+```
+[1] 40
+```
     
 You'll notice that we initially assigned `x` to a value of `35` and then updated value to `40`. This is important to keep in mind because the last value assigned to `x` will be kept. Variables can I have a combination lowercase letters, uppercase letters, underscores and periods:
 
@@ -193,13 +187,12 @@ even_bigger_value
 biggest.value
 ```
 
-!!! info ""
-    ```
-    [1] 40
-    [1] 45
-    [1] 50
-    [1] 55
-    ```
+```
+[1] 40
+[1] 45
+[1] 50
+[1] 55
+```
 
 !!! note
     Take note that the spelling needs to be consistent to call the variable correctly.
@@ -210,10 +203,10 @@ We can also assign a series of values in a specific order to a variable to creat
 someVector <- 5:10
 someVector
 ```
-!!! info ""
-    ```
-    [1]  5  6  7  8  9 10
-    ```
+
+```
+[1]  5  6  7  8  9 10
+```
 
 ---
 
@@ -243,10 +236,9 @@ Aside from the base functions there are thousands of custom fuctions which are b
 .libPaths()
 ```
 
-!!! info ""
-    ```
-    [1] "/opt/shared/R/4.0.0/lib64/R/library"
-    ```
+```
+[1] "/opt/shared/R/4.0.0/lib64/R/library"
+```
 
 This is the base R library for OnDemand and it is rather limited. We will pull in a more complete library by pointing to it:
 
@@ -255,10 +247,9 @@ This is the base R library for OnDemand and it is rather limited. We will pull i
 .libPaths()
 ```
 
-!!! info ""
-    ```
-    [1] "/cluster/tufts/hpc/tools/R/4.0.0"    "/opt/shared/R/4.0.0/lib64/R/library"
-    ```
+```
+[1] "/cluster/tufts/hpc/tools/R/4.0.0"    "/opt/shared/R/4.0.0/lib64/R/library"
+```
 
 Now you'll note we are first pointing to the `/cluster/tufts/hpc/tools/R/4.0.0` library first for packages! You'll can see what packagews are available in the`Packages` window:
 
