@@ -93,18 +93,17 @@ To confirm we have created our folder, use the following commands and make sure 
 ls
 ```
 
-!!! info ""
-    ```
-    data scripts results
-    ```
+```
+data scripts results
+```
+
 ```
 ls data
 ```
 
-!!! info ""
-    ```
-    test.csv metadata.tsv test.xlsx
-    ```
+```
+test.csv metadata.tsv test.xlsx
+```
     
 ---
 
