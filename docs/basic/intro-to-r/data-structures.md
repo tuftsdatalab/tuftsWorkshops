@@ -10,6 +10,13 @@ So far we have only dealt with numeric values. However, we are not limited to ju
 * ```logical``` - These are boolean values so ```TRUE```/```T``` or ```FALSE```/```F```.
 * ```complex``` - complex number such as ```1+6i```
 
+??? question "What data type do you think count data would be?"
+    - numeric
+    - character
+    - integer
+    - logical
+    - complex
+
 ## Data Structures
 
 So we have all this lovely data to play with and in R we typically organize in a few ways:
