@@ -77,3 +77,11 @@ To insert images:
 ![](https://cdn.cyberduck.io/img/cyberduck-icon-384.png)
 
 ## Markdown Report 
+
+The format of the markdown report is as follows:
+
+```
+```{r load_data}
+gapminder <- read.csv("~/Desktop/gapminder.csv")
+```
+```
