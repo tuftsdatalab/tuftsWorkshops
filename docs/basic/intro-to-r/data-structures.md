@@ -72,7 +72,11 @@ matrix(data=1:9,nrow = 3,ncol=3)
 [3,]    3    6    9
 ```
 
-Here we take a vector and specify how many columns and how many rows we'd like. 
+Here we take a vector and specify how many columns and how many rows we'd like. You'll also note that we have multiple arguments in our function:
+
+- `data` : for our input data
+- `nrow` : number of rows
+- `ncol` : number of columns
 
 ### Data Frames
 
@@ -93,6 +97,8 @@ integer=c(1L,2L,3L)
 3     future       3    TRUE       3
 ```
 
+!!! note 
+    The inputs here are not arguments specific to the `data.frame()` function. Instead, we are adding columns and the name before the `=` sign is our column name
 
 ### Lists
 
