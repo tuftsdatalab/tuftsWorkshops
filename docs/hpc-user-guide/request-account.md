@@ -1,21 +1,27 @@
-## Requirements
+# Cluster Account Request
 
-- You must complete an online account request form and be approved to use the Tufts Research Cluster.
-- Account requests require a valid Tufts Username and Tufts Password
-- Guest and student accounts require faculty or researcher sponsorship
+**[https://it.tufts.edu/high-performance-computing](https://it.tufts.edu/high-performance-computing)**
 
-## Get Started
+![](images/rthpcpage.png)
 
-To request a Research Computing Cluster account:
+### Cluster Storage Request
 
-- Go to the [Research Computing Cluster Account Request Form](http://research.uit.tufts.edu/) and select the Research Computing Cluster link.
-- Log in with your Tufts Username and Tufts Password.
-- The form will auto-fill as much of your user information as possible. Double-check to make sure it’s correct, selecting the down arrow to adjust the affiliation information if it’s incorrect.
-- Remove the example text in the Usage Information box and briefly describe your planned use of the Cluster.
-- In the Type of Account field, select the Cluster. 
-- When finished, click, Submit Request.
+* __Home Directory__
 
-## Help and Use Cases
+Your Home Directory (10GB, fixed) should be `/cluster/home/your_utln`
 
-- [Research Cluster FAQ](https://wikis.uit.tufts.edu/confluence/display/TuftsUITResearchComputing/High+Performance+Compute+Cluster)
-- [See how some of your peers are making use of the Research Cluster and its resources.](https://wikis.uit.tufts.edu/confluence/display/TuftsUITResearchComputing/Cluster+Research+use+cases)
+* __Reserach Project Storage__
+
+**Cluster Storage Request** [https://it.tufts.edu/research-technology/](https://it.tufts.edu/high-performance-computing)
+
+Your research projet storage (from 50GB and up) path should be `/cluster/tufts/yourlabname/`, and each member of the lab group has a dedicated directory `/cluster/tufts/yourlabname/your_utln`
+
+To see your **research project storage quota** by running the following command from **any node on the new cluster Pax**:
+
+`$ df -h /cluster/tufts/yourlabname ` 
+
+**NOTE:** Accessing your research project storage space for the __first time__, please make sure you type out the __FULL PATH__ to the directory.
+
+If your group has existing HPC research project storage space set up, please use the same link to request access. 
+
+---
