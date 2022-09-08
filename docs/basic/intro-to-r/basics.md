@@ -264,4 +264,14 @@ library(ggplot2)
 !!! info
      If you need a package installed in this shared library, reach out to TTS Reasarch Technology, at tts-research@tufts.edu
      
-     
+## Getting Help
+
+Now when we use functions we may have questions about what we can pass into functions. To find out more about a function use `?` in front of the function in question. For instance let's take for example the `abs()` function:
+
+```R
+?abs
+```
+
+You should see the following output saying the input `x` should be a numeric vectory or array:
+
+![](images/r-help.png)
