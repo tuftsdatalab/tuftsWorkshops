@@ -93,7 +93,7 @@ ggplot(data = meta, mapping = aes(x = AntibioticUsage, y = OtuCount,fill= Antibi
     x = "Antibiotic Usage",      # x axis title
     y = "OTU Count",             # y axis title
     title = "Figure 1",          # main title of figure
-    color = "Antibiotic Usage"   # title of legend
+    fill = "Antibiotic Usage"   # title of legend
   )
 ```
 
