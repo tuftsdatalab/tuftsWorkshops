@@ -21,12 +21,6 @@ library(openxlsx)
 read.xlsx()
 ```
 
-We will now practice inspecting data frames that we will copy over from a shared location. In the `Terminal` tab enter the following command:
-
-```bash
-cp /cluster/tufts/bio/tools/training/intro-to-r/data/* data/
-```
-
 ### read.csv()
 
 When importing `.csv` files you'll need to specify the path to where you're file is located. So if your `.csv` file is in `data/test.csv`, you can download it like so:
