@@ -61,7 +61,7 @@ library(openxlsx)
 read.xlsx("data/test.xlsx",sheet=1,startRow = 1,colNames = TRUE,rowNames = FALSE)
 ```
 
-So here we are pulling: the document "/Documents/test.xlsx", the second sheet, starting from the fifth row, specifying we do have column names, specifying we do not have row names. 
+So here we are pulling: the document `/data/test.xlsx`, the second sheet, starting from the fifth row, specifying we do have column names, specifying we do not have row names. 
 
 ## Inspecting Data
 
