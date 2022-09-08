@@ -52,23 +52,25 @@ extra_javascript:
 nav:
     - About : index.md
     - Intro to HPC/Slurm For Life Sciences: 
-        - Introduction To The Cluster:
-            - "What Is The Cluster?": hpc-user-guide/what-is-the-cluster.md
-            - "Request an Account": hpc-user-guide/request-account.md
-            - "Navigate To The Cluster": hpc-user-guide/navigate-to-cluster.md
+        - Tufts HPC Cluster Access:
+            - "Request an Accouht": hpc-user-guide/request-account.md
+            - "Login": hpc-user-guide/login.md
             - "File Transfer": hpc-user-guide/file-transfer.md
-        - Cluster Resources:
+        - Tufts HPC Cluster Resource:
             - "HPC Storage": hpc-user-guide/hpc-storage.md
             - "Compute Resources": hpc-user-guide/compute-resources.md
-            - "Software On The Cluster": hpc-user-guide/software-cluster.md
-        - Introduction To SLURM:
+            - "Software on the Cluster": hpc-user-guide/software-cluster.md
+        - SLURM/Linux:
             - "Interactive Session": hpc-user-guide/interactive-session.md
-            - "Submitting A Batch Job": hpc-user-guide/batch-job.md
-            - "Checking Job Status": hpc-user-guide/job-status.md
-        - Introduction To Linux:
-            - "Interactive Session": hpc-user-guide/interactive-session.md
-            - "Submitting A Batch Job": hpc-user-guide/batch-job.md
-            - "Checking Job Status": hpc-user-guide/job-status.md
+            - "Intro To Linux": basic/intro-to-unix/intro-to-unix.md
+            - "Starting with Shell": basic/intro-to-unix/start-w-shell.md
+            - "Bash Parameters": basic/intro-to-unix/bash-parameters.md
+            - "Shell Navigation": basic/intro-to-unix/shell-navigation.md
+            - "Creating & Manipulating Files": basic/intro-to-unix/create-manipulate-files.md
+            - "Going Home": basic/intro-to-unix/going-home.md
+            - "Running an Interactive Session": basic/intro-to-unix/running-interactive.md
+            - "Example with BLAST": basic/intro-to-unix/blast-example.md
+            - "BLAST Batch Script": basic/intro-to-unix/blast-batch.md
     - Intro to RStudio For Life Sciences:
         - Intro To R: 
             - "Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
