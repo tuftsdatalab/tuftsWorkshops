@@ -78,12 +78,77 @@ To insert images:
 
 ![](https://cdn.cyberduck.io/img/cyberduck-icon-384.png)
 
+## Code
+
+We can insert code and the plots that the code creates with:
+
+````
+```{r load_data,eval=FALSE}
+plot(pressure)
+```
+````
+
+Here we add an option, `echo=FALSE` to indicate we don't want to show the code itself, just the result. There are other options as well:
+
+- `results = "hide"` to hide any results
+- `eval = FALSE` to show and not evaluate code
+- `warning = FALSE` to hide warnings
+- `message = FALSE` to hide messages
+- `fig.height` or `fig.width` to modify plot dimensions, in inches
+
+!!! tip
+    If you'd like the same options repeated, you can set them in the begninning of the markdown document like so:
+    
+    ````
+    ```{r global_options, echo=FALSE}
+    knitr::opts_chunk$set(fig.path="Figs/", message=FALSE, warning=FALSE,
+                          echo=FALSE, results="hide", fig.width=11)
+    ```
+    ````
+
 ## Markdown Report 
 
-The format of the markdown report is as follows:
+Now that we know the lingo, let's set up an R markdown report for our results!
 
+````
+# Antibiotic OTU Report
+
+Here we have investigated whether or not antibiotic usage any effect on OTU count. We note previous research by [Raju et al. 2020](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-020-00893-y) that has noted that antiobiotic usage has an effect on microbial diversity.
+
+## Results
+
+```{r plot.otu,echo=FALSE}
+library(ggplot2)
+meta <- read.table("metadata.tsv",sep="\t",stringsAsFactors=FALSE)
+ggplot(data = meta, mapping = aes(x = AntibioticUsage, y = OtuCount,fill= AntibioticUsage)) +
+  geom_boxplot()+
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45,hjust = 1)) +
+  labs(
+    x = "Antibiotic Usage",      # x axis title
+    y = "OTU Count",             # y axis title
+    title = "Figure 1",          # main title of figure
+    fill = "Antibiotic Usage"   # title of legend
+  )
 ```
-```{r load_data}
-gapminder <- read.csv("~/Desktop/gapminder.csv")
-```
-```
+
+Here we note:
+
+- Those samples with Streptomycin usage have much lower OTU counts
+- Those samples without Streptomycin usage have much higher OTU counts
+
+## References
+
+1. Raju, S.C., Viljakainen, H., Figueiredo, R.A.O. et al. Antimicrobial drug use in the first decade of life influences saliva microbiota diversity and composition. Microbiome 8, 121 (2020). https://doi.org/10.1186/s40168-020-00893-y
+2. https://rmarkdown.rstudio.com/authoring_quick_tour.html
+
+````
+
+We can "knit" our results into a report by hitting the `knit` button at the top of the script window. You should then see a an html file of your results!
+
+![](images/r-markdown-report.png)
+
+## References
+
+- [R Markdown](https://rmarkdown.rstudio.com/authoring_quick_tour.html)
+- [Intro to R and RStudio for Genomics](https://datacarpentry.org/genomics-r-intro/)
