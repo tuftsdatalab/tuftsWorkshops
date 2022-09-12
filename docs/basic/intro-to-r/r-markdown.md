@@ -144,9 +144,11 @@ Here we note:
 
 ````
 
-We can "knit" our results into a report by hitting the `knit` button at the top of the script window. You should then see a an html file of your results!
+We can "knit" our results into a report by hitting the `knit` button at the top of the script window. You should then see a an html file of your results:
 
-![](images/r-markdown-report.png)
+!!! abstract "R Markdown Report"
+
+    ![](images/r-markdown-report.png)
 
 ## References
 
