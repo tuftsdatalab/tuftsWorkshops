@@ -156,3 +156,6 @@ We can "knit" our results into a report by hitting the `knit` button at the top 
 
 - [R Markdown](https://rmarkdown.rstudio.com/authoring_quick_tour.html)
 - [Intro to R and RStudio for Genomics](https://datacarpentry.org/genomics-r-intro/)
+- [R for Reproducible Scientific rAnalysis](https://swcarpentry.github.io/r-novice-gapminder/)
+- [hbctraining - Introduction to R](https://hbctraining.github.io/Intro-to-R-flipped/schedules/links-to-lessons.html)
+
