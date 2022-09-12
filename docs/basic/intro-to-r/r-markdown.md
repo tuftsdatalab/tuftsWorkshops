@@ -150,6 +150,8 @@ We can "knit" our results into a report by hitting the `knit` button at the top 
 
     ![](images/r-markdown-report.png)
 
+!!! success "End of Intro To RStudio For Life Sciences! Thanks for Attending!"
+
 ## References
 
 - [R Markdown](https://rmarkdown.rstudio.com/authoring_quick_tour.html)
