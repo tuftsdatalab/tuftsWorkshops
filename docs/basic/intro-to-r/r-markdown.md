@@ -4,6 +4,8 @@ When we analyze data it is often nice to produce reports describing the process 
 So far we have been working with R scripts to run code. R markdown combines R code with markdown language to produce a report that 
 combines code, text and figures.
 
+![](images/markdown-example.png)
+
 ## Markdown language
 
 Markdown language is a way of writing text that gets rendered a certain way when the html file is created. This way we can avoid writing html code directly!
