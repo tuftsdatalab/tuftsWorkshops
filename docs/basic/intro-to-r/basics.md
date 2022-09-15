@@ -172,7 +172,7 @@ x
 [1] 40
 ```
     
-You'll notice that we initially assigned `x` to a value of `35` and then updated value to `40`. This is important to keep in mind because the last value assigned to `x` will be kept. Variables can I have a combination lowercase letters, uppercase letters, underscores and periods:
+You'll notice that we initially assigned `x` to a value of `35` and then updated value to `40`. This is important to keep in mind because the last value assigned to `x` will be kept. Variables can have a combination lowercase letters, uppercase letters, underscores and periods:
 
 ```R
 value <- 40
@@ -196,7 +196,17 @@ biggest.value
 
 !!! note
     Take note that the spelling needs to be consistent to call the variable correctly.
-    
+
+These variable names themselves can also be added together like numbers:
+
+```R
+value+biggerValue+even_bigger_value+biggest.value
+```
+
+```
+[1] 190
+```
+
 We can also assign a series of values in a specific order to a variable to create what is called a **vector**:
 
 ```R
@@ -243,8 +253,7 @@ Aside from the base functions there are thousands of custom fuctions which are b
 This is the base R library for OnDemand and it is rather limited. We will pull in a more complete library by pointing to it:
 
 ```R
-.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0'))
-.libPaths()
+.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',.libPaths()))
 ```
 
 ```
@@ -266,7 +275,7 @@ library(ggplot2)
      
 ## Getting Help
 
-Now when we use functions we may have questions about what we can pass into functions. To find out more about a function use `?` in front of the function in question. For instance let's take for example the `abs()` function:
+Now when we use functions we may have questions about what we can pass into functions. To find out more about a function use `?` in front of the function in question. For instance let's take for example the `aes()` function:
 
 ```R
 ?abs
