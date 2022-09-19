@@ -44,7 +44,7 @@ We begin by specifying the path to our data, sorting by forward and reverse stra
 
 ```R
 ## path to files
-path <- "/cluster/tufts/bio/tools/tool_examples/microbiome16S/subsampled/"
+path <- "./data/fastq/"
 
 ## sort our files by forward and reverse strands
 ## our data has the pattern "_pass_1.fastq.gz" 
