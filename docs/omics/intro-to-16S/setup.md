@@ -60,8 +60,7 @@ Now to get started we will need to setup a script:
 In the R script, start by loading the libraries we need:
 
 ```R
-#LIB='/cluster/tufts/bio/tools/R_libs/4.0.0'
-LIB='/cluster/home/jlaird01/R/x86_64-pc-linux-gnu-library/4.0/'
+LIB='/cluster/tufts/hpc/tools/R/4.0.0'
 .libPaths(c(LIB))
 library(dada2)
 library(phyloseq)
