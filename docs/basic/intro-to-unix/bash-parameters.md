@@ -1,4 +1,4 @@
-## Parameters for Bash Commands
+## Setting Parameters for Bash Commands
 --------------------------------
 
 Many bash commands have special **parameters**, sometimes referred to as **flags** that open up a lot more possibilities.
