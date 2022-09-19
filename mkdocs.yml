@@ -1,5 +1,5 @@
 site_name: Tufts Research Technology Bioinformatics Workshops
-repo_url: https://github.com/BioNomad/tuftsWorkshops
+repo_url: https://github.com/tuftsdatalab/tuftsWorkshops
 
 theme:
   name: material
