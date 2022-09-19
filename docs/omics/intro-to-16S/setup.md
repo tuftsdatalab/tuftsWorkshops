@@ -43,7 +43,7 @@ mkdir scripts
 We will copy over our sample data:
 
 ```bash
-cp -r /cluster/tufts/bio/tools/training/microbiome16S/subsampled/ ./data/
+cp -r /cluster/tufts/bio/tools/training/microbiome16S/subsampled/* ./data/
 ```
 ## Script Setup
 
