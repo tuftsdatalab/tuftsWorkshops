@@ -38,12 +38,17 @@ In the `Terminal` tab we will set up our project space:
 mkdir data
 mkdir results
 mkdir scripts
+cd data
+mkdir fastq
+mkdir metaData
+cd ..
 ```
 
 We will copy over our sample data:
 
 ```bash
-cp -r /cluster/tufts/bio/tools/training/microbiome16S/subsampled/* ./data/
+cp -r /cluster/tufts/bio/tools/training/microbiome16S/subsampled/* ./data/fastq/
+cp /cluster/tufts/bio/tools/training/microbiome16S/metaData.txt ./data/metaData/
 ```
 ## Script Setup
 
