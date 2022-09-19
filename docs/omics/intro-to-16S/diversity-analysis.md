@@ -5,7 +5,7 @@ Once we have quantified our community, we can analyze its composition. Two main 
 
 ## upload meta data for study
 ## use this metadata to create the phyloseq object
-meta <- read.csv("/cluster/tufts/bio/tools/tool_examples/microbiome16S/metaData.txt")
+meta <- read.csv("./data/metaData/metaData.txt")
 rownames(meta) <- meta$Run
 ps <- phyloseq(otu_table(seqtab.nochim, taxa_are_rows=FALSE), 
                sample_data(meta), 
