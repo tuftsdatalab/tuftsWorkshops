@@ -8,7 +8,7 @@
 - The fragments are sequenced to produce reads
 - Reads can be single-end (one strand sequenced) or paired-end (both strands sequenced) 
 
-![](images/sequencing1.png)
+![](images/sequencing2.png)
 
 ## Sequencing Read Data
 
