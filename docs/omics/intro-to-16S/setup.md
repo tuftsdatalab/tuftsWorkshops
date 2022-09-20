@@ -73,4 +73,4 @@ library(tidyverse)
 ```
 
 ??? question "Check that your screen looks like this:"
-    ![](images/project-setup-screen.png)
+    ![](images/project-setup-screen1.png)
