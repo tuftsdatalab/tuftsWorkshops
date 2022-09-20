@@ -34,6 +34,9 @@ We are going to create a new project to begin:
 
 In the `Terminal` tab we will set up our project space:
 
+??? tip "Where Do I find the Terminal Tab?"
+    ![](images/r-studio-terminal-tab.png)
+    
 ```bash
 mkdir data
 mkdir results
