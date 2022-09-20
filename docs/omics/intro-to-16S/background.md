@@ -1,12 +1,5 @@
 # Introduction to the Microbiome
 
-!!! example "Prerequisites"
-    - [Request an account](http://research.uit.tufts.edu/) on the Tufts HPC Cluster
-    - Connect to the [VPN](https://access.tufts.edu/vpn)
-    - Please be sure to have followed the instructions on the [setup page](../setup.md)
-
----
-
 - The microbiome are the set of genes belonging to the microbiota in a specimen. The term microbiome can also refer to the microbes themselves
 - Disturbances in the microbiome are linked to obesity, inflammatory bowel disease, alcoholic and nonalcoholic fatty liver disease, and hepatocellular carcinoma
 
