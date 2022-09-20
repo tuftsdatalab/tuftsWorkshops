@@ -72,5 +72,11 @@ library(DESeq2)
 library(tidyverse)
 ```
 
+Additionally, let's use the `setwd()` function to make sure that we set our directory to this project:
+
+```R
+setwd("~/intro-to-16S/")
+```
+
 ??? question "Check that your screen looks like this:"
     ![](images/project-setup-screen1.png)
