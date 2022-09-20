@@ -8,9 +8,7 @@
 - The fragments are sequenced to produce reads
 - Reads can be single-end (one strand sequenced) or paired-end (both strands sequenced) 
 
-<figure markdown>
-  ![](images/sequencing.png){ width="1000" }
-</figure>
+![](images/sequencing1.png)
 
 ## Sequencing Read Data
 
@@ -40,7 +38,9 @@
 ## DADA2 Quality Control
 
 !!! warning
-    DADA2 assumes that your read data has had any adapters removed and that your data is demultiplexed!
+    DADA2 assumes that your read data has had any adapters removed and that your data is demultiplexed! 
+    Check out [sabre](https://github.com/najoshi/sabre) to demultiplex your samples and [Cutadapt](https://cutadapt.readthedocs.io/en/stable/)
+    to remove adapters
    
 We begin by specifying the path to our data, sorting by forward and reverse strands, and grabbing our sample names:
 
