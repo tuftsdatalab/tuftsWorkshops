@@ -78,6 +78,15 @@ Here we take a vector and specify how many columns and how many rows we'd like. 
 - `nrow` : number of rows
 - `ncol` : number of columns
 
+!!! note
+    While it is true that vectors need to be the same length, they can have different numbers of data points. So for instance:
+    
+    ```R
+    vec1 <- c(1,2,3)
+    vec2 <- c(7,NA,4)
+    ```
+    These vectors are the same length, BUT `vec1` has 3 data points and `vec2` has 2 data points with an `NA` is a filler.
+
 ### Data Frames
 
 Data frames are also collections of vectors of the **same length**. However, they do not need to be the same data type. Here we create a data.frame with the `data.frame()` function:
