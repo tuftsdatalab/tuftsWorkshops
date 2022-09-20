@@ -9,7 +9,7 @@
 - Reads can be single-end (one strand sequenced) or paired-end (both strands sequenced) 
 
 <figure markdown>
-  ![](images/sequencing.png){ width="500" }
+  ![](images/sequencing.png){ width="1000" }
 </figure>
 
 ## Sequencing Read Data
