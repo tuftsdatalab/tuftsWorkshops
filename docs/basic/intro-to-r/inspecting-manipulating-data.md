@@ -210,6 +210,11 @@ rownames(meta)
 [1] "1" "2" "3" "4" "5" "6" "7" "8" "9"
 ```
 
+??? question "Why should we inspect data frames?"
+    Inspecting date of frames is incredibly useful when dealing with larger data frames and you can't necessarily investigate every column.
+    Additionally, it is also helpful to know the data type of each column to ensure your data was imported correctly 
+    (i.e. Ensuring numeric data wasn't imported as character data).
+
 Now that we know how to import our data and inspect it, we can go ahead and manipulate it!
 
 ## Manipulating Data
