@@ -63,8 +63,7 @@ Now to get started we will need to setup a script:
 In the R script, start by loading the libraries we need:
 
 ```R
-LIB='/cluster/tufts/hpc/tools/R/4.0.0'
-.libPaths(c(LIB))
+.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',.libPaths()))
 library(dada2)
 library(phyloseq)
 library(ggplot2)
@@ -79,4 +78,4 @@ setwd("~/intro-to-16S/")
 ```
 
 ??? question "Check that your screen looks like this:"
-    ![](images/project-setup-screen1.png)
+    ![](images/project-setup-screen2.png)
