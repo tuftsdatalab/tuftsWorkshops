@@ -72,4 +72,5 @@ library(DESeq2)
 library(tidyverse)
 ```
 
-
+??? question "Check that your screen looks like this:"
+    ![](images/project-setup-screen.png)
