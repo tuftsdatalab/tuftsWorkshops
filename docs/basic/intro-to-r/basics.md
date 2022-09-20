@@ -278,9 +278,17 @@ library(ggplot2)
 Now when we use functions we may have questions about what we can pass into functions. To find out more about a function use `?` in front of the function in question. For instance let's take for example the `aes()` function:
 
 ```R
-?abs
+?aes
 ```
 
-You should see the following output saying the input `x` should be a numeric vectory or array:
+You should see the following output describing the `aes()` function in any currently loaded packages:
 
-![](images/r-help.png)
+![](images/aes-one-question.png)
+
+Now if you wanted to search all packages for a function with the words `aes` in the name of the function you could use:
+
+```R
+??aes
+```
+![](images/aes-two-question.png)
+
