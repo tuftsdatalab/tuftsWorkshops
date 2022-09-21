@@ -7,7 +7,10 @@ sequence j over L aligned nucleotides with a quality score q?
 
 - This p-value assess if sequence i is too abundant for it to be explained by errors in amplicon sequencing
 
-![](images/error-model.png)
+<figure markdown>
+  ![](images/error-model.png){ width="300" }
+</figure>
+
 
 Here we will leverage the parametric model to learn error rates and then plot them:
 
