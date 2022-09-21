@@ -3,7 +3,10 @@
 - For paired-end data there is a good deal of overlap between the forward and reverse read
 - To resolve this redundancy, these reads are collapsed into contigs
 
-![](images/merging.png)
+<figure markdown>
+  ![](images/merging.png){ width="500" }
+</figure>
+
 
 Let's do this with code now!
 
@@ -40,7 +43,9 @@ seqtab <- makeSequenceTable(mergers)
 - During PCR it is possible for two unrelated templates to form a non-biological hybrid sequence
 - DADA2 finds these chimeras by aligning each sequence to more abundant sequences and seeing if there are any low abundant sequences that can be created by  mixing the left and and right sides of the more abundant sequences
 
-![](images/chimera.png)
+<figure markdown>
+  ![](images/chimera.png){ width="500" }
+</figure>
 
 Now in code:
 
@@ -53,6 +58,23 @@ Now in code:
 
 seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", verbose=TRUE)
 ```
+
+Now let's check if any chimeric sequences are removed:
+
+```R
+> dim(seqtab)
+> dim(seqtab.nochim)
+```
+
+```
+> dim(seqtab)
+[1]  8 27
+> dim(seqtab.nochim)
+[1]  8 27
+```
+
+!!! info 
+    We can see here no chimeric sequences were removed because our before and after sequence count matrices have the same dimensions.
 
 We will also take a moment to do some final QC:
 
@@ -85,6 +107,10 @@ SRR5690820  1000      911       769       683    349     349
 SRR5690821  1000      925       811       700    349     349
 SRR5690822  1000      940       802       669    300     300
 ```
+
+!!! info
+    Here we see that we start with 1000 sequences per sample, end up with around 700 after filtering, around 800 after denoising to 
+    find unique sequences, and around 300-500 sequences after merging sequences and removing chimeric sequences.
 
 ## Assigning Taxonomy
 
