@@ -110,4 +110,5 @@ So how did our results stack up to our graph? Well, the wild type seem to have a
 14. [Abundance-based dissimilarity metrics](https://www.dataanalytics.org.uk/abundance-based-dissimilarity-metrics/)
 15. [Differential expression analysis with DESeq2](https://hbctraining.github.io/DGE_workshop/lessons/04_DGE_DESeq2_analysis.html)
 16. [Introduction to RNA-Seq with Galaxy](https://tuftsdatalab.github.io/Research_Technology_Bioinformatics/workshops/IntroToRNAseqGalaxy/slides/galaxyWorkshop_idgh1001_15Feb2022.pdf)
+17. [Evaluation of 16S rRNA Databases for Taxonomic Assignments Using a Mock Community](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6440677/)
 
