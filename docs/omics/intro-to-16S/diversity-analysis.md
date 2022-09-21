@@ -28,7 +28,7 @@ taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 - The ecological complexity of a single sample
 - We can use the Shannon or Simpson Diversity indices to measure this complexity per sample.
 
-!!! example "Optional: How to calculate these diversity metrics"
+??? example "Optional: How to calculate these diversity metrics"
     ![](images/shannon-simpson.png)
 
 - Here we note:
@@ -45,7 +45,8 @@ plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
   theme(axis.text.x = element_text(angle=65,hjust=1))
 ```
 
-![](alpha-plot.png)
+![](images/alpha-plot.png)
+
 
 ## Beta Diversity
 
