@@ -44,7 +44,7 @@ seqtab <- makeSequenceTable(mergers)
 - DADA2 finds these chimeras by aligning each sequence to more abundant sequences and seeing if there are any low abundant sequences that can be created by  mixing the left and and right sides of the more abundant sequences
 
 <figure markdown>
-  ![](images/chimera.png){ width="500" }
+  ![](images/chimera1.jpeg){ width="500" }
 </figure>
 
 Now in code:
