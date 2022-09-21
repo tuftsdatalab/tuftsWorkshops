@@ -25,7 +25,7 @@ Here we note that the wild type seem to have an abundance of Campylobacteria and
 
 Differential Abundance measures which taxa are differentially abundant between conditions. So how does it work:
 
-- DESeq2 Normalization:
+### DESeq2 Normalization:
 1. Geometric mean per ASV
 2. Divide rows by geometric mean
 3. Take the median of each sample
@@ -35,7 +35,7 @@ Differential Abundance measures which taxa are differentially abundant between c
   ![](images/deseq2-norm1.png){ width="800" }
 </figure>
 
-- DESeq2 Model
+### DESeq2 Model
 1. The normalized abundances of an ASV are plotted against two conditions
 2. The regression line that connects these data is used to determine the p-value for differential abundance
 
@@ -44,7 +44,7 @@ Differential Abundance measures which taxa are differentially abundant between c
 </figure>
 
 
-- DESeq2 P-Value
+### DESeq2 P-Value
 1. The Slope or 𝛽1 is used to calculate a Wald Test Statistic 𝑍
 2. This statistic is compared to a normal distribution to determine the probability of getting that statistic 
 
