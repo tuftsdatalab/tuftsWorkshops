@@ -31,19 +31,26 @@ Differential Abundance measures which taxa are differentially abundant between c
 3. Take the median of each sample
 4. Divide all ASV counts by that median
 
-![](images/deseq2-norm.png)
+<figure markdown>
+  ![](images/deseq2-norm.png){ width="800" }
+</figure>
 
 - DESeq2 Model
 1. The normalized abundances of an ASV are plotted against two conditions
 2. The regression line that connects these data is used to determine the p-value for differential abundance
 
-![](images/deseq2-model.png)
+<figure markdown>
+  ![](images/deseq2-model.png){ width="800" }
+</figure>
+
 
 - DESeq2 P-Value
 1. The Slope or 𝛽1 is used to calculate a Wald Test Statistic 𝑍
 2. This statistic is compared to a normal distribution to determine the probability of getting that statistic 
 
-![](images/deseq2-pvalue.png)
+<figure markdown>
+  ![](images/deseq2-pvalue.png){ width="800" }
+</figure>
 
 Now how do we do this in R?
 
