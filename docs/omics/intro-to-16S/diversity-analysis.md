@@ -47,6 +47,9 @@ plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
 
 ![](images/alpha-plot.png)
 
+!!! note
+    When running alpha and beta diversity plots you will notice some errors. This is due to the subsampling we needed to do on this data
+    to ensure multiple users could run this workshop at the same time.
 
 ## Beta Diversity
 
