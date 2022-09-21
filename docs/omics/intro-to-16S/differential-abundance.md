@@ -17,7 +17,12 @@ merged20 = merge(otu,
                  tax %>% select(Phylum),
                  by="row.names") %>%
   select(-Row.names) %>%
-  reshape2::melt()
+  reshape2::melt() %>%
+  merge(.,
+        data.frame(ps@sam_data) %>%
+          select(Run,Host),
+        by.x="variable",
+        by.y="Run")
 ggplot(merged20,aes(x=variable,y=value,fill=Phylum)) +
   geom_bar(stat='identity') +
   theme_bw()+
@@ -26,7 +31,8 @@ ggplot(merged20,aes(x=variable,y=value,fill=Phylum)) +
     x="",
     y="Abundance",
     title = "Barplot of Phylum Abundance"
-  )
+  )+
+  facet_wrap(Host ~ ., scales = "free_x")
 ```
 
 ![](images/present-phylum2.png)
