@@ -127,3 +127,12 @@ SRR5690822  1000      940       802       669    300     300
 
 taxa <- assignTaxonomy(seqtab.nochim, "/cluster/tufts/bio/data/metagenomes/silva/silva_nr99_v138.1_train_set.fa.gz")
 ```
+
+## Databases
+
+While we use the SILVA database here, there are other options databases:
+
+- [EzBioCloud](https://help.ezbiocloud.net/ezbiocloud-16s-database/)
+- [Greengenes](https://greengenes.secondgenome.com)
+
+[Park SC, Won S. 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6440677/) performed a benchmarking study assessing these three databases and found that Greengenes predicted fewer correct genera and that SILVA and EzBioCloud predicted roughly similar correct genera. However, SILVA had more false postitives. The authors note that this is probably due to the size of SILVA since it was roughly 4 times the size of EzBioCloud in 2018. 
