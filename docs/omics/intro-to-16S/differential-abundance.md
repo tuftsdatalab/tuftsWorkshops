@@ -32,7 +32,7 @@ Differential Abundance measures which taxa are differentially abundant between c
 4. Divide all ASV counts by that median
 
 <figure markdown>
-  ![](images/deseq2-norm.png){ width="800" }
+  ![](images/deseq2-norm1.png){ width="800" }
 </figure>
 
 - DESeq2 Model
@@ -40,7 +40,7 @@ Differential Abundance measures which taxa are differentially abundant between c
 2. The regression line that connects these data is used to determine the p-value for differential abundance
 
 <figure markdown>
-  ![](images/deseq2-model.png){ width="800" }
+  ![](images/deseq2-model1.png){ width="800" }
 </figure>
 
 
@@ -49,7 +49,7 @@ Differential Abundance measures which taxa are differentially abundant between c
 2. This statistic is compared to a normal distribution to determine the probability of getting that statistic 
 
 <figure markdown>
-  ![](images/deseq2-pvalue.png){ width="800" }
+  ![](images/deseq2-pvalue1.png){ width="800" }
 </figure>
 
 Now how do we do this in R?
