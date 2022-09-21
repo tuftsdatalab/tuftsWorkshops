@@ -85,3 +85,22 @@ ggplot(sigtab , aes(x=Phylum, y=log2FoldChange, color=padj)) +
 ![](images/deseq2-res.png)
 
 So how did our results stack up to our graph? Well, the wild type seem to have an abundance of Campylobacteria and the C57BL/6NTac have an abundance of Bacteriodota. However, you'll note that Proteobacteria are severely downregulated in our C57BL/6NTac mice when they only show up in one sample in the wild-type mice. This is why it is useful to confirm that your DESeq2 results are not biased by outliers. It should also be mentioned that we are only dealing with 8 samples here to speed up the tutorial. However, small sample sizes can paint a misleading picture if you are not careful.
+
+## References
+1. [Galaxy Project - Metagenomics](https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.html)
+2. [Microbiome 101](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6391518/)
+3. [Current understanding of the human microbiome](https://www.nature.com/articles/nm.4517)
+4. [Amplicon and metagenomics overview](https://astrobiomike.github.io/misc/amplicon_and_metagen)
+5. [Variable regions of the 16S ribosomal RNA](https://www.nature.com/articles/nrmicro3330/figures/1)
+6. [A primer on microbial bioinformatics for nonbioinformaticians](https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(17)30709-7/fulltext)
+7. [usearch](https://www.drive5.com/usearch/manual/fastq_files.html)
+8. [Sample Multiplexing Overview](https://www.illumina.com/techniques/sequencing/ngs-library-prep/multiplexing.html)
+9. [DADA2: High resolution sample inference from Illumina amplicon data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4927377/)
+10. [Chimeric 16S rRNA sequence formation and detection in Sanger and 454-pyrosequenced PCR amplicons](https://genome.cshlp.org/content/21/3/494/F1.expansion.html)
+11. [DADA2 Pipeline Tutorial (1.16)](https://benjjneb.github.io/dada2/tutorial.html)
+12. [Statistics How To](https://www.statisticshowto.com/)
+13. [Hierarchical Clustering in Data Mining](https://www.geeksforgeeks.org/hierarchical-clustering-in-data-mining/)
+14. [Abundance-based dissimilarity metrics](https://www.dataanalytics.org.uk/abundance-based-dissimilarity-metrics/)
+15. [Differential expression analysis with DESeq2](https://hbctraining.github.io/DGE_workshop/lessons/04_DGE_DESeq2_analysis.html)
+16. [Introduction to RNA-Seq with Galaxy](https://tuftsdatalab.github.io/Research_Technology_Bioinformatics/workshops/IntroToRNAseqGalaxy/slides/galaxyWorkshop_idgh1001_15Feb2022.pdf)
+
