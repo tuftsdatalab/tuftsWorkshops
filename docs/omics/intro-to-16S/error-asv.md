@@ -21,6 +21,10 @@ plotErrors(errForward,nominalQ=TRUE)
 
 ![](images/error-plot1.png)
 
+!!! question "What can we glean from this plot?"
+    So the red line indicates our expected error rate. Essentially, as the quality score gets better so does our error rate. 
+    The black points/line our are actual error rates and we are looking for the trend of the black line to match the trend of the red line. 
+
 ## Inferring Amplicon Sequence Variants (ASVs)
 
 - So far, we have assigned p-values for each sequence in each sample
