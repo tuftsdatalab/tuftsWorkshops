@@ -11,13 +11,25 @@ Before we assess which phylum are differentially abundant, a bar plot can be a q
 top20 <- names(sort(taxa_sums(ps), decreasing=TRUE))[1:20]
 ps.top20 <- transform_sample_counts(ps, function(OTU) OTU/sum(OTU))
 ps.top20 <- prune_taxa(top20, ps.top20)
-plot_bar(ps.top20, x="Run", fill="Phylum") + 
-  facet_wrap(~Host, scales="free_x")+
+otu = data.frame(t(data.frame(ps.top20@otu_table)))
+tax = data.frame(ps.top20@tax_table) 
+merged20 = merge(otu,
+                 tax %>% select(Phylum),
+                 by="row.names") %>%
+  select(-Row.names) %>%
+  reshape2::melt()
+ggplot(merged20,aes(x=variable,y=value,fill=Phylum)) +
+  geom_bar(stat='identity') +
   theme_bw()+
-  theme(axis.text.x = element_text(angle = 65,hjust=1))
+  theme(axis.text.x = element_text(angle=45,hjust=1))+
+  labs(
+    x="",
+    y="Abundance",
+    title = "Barplot of Phylum Abundance"
+  )
 ```
 
-![](images/present-phylum.png)
+![](images/present-phylum1.png)
 
 Here we note that the wild type seem to have an abundance of Campylobacteria and the C57BL/6NTac have an abundance of Bacteriodota. Let's see if our DESeq2 results confirm this.
 
