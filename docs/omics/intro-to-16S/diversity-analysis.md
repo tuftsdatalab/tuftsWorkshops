@@ -26,9 +26,10 @@ taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 ## Alpha Diversity
 
 - The ecological complexity of a single sample
-- We can use the Shannon or Simpson Diversity indices to measure this complexity per sample:
+- We can use the Shannon or Simpson Diversity indices to measure this complexity per sample.
 
-![](images/shannon-simpson.png)
+!!! example "Optional: How to calculate these diversity metrics"
+    ![](images/shannon-simpson.png)
 
 - Here we note:
 
