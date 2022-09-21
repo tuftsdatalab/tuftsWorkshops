@@ -99,5 +99,5 @@ SRR5690822  1000      940       802       669    300     300
 ## set of sequences with known taxonomy information.
 ## here we use the silva database
 
-taxa <- assignTaxonomy(seqtab.nochim, "/cluster/tufts/bio/tools/training/microbiome16S/silva/silva_nr99_v138.1_train_set.fa.gz")
+taxa <- assignTaxonomy(seqtab.nochim, "/cluster/tufts/bio/data/metagenomes/silva/silva_nr99_v138.1_train_set.fa.gz")
 ```
