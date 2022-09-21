@@ -53,7 +53,8 @@ plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
 - The ecological complexity between samples
 - We can visualize how our samples group together by ordination – a dimension reduction technique to help visualize sample to sample distance. An ordination metric we can use is the Bray-Curtis distance:
 
-![](images/bray-curtis.png)
+??? example "Optional: How to calculate Bray-Curtis distance"
+    ![](images/bray-curtis.png)
 
 We can plot this in R code:
 
@@ -70,3 +71,6 @@ plot_ordination(ps.prop, ord.nmds.bray, color="Host", title="Bray NMDS")+
 
 Here we note that the wild type and C57BL/6NTac cluster together.
 
+??? question "Which mouse line do you expect to be more spread on the Bray-Curtis Distance plot?"
+    - Laboratory Mouse Line (C57BL/6NTac)
+    - Wild Type (Mus musculus domesticus)
