@@ -4,7 +4,7 @@
 - To resolve this redundancy, these reads are collapsed into contigs
 
 <figure markdown>
-  ![](images/merging.png){ width="500" }
+  ![](images/merging1.png){ width="500" }
 </figure>
 
 
