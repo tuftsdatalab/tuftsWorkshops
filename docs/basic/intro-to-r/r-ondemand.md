@@ -1,4 +1,4 @@
-# Introduction To RStudio OnDemand
+# Introduction To RStudio For Life Sciences
 
 !!! example "Prerequisites"
     - [Request an account](http://research.uit.tufts.edu/) on the Tufts HPC Cluster
