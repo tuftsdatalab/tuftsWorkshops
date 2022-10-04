@@ -3,7 +3,18 @@
 !!! example "Prerequisites"
     - [Request an account](http://research.uit.tufts.edu/) on the Tufts HPC Cluster
     - Connect to the [VPN](https://access.tufts.edu/vpn)
-    - Please be sure to have followed the instructions on the [setup page](../setup.md)
+
+---
+
+## Learning objectives
+
+Today we are going to learn about:
+
+- project organization
+- R packages and how to access them on the tufts HPC
+- working with variables and data frames
+- visualizing data
+- and finally writing a markdown report of our findings
 
 ---
 
@@ -73,38 +84,11 @@ You will notice that your RStudio console switches to this project directory. Wh
 
 ## File Organization
 
-Let's start by adding some directories to store the data and scripts we will use. In the `Terminal` tab enter the following commands:
+- You noticed now that you are inside your project folder
+- Let's start by creating some folders to you organize our files
+- In the files window click new folder and enter scripts
+- Let's do this again to create a data folder and a results folder
 
-```
-mkdir data
-mkdir scripts
-mkdir results
-```
-
-Now we will need some data to play with so let's copy some over:
-
-```
-cp /cluster/tufts/bio/tools/training/intro-to-r/data/* data/
-```
-
-To confirm we have created our folder, use the following commands and make sure you have the correct output:
-
-```
-ls
-```
-
-```
-data scripts results
-```
-
-```
-ls data
-```
-
-```
-test.csv metadata.tsv test.xlsx
-```
-    
 ---
 
 ## Data Principles
@@ -118,3 +102,32 @@ test.csv metadata.tsv test.xlsx
     Result files are good candidate files to cut if you are getting low on storage.
 
 ---
+
+## Getting Data
+
+- Now that we have set up our folders let's copy the data and scripts we will be using today. 
+- To do this we will use an R function called file.copy. 
+- A function takes some input and delivers an output. 
+- In this case we specify two inputs the location of our file and where we want to copy it to. 
+- The function's output is copying over this file. So let's try it copy over using the following commands:
+
+
+
+```{r data.copy,warning=F,message=F}
+file.copy(from="/cluster/tufts/bio/tools/training/intro-to-r/data/meta.tsv", to="./data/")
+file.copy(from="/cluster/tufts/bio/tools/training/intro-to-r/data/meta2.tsv", to="./data/")
+```
+
+So here you'll note we copied over the file metadata.tsv to the data folder. Let's copy over our script:
+
+```{r script.copy,warning=F,message=F}
+file.copy(from="/cluster/tufts/bio/tools/training/intro-to-r/scripts/intro-to-r.Rmd", to="./scripts")
+```
+
+Here we copy over our script intro-to-r to the scripts folder.
+
+---
+
+## Opening the Script
+
+Now let's start by opening our script. Go to scripts and then double click on intro-to-r.Rmd!
