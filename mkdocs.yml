@@ -72,13 +72,7 @@ nav:
             - "Example with BLAST": basic/intro-to-unix/blast-example.md
             - "BLAST Batch Script": basic/intro-to-unix/blast-batch.md
     - Intro to RStudio For Life Sciences:
-        - Intro To R: 
-            - "Introduction To R OnDemand": basic/intro-to-r/r-ondemand.md
-            - "R Basics": basic/intro-to-r/basics.md
-            - "Data Structures": basic/intro-to-r/data-structures.md
-            - "Inspecting/Manipulating Data": basic/intro-to-r/inspecting-manipulating-data.md
-            - "Visualization": basic/intro-to-r/visualization.md
-            - "R Markdown": basic/intro-to-r/r-markdown.md
+        - Intro to RStudio For Life Sciences: basic/intro-to-r/r-ondemand.md
     - Intro To 16S Metabarcoding:
         - "Background": omics/intro-to-16S/background.md
         - "Setup": omics/intro-to-16S/setup.md
