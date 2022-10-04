@@ -8,13 +8,13 @@
 
 ## Learning objectives
 
-Today we are going to learn about:
+!!! abstract "Today we are going to learn about"
 
-- project organization
-- R packages and how to access them on the tufts HPC
-- working with variables and data frames
-- visualizing data
-- and finally writing a markdown report of our findings
+    - project organization
+    - R packages and how to access them on the tufts HPC
+    - working with variables and data frames
+    - visualizing data
+    - and finally writing a markdown report of our findings
 
 ---
 
