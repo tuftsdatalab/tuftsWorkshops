@@ -3,6 +3,11 @@
 
 In this example, we'll repeat the blast command above but refine it by outputting a table which summarizes each blast hit on one line. 
 
+### Return to the Workshop Directory
+
+cd ~/Oct22Workshop
+
+
 First, let's add more sequences to our query file. This will extract the first 186 sequences.  
 
 
