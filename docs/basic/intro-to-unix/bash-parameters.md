@@ -6,6 +6,23 @@ Many bash commands have special **parameters**, sometimes referred to as **flags
 Let's start by going to your home directory (you choose the command)
 
 
+
+??? note "What if I don't have any files to list? 
+
+    You can add an empty file and an empty directory by typing these two commands:
+
+    The command `touch` makes an empty text file. The command `mkdir` makes a new directory.
+
+    ```
+    touch emptyfile.txt
+    ```
+
+    ```
+    mkdir emptydir
+    ```
+
+
+
 As you start using bash more and more, you will find a mix of files and directories/folders. If we want to know which is which, we can type::
 
 ```
