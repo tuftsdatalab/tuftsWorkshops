@@ -63,9 +63,7 @@ find . -name helloworld.txt
 `name` is the file that you are looking for
 
 
-
-
-From the home directory, the answer should look like:
+From the home directory, the answer is given using the RELATIVE path:
 
 ```
 ./Oct22Workshop/helloworld.txt
@@ -81,7 +79,7 @@ find /cluster/home/username01 -name helloworld.txt
 This command will work from anywhere in the cluster. Note that the answer is given in the ABSOLUTE path format.
 
 ```
-/cluster/home/arhode05/JulyWorkshop/helloworld.txt
+/cluster/home/username01/Oct22Workshop/helloworld.txt
 ```
 
 !!! tip
@@ -146,6 +144,7 @@ In this lesson, we will use BLAST to find zebrafish proteins that
 are similar to a small set of mouse proteins.
 
 ### Why use the command line?
+
 BLAST has a very nice graphical interface for searching sequences in NCBI's database.
 However, running BLAST through the commmand line has many benefits:
   * It's much easier to run many BLAST queries using the command line than the GUI
