@@ -26,15 +26,16 @@ This command only works during the October-November 2022 workshops. To use this 
 * `--pty bash` just indicates that the shell opens in `bash`, meaning that all the commands that we learned today will work.
 
 
+!!! question
+
+ What compute node are you on? Type it into the chat box.
+ 
+<img width="720" alt="loginnode" src="https://user-images.githubusercontent.com/8632603/196236042-d8aaded2-ad10-4b9f-a7b7-8153607da745.png">
 
 ### Finding your files interactively
 
 When you request a computer using an `srun` command, the beginning of your command line should change to indicate that you are no longer on a `login` node and instead are on a `compute` node. It will tell you which node you are on.
 
-!!! question
-
- What compute node are you on? Type it into the chat box.
- 
 
 Your files will `mount` to the new node. This means that you can be on any computer in the Tufts HPC and it will recognize your home directory structure.
 
