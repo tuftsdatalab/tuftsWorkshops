@@ -5,15 +5,18 @@ Let's make a file here using a common command "echo" to start creating our file 
 
 First, go to the Oct22Workshop directory in the home directory.
 
-```
-~/Oct22Workshop
-```
-
 !!! tip
 
   Using the `~` symbol in the path is a short cut for your home directory in the cluster.
   `~` replaces `/cluster/tufts/username01/`
+
+
+```
+cd ~/Oct22Workshop
+```
+
   
+Let's make a file by writing some text using the `echo` command and placing it into a new file named `helloworld.txt`
 
 
 ```
