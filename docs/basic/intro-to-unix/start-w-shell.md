@@ -55,7 +55,7 @@ Let's try some simple commands.
 
 Much like text shortcuts, shell commands often use abbreviations to get their point across.
 
-For example, the command *pwd* is short for "pass working directory."
+For example, the command *pwd* is short for "print working directory." The word "print" here means it will output it into the visible screen.
 
 Now type the command
 
