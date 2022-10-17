@@ -66,7 +66,7 @@ This is an example of an **Absolute Path**.
 
 It gives an address for where you are located on the cluster, much like a postal address that defines where you are in several layers (e.g. /country/state/city/street/specific_house.
 
-<img width="821" alt="tufts_root_path" src="https://user-images.githubusercontent.com/8632603/179759502-549b38b0-4957-4105-aee3-8bca4271bf7b.png">
+<img width="821" alt="tufts_root_path" src="https://user-images.githubusercontent.com/8632603/196219724-11df7fb6-51db-43cf-adbc-328fda34e0cf.png">
 
 Let's add an empty text file into our directory.
 
