@@ -3,12 +3,12 @@
 ---
 > **VPN**
 >
-> - Non-Tufts Network please connect to [Tufts VPN](https://access.tufts.edu/vpn)
+> - Non-Tufts Network please connect to [Tufts VPN](https://access.tufts.edu/vpn){:target="_blank" rel="noopener"}
 
 > __2FA__
 >
-> * Tufts Network (not needed for [**OnDemand**](https://ondemand.pax.tufts.edu))
-> * FastX11 from  [__old OnDemand__](https://ondemand.cluster.tufts.edu)
+> * Tufts Network (not needed for [**OnDemand**](https://ondemand.pax.tufts.edu)){:target="_blank" rel="noopener"}
+> * FastX11 from  [__old OnDemand__](https://ondemand.cluster.tufts.edu){:target="_blank" rel="noopener"}
 
 > **SSH**
 >
