@@ -7,7 +7,7 @@
 
 > __2FA__
 >
-> * Tufts Network (not needed for [**OnDemand**](https://ondemand.pax.tufts.edu)){:target="_blank" rel="noopener"}
+> * Tufts Network (not needed for [**OnDemand**](https://ondemand.pax.tufts.edu){:target="_blank" rel="noopener"})
 > * FastX11 from  [__old OnDemand__](https://ondemand.cluster.tufts.edu){:target="_blank" rel="noopener"}
 
 > **SSH**
