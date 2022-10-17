@@ -3,23 +3,43 @@
 
 Let's make a file here using a common command "echo" to start creating our file structure.
 
+First, go to the Oct22Workshop directory in the home directory.
+
+```
+~/Oct22Workshop
+```
+
+!!! tip
+
+  Using the `~` symbol in the path is a short cut for your home directory in the cluster.
+  `~` replaces `/cluster/tufts/username01/`
+  
+
+
 ```
 echo "Hello World " > helloworld.txt
 
 ```
 
-The `>` in this command tells the command to place the output into the place it is pointing. In this case, it creates the file `helloworld.txt` and puts the phrase `Hello World` into the file. 
+!!! note
 
-#### Helpful Tip
-===================
+  The `>` in this command tells the command to place the output into the place it is pointing. 
+  
+  In this case, it creates the file `helloworld.txt` and puts the phrase `Hello World` into the file. 
 
-Be careful with redirect.
 
-When using `>` to redirect content into a file, if the filename already exists, it will **overwrite** the file. This means that the original file is gone, and there is no undo in shell.
+!!! tip
 
-If you want to add to a file (for example if you are running the same command on several files and extracting a piece of information that you want to put together at the end) you can use another form of redirect `>>`. Using the double redirect will **add** to the file instead of overwriting it.
+  Be careful with redirect.
 
-Which one is used depends on your process. If you are only running a command once, or have an intermediate file in a process that does not need to be retained at the end, then `>` is okay to use.
+  When using `>` to redirect content into a file, if the filename already exists, it will **overwrite** the file. This means that the original file is gone, and there is no undo in shell.
+
+  If you want to add to a file (for example if you are running the same command on several files and extracting a piece of information that you want to put together at the end) you can use another form of redirect `>>`. Using the double redirect will **add** to the file instead of overwriting it.
+
+  Which one is used depends on your process. If you are only running a command once, or have an intermediate file in a process that does not need to be retained at the end, then `>` is okay to use.
+
+
+
 
 -------------------------
 
@@ -140,3 +160,8 @@ Generates the question:
 ```
 mv: overwrite ‘helloworld1.txt’?
 ```
+
+
+!!! tip
+
+  Copying or changing a file to a name that already exists will also overwrite the file. You can ask shell to make sure that this does not happen by using `-i` in the `cp` or `mv` command.
