@@ -68,7 +68,7 @@ Use the `>_Open in Terminal` button in `Files` to open a terminal in whichever d
 
 ![](images/Home.png)
 
-If you need **X11** access through OnDemand to display any GUI applications, please temporarily use our **Old OnDemand** [https://ondemand.cluster.tufts.edu](https://ondemand.cluster.tufts.edu) **`Clusters`** for this option:
+If you need **X11** access through OnDemand to display any GUI applications, please temporarily use our **Old OnDemand** [https://ondemand.cluster.tufts.edu](https://ondemand.cluster.tufts.edu){:target="_blank" rel="noopener"} **`Clusters`** for this option:
 
 **`Tufts HPC FastX11 Shell Access`** = `$ ssh -XC your_utln@login.cluster.tufts.edu` (with X11 for GUI applications)
 
@@ -79,9 +79,9 @@ You also have the option to use the `Xfce Terminal` under new  [OnDemand](https:
 ![](images/InteractiveApps.png)
 
 ### **Windows**
-- **[PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7.2)**
-- **[Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about)**
-- **[PuTTY](https://www.putty.org/)**     
-- **[Cygwin](https://www.cygwin.com/)**  
+- **[PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7.2){:target="_blank" rel="noopener"}**
+- **[Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about){:target="_blank" rel="noopener"}**
+- **[PuTTY](https://www.putty.org/){:target="_blank" rel="noopener"}**     
+- **[Cygwin](https://www.cygwin.com/){:target="_blank" rel="noopener"}**  
 
 ---
