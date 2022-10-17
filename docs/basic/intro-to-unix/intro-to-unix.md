@@ -49,7 +49,7 @@ computational task more than few times, it may be worth automating it;
 the shell is often the best way to automate anything to do with files.
 
 In this lesson, we're going to go through how to access Unix/Linux and some of the basic
-shell commands. We will finish with a demonstration of how to run programs interactively as well by submitting a job to SLURM (https://it.tufts.edu/sites/default/files/uploaded-files/2020-03/QuickStart%20for%20Slurm.pdf). Slurm is a scalable cluster management and job scheduling system for Linux clusters. Other job scheduling systems you may be familiar with from other universities are "PBS" and "SGE_Batch".
+shell commands. We will finish with a demonstration of how to run programs interactively as well by submitting a job to [SLURM](https://it.tufts.edu/sites/default/files/uploaded-files/2020-03/QuickStart%20for%20Slurm.pdf){:target="_blank" rel="noopener"}. Slurm is a scalable cluster management and job scheduling system for Linux clusters. Other job scheduling systems you may be familiar with from other universities are "PBS" and "SGE_Batch".
 
 ### Where to learn shell commands
 
