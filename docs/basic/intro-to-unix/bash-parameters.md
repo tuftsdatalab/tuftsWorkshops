@@ -98,6 +98,8 @@ For very full directories, this is helpful because it outputs the most recent se
 
 Another way to get help is to use the `man` command. Not every unix installation has this installed, but the Tufts cluster does.
 
+`man` is short for "manual"
+
 ```
 man ls
 ```
@@ -114,9 +116,26 @@ For example, if I want to understand the command `tr`
 tr -h
 ```
 
-shell outputs
+The shell outputs:
 
 ```
 tr: invalid option -- 'h'
 Try 'tr --help' for more information
 ```
+
+Most programs recognize when you ask for an incorrect parameter, and will tell you how to get more information, as in this example. To see the options, just retype the command with the correct parameter.
+
+```
+tr --help
+```
+
+In this case, a `man` page does exist, so you can get even more direction by typing:
+
+```
+man tr
+```
+
+
+
+
+
