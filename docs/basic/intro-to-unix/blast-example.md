@@ -1,3 +1,9 @@
+### Return to the workshop directory
+
+```
+cd ~/Oct22Workshop
+```
+
 ### Loading Modules
 
 Many common programs are pre-loaded into the Tufts HPC using a system called "modules".
