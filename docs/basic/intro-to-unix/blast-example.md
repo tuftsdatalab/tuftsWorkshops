@@ -8,9 +8,9 @@ To see what versions of blast are available as a module, try running this comman
 module av blast
 ```
 
-As of July 2022, these are the modules you might see displayed.
+As of October 2022, these are the modules you might see displayed.
 
-<img width="711" alt="Blast_modules" src="https://user-images.githubusercontent.com/8632603/179539551-1d0c8933-30f2-43d5-957c-f4216d849ca6.png">
+<img width="728" alt="moduleavblast" src="https://user-images.githubusercontent.com/8632603/196236539-c2308c9f-bbf8-44e2-9679-731f7299cf9b.png">
 
 
 Choose the latest blast-plus version of the module and load it. 
@@ -29,10 +29,10 @@ module list
 
 ### Bringing in Files from the Internet
 
-We need some data!  Let's grab the mouse and zebrafish RefSeq protein data sets from NCBI, and put them in our home directory. (this example is adapted from a lesson from Titus Brown's summer institute: https://angus.readthedocs.io/en/2019/running-command-line-blast.html)
+We need some data!  Let's grab the mouse and zebrafish RefSeq protein data sets from NCBI, and put them in our home directory. (this example is adapted from a lesson from Titus Brown's summer institute: https://angus.readthedocs.io/en/2019/running-command-line-blast.html){:target="_blank" rel="noopener"}
 
 For genomics projects, the files are often stored in pubic repositories and we must go and get those files before proceeding. These files originally came from the
-[NCBI FTP site](ftp://ftp.ncbi.nih.gov/refseq/M_musculus/mRNA_Prot), a copy has been placed in our github directory for future reference.
+[NCBI FTP site](ftp://ftp.ncbi.nih.gov/refseq/M_musculus/mRNA_Prot){:target="_blank" rel="noopener"}, a copy has been placed in our github directory for future reference.
 
 
 Now, we'll use `curl` to download the files from a Web site onto our computer. You will need to be connected to the internet for these commands to work.
