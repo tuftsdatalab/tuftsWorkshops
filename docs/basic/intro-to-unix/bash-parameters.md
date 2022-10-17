@@ -5,9 +5,10 @@ Many bash commands have special **parameters**, sometimes referred to as **flags
 
 Let's start by going to your home directory (you choose the command)
 
+Read this note if your home directory is empty.
 
+??? note 
 
-??? note "What if I don't have any files to list? 
 
     You can add an empty file and an empty directory by typing these two commands:
 
