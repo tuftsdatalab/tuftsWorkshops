@@ -6,9 +6,7 @@ We are going to make a place to work for this workshop.
 The following command makes a new directory.
 
 ```
-
 mkdir Oct22Workshop
-
 ```
 ----------------------
 
@@ -25,7 +23,6 @@ You can check that the new directory was created by repeating the list command.
 
 ```
 ls
-
 ```
 
 A directory is like a desk drawer. We create them to store files that relate to each other mostly.
@@ -45,21 +42,17 @@ for 'change directory'.  Try typing::
 
 ```
 cd Oct22Workshop
-
 ```
 and then
 
 ```
 pwd
-
 ```
 
 You should now see something like this:
 
 ```
-
 /cluster/home/username01/Oct22Workshop
-
 ```
 
 This is an example of an **Absolute Path**.
@@ -71,9 +64,7 @@ It gives an address for where you are located on the cluster, much like a postal
 Let's add an empty text file into our directory.
 
 ```
-
 touch emptyfile.txt
-
 ```
 
 You can have many files and folders that share the same name in your directories (e.g. scripts, data). An absolute path ensures that you go to the correct file, as it will be unique.
@@ -82,47 +73,36 @@ If you want to go back to the directory that is in the level above our current f
 
 
 ```
-
 cd ..
-
 ```
 
 `..` is a reference to a **RELATIVE PATH**
 
 ```
 pwd
-
 ```
 
 You should be back in your home directory.
 
 ```
-
 /cluster/home/username01/
-
 ```
 
 If you want to go back to the directory that you just left, type this command.
 
 ```
-
 cd -
-
 ```
 Then find your location.
 
 ```
-
 pwd
-
 ```
 
 You should be back in the directory you came from.
 
 ```
-
 /cluster/home/username01/Oct22Workshop
-
 ```
 
 A **RELATIVE PATH* means that the command only works from the relative location that you are in.
@@ -139,9 +119,7 @@ Your home directory is not all the way back at the root, it is set within the cl
 You can make sure that you are in the right directory by using the command `cd` with the absolute path.
 
 ```
-
 cd /cluster/home/username01/Oct22Workshop
-
 ```
 
 #### Helpful Tip
@@ -149,17 +127,13 @@ cd /cluster/home/username01/Oct22Workshop
 Many commands in bash can be used with the ABSOLUTE PATH.
 
 ```
-
 ls /cluster/home/username01/Oct22Workshop
-
 ```
 
 If you created a file earlier using `touch`, you will see the emptyfile.txt listed.
 
 ```
-
 emptyfile.txt
-
 ```
 
 !!! tip
