@@ -111,17 +111,18 @@ This just shows the top two levels of the file structure.
 
 ---
 
-#### Helpful Tip
-================
+!!! tip
 
-There are some keyboard shortcuts that can help when writing complex commands and running programs interactively.
+ There are some keyboard shortcuts that can help when writing complex commands and running programs interactively.
 
-* Control-C will terminate a running process
-* Control-A will put your cursor at the beginning of the line
-* Control-E will put your cursor at the end of the line
-* Up and down arrows will scroll through recent commands - If you make a mistake, just hit up to reveal the command and work on the part that was a mistake instead of retyping the whole thing.
+ * Control-C will terminate a running process
+ * Control-A will put your cursor at the beginning of the line
+ * Control-E will put your cursor at the end of the line
+ * Up and down arrows will scroll through recent commands - If you make a mistake, just hit up to reveal the command and work on the part that was a mistake instead of retyping the whole thing.
 
-**Extra Tip**: When trouble shooting a command using tickets, screen shots of error messages are a good option. (On Macs, Command-Shift-4)
+!!! note
+
+ When trouble shooting a command using tickets, screen shots of error messages are a good option. (On Macs, Command-Shift-4)
 
 ---
 
@@ -154,6 +155,6 @@ However, running BLAST through the commmand line has many benefits:
   * It allows the queries to be automated
   * It allows you to use a remote computer to run the BLAST queries
   
-Later on in the workshop we will talk more about these advantages and have a more in-depth explanation of the shell.
+We are next going to write a script that we will send to SLURM which will demonstrate these advantages.
 
 ----
