@@ -1,5 +1,3 @@
-# Introduction To Unix
-
 # Intro to Command Line
 
 This short workshop provides some basic training on bash and shell scripting on the command line on the Linux-based Tufts HPC cluster.
@@ -60,9 +58,9 @@ power tool, with its own deep internal logic with lots of details.
 
 Practice is the best way to learn, but here are some helpful shell command resources:
 
-* [Fun With Unix Cheat Sheet](https://files.fosswire.com/2007/08/fwunixref.pdf)
-* [Shell Cheatsheet - Software Carpentry](https://github.com/swcarpentry/boot-camps/blob/master/shell/shell_cheatsheet.md)
-* [Explain shell](http://explainshell.com) - a web site where you can see what the different
+* [Fun With Unix Cheat Sheet](https://files.fosswire.com/2007/08/fwunixref.pdf){:target="_blank" rel="noopener"}
+* [Shell Cheatsheet - Software Carpentry](https://github.com/swcarpentry/boot-camps/blob/master/shell/shell_cheatsheet.md){:target="_blank" rel="noopener"}
+* [Explain shell](http://explainshell.com){:target="_blank" rel="noopener"} - a web site where you can see what the different
 components of a shell command are doing.
 
 ## How to Access the Shell at Tufts
@@ -81,13 +79,13 @@ Note: newer versions of MacOSX ship with "zsh" as the default shell language in 
 ### Windows
 
 For Windows, an easy one to install and use right away is  gitbash.  
-Download and install [gitbash](https://gitforwindows.org/)
+Download and install [gitbash](https://gitforwindows.org/){:target="_blank" rel="noopener"}
 Open up the program.
 
 ### Other options: 
 
-* [Microsoft Window Terminal](https://docs.microsoft.com/en-us/windows/terminal/install)
-* [Conemu](https://conemu.github.io/)
+* [Microsoft Window Terminal](https://docs.microsoft.com/en-us/windows/terminal/install){:target="_blank" rel="noopener"}
+* [Conemu](https://conemu.github.io/){:target="_blank" rel="noopener"}
 
 ### Linux
 
