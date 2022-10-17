@@ -24,10 +24,9 @@ Open nano
 
 ```
 nano
-
 ```
 
-Hit Control-X to exit, say no and no. Nothing is saved, because we did not type into the file.
+**Control-X** to exit, say **no** and **no**. Nothing is saved, because we did not type into the file.
 
 Let's reopen and copy and paste our script into the file.
 
@@ -37,7 +36,9 @@ Sometimes it is good to give a file name, so let's nano with a filename for our 
 nano sbatch.sh
 ```
 
-Before closing, let's put some text into the file.
+Before closing, let's put some text into the file. 
+
+Make sure to change the email address to your own email.
 
 ```
 #!/bin/bash
@@ -51,6 +52,7 @@ Before closing, let's put some text into the file.
 #SBATCH --time=0-24:00:00
 #SBATCH --output=%j.out
 #SBATCH --error=%j.err
+#SBATCH --mail-user=youremail@tufts.edu
 
 module load blast-plus/2.11.0
 blastp -query mm-second.faa -db zebrafish.1.protein.faa -out mm-second.x.zebrafish.tsv -outfmt 6
@@ -58,7 +60,7 @@ blastp -query mm-second.faa -db zebrafish.1.protein.faa -out mm-second.x.zebrafi
 
 ```
 
-Control -X to close and save and use the same file name (sbatch.sh)
+**Control -X** to close and save and use the same file name (sbatch.sh)
 
 Because it is going to one or several virtual locations in the cluster, we need to reload the module as part of the script before running the script. This will make the command recognizable to the machine where the job is running.
 
@@ -68,15 +70,15 @@ cat sbatch.sh
 
 Does it have all the elements?
 
-If it does, a simple way to run it is by telling shell that it is a program.
+If it does, a simple way to run it is by telling shell that it is a program to run on SLURM.
 
 ```
-sbatcb sbatch.sh
+sbatch sbatch.sh
 ```
 
 
 
-Delilah will explain the contents of this file, but let's go ahead and run it from the workshop directory.
+Let's go ahead and run it from the workshop directory where you copied your data to.
 
 Because we did not add any ABSOLUTE paths, then the sbatch command will look for the files where the program is running.
 
@@ -95,19 +97,18 @@ The command line may move stuff around slightly, but it is a tab delimited file 
 
 `blastp` is a versatile tool for finding similar sequences, to see all the options, type `blastp -help`
 
-#### Helpful Tip
-=================
+!!! tip
 
-If writing the script on your laptop before copying and pasting, make sure to use a compatible text editor.
+  If writing the script on your laptop before copying and pasting, make sure to use a compatible text editor.
 
-Even though you can't see it, popular word processors will add hidden symbols and change punctuation to your code.
+  Even though you can't see it, popular word processors will add hidden symbols and change punctuation to your code.
 
-There are several free tools available to avoid these errors.
+  There are several free tools available to avoid these errors.
 
-* [Notepad+](https://notepad-plus-plus.org/downloads/) is free to download and use.
-* [BBEdit](http://www.barebones.com/products/bbedit/) has a free version.
+  * [Notepad+](https://notepad-plus-plus.org/downloads/) is free to download and use.
+  * [BBEdit](http://www.barebones.com/products/bbedit/) has a free version.
 
-Other options are Subline and PyCharm, which have some features to help edit files.
+  Other options are Sublime and PyCharm, which have some features to help edit files.
 
 ------------------
 
@@ -117,7 +118,7 @@ Other options are Subline and PyCharm, which have some features to help edit fil
 
 ## Resources for Further Training in Command Line
 
-* Udemy
+* Udemy (free to the Tufts community)
 * Coursera
 * LinkedIn Learning
 
