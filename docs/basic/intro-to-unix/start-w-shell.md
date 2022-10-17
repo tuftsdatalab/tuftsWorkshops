@@ -46,14 +46,16 @@ This is called the 'command line prompt.'
 This information helps orient you to who you are (`username01`) and which computer you are currently on(`login-prod-02`). In this case, it is a server that is intended only for "login", no big programs should be run from this computer, but it is fine for practicing a few bash commands.
 
 !!! tip
+
     The `$` at the end of the line is where you start typing your commands. The `$` (on the Mac it is a `%`) is not part of the command.
     The outputs from commands will not have that piece of information or `$` at the beginning of the line.
+
 
 !!! tip
 
     The name of the computer you are on is important informatiom when troubleshooting the cluster. 
     `login` machines will reject large commands and output an error. 
-    Make sure to switch machines before running jobs. This is explained in the [HPC portion of the lesson](https://tuftsdatalab.github.io/tuftsWorkshops/hpc-user-guide/interactive-session/). 
+    Make sure to switch machines before running jobs. This is explained in the [HPC portion of the lesson](https://tuftsdatalab.github.io/tuftsWorkshops/hpc-user-guide/interactive-session/){:target="_blank" rel="noopener"}. 
     
 
 Let's try some simple commands.
