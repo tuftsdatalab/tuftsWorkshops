@@ -136,7 +136,14 @@ If you are positive that you want to remove a directory and all the files within
 
 Both commands above could have been replaced with one remove command: `rm -rf helloworld`
 
-Until you are confident with file structure and bash commands, it is a good idea to copy instead of move and to set the interactive flag `-i` on the commands `rm` and `mv` to set up a question that you answer `y` or `n` to before removing.
+!!! tip
+
+  Until you are confident with file structure and bash commands, it is a good idea to copy instead of move and to 
+  * `cp -u` will copy files only if they do not already exist.
+  * `cp -r` is a good command for copying directories, it means `copy recursively` which will copy the entire directory.
+  * `cp -rf` BE CAREFUL with this, it copies the entire directory AND forces the overwrite of any files that already exist.
+  * Adding the interactive flag `-i` on the commands `rm` and `mv` to set up a question that you answer `y` or `n` to before removing.
+
 
 ```
 rm -i helloworld/helloworld.txt
@@ -161,7 +168,8 @@ Generates the question:
 mv: overwrite ‘helloworld1.txt’?
 ```
 
+A great website to look at to understand the nuances of shell commands is:
 
-!!! tip
+[ComputerHope](https://www.computerhope.com/unix.htm){:target="_blank" rel="noopener"}
 
-  Copying or changing a file to a name that already exists will also overwrite the file. You can ask shell to make sure that this does not happen by using `-i` in the `cp` or `mv` command.
+
