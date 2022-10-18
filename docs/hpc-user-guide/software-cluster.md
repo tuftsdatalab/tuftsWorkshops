@@ -7,7 +7,6 @@
 
 
 ### Module  Commands
-
     - module av : to check all available modules
     - module load : to load a particular module
     - module list : to list modules that are loaded
