@@ -16,16 +16,21 @@ It lets you switch easily between several programs in one terminal, detach them 
 Make a note of the login nodename `login-prod-01` where your tmux session lives.
 
 #### Start your tmux session
-`[your_utln@login-prod-01 ~]$ tmux new -s mysession
+`[your_utln@login-prod-01 ~]$ tmux new -s mysession`
 
 #### Start your Interactive session inside the tmux session, and run your programs
 
 #### Detach your tmux session OR lose connection...
 `CTRL+b d`
+
 #### Get your work session back
+
 Log back in to the cluster or start a new terminal
+
 If you are allocated on a **different** login node than where your tmux session lives. Simply do: 
+
 `[your_utln@login-prod-03 ~]$ ssh login-prod-01`
+
 `[your_utln@login-prod-01 ~]$ module load tmux`
 
 #### Check tmux sessions
