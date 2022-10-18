@@ -47,8 +47,9 @@ preempt         up 7-00:00:00     20   idle p1cmp[016-017,031-037,039-042,081-08
 __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
 
 - Request GPU resources with `--gres`. See details below.
-- Please **DO NOT** manually set `CUDA_VISIBLE_DEVICES`. 
+- Please **DO NOT** manually set `CUDA_VISIBLE_DEVICES`.
 - Users can ONLY see GPU devices that are assigned to them with `$ nvidia-smi`.
+
 **`gpu` partition`-p gpu`:**
   - NVIDIA P100
     - In "gpu" partition
