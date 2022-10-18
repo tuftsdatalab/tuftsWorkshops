@@ -1,10 +1,10 @@
-## Cluster Account Request
+## Cluster Account
 
 **[Tufts HPC](https://it.tufts.edu/high-performance-computing){target=_blank}**
 
 ![](images/rthpcpage.png)
 
-## Cluster Storage Request
+## Cluster Storage
 
 * __Home Directory__
 
