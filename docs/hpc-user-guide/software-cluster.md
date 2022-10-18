@@ -18,7 +18,7 @@ To check **ALL available modules** installed on the cluster:
 `[your_utln@login-prod-01 ~]$ module av`
 
 
-Upon login, environment `PATH` is set for the system to search executables:
+Upon login, environment **`PATH`** is set for the system to search executables:
 
 
 `[your_utln@login-prod-01 ~]$ echo $PATH`
