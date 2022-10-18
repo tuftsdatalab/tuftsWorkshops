@@ -61,8 +61,10 @@ nav:
             - "HPC Storage": hpc-user-guide/hpc-storage.md
             - "Compute Resources": hpc-user-guide/compute-resources.md
             - "Software on the Cluster": hpc-user-guide/software-cluster.md
+            - "Tmux Session": hpc-user-guide/tmux.md
         - SLURM/Linux:
             - "Interactive Session": hpc-user-guide/interactive-session.md
+            - "Job Status": hpc-user-guide/job-status.md
             - "Intro To Linux": basic/intro-to-unix/intro-to-unix.md
             - "Starting with Shell": basic/intro-to-unix/start-w-shell.md
             - "Bash Parameters": basic/intro-to-unix/bash-parameters.md
