@@ -30,10 +30,10 @@
 
 ```
 [your_utln@login-prod-01 ~]$ srun -p batch --time=1-2:10:00 -n 2 --mem=8g --reservation=bioworkshop --pty bash
-[your_utln@c1cmp044 ~]$
+[your_utln@p1cmp025 ~]$
 
 ```
-You will be placed on one of the reserved nodes for the workshop `c1cmp[044-045,047-048]`
+You will be placed on one of the reserved nodes for the workshop `p1cmp[025-026,028-029,043-045]`
 
 The reservation will expire after the workshop. You will no longer have access to the reservation `bioworkshop`. 
 
