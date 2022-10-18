@@ -1,10 +1,8 @@
-## HPC Storage
-
-### Home Directory
+## Home Directory
 
 Your Home Directory (10GB, fixed) should be `/cluster/home/your_utln`
 
-### Reserach Project Storage
+## Reserach Project Storage
 
 **Cluster Storage Request** [https://it.tufts.edu/research-technology/](https://it.tufts.edu/high-performance-computing)
 
