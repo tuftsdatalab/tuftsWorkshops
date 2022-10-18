@@ -53,7 +53,7 @@ nav:
     - About : index.md
     - Intro to HPC/Slurm For Life Sciences: 
         - Tufts HPC Cluster Access:
-            - "Request an Accouht": hpc-user-guide/request-account.md
+            - "Request an Account": hpc-user-guide/request-account.md
             - "Login": hpc-user-guide/login.md
             - "File Transfer": hpc-user-guide/file-transfer.md
         - Tufts HPC Cluster Resource:
