@@ -1,6 +1,4 @@
-## Compute Resources
-
-### CPUs
+## CPUs
 Resources are orgnized into **partitions** on the cluster based on functionality and priority.
 
 After logging in on the HPC cluster, you can use command `sinfo` to check the `partition` you have access to (all partitions listed in the `sinfo` output).
@@ -44,7 +42,7 @@ preempt         up 7-00:00:00     20   idle p1cmp[016-017,031-037,039-042,081-08
 
 ![](images/Inventory.png)
 
-### GPUs
+## GPUs
 
 __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
 
@@ -52,14 +50,16 @@ __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
 - Please **DO NOT** manually set `CUDA_VISIBLE_DEVICES`. 
 - Users can ONLY see GPU devices that are assigned to them with `$ nvidia-smi`.
 - `gpu` partition`-p gpu`:
-  - NVIDIA P100s
+  - NVIDIA P100
     - In "gpu" partition
     - Request with: `--gres=gpu:p100:1`(one P100 GPU, can request up to 6 on one node)
   - NVIDIA Tesla K20xm
     - In "gpu" partition
     - Request with: `--gres=gpu:k20xm:1`(one Tesla K20xm GPU, can request up to 1 on one node)
+  - NVIDIA A100 (80GB)
+    - In "gpu" partition
+    - Request with: `--gres=gpu:a100:1`(one A100 GPU, can request up to 4 on one node)
 - `preempt` partition `-p preempt`:
-  - `a100`, `v100`, `p100`, ` rtx_6000`, `t4`
   - NVIDIA T4
     - In "preempt" partition
     - Request with: `--gres=gpu:t4:1`(one T4 GPU, can request up to 4 on one node)
