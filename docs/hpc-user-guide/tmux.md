@@ -18,7 +18,8 @@ Make a note of the login nodename `login-prod-01` where your tmux session lives.
 ### Start your tmux session
 `[your_utln@login-prod-01 ~]$ tmux new -s mysession`
 
-### Start your Interactive session inside the tmux session, and run your programs (Next Session)
+### Start your Interactive session inside the tmux session, and run your programs 
+(Next Session)
 
 ### Detach your tmux session OR lose connection...
 `CTRL+b d`
