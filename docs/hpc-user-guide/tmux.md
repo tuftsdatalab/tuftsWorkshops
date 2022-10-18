@@ -2,7 +2,7 @@
 tmux is a terminal multiplexer. 
 It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal.
 
-**[Cheat Sheet]**(https://tmuxcheatsheet.com/)
+**(Cheat Sheet)**[https://tmuxcheatsheet.com/]
 
 - New Tmux Window `tmux new -s mysession`
 - Detach it `CTRL+b d`
