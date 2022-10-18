@@ -50,30 +50,30 @@ Use port 22 for SFTP
     If you are transfering very large files that could take hours to finish, we would suggest using `rsync` as it has ability to restart from where it left if interrupted.
 
 ### Download from cluster
+```
+    $ scp your_utln@xfer.cluster.tufts.edu:Cluster_Path Local_Path  
 
-    `$ scp your_utln@xfer.cluster.tufts.edu:Cluster_Path Local_Path  `
-
-    `$ rsync your_utln@xfer.cluster.tufts.edu:Cluster_Path Local_Path`
-
+    $ rsync your_utln@xfer.cluster.tufts.edu:Cluster_Path Local_Path
+```
 ### Upload to cluster
+```
+    $ scp Local_Path your_utln@xfer.cluster.tufts.edu:Cluster_Path
 
-    `$ scp Local_Path your_utln@xfer.cluster.tufts.edu:Cluster_Path `
-
-    `$ rsync Local_Path your_utln@xfer.cluster.tufts.edu:Cluster_Path`
-
+    $ rsync Local_Path your_utln@xfer.cluster.tufts.edu:Cluster_Path
+```
 !!! tip
     If you are transfering a directory use `scp -r` or `rsync -azP`
 
 ### Download from cluster
+```
+    $ scp -r your_utln@xfer.cluster.tufts.edu:Cluster_Path Local_Path  
 
-    `$ scp -r your_utln@xfer.cluster.tufts.edu:Cluster_Path Local_Path  `
-
-    `$ rsync -azP your_utln@xfer.cluster.tufts.edu:Cluster_Path Local_Path`
-
+    $ rsync -azP your_utln@xfer.cluster.tufts.edu:Cluster_Path Local_Path
+```
 ### Upload to cluster
+```
+    $ scp -r Local_Path your_utln@xfer.cluster.tufts.edu:Cluster_Path
 
-    `$ scp -r Local_Path your_utln@xfer.cluster.tufts.edu:Cluster_Path`
-
-    `$ rsync -azP Local_Path your_utln@xfer.cluster.tufts.edu:Cluster_Path`
-    
+    $ rsync -azP Local_Path your_utln@xfer.cluster.tufts.edu:Cluster_Path
+```    
 
