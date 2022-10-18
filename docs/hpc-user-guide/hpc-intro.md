@@ -2,7 +2,7 @@
 
 ## TTS Research Technology Instructors 
 
-- Delilah Maloney, Senior High Performing Computer Specialist
+- Delilah Maloney, Senior High Performing Computing Specialist
 - Adelaide Rhodes, PhD,  Senior Bioinformatics Scientist
 - Jason Laird, Bioinformatics Scientist
 
