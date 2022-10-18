@@ -7,10 +7,10 @@
 
 
 ### Module  Commands
-    - module av : to check all available modules
-    - module load : to load a particular module
-    - module list : to list modules that are loaded
-    - module purge : purge any loaded modules
+- `module av` : to check all available modules
+- `module load/unload` : to load or unload a particular module
+- `module list` : to list modules that are loaded
+- `module purge` : purge any loaded modules
 
 To check **ALL available modules** installed on the cluster:
 
