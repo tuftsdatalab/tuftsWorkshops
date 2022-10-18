@@ -27,5 +27,5 @@ If you'd like to subscribe to this elist you can do so [here](https://elist.tuft
 This introductory virtual workshop will cover the basics of using the Tufts High Performance Computing Cluster (HPC) using OnDemand. Users will be introduced to basic Linux commands and how to use the SLURM job scheduler to run and monitor jobs on the HPC. This workshop is open to the Tufts community and is appropriate for anyone who would like to work on the Tufts HPC Cluster. No prior experience is required. 
     
 !!! abstract "Acknowledgement"
-    We would like to thank members Kyle Monahan, Christina Divoll, Kayla Sansevere, and Uku Uustalu for their review of this content
+    We would like to thank Kyle Monahan, Christina Divoll, Kayla Sansevere, and Uku Uustalu for their review of this content
     
