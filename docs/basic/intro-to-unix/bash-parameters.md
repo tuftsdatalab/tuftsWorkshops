@@ -99,7 +99,20 @@ ls
 
 !!! question
     Please put a green checkmark in your box if you see the new directory when you type `ls` from your home directory).
+
+
+!!! tip "Be Careful with Redirect"
+
+    Be careful with redirect.
+
+    When using `>` to redirect content into a file, if the filename already exists, it will **overwrite** the file. This means that the original file is gone, and there is no undo in shell.
+
+    If you want to add to a file (for example if you are running the same command on several files and extracting a piece of information that you want to put together at the end) you can use another form of redirect `>>`. Using the double redirect will **add** to the file instead of overwriting it.
     
+    Which one is used depends on your process. If you are only running a command once, or have an intermediate file in a process that does not need to be retained at the end, then `>` is okay to use.
+
+
+
    
 ## Setting Parameters for Bash Commands
 
