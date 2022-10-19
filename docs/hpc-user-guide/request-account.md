@@ -2,6 +2,8 @@
 
 **[Tufts HPC](https://it.tufts.edu/high-performance-computing){target=_blank}**
 
+**Cluster Account Request** [https://it.tufts.edu/research-technology/](https://it.tufts.edu/high-performance-computing)
+
 ![](images/rthpcpage.png)
 
 ## Cluster Storage
