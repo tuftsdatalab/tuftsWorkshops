@@ -4,7 +4,6 @@ It lets you switch easily between several programs in one terminal, detach them 
 
 **[Cheat Sheet](https://tmuxcheatsheet.com/)**
 
-!!!tip "Useful Commands"
     - New Tmux Window `tmux new -s mysession`
     - Detach it `CTRL+b d`
     - List Sessions `tmux ls`
