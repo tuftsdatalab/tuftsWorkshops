@@ -22,9 +22,20 @@ cd
 ```
 mkdir Oct22Workshop
 ```
+!!! note
 
-`mkdir` is a specific command that allows you to make a directory.
-`rmdir` is a command that allows you to remove a directory (but only if it is empty)
+    `mkdir` is a specific command that allows you to make a directory.
+    `rmdir` is a command that allows you to remove a directory (but only if it is empty)
+     When nameing files and directories, avoid spaces and special characters except underscores ("_") and hyphens ("-").
+
+
+!!! note "Important"
+
+    **Spelling** and **Capitalization** are literal in unix.
+    Be careful when making and using files to be consistent in your process. 
+    This will make it easier to find files later.
+
+
 
 3.) Let's go into the directory using a very common command `cd` --> `change directory`
 
@@ -73,7 +84,7 @@ ls
 !!! question
     Please put a green checkmark in your box if you see the new directory when you type `ls` from your home directory).
     
-    
+   
 ## Setting Parameters for Bash Commands
 
 
