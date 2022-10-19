@@ -26,7 +26,7 @@
   - X Window `--x11=first`
     - Default none	
 
-  Starting an interactive session of bash shell on preempt partition with **2 CPU cores and 4GB of RAM, with X11 forwarding for 1 day, 2 hours, and 10 minutes** (use `exit` to end session and release resources).
+Starting an interactive session of bash shell on preempt partition with **2 CPU cores and 4GB of RAM, with X11 forwarding for 1 day, 2 hours, and 10 minutes** (use `exit` to end session and release resources).
 
 ```
 [your_utln@login-prod-01 ~]$ srun -p batch --time=1-2:10:00 -n 2 --mem=4g --reservation=bioworkshop --pty bash
