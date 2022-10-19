@@ -1,28 +1,27 @@
 # How to Login to Tufts HPC Cluster
+!!!tips
+  > **VPN**
+  >
+  > - Non-Tufts Network please connect to [Tufts VPN](https://access.tufts.edu/vpn){:target="_blank" rel="noopener"}
 
----
-> **VPN**
->
-> - Non-Tufts Network please connect to [Tufts VPN](https://access.tufts.edu/vpn){:target="_blank" rel="noopener"}
+  > __2FA__
+  >
+  > * Tufts Network (not needed for [**OnDemand**](https://ondemand.pax.tufts.edu){:target="_blank" rel="noopener"})
+  > * FastX11 from  [__old OnDemand__](https://ondemand.cluster.tufts.edu){:target="_blank" rel="noopener"}
 
-> __2FA__
->
-> * Tufts Network (not needed for [**OnDemand**](https://ondemand.pax.tufts.edu){:target="_blank" rel="noopener"})
-> * FastX11 from  [__old OnDemand__](https://ondemand.cluster.tufts.edu){:target="_blank" rel="noopener"}
+  > **SSH**
+  >
+  > - The SSH protocol aka **Secure Shell** is a method for secure remote login from one computer to another. 
 
-> **SSH**
->
-> - The SSH protocol aka **Secure Shell** is a method for secure remote login from one computer to another. 
+  > **X Window System (X11)**
+  >
+  > - The X Window System (X11) is an open source, cross platform,  client-server computer software system that provides a **GUI** in a  distributed network environment.
 
-> **X Window System (X11)**
->
-> - The X Window System (X11) is an open source, cross platform,  client-server computer software system that provides a **GUI** in a  distributed network environment.
+  > **Login Info**
+  >
+  > - login.cluster.tufts.edu
+  >
 
-> **Login Info**
->
-> - login.cluster.tufts.edu
->
----
 ### **Terminal** 
 
   - Shell environment (default: bash):
