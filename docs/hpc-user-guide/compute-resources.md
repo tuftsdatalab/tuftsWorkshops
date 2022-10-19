@@ -53,30 +53,30 @@ __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
 - Users can ONLY see GPU devices that are assigned to them with `$ nvidia-smi`.
 
 **`gpu` partition`-p gpu`:**
-  - NVIDIA P100
+- NVIDIA P100
     - In "gpu" partition
     - Request with: `--gres=gpu:p100:1`(one P100 GPU, can request up to 6 on one node)
-  - NVIDIA Tesla K20xm
+- NVIDIA Tesla K20xm
     - In "gpu" partition
     - Request with: `--gres=gpu:k20xm:1`(one Tesla K20xm GPU, can request up to 1 on one node)
-  - NVIDIA A100 (80GB)
+- NVIDIA A100 (80GB)
     - In "gpu" partition
     - Request with: `--gres=gpu:a100:1`(one A100 GPU, can request up to 4 on one node)
- 
+
 **`preempt` partition `-p preempt`**
-  - NVIDIA T4
+- NVIDIA T4
     - In "preempt" partition
     - Request with: `--gres=gpu:t4:1`(one T4 GPU, can request up to 4 on one node)
-  - NVIDIA P100
+- NVIDIA P100
     - In "preempt" partition
     - Request with: `--gres=gpu:p100:1`(one P100 GPU, can request up to 4 on one node)
-  - NVIDIA rtx_6000
+- NVIDIA rtx_6000
     - In "preempt" partition
     - Request with: `--gres=gpu:rtx_6000:1`(one RTX_6000 GPU, can request up to 8 on one node)
-  - NVIDIA V100
+- NVIDIA V100
     - In "preempt" partition
     - Request with: `--gres=gpu:v100:1`(one V100 GPU, can request up to 4 on one node)
-  - NVIDIA A100
+- NVIDIA A100
     - In "preempt" partition
     - Request with: `--gres=gpu:a100:1`(one A100 GPU, can request up to 8 on one node)
 
