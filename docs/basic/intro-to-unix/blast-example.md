@@ -11,6 +11,7 @@ Many common programs are pre-loaded into the Tufts HPC using a system called "mo
 To see what versions of blast are available as a module, try running this command. 
 
 !!! tip
+  
   You can use the first part of the program name to check if there is a module.
 
 ```
@@ -47,6 +48,7 @@ If other programs are loaded with the module, they may also show up with this co
 We need some data!  Let's grab the mouse and zebrafish RefSeq protein data sets from NCBI, and put them in our home directory. (this example is adapted from a lesson from [Titus Brown's summer institute](https://angus.readthedocs.io/en/2019/running-command-line-blast.html){:target="_blank" rel="noopener"}. These lessons contain a lot of command line examples.
 
 !!! note
+  
   `curl` and `wget` are the two most common tools used to bring in files that are available from a url. We are going to use `curl` because that command works well for files coming from an `ftp://` url.
 
 ??? note "Copying files over from NCBI"
@@ -101,6 +103,7 @@ gunzip *.faa.gz
 Because both files follow a very similar pattern, and we want to decompress all our .gz files, we can use the `*` wildcard (filenames that have a pattern that matches and number of missing letters before the part of the file name that is the same
 
 !!! note "Regular Expressions"
+  
   `*` and other wildcards are useful to save on typing scripts, because many actions can be combined in one request.
   
   Regular Expressions are a set of special characters combined with unix commands.
@@ -195,9 +198,10 @@ less mm-first.x.zebrafish.txt
 
 -----
 
-!!! question "What are your questions:"
+!!! question "What are your questions?"
 
 !!! note
+  
   This command was an example of `interactive` shell scripting because we are typing in the commands manually and waiting for the results. If we walk away from our machine and the session times out, then the program may be interrupted. `tmux` allows us to keep running the program even if we take a break.
   
   The next session demonstrates how to combine all of these commands into a script that runs on **SLURM**. 
