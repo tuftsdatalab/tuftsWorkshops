@@ -63,7 +63,23 @@ echo "Hello World" > helloworld.txt
 
 `echo` is a command that prints the content to the terminal window (sometimes refered to as `print to screen`
 
-5.) Return to your home directory and run `ls`
+The `>` in this command tells the command to place the output into the place it is pointing. 
+  
+In this case, it creates the file `helloworld.txt` and puts the phrase `Hello World` into the file. 
+
+6.) Print out the contents of the file to the terminal
+
+```
+cat helloworld.txt
+```
+
+You should see the output
+
+```
+Hello World
+```
+
+7.) Return to your home directory and run `ls`
 
 ```
 cd
