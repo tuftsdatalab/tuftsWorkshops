@@ -103,7 +103,6 @@ A **RELATIVE PATH* means that the command only works from the relative location 
 
 ## Using Bash Commands with Absolute Paths
 
-=================
 Many commands in bash can be used with the ABSOLUTE PATH.
 
 ```
