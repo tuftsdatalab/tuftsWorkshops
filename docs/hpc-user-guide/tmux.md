@@ -38,5 +38,5 @@ If you are allocated on a **different** login node than where your tmux session 
 ### Check tmux sessions
 `[your_utln@login-prod-01 ~]$ tmux ls`
 
-### - Pick your session to reattach it
+### Pick your session to reattach it
 `[your_utln@login-prod-01 ~]$ tmux a -t mysession`
