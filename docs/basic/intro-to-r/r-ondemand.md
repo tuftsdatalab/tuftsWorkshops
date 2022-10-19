@@ -105,8 +105,10 @@ You will notice that your RStudio console switches to this project directory. Wh
 
 ## Getting Data
 
-- Now that we have set up our folders let's copy the data and scripts we will be using today. 
-- To do this we will use an R function called file.copy. 
+![](images/data_summary.png)
+
+- Today we will be using a fake dataset assessing the taxa count on the mouse microbiome before and after antibiotic usage.
+- To copy over this data we will use an R function called file.copy. 
 - A function takes some input and delivers an output. 
 - In this case we specify two inputs the location of our file and where we want to copy it to. 
 - The function's output is copying over this file. So let's try it copy over using the following commands:
