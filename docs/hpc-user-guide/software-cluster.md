@@ -6,7 +6,7 @@
 - Modules can also be bundled into metamodules that will load an entire **set of different applications (dependencies)**. 
 
 
-!!!tip "Module  Commands"
+!!!info "Useful Module  Commands"
     - `module av` : to check all available modules
     - `module load/unload` : to load or unload a particular module
     - `module list` : to list modules that are loaded
@@ -101,19 +101,19 @@ No Modulefiles Currently Loaded.
 ## Install Software/Packages
 
 - [R](https://tufts.box.com/s/qximkv5ke2y4k0vbg6m04m6fc6exh88h) (R command line recommanded)
-  - R/4.0.0
-  - gcc 
-  - gdal
-  - curl
+      - R/4.0.0
+      - gcc 
+      - gdal
+      - curl
 - [Python](https://tufts.box.com/v/CondaEnvonHPC) (Conda env recommanded)
-  - anaconda/3 (older version, source activate)
-  - anaconda/2021.05 (newer version, source activate)
-  - Use the same version of conda on one conda env every time
+      - anaconda/3 (older version, source activate)
+      - anaconda/2021.05 (newer version, source activate)
+      - Use the same version of conda on one conda env every time
 - Other software compiled from source
-  - gcc
-  - cmake
-  - ... any dependencies, load if available, install if not.
-  - Follow instructions (read it through)
-  - Use "--prefix=" to install in non-standard locations
-  - Modify the environment variables !!! (such as PATH, LD_LIBRARY_PATH, CPATH, .etc)
+      - gcc
+      - cmake
+      - ... any dependencies, load if available, install if not.
+      - Follow instructions (read it through)
+      - Use "--prefix=" to install in non-standard locations
+      - Modify the environment variables !!! (such as PATH, LD_LIBRARY_PATH, CPATH, .etc)
 
