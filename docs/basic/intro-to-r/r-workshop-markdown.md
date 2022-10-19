@@ -25,6 +25,7 @@
 
 
 !!! info "output"
+
     Registered S3 methods overwritten by 'dbplyr':
     method         from
     print.tbl_lazy     
