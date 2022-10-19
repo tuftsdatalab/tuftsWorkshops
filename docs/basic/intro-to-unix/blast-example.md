@@ -12,7 +12,7 @@ To see what versions of blast are available as a module, try running this comman
 
 !!! tip
   
-  You can use the first part of the program name to check if there is a module.
+    You can use the first part of the program name to check if there is a module.
 
 ```
 module av blast
@@ -49,7 +49,7 @@ We need some data!  Let's grab the mouse and zebrafish RefSeq protein data sets 
 
 !!! note
   
-  `curl` and `wget` are the two most common tools used to bring in files that are available from a url. We are going to use `curl` because that command works well for files coming from an `ftp://` url.
+   `curl` and `wget` are the two most common tools used to bring in files that are available from a url. We are going to use `curl` because that command works well for files coming from an `ftp://` url.
 
 ??? note "Copying files over from NCBI"
   For genomics projects, the files are often stored in pubic repositories and we must go and get those files before proceeding. These files originally came from the
@@ -104,7 +104,7 @@ Because both files follow a very similar pattern, and we want to decompress all 
 
 !!! note "Regular Expressions"
   
-  `*` and other wildcards are useful to save on typing scripts, because many actions can be combined in one request.
+    `*` and other wildcards are useful to save on typing scripts, because many actions can be combined in one request.
   
   Regular Expressions are a set of special characters combined with unix commands.
   
@@ -123,11 +123,8 @@ head mouse.1.protein.faa
 
 !!! note "FASTA format
 
-  These are protein sequences in FASTA format.  FASTA format is something
-  many of you have probably seen in one form or another -- it's pretty
-  ubiquitous.  It's a text file, containing records; each record
-  starts with a line beginning with a '>', and then contains one or more
-  lines of sequence text.
+    These are protein sequences in FASTA format.  FASTA format is something many of you have probably seen in one form or another -- it's pretty ubiquitous.  It's a text file, containing records; each record starts with a line beginning with a '>', and then contains one or more lines of sequence text.
+
 
 Let's take those first two sequences and save them to a file.  We'll do this using output redirection with '>', which says "take
 all the output and put it into this file here."
@@ -202,7 +199,7 @@ less mm-first.x.zebrafish.txt
 
 !!! note
   
-  This command was an example of `interactive` shell scripting because we are typing in the commands manually and waiting for the results. If we walk away from our machine and the session times out, then the program may be interrupted. `tmux` allows us to keep running the program even if we take a break.
+    This command was an example of `interactive` shell scripting because we are typing in the commands manually and waiting for the results. If we walk away from our machine and the session times out, then the program may be interrupted. `tmux` allows us to keep running the program even if we take a break.
   
   The next session demonstrates how to combine all of these commands into a script that runs on **SLURM**. 
   
