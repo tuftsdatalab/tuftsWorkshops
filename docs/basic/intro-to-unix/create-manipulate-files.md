@@ -1,53 +1,14 @@
-## Creating and Manipulating Files
-----------------------------------
 
-Let's make a file here using a common command "echo" to start creating our file structure.
-
-First, go to the Oct22Workshop directory in the home directory.
-
-!!! tip
-
-  Using the `~` symbol in the path is a short cut for your home directory in the cluster.
-  `~` replaces `/cluster/tufts/username01/`
-
-
-```
-cd ~/Oct22Workshop
-```
-
-  
-Let's make a file by writing some text using the `echo` command and placing it into a new file named `helloworld.txt`
-
-
-```
-echo "Hello World " > helloworld.txt
-
-```
-
-!!! note
-
-  The `>` in this command tells the command to place the output into the place it is pointing. 
-  
-  In this case, it creates the file `helloworld.txt` and puts the phrase `Hello World` into the file. 
-
-
-!!! tip
-
-  Be careful with redirect.
-
-  When using `>` to redirect content into a file, if the filename already exists, it will **overwrite** the file. This means that the original file is gone, and there is no undo in shell.
-
-  If you want to add to a file (for example if you are running the same command on several files and extracting a piece of information that you want to put together at the end) you can use another form of redirect `>>`. Using the double redirect will **add** to the file instead of overwriting it.
-
-  Which one is used depends on your process. If you are only running a command once, or have an intermediate file in a process that does not need to be retained at the end, then `>` is okay to use.
-
-
-
-
--------------------------
-
-### Reading File Contents
+## Reading File Contents
 ---------------------------
+
+There are a few different ways to see the contents of a file.
+
+We already used this first example.
+
+```
+cd ~/Oct22Workshops
+```
 
 Let's look inside the file. We have several methods of viewing the content of files that we have created.
 
@@ -75,7 +36,7 @@ A third way to check file contents is by using a program called "less" (or "more
 less helloworld.txt
 ```
 
-Press "q" to close the file.
+Press ***q*** to close the file opened by `less`
 
 There are many versions of these tools on command line, but "cat", "head" and "less" are very common.
 
@@ -105,7 +66,7 @@ cp helloworld.txt helloworld
 
 Check this with `ls helloworld` (lists the contents of the directory).
 
-### Moving Files
+## Moving Files
 ---------------------------
 
 `mv` is an option for renaming files, but also has the potential to **overwrite** existing files.
@@ -118,7 +79,7 @@ mv helloworld1.txt helloworld2.txt
 
 Check this with `ls`
 
-### Removing Files
+## Removing Files
 ---------------------------
 
 `rm` and `rmdir` are permanent in shell, so make sure you are ready to delete files.
@@ -161,8 +122,16 @@ rm: remove regular file ‘helloworld/helloworld.txt’?
 
 For example:
 
+1.) Make a new file from the original file we created
+
 ```
-cp helloworld.txt helloworld1.txt
+cp -u helloworld.txt helloworld1.txt
+```
+`-u` for the copy command will not copy the file if it already exists.
+
+2.) Try to rename the file with `mv`, with the `i` parameter set to prevent overwriting an existing file.
+
+```
 mv -i helloworld.txt helloworld1.txt
 ```
 Generates the question:
