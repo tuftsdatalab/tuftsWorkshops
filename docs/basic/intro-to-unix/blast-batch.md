@@ -117,10 +117,6 @@ The command line may move stuff around slightly, but it is a tab delimited file 
 
 ------------------
 
-## This concludes our Intro to Unix Lesson and we now Return to our Regularly Scheduled Slurm
-
-[Return to TOC](#intro-to-command-line)
-
 ## Resources for Further Training in Command Line
 
 * Udemy (free to the Tufts community)
