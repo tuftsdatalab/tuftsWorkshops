@@ -4,7 +4,7 @@ It lets you switch easily between several programs in one terminal, detach them 
 
 **[Cheat Sheet](https://tmuxcheatsheet.com/)**
 
-!!!tip "Useful Tmux Commands"
+!!!tip "Useful tmux Commands"
     - New Tmux Window `tmux new -s mysession`
     - Detach it `CTRL+b d`
     - List Sessions `tmux ls`
@@ -12,20 +12,20 @@ It lets you switch easily between several programs in one terminal, detach them 
 
 ## How to use tmux on Tufts HPC Cluster
 
-### - Load tmux module
+### Load tmux module
 `[your_utln@login-prod-01 ~]$ module load tmux`
 Make a note of the login nodename `login-prod-01` where your tmux session lives.
 
-### - Start your tmux session
+### Start your tmux session
 `[your_utln@login-prod-01 ~]$ tmux new -s mysession`
 
-### - Start your Interactive session inside the tmux session, and run your programs 
+### Start your Interactive session inside the tmux session, and run your programs 
 (Next Session)
 
-### - Detach your tmux session OR lose connection...
+### Detach your tmux session OR lose connection...
 `CTRL+b d`
 
-### - Get your work session back
+### Get your work session back
 
 Log back in to the cluster or start a new terminal
 
@@ -35,7 +35,7 @@ If you are allocated on a **different** login node than where your tmux session 
 
 `[your_utln@login-prod-01 ~]$ module load tmux`
 
-### - Check tmux sessions
+### Check tmux sessions
 `[your_utln@login-prod-01 ~]$ tmux ls`
 
 ### - Pick your session to reattach it
