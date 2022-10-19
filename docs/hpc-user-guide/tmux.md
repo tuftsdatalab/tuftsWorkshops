@@ -5,10 +5,10 @@ It lets you switch easily between several programs in one terminal, detach them 
 **[Cheat Sheet](https://tmuxcheatsheet.com/)**
 
 !!!tip "Useful tmux Commands"
-    - New Tmux Window `tmux new -s mysession`
-    - Detach it `CTRL+b d`
-    - List Sessions `tmux ls`
-    - Reattach Session `tmux a -t mysession`
+    - New Tmux Window **`tmux new -s mysession`**
+    - Detach it **`CTRL+b d`**
+    - List Sessions **`tmux ls`**
+    - Reattach Session **`tmux a -t mysession`**
 
 ## How to use tmux on Tufts HPC Cluster
 
