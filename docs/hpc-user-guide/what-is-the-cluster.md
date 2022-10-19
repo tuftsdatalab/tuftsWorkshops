@@ -1,28 +1,45 @@
-# What is the Cluster?
+## Cluster Terminologies
+### What is "Cluster"
 
-Before getting to the cluster it is worth discussing what a cluster is and some of the terminology. First, let's discuss the difference between a CPU and a GPU.
+- A computer cluster is a set of loosely or tightly **connected** **computers** that work together so that, in many respects, they can be viewed as a single system. Computer clusters have each node set to perform the same/similar tasks, controlled and scheduled by **[software](#SLURM)**. 
 
-### CPU -- Central Processing Unit
-  - A CPU can never be fully replaced by a GPU
-  - Can be thought of as the taskmaster of the entire system, coordinating a wide range of general-purpose computing tasks
- 
-### GPU -- Graphics Processing Unit
-  - GPUs were originally designed to create images for computer graphics and video game consoles
-  - Performing a narrower range of more specialized tasks
+![](images/hpcImage.png)
+
+### CPU vs GPU
+
+- CPU -- **Central Processing Unit** 
+
+    - A CPU can never be fully replaced by a GPU
+
+    - Can be thought of as the **taskmaster** of the entire system, coordinating a wide range of general-purpose computing tasks
+
+- GPU -- **Graphics Processing Unit**
+
+    - GPUs were originally designed to create images for computer graphics and video game consoles
+
+    - GPGPU
+
+    - Performing a narrower range of more specialized tasks
 
 ![](images/cpuGpu.png)
 
-You'll notice that in the picture above the CPU is composed of a smaller unit, a **core**. A core is the computing unit in a CPU. You'll also note that the whole system (including CPUs, GPUs and Storage) is a single computer in the system called a **node**.
+### Cores vs Node
+
+- A **node** is a single computer in the system, which has a number of computing units, aka **cores**. 
 
 ![](images/coreNode.png)
 
-When a CPU performs some computation they use a storage hierarchy. This hierarchy places small/fast storage options close to the CPU and slower/larger options away from the CPU. These small/fast options are called **memory/RAM** while the slower/larger options are simply called **storage**.
+### Memory vs Storage
 
+The central processing unit (CPU) of a computer is what manipulates data by performing computations.  In practice, almost all computers use a [storage hierarchy](https://en.wikipedia.org/wiki/Memory_hierarchy), which puts fast but expensive and small storage options close to the  CPU and slower but less expensive and larger options further away.  Generally the fast volatile technologies (which lose data when off  power) are referred to as "memory", while slower persistent technologies are referred to as "storage".
+
+- Memory
+    - Small, fast, expensive
+    - Used to store information for immediate use
+- Storage
+    - Larger, slower, cheaper
+    - Non-volatile (retaining data when its power is shut off)
 ![](images/memStore.png)
-
-Now that we now the components we can put together an image of what a computer cluster is. A **computer cluster** is a group of loosely or tightly connected computers that work together as a single system. A **HPC (High Performance Compute) cluster** is a computer cluster capable of performing computations at high speeds.
-
-![](images/hpcImage.png)
 
 
 
