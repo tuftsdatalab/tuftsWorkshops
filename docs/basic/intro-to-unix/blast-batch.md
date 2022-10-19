@@ -82,7 +82,11 @@ If it does, a simple way to run it is by telling shell that it is a program to r
 sbatch blast_sbatch.sh
 ```
 
+Check that the job is running
 
+```
+squeue -u $USER
+```
 
 Let's go ahead and run it from the workshop directory where you copied your data to.
 
