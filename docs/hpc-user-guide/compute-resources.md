@@ -53,6 +53,7 @@ __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
 - Users can ONLY see GPU devices that are assigned to them with `$ nvidia-smi`.
 
 **`gpu` partition`-p gpu`:**
+
 - NVIDIA P100
     - In "gpu" partition
     - Request with: `--gres=gpu:p100:1`(one P100 GPU, can request up to 6 on one node)
@@ -64,6 +65,7 @@ __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
     - Request with: `--gres=gpu:a100:1`(one A100 GPU, can request up to 4 on one node)
 
 **`preempt` partition `-p preempt`**
+
 - NVIDIA T4
     - In "preempt" partition
     - Request with: `--gres=gpu:t4:1`(one T4 GPU, can request up to 4 on one node)
