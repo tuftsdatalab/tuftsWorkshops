@@ -1,4 +1,4 @@
-## OnDemand
+## OnDemand File Transfer
 
 !!! note
     Only for transfering files size up to 976MB per file.
@@ -14,7 +14,7 @@ Using the **`Upload`** or **`Download`** buttons to transfer.
 ![](images/Home.png)
 
 
-### File Transfer Client
+## File Transfer Client
 
 -  Download one of these free file transfer programs:
 
