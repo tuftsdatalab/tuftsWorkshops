@@ -58,7 +58,7 @@ nav:
             - "Login": hpc-user-guide/login.md
             - "File Transfer": hpc-user-guide/file-transfer.md
         - Tufts HPC Cluster Resource:
-            - "Terminologies:" hpc-user-guide/what-is-the-cluster.md
+            - "Terninologies": hpc-user-guide/what-is-the-cluster.md
             - "Compute Resources": hpc-user-guide/compute-resources.md
             - "Software on the Cluster": hpc-user-guide/software-cluster.md
             - "Tmux Session": hpc-user-guide/tmux.md
