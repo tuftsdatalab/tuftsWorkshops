@@ -2,9 +2,29 @@
 
 We will spend most of our time learning about the basics of the shell by manipulating some experimental data that we download from the internet.
 
+??? note "For Attendees Using Terminal Programs to Access the Cluster (instead of the Web Browser "OnDemand"
+
+    If you are using a terminal on your home machine to connect to the tufts cluster, you will first need to log in by sending a simple command. **Ignore this if you are using the web browser login tool.**
+
+    Replace "username01" with your tufts username.
+
+    ```
+    ssh username01@login.pax.tufts.edu
+    ```
+
+    Your username will have been created when your account was set up. If you do not have a cluster account, you can still follow this tutorial from your laptop or personal computer, except that the file structure will be different from what is described.
+
+The login will ask you for your Tufts password.
+
+??? note "Connection Issues?"
+
+    If you are not on the Tufts network, you will need to set up the Tufts VPN (Virtual Private Network) before logging in:
+
+    [VPN Instructions](https://it.tufts.edu/guides/vpn-virtual-private-network/anyconnect-desktop-application){:target="_blank" rel="noopener"}
 
 
-!!! Note "Best Practices for Logging In"
+
+!!! note "Best Practices for Logging In"
 
     If you are logged in to OnDemand, and on a machine called "login". If you are not on the login machine, type `exit` to get there.
     
@@ -64,30 +84,6 @@ and then hit ENTER
 (This is a good question for Mondays ....)
 
 When you are on the Tufts cluster, this will return your username according to the cluster. This username is attached to you wherever you are in the cluster and creates a home where your files can be kept, regardless of which machine you are on in the cluster. [If you are on your laptop or personal computer, the answer to this may be different before you log in.]
-
-
-
-??? note "For Attendees Using Terminal Programs to Access the Cluster (instead of the Web Browser "OnDemand"
-
-    If you are using a terminal on your home machine to connect to the tufts cluster, you will first need to log in by sending a simple command. **Ignore this if you are using the web browser login tool.**
-
-    Replace "username01" with your tufts username.
-
-    ```
-    ssh username01@login.pax.tufts.edu
-    ```
-
-    Your username will have been created when your account was set up. If you do not have a cluster account, you can still follow this tutorial from your laptop or personal computer, except that the file structure will be different from what is described.
-
-The login will ask you for your Tufts password.
-
-??? note "Connection Issues?"
-
-    If you are not on the Tufts network, you will need to set up the Tufts VPN (Virtual Private Network) before logging in:
-
-    [VPN Instructions](https://it.tufts.edu/guides/vpn-virtual-private-network/anyconnect-desktop-application){:target="_blank" rel="noopener"}
-
-
 
 
 ## Running Commands
