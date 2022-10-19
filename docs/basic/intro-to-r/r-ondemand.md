@@ -57,7 +57,13 @@ Before we dive into R it is worth taking a moment to talk about project manageme
 
 ![](images/messy.png)
 
-Sifting through a non-organized file system can make it difficult to find files, share data/scripts, and identify different versions of scripts. To remedy this, It is reccomended to work within an R Project.
+Sifting through a non-organized file system can make it difficult to find files, share data/scripts, and identify different versions of scripts. To remedy this, It is reccomended to work within an R Project. Before we make this project, we should make sure you are in your home directory. To do this click on the three dots in the files tab:
+
+![](images/three_dots.png)
+
+Then enter in a ~ symbol to go home!
+
+![](images/getting_home.png)
 
 ---
 
