@@ -30,7 +30,7 @@ Click on `Interactive Apps > RStudio Pax` and you will see a form to fill out to
 - `Number of cores` : `1`
 - `Amount of memory` : `4GB`
 - `R version` : `4.0.0`
-- `Reservation for class, training, workshop` : `GET THIS FROM DELILAH`
+- `Reservation for class, training, workshop` : `Bioinformatics Workshops`
 - `Load Supporting Modules`: `boost/1.63.0-python3 java/1.8.0_60 gsl/2.6`
 
 Click `Launch` and wait until your session is ready. Click `Connect To RStudio Server`, and you will notice a new window will pop up with RStudio. 
