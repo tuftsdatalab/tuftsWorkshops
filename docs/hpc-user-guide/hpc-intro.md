@@ -8,9 +8,9 @@
 - Jason Laird, Bioinformatics Scientist
 
 
-!!! tip 
- ### TTS Help
- If you'd like to contact Research Technology with questions regarding cluster and storage accounts at Tufts, feel free to reach out to us at <li><a href="tts-research@tufts.edu">tts-research@tufts.edu</a></li>
+!!! note "TTS Help" 
+
+    If you'd like to contact Research Technology with questions regarding cluster and storage accounts at Tufts, feel free to reach out to us at <li><a href="tts-research@tufts.edu">tts-research@tufts.edu</a></li>
     
 ## Recording 
 
@@ -26,9 +26,8 @@ This introductory virtual workshop will cover the basics of using the Tufts High
 
 Find out about other Data Lab and Bioinformatics Workshops being offered this semester from [this link](https://sites.tufts.edu/datalab/workshops/){:target="_blank" rel="noopener"}.
 
-!!! tip
- ### Bioinformatics Workshops
-  If you have a question regarding bioinformatics workshops specifically, please reach out to <li><a href="bioinformatics-workshop-       questions@elist.tufts.edu">bioinformatics-workshop-questions@elist.tufts.edu</a></li>
+!!! note "Bioinformatics Workshops"
+    If you have a question regarding bioinformatics workshops specifically, please reach out to <li><a href="bioinformatics-workshop-       questions@elist.tufts.edu">bioinformatics-workshop-questions@elist.tufts.edu</a></li>
 
  
 !!! abstract "Acknowledgement"
