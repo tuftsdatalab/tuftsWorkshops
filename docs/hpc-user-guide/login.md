@@ -4,7 +4,7 @@
 - **VPN**
     - Non-Tufts Network please connect to [Tufts VPN](https://access.tufts.edu/vpn){:target="_blank" rel="noopener"}
 - **2FA**
-    - Tufts Network (not needed for [**OnDemand**](https://ondemand.pax.tufts.edu){:target="_blank" rel="noopener"})
+    - Tufts Network (not needed for [**OnDemand**](https://ondemand.pax.tufts.edu){:target="_blank" rel="noopener"}
     - FastX11 from  [__old OnDemand__](https://ondemand.cluster.tufts.edu){:target="_blank" rel="noopener"}
 - **SSH**
     - The SSH protocol aka **Secure Shell** is a method for secure remote login from one computer to another. 
@@ -34,12 +34,12 @@
     
     `$ [your_utln@login-prod-03 ~]`
 
-  * Setting up [SSH keyless access](_https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/_)
+  * Setting up [SSH keyless access](_https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/_){:target="_blank" rel="noopener"}
 
 
 ### **OnDemand Web Interface**
 
-#### [**https://ondemand.pax.tufts.edu**](https://ondemand.pax.tufts.edu)
+#### [**https://ondemand.pax.tufts.edu**](https://ondemand.pax.tufts.edu){:target="_blank" rel="noopener"}
 
 ![](images/login.png)
 
@@ -67,7 +67,7 @@ If you need **X11** access through OnDemand to display any GUI applications, ple
 
 OR 
 
-You also have the option to use the `Xfce Terminal` under new  [OnDemand](https://ondemand.pax.tufts.edu) `Interactive Apps`.
+You also have the option to use the `Xfce Terminal` under new  [OnDemand](https://ondemand.pax.tufts.edu){:target="_blank" rel="noopener"} `Interactive Apps`.
 
 ![](images/InteractiveApps.png)
 
