@@ -31,7 +31,7 @@ Find out about other Data Lab and Bioinformatics Workshops being offered this se
 !!! note "Bioinformatics Workshops"
     If you have a question regarding bioinformatics workshops specifically, please reach out to 
     
-    [bioinformatics-workshop-questions@elist.tufts.edu(mailto:bioinformatics-workshop-questions@elist.tufts.edu)
+    [bioinformatics-workshop-questions@elist.tufts.edu](mailto:bioinformatics-workshop-questions@elist.tufts.edu)
 
  
 !!! abstract "Acknowledgement"
