@@ -1,4 +1,5 @@
 ## CPUs
+
 Resources are orgnized into **partitions** on the cluster based on functionality and priority.
 
 After logging in on the HPC cluster, you can use command `sinfo` to check the `partition` you have access to (all partitions listed in the `sinfo` output).
@@ -41,6 +42,7 @@ preempt         up 7-00:00:00     20   idle p1cmp[016-017,031-037,039-042,081-08
 ![](images/Misc2.png)
 
 ![](images/Inventory.png)
+
 
 ## GPUs
 
