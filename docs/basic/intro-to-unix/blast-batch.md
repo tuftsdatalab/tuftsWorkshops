@@ -15,13 +15,14 @@ First, let's add more sequences to our query file. This will extract the first 1
 head -n 999 mouse.1.protein.faa > mm-second.faa
 ```
 
-See [this link](http://www.metagenomics.wiki/tools/blast/blastn-output-format-6) for a description of the possible BLAST output formats.
+See [this link](http://www.metagenomics.wiki/tools/blast/blastn-output-format-6){:target="_blank" rel="noopener"} for a description of the possible BLAST output formats.
 
 In order to do this, we need to open a text editor.
 
-### Opening a Text Editor
 
-The easiest text editor to use on command line is `nano`, but there are many other types of command line text editors (`vi`,`emacs`,`vim`, etc.)
+## Opening a Text Editor
+
+The easiest text editor to use on command line for beginners is `nano`, but there are many other types of command line text editors (`vi`,`emacs`,`vim`, etc.)
 
 Nano is nice because it puts the instructions at the bottom of the editor in case you forget.
 
@@ -38,7 +39,7 @@ Let's reopen and copy and paste our script into the file.
 Sometimes it is good to give a file name, so let's nano with a filename for our script.
 
 ```
-nano sbatch.sh
+nano blast_sbatch.sh
 ```
 
 Before closing, let's put some text into the file. 
@@ -48,7 +49,7 @@ Make sure to change the email address to your own email.
 ```
 #!/bin/bash
 
-#SBATCH --job-name=job
+#SBATCH --job-name=blast
 #SBATCH --nodes=1
 #SBATCH -n 2
 #SBATCH --partition=batch
@@ -65,12 +66,12 @@ blastp -query mm-second.faa -db zebrafish.1.protein.faa -out mm-second.x.zebrafi
 
 ```
 
-**Control -X** to close and save and use the same file name (sbatch.sh)
+**Control -X** to close and save and use the same file name (blast_sbatch.sh)
 
 Because it is going to one or several virtual locations in the cluster, we need to reload the module as part of the script before running the script. This will make the command recognizable to the machine where the job is running.
 
 ```
-cat sbatch.sh
+cat blast_sbatch.sh
 ```
 
 Does it have all the elements?
@@ -78,7 +79,7 @@ Does it have all the elements?
 If it does, a simple way to run it is by telling shell that it is a program to run on SLURM.
 
 ```
-sbatch sbatch.sh
+sbatch blast_sbatch.sh
 ```
 
 
@@ -95,8 +96,7 @@ You can look at the output file with `less -S`, the flag allows scrolling from l
 less -S mm-second.x.zebrafish.tsv
 ```
 
-(and again, type 'q' to get out of paging mode.)
-
+(and again, type 'q' to get out of paging mode)
 
 The command line may move stuff around slightly, but it is a tab delimited file that can be downloaded to your computer and loaded into your spreadsheet program of choice.
 
