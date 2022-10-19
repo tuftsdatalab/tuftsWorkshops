@@ -49,7 +49,7 @@
 
 #### [**https://ondemand.pax.tufts.edu**](https://ondemand.pax.tufts.edu)
 
-<img src="../images/login.png" alt="OnDemandLogin" width="60%">
+![](images/login.png)
 
 Use your **Tufts UTLN** and **password** to login. 
 
