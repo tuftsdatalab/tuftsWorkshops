@@ -1,5 +1,5 @@
 # How to Login to Tufts HPC Cluster
-!!!tip
+!!!info
   > **VPN**
   >
   > - Non-Tufts Network please connect to [Tufts VPN](https://access.tufts.edu/vpn){:target="_blank" rel="noopener"}
