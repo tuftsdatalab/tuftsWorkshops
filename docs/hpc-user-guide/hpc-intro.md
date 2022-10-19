@@ -7,8 +7,8 @@
 - Adelaide Rhodes, Ph.D,  Senior Bioinformatics Scientist
 - Jason Laird, Bioinformatics Scientist
 
-!!! tip
-    If you'd like to contact Research Technology with questions feel free to reach out to us at <li><a href="tts-research@tufts.edu">tts-research@tufts.edu</a></li>
+
+If you'd like to contact Research Technology with questions regarding cluster and storage accounts at Tufts, feel free to reach out to us at <li><a href="tts-research@tufts.edu">tts-research@tufts.edu</a></li>
     
 ## Recording 
 
