@@ -77,7 +77,7 @@ nav:
     - Intro to RStudio For Life Sciences:
         - "Introduction": basic/intro-to-r/r-intro.md
         - "Setup": basic/intro-to-r/r-ondemand.md
-        - "Intro To R Script": basic/intro-to-r/r-workshop-markdown.md
+        - "Intro To R Script": basic/intro-to-r/intro-to-r.html
     - Intro To 16S Metabarcoding:
         - "Background": omics/intro-to-16S/background.md
         - "Setup": omics/intro-to-16S/setup.md
