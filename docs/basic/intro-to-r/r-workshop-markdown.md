@@ -50,7 +50,7 @@
 
 !!! info "output"
 
-    ```
+    ````
     spec_tbl_df [9 × 5] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
      $ SampleID       : chr [1:9] "sample 1" "sample 2" "sample 3" "sample 4" ...
      $ AntibioticUsage: chr [1:9] "None" "None" "None" "None" ...     
@@ -65,7 +65,7 @@
       ..   Organism = col_character(),
       ..   TaxaCount = col_double()
       .. )
-      ```
+    ````
   
 
 !!! info "output"
