@@ -4,6 +4,10 @@ When assessing a microbial community, you might be interested to determine which
 
 Before we assess which phylum are differentially abundant, a bar plot can be a quick first pass at determining this:
 
+**Code Chunk 15**
+
+![](images/r-markdown-header.png)
+
 ```R
 ## filter out top 20 ASVs
 ## create a barplot of their distribution
@@ -71,6 +75,10 @@ Differential Abundance measures which taxa are differentially abundant between c
 </figure>
 
 Now how do we do this in R?
+
+**Code Chunk 16**
+
+![](images/r-markdown-header.png)
 
 ```R
 # Differential Abundance
