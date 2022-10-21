@@ -44,6 +44,8 @@
    
 We begin by specifying the path to our data, sorting by forward and reverse strands, and grabbing our sample names:
 
+![](images/r-markdown-header.png)
+
 ```R
 ## path to files
 path <- "./data/fastq/"
