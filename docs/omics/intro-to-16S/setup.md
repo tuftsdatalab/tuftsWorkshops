@@ -50,61 +50,21 @@ file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/silva/silva_nr99
 file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/scripts/dada2pipeline.Rmd",to="./scripts/")
 ```
 
+Now that we have our data and scripts copied, let's navigate to our scripts folder and open up "dada2pipeline.Rmd".
 
+## Libraries
 
+To run a code chunk in this R markdown file, click the play button at the top right hand side of the code chunk. We will practice by running the code chunk that loads the R libraries we will need for this workshop:
 
+**Code Chunk 1**
 
-
-
-
-
-
-
-
-In the `Terminal` tab we will set up our project space:
-
-??? tip "Where Do I find the Terminal Tab?"
-    ![](images/r-studio-terminal-tab.png)
-    
-```bash
-mkdir data
-mkdir results
-mkdir scripts
-cd data
-mkdir fastq
-mkdir metaData
-cd ..
-```
-
-We will copy over our sample data:
-
-```bash
-cp -r /cluster/tufts/bio/tools/training/microbiome16S/subsampled/* ./data/fastq/
-cp /cluster/tufts/bio/tools/training/microbiome16S/metaData.txt ./data/metaData/
-```
-## Script Setup
-
-Now to get started we will need to setup a script:
-
-- Go to `File > New File > R script`
-- Click the `New File` icon and select R script
-
-In the R script, start by loading the libraries we need:
+![](images/r-markdown-header.png)
 
 ```R
-.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',.libPaths()))
+.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',))
 library(dada2)
 library(phyloseq)
 library(ggplot2)
 library(DESeq2)
 library(tidyverse)
 ```
-
-Additionally, let's use the `setwd()` function to make sure that we set our directory to this project:
-
-```R
-setwd("~/intro-to-16S/")
-```
-
-??? question "Check that your screen looks like this:"
-    ![](images/project-setup-screen2.png)
