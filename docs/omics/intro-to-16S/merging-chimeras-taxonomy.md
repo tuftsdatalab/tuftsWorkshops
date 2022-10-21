@@ -10,7 +10,7 @@
 
 Let's do this with code now!
 
-**Code Chunk 6**
+**Code Chunk 7**
 
 ![](images/r-markdown-header.png)
 
@@ -32,7 +32,7 @@ mergers <- mergePairs(
 
 Now that our sequences are merged we can create an ASV counts table, basically telling us how which samples contain which ASV's:
 
-**Code Chunk 7**
+**Code Chunk 8**
 
 ![](images/r-markdown-header.png)
 
@@ -57,7 +57,7 @@ seqtab <- makeSequenceTable(mergers)
 
 Now in code:
 
-**Code Chunk 8**
+**Code Chunk 9**
 
 ![](images/r-markdown-header.png)
 
@@ -73,7 +73,7 @@ seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", verbose=TRUE)
 
 Now let's check if any chimeric sequences are removed:
 
-**Code Chunk 9**
+**Code Chunk 10**
 
 ![](images/r-markdown-header.png)
 
@@ -100,7 +100,7 @@ dim(seqtab.nochim)
 
 We will also take a moment to do some final QC:
 
-**Code Chunk 10**
+**Code Chunk 11**
 
 ![](images/r-markdown-header.png)
 
@@ -143,7 +143,7 @@ SRR5690822  1000      940       802       669    300     300
 - To determine which taxon each  ASV belongs to DADA2 uses a naïve bayes classifier 
 - This classifier uses a set of reference sequences with known taxonomy, here we use the SILVA database, as the training set and and outputs taxonomic assignments with bootstrapped confidence
 
-**Code Chunk 11**
+**Code Chunk 12**
 
 ![](images/r-markdown-header.png)
 
