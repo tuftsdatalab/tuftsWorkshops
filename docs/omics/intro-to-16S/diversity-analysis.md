@@ -1,3 +1,5 @@
+## Making a PhyloSeq Object
+
 Once we have quantified our community, we can analyze its composition. Two main methods of doing so are exploring the **alpha** and **beta** diversity of the community. First we will need to take our taxonomic data and pass it to the `phyloseq` package for easier manipulation:
 
 ```R
