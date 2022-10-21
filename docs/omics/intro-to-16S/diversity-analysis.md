@@ -2,7 +2,7 @@
 
 Once we have quantified our community, we can analyze its composition. Two main methods of doing so are exploring the **alpha** and **beta** diversity of the community. First we will need to take our taxonomic data and pass it to the `phyloseq` package for easier manipulation:
 
-**Code Chunk 12**
+**Code Chunk 13**
 
 ![](images/r-markdown-header.png)
 
@@ -44,7 +44,7 @@ taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 
 In R we can visualize this with:
 
-**Code Chunk 13**
+**Code Chunk 14**
 
 ![](images/r-markdown-header.png)
 
@@ -71,7 +71,7 @@ plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
 
 We can plot this in R code:
 
-**Code Chunk 14**
+**Code Chunk 15**
 
 ![](images/r-markdown-header.png)
 
