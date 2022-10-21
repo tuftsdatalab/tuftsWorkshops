@@ -76,6 +76,8 @@ Now let's check if any chimeric sequences are removed:
 !!! info 
     We can see here no chimeric sequences were removed because our before and after sequence count matrices have the same dimensions.
 
+## Pipeline Quality Control 
+
 We will also take a moment to do some final QC:
 
 ```R
