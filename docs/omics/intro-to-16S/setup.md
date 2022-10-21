@@ -30,6 +30,37 @@ We are going to create a new project to begin:
 4. Create a name for your project (e.g. `intro-to-16S`)
 5. `Create Project`
 
+## File Organization
+
+In our project we will need some folders to contain our scripts, data and results:
+
+- Click the New Folder icon
+- Create a folder called data and click ok
+- Following the same process, create a scripts folder and a results folder
+
+
+## Data & Scripts
+
+Today we will be working with data from Rosshart et al. (2107) where wild-type and laboratory strain mouse microbiomes were assessed. To copy over 
+this data we will enter the following command into the console:
+
+```R
+file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/data/*",to="./data/")
+file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/silva/silva_nr99_v138.1_train_set.fa.gz",to="./data/")
+file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/scripts/dada2pipeline.Rmd",to="./scripts/")
+```
+
+
+
+
+
+
+
+
+
+
+
+
 In the `Terminal` tab we will set up our project space:
 
 ??? tip "Where Do I find the Terminal Tab?"
