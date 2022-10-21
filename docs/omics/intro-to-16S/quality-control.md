@@ -79,6 +79,8 @@ dada2::plotQualityProfile(path2Forward[1:2])+
 
 ![](images/quality-control-plot.png)
 
+## Trimming 
+
 Here we notice a dip in quality scores and will trim using the base DADA2 filters:
 
 ```R
