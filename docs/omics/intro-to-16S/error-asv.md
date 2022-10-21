@@ -9,7 +9,7 @@ sequence j over L aligned nucleotides with a quality score q?
 
 Here we will leverage the parametric model to learn error rates and then plot them:
 
-**Code Chunk 4**
+**Code Chunk 5**
 
 ![](images/r-markdown-header.png)
 
@@ -38,7 +38,7 @@ plotErrors(errForward,nominalQ=TRUE)
 
 ![](images/infer-asv.png)
 
-**Code Chunk 5**
+**Code Chunk 6**
 
 ![](images/r-markdown-header.png)
 
