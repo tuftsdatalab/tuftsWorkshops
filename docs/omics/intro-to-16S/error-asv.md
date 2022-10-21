@@ -9,6 +9,10 @@ sequence j over L aligned nucleotides with a quality score q?
 
 Here we will leverage the parametric model to learn error rates and then plot them:
 
+**Code Chunk 4**
+
+![](images/r-markdown-header.png)
+
 ```R
 # Learn Error Rates
 
@@ -33,6 +37,10 @@ plotErrors(errForward,nominalQ=TRUE)
 - If a sequence is present in another sample, it is more likely that it is a real biological sequence
 
 ![](images/infer-asv.png)
+
+**Code Chunk 5**
+
+![](images/r-markdown-header.png)
 
 ```R
 # Sample Inference
