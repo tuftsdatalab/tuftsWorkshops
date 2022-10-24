@@ -61,7 +61,7 @@ To run a code chunk in this R markdown file, click the play button at the top ri
 ![](images/r-markdown-header.png)
 
 ```R
-.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',))
+.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0'))
 library(dada2)
 library(phyloseq)
 library(ggplot2)
