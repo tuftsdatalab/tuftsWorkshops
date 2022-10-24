@@ -4,7 +4,8 @@ November 2,2022
 
 ## TTS Research Technology Instructors 
 
-- Jason Laird, Bioinformatics Scientist
+- Jason Laird, M.S., Bioinformatics Scientist
+- Naisi Zhao, M.S., Dr.PH, Research Assistant Professor
 - Adelaide Rhodes, Ph.D,  Senior Bioinformatics Scientist
 
 
