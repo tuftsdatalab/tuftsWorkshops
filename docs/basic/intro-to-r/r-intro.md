@@ -1,6 +1,6 @@
 ## Intro to RStudio For Life Sciences
 
-October 26,2022
+October 26, 2022
 
 ## TTS Research Technology Instructors 
 
