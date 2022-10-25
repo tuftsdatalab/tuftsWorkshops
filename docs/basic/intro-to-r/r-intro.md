@@ -5,7 +5,7 @@ October 26,2022
 ## TTS Research Technology Instructors 
 
 - Jason Laird, Bioinformatics Scientist
-- Christina Divoli, Instrumentation Specialist
+- Christina Divoll, Research Instrumentation and HPC Specialist
 
 
 !!! note "TTS Help" 
