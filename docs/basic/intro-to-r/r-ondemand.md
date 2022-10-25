@@ -2,7 +2,7 @@
 
 !!! example "Prerequisites"
     - [Request an account](http://research.uit.tufts.edu/) on the Tufts HPC Cluster
-    - Connect to the [VPN](https://access.tufts.edu/vpn)
+    - Connect to the [VPN](https://access.tufts.edu/vpn) or the Tufts Secure Network
 
 ---
 
