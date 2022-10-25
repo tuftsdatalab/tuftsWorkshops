@@ -523,6 +523,7 @@ merged$RBC_Status <- factor(
   )
 )
 merged$RBC_Status
+```
 
 !!! info "output"
     
@@ -531,6 +532,8 @@ merged$RBC_Status
     [8] Low RBC Count  Low RBC Count 
     Levels: Low RBC Count High RBC Count
     ```
+
+
 ## Visualizing Data
 
 - Now for the fun part of R: data visualization!
