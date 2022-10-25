@@ -35,7 +35,7 @@ Click on `Interactive Apps > RStudio Pax` and you will see a form to fill out to
 
 Click `Launch` and wait until your session is ready. Click `Connect To RStudio Server`, and you will notice a new window will pop up with RStudio. 
 
-??? question "Have you logged into the cluster?"
+??? question "Are you connected to RStudio?"
     - Yes (put up a green check mark in zoom)
     - No (raise hand in zoom)
     
