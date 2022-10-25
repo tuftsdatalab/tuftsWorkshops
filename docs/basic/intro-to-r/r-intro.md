@@ -5,7 +5,7 @@ October 26,2022
 ## TTS Research Technology Instructors 
 
 - Jason Laird, Bioinformatics Scientist
-- Adelaide Rhodes, Ph.D,  Senior Bioinformatics Scientist
+- Christina Divoli, Instrumentation Specialist
 
 
 !!! note "TTS Help" 
