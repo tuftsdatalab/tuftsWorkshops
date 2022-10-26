@@ -13,10 +13,10 @@ Click on `Interactive Apps > RStudio Pax` and you will see a form to fill out to
 
 - `Number of hours` : `3`
 - `Number of cores` : `1`
-- `Amount of memory` : `32GB`
+- `Amount of memory` : `8GB`
 - `R version` : `4.0.0`
-- `Reservation for class, training, workshop` : `Default`
-- `Load Supporting Modules`: `curl/7.47.1 gcc/7.3.0 hdf5/1.10.4 boost/1.63.0-python3 libpng/1.6.37 java/1.8.0_60 libxml2/2.9.10 libiconv/1.16 fftw/3.3.2 gsl/2.6`
+- `Reservation for class, training, workshop` : `Bioinformatics Workshop`
+- `Load Supporting Modules`: `boost/1.63.0-python3 java/1.8.0_60 gsl/2.6`
 
 Click `Lauch` and wait until your session is ready. Click `Connect To RStudio Server`, and you will notice a new window will pop up with RStudio. 
 
