@@ -45,7 +45,8 @@ Today we will be working with data from Rosshart et al. (2107) where wild-type a
 this data we will enter the following command into the console:
 
 ```R
-file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/data/*",to="./data/")
+file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/fastq/",to="./data/", recursive = TRUE)
+file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/meta/metaData.txt",to="./data/", recursive = TRUE)
 file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/silva/silva_nr99_v138.1_train_set.fa.gz",to="./data/")
 file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/scripts/dada2pipeline.Rmd",to="./scripts/")
 ```
