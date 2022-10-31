@@ -59,6 +59,7 @@ Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
     Here we note that even though we have 662 unique sequences in our data, only 17 of them have been deemed true sequence variants.
 
 
+!!! success "Time for a break!"
 
 
 
