@@ -58,20 +58,6 @@ Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
 !!! info
     Here we note that even though we have 662 unique sequences in our data, only 17 of them have been deemed true sequence variants.
 
-## ASVs vs. OTUs
-
-Traditional 16S metagenomic approaches use OTUs or operational taxonomic units instead of ASVs. So why does DADA2 use ASVs? First let's cover what an OTU is:
-
-- Methods that use OTUs, cluster sequences are clustered together by similarity 
-- Those sequences with above a 97% identity threshold are clustered into an OTU
-- These OTUs are then combined into a consensus sequence and mapped to a reference database to determine which species it is from
-
-![](images/otu.png)
-
-Originally, OTUs were used to mitigate possible sequence errors by clustering similar sequences and getting a consensus sequence. 
-However, this method has been found to inflate the number of unique sequences. 
-By contrast, ASV analysis derives an error term to assess the possibility of a sequencing error. 
-These sequences are then mapped directly to the organism of interest - giving nucleotide resolution. 
 
 
 
