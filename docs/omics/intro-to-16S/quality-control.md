@@ -131,6 +131,7 @@ out <- filterAndTrim(
 ```
 
 !!! info "What do these options mean?"
+    - `truncLen`: truncate reads after this base 
     - `maxN`: After truncation, sequences with more than maxN Ns will be discarded. Note that dada does not allow Ns.
     - `maxEE`: After truncation, reads with higher than maxEE "expected errors" will be discarded.
     - `truncQ`: Truncate reads at the first instance of a quality score less than or equal to `truncQ`
