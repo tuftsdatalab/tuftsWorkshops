@@ -1,13 +1,8 @@
 ## DADA2 Error Model
 
-- The DADA2 Error Model asks: What is the error rate for an amplicon sequence read i that was produced from a 
-sequence j over L aligned nucleotides with a quality score q?
+- The DADA2 error model attempts to assess whether a sequence is too abundant to be explained by errors in amplicon sequencing. 
 
-- Basically, this is a product of error probabilities given some quality score e.g. p(A > G, 35)
-
-- This p-value assess if sequence i is too abundant for it to be explained by errors in amplicon sequencing
-
-Here we will leverage the parametric model to learn error rates and then plot them:
+Here we will leverage this model to learn error rates and then plot them:
 
 **Code Chunk 5**
 
@@ -30,10 +25,10 @@ plotErrors(errForward,nominalQ=TRUE)
     The black points/line our are actual error rates and we are looking for the trend of the black line to match the trend of the red line. 
     Here we expect a little deviation since our sample has been subsampled.
 
-## Inferring Amplicon Sequence Variants (ASVs)
+## Inferring Sequence Variants 
 
 - So far, we have assigned p-values for each sequence in each sample
-- DADA2 then tries to determine which sequences are of biological origin (ASVs) and which aren’t by assessing which sequences are present in other samples
+- DADA2 then tries to determine which sequences are of biological origin and which aren’t by assessing which sequences are present in other samples
 - If a sequence is present in another sample, it is more likely that it is a real biological sequence
 
 ![](images/sequenc-variant-inference.png)
