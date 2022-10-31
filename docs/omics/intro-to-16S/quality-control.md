@@ -87,6 +87,17 @@ dada2::plotQualityProfile(path2Forward[1:2])+
 
 ![](images/quality-control-plot.png)
 
+PLACEHOLDER FOR REVERSE READ PLOT
+
+!!! info "What does the graph tell us?"
+
+    - Here we see that the quality scores drop off around the 200th base pair for the forward reads and the 150th base pair for the reverse reads
+    - The error rate is considered when determining true biological sequences but is more sensitive to rare biological senquences when reads are trimmed.
+
+!!! danger "Trimming Considerations"
+    
+    - The data we are using are 2x250 V4 sequence data. For data that do not overlap as much (i.e. data from the V1-V2 or V3-V4 regions), please ensure that your truncation length is larger than 20 + biological.length.variation of nucleotides between the your strands. 
+
 ## Trimming 
 
 Here we notice a dip in quality scores and will trim using the base DADA2 filters:
