@@ -87,7 +87,13 @@ dada2::plotQualityProfile(path2Forward[1:2])+
 
 ![](images/quality-control-plot.png)
 
-PLACEHOLDER FOR REVERSE READ PLOT
+```R
+# plot the reverse strand quality plot of our first sample
+dada2::plotQualityProfile(path2Reverse[1:2])+
+  guides(scale = "none")
+```
+
+![](images/reverse-quality.png)
 
 !!! info "What does the graph tell us?"
 
