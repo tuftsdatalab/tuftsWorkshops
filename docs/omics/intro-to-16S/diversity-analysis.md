@@ -82,10 +82,9 @@ plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
 ## Beta Diversity
 
 - The ecological complexity between samples
-- We can visualize how our samples group together by ordination – a dimension reduction technique to help visualize sample to sample distance. An ordination metric we can use is the Bray-Curtis distance:
-
-??? example "Optional: How to calculate Bray-Curtis distance"
-    ![](images/bray-curtis.png)
+- We can visualize how our samples group together by ordination – a dimension reduction technique to help visualize sample to sample distance.
+- Here we will use the Unifrac metric to assess sample distance. 
+- Alternatively we could have used the Bray-Curtis distance, however the Bray-Curtis distance is measured soley off the ASV counts where as the Unifrac distance also accounts for phylogeny.
 
 We can plot this in R code:
 
@@ -94,15 +93,10 @@ We can plot this in R code:
 ![](images/r-markdown-header.png)
 
 ```R
-## Transform data to proportions 
-## as appropriate for Bray-Curtis distances
-ps.prop <- transform_sample_counts(ps, function(otu) otu/sum(otu))
-ord.nmds.bray <- ordinate(ps.prop, method="NMDS", distance="bray")
-plot_ordination(ps.prop, ord.nmds.bray, color="Host", title="Bray NMDS")+
-  theme_bw()
+
 ```
 
-![](images/bray-curtis-plot.png)
+PLACEHOLDER FOR UNIFRAC FIGURE
 
 Here we note that the wild type and C57BL/6NTac cluster together.
 
