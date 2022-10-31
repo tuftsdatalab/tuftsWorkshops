@@ -31,7 +31,7 @@ plotErrors(errForward,nominalQ=TRUE)
 - DADA2 then tries to determine which sequences are of biological origin and which aren’t by assessing which sequences are present in other samples
 - If a sequence is present in another sample, it is more likely that it is a real biological sequence
 
-![](images/sequenc-variant-inference.png)
+![](images/sequence-variant-inference.png)
 
 **Code Chunk 6**
 
