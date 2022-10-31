@@ -138,4 +138,7 @@ So how did our results stack up to our graph? Well, the wild type seem to have a
 16. [Introduction to RNA-Seq with Galaxy](https://tuftsdatalab.github.io/Research_Technology_Bioinformatics/workshops/IntroToRNAseqGalaxy/slides/galaxyWorkshop_idgh1001_15Feb2022.pdf)
 17. [Evaluation of 16S rRNA Databases for Taxonomic Assignments Using a Mock Community](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6440677/)
 18. [Wild Mouse Gut Microbiota Promotes Host Fitness and Improves Disease Resistance](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6887100/)
+19. [Normalization and microbial differential abundance strategies depend upon data characteristics](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-017-0237-y)
+20. [Waste Not, Want Not: Why Rarefying Microbiome Data Is Inadmissible](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003531)
+21. [A Primer on Metagenomics](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000667)
 
