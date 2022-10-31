@@ -28,6 +28,23 @@ mergers <- mergePairs(
   verbose=TRUE)
 ```
 
+## ASVs vs. OTUs
+
+- Now that we have finally merged our sequence variants we are left with an Amplicon Sequence Variant. 
+- Traditional 16S metagenomic approaches use OTUs or operational taxonomic units instead of ASVs. 
+- So why does DADA2 use ASVs? First let's cover what an OTU is:
+
+    - Methods that use OTUs, cluster sequences are clustered together by similarity 
+    - Those sequences with above a 97% identity threshold are clustered into an OTU
+    - These OTUs are then combined into a consensus sequence and mapped to a reference database to determine which species it is from
+
+![](images/otu.png)
+
+Originally, OTUs were used to mitigate possible sequence errors by clustering similar sequences and getting a consensus sequence. 
+However, this method has been found to inflate the number of unique sequences. 
+By contrast, ASV analysis derives an error term to assess the possibility of a sequencing error. 
+These sequences are then mapped directly to the organism of interest - giving nucleotide resolution. 
+
 ## ASV Table
 
 Now that our sequences are merged we can create an ASV counts table, basically telling us how which samples contain which ASV's:
