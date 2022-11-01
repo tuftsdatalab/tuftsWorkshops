@@ -127,10 +127,10 @@ plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
     
     - $N$ is the number of nodes in the tree
     - $S$ is the number of sequences represented by the tree
-    - $li$ is the branch length between node $i$ and its parent 
-    - $Lj$ is the total branch length from the root to the tip of the tree for sequence $j$
-    - $Ai$ and $Bi$ are the number of sequences from communities $A$ and $B$ that descend from the node, 
-    - $AT$ and $BT$ are the total number of sequences from communities $A$ and $B$.
+    - $L_i$ is the branch length between node $i$ and its parent 
+    - $L_j$ is the total branch length from the root to the tip of the tree for sequence $j$
+    - $A_i$ and $B_i$ are the number of sequences from communities $A$ and $B$ that descend from the node, 
+    - $A_T$ and $B_T$ are the total number of sequences from communities $A$ and $B$.
     
     [Mothur UniFrac Alogrith](https://mothur.org/wiki/weighted_unifrac_algorithm/)
 
