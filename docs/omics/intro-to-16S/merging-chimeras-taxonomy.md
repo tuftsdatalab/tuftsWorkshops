@@ -50,13 +50,12 @@ mergers <- mergePairs(
 - Traditional 16S metagenomic approaches use OTUs or operational taxonomic units instead of ASVs. 
 - So why does DADA2 use ASVs? First let's cover what an OTU is:
 
-    - Methods that use OTUs, cluster sequences are clustered together by similarity 
-    - Those sequences with above a 97% identity threshold are clustered into an OTU
+    - Methods that use OTUs, cluster sequences are clustered together by an adjustable similarity threshold usually around 97%
     - These OTUs are then combined into a consensus sequence and mapped to a reference database to determine which species it is from
 
 ![](images/otu.png)
 
-Originally, OTUs were used to mitigate possible sequence errors by clustering similar sequences and getting a consensus sequence. 
+Originally, OTUs were used to mitigate the false discovery rate by clustering similar sequences and getting a consensus sequence. 
 However, this method has been found to inflate the number of unique sequences. 
 By contrast, ASV analysis derives an error term to assess the possibility of a sequencing error. 
 These sequences are then mapped directly to the organism of interest - giving nucleotide resolution. 
