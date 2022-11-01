@@ -96,7 +96,7 @@ We can plot this in R code:
 
 ```
 
-PLACEHOLDER FOR UNIFRAC FIGURE
+![](images/unifrac.png)
 
 Here we note that the wild type and C57BL/6NTac cluster together.
 
