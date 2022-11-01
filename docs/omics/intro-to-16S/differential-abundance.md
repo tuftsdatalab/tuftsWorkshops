@@ -115,7 +115,7 @@ ggplot(sigtab , aes(x=Phylum, y=log2FoldChange, color=padj)) +
   ggtitle("Mus musculus domesticus v. C57BL/6NTac")
 ```
 
-![](images/deseq2-res.png)
+![](images/deseq2-res1.png)
 
 So how did our results stack up to our graph? Well, the wild type seem to have an abundance of Campylobacteria and the C57BL/6NTac have an abundance of Bacteriodota. However, you'll note that Proteobacteria are severely downregulated in our C57BL/6NTac mice when they only show up in one sample in the wild-type mice. This is why it is useful to confirm that your DESeq2 results are not biased by outliers. It should also be mentioned that we are only dealing with 8 samples here to speed up the tutorial. However, small sample sizes can paint a misleading picture if you are not careful.
 
