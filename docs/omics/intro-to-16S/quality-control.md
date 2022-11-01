@@ -50,7 +50,7 @@ We begin by specifying the path to our data, sorting by forward and reverse stra
 
 ```R
 # path to files
-path <- "../data/fastq"
+path <- "../data/raw_fastq"
 
 # sort our files by forward and reverse strands 
 # so that the sample names for each strand matches
