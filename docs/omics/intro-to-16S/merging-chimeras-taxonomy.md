@@ -81,7 +81,10 @@ seqtab <- makeSequenceTable(mergers)
 
 - During Sequencing microbial DNA is subjected to PCR to amplify DNA
 - During PCR it is possible for two unrelated templates to form a non-biological hybrid sequence
-- DADA2 finds these chimeras by aligning each sequence to more abundant sequences and seeing if there are any low abundant sequences that can be created by  mixing the left and and right sides of the more abundant sequences
+- DADA2 finds these chimeras by:
+    - aligning each sequence to more abundant sequences 
+    - now check low abundant sequences and determine:
+        - can this sequence be created if we mix the left and right sides of the abundant sequences
 
 <figure markdown>
   ![](images/chimera1.jpeg){ width="500" }
