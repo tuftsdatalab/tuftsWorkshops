@@ -146,4 +146,5 @@ out <- filterAndTrim(
     - `maxEE`: After truncation, reads with higher than maxEE "expected errors" will be discarded.
     - `truncQ`: Truncate reads at the first instance of a quality score less than or equal to `truncQ`
     - `rm.phix`: If TRUE, discard reads that match against the phiX genome
+        - the PhiX genome is often used in Illumina control runs and it is neccary to remove reads from this genome to assess your microbial community of interest.
     - `compress`:  If TRUE, the output fastq file(s) are gzipped
