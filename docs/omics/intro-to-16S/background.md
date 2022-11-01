@@ -46,7 +46,7 @@
 
 ## DADA2
 
-Today we will be analyzing the microbiome of wild type mice and the C57BL/6NTac laboratory mouse strain using 16S metabarcoding data analysis:
+Today we will be analyzing the microbiome of wild type mice and the C57BL/6NTac laboratory mouse strain, from [Rosshart et al. (2107)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6887100/), using 16S metabarcoding data analysis:
 
 ![](images/microbiome_mouse_data.png)
 
