@@ -17,15 +17,16 @@ Let's do this with code now!
 ```R
 # Merge Read Pairs
 
-## so far we have "denoised", so to speak, 
-## these sequence variants. We now need to merge the
-## forward and reverse strands
+# so far we have "denoised", so to speak, 
+# these sequence variants. We now need to merge the
+# forward and reverse strands
 mergers <- mergePairs(
   dadaForward,
   filtForward,
   dadaReverse, 
   filtReverse, 
   verbose=TRUE)
+
 ```
 
 ## ASVs vs. OTUs
@@ -56,10 +57,10 @@ Now that our sequences are merged we can create an ASV counts table, basically t
 ```R
 # Making a Sequence Table
 
-## now that we have merged sequences we can construct
-## an Amplicon Sequence Variant (ASV) table
-## 
+# now that we have merged sequences we can construct
+# an Amplicon Sequence Variant (ASV) table
 seqtab <- makeSequenceTable(mergers)
+
 ```
 
 ## Chimera Removal
@@ -81,11 +82,12 @@ Now in code:
 ```R
 # Removing Chimeras
 
-## Chimeric sequences occur as errors during PCR 
-## when two unrelated templates for a hybrid sequence
-## we will need to remove them before going forward
+# Chimeric sequences occur as errors during PCR 
+# when two unrelated templates for a hybrid sequence
+# we will need to remove them before going forward
 
 seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", verbose=TRUE)
+
 ```
 
 Now let's check if any chimeric sequences are removed:
@@ -104,14 +106,12 @@ dim(seqtab.nochim)
 ```
 
 ```
-> dim(seqtab)
-[1]  8 27
-> dim(seqtab.nochim)
-[1]  8 27
+[1]   8 119
+[1]   8 117
 ```
 
 !!! info 
-    We can see here no chimeric sequences were removed because our before and after sequence count matrices have the same dimensions.
+    We can see here that 2 chimeric sequences were removed because our before and after sequence count matrices differ by two columns.
 
 ## Pipeline Quality Control 
 
@@ -141,19 +141,19 @@ finalQC
 
 ```
            input filtered denoisedF denoisedR merged nonchim
-SRR5690809  1000      929       788       743    528     528
-SRR5690810  1000      937       766       708    293     293
-SRR5690811  1000      930       807       735    360     360
-SRR5690812  1000      915       768       756    437     437
-SRR5690819  1000      943       761       708    337     337
-SRR5690820  1000      911       769       683    349     349
-SRR5690821  1000      925       811       700    349     349
-SRR5690822  1000      940       802       669    300     300
+SRR5690809  1000      905       840       855    619     611
+SRR5690810  1000      937       853       885    570     549
+SRR5690811  1000      937       880       910    619     594
+SRR5690812  1000      924       886       888    713     700
+SRR5690819  1000      938       872       906    609     609
+SRR5690820  1000      916       870       844    620     620
+SRR5690821  1000      921       883       879    679     679
+SRR5690822  1000      940       865       891    616     616
 ```
 
 !!! info
-    Here we see that we start with 1000 sequences per sample, end up with around 700 after filtering, around 800 after denoising to 
-    find unique sequences, and around 300-500 sequences after merging sequences and removing chimeric sequences.
+    Here we see that we start with 1000 sequences per sample, end up with around 900 after filtering, around 800 after denoising to 
+    find unique sequences, and around 600-700 sequences after merging sequences and removing chimeric sequences.
 
 ## Assigning Taxonomy
 
@@ -167,12 +167,12 @@ SRR5690822  1000      940       802       669    300     300
 ```R
 # Assigning Taxonomy
 
-## dada2 uses a naive Bayes classifier when
-## assigning taxonomy. This means we need a training
-## set of sequences with known taxonomy information.
-## here we use the silva database
+# dada2 uses a naive Bayes classifier when
+# assigning taxonomy. This means we need a training
+# set of sequences with known taxonomy information.
+# here we use the silva database
 
-taxa <- assignTaxonomy(seqtab.nochim, "/cluster/tufts/bio/data/metagenomes/silva/silva_nr99_v138.1_train_set.fa.gz")
+taxa <- assignTaxonomy(seqtab.nochim, "../data/silva_nr99_v138.1_train_set.fa.gz")
 ```
 
 ## Databases
