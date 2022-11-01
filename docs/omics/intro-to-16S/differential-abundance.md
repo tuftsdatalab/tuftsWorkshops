@@ -9,25 +9,29 @@ Before we assess which phylum are differentially abundant, a bar plot can be a q
 ![](images/r-markdown-header.png)
 
 ```R
-## filter out top 20 ASVs
-## create a barplot of their distribution
-## between samples/conditions
-top20 <- names(sort(taxa_sums(ps), decreasing=TRUE))[1:20]
-ps.top20 <- transform_sample_counts(ps, function(OTU) OTU/sum(OTU))
-ps.top20 <- prune_taxa(top20, ps.top20)
-otu = data.frame(t(data.frame(ps.top20@otu_table)))
-tax = data.frame(ps.top20@tax_table) 
-merged20 = merge(otu,
+# transform the sample counts to proportions
+# separate out our proportions
+# separate our our tax info
+ps.prop <- transform_sample_counts(ps, function(OTU) OTU/sum(OTU))
+otu = data.frame(t(data.frame(ps.prop@otu_table)))
+tax = data.frame(ps.prop@tax_table) 
+
+# merge the otu table and phylum column
+# reshape our data to be accepted by ggplot
+# merge taxa data with sample meta data
+merged <- merge(otu,
                  tax %>% select(Phylum),
                  by="row.names") %>%
   select(-Row.names) %>%
   reshape2::melt() %>%
   merge(.,
-        data.frame(ps@sam_data) %>%
+        data.frame(ps.prop@sam_data) %>%
           select(Run,Host),
         by.x="variable",
         by.y="Run")
-ggplot(merged20,aes(x=variable,y=value,fill=Phylum)) +
+
+# plot our taxa 
+ggplot(merged,aes(x=variable,y=value,fill=Phylum)) +
   geom_bar(stat='identity') +
   theme_bw()+
   theme(axis.text.x = element_text(angle=45,hjust=1))+
