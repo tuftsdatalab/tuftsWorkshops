@@ -28,7 +28,7 @@ merged <- merge(otu,
         by.y="Run")
 
 # plot our taxa 
-ggplot(merged,aes(x=variable,y=value,fill=Phylum)) +
+taxa_plot <- ggplot(merged,aes(x=variable,y=value,fill=Phylum)) +
   geom_bar(stat='identity') +
   theme_bw()+
   theme(axis.text.x = element_text(angle=45,hjust=1))+
@@ -38,6 +38,7 @@ ggplot(merged,aes(x=variable,y=value,fill=Phylum)) +
     title = "Barplot of Phylum Abundance"
   )+
   facet_wrap(Host ~ ., scales = "free_x")
+taxa_plot
 ```
 
 ![](images/present-phylum3.png)
@@ -102,7 +103,6 @@ sigtab = res %>%
   dplyr::filter(padj < 0.05) 
 
 ## order sigtab in direction of fold change
-## plot differential abundance
 sigtab <- sigtab %>%
   mutate(Phylum = factor(as.character(Phylum), 
                         levels=names(sort(tapply(
@@ -110,12 +110,19 @@ sigtab <- sigtab %>%
                           sigtab$Phylum, 
                           function(x) max(x)))))
   )
+
+# as a reminder let's plot our abundance data again
+taxa_plot
+
+## plot differential abundance
 ggplot(sigtab , aes(x=Phylum, y=log2FoldChange, color=padj)) + 
   geom_point(size=6) + 
   theme_bw() +
   theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
   ggtitle("Mus musculus domesticus v. C57BL/6NTac")
 ```
+
+![](images/present-phylum3.png)
 
 ![](images/deseq2-res1.png)
 
