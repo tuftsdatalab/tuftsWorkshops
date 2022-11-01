@@ -152,4 +152,6 @@ ggplot(sigtab , aes(x=Phylum, y=log2FoldChange, color=padj)) +
 19. [Normalization and microbial differential abundance strategies depend upon data characteristics](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-017-0237-y)
 20. [Waste Not, Want Not: Why Rarefying Microbiome Data Is Inadmissible](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003531)
 21. [A Primer on Metagenomics](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000667)
+22. [Clustal W and Clustal X version 2.0](https://academic.oup.com/bioinformatics/article/23/21/2947/371686?login=true)
+23. [The neighbor-joining method: a new method for reconstructing phylogenetic trees.](https://academic.oup.com/mbe/article/4/4/406/1029664?login=true)
 
