@@ -11,11 +11,14 @@ Here we will leverage this model to learn error rates and then plot them:
 ```R
 # Learn Error Rates
 
-## dada2 uses a parametric model to learn the error rates
-## for each amplicon data set
+# dada2 uses a parametric model to learn the error rates
+# for each sequence
 errForward <- learnErrors(filtForward)
 errReverse <- learnErrors(filtReverse)
+
+# plot the error rate against theoretical error rates
 plotErrors(errForward,nominalQ=TRUE)
+
 ```
 
 ![](images/error-plot1.png)
@@ -38,25 +41,28 @@ plotErrors(errForward,nominalQ=TRUE)
 ![](images/r-markdown-header.png)
 
 ```R
-# Sample Inference
+# Infer Sequnce Variants
 
-## we will now run the dada2 algorithm 
-## this algorithm delivers "true" sequence variants
-## with information gathered from the error model 
-## generated above
+# we will now run the dada2 algorithm 
+# this algorithm delivers "true" sequence variants
+# with information gathered from the error model 
+# generated above
 dadaForward <- dada(filtForward, err=errForward)
 dadaReverse <- dada(filtReverse, err=errReverse)
+
+# let's get a summary of our first sample
 dadaForward[[1]]
+
 ```
 
 ```
 dada-class: object describing DADA2 denoising results
-17 sequence variants were inferred from 662 input unique sequences.
+35 sequence variants were inferred from 430 input unique sequences.
 Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
 ```
 
 !!! info
-    Here we note that even though we have 662 unique sequences in our data, only 17 of them have been deemed true sequence variants.
+    Here we note that even though we have 430 unique sequences in our data, only 35 of them have been deemed true sequence variants.
 
 
 !!! success "Time for a break!"
