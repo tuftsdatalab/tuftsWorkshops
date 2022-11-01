@@ -99,7 +99,7 @@ dada2::plotQualityProfile(path2Reverse[1:2])+
 
 !!! info "What does the graph tell us?"
 
-    - Here we see that the quality scores drop off around the 200th base pair for the forward reads and the 150th base pair for the reverse reads
+    - Here we see that the quality scores drop off around the 200th base position for the forward reads and the 150th base position for the reverse reads
     - The error rate is considered when determining true biological sequences but is more sensitive to rare biological senquences when reads are trimmed.
 
 !!! danger "Trimming Considerations"
