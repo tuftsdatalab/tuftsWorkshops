@@ -39,7 +39,7 @@ ggplot(merged20,aes(x=variable,y=value,fill=Phylum)) +
   facet_wrap(Host ~ ., scales = "free_x")
 ```
 
-![](images/present-phylum2.png)
+![](images/present-phylum3.png)
 
 Here we note that the wild type seem to have an abundance of Campylobacteria and the C57BL/6NTac have an abundance of Bacteriodota. Let's see if our DESeq2 results confirm this.
 
