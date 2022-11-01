@@ -46,10 +46,13 @@
 
 ## DADA2
 
-We will go through 16S Metabarcoding analysis using DADA2:
+Today we will be analyzing the microbiome of wild type mice and the C57BL/6NTac laboratory mouse strain using 16S metabarcoding data analysis:
+
+![](images/microbiome_mouse_data.png)
+
+To perform 16S Metabarcoding analysis we will be using DADA2:
 
 INSERT DADA2 OVERVIEW GRAPHIC
-
 
 !!! tip "Other 16S Analysis Methods"
     - [USEARCH](https://drive5.com/usearch/)
