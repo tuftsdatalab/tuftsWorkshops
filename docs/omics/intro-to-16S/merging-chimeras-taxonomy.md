@@ -182,6 +182,5 @@ While we use the SILVA database here, there are other options databases:
 - [NCBI 16S RefSeq Database](https://www.ncbi.nlm.nih.gov/refseq/targetedloci/16S_process/)
 - [Greengenes](https://greengenes.secondgenome.com)
 
-[Park SC, Won S. 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6440677/) performed a benchmarking study assessing these three databases and found that Greengenes predicted fewer correct genera and that SILVA and EzBioCloud predicted roughly similar correct genera. However, SILVA had more false postitives. The authors note that this is probably due to the size of SILVA since it was roughly 4 times the size of EzBioCloud in 2018. 
 
 !!! success "Time for a break!"
