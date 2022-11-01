@@ -44,10 +44,6 @@
    
 We begin by specifying the path to our data, sorting by forward and reverse strands, and grabbing our sample names:
 
-**Code Chunk 2**
-
-![](images/r-markdown-header.png)
-
 ```R
 # path to files
 path <- "../data/raw_fastq"
@@ -77,9 +73,6 @@ sampleNames <- sapply(
 
 DADA2 has built in plotting features that allow you to inspect your fastq files:
 
-**Code Chunk 3**
-
-![](images/r-markdown-header.png)
 
 ```R
 # plot the forward strand quality plot of our first two sample
@@ -110,9 +103,6 @@ dada2::plotQualityProfile(path2Reverse[1:2])+
 
 Here we notice a dip in quality scores and will trim using the base DADA2 filters:
 
-**Code Chunk 4**
-
-![](images/r-markdown-header.png)
 
 ```R
 # create new file names for filtered forward/reverse fastq files
