@@ -136,7 +136,7 @@ ggplot(sigtab , aes(x=Phylum, y=log2FoldChange, color=padj)) +
 ??? tip "Optional: How do I turn this R markdown into an R script?"
     - run the following code (being sure to change the path to where your script is): 
     - `knitr::purl("dada2pipeline.Rmd")`
-    - You should now find an R script called dada2pipeline.R!
+    - You should now find an R script called `dada2pipeline.R`!
     
 
 !!! abstract "References"
