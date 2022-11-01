@@ -49,12 +49,13 @@ We begin by specifying the path to our data, sorting by forward and reverse stra
 ![](images/r-markdown-header.png)
 
 ```R
-## path to files
-path <- "./data/fastq/"
+# path to files
+path <- "../data/fastq"
 
-## sort our files by forward and reverse strands
-## our data has the pattern "_pass_1.fastq.gz" 
-## and "_pass_2.fastq.gz"
+# sort our files by forward and reverse strands 
+# so that the sample names for each strand matches
+# our data has the pattern "_pass_1.fastq.gz" 
+# and "_pass_2.fastq.gz"
 path2Forward <- sort(
   list.files(
     path,
@@ -68,7 +69,7 @@ path2Reverse <- sort(
     full.names = TRUE)
   )
 
-## now let's grab our sample names
+# now let's grab our sample names
 sampleNames <- sapply(
   strsplit(
     basename(path2Forward), "_"), `[`, 1)
@@ -81,6 +82,7 @@ DADA2 has built in plotting features that allow you to inspect your fastq files:
 ![](images/r-markdown-header.png)
 
 ```R
+# plot the forward strand quality plot of our first two sample
 dada2::plotQualityProfile(path2Forward[1:2])+
   guides(scale = "none")
 ```
@@ -88,7 +90,7 @@ dada2::plotQualityProfile(path2Forward[1:2])+
 ![](images/quality-control-plot.png)
 
 ```R
-# plot the reverse strand quality plot of our first sample
+# plot the reverse strand quality plot of our first two sample
 dada2::plotQualityProfile(path2Reverse[1:2])+
   guides(scale = "none")
 ```
@@ -113,31 +115,33 @@ Here we notice a dip in quality scores and will trim using the base DADA2 filter
 ![](images/r-markdown-header.png)
 
 ```R
-## create new file names for filtered forward/reverse fastq files
-## name each file name in the vector with the sample name
-## this way we can compare the forward and reverse files 
-## when we filter and trim
+# create new file names for filtered forward/reverse fastq files
+# name each file name in the vector with the sample name
+# this way we can compare the forward and reverse files 
+# when we filter and trim
 filtForward <- file.path(path, "filtered", paste0(sampleNames, "_F_filt.fastq.gz"))
 filtReverse <- file.path(path, "filtered", paste0(sampleNames, "_R_filt.fastq.gz"))
 names(filtForward) <- sampleNames
 names(filtReverse) <- sampleNames
 
-## Now we will filter and trim our sequences
-## our max 
+# Now we will filter and trim our sequences
 out <- filterAndTrim(
   path2Forward,
   filtForward,
   path2Reverse, 
   filtReverse,
+  truncLen = c(200,150),
   maxN=0, 
   maxEE=c(2,2), 
   truncQ=2, 
   rm.phix=TRUE,
   compress=TRUE)
+
 ```
 
 !!! info "What do these options mean?"
     - `truncLen`: truncate reads after this base 
+        - Here we truncate after base 200 for the forward reads and after basae 150 for the reverse reads
     - `maxN`: After truncation, sequences with more than maxN Ns will be discarded. Note that dada does not allow Ns.
     - `maxEE`: After truncation, reads with higher than maxEE "expected errors" will be discarded.
     - `truncQ`: Truncate reads at the first instance of a quality score less than or equal to `truncQ`
