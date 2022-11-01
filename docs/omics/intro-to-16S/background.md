@@ -54,7 +54,7 @@ To perform 16S Metabarcoding analysis we will be using DADA2:
 
 INSERT DADA2 OVERVIEW GRAPHIC
 
-!!! tip "Other 16S Analysis Methods"
+??? tip "Other 16S Analysis Methods"
     - [USEARCH](https://drive5.com/usearch/)
     - [Mothur](https://mothur.org/)
     - [QIIME](http://qiime.org/)
