@@ -46,8 +46,12 @@
 
 ## DADA2
 
-We will go through 16S Metabarcoding analysis using DADA2, however, other methods are available as well:
+We will go through 16S Metabarcoding analysis using DADA2:
 
-- [USEARCH](https://drive5.com/usearch/)
-- [Mothur](https://mothur.org/)
-- [QIIME](http://qiime.org/)
+INSERT DADA2 OVERVIEW GRAPHIC
+
+
+!!! tip "Other 16S Analysis Methods"
+    - [USEARCH](https://drive5.com/usearch/)
+    - [Mothur](https://mothur.org/)
+    - [QIIME](http://qiime.org/)
