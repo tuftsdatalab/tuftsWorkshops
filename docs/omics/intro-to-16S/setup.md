@@ -62,10 +62,13 @@ To run a code chunk in this R markdown file, click the play button at the top ri
 ![](images/r-markdown-header.png)
 
 ```R
+# load our libraries
 .libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0'))
 library(dada2)
 library(phyloseq)
 library(ggplot2)
 library(DESeq2)
 library(tidyverse)
+library(phangorn)
+library(msa)
 ```
