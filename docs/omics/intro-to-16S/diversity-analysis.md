@@ -1,3 +1,35 @@
+## Constructing the Phylogenetic Tree
+
+We will now construct a phylogenic tree based on our sequence data. To construct our tree we will be first aligning our ASV's using ClustalW and then constructing a phylogenetic tree via the neighborhood joining method. 
+
+
+!!! info "To learn more about ClustalW and the neighborhood joining method visit:"
+    - [Clustal W and Clustal X version 2.0](https://academic.oup.com/bioinformatics/article/23/21/2947/371686?login=true)
+    - [The neighbor-joining method: a new method for reconstructing phylogenetic trees.](https://academic.oup.com/mbe/article/4/4/406/1029664?login=true)
+  
+Let's work this in R!
+
+![](images/r-markdown-header.png)
+
+```R
+# extract sequences
+# name the sequences with their sequence so 
+# that the ends of the phylogenetic tree are labeled
+# align these sequences
+seqs <- getSequences(seqtab)
+names(seqs) <- seqs 
+mult <- msa(seqs, method="ClustalW", type="dna", order="input")
+
+# convert multiple sequence alignment to a phyDat object
+# calculate the nucleotide distances between ASVs
+# use a neighbor joining algorithm to generate the tree
+# finally calculate the likelihood of the tree given the sequence alignment
+phang.align <- as.phyDat(mult, type="DNA", names=getSequence(seqtab))
+dm <- dist.ml(phang.align)
+treeNJ <- NJ(dm)
+fit = pml(treeNJ, data=phang.align)
+```
+
 ## Making a PhyloSeq Object
 
 Once we have quantified our community, we can analyze its composition. Two main methods of doing so are exploring the **alpha** and **beta** diversity of the community. First we will need to take our taxonomic data and pass it to the `phyloseq` package for easier manipulation:
@@ -9,20 +41,24 @@ Once we have quantified our community, we can analyze its composition. Two main 
 ```R
 # Create phyloseq object
 
-## upload meta data for study
-## use this metadata to create the phyloseq object
-meta <- read.csv("./data/metaData/metaData.txt")
+# upload meta data for study
+# ensure the rownames of our meta data are our sample name
+meta <- read.csv("../data/metaData.txt")
 rownames(meta) <- meta$Run
+
+# combine the ASV table, the meta data, and taxonomic data
+# to create the phyloseq object
 ps <- phyloseq(otu_table(seqtab.nochim, taxa_are_rows=FALSE), 
                sample_data(meta), 
-               tax_table(taxa)
+               tax_table(taxa),
+               phy_tree(fit$tree)
                )
-               
+
 # Update ASV names to be shorter
 
-## The full ASV DNA sequence can be hard to look at
-## for this reason we move the sequence information to 
-## the refseq slot of the phyloseq object
+# The full ASV DNA sequence can be hard to look at
+# for this reason we move the sequence information to 
+# the refseq slot of the phyloseq object
 dna <- Biostrings::DNAStringSet(taxa_names(ps))
 names(dna) <- taxa_names(ps)
 ps <- merge_phyloseq(ps, dna)
@@ -67,7 +103,7 @@ In R we can visualize this with:
 ![](images/r-markdown-header.png)
 
 ```R
-# Plotting
+# Plotting Alpha Diversity Metrics
 plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
   theme_bw()+
   theme(axis.text.x = element_text(angle=65,hjust=1))
@@ -93,7 +129,12 @@ We can plot this in R code:
 ![](images/r-markdown-header.png)
 
 ```R
-
+# calculate the unifrac distance between samples 
+# plot unifrac distances
+ordu = ordinate(ps, "PCoA", "unifrac", weighted=TRUE)
+plot_ordination(ps, ordu, color="Host")+
+  theme_bw()+
+  labs(title = "Unifrac Distances")
 ```
 
 ![](images/unifrac.png)
