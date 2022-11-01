@@ -4,9 +4,6 @@ When assessing a microbial community, you might be interested to determine which
 
 Before we assess which phylum are differentially abundant, a bar plot can be a quick first pass at determining this:
 
-**Code Chunk 16**
-
-![](images/r-markdown-header.png)
 
 ```R
 # transform the sample counts to proportions
@@ -53,6 +50,7 @@ Here we note that the wild type seem to have an abundance of Campylobacteria and
 Differential Abundance measures which taxa are differentially abundant between conditions. So how does it work:
 
 ### DESeq2 Normalization:
+
 1. Geometric mean per ASV
 2. Divide rows by geometric mean
 3. Take the median of each sample
@@ -63,6 +61,7 @@ Differential Abundance measures which taxa are differentially abundant between c
 </figure>
 
 ### DESeq2 Model
+
 1. The normalized abundances of an ASV are plotted against two conditions
 2. The regression line that connects these data is used to determine the p-value for differential abundance
 
@@ -72,6 +71,7 @@ Differential Abundance measures which taxa are differentially abundant between c
 
 
 ### DESeq2 P-Value
+
 1. The Slope or 𝛽1 is used to calculate a Wald Test Statistic 𝑍
 2. This statistic is compared to a normal distribution to determine the probability of getting that statistic 
 
@@ -81,9 +81,6 @@ Differential Abundance measures which taxa are differentially abundant between c
 
 Now how do we do this in R?
 
-**Code Chunk 17**
-
-![](images/r-markdown-header.png)
 
 ```R
 # Differential Abundance
