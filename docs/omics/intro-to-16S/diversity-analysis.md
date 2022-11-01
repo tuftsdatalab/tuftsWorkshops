@@ -9,8 +9,6 @@ We will now construct a phylogenic tree based on our sequence data. To construct
   
 Let's work this in R!
 
-![](images/r-markdown-header.png)
-
 ```R
 # extract sequences
 # name the sequences with their sequence so 
@@ -34,9 +32,6 @@ fit = pml(treeNJ, data=phang.align)
 
 Once we have quantified our community, we can analyze its composition. Two main methods of doing so are exploring the **alpha** and **beta** diversity of the community. First we will need to take our taxonomic data and pass it to the `phyloseq` package for easier manipulation:
 
-**Code Chunk 13**
-
-![](images/r-markdown-header.png)
 
 ```R
 # Create phyloseq object
@@ -98,9 +93,6 @@ taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 
 In R we can visualize this with:
 
-**Code Chunk 14**
-
-![](images/r-markdown-header.png)
 
 ```R
 # Plotting Alpha Diversity Metrics
@@ -137,9 +129,6 @@ plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
 
 We can plot this in R code:
 
-**Code Chunk 15**
-
-![](images/r-markdown-header.png)
 
 ```R
 # calculate the unifrac distance between samples 
