@@ -57,10 +57,6 @@ Now that we have our data and scripts copied, let's navigate to our scripts fold
 
 To run a code chunk in this R markdown file, click the play button at the top right hand side of the code chunk. We will practice by running the code chunk that loads the R libraries we will need for this workshop:
 
-**Code Chunk 1**
-
-![](images/r-markdown-header.png)
-
 ```R
 # load our libraries
 .libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0'))
