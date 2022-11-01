@@ -29,6 +29,21 @@ mergers <- mergePairs(
 
 ```
 
+```
+619 paired-reads (in 18 unique pairings) successfully merged out of 807 (in 82 pairings) input.
+570 paired-reads (in 29 unique pairings) successfully merged out of 815 (in 136 pairings) input.
+619 paired-reads (in 28 unique pairings) successfully merged out of 868 (in 128 pairings) input.
+713 paired-reads (in 18 unique pairings) successfully merged out of 860 (in 76 pairings) input.
+609 paired-reads (in 29 unique pairings) successfully merged out of 851 (in 133 pairings) input.
+620 paired-reads (in 30 unique pairings) successfully merged out of 810 (in 115 pairings) input.
+679 paired-reads (in 28 unique pairings) successfully merged out of 845 (in 104 pairings) input.
+616 paired-reads (in 28 unique pairings) successfully merged out of 830 (in 106 pairings) input.
+```
+
+!!! info 
+    Here we see that for each sample we get the number of reads that were able to be successfully merged out of the total number of reads that could be merged.
+    
+
 ## ASVs vs. OTUs
 
 - Now that we have finally merged our sequence variants we are left with an Amplicon Sequence Variant. 
