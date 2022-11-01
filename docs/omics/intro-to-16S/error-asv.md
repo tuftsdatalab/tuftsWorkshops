@@ -4,9 +4,6 @@
 
 Here we will leverage this model to learn error rates and then plot them:
 
-**Code Chunk 5**
-
-![](images/r-markdown-header.png)
 
 ```R
 # Learn Error Rates
@@ -36,9 +33,6 @@ plotErrors(errForward,nominalQ=TRUE)
 
 ![](images/sequence-variant-inference.png)
 
-**Code Chunk 6**
-
-![](images/r-markdown-header.png)
 
 ```R
 # Infer Sequnce Variants
