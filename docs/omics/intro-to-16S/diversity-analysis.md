@@ -79,8 +79,8 @@ taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 
 - There has been recent debate about whether or not to rarefy amplicon sequencing data:
     - **Pros**: [Weiss et al. 2017](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-017-0237-y) have noted that sequencing depth has an effect on ordination space and how species richness is displayed 
-    - **Cons**: [McMurdie and Holmes 2014](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003531) have noted that this depends on the species richness metric. [The author of DADA2 has mentioned](https://github.com/benjjneb/dada2/issues/978) that metrics like the Shannon/Simpson metrics do not depend as heavily on rare taxa. 
-- For this reason we won't be applying rarefaction to our data.
+    - **Cons**: [McMurdie and Holmes 2014](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003531) have noted that this depends on the species richness metric. 
+- In this tutorial we won't be applying rarefaction to our data.
 
 
 ## Alpha Diversity
