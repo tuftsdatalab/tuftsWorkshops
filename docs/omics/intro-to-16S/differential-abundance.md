@@ -165,4 +165,5 @@ ggplot(sigtab , aes(x=Phylum, y=log2FoldChange, color=padj)) +
     22. [Clustal W and Clustal X version 2.0](https://academic.oup.com/bioinformatics/article/23/21/2947/371686?login=true)
     23. [The neighbor-joining method: a new method for reconstructing phylogenetic trees.](https://academic.oup.com/mbe/article/4/4/406/1029664?login=true)
     24. [Large-scale contamination of microbial isolate genomes by Illumina PhiX control](https://environmentalmicrobiome.biomedcentral.com/articles/10.1186/1944-3277-10-18)
+    25. [Dadasnake, a Snakemake implementation of DADA2 to process amplicon sequencing data for microbial ecology](https://academic.oup.com/gigascience/article/9/12/giaa135/6011256?login=false)
 
