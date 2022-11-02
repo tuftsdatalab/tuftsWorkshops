@@ -59,7 +59,10 @@ Researchers can use this table to conduct further downstream analysis including:
 - correlation anlysis
 - network analysis
 
-![](images/microbiome_data_analysis_overview.png)
+<figure markdown>
+  ![](images/microbiome_data_analysis_overview.png)
+  <figcaption>Modified from Liu et al. Protein & Cell (2021)</figcaption>
+</figure>
 
 Today we will be using the DADA2 method to perform our amplicon data analysis!
 
