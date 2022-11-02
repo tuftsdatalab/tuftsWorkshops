@@ -59,7 +59,7 @@ To run a code chunk in this R markdown file, click the play button at the top ri
 
 ```R
 # load our libraries
-.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0'))
+.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',.libPaths()))
 library(dada2)
 library(phyloseq)
 library(ggplot2)
