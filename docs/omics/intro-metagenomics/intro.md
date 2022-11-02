@@ -21,7 +21,7 @@ We will be recording this workshop and distributing among Tufts HPC users as a r
 
 ## BEST Elist
 
-We are also happy to mention that the Bioinformatics team within TTS Research Technology has an elist, [best@elist.tufts.edu](https://elist.tufts.edu/sympa/subscribe/best?previous_action=info){:target="_blank" rel="noopener"} to find out about Bioinformatics Education, Software and Tools
+We are also happy to mention that the Bioinformatics team within TTS Research Technology has an elist, sign up with this link [best@elist.tufts.edu](https://elist.tufts.edu/sympa/subscribe/best?previous_action=info){:target="_blank" rel="noopener"} to find out about Bioinformatics Education, Software and Tools
 
 Find out about other Data Lab and Bioinformatics Workshops being offered this semester from [this link](https://sites.tufts.edu/datalab/workshops/){:target="_blank" rel="noopener"}.
 
