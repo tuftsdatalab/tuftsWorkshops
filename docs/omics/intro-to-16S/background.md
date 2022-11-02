@@ -44,11 +44,13 @@
 
 ![](images/v4-region.png)
 
-## Amplicon Data Analysis
+## Our Data
 
 Today we will be analyzing the microbiome of wild type mice and the C57BL/6NTac laboratory mouse strain, from [Rosshart et al. (2107)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6887100/), using amplicon data analysis:
 
 ![](images/microbiome_mouse_data.png)
+
+## Amplicon Data Analysis
 
 The goal of amplicon data analysis is to generate amplicon sequence variant table (also called feature table). 
 Researchers can use this table to conduct further downstream analysis including:
