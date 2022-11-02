@@ -80,8 +80,14 @@ taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 
 ## Alpha Diversity
 
-- The ecological complexity of a single sample
-- We can use the Shannon or Simpson Diversity indices to measure this complexity per sample.
+- **Alpha Diversity:** diversity of organisms sharing the same community or habitat. Alpha diversity metrics can look at richness, evenness, or both within a sample. 
+    - Alpha Diversity Metrics:
+        - Faith’s PD: Phylogenetic diversity
+        - Observed OTUs: Richness of community
+        - Shannon: Balances richness and evenness
+        - Pielou’s Evenness: Evenness of community
+
+- We will use the Shannon or Simpson Diversity indices to measure this complexity per sample.
 
 ??? example "Optional: How to calculate these diversity metrics"
     ![](images/shannon-simpson.png)
@@ -109,10 +115,14 @@ plot_richness(ps, x="Host", measures=c("Shannon", "Simpson"), color="Host")+
 
 ## Beta Diversity
 
-- The ecological complexity between samples
-- We can visualize how our samples group together by ordination – a dimension reduction technique to help visualize sample to sample distance.
-- Here we will use the Unifrac metric to assess sample distance. 
-- Alternatively we could have used the Bray-Curtis distance, however the Bray-Curtis distance is measured soley off the ASV counts where as the Unifrac distance also accounts for phylogeny.
+- Beta Diversity: diversity between communities. Beta diversity calculates how similar two total ecosystems are.
+    - Beta Diversity
+        - Unweighted Unifrac: Presence / absence phylogenetic distance between samples
+        - Weighted Unifrac: Abundance weighted phylogenetic distance between samples
+        - Jaccard: Presence / absence distance between samples
+        - Bray Curtis: Abundance weighted distance between samples
+
+- Here we will use the weighted UniFrac distance since it aware of phylogenetic distances
 
 ??? example "Optional: How to calculate UniFrac Distance"
     ![](images/unifrac.jpg)
