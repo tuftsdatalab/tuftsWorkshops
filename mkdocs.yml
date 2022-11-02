@@ -88,6 +88,6 @@ nav:
         - "Diversity Analysis": omics/intro-to-16S/diversity-analysis.md
         - "Differential Abundance": omics/intro-to-16S/differential-abundance.md
     - Intro To Metagenomics:
-        - "Introduction": omics/intro-metagenomics/metabarcoding-intro.md
+        - "Introduction": omics/intro-metagenomics/intro.md
         - "Setup": omics/intro-metagenomics/setup.md
         
