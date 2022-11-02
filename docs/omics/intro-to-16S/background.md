@@ -1,7 +1,9 @@
 # Introduction to the Microbiome
 
-- The microbiome are the set of genes belonging to the microbiota in a specimen. The term microbiome can also refer to the microbes themselves
-- Disturbances in the microbiome are linked to obesity, inflammatory bowel disease, alcoholic and nonalcoholic fatty liver disease, and hepatocellular carcinoma
+- The microbiome refers to the collective set of genes belonging to the microbiota in a specimen. The term microbiota represents the community of microbes themselves.
+- Disturbances in the microbiome have been linked to multiple chronic conditions, including obesity, inflammatory bowel disease, alcoholic and nonalcoholic fatty liver disease, and hepatocellular carcinoma.
+![image](https://user-images.githubusercontent.com/59677194/199562828-ba31aa00-ed8e-4032-aa5c-ce7405decf2b.png)
+
 
 ![](images/microbiome.png)
 
