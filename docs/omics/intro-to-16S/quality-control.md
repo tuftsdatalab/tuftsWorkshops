@@ -97,7 +97,7 @@ dada2::plotQualityProfile(path2Reverse[1:2])+
 
 !!! danger "Trimming Considerations"
     
-    - The data we are using are 2x250 V4 sequence data. For data that do not overlap as much (i.e. data from the V1-V2 or V3-V4 regions), please ensure that your truncation length is larger than 20 + biological.length.variation of nucleotides between the your strands. 
+    - The data we are using are 2x250 V4 sequence data. For data that do not overlap as much (i.e. data from the V1-V2 or V3-V4 regions), be wary that this may affect how the reads are merged later on. 
 
 ## Trimming 
 
