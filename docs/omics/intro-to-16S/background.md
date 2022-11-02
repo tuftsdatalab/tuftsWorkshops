@@ -44,15 +44,24 @@
 
 ![](images/v4-region.png)
 
-## DADA2
+## Amplicon Data Analysis
 
-Today we will be analyzing the microbiome of wild type mice and the C57BL/6NTac laboratory mouse strain, from [Rosshart et al. (2107)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6887100/), using 16S metabarcoding data analysis:
+Today we will be analyzing the microbiome of wild type mice and the C57BL/6NTac laboratory mouse strain, from [Rosshart et al. (2107)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6887100/), using amplicon data analysis:
 
 ![](images/microbiome_mouse_data.png)
 
-To perform 16S Metabarcoding analysis we will be using DADA2:
+The goal of amplicon data analysis is to generate amplicon sequence variant table (also called feature table). 
+Researchers can use this table to conduct further downstream analysis including:
 
-![](images/dada2_workflow.png)
+- alpha/beta-diversity
+- taxonomic composition
+- difference comparison 
+- correlation anlysis
+- network analysis
+
+![](images/microbiome_data_analysis_overview.png)
+
+Today we will be using the DADA2 method to perform our amplicon data analysis!
 
 ??? tip "Other 16S Analysis Methods"
     - [USEARCH](https://drive5.com/usearch/)
