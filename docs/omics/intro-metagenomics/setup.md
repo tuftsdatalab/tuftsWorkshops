@@ -40,15 +40,8 @@ In our project we will need some folders to contain our scripts, data and result
 
 ## Data & Scripts
 
-Today we will be working with data from Rosshart et al. (2107) where wild-type and laboratory strain mouse microbiomes were assessed. To copy over 
-this data we will enter the following command into the console:
+To copy over this data we will enter the following command into the console:
 
-```R
-file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/raw_fastq/",to="./data/", recursive = TRUE)
-file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/meta/metaData.txt",to="./data/", recursive = TRUE)
-file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/silva/silva_nr99_v138.1_train_set.fa.gz",to="./data/")
-file.copy(from="/cluster/tufts/bio/tools/training/microbiome16S/scripts/dada2pipeline.Rmd",to="./scripts/")
-```
 
 Now that we have our data and scripts copied, let's navigate to our scripts folder and open up "dada2pipeline.Rmd".
 
@@ -56,14 +49,3 @@ Now that we have our data and scripts copied, let's navigate to our scripts fold
 
 To run a code chunk in this R markdown file, click the play button at the top right hand side of the code chunk. We will practice by running the code chunk that loads the R libraries we will need for this workshop:
 
-```R
-# load our libraries
-.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',.libPaths()))
-library(dada2)
-library(phyloseq)
-library(ggplot2)
-library(DESeq2)
-library(tidyverse)
-library(phangorn)
-library(msa)
-```
