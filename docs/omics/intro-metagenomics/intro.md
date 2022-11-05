@@ -37,5 +37,5 @@ Find out about other Data Lab and Bioinformatics Workshops being offered this se
  
 !!! abstract "Acknowledgement"
 
-    We would like to thank Delilah Maloney, Kyle Monahan, Christina Divoll, Kayla Sansevere, and Uku Uustalu for their review of this content
+    We would like to thank Delilah Maloney, Kyle Monahan, Klara Chura, Christina Divoll, Kayla Sansevere and Uku Uustalu for their review of this content
     
