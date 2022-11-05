@@ -2,14 +2,15 @@
 
 November 9,2022
 
-## TTS Research Technology Instructors 
+## Bioinformatics Instructors 
 
-- Adelaide Rhodes, Ph.D,  Senior Bioinformatics Scientist
+- Adelaide Rhodes, Ph.D, Senior Bioinformatics Scientist 
 - Jason Laird, M.S., Bioinformatics Scientist
 
 ## HPC Support
 
 - Delilah Maloney, Senior High Performance Computing Specialist
+
 
 
 !!! note "TTS Help" 
