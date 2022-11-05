@@ -1,5 +1,6 @@
 site_name: Tufts TTS Research Technology Bioinformatics Workshops
 repo_url: https://github.com/tuftsdatalab/tuftsWorkshops
+edit_uri: blob/main/docs/
 
 theme:
   name: material
