@@ -46,5 +46,5 @@ We are going to create a new project in the existing directory that we just copi
 
 ## Open the R Notebook
 
-Now that we have our data and scripts copied, let's navigate to our scripts folder and open up "Metagenomics.Rmd".
+Now that we have our data and scripts copied, let's navigate to our scripts folder and open up `Metagenomics.Rmd`.
 
