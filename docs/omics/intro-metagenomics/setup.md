@@ -54,7 +54,7 @@ Now that we have our data and scripts copied, let's navigate to our scripts fold
 
 Here is a rendered version of the notebook that displays only the text and the code and not the output.
 
-[Today's Notebook](http://htmlpreview.github.io/?https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomics.nb.html)
+[Today's Notebook](http://htmlpreview.github.io/?https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomics.nb.html){:target="_blank" rel="noopener"}
 
 
 
