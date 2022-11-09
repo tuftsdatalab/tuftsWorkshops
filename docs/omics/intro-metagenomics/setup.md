@@ -19,33 +19,32 @@ Click on `Interactive Apps > RStudio Pax` and you will see a form to fill out to
 
 Click `Lauch` and wait until your session is ready. Click `Connect To RStudio Server`, and you will notice a new window will pop up with RStudio. 
 
+## Copy Over the Workshop Folder Into Your Home Directory
+
+Copy this code chunk by clicking on the "copy" icon that is in the upper right corner.
+Paste the code chunk into the console window in R studio (lower left window)
+
+```R
+
+file.copy(from="/cluster/tufts/bio/tools/training/metagenomics/Metagenomics2022",to="~/", recursive = TRUE)
+
+```
+
 ## Project Setup
 
-We are going to create a new project to begin:
+We are going to create a new project in the existing directory that we just copied over:
 
 1. Go to `File` > `New Project`
-2. `New Directory`
-3. `New Project`
-4. Create a name for your project (e.g. `intro-to-16S`)
-5. `Create Project`
+2. Click "Don't Save" if it asks about saving the workspace.
+3. `Existing Directory`
+4. Choose the directory we just copied over (e.g. `~/Metagenomics2022`)
 
-## File Organization
-
-In our project we will need some folders to contain our scripts, data and results:
-
-- Click the New Folder icon
-- Create a folder called data and click ok
-- Following the same process, create a scripts folder and a results folder
+!!! question "What if my screen goes blank?"
+    
+    Don't worry if the screen goes blank for a moment. It just means that a shiny new workspace is being created so you can start on your project.
 
 
-## Data & Scripts
+## Open the R Notebook
 
-To copy over this data we will enter the following command into the console:
-
-
-Now that we have our data and scripts copied, let's navigate to our scripts folder and open up "dada2pipeline.Rmd".
-
-## Libraries
-
-To run a code chunk in this R markdown file, click the play button at the top right hand side of the code chunk. We will practice by running the code chunk that loads the R libraries we will need for this workshop:
+Now that we have our data and scripts copied, let's navigate to our scripts folder and open up "Metagenomics.Rmd".
 
