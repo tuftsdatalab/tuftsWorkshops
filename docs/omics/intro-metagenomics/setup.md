@@ -48,3 +48,13 @@ We are going to create a new project in the existing directory that we just copi
 
 Now that we have our data and scripts copied, let's navigate to our scripts folder and open up `Metagenomics.Rmd`.
 
+
+
+## What to Expect from Today
+
+Here is a rendered version of the notebook that displays only the text and the code and not the output.
+
+[Today's Notebook](http://htmlpreview.github.io/?https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomics.nb.html)
+
+
+
