@@ -1,0 +1,605 @@
+---
+title: "Metagenomics Workshop, November 9, 2022"
+author: "Adelaide Rhodes Ph.D."
+output:
+  html_document:
+    toc: yes
+    df_print: paged
+  html_notebook:
+    toc: yes
+---
+
+## Introduction and Background
+
+### Agenda
+
+#### Part I - Setting up the Data
+
+* Define the differences between Metabarcoding/Amplicon sequencing and Whole Shotgun Sequencing Metagenomics
+* Get some practice in RStudio OnDemand and using the Tufts Cluster
+* Learn about accessing interesting NCBI data through BioProjects and SRA Run Selector
+* Refine our quality control best practices to preprocess data we have generated or downloaded
++ Fastqc
++ Multiqc
++ Kmer-based filtering and trimming with BCBio tools
+
+#### Part II - Practice a typical metagenomic workflow
+
++ Metagenome Assembly with Megahit
++ Assessing the Quality of an Assembly with Quast
++ Preliminary contamination screening with kraken
++ Visualization of kraken reports with the krona tool
+
+
+The following items are not hands on, but will be shown as part of  use case of a recent Metagenomics Workflow done in collaboration with a Tufts Researcher
+
++ Metagenome Binning and Refinement with MetaBat2, MaxBin and Concoct
++ Visualization of Sequence of Metagenomic Bins with BlobTools
++ Extracting Relevant Reads with BWA
++ Reassembly with Megahit from the Bins
++ Taxonomic Classification with Kaiju
++ Functional Classification with Prokka
+
+If this sounds like a lot of ground to cover, you are correct!
+
+In some portions of this tutorial, we don't actually run the code, but jump ahead to the next step.
+
+For these "skipped" portions, the code to run the process is provided.
+
+
+### This Metagenomics Tutorial is mainly a set of Bash Commands
+
+This tutorial uses code chunks. To run an individual code chunk while the notebook is open in OnDemand RStudio, please press the green triangle on the upper right corner of the code chunk.
+
+
+```{r setup commands, setup, include=FALSE}
+
+#This command sets our working directory to this workshop
+knitr::opts_knit$set(root.dir = '~/Metagenomics2022')
+
+#The next two lines makes our bash profile visible to the R environment, allowing the use of modules.
+knitr::opts_chunk$set(engine.opts = list(bash = "-l"))
+Sys.setenv(BASH_ENV="~/.bashrc")
+
+```
+
+You may be wondering why we went through the trouble of having bash commands inside an R notebook for this tutorial. The simplest answer is that RStudio has the handy ability to open visualization files with a simple click on the file name in the  lower right screen. This saves a lot of time and confusing navigation when doing this type of project, that produces a lot of intermediate files.
+
+RStudio can run code chunks in other languages by resetting the code chunks to read that language.
+
+*   `{bash}` indicates that the code chunk is in command line syntax, so these commands can be copied and pasted directly into a terminal
+
+*   `{r}` indicates that the code chunk uses R-code
+    
+To save a bunch of copying/pasting, we are just going to run both types of these chunks inside our notebook using RStudio OnDemand.
+
+The order of chunks is important, so if you skip one or get lost, it is possible to use the dropdown menu next to the word "Run" at the top of this window to run multiple chunks to get you back to where you started.
+
+Any questions?
+
+---
+
+##### What other "kernels" are available in R notebook code chunks? (Hint - click the down arrow next to the "Insert Chunk command at the top of this window)
+
+---
+
+### Attach public library paths to your RStudio OnDemand session
+
+The setup code adds the libraries in the order they will be searced for packages. 
+
+Setting `.libpaths()` to Tufts shared folders can reduce the amount of time spent downloading packages. 
+
+**Please reach out to us about any difficult or tricky installs, sometimes it is a library package error that has to be fixed by an TTS HPC Research Technology Specialist.**
+
+Please make sure that the output to this code chunk has the shared library, "/cluster/tufts/hpc/tools/R/4.0.0"  in position [1]
+
+Example output (it depends what else you have been doing in RStudio before today).
+
+[1] "/cluster/tufts/hpc/tools/R/4.0.0"
+[2] "/cluster/home/arhode05/R/x86_64-pc-linux-gnu-library/4.0"
+[3] "/opt/shared/R/4.0.0/lib64/R/library" 
+
+
+Commands to specify the shared directory as the first place to look for R libraries and check the output.
+
+```{r check library paths}
+
+.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',.libPaths()))
+
+.libPaths()
+
+```
+
+
+### Modules and Conda Environments
+
+In this workshop, we will sometimes be loading modules from the HPC to use in a code chunk.
+
+Here is an example code chunk that loads a module for samtools and runs the command with the help flag to generate some output to test that the module loaded correctly.
+
+If the bash environment is not designated in the setup chunk, you may need to add this bash command at the beginning of the chunk to enable module loading. 
+
+`source ~/.bashrc`
+
+```{bash example module command, results='hide'}
+
+module load samtools/1.9
+samtools --help
+
+```
+
+
+The behavior of modules in the code chunks differs from our direct command line.
+
+The Rmarkdown notebook will not remember it from chunk to chunk. So load the modules in the chunks where the commands are needed.
+
+An example with conda environments will be shown in Part II.
+
+---
+
+##### What happens when you run this chunk?
+
+```{bash}
+
+module list
+
+```
+
+---
+
+##### Why use modules instead of conda environments?
+
+*   Conda environments are great for installing specific versions of programs, but often bring in clashing dependencies, and only one is active at a time.
+
+*   Using HPC modules can provide more integration because you can load several at one time.
+
+*   Of course, conda environments could be used if you load all the required programs into the same environment. We will see an example of this later with Metawrap
+
+
+## Introducing the Data - Giant Panda ticks
+
+Ticks are capable of spreading pathogens (viruses, bacteria and other parasites) among a host population. Not much is known about the spread of tick-borne viruses in Giant Pandas. The density of giant pandas in breeding captivity in Sichuan Province, China may lead to more transmission of these diseases. The researchers who loaded this data into the SRA were interested in characterizing the virome of these ticks and to compare these with the virome of the pandas.
+
+We are not going to restrict our analysis to the virome, and just take a general look at what these ticks are carryng around in general using practical metagenomics workflows.
+
+[Check out the bioproject here](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA808793) 
+
+[Check out the final paper here](https://journals.asm.org/doi/10.1128/spectrum.02034-22)
+
+
+![Is he sleepy or is he sick? \label{Giant Panda }](./images/sleepy_panda.png){width=50%}
+
+
+We are going to bring in some of the data from this bioproject to our Metagenomics Tutorial space.
+
+#### What information can we find in the metadata?
+
+SRA Metadata - every project is different!
+
+Example from BioProject [Microbes From Mum](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=11&WebEnv=MCID_636b6f555e34617c8576db8f&o=acc_s%3Aa)
+
+
+![Mum sponge metadata \label{Tick Metadata }](./images/mum_metadata.png){width=70%}
+
+
+
+[The Metadata from our BioProject](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=15&WebEnv=MCID_636b6f555e34617c8576db8f&o=acc_s%3Aa)
+
+
+![Panda tick metadata \label{Tick Metadata }](./images/tick_metadata.png){width=70%}
+
+##### Question - Why do most of the reads of "spot length" equal to 502?
+
+Something you may have noticed is that the reads are suspicially even in number, at length 502. The experimental design states that the reads were paired-end 2x250.
+
+
+##### Question - Who is responsible for loading BioProject metadata to the NCBI?
+
+
+### Obtaining Data from SRA
+
+The data we are going to copy over can be obtained directly from the SRA by using our command line module for the SRAToolkit. This can take a little while, depending on the internet connection and which source the files are pulled from (on-prem, AWS or GCP).
+
+
+#### "Spots" in SRA are not the same as "reads"
+
+* A spot is all the info you got from one "spot" on the flow cell.
+* You get 4 reads per spot with today's illumina sequencing: forward barcode, forward read, reverse barcode, reverse read. 
+
+![NCBI SRA "Spots" \label{Spots from SRA }](./images/split-3.png){width=70%}
+
+
+#### Practice downloading data from SRA
+
+
+```{bash}
+
+module load /cluster/tufts/bio/tools/module_files/sra/3.0.0
+mkdir -p test_SRA
+fastq-dump --outdir test_SRA -X 500 --skip-technical --read-filter pass --readids --minReadLen 200 --split-e SRR18086364
+
+```
+
+**Command Line Parameters**
+
+* Grap first million lines `-X 500`
+* Only "biological reads" `--skip-technical`
+* Remove reads that are mostly N's  `--read-filter pass`
+* Append `.1` to forward read header `.2` to reverse read header  --readids
+* Keep mated pairs and singletons, use -–split-e and a three files will be generated if orphans are present (forward, reverse, and unmatched mates)
+
+
+There should be three new files in your `Metagenomics2022/test_SRA` directory.
+
+The output is small enough that we can look into the fastq file by clicking on it.
+
+* Confirm the `.1` and `.2` were appended to your forward read headers and reverse read headers
+* What happened inside the singleton file? Do you see `.1`, `.2` or both?
+* QC Best practice: Count the number of lines in the output files
+
+```{bash}
+
+wc -l ./test_SRA/*.fastq
+
+```
+* How many lines are in our fastq output files and why? 
+
+  (Hint 1: we asked for 500 "spots", not reads)
+  (Hint 2: how did our parameter choices affect our outputs?)
+
+
+##### A Note about Fasterq-dump
+
+In some cases, the newer version of this tool `fasterq-dump` will automatically run the split-e version of the command without adding this parameter. It is worth looking at the options before using it, because some of the parameter meanings have changed.
+
+
+The following codeblock is for reference, to use the chunk, remove the `#` at the beginning of the line.
+
+
+```{bash, include = FALSE}
+
+#source ~/.bashrc
+#module load /cluster/tufts/bio/tools/module_files/sra/3.0.0
+
+#fastq-dump -X 1000000 --skip-technical --clip --read-filter pass --split-spot --readids --minReadLen 200 --split-e SRR18085691
+
+#fastq-dump -X 1000000 --skip-technical --clip --read-filter pass --split-spot --readids --minReadLen 200 --split-e SRR18085708
+
+#fastq-dump -X 1000000 --skip-technical --clip --read-filter pass --split-spot --readids --minReadLen 200 --split-e SRR18086277
+
+#fastq-dump -X 1000000 --skip-technical --clip --read-filter pass --split-spot --readids --minReadLen 200 --split-e SRR18086342
+
+#fastq-dump -X 1000000 --skip-technical --clip --read-filter pass --split-spot --readids --minReadLen 200 --split-e SRR18086364
+
+#fastq-dump -X 1000000 --skip-technical --clip --read-filter pass --split-spot --readids --minReadLen 200 --split-e SRR18086575
+
+#fastq-dump -X 1000000 --skip-technical --clip --read-filter pass --split-spot --readids --minReadLen 200 --split-e SRR18091316
+
+#fastq-dump -X 1000000 --skip-technical --clip --read-filter pass --split-spot --readids --minReadLen 200 --split-e SRR18091737
+
+```
+
+
+
+
+####  
+
+```{bash quality check of the raw files}
+
+#/cluster/tufts/hpc/tools/spack/linux-rhel7-ivybridge/gcc-9.3.0/fastqc-0.11.9-eeij5jwnwau3ttx4m53bxafmxbhm4fjz/bin/fastqc ./MGData/*overrep.fastq
+
+source ~/.bashrc
+module load fastqc
+mkdir -p fastqc
+fastqc ./data/*pass*.fastq -o fastqc
+
+```
+
+```{bash aggregate the raw quality check}
+
+#source ~/.bashrc
+module load multiqc/1.7.0
+mkdir -p multiqc
+multiqc ./fastqc -o ./multiqc
+
+```
+
+Check the quality of your results by navigating to the file folder for multiqc and clicking on the html files that were generated.
+
+Okay, so the data is not the most perfect, but we just need a set that can make it through the analysis.
+
+## Preprocessing Reads
+
+Metagenomics has benefited from k-mer based approaches.
+
+|||| Add descriptioin of k-mer based approaches here ||||
+
+BCBio tools are useful for cleaining metagenomics files, because many simple functions can be called and sped up using kmers.
+
+For example, let's remove known adapter and other contamination using the NCBI database called "UniVec"
+
+||||| Adding more information about UniVec here |||||||
+
+
+
+```{bash look at UniVec.fasta}
+
+cd ~/Metagenomics2022
+#pwd
+
+#grep "TruSeq" ./data/UniVec.fasta
+
+grep "PCR Primer Index 9" ./data/UniVec.fasta
+
+
+
+```
+
+
+### Remove contamination from sequences with BCBio tools
+
+Are these repeats biological (part of the genome) or technical (primer amplification, underabundance of sample or lack of PhiX spike-in)? What does the raw sequencing data show us?
+
+
+Here is an example of how bbduk.sh can be used to simultaneously remove adapters, phiX spike-in and overrepresented sequences from our custom file.
+
+```{bash remove sequences on raw data file}
+
+#source ~/.bashrc
+module load java/1.8.0_60
+module load /cluster/tufts/bio/tools/module_files/bcbio/1.1.5
+mkdir -p decon
+
+
+bbduk.sh -Xmx10g -tbo  -tpe \
+in1=data/SRR18085691_pass_1.fastq \
+in2=data/SRR18085691_pass_2.fastq \
+out1=decon/SRR18085691_decon_1.fastq \
+out2=decon/SRR18085691_decon_2.fastq \
+outs=decon/SRR18085691_decon_sing.fastq \
+ref=contaminants/UniVec.fasta \
+ref=contaminants/overrep.fasta \
+ref=phix \
+ref=adpaters \
+ktrim=r k=21 rcomp=t mink=11 hdist=2 minlen=200 \
+
+
+```
+
+#### While the next chunk is running, let's talk about kmer-based approaches to filtering.
+
+[BBDUK = Decontamination Using Kmers](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/)
+
+* `-tbo` trims overlapping bases in paired end reads
+* `-tpe` trims both paired end reads to the same length
+* `-in1`,`-in2`,`out1`,`out2`,`outs` means input forward and reverse reads and output forward and reverse plus orphaned reads
+* `ref` can be any file in fasta format or baked-in options such as `phiX` and `adapters`
+* `ref` can be replaced with `literal=ACTGGT,TTTGGTG` with any list of strings
+* `ktrim=r` means to trim from `3-prime` end
+* `k` refers to the `kmer` size that is chosen
+* `mink` allows a shorter `kmer` size at the end of the sequence
+* `hdist` refers to hamming distance - number of mismatches allowed in a kmer
+* `minlen` indicates the minimum length of the sequence to keep after trimming
+
+
+
+```{bash remove sequences on all raw data files}
+
+#source ~/.bashrc
+module load java/1.8.0_60
+module load /cluster/tufts/bio/tools/module_files/bcbio/1.1.5
+mkdir -p decon
+
+
+ls data/*_pass_1.fastq | while read line ; do \
+
+bbduk.sh -Xmx10g -tbo -tpe \
+in1=$line \
+in2=data/$(basename $line _pass_1.fastq)_pass_2.fastq \
+out1=decon/$(basename $line _pass_1.fastq)_decon_1.fastq \
+out2=decon/$(basename $line _pass_1.fastq)_decon_2.fastq\ \
+outs=decon/$(basename $line _pass_1.fastq)_decon_sing.fastq \
+ref=contaminants/UniVec.fasta \
+ref=contaminants/overrep.fasta \
+ref=phix \
+ref=adapters \
+ktrim=r k=21 rcomp=t mink=11 hdist=2 minlen=200; \
+done
+
+
+
+
+```
+
+
+
+
+
+
+
+```{bash quality check decon files}
+#source ~/.bashrc
+module load fastqc
+mkdir -p fastqc_decon
+fastqc ./decon/*decon*.fastq -o fastqc_decon
+
+```
+
+
+
+
+
+
+```{bash aggregate the decon quality check}
+
+#source ~/.bashrc
+module load multiqc/1.7.0
+mkdir -p multiqc_decon
+multiqc ./fastqc_decon -o ./multiqc_decon
+
+```
+
+
+
+#### Question: Did we get rid of all the adapter sequences? What would your next step be?
+
+
+#### Question: Is there a particular tick pool that we may want to remove before assembly?
+
+To be removed before assembly:
+
+* Ignore single reads
+* Ignore low count reads (SRR18086364)
+* Ignore low quality reads (SRR18091737,SRR18086277)
+
+
+```{bash keep the good ticks}
+
+mkdir -p gooddata
+
+echo SRR18085691 > gooddata.txt
+echo SRR18085708 >> gooddata.txt
+echo SRR18086342 >> gooddata.txt
+echo SRR18086575 >> gooddata.txt
+echo SRR18091316 >> gooddata.txt
+
+
+cat gooddata.txt | while read $line; do cp decon/$line*1.fastq gooddata; cp decon/$line*2.fastq gooddata; done
+
+```
+
+This concludes Part I, please come back after the break for Part II - using a wrapper script to bin your data.
+
+
+---
+
+## Part II
+
+
+### Running an Assembly on the Cleaned Data
+
+#### This command takes approximately 20 minutes, so the commands used to make the assembly are commented out.
+
+
+```{bash run metagenome assembly}
+
+
+#/cluster/tufts/bio/tools/megahit/1.2.9/bin/megahit  -m 16000000 -t 32 --read ./gooddata/* \
+#--k-list 21,41,61,81,99 \
+#--no-mercy \
+#--min-count 2 \
+#-o megahit_out/
+
+```
+
+[Megahit: de Bruijn graph Assembly](https://academic.oup.com/bioinformatics/article/31/10/1674/177884)
+
+
+![Megahit workflow \label{Megahit workflow}](./images/megahit_workflow.png){width=30%}
+
+#### What is a deBruijn graph?
+
+It is an assembly algorithm that splits your sequence into k-mers and tries to build the longest contigs along the shortest parsimonious path.
+
+![Megahit workflow \label{Sohn, jang-il & Nam, Jin-Wu. (2016). The present and future of de novo whole-genome assembly. Briefings in Bioinformatics. 19. bbw096. 10.1093/bib/bbw096}](./images/deBruijn.png)
+ 
+
+
+
+To save time in the workshop, the assembly has been done using the commented out command above and placed into your workshop folder called "reports".
+
+
+### Checking the quality of our Assembly
+
+[Quast](https://academic.oup.com/bioinformatics/article/29/8/1072/228832) is a commonly used tool to assess assemblies. It will provide a report that is either in a text file or an html.
+
+Let's run the following command and then look for the quast report to see if we have a "good" assembly.
+
+
+```{bash quast analysis}
+
+/cluster/tufts/bio/tools/quast/5.2.0/quast.py -o quast_assembly ./reports/final.contigs.fa
+
+```
+
+### Using Kraken to check for Metagenome Composition
+
+At this point, we may be interested in whether our assembly makes sense for our set of contigs.
+
+[Kraken2](https://ccb.jhu.edu/software/kraken2/) is the newest version of Kraken, a taxonomic classification system using exact k-mer matches. This k-mer based approach has very fast classification speeds with high accuracy.
+
+This approach differs from homology based approaches that try to match sequences to each other and score them based on the number of mismatches, deletions and inserts. Kraken uses the entire kmer composition of the contig to match it to a database where reference sequences have been broken down into kmer "hashes" or a database of what the kmers look like for a particular organism.
+
+
+```{bash kraken classification of our assembly}
+
+/cluster/tufts/bio/tools/conda_envs/kraken/2.1.2/bin/kraken2 --use-names --threads 4 --db /cluster/tufts/bio/tools/training/metagenomics/kraken_virus --report kraken.report.txt --quick reports/final.contigs.fa --classified-out classified_sequences.tsv > sequences.kraken
+
+
+```
+
+We can open up the sequence report inside RStudio OnDemand and scroll through the findings.
+
+This can be a very long list of species names, so it may be more helpful to use an interactive visualization tool to look at our data.
+
+
+[Krona](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-385) is a very useful tool that can take in a variety of formats. In this case, we are providing our kraken.report to the visualization. Metabarcoding data assigned to a taxonomy can also be used in this case.
+
+
+```{bash}
+
+/cluster/tufts/bio/tools/conda_envs/kraken/2.1.2/bin/ktImportTaxonomy -t 5 -m 3 -o krona.html kraken.report.txt
+
+```
+
+
+The output, when opened in a web browser, allows the user to interact with the data and explore different levels of the data.
+
+![Krona output \label{Krona output}](./images/krona_example.png)
+
+
+
+
+### What can we do with Metagenomic Approaches
+
+### Case Study: Describing a Complete Cyanobacterial Genome and its Symbionts from an Extremely Arid Environment
+
+#### The Atacama Desert - Are we on Mars?
+
+![Atacama Desert \label{Atacama Desert ESO/S. Lowery - https://www.eso.org/public/images/potw1718a/}](./images/Atacama.jpeg)
+
+
+
+So we are probably running out of time to continue working hands on.
+
+Let's take some time to discuss what the next steps might look like.
+
+This discussion will center around a recent project from Dr. Pearson's lab, conducted by Neveda Naz, Ph.D.
+
+Neveda builds little robots and sends them to outerspace. (Neveda if you are here, feel free to comment!)
+
+
+[Please open up this pdf here](https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomic_workflow_example.pdf) to find the discussion.
+
+
+
+#### Helpful Resources
+
+Also, for future reading, I have placed two useful .pdf's in our public github pages that summarize the steps we are discussing in further detail.
+
+[Essentials in Metagenomics I](https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomics_Essentials_1.pdf)
+[Essentials in Metagenomics II](https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomics_Essentials_2.pdf)
+
+This markdown and associated files will be placed in our Github and mailed out to the class shortly.
+
+We will also send out a video of this workshop.
+
+#### Please Provide Feedback
+
+Jason and I hope to continue developing this practical material to provide more hands-on experience in the future, so any feedback on the tools you would like to explore is appreciated.
+
+
+
+
+
+
