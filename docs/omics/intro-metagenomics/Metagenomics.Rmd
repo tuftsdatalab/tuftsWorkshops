@@ -67,16 +67,14 @@ Example output (it depends what else you have been doing in RStudio before today
 
 Commands to specify the shared directory as the first place to look for R libraries and check the output.
 
+For example, we are using `knitr` in this notebook to generate an .html file, so that program is already in our shared libraries.
+
 ```{r check library paths, eval=FALSE}
 
-
 .libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',.libPaths()))
-
 .libPaths()
 
 ```
-
-
 
 
 ### This Metagenomics Tutorial is mainly a set of Bash Commands
@@ -88,6 +86,8 @@ This tutorial uses code chunks. To run an individual code chunk while the notebo
 
 #This command sets our working directory to this workshop
 knitr::opts_knit$set(root.dir = '~/Metagenomics2022')
+#This command outputs the html without the outputs.
+knitr::opts_chunk$set(eval = FALSE)
 
 #The next two lines makes our bash profile visible to the R environment, allowing the use of modules.
 knitr::opts_chunk$set(engine.opts = list(bash = "-l"))
