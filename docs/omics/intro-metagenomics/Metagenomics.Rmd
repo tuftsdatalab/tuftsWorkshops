@@ -46,6 +46,38 @@ In some portions of this tutorial, we don't actually run the code, but jump ahea
 
 For these "skipped" portions, the code to run the process is provided.
 
+--- 
+
+### Attach public library paths to your RStudio OnDemand session
+
+The setup code adds the libraries in the order they will be searced for packages. 
+
+Setting `.libpaths()` to Tufts shared folders can reduce the amount of time spent downloading packages. 
+
+**Please reach out to us about any difficult or tricky installs, sometimes it is a library package error that has to be fixed by an TTS HPC Research Technology Specialist.**
+
+Please make sure that the output to this code chunk has the shared library, "/cluster/tufts/hpc/tools/R/4.0.0"  in position [1]
+
+Example output (it depends what else you have been doing in RStudio before today).
+
+[1] "/cluster/tufts/hpc/tools/R/4.0.0"
+[2] "/cluster/home/arhode05/R/x86_64-pc-linux-gnu-library/4.0"
+[3] "/opt/shared/R/4.0.0/lib64/R/library" 
+
+
+Commands to specify the shared directory as the first place to look for R libraries and check the output.
+
+```{r check library paths, eval=FALSE}
+
+
+.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',.libPaths()))
+
+.libPaths()
+
+```
+
+
+
 
 ### This Metagenomics Tutorial is mainly a set of Bash Commands
 
@@ -82,33 +114,6 @@ Any questions?
 ##### What other "kernels" are available in R notebook code chunks? (Hint - click the down arrow next to the "Insert Chunk command at the top of this window)
 
 ---
-
-### Attach public library paths to your RStudio OnDemand session
-
-The setup code adds the libraries in the order they will be searced for packages. 
-
-Setting `.libpaths()` to Tufts shared folders can reduce the amount of time spent downloading packages. 
-
-**Please reach out to us about any difficult or tricky installs, sometimes it is a library package error that has to be fixed by an TTS HPC Research Technology Specialist.**
-
-Please make sure that the output to this code chunk has the shared library, "/cluster/tufts/hpc/tools/R/4.0.0"  in position [1]
-
-Example output (it depends what else you have been doing in RStudio before today).
-
-[1] "/cluster/tufts/hpc/tools/R/4.0.0"
-[2] "/cluster/home/arhode05/R/x86_64-pc-linux-gnu-library/4.0"
-[3] "/opt/shared/R/4.0.0/lib64/R/library" 
-
-
-Commands to specify the shared directory as the first place to look for R libraries and check the output.
-
-```{r check library paths}
-
-.libPaths(c('/cluster/tufts/hpc/tools/R/4.0.0',.libPaths()))
-
-.libPaths()
-
-```
 
 
 ### Modules and Conda Environments
@@ -211,14 +216,32 @@ The data we are going to copy over can be obtained directly from the SRA by usin
 
 #### Practice downloading data from SRA
 
+We have a toolkit on the HPC cluster that allows users to pull data directly from SRA.
+The first step is configuring the SRA toolkit with a unique user ID. The second step is running either `fastq-dump` or `fasterq-dump`. We will use `fastq-dump` to demonstrate the options available.
 
-```{bash}
+
+```{bash set up SRA config}
 
 module load /cluster/tufts/bio/tools/module_files/sra/3.0.0
+
+#The next few lines set up your configuration for SRA and is necessary if you have not used the SRA toolkit previously.
+
+#The vdb-config is an interactive tool, to generate a unique identifier. Since it is difficult to use it interactively from ROnDemand, this command opens the interactive screen for three seconds then closes it, which generates the user id.
+
+vdb-config -i & read -t 3 ; kill $!
+
+```
+
+```{bash download a test set from SRA}
+
+module load /cluster/tufts/bio/tools/module_files/sra/3.0.0
+
 mkdir -p test_SRA
 fastq-dump --outdir test_SRA -X 500 --skip-technical --read-filter pass --readids --minReadLen 200 --split-e SRR18086364
 
+
 ```
+
 
 **Command Line Parameters**
 
@@ -288,7 +311,7 @@ The following codeblock is for reference, to use the chunk, remove the `#` at th
 
 #/cluster/tufts/hpc/tools/spack/linux-rhel7-ivybridge/gcc-9.3.0/fastqc-0.11.9-eeij5jwnwau3ttx4m53bxafmxbhm4fjz/bin/fastqc ./MGData/*overrep.fastq
 
-source ~/.bashrc
+#source ~/.bashrc
 module load fastqc
 mkdir -p fastqc
 fastqc ./data/*pass*.fastq -o fastqc
@@ -312,13 +335,10 @@ Okay, so the data is not the most perfect, but we just need a set that can make 
 
 Metagenomics has benefited from k-mer based approaches.
 
-|||| Add descriptioin of k-mer based approaches here ||||
-
 BCBio tools are useful for cleaining metagenomics files, because many simple functions can be called and sped up using kmers.
 
 For example, let's remove known adapter and other contamination using the NCBI database called "UniVec"
 
-||||| Adding more information about UniVec here |||||||
 
 
 
@@ -327,9 +347,9 @@ For example, let's remove known adapter and other contamination using the NCBI d
 cd ~/Metagenomics2022
 #pwd
 
-#grep "TruSeq" ./data/UniVec.fasta
+#grep "TruSeq" ./contaminants/UniVec.fasta
 
-grep "PCR Primer Index 9" ./data/UniVec.fasta
+grep "PCR Primer Index 9" ./contaminants/UniVec.fasta
 
 
 
@@ -359,8 +379,8 @@ out2=decon/SRR18085691_decon_2.fastq \
 outs=decon/SRR18085691_decon_sing.fastq \
 ref=contaminants/UniVec.fasta \
 ref=contaminants/overrep.fasta \
+ref=adapters \
 ref=phix \
-ref=adpaters \
 ktrim=r k=21 rcomp=t mink=11 hdist=2 minlen=200 \
 
 
@@ -402,7 +422,6 @@ outs=decon/$(basename $line _pass_1.fastq)_decon_sing.fastq \
 ref=contaminants/UniVec.fasta \
 ref=contaminants/overrep.fasta \
 ref=phix \
-ref=adapters \
 ktrim=r k=21 rcomp=t mink=11 hdist=2 minlen=200; \
 done
 
@@ -536,6 +555,10 @@ This approach differs from homology based approaches that try to match sequences
 /cluster/tufts/bio/tools/conda_envs/kraken/2.1.2/bin/kraken2 --use-names --threads 4 --db /cluster/tufts/bio/tools/training/metagenomics/kraken_virus --report kraken.report.txt --quick reports/final.contigs.fa --classified-out classified_sequences.tsv > sequences.kraken
 
 
+```
+```{bash}
+
+head classified_sequences.tsv
 ```
 
 We can open up the sequence report inside RStudio OnDemand and scroll through the findings.
