@@ -7,6 +7,10 @@ November 9,2022
 - Adelaide Rhodes, Ph.D, Senior Bioinformatics Scientist 
 - Jason Laird, M.S., Bioinformatics Scientist
 
+## Special Guest Speaker
+
+- Neveda Naz, Ph.D., Department of Chemistry
+
 ## HPC Support
 
 - Delilah Maloney, Senior High Performance Computing Specialist
