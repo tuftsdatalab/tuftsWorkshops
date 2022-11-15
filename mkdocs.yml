@@ -92,4 +92,11 @@ nav:
         - "Introduction": omics/intro-metagenomics/intro.md
         - "Setup": omics/intro-metagenomics/setup.md
         - "Workshop Notebook": http://htmlpreview.github.io/?https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomics.nb.html
-        
+    - Intro To AlphaFold2:
+            - "Background": omics/intro-to-alphafold2/01_background.md
+            - "Setup": omics/intro-to-alphafold2/02_setup.md
+            - "AlphaFold2 Pre-Processing": omics/intro-to-alphafold2/03_af2_preprocess.md
+            - "AlphaFold2 Evoformer/Structure Module": omics/intro-to-alphafold2/04_af2_evoformer_structure.md
+            - "AlphaFold2 Output": omics/intro-to-alphafold2/05_af2_output.md
+            - "PyMOL Visualization": omics/intro-to-alphafold2/06_pymol_viz.md
+            - "Optional: AlphaFold2 Batch Script": omics/intro-to-alphafold2/07_af2_batch.md
