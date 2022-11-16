@@ -93,6 +93,7 @@ nav:
         - "Setup": omics/intro-metagenomics/setup.md
         - "Workshop Notebook": http://htmlpreview.github.io/?https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomics.nb.html
     - Intro To AlphaFold2:
+            - "Introduction": omics/intro-to-alphafold2/00_introduction.md
             - "Background": omics/intro-to-alphafold2/01_background.md
             - "Setup": omics/intro-to-alphafold2/02_setup.md
             - "AlphaFold2 Pre-Processing": omics/intro-to-alphafold2/03_af2_preprocess.md
