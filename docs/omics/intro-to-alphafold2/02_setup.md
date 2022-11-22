@@ -19,7 +19,7 @@
 - To run our analyses we will need to move from the login node to a compute node. We can do this by entering:
 
 ```bash
-srun --pty -t 3:00:00 --mem 16G -N 1 --cpus 4 bash
+srun --pty -t 3:00:00 --mem 16G -N 1 --cpus 4 bash --reservation=bioworkshop
 ```
 
 Where:
@@ -32,6 +32,11 @@ Where:
     - `--mem`:  memory we need here we request 16 Gigabytes
     - `-N`:  number of nodes needed here we requested 1 node
     - `--cpus`:  number of CPUs needed here we requested 4
+    - `--reservation`: the reservation of compute resources to use here we use the `bioworkshop` reservation
+    
+!!! warning 
+    
+    The `bioworkshop` reservation will be unavailable after December 7th. This reservation is a temporary reservation for this class. 
 
 - When you get a compute node you'll note that your prompt will no longer say login and instead say the name of the node:
 
