@@ -33,7 +33,7 @@
 
 - We can assess the accuracy of the AlphaFold prediction using:
     - **Predicted Local Distance Difference Test (pLDDT)**
-    - **Predicted Alignment Error**b
+    - **Predicted Alignment Error**
 
 ### Predicted Local Distance Difference Test (pLDDT)
 
