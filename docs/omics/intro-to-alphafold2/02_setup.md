@@ -20,6 +20,7 @@
 
 ```bash
 srun --pty -t 3:00:00 --mem 16G -N 1 --cpus 4 bash --reservation=bioworkshop
+srun -p batch --time=3:00:00 -n 2 --mem=4g --reservation=bioworkshop --pty bash
 ```
 
 Where:
@@ -27,12 +28,12 @@ Where:
 !!! example "Explanation of Commands"
 
     - `srun`: SLURM command to run a parallel job
-    - `--pty`: get a pseudo terminal
-    - `-t`: time we need here we request 3 hours
-    - `--mem`:  memory we need here we request 16 Gigabytes
-    - `-N`:  number of nodes needed here we requested 1 node
-    - `--cpus`:  number of CPUs needed here we requested 4
+    - `-p`: asking for a partition, here we are requesting the batch partition
+    - `--time`: time we need here we request 3 hours
+    - `-n`:  number of CPUs needed here we requested 2
+    - `--mem`:  memory we need here we request 4 Gigabytes
     - `--reservation`: the reservation of compute resources to use here we use the `bioworkshop` reservation
+    - `--pty`: get a pseudo bash terminal
     
 !!! warning 
     
