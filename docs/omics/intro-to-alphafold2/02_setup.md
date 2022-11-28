@@ -90,7 +90,12 @@ The contact between the PCNA interacting motif and PCNA induce a conformational 
 
 ## FASTA Format
 
-So we have copied over data, what does it look like? We can check it out by running the following command:
+So we have copied over our:
+- initial data
+- the scripts used to run AlphaFold2
+- AlphaFold2 output
+
+We will start by taking a look at the input data for PCNA, it's protein sequence. We can check it out by running the following command:
 
 ```bash
 cat af2Workshop/data/1AXC.fasta 
