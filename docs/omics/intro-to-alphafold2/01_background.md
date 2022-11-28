@@ -47,11 +47,11 @@ However there are 100,000,000 known distinct proteins, each with a unique struct
 ## How Could Sequence Predict Structure?
 
 - Sequences can be aligned to one another to find overlaps
-- - These sequences are _aligned_ with one another as to best match similar regions
+- These sequences are _aligned_ with one another as to best match similar regions, this is called a **multiple sequence alignment or MSA**
 - These sequences don’t always line up perfectly and as such we see:
-    - Conserved positions: where the letter does not change
-    - Coevolved positions: where the letter will change with another letter
-    - Specificity Determining positions: where the letter is consistently different 
+    - **Conserved positions**: where the letter does not change
+    - **Coevolved positions**: where the letter will change with another letter
+    - **Specificity Determining positions**: where the letter is consistently different 
 
 ![](images/msa.png)
 
