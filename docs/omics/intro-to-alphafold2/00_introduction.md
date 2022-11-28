@@ -9,9 +9,9 @@
 
 ## Materials Needed
 
-- Account on [Tufts HPC](https://access.tufts.edu/research-cluster-account)
-- [VPN](https://access.tufts.edu/vpn) if accessing the HPC from off campus
-- [PyMOL](https://access.tufts.edu/pymol)
+- Account on [Tufts HPC](https://access.tufts.edu/research-cluster-account){:target="_blank" rel="noopener"}
+- [VPN](https://access.tufts.edu/vpn){:target="_blank" rel="noopener"} if accessing the HPC from off campus
+- [PyMOL](https://access.tufts.edu/pymol){:target="_blank" rel="noopener"}
 
 ## Goals
 
