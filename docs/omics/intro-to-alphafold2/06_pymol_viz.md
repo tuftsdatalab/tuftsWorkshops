@@ -31,7 +31,6 @@
 ![](images/id.png)
 ![](images/ranked0_name.png)
 
-- Make sure to add a prefix to each `ranked_0.pdb` file as to not confuse the two. You can rename the `ranked_0.pdb` in the `lig1` folder to `lig1_ranked_0.pdb` and the `ranked_0.pdb` in the `pcna` folder to `pcna_ranked_0.pdb`. 
 
 ## AlphaFold Output In PyMOL
 
