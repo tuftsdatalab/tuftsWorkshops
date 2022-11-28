@@ -117,8 +117,9 @@ GRKRRQTSMTDFYHSKRRLIFS
 ```
 
 !!! example "What does this mean?"
-    - Here we have 6 sequences and each sequence has two lines:
+    - Here we have 6 sequences (indicating this protein is a multimer) and each sequence has two lines:
         - A line starting with `>` which is the sequence header and contains information about the sequence
         - A second line with the amino acid sequence
+        - Note here that the fasta file is called `1AXC.fasta` and does not mention PCNA. This is because 1AXC is the PDB code for the PCNA structure we plan to use. 
         
         
