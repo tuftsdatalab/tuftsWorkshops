@@ -95,11 +95,11 @@ python vizaf2.py --input_dir pcna/1AXC/ --output_dir pcna/visuals/ --name pcna
  - `pcna_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
  - `pcna_PAE.png` - plots of your predicted alignment error for each of your models
 
-### pcna_coverage_LDDT.png
+**pcna_coverage_LDDT.png**
 
 ![](images/pcna_coverage_LDDT.png)
 
-### pcna_PAE.png
+**pcna_PAE.png**
 
 ![](images/pcna_PAE.png)
 
@@ -108,11 +108,12 @@ python vizaf2.py --input_dir pcna/1AXC/ --output_dir pcna/visuals/ --name pcna
 ```bash
 python vizaf2.py --input_dir lig1/1X9N/ --output_dir lig1/visuals/ --name lig1
 ```
-### lig1_coverage_LDDT.png
+
+**lig1_coverage_LDDT.png**
 
 ![](images/lig1_coverage_LDDT.png)
 
-### lig1_PAE.png
+**lig1_PAE.png**
 
 ![](images/lig1_PAE.png)
 
