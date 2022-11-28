@@ -25,6 +25,10 @@ As of now there are a few different ways to predict protein structure in the lab
     
 However there are 100,000,000 known distinct proteins, each with a unique structure that determines function. Determining protein structure is time consuming and as such only a small fraction of exact 3D structures are known.
 
+??? info "Where can I find protein structure information?"
+
+    You can use the [Protein Data Bank (PDB)](https://www.rcsb.org/) to find information on a protein's structure and the study that created that structure.
+
 ## Levinthal's Paradox
 
 - Finding the native folded state of a protein by random searching of all possible configurations would take an enormous amount of time
