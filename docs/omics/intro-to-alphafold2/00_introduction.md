@@ -5,7 +5,7 @@
 ## TTS Research Technology Instructors
 
 - Jason Laird, M.S., Bioinformatics Scientist
-- Adelaide Rhodes, Ph.D, Senior Bioinformatics Scientist
+
 
 ## Materials Needed
 
