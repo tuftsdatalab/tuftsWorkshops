@@ -4,7 +4,7 @@
 
 ![](images/pymolOverview.png)
 
-- Here we see that PyMOL takes either the PDB ID or a PDB file and creates a vizualization for us to examine. If you have not done so already please [download PyMOL](https://pymol.org/2/) and open the app. You should see a window like the follwing:
+- Here we see that PyMOL takes either the PDB ID or a PDB file and creates a vizualization for us to examine. If you have not done so already please [download PyMOL](https://access.tufts.edu/pymol){:target="_blank" rel="noopener"} and open the app. You should see a window like the follwing:
 
 ![](images/pymolSession.png)
 
@@ -68,7 +68,7 @@ AlphaFold2 attempts to predict protein structures based on available structure d
 
     For example there are lots of studies examining what a particular protein structure looks like when bound to ions, when it’s chemically modified, or when its in larger complexes
     
-- Protein interactions/multimers might not be captured in the [PDB](https://www.rcsb.org/) database. Given this, AlphaFold2’s multimeric prediction might not be reflective of the true interaction structure.
+- Protein interactions/multimers might not be captured in the [PDB](https://www.rcsb.org/){:target="_blank" rel="noopener"} database. Given this, AlphaFold2’s multimeric prediction might not be reflective of the true interaction structure.
 - Proteins can also contain disordered regions (i.e. loops), which are difficult to crystallize and as such AlphaFold’s prediction of these disordered regions is bound to be poor.
         
 AlphaFold2 is indeed a powerful tool but just be aware of what it is prediciting and if any of the items mentioned above interfere with the study question you are using AlphaFold2 to answer!
