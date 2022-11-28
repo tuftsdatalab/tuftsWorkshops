@@ -1,6 +1,6 @@
 ## Log into the HPC cluster’s On Demand Interface
 
-- Open a Chrome browser and go to [On Demand](https://ondemand.pax.tufts.edu/)
+- Open a Chrome browser and go to [On Demand](https://ondemand.pax.tufts.edu/){:target="_blank" rel="noopener"}
 - Log in with your Tufts Credentials
 - On the top menu bar choose `Clusters->Tufts HPC Shell Access`
 
