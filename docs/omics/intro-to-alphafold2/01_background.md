@@ -40,6 +40,24 @@ However there are 100,000,000 known distinct proteins, each with a unique struct
 
 ![](images/seq_to_structure.png)
 
+## How Could Sequence Predict Structure?
+
+- Sequences can be aligned to one another to find overlaps
+- - These sequences are _aligned_ with one another as to best match similar regions
+- These sequences don’t always line up perfectly and as such we see:
+    - Conserved positions: where the letter does not change
+    - Coevolved positions: where the letter will change with another letter
+    - Specificity Determining positions: where the letter is consistently different 
+
+![](images/msa.png)
+
+## Why is an MSA Useful In Structure Prediction?
+
+- The theory is that residues that coevolve are generally close to each other in the protein’s folded state
+- So, by assessing what residues change together we get an idea of where they might be spatially!
+
+![](images/coevolution.png)
+
 ## Our Data
 
 Today we will be comparing AlphaFold2's structure prediction of Proliferating Cell Nuclear Antigen (PCNA) and DNA ligase 1 (LIG1)!
