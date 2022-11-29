@@ -16,6 +16,7 @@ Senior Bioinformatics Scientist
 
 ## Computer Set Up for Hands On Practice
 
+- Be prepared  to code (i.e.,  work off a laptop/desktop)
 - Account on [Tufts HPC](https://access.tufts.edu/research-cluster-account){:target="_blank" rel="noopener"}
 - Confirm you can log in to [Open OnDemand](https://ondemand.pax.tufts.edu/)
 - [VPN](https://access.tufts.edu/vpn){:target="_blank" rel="noopener"} if accessing the HPC from off campus
