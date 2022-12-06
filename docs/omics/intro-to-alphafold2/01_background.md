@@ -1,5 +1,8 @@
 ## Protein Organization
 
+
+- We are composed mostly of proteins, and proteins are composed of amino acids (e.g. Tryptophan). Proteins can have four levels of organization:
+
 - **Primary Structure**: amino acid sequence
 - **Secondary Structure**: amino acid sequences linked by hydrogen bonds
 - **Tertiary Structure**: organization of secondary structures
