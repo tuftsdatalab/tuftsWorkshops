@@ -97,11 +97,11 @@ python vizaf2.py --input_dir pcna/1AXC/ --output_dir pcna/visuals/ --name pcna
 
 **pcna_coverage_LDDT.png**
 
-![](images/pcna_coverage_LDDT.png)
+![](images/pcna_coverage_LDDT.png){width="800"}
 
 **pcna_PAE.png**
 
-![](images/pcna_PAE.png)
+![](images/pcna_PAE.png){width="800"}
 
 - Now that we have these plots for the PCNA structure prediction, let's run this on the LIG1 prediction as well!
 
@@ -111,10 +111,10 @@ python vizaf2.py --input_dir lig1/1X9N/ --output_dir lig1/visuals/ --name lig1
 
 **lig1_coverage_LDDT.png**
 
-![](images/lig1_coverage_LDDT.png)
+![](images/lig1_coverage_LDDT.png){width="800"}
 
 **lig1_PAE.png**
 
-![](images/lig1_PAE.png)
+![](images/lig1_PAE.png){width="800"}
 
 
