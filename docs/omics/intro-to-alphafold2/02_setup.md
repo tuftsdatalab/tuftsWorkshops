@@ -14,6 +14,12 @@
 
 - This indicates you are logged in to the login node of the cluster. Please **do not** run any program from the login node.
 
+??? question "Are you logged into OnDemand?"
+
+    - Yes
+    - No
+    
+    
 ## Starting an Interactive Session
 
 - To run our analyses we will need to move from the login node to a compute node. We can do this by entering:
