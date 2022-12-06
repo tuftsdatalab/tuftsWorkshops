@@ -68,13 +68,12 @@ cd ../../
 ls
 ```
 
-- Do you see the following output?
-
-!!! info ""
+!!! question "Do you see the following output?"
 
     ```
     data  lig1  lig1af2.sh  pcna  pcnaaf2.sh  vizaf2.py
     ```
+
 ---
 
 To run our script we will need to load some tools first. We can load tools on the cluster by loading what are called modules. To load the module we will need, go ahead and enter the following command:
