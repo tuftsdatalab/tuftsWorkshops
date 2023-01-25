@@ -102,7 +102,7 @@ nav:
             - "Optional: AlphaFold2 Batch Script": omics/intro-to-alphafold2/07_af2_batch.md
     - RNA-Seq with Galaxy:
         - "Introduction": 2023_workshops/00_Galaxy_introduction.md
-        - "Processing Raw Reads": 2023_workshops/01_Introduction_and_Setup.md
+        - "Processing Raw Reads": 2023_workshops/01_Introduction_and_Setup_noqual.md
         - "Read Alignment": 2023_workshops/03_Read_alignment.md
         - "Gene Quantification": 2023_workshops/04_Gene_quantification.md
         - "Differential Expression": 2023_workshops/05_Diff_expression.md
