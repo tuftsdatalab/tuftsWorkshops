@@ -4,5 +4,5 @@ Research Technology Bioinformatics provides consultations to Tufts students, fac
 
 Check out our calendar to stay up to date on upcoming events:
 
-<iframe src="https://tufts.libcal.com/calendar?cid=12812&t=d&d=0000-00-00&cal=12812&inc=0" height="1000" width="1000" title="Online Workshops - Upcoming Events"></iframe>
+<iframe src="https://tufts.libcal.com/calendar?cid=12812&t=d&d=0000-00-00&cal=12812&inc=0" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
 
