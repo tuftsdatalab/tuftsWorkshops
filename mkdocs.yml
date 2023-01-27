@@ -52,47 +52,48 @@ extra_javascript:
 
 nav:
     - About : index.md
-    - Intro to HPC/Slurm For Life Sciences: 
-        - "Introduction": hpc-user-guide/hpc-intro.md
-        - Tufts HPC Cluster Access: 
-            - "Cluster Account and Storage": hpc-user-guide/request-account.md
-            - "Login": hpc-user-guide/login.md
-            - "File Transfer": hpc-user-guide/file-transfer.md
-        - Tufts HPC Cluster Resource:
-            - "Terninologies": hpc-user-guide/what-is-the-cluster.md
-            - "Compute Resources": hpc-user-guide/compute-resources.md
-            - "Software on the Cluster": hpc-user-guide/software-cluster.md
-            - "Tmux Session": hpc-user-guide/tmux.md
-        - SLURM/Linux:
-            - "Interactive Session": hpc-user-guide/interactive-session.md
-            - "Job Status": hpc-user-guide/job-status.md
-            - "Intro To Linux": basic/intro-to-unix/intro-to-unix.md
-            - "Starting with Shell": basic/intro-to-unix/start-w-shell.md
-            - "Bash Parameters": basic/intro-to-unix/bash-parameters.md
-            - "Shell Navigation": basic/intro-to-unix/shell-navigation.md
-            - "Creating & Manipulating Files": basic/intro-to-unix/create-manipulate-files.md
-            - "Going Home": basic/intro-to-unix/going-home.md
-            - "Running an Interactive Session": basic/intro-to-unix/running-interactive.md
-            - "Example with BLAST": basic/intro-to-unix/blast-example.md
-            - "BLAST Batch Script": basic/intro-to-unix/blast-batch.md
-    - Intro to RStudio For Life Sciences:
-        - "Introduction": basic/intro-to-r/r-intro.md
-        - "Setup": basic/intro-to-r/r-ondemand.md
-        - "Intro To R Script": basic/intro-to-r/r-workshop-markdown.md
-    - Intro To 16S Metabarcoding:
-        - "Introduction": omics/intro-to-16S/metabarcoding-intro.md
-        - "Background": omics/intro-to-16S/background.md
-        - "Setup": omics/intro-to-16S/setup.md
-        - "Quality Control": omics/intro-to-16S/quality-control.md
-        - "Error Model & ASVs": omics/intro-to-16S/error-asv.md
-        - "Merging, Chimeras & Taxonomy": omics/intro-to-16S/merging-chimeras-taxonomy.md
-        - "Diversity Analysis": omics/intro-to-16S/diversity-analysis.md
-        - "Differential Abundance": omics/intro-to-16S/differential-abundance.md
-    - Intro To Metagenomics:
-        - "Introduction": omics/intro-metagenomics/intro.md
-        - "Setup": omics/intro-metagenomics/setup.md
-        - "Workshop Notebook": http://htmlpreview.github.io/?https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomics.nb.html
-    - Intro To AlphaFold2:
+    - 2022 Workshops:
+        - Intro to HPC/Slurm For Life Sciences: 
+            - "Introduction": hpc-user-guide/hpc-intro.md
+            - Tufts HPC Cluster Access: 
+                - "Cluster Account and Storage": hpc-user-guide/request-account.md
+                - "Login": hpc-user-guide/login.md
+                - "File Transfer": hpc-user-guide/file-transfer.md
+            - Tufts HPC Cluster Resource:
+                - "Terninologies": hpc-user-guide/what-is-the-cluster.md
+                - "Compute Resources": hpc-user-guide/compute-resources.md
+                - "Software on the Cluster": hpc-user-guide/software-cluster.md
+                - "Tmux Session": hpc-user-guide/tmux.md
+            - SLURM/Linux:
+                - "Interactive Session": hpc-user-guide/interactive-session.md
+                - "Job Status": hpc-user-guide/job-status.md
+                - "Intro To Linux": basic/intro-to-unix/intro-to-unix.md
+                - "Starting with Shell": basic/intro-to-unix/start-w-shell.md
+                - "Bash Parameters": basic/intro-to-unix/bash-parameters.md
+                - "Shell Navigation": basic/intro-to-unix/shell-navigation.md
+                - "Creating & Manipulating Files": basic/intro-to-unix/create-manipulate-files.md
+                - "Going Home": basic/intro-to-unix/going-home.md
+                - "Running an Interactive Session": basic/intro-to-unix/running-interactive.md
+                - "Example with BLAST": basic/intro-to-unix/blast-example.md
+                - "BLAST Batch Script": basic/intro-to-unix/blast-batch.md
+        - Intro to RStudio For Life Sciences:
+            - "Introduction": basic/intro-to-r/r-intro.md
+            - "Setup": basic/intro-to-r/r-ondemand.md
+            - "Intro To R Script": basic/intro-to-r/r-workshop-markdown.md
+        - Intro To 16S Metabarcoding:
+            - "Introduction": omics/intro-to-16S/metabarcoding-intro.md
+            - "Background": omics/intro-to-16S/background.md
+            - "Setup": omics/intro-to-16S/setup.md
+            - "Quality Control": omics/intro-to-16S/quality-control.md
+            - "Error Model & ASVs": omics/intro-to-16S/error-asv.md
+            - "Merging, Chimeras & Taxonomy": omics/intro-to-16S/merging-chimeras-taxonomy.md
+            - "Diversity Analysis": omics/intro-to-16S/diversity-analysis.md
+            - "Differential Abundance": omics/intro-to-16S/differential-abundance.md
+        - Intro To Metagenomics:
+            - "Introduction": omics/intro-metagenomics/intro.md
+            - "Setup": omics/intro-metagenomics/setup.md
+            - "Workshop Notebook": http://htmlpreview.github.io/?https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/omics/intro-metagenomics/Metagenomics.nb.html
+        - Intro To AlphaFold2:
             - "Introduction": omics/intro-to-alphafold2/00_introduction.md
             - "Background": omics/intro-to-alphafold2/01_background.md
             - "Setup": omics/intro-to-alphafold2/02_setup.md
@@ -100,9 +101,10 @@ nav:
             - "AlphaFold2 Output": omics/intro-to-alphafold2/05_af2_output.md
             - "PyMOL Visualization": omics/intro-to-alphafold2/06_pymol_viz.md
             - "Optional: AlphaFold2 Batch Script": omics/intro-to-alphafold2/07_af2_batch.md
-    - RNA-Seq with Galaxy:
-        - "Introduction": 2023_workshops/galaxyRNASeq/00_Galaxy_introduction.md
-        - "Processing Raw Reads": 2023_workshops/galaxyRNASeq/01_Introduction_and_Setup_noqual.md
-        - "Read Alignment": 2023_workshops/galaxyRNASeq/03_Read_alignment.md
-        - "Gene Quantification": 2023_workshops/galaxyRNASeq/04_Gene_quantification.md
-        - "Differential Expression": 2023_workshops/galaxyRNASeq/05_Diff_expression.md
+    - 2023 Workshops:
+        - RNA-Seq with Galaxy:
+            - "Introduction": 2023_workshops/galaxyRNASeq/00_Galaxy_introduction.md
+            - "Processing Raw Reads": 2023_workshops/galaxyRNASeq/01_Introduction_and_Setup_noqual.md
+            - "Read Alignment": 2023_workshops/galaxyRNASeq/03_Read_alignment.md
+            - "Gene Quantification": 2023_workshops/galaxyRNASeq/04_Gene_quantification.md
+            - "Differential Expression": 2023_workshops/galaxyRNASeq/05_Diff_expression.md
