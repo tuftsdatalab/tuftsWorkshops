@@ -112,7 +112,7 @@ nav:
                 - "Setup": 2022_workshops/introMetagenomics/02_setup.md
                 - "Workshop Notebook": 2022_workshops/introMetagenomics/03_Metagenomics.nb.html
             - Intro To Genome Technology:
-                - "Introduction": 2022_workshops/introGenomeTech/introGenomeTech.md
+                - "Introduction": 2022_workshops/introGenomeTech/01_intro.md
                 - "Slides": 2022_workshops/introGenomeTech/Rhodes_BioE291.pdf
             - Intro To AlphaFold2:
                 - "Introduction": 2022_workshops/introAlphaFold/00_introduction.md
