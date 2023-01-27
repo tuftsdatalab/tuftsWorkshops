@@ -71,7 +71,7 @@ extra_javascript:
 
 nav:
     - About : index.md
-    - 2022 Workshops:
+    - 2022 Workshops: 2022_workshops/2022_workshops.md
         - Fall 2022:
             - Intro to HPC/Slurm For Life Sciences: 
                 - "Introduction": 2022_workshops/introHpcSlurm/01_hpc-intro.md
