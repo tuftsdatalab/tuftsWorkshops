@@ -1,4 +1,3 @@
-## Introduction
 ## Introduction to Galaxy
 
 Galaxy is a web-based platform for running data analysis and integration, geared towards bioinformatics.
