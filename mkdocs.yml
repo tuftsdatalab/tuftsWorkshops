@@ -24,7 +24,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  logo: 'img/logo3.png'
+  logo: 'img/logo2.png'
   icon:
     admonition:
       note: octicons/tag-16
