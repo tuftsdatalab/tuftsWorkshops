@@ -121,7 +121,7 @@ nav:
                 - "AlphaFold2 Output": 2022_workshops/introAlphaFold/05_af2_output.md
                 - "PyMOL Visualization": 2022_workshops/introAlphaFold/06_pymol_viz.md
                 - "Optional: AlphaFold2 Batch Script": 2022_workshops/introAlphaFold/07_af2_batch.md
-    - 2023 Workshops:
+    - 2023 Workshops: 2023_workshops/2023_workshops.md
         - Spring 2023:
             - RNA-Seq with Galaxy:
                 - "Introduction": 2023_workshops/galaxyRNASeq/00_Galaxy_introduction.md
