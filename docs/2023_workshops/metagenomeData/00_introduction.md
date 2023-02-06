@@ -61,8 +61,9 @@ For class today we will be copying over a folder with all the data/scripts we wi
 Now enter the following into command line:
 
 ```bash
-cp -r SOMEFOLDER ./
+cp -r  /cluster/tufts/bio/tools/training/metagenomeData ./
 ```
+
 Now on the right hand side of your screen you should see the folder, SOMEFOLDER! Double click on this folder and then double click on `metagenome_exercises.ipynb`. Now you have opened a Jupyter Notebook!
 
 ## What is a Jupyter Notebook?
