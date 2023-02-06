@@ -15,15 +15,18 @@
 
 ## **Background - SRA and STAT**
 
-On our website, the Analysis page gives a broad overview of the top taxonomic hits for this accession thanks to a program designed by the SRA team called STAT.  
-
-<div>
-    <img src='images/STAT.png', width='60%', height='100%', border='3px solid #555'/>
-</div>
+On our website, the Analysis page gives a broad overview of the top taxonomic hits for this accession thanks to a program designed by the SRA team called STAT which uses kmers.
 
 <div>
     <img src='images/kmers.png', width='60%', height='100%', border='3px solid #555'/>
 </div>
+
+- STAT characterizes taxonomic distribution of reads in every SRA submission.
+- Usually measured as a % of reads within a run
+- Reads may be mapped to multiple taxa. So, reads are usually assigned to the lowest taxonomic group
+    - e.g., two species share a genus so the read is assigned to the genus 
+- STAT is relatively conservative in their taxonomic assignment and loses sensitivity as you increase the taxonomic breadth
+
 
 ## **NOTE 3 -** 
 
