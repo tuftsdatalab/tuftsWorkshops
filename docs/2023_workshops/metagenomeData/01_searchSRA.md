@@ -13,9 +13,7 @@ Navigate to https://www.ncbi.nlm.nih.gov/
 
 Using the search bar at the top of the screen, set the database to `BioProject` and type `PRJEB37709` into the search box to look for today's BioProject.
 
-<div>
-<img src="images/bioproject.png", width="50%", border="3px solid #555"/>
-</div>
+![](images/bioproject.png){width="500"}
 
 The BioProject page provides some background about the project including:
 
@@ -23,9 +21,8 @@ The BioProject page provides some background about the project including:
     - Submission info (*e.g.*, accession number and submitter information)
     - Associated BioProject data (*e.g.* SRA experiments and BioSamples)
 
-<div>
-    <img src='images/bioproject_page.png', width="50%", height="100%", border="3px solid #555"/>
-</div>
+![](images/bioproject_page.png){width="500"}
+
 
 ### **Step 3 - Find the BioSamples**
 
@@ -45,17 +42,14 @@ The BioSample page contains all of the metadata associated with where/how the se
 
 To get the SRA run accession (where the actual sequence data is stored), click on the `SRA` button in the **Related Information** tab on the right-hand side of the screen.
 
-<div>
-    <img src='images/biosample_page.png', width='50%', height='100%', border='3px solid #555'/>
-</div>
+![](images/biosample_page.png){width="500"}
 
 ### **Step 5 - Find the SRA Runs**
 
 This new SRA page displays the SRA experiment. This is the metadata associated with how the sequence data was generated (*e.g.* sequencing machine, sequencing type, etc.). At the bottom of the page there is a `Runs` section which shows the sequence run accession. Click on that link.
 
-<div>
-    <img src='images/experiment_page.png', width='50%', height='100%', border='3px solid #555'/>
-</div>
+
+![](images/experiment_page.png){width="500"}
 
 ### **Step 6 - Find the Run Statistics**
 
@@ -63,25 +57,16 @@ This page is the SRA Run Browser where we can explore details and statistics abo
 
 To see the STAT results, click the `Analysis` tab near the top of the page
 
-<div>
-    <img src='images/run_page.png', width='50%', height='100%', border='3px solid #555'/>   
-</div>
+![](images/run_page.png){width="500"}
 
 
 It is possible to click on the "+" signs within the taxonomic tree to expand the view to show lower taxonomic levels.
 
-
-<div>
-    <img src='images/compressed_tax.png', width='50%', height='100%', border='3px solid #555'/>   
-</div>
-
+![](images/compressed_tax.png){width="500"}
 
 
 For example, clicking on the plus sign next to Alphaprotobacteria expands the list.
 
 
-<div>
-    <img src='images/expanded_tax.png', width='50%', height='100%', border='3px solid #555'/>   
-</div>
+![](images/expanded_tax.png){width="500"}
 
-----
