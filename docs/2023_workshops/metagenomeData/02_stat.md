@@ -71,7 +71,7 @@ from IPython.display import IFrame
 IFrame(src='results/ERR4836973_unaffected_stat.html', width=900, height=600)
 ```
 
-<iframe src="https://tufts.libcal.com/calendar?cid=12812&t=d&d=0000-00-00&cal=12812&inc=0" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
+<iframe src="./krona/ERR4836973_unaffected_stat.html" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
 
 ### **Step 3 - Understand the Sample**
 
@@ -115,7 +115,6 @@ IFrame(src='results/ERR4836970_affected_stat.html', width=900, height=600)
 ```
 
 
-<iframe src="https://tufts.libcal.com/calendar?cid=12812&t=d&d=0000-00-00&cal=12812&inc=0" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
+<iframe src="/krona/ERR4836970_affected_stat.html" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
 
-from IPython.display import IFrame
-IFrame(src='results/ERR4836970_affected_stat.html', width=900, height=600)
+
