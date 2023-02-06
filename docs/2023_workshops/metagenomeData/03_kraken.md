@@ -17,10 +17,7 @@
 
 ## How does it work?
 
-
-<div style="text-align:center;">
-    <img src='images/kraken_tree.png', width='60%', height='80%',class="center", border='3px solid #555'/>
-</div>
+![](images/kraken_tree.png){width="500"}
 
 
 - To classify a sequence, each k-mer in the sequence is mapped to the lowest common ancestor (LCA) of the genomes that contain that k-mer in a database. 
