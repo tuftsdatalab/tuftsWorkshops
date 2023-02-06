@@ -17,9 +17,8 @@
 
 On our website, the Analysis page gives a broad overview of the top taxonomic hits for this accession thanks to a program designed by the SRA team called STAT which uses kmers.
 
-<div>
-    <img src='images/kmers.png', width='60%', height='100%', border='3px solid #555'/>
-</div>
+![](images/kmers.png){width="500"}
+
 
 - STAT characterizes taxonomic distribution of reads in every SRA submission.
 - Usually measured as a % of reads within a run
