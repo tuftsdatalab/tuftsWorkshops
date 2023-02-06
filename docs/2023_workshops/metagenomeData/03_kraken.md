@@ -158,3 +158,5 @@ display(IFrame(src='results/ERR4836973_unaffected_kraken.html', width=900, heigh
 1. Which sample, the affected eye or unaffected eye had a higher percentage of classified sequences?
 
 2. Which sample, the affected eye or unaffected eye had a higher percentage of bacteria?
+
+3. Does anyone spot a potential non-bacterial taxa in the affected eye?
