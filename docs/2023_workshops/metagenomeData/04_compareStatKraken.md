@@ -58,12 +58,10 @@ This concludes our look on finding and analyzing metagenomic data with NCBI! Let
 
 ## Homework Questions
 
-1. How do the "magnitudes" differ between the two methods? Do they mean the same thing? What can this tell us about the methods?
+1. How similar are the species predictions? In particular, how well is the suspected case study culprit, *Bacillus subtilis* represented in each method? What is the *Bacillus subtilis* magnitude in each eye and each method?
 
-2. How similar are the species predictions? In particular, how well is the suspected case study culprit, *B. subtilis* represented in each method?
+2. Does STAT accomplish its goal of being a good "first pass" for an SRA sample to detect contamination and general taxonomic composition?
 
-3. Does STAT accomplish its goal of being a good "first pass" for an SRA sample to detect contamination and general taxonomic composition?
-
-4. Ultimately, how did each tool do at answering the questions of our case study?
+3. Ultimately, how did each tool do at answering the questions of our case study?
     - "Is the taxonomic distribution of each "cornea" microbiome" different between each eye?"
     - "Do the taxonomic distributions of the eyes match our expectations for healthy and infected eyes?"
