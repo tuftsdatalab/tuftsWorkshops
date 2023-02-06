@@ -18,11 +18,11 @@
 On our website, the Analysis page gives a broad overview of the top taxonomic hits for this accession thanks to a program designed by the SRA team called STAT.  
 
 <div>
-    <img src='img/STAT.png', width='60%', height='100%', border='3px solid #555'/>
+    <img src='images/STAT.png', width='60%', height='100%', border='3px solid #555'/>
 </div>
 
 <div>
-    <img src='img/kmers.png', width='60%', height='100%', border='3px solid #555'/>
+    <img src='images/kmers.png', width='60%', height='100%', border='3px solid #555'/>
 </div>
 
 ## **NOTE 3 -** 
