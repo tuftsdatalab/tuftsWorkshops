@@ -125,6 +125,12 @@ nav:
     - 2023 Workshops: 
         - "Schedule": 2023_workshops/2023_workshops.md
         - Spring 2023:
+            - Finding & Analyzing Metagenomics Data:
+                - "Introduction": 2023_workshops/metagenomeData/00_introduction.md
+                - "Searching For SRA Data": 2023_workshops/metagenomeData/01_searchSRA.md
+                - "STAT Taxonomic Analysis": 2023_workshops/metagenomeData/02_stat.md
+                - "Kraken2 Taxonomic Analysis": 2023_workshops/metagenomeData/03_kraken.md
+                - "Compare STAT & Kraken2": 2023_workshops/metagenomeData/04_compare.md
             - RNA-Seq with Galaxy:
                 - "Introduction": 2023_workshops/galaxyRNASeq/00_Galaxy_introduction.md
                 - "Processing Raw Reads": 2023_workshops/galaxyRNASeq/01_Introduction_and_Setup_noqual.md
