@@ -43,7 +43,7 @@ from IPython.display import HTML
 display(IFrame(src='results/ERR4836970_affected_kraken.html', width=900, height=600))
 ```
 
-<iframe src="krona/ERR4836970_affected_kraken.html" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
+<iframe src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2023_workshops/metagenomeData/krona/ERR4836970_affected_kraken.html" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
 
 # Conclusions
 
