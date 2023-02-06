@@ -14,7 +14,7 @@ from IPython.display import IFrame
 display(IFrame(src='results/ERR4836973_unaffected_stat.html', width=900, height=600))
 ```
 
-<iframe src="krona/ERR4836973_unaffected_stat.html" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
+![](images/unaffected_stat.png)
 
 
 ### Unaffected Eye - Kraken2 Krona Plot
@@ -24,7 +24,8 @@ from IPython.display import IFrame
 display(IFrame(src='results/ERR4836973_unaffected_kraken.html', width=900, height=600))
 ```
 
-<iframe src="krona/ERR4836973_unaffected_kraken.html" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
+
+![](images/unaffected_kraken.png)
 
 
 ### Affected Eye - STAT Krona Plot
@@ -34,7 +35,8 @@ from IPython.display import HTML
 display(IFrame(src='results/ERR4836970_affected_stat.html', width=900, height=600))
 ```
 
-<iframe src="krona/ERR4836970_affected_stat.html" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
+![](images/affected_stat.png)
+
 
 ### Affected Eye - Kraken2 Krona Plot
 
@@ -42,6 +44,8 @@ display(IFrame(src='results/ERR4836970_affected_stat.html', width=900, height=60
 from IPython.display import HTML
 display(IFrame(src='results/ERR4836970_affected_kraken.html', width=900, height=600))
 ```
+
+![](images/affected_kraken.png)
 
 # Conclusions
 
