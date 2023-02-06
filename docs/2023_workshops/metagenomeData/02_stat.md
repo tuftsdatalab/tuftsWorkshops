@@ -70,7 +70,7 @@ from IPython.display import IFrame
 IFrame(src='results/ERR4836973_unaffected_stat.html', width=900, height=600)
 ```
 
-<iframe src="./krona/ERR4836973_unaffected_stat.html" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
+![](images/unaffected_stat.png)
 
 ### **Step 3 - Understand the Sample**
 
@@ -113,7 +113,7 @@ from IPython.display import IFrame
 IFrame(src='results/ERR4836970_affected_stat.html', width=900, height=600)
 ```
 
+![](images/affected_stat.png)
 
-<iframe src="/krona/ERR4836970_affected_stat.html" height="500" width="1000" title="Online Workshops - Upcoming Events"></iframe>
 
 
