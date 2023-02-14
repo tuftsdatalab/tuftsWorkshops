@@ -1,4 +1,4 @@
-# Read Alignment
+## Read Alignment
 
 
 - RNAseq data originates from spliced mRNA (no introns)
@@ -13,12 +13,13 @@
 ## SAM format
 STAR produces a file in Sequence Alignment Map (SAM) format or the compressed version BAM.
 
-!!! info "[SAM File Format](www.samformat.info)"
+!!! info "[SAM File Format](https://sites.google.com/a/broadinstitute.org/legacy-gatk-forum-discussions/dictionary/11014-SAM-BAM-CRAM-Mapped-sequence-data-formats)"
 
-    ![](images/sam_format.jpeg)
+    ![](images/sam_format.png)
 
 
 ## Genome Annotation Standards
+
 - STAR can use an annotation file gives the location and structure of genes in order to improve alignment in known splice junctions 
 - Annotation is dynamic and there are at least three major sources of annotation 
 - The intersection among RefGene, UCSC, and Ensembl annotations shows high overlap. RefGene has the fewest unique genes, while more than 50% of genes in Ensembl are unique. 
@@ -26,7 +27,7 @@ STAR produces a file in Sequence Alignment Map (SAM) format or the compressed ve
 
 !!! info "[A comprehensive evaluation of ensembl, RefSeq, and UCSC annotations in the context of RNA-seq read mapping and gene quantification](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-015-1308-8)"
 
-    ![](images/annotation_source.png)
+    ![](images/annotation_sources.png)
 
 
 ## GTF Gene Annotation 
@@ -34,21 +35,24 @@ STAR produces a file in Sequence Alignment Map (SAM) format or the compressed ve
 - In order to count genes, we need to know where they are located in the reference sequence
 - STAR uses a Gene Transfer Format (GTF) file for gene annotation 
 
-![](imagesgtf_format.png)
+![](images/gtf_format.png)
 
 
 ## Import a gene annotation file from a Data Library to be used for feature counting
+
 - Click **Shared Data** on the top menu bar and select **Data Libraries**
-- Select **annotation_files**
+- Click on **annotation_files** 
 - Select the box next to **hg38_genes.gtf** and **hg38_genes.bed**.
 - Click **Export to History** next to the Search bar and choose **as Datasets**
-- Click **Import** to add the file to our current history 
-- Click<D-d> **Tufts Galaxy** in the top left to return to the homepage
+- Click **Import** to add the file to our current history (**rnaseq**)
+- Click **Galaxy Tufts** in the top left to return to the homepage
 
 ## Align the reads to the human genome using STAR aligner
+
 - In the **Tools** panel search bar, type **STAR**
 - Scroll down and select **RNA STAR** under **RNA-seq**
-- Under **RNA-Seq FASTQ/FASTA file** click the download icon and select the trimmed reads **42: Trim Galore! on collection 12: trimmed reads**
+- Under **Single-end or paired-end reads** select **Single-End**
+- Under **RNA-Seq FASTQ/FASTA file** click the folder icon and select the trimmed reads **42: Trim Galore! on collection 7: trimmed reads**
 - **STAR** gives us the option of using a genome that includes a database of known splice junction locations or providing a gtf file so that STAR can create the database. We’ll select a reference genome on our server that already includes the splice junctions listed in our GTF file. Under **Reference genome with or without an annotation** select **use genome reference with built-in gene-model**.
 - Under **Select reference genome** select **hg38-with-genes**.
 - The final configuration should look like this: 
