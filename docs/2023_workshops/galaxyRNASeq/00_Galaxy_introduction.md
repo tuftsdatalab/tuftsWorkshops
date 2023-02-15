@@ -22,7 +22,7 @@ Galaxy is a web-based platform for running data analysis and integration, geared
 - We'll spend some time getting familiar with the Galaxy interface, layout, and key functions
 - The Galaxy User Interface has a top menu bar and three panels: Tools, Main, and History
 
-![](images//ui1.png)
+![](images/ui1.png)
 
 - The panels can be expanded/minimized using the small arrows and dragging the three small lines in the bottom left and right corners of the page
 - To get back to the home page click the logo next to **Galaxy Tufts** on the top left of the page or the **Analyze Data** tab on the top of the page
