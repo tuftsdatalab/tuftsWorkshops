@@ -1,6 +1,7 @@
 ## Import Raw Reads from Shared Library
 
 ## Dataset
+
 Our dataset is from the publication:
 
 The experiment aims to compare the mRNA produced by Mock and HIV infected CD4+ T cells, both 12 hr and 24 hr after infection.
@@ -10,12 +11,14 @@ The experiment aims to compare the mRNA produced by Mock and HIV infected CD4+ T
 The following steps will walk you through how to run tools needed for our workflow. In each step certain parameters are set. If a parameter option appears on the screen but this tutorial doesn't mention how to set it, leave it at the default. There are questions throughout, which serve to guide you through the results and check your understanding.
 
 ## Create a new history
+
 - Click the **+** at the top of the history panel
 - To rename the history, click on the box **Unnamed History** and type **rnaseq** and press enter
 
 ![](images/new_history.png)
 
 ## Import the raw data from a shared data library on our server
+
 We'll import The raw reads from a shared library on our server. They have been downsampled to 1 million reads per file in order to speed up computation. The full dataset is available from NCBI under accession [SRP013224](https://www.ncbi.nlm.nih.gov/sra?term=SRP013224).
 
 - On the top menu bar, click **Shared Data** and select **Data Libraries**
@@ -75,7 +78,7 @@ FastQC provides several modules:
 
 - Click to expand the second list **FastQC on collection 7: Webpage** and click on the eye icon next to the sample **HIV_12hr_rep1**. The first table gives **Basic Statistics** of the sample. The Main panel will show metrics and plots. You may have to adjust the size of the panel in order to view.
 
-![](images/raw_fastqc_result_top.png)
+![](images/raw_fastqc_seq_qual.png)
 
 !!! question "Question 1: How many sequences are in the sample **HIV_12hr_rep1**? What is their average length?"
 
@@ -100,7 +103,7 @@ Steps to run:
 
 The first panel gives summary statistics:
 
-![](images/raw_multiqc_general_stats.png)
+![](images/raw_multiqc_general_stats1.png)
 
 The second figure is a bar graph showing "Sequence Counts" of unique and duplicate reads for each sample. The remaining figures show each FastQC metric, displaying all samples on a single graph. There is a rectangle at the top that summarizes the pass/fail status of samples. 
 
