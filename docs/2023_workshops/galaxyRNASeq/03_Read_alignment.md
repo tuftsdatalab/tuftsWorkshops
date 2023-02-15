@@ -66,20 +66,21 @@ STAR produces a file in Sequence Alignment Map (SAM) format or the compressed ve
 
 ## Run MultiQC on the STAR log files to check the result of the alignment
 
-- Follow the steps from the [previous section](03_Process_raw_reads.md) to run MultiQC except: 
+- Follow the steps from the [previous section](./02_Process_raw_reads.md) to run MultiQC except: 
 	- Under **Which tool was used generate logs?**  select **STAR**
-	- Under **STAR log output** click the download icon width="15"> and select the collection **83: RNA STAR on collection 42:log**
-- After the job finished, click the download icon width="15"> to view the webpage.
+	- Under **STAR log output** click the folder icon and select the collection **61: RNA STAR on collection 27:log**
+- After the job finished, click the eye icon to view the webpage.
 
-!!! question "Question 5: In RNAseq, the percentages of uniquely aligned reads are typically lower than for DNAseq, due to the presence of unremoved ribosomal RNA. These are present in multiple copies throughout the genome and cause reads not to be mapped confidently. RNAseq is expected to be above 75% for an uncontaminated human sample. Is the "% Aligned" above 75% for these samples? You can optionally check to see which percentage of the reads align to the HIV genome by re-running STAR using the HIV genome with built-in gene model hiv_nc001802"
+!!! question "Question 5: In RNAseq, the percentages of uniquely aligned reads are typically lower than for DNAseq, due to the presence of unremoved ribosomal RNA. These are present in multiple copies throughout the genome and cause reads not to be mapped confidently. RNAseq is expected to be above 75% for an uncontaminated human sample. Is the "% Aligned" above 75% for these samples? 
 
 
 ## View bam file using JBrowse
 
-- In the **Tools** panel search bar, type **JBrowse** and select **JBrowse** genome browser
+- In the **Tools** panel search bar, type **JBrowse** and select **JBrowse genome browser**
 - Under **Select a reference genome** select **hg38**
 
-Next we'll add two Track groups, each with an annotation track
+Next we'll add two Track groups, each with an annotation track:
+
 - Under **Track Group** click **+ Insert Track Group**
 - Click **+ Insert Annotation Track**
 - Select track type **BAM Pileups** and under **BAM Track Data** click the folder icon and select the list **RNA STAR on collection: mapped.bam**
@@ -93,10 +94,14 @@ Finally, run the job:
 
 ![](images/jbrowse_available_tracks.png)
 
-- We'll zoom in on one gene **MYC**. To do this, click on the search bar to the left of the **Go** button and type `chr8:127735434-127742951`. Note that you can't search by gene name in this tool.
+- We'll zoom in on one gene **MYC**. To do this, click on the search bar to the left of the **Go** button and type `chr8:127735434-127742951`. 
+
+!!! note
+    Note that you can't search by gene name in this tool.
+    
 - The bam tracks will show the reads that align to the region for each sample. 
 - The color will show whether the read aligns to the + or –strand and grey lines show splice regions where a read spans an intron. 
-The gene track at the bottom called **hg38_genes.bed** will show 6 features of EGR1, by clicking on them you will be able to see the different feature types (exon, CDS, start_codon, stop_codon).
+- The gene track at the bottom called **hg38_genes.bed** will show 6 features of EGR1, by clicking on them you will be able to see the different feature types (exon, CDS, start_codon, stop_codon).
 
 ![](images/jbrowse_myc.png)
 
