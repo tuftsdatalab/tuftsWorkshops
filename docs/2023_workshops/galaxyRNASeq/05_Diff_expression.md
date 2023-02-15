@@ -69,7 +69,7 @@ The p-value plot shows a histogram of p-values for all the genes that were exami
 
 !!! info "[Variance Explained](http://varianceexplained.org/statistics/interpreting-pvalue-histogram/)"
 
-    ![](images/pval.png)
+    ![](images/pvalue_distribution.png)
 
 
 !!! question "Question 11: What observation can you make about the pvalue distribution, does it look like there are many true significant results? Note that the published dataset has been downsampled for instructional purposes."
