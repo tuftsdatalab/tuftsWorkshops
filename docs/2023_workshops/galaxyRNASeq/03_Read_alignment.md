@@ -55,14 +55,10 @@ STAR produces a file in Sequence Alignment Map (SAM) format or the compressed ve
 - Under **RNA-Seq FASTQ/FASTA file** click the folder icon and select the trimmed reads **42: Trim Galore! on collection 7: trimmed reads**
 - **STAR** gives us the option of using a genome that includes a database of known splice junction locations or providing a gtf file so that STAR can create the database. We’ll select a reference genome on our server that already includes the splice junctions listed in our GTF file. Under **Reference genome with or without an annotation** select **use genome reference with built-in gene-model**.
 - Under **Select reference genome** select **hg38-with-genes**.
-- The final configuration should look like this: 
-
-![](images/STARconfig.png)
-
 - Scroll down and click **Execute**
 - The result will be three collections, giving the bam, splice junctions and log files for the alignments
 
-![](images/STARresult.png)
+![](images/star_result.png)
 
 ## Run MultiQC on the STAR log files to check the result of the alignment
 
@@ -71,7 +67,7 @@ STAR produces a file in Sequence Alignment Map (SAM) format or the compressed ve
 	- Under **STAR log output** click the folder icon and select the collection **61: RNA STAR on collection 27:log**
 - After the job finished, click the eye icon to view the webpage.
 
-!!! question "Question 5: In RNAseq, the percentages of uniquely aligned reads are typically lower than for DNAseq, due to the presence of unremoved ribosomal RNA. These are present in multiple copies throughout the genome and cause reads not to be mapped confidently. RNAseq is expected to be above 75% for an uncontaminated human sample. Is the "% Aligned" above 75% for these samples? 
+!!! question "Question 5: In RNAseq, the percentages of uniquely aligned reads are typically lower than for DNAseq, due to the presence of unremoved ribosomal RNA. These are present in multiple copies throughout the genome and cause reads not to be mapped confidently. RNAseq is expected to be above 75% for an uncontaminated human sample. Is the "% Aligned" above 75% for these samples?" 
 
 
 ## View bam file using JBrowse
@@ -92,7 +88,7 @@ Finally, run the job:
 - Once the job is complete (green) click the eye icon to view the data. 
 - In the **Available Tracks** panel select the HIV and Mock samples from 12 hr, as well as the bed file.
 
-![](images/jbrowse_available_tracks.png)
+![](images/jbrowse_select_tracks.png)
 
 - We'll zoom in on one gene **MYC**. To do this, click on the search bar to the left of the **Go** button and type `chr8:127735434-127742951`. 
 
@@ -101,18 +97,18 @@ Finally, run the job:
     
 - The bam tracks will show the reads that align to the region for each sample. 
 - The color will show whether the read aligns to the + or –strand and grey lines show splice regions where a read spans an intron. 
-- The gene track at the bottom called **hg38_genes.bed** will show 6 features of EGR1, by clicking on them you will be able to see the different feature types (exon, CDS, start_codon, stop_codon).
+- The gene track at the top called **hg38_genes.bed** will display the gene MYC, by clicking on the gene representation you will be able to see the different feature types (exon, CDS, start_codon, stop_codon):
 
-![](images/jbrowse_myc.png)
+![](images/jbrowse_bed_track_click.png)
 
 	
 !!! question "Question 6: Which samples appear to show higher expression of MYC, the Mock or HIV?"
 	
 
-!!! question "Question 7: How many exons does this gene have?"
+!!! question "Question 7: How many exons do you think MYC has? Hint: When we aligned our reads we mapped to exons. Do we see distinct blocks of reads and if so how many?"
 
 
 [Next: Gene Quantification](04_Gene_quantification.md)
 
-[Previous: Process Raw Reads](01_Introduction_and_Setup_noqual.md)
+[Previous: Process Raw Reads](02_Process_raw_reads.md)
 	
