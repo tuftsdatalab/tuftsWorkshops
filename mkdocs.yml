@@ -137,3 +137,5 @@ nav:
                 - "Read Alignment": 2023_workshops/galaxyRNASeq/03_Read_alignment.md
                 - "Gene Quantification": 2023_workshops/galaxyRNASeq/04_Gene_quantification.md
                 - "Differential Expression": 2023_workshops/galaxyRNASeq/05_Diff_expression.md
+            - Trajectory Analysis:
+                - "Introduction": 2023_workshops/trajectoryAnalysis/00_background.md
