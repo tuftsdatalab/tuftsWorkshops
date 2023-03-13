@@ -2,8 +2,8 @@
 
 Content developed by DISC & TTS Research Technology
 
-- Rebecca Batorsky, PhD, Data Scientist I^1
-- Jason Laird, MSc, Bioinformatics Scientist^2
+- Rebecca Batorsky, PhD, Data Scientist I ^1
+- Jason Laird, MSc, Bioinformatics Scientist ^2
 
 
 1. Data Intensive Study Center, Tufts University
