@@ -4,6 +4,7 @@ The TTS Research Technology Bioinformatics Team has prepared the following works
 
 - [Finding & Analyzing Metagenomics Data](./metagenomeData/00_introduction.md)
 - [Intro to RNA-Seq Using Galaxy](./galaxyRNASeq/00_Galaxy_introduction.md)
+- [Cas12a Variant Structure Prediction](./cas12aAlphaFold2/00_introduction.md)
 - [Trajectory Analysis](./trajectoryAnalysis/00_background.md)
 
 
