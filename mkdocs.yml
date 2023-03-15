@@ -137,5 +137,10 @@ nav:
                 - "Read Alignment": 2023_workshops/galaxyRNASeq/03_Read_alignment.md
                 - "Gene Quantification": 2023_workshops/galaxyRNASeq/04_Gene_quantification.md
                 - "Differential Expression": 2023_workshops/galaxyRNASeq/05_Diff_expression.md
+            - Cas12a Variant Structural Predictions With AlphaFold2:
+                - "Introduction": 2023_workshops/cas12aAlphaFold2/00_introduction.md
+                - "Introduction To Cas12a Variant Structural Predictions With AlphaFold2": 2023_workshops/cas12aAlphaFold2/01_CRISPR-Cas_Structural_Predictions_with_AlphaFold2.pdf
+                - "AlphaFold2 Accuracy Assessment": 2023_workshops/cas12aAlphaFold2/02_AlphaFold2_Accuracy_Assessment.md
+                - "Cas12a Variant Visualization": 2023_workshops/cas12aAlphaFold2/03_Cas12a_Variant_Vizualization.md
             - Trajectory Analysis:
                 - "Introduction": 2023_workshops/trajectoryAnalysis/00_background.md
