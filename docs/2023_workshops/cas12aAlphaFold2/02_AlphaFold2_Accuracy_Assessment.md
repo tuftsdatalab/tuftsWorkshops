@@ -2,8 +2,8 @@
 
 We can assess the accuracy of the AlphaFold prediction using:
 
-- Predicted Local Distance Difference Test (pLDDT)
-- Predicted Alignment Error
+- **Predicted Local Distance Difference Test (pLDDT)**
+- **Predicted Alignment Error**
 
 ## Predicted Local Distance Difference Test (pLDDT)
 
@@ -66,7 +66,7 @@ Where:
     
 !!! warning 
     
-    The `bioworkshop` reservation will be unavailable after December 7th. This reservation is a temporary reservation for this class. 
+    The `bioworkshop` reservation will be unavailable a few days after this workshop. This reservation is a temporary reservation for this class. To get on an interactive node outside of this session just remove --reservation=bioworkshop from the command!
 
 - When you get a compute node you'll note that your prompt will no longer say login and instead say the name of the node:
 
@@ -79,5 +79,43 @@ Where:
 - To get our AlphaFold data we will enter:
 
 ```bash
-cp -r /cluster/tufts/bio/tools/training/af2Workshop ./
+cp -r /cluster/tufts/bio/tools/training/cas12a_af2 ./
 ```
+
+- Now let's go into this folder with the following command:
+
+```bash
+cd cas12a_af2 
+```
+
+- Now, given that AlphaFold2 can take anywhere from a few hours to a few days to run - AlphaFold2 predictions have already been generated for the three mutants of interest in our study. We would use a script from the [VIB Bioinformatics Core](https://elearning.bits.vib.be/courses/alphafold/lessons/alphafold-on-the-hpc/topic/alphafold-outputs/) to visualize the accuracy of AlphaFold2's predictions. First we will need to load the software needed to run that script:
+
+```bash
+module load alphafold/2.2.0
+```
+
+- Now we will need to feed our script three arguments:
+ - `--input_dir` input directory with model files mentioned above
+ - `--output_dir` output directory to put our plots of model information
+ - `--name` optional prefix to add to our file names
+
+```bash
+python af2_accuracy_viz.py --input_dir mut2bw --output_dir ./ --name mut2bw
+python af2_accuracy_viz.py --input_dir mut2cw --output_dir ./ --name mut2cw
+python af2_accuracy_viz.py --input_dir mut2cwf --output_dir ./ --name mut2cwf
+```
+
+- Running this will generate two images, per Cas12a mutant, in your current directory:
+ - `*_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
+ - `*_PAE.png` - plots of your predicted alignment error for each of your models
+
+- The following is are the images per Cas12a mutant:
+
+![](images/)
+
+- You'll note that for the pLDDT plots, that the multiple sequence alignment is plotted with a bar on the side to tell you how similar those sequences were to your query sequence (in this case each of the Cas12a mutants)
+
+
+??? question "Which Cas12a mutant has the best overall coverage and which has the worst?"
+
+??? question "How does this coverage seem to affect the confidence in each residues position in the pLDDT plots?"
