@@ -52,9 +52,7 @@ We can assess the accuracy of the AlphaFold prediction using:
 srun -p batch --time=3:00:00 -n 2 --mem=4g --reservation=bioworkshop --pty bash
 ```
 
-Where:
-
-!!! example "Explanation of Commands"
+??? example "Explanation of Commands"
 
     - `srun`: SLURM command to run a parallel job
     - `-p`: asking for a partition, here we are requesting the batch partition
