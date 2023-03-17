@@ -21,3 +21,39 @@
 - First we will need to download our predicted structure pdb files. To this go to Files > Home Directory:
 
 ![](images/homeDir.png)
+
+- Now, click on cas12a_af2 and download each of these files that end in `.pdb`:
+
+IMAGES TO BE INSERTED HERE
+
+![](images/)
+
+## Visualization with PyMOL
+
+- To visualize these protein structures in PyMOL, open PyMOL on your computer
+- Go to File > Open - then choose your pdb files.
+- We will now align each of these structures so we can visualize the region of interest. So in the PyMOL command prompt enter:
+
+```bash
+align mut2bw, mut2cw
+```
+
+```bash
+align mut2cwf, mut2cw
+```
+
+
+- Now that we have aligned all of our structures, let's disable 
+- Let's visualize the Bridge Helix region on these Cas12a mutants. 
+
+```bash
+select resid 890+885+884
+```
+
+```bash
+color sele, red
+```
+
+```bash
+zoom sele
+```
