@@ -88,16 +88,18 @@ cp -r /cluster/tufts/bio/tools/training/cas12a_af2 ./
 cd cas12a_af2 
 ```
 
-- Now, given that AlphaFold2 can take anywhere from a few hours to a few days to run - AlphaFold2 predictions have already been generated for the three mutants of interest in our study. We would use a script from the [VIB Bioinformatics Core](https://elearning.bits.vib.be/courses/alphafold/lessons/alphafold-on-the-hpc/topic/alphafold-outputs/) to visualize the accuracy of AlphaFold2's predictions. First we will need to load the software needed to run that script:
+- Given that AlphaFold2 can take anywhere from a few hours to a few days to run - AlphaFold2 predictions have already been generated for the three mutants of interest in our study. We would use a script from the [VIB Bioinformatics Core](https://elearning.bits.vib.be/courses/alphafold/lessons/alphafold-on-the-hpc/topic/alphafold-outputs/) to visualize the accuracy of AlphaFold2's predictions. First we will need to load the software needed to run that script:
 
 ```bash
 module load alphafold/2.2.0
 ```
 
 - Now we will need to feed our script three arguments:
- - `--input_dir` input directory with model files mentioned above
- - `--output_dir` output directory to put our plots of model information
- - `--name` optional prefix to add to our file names
+    
+    - `--input_dir` input directory with model files mentioned above
+    - `--output_dir` output directory to put our plots of model information
+    - `--name` optional prefix to add to our file names
+
 
 ```bash
 python af2_accuracy_viz.py --input_dir mut2bw --output_dir ./ --name mut2bw
@@ -106,8 +108,9 @@ python af2_accuracy_viz.py --input_dir mut2cwf --output_dir ./ --name mut2cwf
 ```
 
 - Running this will generate two images, per Cas12a mutant, in your current directory:
- - `*_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
- - `*_PAE.png` - plots of your predicted alignment error for each of your models
+
+    - `*_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
+    - `*_PAE.png` - plots of your predicted alignment error for each of your models
 
 - The following is are the images per Cas12a mutant:
 
