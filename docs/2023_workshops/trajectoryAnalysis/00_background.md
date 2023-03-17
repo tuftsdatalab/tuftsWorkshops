@@ -1,6 +1,6 @@
 ## Introduction To Trajectory Analysis 
 
-Content developed by DISC & TTS Research Technology
+**Content developed by DISC & TTS Research Technology**
 
 - Rebecca Batorsky, PhD, Data Scientist I<sup>1</sup>
 - Jason Laird, MSc, Bioinformatics Scientist<sup>2</sup>
