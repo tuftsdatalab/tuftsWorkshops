@@ -18,11 +18,11 @@
 
 ## Download AlphaFold Output
 
-- First we will need to download our predicted structure pdb files. To this go to Files > Home Directory:
+- First we will need to download our predicted structure pdb file for the Cas12a-CW mutant. To this go to Files > Home Directory:
 
 ![](images/homeDir.png)
 
-- Now, click on cas12a_af2 and download each of these files that end in `.pdb`:
+- Now, click on cas12a_af2 and download the following file, `mut2cw.pdb`:
 
 IMAGES TO BE INSERTED HERE
 
@@ -30,21 +30,19 @@ IMAGES TO BE INSERTED HERE
 
 ## Visualization with PyMOL
 
-- To visualize these protein structures in PyMOL, open PyMOL on your computer
-- Go to File > Open - then choose your pdb files.
-- We will now align each of these structures so we can visualize the region of interest. So in the PyMOL command prompt enter:
+- To visualize this protein structure in PyMOL, open PyMOL on your computer
+- Go to File > Open - then choose your pdb file.
+- We will now align this structure with the wild type of Cas12a(PDB: 5XUS). So in the PyMOL command prompt enter:
 
 ```bash
-align mut2bw, mut2cw
+fetch 5xus
 ```
 
 ```bash
-align mut2cwf, mut2cw
+align 5xus, mut2cw
 ```
 
-
-- Now that we have aligned all of our structures, let's disable 
-- Let's visualize the Bridge Helix region on these Cas12a mutants. 
+- Now that we have aligned our structures, let's visualize the Bridge Helix region on the Cas12a mutant, and Cas12a wild-type. 
 
 ```bash
 select resid 890+885+884
