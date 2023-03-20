@@ -42,16 +42,22 @@ fetch 5xus
 align 5xus, mut2cw
 ```
 
-- Now that we have aligned our structures, let's visualize the Bridge Helix region on the Cas12a mutant, and Cas12a wild-type. 
+- Now that we have aligned our structures, let's select residues on the Bridge Helix region on the Cas12a mutant and Cas12a wild-type:
 
 ```bash
 select resid 890+885+884
 ```
 
+- With these residues selected we can color them to visualize them easier:
+
 ```bash
 color sele, red
 ```
 
+- Let's now zoom into this region:
+
 ```bash
 zoom sele
 ```
+
+
