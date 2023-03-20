@@ -21,9 +21,7 @@ We can assess the accuracy of the AlphaFold prediction using:
 
 ## Navigate To The Cluster
 
-- Now that we have an idea of what these metrics mean, let's try generating these plots for our Cas12a mutants on the cluster. First navigate to:
-
-[https://ondemand.pax.tufts.edu/](https://ondemand.pax.tufts.edu/)
+- Now that we have an idea of what these metrics mean, let's try generating these plots for our Cas12a mutants on the cluster. First navigate to: [https://ondemand.pax.tufts.edu/](https://ondemand.pax.tufts.edu/)
 
 - Log in with your Tufts credentials
 - On the top menu bar choose `Clusters->Tufts HPC Shell Access`
@@ -100,23 +98,19 @@ module load alphafold/2.2.0
 
 
 ```bash
-python af2_accuracy_viz.py --input_dir mut2bw --output_dir ./ --name mut2bw
 python af2_accuracy_viz.py --input_dir mut2cw --output_dir ./ --name mut2cw
-python af2_accuracy_viz.py --input_dir mut2cwf --output_dir ./ --name mut2cwf
 ```
 
 - Running this will generate two images, per Cas12a mutant, in your current directory:
 
-    - `*_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
-    - `*_PAE.png` - plots of your predicted alignment error for each of your models
+    - `mut2cw_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
+    - `mut2cw_PAE.png` - plots of your predicted alignment error for each of your models
 
-- The following is are the images per Cas12a mutant:
+- The following is are the pLDDT and PAE scores for the Cas12a-CW mutant:
 
 ![](images/)
 
-- You'll note that for the pLDDT plots, that the multiple sequence alignment is plotted with a bar on the side to tell you how similar those sequences were to your query sequence (in this case each of the Cas12a mutants)
+- You'll note that for the pLDDT plots, that the multiple sequence alignment is plotted with a bar on the side to tell you how similar those sequences were to your query sequence (in this case each of the Cas12a-CW mutant)
 
-
-??? question "Which Cas12a mutant has the best overall coverage and which has the worst?"
 
 ??? question "How does this coverage seem to affect the confidence in each residues position in the pLDDT plots?"
