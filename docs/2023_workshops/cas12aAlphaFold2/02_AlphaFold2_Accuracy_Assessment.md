@@ -98,7 +98,7 @@ module load alphafold/2.2.0
 
 
 ```bash
-python af2_accuracy_viz.py --input_dir mut2cw --output_dir ./ --name mut2cw
+python af2_accuracy_viz.py --input_dir mut2cw/5XUS_mutcw --output_dir ./ --name mut2cw
 ```
 
 - Running this will generate two images, per Cas12a mutant, in your current directory:
