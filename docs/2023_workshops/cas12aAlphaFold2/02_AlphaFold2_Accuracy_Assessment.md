@@ -108,10 +108,10 @@ python af2_accuracy_viz.py --input_dir mut2cw/5XUS_mutcw --output_dir ./ --name 
 
 - The following is are the pLDDT and PAE scores for the Cas12a-CW mutant:
 
-![](images/)
+![](images/cas12a_cw_errors.png)
 
 - You'll note that for the pLDDT plots, that the multiple sequence alignment is plotted with a bar on the side to tell you how similar those sequences were to your query sequence (in this case each of the Cas12a-CW mutant)
 
 ??? question "Do you see a region in the MSA plot that seems more conserved?"
 
-??? question "How does this coverage seem to affect the confidence in each residues position in the pLDDT plots?"
+??? question "How does this coverage seem to affect the confidence in each residues position in the pLDDT plots? "
