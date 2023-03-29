@@ -18,7 +18,7 @@
 
 ## Download AlphaFold Output
 
-- First we will need to download our predicted structure pdb file for the mutant, Cas12a mut2-CWF. To this go to `Files > Home Directory`:
+- First we will need to download our predicted structure pdb file for the mutant, Cas12a mut2-CWF. To this, go to `Files > Home Directory`:
 
 ![](images/homeDir.png)
 
