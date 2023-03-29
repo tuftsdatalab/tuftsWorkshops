@@ -28,30 +28,67 @@ IMAGES TO BE INSERTED HERE
 
 ![](images/)
 
-## Visualization with PyMOL
+## Importing Structures
 
 - To visualize this protein structure in PyMOL, open PyMOL on your computer
 - Go to File > Open - then choose your pdb file.
-- We will now align this structure with the wild type of Cas12a(PDB: 5XUS). So in the PyMOL command prompt enter:
+- The file we have loaded is the Cas12a-CWF mutant, let's fetch the structure for the wild type Cas12a protein:
 
 ```bash
 fetch 5xus
 ```
 
+- We will now align this structure with the wild type of Cas12a(PDB: 5XUS). So in the PyMOL command prompt enter:
+
 ```bash
-align 5xus, mut2cwf
+align mut2cwf, 5xus
 ```
 
-- Now that we have aligned our structures, let's select residues on the Bridge Helix region on the mutan, Cas12a mut2-CWF, and Cas12a wild-type:
+## Viewing/Coloring Structures
+
+- To view one structure at a time, you can use the `disable` command to hide one of the structures:
 
 ```bash
-select resid 890+885+884
+disable 5xus
+```
+
+- To see this structure again we can simply use the `enable` command:
+
+```bash
+enable 5xus
+```
+
+- To change the color of our structures we can use the following command:
+
+```bash
+color lightblue, 5xus
+```
+
+```bash
+color salmon, mut2cwf
+```
+
+## Visualizing Variants
+
+- Now that we have aligned/colored our structures, let's select residues on the RuvC Domain on the Cas12a mut2-CWF and the Cas12a wild-type:
+
+```bash
+select resi 863+952+965+1214 and name CA
+```
+
+!!! note 
+    Note we are only selecting the alpha carbons so that when we label these residues we only have one label per residue
+
+- To label these residues we can use the following:
+
+```bash
+label sele, " %s%s" % (resn,resi)
 ```
 
 - With these residues selected we can color them to visualize them easier:
 
 ```bash
-color sele, red
+color red, sele
 ```
 
 - Let's now zoom into this region:
@@ -60,7 +97,11 @@ color sele, red
 zoom sele
 ```
 
+- To capture this image we can go to `File > Export Image As > PNG... > Save PNG image as ...` and enter a name for your image!
+- Alternatively, you can take a screen shot and save.
+
+
 ??? question "Can you spot any disordered regions that AlphaFold2 may not have predicted well? Include an image displaying one of these regions. "
 
-??? question "[Ma et al. 2022](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9825149/) note that the Cas12a mut2-CW has a more open active site than the wild type Cas12a. Zoom into the catalytic site for Cas12a mut2c-W and include an image displaying this catalytic site (Hint: the catalytic site will contain the following residues: 863, 952, 965, and 1214). Do you agree that the catalytic site appears more open in comparison to the wild type structure (5XUS)?"
+??? question "[Ma et al. 2022](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9825149/) note that the Cas12a mut2-CWF has a more open active site than the wild type Cas12a. Disable the Cas12a mut2-CWF mutant and include an image of the wild type Cas12a. Then enable Cas12a mut2-CWF mutant, disable the wild type Cas12a and include an image of the Cas12a mut2-CWF mutant. Do you agree that the catalytic site appears more open in comparison to the wild type structure (5XUS)?"
 
