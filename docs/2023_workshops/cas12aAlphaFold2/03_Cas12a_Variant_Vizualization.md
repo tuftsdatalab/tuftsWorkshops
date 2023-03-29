@@ -26,7 +26,7 @@
 
 IMAGES TO BE INSERTED HERE
 
-![](images/)
+![](images/pdb_file_to_choose.png)
 
 ## Importing Structures
 
