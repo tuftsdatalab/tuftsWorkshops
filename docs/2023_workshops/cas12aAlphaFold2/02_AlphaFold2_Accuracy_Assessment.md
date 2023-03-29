@@ -21,7 +21,7 @@ We can assess the accuracy of the AlphaFold prediction using:
 
 ## Navigate To The Cluster
 
-- Now that we have an idea of what these metrics mean, let's try generating these plots for our Cas12a mutants on the cluster. First navigate to: [https://ondemand.pax.tufts.edu/](https://ondemand.pax.tufts.edu/)
+- Now that we have an idea of what these metrics mean, let's try generating these plots for the Cas12a-CWF mutant on the cluster. First navigate to: [https://ondemand.pax.tufts.edu/](https://ondemand.pax.tufts.edu/)
 
 - Log in with your Tufts credentials
 - On the top menu bar choose `Clusters->Tufts HPC Shell Access`
@@ -87,7 +87,7 @@ cd cas12a_af2
 - Given that AlphaFold2 can take anywhere from a few hours to a few days to run - AlphaFold2 predictions have already been generated for the three mutants of interest in our study. We would use a script from the [VIB Bioinformatics Core](https://elearning.bits.vib.be/courses/alphafold/lessons/alphafold-on-the-hpc/topic/alphafold-outputs/) to visualize the accuracy of AlphaFold2's predictions. First we will need to load the software needed to run that script:
 
 ```bash
-module load alphafold/2.2.0
+module load alphafold/2.1.1
 ```
 
 - Now we will need to feed our script three arguments:
@@ -98,20 +98,20 @@ module load alphafold/2.2.0
 
 
 ```bash
-python af2_accuracy_viz.py --input_dir mut2cw/5XUS_mutcw --output_dir ./ --name mut2cw
+python af2_accuracy_viz.py --input_dir mut2cwf/5XUS_mut2cwf --output_dir ./ --name mut2cwf
 ```
 
 - Running this will generate two images, per Cas12a mutant, in your current directory:
 
-    - `mut2cw_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
-    - `mut2cw_PAE.png` - plots of your predicted alignment error for each of your models
+    - `mut2cwf_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
+    - `mut2cwf_PAE.png` - plots of your predicted alignment error for each of your models
 
-- The following is are the pLDDT and PAE scores for the Cas12a-CW mutant:
+- The following is are the pLDDT and PAE scores for the Cas12a-CWF mutant:
 
 ![](images/cas12a_cw_errors.png)
 
-- You'll note that for the pLDDT plots, that the multiple sequence alignment is plotted with a bar on the side to tell you how similar those sequences were to your query sequence (in this case each of the Cas12a-CW mutant)
+- You'll note that for the pLDDT plots, that the multiple sequence alignment is plotted with a bar on the side to tell you how similar those sequences were to your query sequence (in this case each of the Cas12a-CWF mutant)
 
-??? question "Do you see a region in the MSA plot that seems more conserved?"
+??? question "Do you see a region in the MSA plot that seems more conserved? How about less conserved?"
 
 ??? question "How does this coverage seem to affect the confidence in each residues position in the pLDDT plots? "
