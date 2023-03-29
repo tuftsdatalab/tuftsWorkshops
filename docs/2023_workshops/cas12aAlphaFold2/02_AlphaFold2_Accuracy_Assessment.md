@@ -60,7 +60,7 @@ srun -p batch --time=3:00:00 -n 2 --mem=4g --reservation=bioworkshop --pty bash
     - `--reservation`: the reservation of compute resources to use here we use the `bioworkshop` reservation
     - `--pty`: get a pseudo bash terminal
     
-!!! warning 
+!!! warning ""
     
     The `bioworkshop` reservation will be unavailable a few days after this workshop. This reservation is a temporary reservation for this class. To get on an interactive node outside of this session just remove --reservation=bioworkshop from the command!
 
