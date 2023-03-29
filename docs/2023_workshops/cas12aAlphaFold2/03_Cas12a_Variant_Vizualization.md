@@ -101,5 +101,5 @@ zoom sele
 
 ??? question "Can you spot any disordered regions that AlphaFold2 may not have predicted well? Include an image displaying one of these regions. "
 
-??? question "[Ma et al. 2022](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9825149/) note that the Cas12a mut2-CWF has a more open active site than the wild type Cas12a. Disable the Cas12a mut2-CWF mutant and include an image of the wild type Cas12a. Then enable Cas12a mut2-CWF mutant, disable the wild type Cas12a and include an image of the Cas12a mut2-CWF mutant. Do you agree that the catalytic site appears more open in comparison to the wild type structure (5XUS)?"
+??? question "[Ma et al. 2022](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9825149/) note that the Cas12a mut2-CWF has a more open active site than the wild type Cas12a. Disable the Cas12a mut2-CWF mutant and include an image of the wild type Cas12a. Then enable Cas12a mut2-CWF mutant, disable the wild type Cas12a and include an image of the Cas12a mut2-CWF mutant. Do you agree that the catalytic site appears more open in comparison to the wild type structure (5xus)?"
 
