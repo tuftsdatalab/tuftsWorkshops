@@ -24,8 +24,6 @@
 
 - Now, click on cas12a_af2 and download the following file, `mut2cwf.pdb`:
 
-IMAGES TO BE INSERTED HERE
-
 ![](images/pdb_file_to_choose.png)
 
 ## Importing Structures
