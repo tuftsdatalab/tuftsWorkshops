@@ -36,7 +36,7 @@
 fetch 5xus
 ```
 
-- We will now align this structure with the wild type of Cas12a(PDB: 5XUS). So in the PyMOL command prompt enter:
+- We will now align this structure with the Cas12a-CWF mutant. So in the PyMOL command prompt enter:
 
 ```bash
 align mut2cwf, 5xus
