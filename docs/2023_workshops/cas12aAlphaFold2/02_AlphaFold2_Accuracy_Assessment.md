@@ -47,7 +47,7 @@ We can assess the accuracy of the AlphaFold prediction using:
 - To run our analyses we will need to move from the login node to a compute node. We can do this by entering:
 
 ```bash
-srun -p batch --time=3:00:00 -n 2 --mem=4g --reservation=bioworkshop --pty bash
+srun -p batch --time=3:00:00 -n 2 --mem=4g --reservation=chbe165 --pty bash
 ```
 
 ??? example "Explanation of Commands"
@@ -62,7 +62,7 @@ srun -p batch --time=3:00:00 -n 2 --mem=4g --reservation=bioworkshop --pty bash
     
 !!! warning ""
     
-    The `bioworkshop` reservation will be unavailable a few days after this workshop. This reservation is a temporary reservation for this class. To get on an interactive node outside of this session just remove --reservation=bioworkshop from the command!
+    The `chbe165` reservation will be unavailable a few days after this workshop. This reservation is a temporary reservation for this class. To get on an interactive node outside of this session just remove --reservation=chbe165 from the command!
 
 - When you get a compute node you'll note that your prompt will no longer say login and instead say the name of the node:
 
