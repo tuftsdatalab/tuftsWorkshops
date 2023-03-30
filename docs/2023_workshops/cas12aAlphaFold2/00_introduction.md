@@ -14,6 +14,11 @@ Content developed by TTS Research Technology
 - High Performance Compute Cluster
 - Workshops
 
+## Prerequisites
+
+- [Download PyMOL](https://access.tufts.edu/pymol)
+- [Account on the HPC](https://tufts.qualtrics.com/jfe/form/SV_5bUmpFT0IXeyEfj) (**Note:** everyone in CHBE-165 should have an account already set up. To test your account log into [OnDemand](https://ondemand.pax.tufts.edu/). If you can log in, you are all set, if not please reach out to tts-research@tufts.edu)
+
 
 ## Schedule
 
