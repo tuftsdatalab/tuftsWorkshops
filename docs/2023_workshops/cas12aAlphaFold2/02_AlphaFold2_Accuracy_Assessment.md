@@ -92,7 +92,7 @@ module load alphafold/2.1.1
 
 - Now we will need to feed our script three arguments:
     
-    - `--input_dir` input directory with model files mentioned above
+    - `--input_dir` input directory with model files 
     - `--output_dir` output directory to put our plots of model information
     - `--name` optional prefix to add to our file names
 
