@@ -104,7 +104,7 @@ python af2_accuracy_viz.py --input_dir mut2cwf/5XUS_mut2cwf --output_dir ./ --na
 - Running this will generate two images in your current directory:
 
     - `mut2cwf_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
-    - `mut2cwf_PAE.png` - plots of your predicted alignment error for each of your models
+    - `mut2cwf_PAE.png` - plots of your predicted alignment error 
 
 - The following is are the pLDDT and PAE scores for the Cas12a-CWF mutant:
 
