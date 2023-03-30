@@ -57,7 +57,7 @@ srun -p batch --time=3:00:00 -n 2 --mem=4g --reservation=chbe165 --pty bash
     - `--time`: time we need here we request 3 hours
     - `-n`:  number of CPUs needed here we requested 2
     - `--mem`:  memory we need here we request 4 Gigabytes
-    - `--reservation`: the reservation of compute resources to use here we use the `bioworkshop` reservation
+    - `--reservation`: the reservation of compute resources to use here we use the `chbe165` reservation
     - `--pty`: get a pseudo bash terminal
     
 !!! warning ""
