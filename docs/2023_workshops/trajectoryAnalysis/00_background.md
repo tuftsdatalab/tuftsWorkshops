@@ -21,8 +21,8 @@
 
 **Hands On Activity**
 
-1. Setup and Loading the Data
-2. Running Monocle
-3. Assessing Pseudotime
-4. Time-Series Data with Pertubations
+1. [Setup and Seurat Objects](01_setup_and_seurat.md)
+3. Running Monocle
+4. Assessing Pseudotime
+5. Time-Series Data with Pertubations
 
