@@ -23,6 +23,5 @@
 
 1. [Setup and Seurat Objects](01_setup_and_seurat.md)
 3. [Monocle Setup and Trajectory Analysis](02_monocle_setup_and_trajectory_analysis.md)
-4. Assessing Pseudotime
-5. Time-Series Data with Pertubations
+4. [Pseudotime and Differential Expression](03_pseudotime_and_differential_expression.md)
 
