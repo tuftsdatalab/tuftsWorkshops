@@ -22,7 +22,7 @@
 **Hands On Activity**
 
 1. [Setup and Seurat Objects](01_setup_and_seurat.md)
-3. Running Monocle
+3. [Monocle Setup and Trajectory Analysis](02_monocle_setup_and_trajectory_analysis.md)
 4. Assessing Pseudotime
 5. Time-Series Data with Pertubations
 
