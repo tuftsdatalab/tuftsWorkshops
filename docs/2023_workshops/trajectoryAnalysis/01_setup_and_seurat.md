@@ -2,6 +2,12 @@
 
 ## Loading Libraries and Data
 
+- We will be working with Single-Cell RNA-seq data in R today. This data is often stored as a Seurat object, which has the following structure:
+
+![](images/single_cell_exp_obj.png)
+
+- Let's start by loading the libraries we need to import and manipulate this object!
+
 ```R
 # --- Load Libraries -----------------------------------------------------------
 #LIB='/cluster/tufts/bio/tools/R_libs/4.0.0'
