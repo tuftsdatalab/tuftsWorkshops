@@ -10,9 +10,7 @@
 
 ```R
 # --- Load Libraries -----------------------------------------------------------
-#LIB='/cluster/tufts/bio/tools/R_libs/4.0.0'
-#LIB='/cluster/tufts/hpc/tools/R/4.0.0/'
-.libPaths(c("","/cluster/home/jlaird01/R/x86_64-pc-linux-gnu-library/4.0/"))
+.libPaths(c("","/cluster/tufts/bio/tools/R/bio_sup"))
 library(monocle3)
 library(Seurat)
 library(SeuratWrappers)
