@@ -1,5 +1,26 @@
 ## Setup and Seurat Objects
 
+## Navigate To The Cluster
+
+Once you have an account and are connected to the VPN/Tufts Network, navigate to the [OnDemand Website](https://ondemand.pax.tufts.edu/){:target="_blank" rel="noopener"} and log in with your tufts credentials. Once you are logged in you'll notice a few navigation options:
+
+![](images/ondemand_layout_pic.png)
+
+Click on `Interactive Apps > RStudio Pax` and you will see a form to fill out to request compute resources to use RStudio on the Tufts HPC cluster. We will fill out the form with the following entries:
+
+- `Number of hours` : `3`
+- `Number of cores` : `1`
+- `Amount of memory` : `4GB`
+- `R version` : `4.0.0`
+- `Reservation for class, training, workshop` : `Bioinformatics Workshops`---> NOTE: This reservation closed on Nov 9, 2022, use Default if running through the materials after that date.
+- `Load Supporting Modules`: `boost/1.63.0-python3 java/1.8.0_60 gsl/2.6`
+
+Click `Launch` and wait until your session is ready. Click `Connect To RStudio Server`, and you will notice a new window will pop up with RStudio. 
+
+??? question "Are you connected to RStudio?"
+    - Yes (put up a green check mark in zoom)
+    - No (raise hand in zoom)
+
 ## Loading Libraries and Data
 
 - We will be working with Single-Cell RNA-seq data in R today. This data is often stored as a Seurat object, which has the following structure:
