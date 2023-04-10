@@ -1,3 +1,13 @@
+
+Seurat is a user friendly R package used to analyze single-cell RNA-Seq data. Seurat objects have the following structure:
+
+
+!!! info "Seurat Objects" 
+
+    ![](images/seurat_obj.png)
+
+Let's invetstigate some single cell data - first we will need to load the necessary libraries:
+
 ```R
 # --- Load Libraries -----------------------------------------------------------
 LIB='/cluster/tufts/hpc/tools/R/4.0.0/'
@@ -9,17 +19,16 @@ library(clusterProfiler)
 library(patchwork)
 library(tidyverse)
 
-# --- Set color palette --------------------------------------------------------
-
-cols = c("#41ae76","#ee8866","#bebada","#bbcc33","#fdb462",
-         "#f768a1","#fa9fb5","#77aadd","darkgray",
-         "#cc6677","#882255","#225522","#aa4499","#332288",
-         "#009988","#5C61FF","#B87ACF")
-         
 # --- Load Data ----------------------------------------------------------------
 
 # start with the day 35 seurat object 
 seur <- readRDS("./results/asd_organoids/suv420h1_mito210_d35_sub.rds")
+
+```
+
+Now let's see what is in our Seurat object and how we can access our data:
+
+```R
 
 # --- Explain the Seurat Object ------------------------------------------------
 
