@@ -32,7 +32,9 @@ Click `Launch` and wait until your session is ready. Click `Connect To RStudio S
 
 Today we will be working with data from  [Paulson et al. 2022](https://www.nature.com/articles/s41586-021-04358-6) which found cell-type-specific neurodevelopmental abnormalities that were shared across ASD risk genes. To this end they leveraged organoid single-cell RNA-seq data to investigate these abnormalities:
 
-![](images/asd_figure_1.png)
+!!! info "[Paulson et al. 2022](https://www.nature.com/articles/s41586-021-04358-6)"
+
+    ![](images/asd_figure_1.png)
 
 This research uncovers cell-type-specific neurodevelopmental abnormalities that are shared across ASD risk genes and are finely modulated by human genomic context, finding convergence in the neurobiological basis of how different risk genes contribute to ASD pathology.
 
