@@ -10,7 +10,7 @@ Click on `Interactive Apps > RStudio Pax` and you will see a form to fill out to
 
 - `Number of hours` : `3`
 - `Number of cores` : `1`
-- `Amount of memory` : `4GB`
+- `Amount of memory` : `16GB`
 - `R version` : `4.0.0`
 - `Reservation for class, training, workshop` : `Bioinformatics Workshops`---> NOTE: This reservation closed on Nov 9, 2022, use Default if running through the materials after that date.
 - `Load Supporting Modules`: `boost/1.63.0-python3 java/1.8.0_60 gsl/2.6`
@@ -20,6 +20,14 @@ Click `Launch` and wait until your session is ready. Click `Connect To RStudio S
 ??? question "Are you connected to RStudio?"
     - Yes (put up a green check mark in zoom)
     - No (raise hand in zoom)
+
+## Today's Data
+
+Today we will be working with data from  [Paulson et al. 2022](https://www.nature.com/articles/s41586-021-04358-6) which found cell-type-specific neurodevelopmental abnormalities that were shared across ASD risk genes. To this end they leveraged organoid single-cell RNA-seq data to investigate these abnormalities:
+
+![](images/asd_figure_1.png)
+
+This research uncovers cell-type-specific neurodevelopmental abnormalities that are shared across ASD risk genes and are finely modulated by human genomic context, finding convergence in the neurobiological basis of how different risk genes contribute to ASD pathology.
 
 ## Loading Libraries and Data
 
