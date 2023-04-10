@@ -1,5 +1,12 @@
 ## Setup and Seurat Objects
 
+
+!!! example "Prerequisites"
+    - [Request an account](http://research.uit.tufts.edu/) on the Tufts HPC Cluster
+        - Note if you signed up for the Introduction to Single-Cell RNA-Seq Time Series and Trajectory Analysis workshop this will have been already taken care of for you!
+    - Connect to the [VPN](https://access.tufts.edu/vpn) if off campus
+    
+
 ## Navigate To The Cluster
 
 Once you have an account and are connected to the VPN/Tufts Network, navigate to the [OnDemand Website](https://ondemand.pax.tufts.edu/){:target="_blank" rel="noopener"} and log in with your tufts credentials. Once you are logged in you'll notice a few navigation options:
