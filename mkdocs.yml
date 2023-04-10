@@ -147,3 +147,4 @@ nav:
                 - "Setup and Monocl3 Objects": 2023_workshops/trajectoryAnalysis/01_setup_and_seurat.md
                 - "Monocle Setup and Trajectory Analysis": 2023_workshops/trajectoryAnalysis/02_monocle_setup_and_trajectory_analysis.md
                 - "Pseudotime and Differential Expression": 2023_workshops/trajectoryAnalysis/03_pseudotime_and_differential_expression.md
+                - "Optional: Seurat Manipulation": 2023_workshops/trajectoryAnalysis/0X_seurat_manipulation.md
