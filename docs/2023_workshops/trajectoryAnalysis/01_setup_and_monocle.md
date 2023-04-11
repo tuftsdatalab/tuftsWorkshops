@@ -35,6 +35,54 @@ Today we will be working with data from  [Paulson et al. 2022](https://www.natur
 !!! info "[Paulson et al. 2022](https://www.nature.com/articles/s41586-021-04358-6)"
 
     ![](images/asd_figure_1.png)
+    
+## Project Setup
+
+We are going to create a new project to begin:
+
+- Go to `File` > `New Project`
+- `New Directory`
+- `New Project`
+- Create a name for your project (e.g. `trajectory_analysis`)
+- `Create Project`
+
+## Data & Scripts
+
+To copy over this data we will enter the following command into the console:
+
+```R
+file.copy(from="/cluster/tufts/bio/tools/training/trajectory_analysis",to="./", recursive = TRUE)
+```
+
+Now that we have our data and scripts copied, let's navigate to our scripts folder and open up "dada2pipeline.Rmd".
+
+## Loading Libraries and Data
+
+
+```R
+# --- Load Libraries -----------------------------------------------------------
+LIB='/cluster/tufts/hpc/tools/R/4.0.0/'
+.libPaths(c("",LIB))
+.libPaths()
+library(Seurat)
+library(monocle3)
+library(clusterProfiler)
+library(patchwork)
+library(tidyverse)
+
+# --- Set color palette --------------------------------------------------------
+
+cols = c("#41ae76","#ee8866","#bebada","#bbcc33","#fdb462",
+         "#f768a1","#fa9fb5","#77aadd","darkgray",
+         "#cc6677","#882255","#225522","#aa4499","#332288",
+         "#009988","#5C61FF","#B87ACF")
+         
+# --- Load Data ----------------------------------------------------------------
+
+# start with the day 35 seurat object 
+#seur <- readRDS("/cluster/tufts/bio/data/projects/2023_02_time_series_scrnaseq/rds/SUV420H1_Mito210_d35.rds")
+seur <- readRDS("./results/asd_organoids/suv420h1_mito210_d35_sub.rds")
+```
 
 ## Monocle3 Cell Data Objects
 
@@ -45,5 +93,3 @@ Today we will be working with data from  [Paulson et al. 2022](https://www.natur
     ![](images/cell_data_set.png)
 
 - Let's start by loading the libraries we need to import and manipulate this object!
-
-## Loading Libraries and Data
