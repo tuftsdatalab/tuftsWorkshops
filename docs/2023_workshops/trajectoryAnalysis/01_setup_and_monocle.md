@@ -78,16 +78,11 @@ cols = c("#41ae76","#ee8866","#bebada","#bbcc33","#fdb462",
          "#f768a1","#fa9fb5","#77aadd","darkgray",
          "#cc6677","#882255","#225522","#aa4499","#332288",
          "#009988","#5C61FF","#B87ACF")
-         
-# --- Load Data ----------------------------------------------------------------
-
-# start with the day 35 seurat object 
-seur <- readRDS("./results/asd_organoids/suv420h1_mito210_d35_sub.rds")
 ```
 
 ## Monocle3 Cell Data Objects
 
-- We will be working with single-cell RNA-seq data in R today. This data is often stored as a Seurat object if you are performing differential expression testing. To understand how to work with a Seurat object check out our [quick tutorial](0X_seurat_manipulation.md). Today, we will be performing trajectory analysis using the R package Monocle3. Monocle3 stores single-cell RNA-seq data as a cell data set object, which has the following structure:
+- We will be working with single-cell RNA-seq data in R today. Today, we will be performing trajectory analysis using the R package Monocle3. Monocle3 stores single-cell RNA-seq data as a cell data set object, which has the following structure:
 
 !!! info "Monocle3's Cell Data Set Object"
 
@@ -96,15 +91,21 @@ seur <- readRDS("./results/asd_organoids/suv420h1_mito210_d35_sub.rds")
 - Let's start by loading the libraries we need to import and manipulate this object!
 
 ```R
-# isolate the gene names
-fd = data.frame("gene_short_name" = rownames(GetAssayData(seur)))
-rownames(fd) = rownames(GetAssayData(seur))
+# load the counts data
+counts <- read.csv("/cluster/tufts/bio/data/projects/2023_02_time_series_scrnaseq/rds/SUV420H1_Mito210_d35_subset_4000_g50_counts.csv", check.names = F)
 
-# create a cell data cell object that monocle can use for trajectory
-# analysis
-cds <- new_cell_data_set(GetAssayData(seur),
-                         cell_metadata = seur@meta.data,
-                         gene_metadata = fd)
+# load the meta data
+meta <- read.csv( "/cluster/tufts/bio/data/projects/2023_02_time_series_scrnaseq/rds/SUV420H1_Mito210_d35_subset_4000_meta.csv")
+
+# clean our meta and counts data
+rownames(meta) = meta$cellid
+meta$cellid=NULL
+rownames(counts) = counts$gene
+counts$gene=NULL
+
+# create a cell data cell object that monocle can use for trajectory analysis
+cds <- new_cell_data_set(as.matrix(counts),
+                         cell_metadata = meta)
 cds
 ```
 
@@ -112,18 +113,18 @@ cds
 
     ```R
     class: cell_data_set 
-    {==dim: 3233 27666==} 
-    metadata(1): cds_version citations
+    dim: 12962 4000 
+    metadata(1): cds_version
     assays(1): counts
-    {==rownames(3233): RP11-54O7.1 AURKAIP1 ... MT-ND5 MT-CYB==}
-    rowData names(1): gene_short_name
-    {==colnames(27666): 1_AAACCCAAGCACGGAT 1_AAACCCAAGTCATACC ... 4_TTTGGTTCAAGCCTGC 5_AGACAGGTCACAAGGG==}
-    {==colData names(11): orig.ident nCount_RNA ... org Size_Factor==}
-    {==reducedDimNames(0): ==}
+    rownames(12962): FO538757.2 AP006222.2 ... AC004556.1 AC240274.1
+    rowData names(0):
+    colnames(4000): 1_AAAGGTACACAGCTGC 1_AAAGGTATCTGCCTGT ... 6_TTTGACTGTACCATAC 6_TTTGGTTGTTACGTAC
+    colData names(4): treat dataset CellType Size_Factor
+    reducedDimNames(0):
     altExpNames(0):
     ```
     
-- Here we will highlight that we have X rows and Y columns, our rownames are gene names, our column names are the cell names, we have one assay (`counts`), we have 11 columns of meta data under `colData`, and we have no dimension reductions under `reducedDimNames`.
+- Here we will highlight that we have 12962 rows and 4000 columns, our rownames are gene names, our column names are the cell names, we have one assay (`counts`), we have 4 columns of meta data under `colData`, and we have no dimension reductions under `reducedDimNames`.
 - Let's investage a few helpful functions that can help access these data:
 
 ```R
@@ -134,7 +135,7 @@ rownames(cds)[1:5]
 !!! info "output"
 
     ```R
-    [1] "RP11-54O7.1" "AURKAIP1"    "SSU72"       "C1orf233"    "MIB2" 
+    [1] "FO538757.2"    "AP006222.2"    "RP11-206L10.9" "LINC00115"     "FAM41C" 
     ```
 
 ```R
@@ -146,7 +147,7 @@ colnames(cds)[1:5]
 !!! info "output"
 
     ```R
-    [1] "1_AAACCCAAGCACGGAT" "1_AAACCCAAGTCATACC" "1_AAACCCAGTAGGAGTC" "1_AAACCCATCACTCTTA" "1_AAACCCATCTTGAACG"
+    [1] "1_AAAGGTACACAGCTGC" "1_AAAGGTATCTGCCTGT" "1_AACAACCCACACTGGC" "1_AACAAGATCGAAGCAG" "1_AACAGGGAGGACAGCT"
     ```
     
 ```R
@@ -154,18 +155,10 @@ colnames(cds)[1:5]
 head(rowData(cds))
 ```
 
-!!! info "output"
+!!! info "output (Notice we have no gene meta data)"
 
     ```R
-    DataFrame with 6 rows and 1 column
-                gene_short_name
-                    <character>
-    RP11-54O7.1     RP11-54O7.1
-    AURKAIP1           AURKAIP1
-    SSU72                 SSU72
-    C1orf233           C1orf233
-    MIB2                   MIB2
-    MMP23B               MMP23B
+    DataFrame with 6 rows and 0 columns
     ```
 
 ```R
@@ -176,15 +169,15 @@ head(colData(cds))
 !!! info "output"
 
     ```R
-    [DataFrame with 6 rows and 11 columns
-                       orig.ident nCount_RNA nFeature_RNA percent.mito percent.ribo            CellType       treat seurat_clusters         dataset      org Size_Factor
-                         <factor>  <numeric>    <integer>    <numeric>    <numeric>         <character> <character>        <factor>     <character> <factor>   <numeric>
-    1_AAACCCAAGCACGGAT          1       3086          544    0.1148179     0.474840                 aRG          wt              4  SUV_Mito210_d35        1    0.575785
-    1_AAACCCAAGTCATACC          1       6499         1364    0.0745991     0.107398         Subcortical          wt              15 SUV_Mito210_d35        1    1.221490
-    1_AAACCCAGTAGGAGTC          1      12168         1618    0.0678902     0.179736 Cycling Progenitors          wt              9  SUV_Mito210_d35        1    1.332651
-    1_AAACCCATCACTCTTA          1       5393         1237    0.1456875     0.124290       Cajal-Retzius          wt              16 SUV_Mito210_d35        1    1.141904
-    1_AAACCCATCTTGAACG          1       4951         1054    0.0581777     0.246685                 aRG          wt              0  SUV_Mito210_d35        1    0.988533
-    1_AAACGAAGTGGCAACA          1       7081         1429    0.0966265     0.108369         Newborn PNs          wt              3  SUV_Mito210_d35        1    1.289798
+    DataFrame with 6 rows and 4 columns
+                             treat         dataset            CellType Size_Factor
+                       <character>     <character>         <character>   <numeric>
+    1_AAAGGTACACAGCTGC          wt SUV_Mito210_d35 Cycling Progenitors    1.074965
+    1_AAAGGTATCTGCCTGT          wt SUV_Mito210_d35                 aRG    0.584379
+    1_AACAACCCACACTGGC          wt SUV_Mito210_d35 Cycling Progenitors    1.248093
+    1_AACAAGATCGAAGCAG          wt SUV_Mito210_d35                 aRG    1.115985
+    1_AACAGGGAGGACAGCT          wt SUV_Mito210_d35                 aRG    0.682049
+    1_AACCTGAGTATACGGG          wt SUV_Mito210_d35 Cycling Progenitors    0.997981
     ```
 
 ```R
@@ -196,12 +189,12 @@ head(assay(cds)[,1:3])
 
     ```R
     6 x 3 sparse Matrix of class "dgCMatrix"
-                1_AAACCCAAGCACGGAT 1_AAACCCAAGTCATACC 1_AAACCCAGTAGGAGTC
-    RP11-54O7.1                  .           .                  .       
-    AURKAIP1                     .           5.337212           5.443008
-    SSU72                        .           .                  4.069609
-    C1orf233                     .           4.648863           .       
-    MIB2                         .           4.648863           .       
-    MMP23B                       .           .                  .       
+                  1_AAAGGTACACAGCTGC 1_AAAGGTATCTGCCTGT 1_AACAACCCACACTGGC
+    FO538757.2                     .                  1                  .
+    AP006222.2                     .                  .                  .
+    RP11-206L10.9                  .                  .                  .
+    LINC00115                      .                  .                  .
+    FAM41C                         .                  .                  .
+    RP11-54O7.1                    .                  .                  .
     ```
 
