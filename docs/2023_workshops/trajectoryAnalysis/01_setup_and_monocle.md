@@ -37,15 +37,6 @@ Today we will be working with data from  [Paulson et al. 2022](https://www.natur
 
     ![](images/asd_figure_1.png)
     
-## Project Setup
-
-We are going to create a new project to begin:
-
-- Go to `File` > `New Project`
-- `New Directory`
-- `New Project`
-- Create a name for your project (e.g. `trajectory_analysis`)
-- `Create Project`
 
 ## Data & Scripts
 
@@ -55,11 +46,20 @@ To copy over this data we will enter the following command into the console:
 file.copy(from="/cluster/tufts/bio/tools/training/trajectory_analysis",to="./", recursive = TRUE)
 ```
 
-Now that we have our data and scripts copied, let's navigate to our scripts folder and open up "trajectory_analysis.Rmd".
+## Project Setup
+
+Now that we have copied over the directory for today's workshop we are going to use this folder to create a new R project. R projects are great for managing analyses in a containerized way. To create an R project from within our `trajectory_analysis` directory we will:
+
+- Go to `File` > `New Project`
+- `Existing Directory`
+- Browse for the `trajectory_analysis` folder
+- Click `Create Project`
+
+Now that we have our data and scripts copied, let's navigate to our `scripts` folder and open up "trajectory_analysis.Rmd".
 
 ## Loading Libraries and Data
 
-Before we analyze our single-cell RNA-Seq data 
+Before we analyze our single-cell RNA-Seq data we will need to load the libraries needed for our analysis:
 
 ```R
 # --- Load Libraries -----------------------------------------------------------
@@ -94,3 +94,113 @@ seur <- readRDS("./results/asd_organoids/suv420h1_mito210_d35_sub.rds")
     ![](images/cell_data_set.png)
 
 - Let's start by loading the libraries we need to import and manipulate this object!
+
+```R
+# isolate the gene names
+fd = data.frame("gene_short_name" = rownames(GetAssayData(seur)))
+rownames(fd) = rownames(GetAssayData(seur))
+
+# create a cell data cell object that monocle can use for trajectory
+# analysis
+cds <- new_cell_data_set(GetAssayData(seur),
+                         cell_metadata = seur@meta.data,
+                         gene_metadata = fd)
+cds
+```
+
+!!! info "output"
+
+    ```R
+    class: cell_data_set 
+    {==dim: 3233 27666==} 
+    metadata(1): cds_version citations
+    assays(1): counts
+    {==rownames(3233): RP11-54O7.1 AURKAIP1 ... MT-ND5 MT-CYB==}
+    rowData names(1): gene_short_name
+    {==colnames(27666): 1_AAACCCAAGCACGGAT 1_AAACCCAAGTCATACC ... 4_TTTGGTTCAAGCCTGC 5_AGACAGGTCACAAGGG==}
+    {==colData names(11): orig.ident nCount_RNA ... org Size_Factor==}
+    {==reducedDimNames(0): ==}
+    altExpNames(0):
+    ```
+    
+- Here we will highlight that we have X rows and Y columns, our rownames are gene names, our column names are the cell names, we have one assay (`counts`), we have 11 columns of meta data under `colData`, and we have no dimension reductions under `reducedDimNames`.
+- Let's investage a few helpful functions that can help access these data:
+
+```R
+# access the gene names
+rownames(cds)[1:5]
+```
+
+!!! info "output"
+
+    ```R
+    [1] "RP11-54O7.1" "AURKAIP1"    "SSU72"       "C1orf233"    "MIB2" 
+    ```
+
+```R
+# access the cell names
+colnames(cds)[1:5]
+```
+
+
+!!! info "output"
+
+    ```R
+    [1] "1_AAACCCAAGCACGGAT" "1_AAACCCAAGTCATACC" "1_AAACCCAGTAGGAGTC" "1_AAACCCATCACTCTTA" "1_AAACCCATCTTGAACG"
+    ```
+    
+```R
+# access the feature data
+head(rowData(cds))
+```
+
+!!! info "output"
+
+    ```R
+    DataFrame with 6 rows and 1 column
+                gene_short_name
+                    <character>
+    RP11-54O7.1     RP11-54O7.1
+    AURKAIP1           AURKAIP1
+    SSU72                 SSU72
+    C1orf233           C1orf233
+    MIB2                   MIB2
+    MMP23B               MMP23B
+    ```
+
+```R
+# access the meta data
+head(colData(cds))
+```
+
+!!! info "output"
+
+    ```R
+    [DataFrame with 6 rows and 11 columns
+                       orig.ident nCount_RNA nFeature_RNA percent.mito percent.ribo            CellType       treat seurat_clusters         dataset      org Size_Factor
+                         <factor>  <numeric>    <integer>    <numeric>    <numeric>         <character> <character>        <factor>     <character> <factor>   <numeric>
+    1_AAACCCAAGCACGGAT          1       3086          544    0.1148179     0.474840                 aRG          wt              4  SUV_Mito210_d35        1    0.575785
+    1_AAACCCAAGTCATACC          1       6499         1364    0.0745991     0.107398         Subcortical          wt              15 SUV_Mito210_d35        1    1.221490
+    1_AAACCCAGTAGGAGTC          1      12168         1618    0.0678902     0.179736 Cycling Progenitors          wt              9  SUV_Mito210_d35        1    1.332651
+    1_AAACCCATCACTCTTA          1       5393         1237    0.1456875     0.124290       Cajal-Retzius          wt              16 SUV_Mito210_d35        1    1.141904
+    1_AAACCCATCTTGAACG          1       4951         1054    0.0581777     0.246685                 aRG          wt              0  SUV_Mito210_d35        1    0.988533
+    1_AAACGAAGTGGCAACA          1       7081         1429    0.0966265     0.108369         Newborn PNs          wt              3  SUV_Mito210_d35        1    1.289798
+    ```
+
+```R
+# access the assay data
+head(assay(cds))
+```
+
+!!! info "output"
+
+    ```R
+    6 x 3 sparse Matrix of class "dgCMatrix"
+                1_AAACCCAAGCACGGAT 1_AAACCCAAGTCATACC 1_AAACCCAGTAGGAGTC
+    RP11-54O7.1                  .           .                  .       
+    AURKAIP1                     .           5.337212           5.443008
+    SSU72                        .           .                  4.069609
+    C1orf233                     .           4.648863           .       
+    MIB2                         .           4.648863           .       
+    MMP23B                       .           .                  .       
+    ```
