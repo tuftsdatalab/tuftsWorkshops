@@ -36,7 +36,7 @@ Today we will be working with data from  [Paulson et al. 2022](https://www.natur
 
     ![](images/asd_figure_1.png)
 
-## Loading Libraries and Data
+## Monocle3 Cell Data Objects
 
 - We will be working with single-cell RNA-seq data in R today. This data is often stored as a Seurat object if you are performing differential expression testing. To understand how to work with a Seurat object check out our [quick tutorial](0X_seurat_manipulation.md). Today, we will be performing trajectory analysis using the R package Monocle3. Monocle3 stores single-cell RNA-seq data as a cell data set object, which has the following structure:
 
@@ -45,3 +45,5 @@ Today we will be working with data from  [Paulson et al. 2022](https://www.natur
     ![](images/cell_data_set.png)
 
 - Let's start by loading the libraries we need to import and manipulate this object!
+
+## Loading Libraries and Data
