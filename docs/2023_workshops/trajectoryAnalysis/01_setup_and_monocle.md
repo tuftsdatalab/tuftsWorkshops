@@ -55,10 +55,11 @@ To copy over this data we will enter the following command into the console:
 file.copy(from="/cluster/tufts/bio/tools/training/trajectory_analysis",to="./", recursive = TRUE)
 ```
 
-Now that we have our data and scripts copied, let's navigate to our scripts folder and open up "dada2pipeline.Rmd".
+Now that we have our data and scripts copied, let's navigate to our scripts folder and open up "trajectory_analysis.Rmd".
 
 ## Loading Libraries and Data
 
+Before we analyze our single-cell RNA-Seq data 
 
 ```R
 # --- Load Libraries -----------------------------------------------------------
@@ -81,7 +82,6 @@ cols = c("#41ae76","#ee8866","#bebada","#bbcc33","#fdb462",
 # --- Load Data ----------------------------------------------------------------
 
 # start with the day 35 seurat object 
-#seur <- readRDS("/cluster/tufts/bio/data/projects/2023_02_time_series_scrnaseq/rds/SUV420H1_Mito210_d35.rds")
 seur <- readRDS("./results/asd_organoids/suv420h1_mito210_d35_sub.rds")
 ```
 
