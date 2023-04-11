@@ -96,7 +96,17 @@ Above we can see that we have multiple clusters (usually representing our cells)
 # partition as you are examining how gene expression changes between clusters
 # in some group
 cds_2 = choose_cells(cds)
+```
 
+When we go to subset our cells we will choose the following cells:
+
+INSERT IMAGE HERE
+
+## Trajectory Analysis
+
+Now that we have subsampled cells moving from Cycling Progenitors to Newborn DL PNs, we will need to re-run the Monocle3 workflow on our data given that our clustering was done on the larger data set. This time we will calculate trajectories in our data now that we have a subset of cells in which it makes sense to do so:
+
+```R
 # re-run the monocle3 workflow on our subset data:
 # use the same # of top PCs as used for clustering
 cds_2 <- preprocess_cds(cds_2, num_dim = 27) 
@@ -125,6 +135,51 @@ p6 <- plot_cells(cds_2,
                  cell_size = 0.5)
 
 patchwork::wrap_plots(p4,p5,p6)
+```
+
+INSERT IMAGE HERE
+
+Let's visualize how the distribution of cell types between our two conditions (wild-type and mutant) and the trajectory going from Cycling Progenitors to Newborn DL PNs:
+
+```R
+# Trajectory analysis in Monocle is a way to assess the relationship between 
+# groups of cells based on gene expression changes. Let's visualize this trajectory over cell types
+monocle3::plot_cells(cds_2,
+                     color_cells_by = "CellType",
+                     label_groups_by_cluster=FALSE,
+                     label_leaves=FALSE,
+                     label_branch_points=FALSE,
+                     group_label_size = 4,
+                     cell_size = 0.5)
+
+# let's visualize the distribution of wild type and mutant cells
+
+# isolate only the wild type cells
+wtCells_2 = rownames(colData(cds_2)[colData(cds_2)$treat=="wt",])
+
+# isolate only the mutant type cells
+mutCells_2 = rownames(colData(cds_2)[colData(cds_2)$treat=="mut",])
+
+# plot the distribution of cells in each condition
+wt <- plot_cells(cds_2[,wtCells_2],
+                 color_cells_by = "CellType",
+                 label_groups_by_cluster=FALSE,
+                 label_leaves=FALSE,
+                 label_branch_points=FALSE,
+                 group_label_size = 4,
+                 cell_size = 0.5)+
+  labs(title="Wild Type Cells")
+
+mut <- plot_cells(cds_2[,mutCells_2],
+                  color_cells_by = "CellType",
+                  label_groups_by_cluster=FALSE,
+                  label_leaves=FALSE,
+                  label_branch_points=FALSE,
+                  group_label_size = 4,
+                  cell_size = 0.5)+
+  labs(title="SUV420H1 Mutant Cells")
+
+patchwork::wrap_plots(wt,mut)
 ```
 
 INSERT IMAGE HERE
