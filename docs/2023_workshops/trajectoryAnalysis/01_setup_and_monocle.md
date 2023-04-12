@@ -111,16 +111,16 @@ cds
 
 !!! info "output"
 
-    ```R
+    ```
     class: cell_data_set 
-    dim: 12962 4000 
-    metadata(1): cds_version
-    assays(1): counts
-    rownames(12962): FO538757.2 AP006222.2 ... AC004556.1 AC240274.1
-    rowData names(0):
-    colnames(4000): 1_AAAGGTACACAGCTGC 1_AAAGGTATCTGCCTGT ... 6_TTTGACTGTACCATAC 6_TTTGGTTGTTACGTAC
-    colData names(4): treat dataset CellType Size_Factor
-    reducedDimNames(0):
+    {==dim: 12962 4000==} 
+    {==metadata(1):==} cds_version
+    {==assays(1):==} counts
+    {==rownames(12962): FO538757.2 AP006222.2 ... AC004556.1 AC240274.1==}
+    {==rowData names(0):==}
+    {==colnames(4000): 1_AAAGGTACACAGCTGC 1_AAAGGTATCTGCCTGT ... 6_TTTGACTGTACCATAC 6_TTTGGTTGTTACGTAC==}
+    {==colData names(4): treat dataset CellType Size_Factor==}
+    {==reducedDimNames(0):==}
     altExpNames(0):
     ```
     
@@ -198,6 +198,6 @@ head(assay(cds)[,1:3])
     RP11-54O7.1                    .                  .                  .
     ```
 
-??? question "What is a dgCMatrix?"
+??? question "[What is a dgCMatrix?](https://cran.r-project.org/web/packages/Matrix/Matrix.pdf)"
 
     a dgCMatrix is a type of sparse, compressed, column-oriented numeric matrix where non-zero elements in each column are sorted into increasing row order. Essentially, this is a way of storing matrices with less memory which is important for single-cell RNA-seq data given so many matrices are generated.
