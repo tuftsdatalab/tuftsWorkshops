@@ -74,7 +74,7 @@ cds
 
 !!! info "output"
 
-    ```R
+    ```
     class: cell_data_set 
     dim: 3233 33313 
     metadata(2): cds_version citations
@@ -83,7 +83,7 @@ cds
     rowData names(1): gene_short_name
     colnames(33313): 1_AAACCCAAGCACGGAT 1_AAACCCAAGTCATACC ... 6_TTTGTTGCATTACGGT 6_TTTGTTGTCAAACCTG
     colData names(11): orig.ident nCount_RNA ... org Size_Factor
-    {=={reducedDimNames(2): PCA UMAP==}
+    {==reducedDimNames(2): PCA UMAP==}
     altExpNames(0):
     ```
 Here we would like to highlight that after running our pipeline, we now have two `reducedDimNames` slots in our object! We can access them with the `reducedDims` function:
@@ -151,7 +151,7 @@ Now that we have subsampled cells moving from Cycling Progenitors to Newborn DL 
 ```R
 # re-run the monocle3 workflow on our subset data:
 # use the same # of top PCs as used for clustering
-cds_2 <- preprocess_cds(cds_2, num_dim = 27) 
+cds_2 <- preprocess_cds(cds_2, num_dim = 30) 
 # reduce the dimensions 
 cds_2 <- reduce_dimension(cds_2,umap.fast_sgd=TRUE)
 # force few partitions with partition q-value set higher
