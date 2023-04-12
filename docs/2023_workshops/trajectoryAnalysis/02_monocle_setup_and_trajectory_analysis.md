@@ -19,8 +19,39 @@ There are typically four main commands when running Monocle3:
 
 
 - `reduce_dimension()`: reduces the dimensionality of the data using algorithms like UMAP or tSNE. Trajectories will be calculated through this space.
+
+??? example "`reduce_dimension()` options"
+
+    - `max_components` : the dimensionality of the reduced space - default is 2
+    - `reduction_method` : the method used for dimension reduction - options are "UMAP", "tSNE", "PCA", "LSI", and "Aligned"
+    - `preprocess_method` : what preprocess method was used to initially reduce the dimensionality of the gene expression data - default is LSI
+    - `umap.metric` : the distance metrice used when calculating the UMAP - default is "cosine"
+    - `umap.min_dist` : the minimum distance to be input into the UMAP function - default is 0.1
+    - `umap.n_neighbors` : the number of neighbors to use during kNN graph construction - default is 15L
+    - `umap.fast_sgd` : option to use Stochastic Gradient Descent when caclulating the UMAP to speed up the computation - default is FALSE
+    - `umap.nn_method` : the nearest neighbor method to be used by UMAP - default is "annoy"
+    
+    
 - `cluster_cells()`: clusters the cells using Louvain/Leiden community detection, and returns a cell_data_set with internally stored cluster assignments. These cluster assignments can then be assigned to cell types given that cells in a cluster are likely to be the same cell type as cells of the same type have similar gene expression patterns.
+
+??? example "`cluster_cells()` options"
+
+    - `reduction_method` : The dimensionality reduction method upon which to base clustering - options are "UMAP", "tSNE", "PCA", "LSI", and "Aligned"
+    - k : the number of nearest neighbors to use when creating the k nearest neighbor graph for Louvain/Leiden clustering. k is related to the resolution of the clustering result, a bigger k will result in lower resolution and vice versa - default is 20
+    - `cluster_method` :  the clustering method to use, if "louvain" is used the resolution paramter is ignored - default is "leiden" 
+    - `num_iter` : number of iterations used for Louvain/Leiden clustering - defualt is 2
+    - `partition_qval` : q-value cutoff to determine when to partition - default is 0.05
+    - `weight` : to determine whether or not to use Jaccard coefficients for two nearest neighbors (based on the overlapping of their kNN) as the weight used for Louvain clustering - default is FALSE
+    - `resolution` : controls the resolution of clustering. If NULL, the parameter is determined automatically - default is NULL
+    - `random_seed` : used by the random number generator in louvain-igraph package. This argument will be ignored if num_iter is larger than 1 - default is NULL
+
 - `learn_graph()`: constructs the trajectory through clusters in a lower dimensional space to ["learn the sequence of gene expression changes each cell must go through as part of a dynamic biological process"](https://cole-trapnell-lab.github.io/monocle3/docs/trajectories/)
+
+??? example "`learn_graph()` options"
+
+    - `use_partition` : determines whether to use partitions calculated during cluster_cells and therefore to learn disjoint graph in each partition. When use_partition = FALSE, a single graph is learned across all partitions - default is TRUE
+    - `close_loop` : determines whether or not to perform an additional run of loop closing after estimating the principal graphs to identify potential loop structure in the data space - default is TRUE
+    - `learn_graph_control` = a list of control parameters to be passed to the reversed graph embedding function - default is NULL
 
 Here we will only run through the first three steps:
 
