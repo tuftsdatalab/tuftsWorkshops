@@ -198,3 +198,6 @@ head(assay(cds)[,1:3])
     RP11-54O7.1                    .                  .                  .
     ```
 
+??? question "What is a dgCMatrix?"
+
+    a dgCMatrix is a type of sparse, compressed, column-oriented numeric matrix where non-zero elements in each column are sorted into increasing row order. Essentially, this is a way of storing matrices with less memory which is important for single-cell RNA-seq data given so many matrices are generated.
