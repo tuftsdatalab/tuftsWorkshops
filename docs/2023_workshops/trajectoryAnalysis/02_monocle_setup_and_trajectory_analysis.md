@@ -7,6 +7,17 @@ There are typically four main commands when running Monocle3:
     ![](images/monocle_workflow.png)
 
 - `preprocess_cds()`: normalizes the data by log and size factor to address depth differences and calculates a lower dimensional space that will be used as the input for further dimensionality reduction like tSNE and UMAP.
+
+??? example "`preprocess_cds()` options"
+
+    - `method` : initial method of dimention reduction - options are  "PCA" and "LSI"
+    - `num_dim` : the dimensionality of the reduced space - default is 50
+    - `norm_method` : methods of normalizing the expression data - options are "log", "size_only", "none"
+    - `use_genes` : when this option is not NULL, only the list of genes provided will be used for dimension reduction - default is NULL
+    - `pseudo_count` : amount to increase expression values before normalization and dimensionality reduction. If the value is NULL a pseudo count of 1 is added - default is NULL
+    - `scaling` : this will scale each gene before running trajectory reconstruction if set to TRUE - default is TRUE
+
+
 - `reduce_dimension()`: reduces the dimensionality of the data using algorithms like UMAP or tSNE. Trajectories will be calculated through this space.
 - `cluster_cells()`: clusters the cells using Louvain/Leiden community detection, and returns a cell_data_set with internally stored cluster assignments. These cluster assignments can then be assigned to cell types given that cells in a cluster are likely to be the same cell type as cells of the same type have similar gene expression patterns.
 - `learn_graph()`: constructs the trajectory through clusters in a lower dimensional space to ["learn the sequence of gene expression changes each cell must go through as part of a dynamic biological process"](https://cole-trapnell-lab.github.io/monocle3/docs/trajectories/)
