@@ -53,21 +53,28 @@ There are typically four main commands when running Monocle3:
     - `close_loop` : determines whether or not to perform an additional run of loop closing after estimating the principal graphs to identify potential loop structure in the data space - default is TRUE
     - `learn_graph_control` = a list of control parameters to be passed to the reversed graph embedding function - default is NULL
 
-Here we will only run through the first three steps:
+Let's start with the pre-processing step:
 
 ```R
-# --- Running Monocle3 ---------------------------------------------------------
+# preprocess_cds does both 1) normalization and 2) preliminary dimension reduction.  By default 1) gene expression count for each cell is divided by the total counts of that cell, multiplied by a scale factor, and log-transformed. This is done  to address differences in sequencing depths for different cells. 2) PCA is used to calculate a lower dimensional space that will be used as the input for downstream steps like UMAP visualization. 
+cds <- preprocess_cds(cds, 
+                      num_dim = 30) 
 
-# let's run the monocle workflow:
-# use the same # of top PCs as used for clustering
-cds <- preprocess_cds(cds, num_dim = 27) 
+# look at the percentage of variance explained by our principal components
+plot_pc_variance_explained(cds)
+```
 
-# reduce the dimensions 
-cds <- reduce_dimension(cds,umap.fast_sgd=TRUE)
+![](images/first_var_exp.png)
 
-# force few partitions with partition q-value set higher
-cds <- cluster_cells(cds, partition_qval = 0.5) 
+Here we see that the first few PCA components account for about half the variance. Note that adding components helps with explaining the variation in your data, but comes at the cost of increased computational time. Given this is a subsampled data set, this is less of a concern. Now, let's run the reduce dimentions step!
 
+```R
+# Note here we are using the results of PCA dimension reduction in the last step and visualizing the results in 2 dimensions.
+# umap.fast_sgd=FALSE and cores = 1 are needed for reproducible results 
+cds <- reduce_dimension(cds,
+                        preprocess_method = 'PCA',
+                        umap.fast_sgd=FALSE, 
+                        cores = 1)
 # let's take another look at our cell data set object
 cds
 ```
@@ -107,33 +114,38 @@ head(reducedDims(cds)$UMAP)
 To understand why we only ran through the first three steps, we should examine how our cells are distributed in our dimension reduced UMAP plot:
 
 ```R
-# let's inspect our cell types, clusters and partitions!
-p1 <- monocle3::plot_cells(cds,
-                           color_cells_by = "CellType", 
-                           show_trajectory_graph = FALSE,
-                           cell_size = 0.5)
-p2 <- monocle3::plot_cells(cds, 
-                           color_cells_by = "cluster",
-                           show_trajectory_graph = FALSE,
-                           cell_size = 0.5)
-p3 <- monocle3::plot_cells(cds,
-                           color_cells_by = "partition", 
-                           show_trajectory_graph = FALSE,
-                           cell_size = 0.5)
-
-patchwork::wrap_plots(p1, p2, p3)
-
+# view the cell types in our UMAP plot
+plot_cells(cds,
+           color_cells_by = "CellType", 
+           show_trajectory_graph = FALSE,
+           group_label_size = 3,
+           cell_size = 0.5)
 ```
 
-INSERT IMAGE HERE
+![](images/umap_all_cell.png)
 
+Grouping cells into clusters is an important step in identifying the cell types represented in your data. Monocle uses a technique called community detection to group cells into cluster and partitions.
+
+```R
+# Grouping cells into clusters is an important step in identifying the cell types represented in your data. Monocle uses a technique called community detection to group cells into cluster and partitions.
+cds <- cluster_cells(cds, 
+                     k = 20,
+                     partition_qval = 0.05)
+
+plot_cells(cds,
+           color_cells_by = "partition", 
+           show_trajectory_graph = FALSE,
+           group_label_size = 3,
+           cell_size = 0.5)
+```
+
+![](images/first_paritions.png)
 
 ## Subsetting Our Data
 
 Above we can see that we have multiple clusters (usually representing our cells) and multiple partitions (usually representing groups of different cells). When Monocle3 calculates it's trajectory it will typically do so through one of these partitions. So we will subset our data to just grab the partition that contains the Cycling Progenitors, Newborn PNs, and Newborn DL PNs. By doing this we can assess how gene expression changes during cell differentiation from a Cycling Progenitors to a Newborn DL PN:
 
 ```R
-# --- Subsetting our Data ------------------------------------------------------
 # when we examine a trajectory in monocle3 it is useful to look at one
 # partition as you are examining how gene expression changes between clusters
 # in some group
@@ -142,86 +154,78 @@ cds_2 = choose_cells(cds)
 
 When we go to subset our cells we will choose the following cells:
 
-INSERT IMAGE HERE
+![](images/cells_to_subset.png)
+
+Now that we subset our cells, let's examine how our UMAP has changed!
+
+```R
+# check the subset of cells
+plot_cells(cds_2, 
+           color_cells_by = "partition",
+           show_trajectory_graph = FALSE,
+           group_label_size = 3,
+           cell_size = 0.5)
+```
+
+![](images/new_partitions.png)
 
 ## Trajectory Analysis
 
-Now that we have subsampled cells moving from Cycling Progenitors to Newborn DL PNs, we will need to re-run the Monocle3 workflow on our data given that our clustering was done on the larger data set. This time we will calculate trajectories in our data now that we have a subset of cells in which it makes sense to do so:
+Now that we have subsampled cells moving from Cycling Progenitors to Newborn DL PNs, we will need to re-run the Monocle3 workflow on our data given that our clustering was done on the larger data set.
 
 ```R
 # re-run the monocle3 workflow on our subset data:
 # use the same # of top PCs as used for clustering
-cds_2 <- preprocess_cds(cds_2, num_dim = 30) 
-# reduce the dimensions 
-cds_2 <- reduce_dimension(cds_2,umap.fast_sgd=TRUE)
-# force few partitions with partition q-value set higher
-cds_2 <- cluster_cells(cds_2, partition_qval = 0.5) 
-# additionally we will run learn_graph to calculate trajectories on our subset!
-cds_2 <- learn_graph(cds_2)
+cds_2 <- preprocess_cds(cds_2, 
+                        num_dim = 20)
 
-# now that we hav subset out data, re-run our monocle workflow, and calculated 
-# trajectories, let's visualize them!
-p5 <- plot_cells(cds_2, 
-                 color_cells_by = "CellType",
-                 show_trajectory_graph = T,
-                 cell_size = 0.5)
-
-p5 <- plot_cells(cds_2, 
-                 color_cells_by = "cluster",
-                 show_trajectory_graph = T,
-                 cell_size = 0.5)
-
-p6 <- plot_cells(cds_2, 
-                 color_cells_by = "partition",
-                 show_trajectory_graph = T,
-                 cell_size = 0.5)
-
-patchwork::wrap_plots(p4,p5,p6)
+# take another look at the variance explained 
+plot_pc_variance_explained(cds_2)
 ```
 
-INSERT IMAGE HERE
+![](images/second_var_exp.png)
 
-Let's visualize how the distribution of cell types between our two conditions (wild-type and mutant) and the trajectory going from Cycling Progenitors to Newborn DL PNs:
+You'll note again that the first few PCA components explain about half the variance. Here we include fewer PCA components to account for the variance as we reduced the number the of total cells we are examining. We can now move on and apply the reduce_dimensions/cluster_cells functions to our data:
 
 ```R
-# Trajectory analysis in Monocle is a way to assess the relationship between 
-# groups of cells based on gene expression changes. Let's visualize this trajectory over cell types
-monocle3::plot_cells(cds_2,
-                     color_cells_by = "CellType",
-                     label_groups_by_cluster=FALSE,
-                     label_leaves=FALSE,
-                     label_branch_points=FALSE,
-                     group_label_size = 4,
-                     cell_size = 0.5)
+# reduce the dimensions 
+cds_2 <- reduce_dimension(cds_2,
+                          preprocess_method = 'PCA',
+                          umap.fast_sgd=FALSE, 
+                          cores = 1)
 
-# let's visualize the distribution of wild type and mutant cells
+# force few partitions with partition q-value set higher
+cds_2 <- cluster_cells(cds_2, 
+                       k = 20,
+                       partition_qval = 1)
 
-# isolate only the wild type cells
-wtCells_2 = rownames(colData(cds_2)[colData(cds_2)$treat=="wt",])
-
-# isolate only the mutant type cells
-mutCells_2 = rownames(colData(cds_2)[colData(cds_2)$treat=="mut",])
-
-# plot the distribution of cells in each condition
-wt <- plot_cells(cds_2[,wtCells_2],
-                 color_cells_by = "CellType",
-                 label_groups_by_cluster=FALSE,
-                 label_leaves=FALSE,
-                 label_branch_points=FALSE,
-                 group_label_size = 4,
-                 cell_size = 0.5)+
-  labs(title="Wild Type Cells")
-
-mut <- plot_cells(cds_2[,mutCells_2],
-                  color_cells_by = "CellType",
-                  label_groups_by_cluster=FALSE,
-                  label_leaves=FALSE,
-                  label_branch_points=FALSE,
-                  group_label_size = 4,
-                  cell_size = 0.5)+
-  labs(title="SUV420H1 Mutant Cells")
-
-patchwork::wrap_plots(wt,mut)
+# do we only have one partition now?
+plot_cells(cds_2,
+           color_cells_by = "partition", 
+           show_trajectory_graph = FALSE,
+           group_label_size = 3,
+           cell_size = 0.5)
 ```
 
-INSERT IMAGE HERE
+![](images/final_partitions.png)
+
+Note that in the above plot that all of our cells are now in one partition. This time we will calculate trajectories in our data now that we have a subset of cells in which it makes sense to do so:
+
+```R
+# additionally we will run learn_graph to calculate trajectories on our subset!
+cds_2 <- learn_graph(cds_2,
+                     use_partition = FALSE,
+                     close_loop = TRUE)
+
+# now that we have subset out data, re-run our monocle workflow, and calculated 
+# trajectories, let's see where we should set our root node!
+plot_cells(cds_2, 
+           color_cells_by = "CellType",
+           cell_size = 0.5,
+           labels_per_group = 0) 
+```
+
+![](images/trajectory.png)
+
+We can see that we have a trajectory now connecting the Cylcing Progenitor cells and the Newborn DL PNs!
+
