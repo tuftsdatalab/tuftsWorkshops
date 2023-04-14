@@ -62,22 +62,11 @@ Now that we have our data and scripts copied, let's navigate to our `scripts` fo
 Before we analyze our single-cell RNA-Seq data we will need to load the libraries needed for our analysis:
 
 ```R
-# --- Load Libraries -----------------------------------------------------------
+# set the libPath and load the libraries
 LIB='/cluster/tufts/hpc/tools/R/4.0.0/'
 .libPaths(c("",LIB))
-.libPaths()
-library(Seurat)
 library(monocle3)
-library(clusterProfiler)
-library(patchwork)
 library(tidyverse)
-
-# --- Set color palette --------------------------------------------------------
-
-cols = c("#41ae76","#ee8866","#bebada","#bbcc33","#fdb462",
-         "#f768a1","#fa9fb5","#77aadd","darkgray",
-         "#cc6677","#882255","#225522","#aa4499","#332288",
-         "#009988","#5C61FF","#B87ACF")
 ```
 
 ## Monocle3 Cell Data Objects
@@ -88,24 +77,75 @@ cols = c("#41ae76","#ee8866","#bebada","#bbcc33","#fdb462",
 
     ![](images/cell_data_set.png)
 
-- Let's start by loading the libraries we need to import and manipulate this object!
+- Let's start by loading the input matrices we need to create our cell data set object!
 
 ```R
-# load the counts data
-counts <- read.csv("/cluster/tufts/bio/data/projects/2023_02_time_series_scrnaseq/rds/SUV420H1_Mito210_d35_subset_4000_g50_counts.csv", check.names = F)
+# read in cells by gene count matrix
+counts <- read.csv("/cluster/tufts/bio/data/projects/2023_02_time_series_scrnaseq/rds/SUV420H1_Mito210_d35_counts.csv", 
+                   row.names=1,
+                   check.names = F)
 
-# load the meta data
-meta <- read.csv( "/cluster/tufts/bio/data/projects/2023_02_time_series_scrnaseq/rds/SUV420H1_Mito210_d35_subset_4000_meta.csv")
+head(counts)
+```
 
-# clean our meta and counts data
-rownames(meta) = meta$cellid
-meta$cellid=NULL
-rownames(counts) = counts$gene
-counts$gene=NULL
+!!! info "output"
 
-# create a cell data cell object that monocle can use for trajectory analysis
-cds <- new_cell_data_set(as.matrix(counts),
-                         cell_metadata = meta)
+    ```
+                  1_AAAGGTACACAGCTGC 1_AAAGGTATCTGCCTGT 1_AACAACCCACACTGGC
+    FO538757.2                     0                  1                  0
+    AP006222.2                     0                  0                  0
+    RP11-206L10.9                  0                  0                  0
+    LINC00115                      0                  0                  0
+    ```
+    
+```R
+# read in sample meta data
+meta <- read.csv( "/cluster/tufts/bio/data/projects/2023_02_time_series_scrnaseq/rds/SUV420H1_Mito210_d35_meta.csv", row.names=1)
+
+head(meta)
+```
+
+!!! info "output"
+
+    ```
+                       treat         dataset            CellType
+    1_AAAGGTACACAGCTGC    wt SUV_Mito210_d35 Cycling Progenitors
+    1_AAAGGTATCTGCCTGT    wt SUV_Mito210_d35                 aRG
+    1_AACAACCCACACTGGC    wt SUV_Mito210_d35 Cycling Progenitors
+    1_AACAAGATCGAAGCAG    wt SUV_Mito210_d35                 aRG
+    1_AACAGGGAGGACAGCT    wt SUV_Mito210_d35                 aRG
+    1_AACCTGAGTATACGGG    wt SUV_Mito210_d35 Cycling Progenitors
+    ```
+    
+```R
+# can optionally list more annotation of genes
+gene_meta <- read.csv("/cluster/tufts/bio/data/projects/2023_02_time_series_scrnaseq/rds/SUV420H1_Mito210_d35_genemeta.csv",
+                      row.names=1)
+head(gene_meta)
+```
+
+!!! info "output"
+
+    ```
+                  gene_short_name
+    FO538757.2         FO538757.2
+    AP006222.2         AP006222.2
+    RP11-206L10.9   RP11-206L10.9
+    LINC00115           LINC00115
+    FAM41C                 FAM41C
+    RP11-54O7.1       RP11-54O7.1
+    ```
+    
+- Now that we have loaded our gene expression matrix, our meta data, and our gene metadata, we can use these to create the cell data set object!
+
+```R
+# note the colnames(counts) must match rownames(meta)
+
+cds <- new_cell_data_set(expression_data = as.matrix(counts),
+                         cell_metadata = meta, 
+                         gene_metadata = gene_meta)
+
+# let's take a look at our new object!
 cds
 ```
 
