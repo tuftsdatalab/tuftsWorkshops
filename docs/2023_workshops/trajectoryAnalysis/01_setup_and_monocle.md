@@ -56,7 +56,6 @@ Now we are going to use this folder to create a new R project. R projects are gr
 
 Let's navigate to our project in our home directory and open up our workshop script:
 - Click on the `Files` tab in the lower right hand pane
-- Click on the `trajectory_analysis` folder
 - Click on the `scripts` folder
 - Click on the `trajectory_analysis.Rmd` script
 
