@@ -105,7 +105,9 @@ dim(fit_coefs)
 
 !!! info "output"
 
-    XXXXXXX
+    ```
+    [1] 38886    14
+    ```
 
 ## Filter For Significant Genes
 
@@ -123,7 +125,9 @@ dim(fit_coef_filter)
 
 !!! info "output"
 
-    XXXXXXX
+    ```
+    [1] 38886     7
+    ```
 
 ```{r filter the fit coeficients by row}
 # we can also use dplyr to filter the rows we need
@@ -137,7 +141,9 @@ dim(fit_coef_filter)
 
 !!! info "output"
 
-    XXXXXXX
+    ```
+    [1] 3964    7
+    ```
 
 ```{r view our filtered results data frame}
 # view our results data frame to and sort genes by q-value for 
@@ -159,6 +165,11 @@ plot_genes_violin(cds_subset,
   theme(axis.text.x=element_text(angle=45, hjust=1))
 ```
 
+!!! info "output"
+
+    ![](images/pseudotime_deg.png)
+
+
 ```{r Plot Treatment Genes}
 # example of genes that vary as a result of the treatment
 # NOTE: After plotting MT-ND3, try plotting another gene!
@@ -171,3 +182,8 @@ plot_genes_violin(cds_subset,
   theme(axis.text.x=element_text(angle=45, hjust=1))
 
 ```
+
+
+!!! info "output"
+
+    ![](images/treatment_gene.png)
