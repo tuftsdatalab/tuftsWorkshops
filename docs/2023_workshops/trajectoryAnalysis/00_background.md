@@ -21,7 +21,7 @@
 
 **Hands On Activity**
 
-1. [Setup and Seurat Objects](01_setup_and_seurat.md) 
+1. [Setup and Seurat Objects](01_setup_and_monocle.md) 
 2. [Monocle Setup and Trajectory Analysis](02_monocle_setup_and_trajectory_analysis.md)
 3. [Pseudotime and Differential Expression](03_pseudotime_and_differential_expression.md)
 
