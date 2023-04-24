@@ -40,22 +40,25 @@ Today we will be working with data from  [Paulson et al. 2022](https://www.natur
 
 ## Data & Scripts
 
-To copy over this data we will enter the following command into the console:
+To copy over the data and scripts we will need for the workshop into our home directory, enter the following command into the console:
 
 ```R
-file.copy(from="/cluster/tufts/bio/tools/training/trajectory_analysis",to="./", recursive = TRUE)
+file.copy(from="/cluster/tufts/bio/tools/training/trajectory_analysis",to="~/", recursive = TRUE)
 ```
 
 ## Project Setup
-
-Now that we have copied over the directory for today's workshop we are going to use this folder to create a new R project. R projects are great for managing analyses in a containerized way. To create an R project from within our `trajectory_analysis` directory we will:
+Now we are going to use this folder to create a new R project. R projects are great for managing analyses in a portable, self-contained folder. To create an R project from within our `trajectory_analysis` directory we will:
 
 - Go to `File` > `New Project`
 - `Existing Directory`
 - Browse for the `trajectory_analysis` folder
 - Click `Create Project`
 
-Now that we have our data and scripts copied, let's navigate to our `scripts` folder and open up "trajectory_analysis.Rmd".
+Let's navigate to our project in our home directory and open up our workshop script:
+- Click on the `Files` tab in the lower right hand pane
+- Click on the `trajectory_analysis` folder
+- Click on the `scripts` folder
+- Click on the `trajectory_analysis.Rmd` script
 
 ## Loading Libraries and Data
 
