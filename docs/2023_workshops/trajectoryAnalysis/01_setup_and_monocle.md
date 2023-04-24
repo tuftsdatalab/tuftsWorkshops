@@ -35,7 +35,7 @@ Today we will be working with data from  [Paulson et al. 2022](https://www.natur
 
 !!! info "[Paulson et al. 2022](https://www.nature.com/articles/s41586-021-04358-6)"
 
-    ![](images/asd_figure_1.png)
+    ![](images/asd_figure_1_crop.png)
     
 
 ## Data & Scripts
