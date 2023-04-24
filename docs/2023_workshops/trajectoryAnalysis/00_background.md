@@ -1,8 +1,8 @@
 ## Introduction To Trajectory Analysis 
 
-**Content developed by DISC & TTS Research Technology**
+**Content developed by [Data Intensive Studies Center](https://disc.tufts.edu/) & [TTS Research Technology](https://it.tufts.edu/research-technology) at Tufts University**
 
-- Rebecca Batorsky, PhD, Data Scientist I<sup>1</sup>
+- Rebecca Batorsky, PhD, Data Scientist I <sup>1</sup>
 - Albert Tai, PhD, Research Assistant Professor<sup>3</sup> 
 - Jason Laird, MSc, Bioinformatics Scientist<sup>2</sup>
 

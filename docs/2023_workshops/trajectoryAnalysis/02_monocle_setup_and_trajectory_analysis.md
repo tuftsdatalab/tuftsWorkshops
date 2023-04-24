@@ -83,15 +83,16 @@ cds
 
     ```
     class: cell_data_set 
-    dim: 3233 33313 
+    dim: 12962 4000 
     metadata(2): cds_version citations
     assays(1): counts
-    rownames(3233): RP11-54O7.1 AURKAIP1 ... MT-ND5 MT-CYB
+    rownames(12962): FO538757.2 AP006222.2 ... AC004556.1 AC240274.1
     rowData names(1): gene_short_name
-    colnames(33313): 1_AAACCCAAGCACGGAT 1_AAACCCAAGTCATACC ... 6_TTTGTTGCATTACGGT 6_TTTGTTGTCAAACCTG
-    colData names(11): orig.ident nCount_RNA ... org Size_Factor
-    {==reducedDimNames(2): PCA UMAP==}
-    altExpNames(0):
+    colnames(4000): 1_AAAGGTACACAGCTGC 1_AAAGGTATCTGCCTGT ...
+    6_TTTGACTGTACCATAC 6_TTTGGTTGTTACGTAC
+    colData names(4): treat dataset CellType Size_Factor
+    reducedDimNames(2): PCA UMAP
+    altExpNames(0)
     ```
 Here we would like to highlight that after running our pipeline, we now have two `reducedDimNames` slots in our object! We can access them with the `reducedDims` function:
 
@@ -103,13 +104,13 @@ head(reducedDims(cds)$UMAP)
 !!! info "output"
 
     ```R
-                             [,1]       [,2]
-    1_AAACCCAAGCACGGAT  2.5821856 -5.6855853
-    1_AAACCCAAGTCATACC -9.1280608 -6.5626800
-    1_AAACCCAGTAGGAGTC  0.4445358  6.8874695
-    1_AAACCCATCACTCTTA -9.6992268 -3.9201496
-    1_AAACCCATCTTGAACG  5.5063716 -0.8642332
-    1_AAACGAAGTGGCAACA -9.8187041  2.8391122
+                            [,1]        [,2]
+    1_AAAGGTACACAGCTGC -4.371685 -1.90491864
+    1_AAAGGTATCTGCCTGT -9.110986  1.60710314
+    1_AACAACCCACACTGGC -8.257574 -0.05704084
+    1_AACAAGATCGAAGCAG -6.810462  2.03861049
+    1_AACAGGGAGGACAGCT -9.367511  1.91848877
+    1_AACCTGAGTATACGGG -9.553589  0.20396432
     ```
 To understand why we only ran through the first three steps, we should examine how our cells are distributed in our dimension reduced UMAP plot:
 
