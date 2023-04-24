@@ -21,7 +21,7 @@
 
 **Hands On Activity**
 
-1. [Setup and Cell Data Sets](01_setup_and_monocle.md) 
-2. [Monocle Workflow](02_monocle_setup_and_trajectory_analysis.md)
+1. [Setup and Monocle3 Objects](01_setup_and_monocle.md) 
+2. [Monocle Workflow and Trajectory Analysis](02_monocle_setup_and_trajectory_analysis.md)
 3. [Pseudotime and Differential Expression](03_pseudotime_and_differential_expression.md)
 
