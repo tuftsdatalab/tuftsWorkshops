@@ -210,7 +210,7 @@ plot_cells(cds_2,
 
 ![](images/final_partitions.png)
 
-Note that in the above plot that all of our cells are now in one partition. This time we will calculate trajectories in our data now that we have a subset of cells in which it makes sense to do so:
+Note that in the above plot that all of our cells are now in one partition. This time we will calculate trajectories in our data now that we have a subset of cells in which it makes sense to do so. You will note that we specify two options when we "learn our graph". One being 'use_partition = FALSE' which we will not use as we have already subset our cell population. The other being 'close_loop = TRUE', which we specify as this allows for the trajectory to form loops. This is important if we want to to identify populations of cells with cyclic behavior.
 
 ```R
 # additionally we will run learn_graph to calculate trajectories on our subset!
