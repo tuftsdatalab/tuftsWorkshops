@@ -108,6 +108,7 @@ dim(fit_coefs)
     ```
     [1] 38886    14
     ```
+Here you will notice that we have 14 columns pertaining to model information and 38886 rows corresponding to terms in those models.
 
 ## Filter For Significant Genes
 
@@ -129,6 +130,8 @@ dim(fit_coef_filter)
     [1] 38886     7
     ```
 
+ You'll note that we now only have 7 columns!
+ 
 ```{r filter the fit coeficients by row}
 # we can also use dplyr to filter the rows we need
 # let's use the filter function to remove lines that correspond to the
@@ -144,6 +147,8 @@ dim(fit_coef_filter)
     ```
     [1] 3964    7
     ```
+
+You'll note that we only have 3964 genes!
 
 ```{r view our filtered results data frame}
 # view our results data frame to and sort genes by q-value for 
@@ -170,6 +175,8 @@ plot_genes_violin(cds_subset,
     ![](images/pseudotime_deg.png)
 
 
+Here you can see that as pseudotime increases so does the expression of RTN1. Let's try out a gene that varies due to the treatment effect:
+
 ```{r Plot Treatment Genes}
 # example of genes that vary as a result of the treatment
 # NOTE: After plotting MT-ND3, try plotting another gene!
@@ -187,3 +194,5 @@ plot_genes_violin(cds_subset,
 !!! info "output"
 
     ![](images/treatment_gene.png)
+    
+Here you'll notice that MT-ND3 is slightly upregulated in the Wild-Type when compared to the Mutant! 
