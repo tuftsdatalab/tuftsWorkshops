@@ -29,14 +29,6 @@ Click `Launch` and wait until your session is ready. Click `Connect To RStudio S
     - Yes (put up a green check mark in zoom)
     - No (raise hand in zoom)
 
-## Today's Data
-
-Today we will be working with data from  [Paulson et al. 2022](https://www.nature.com/articles/s41586-021-04358-6) which found cell-type-specific neurodevelopmental abnormalities that were shared across ASD risk genes. To this end they leveraged organoid single-cell RNA-seq data to investigate these abnormalities:
-
-!!! info "[Paulson et al. 2022](https://www.nature.com/articles/s41586-021-04358-6)"
-
-    ![](images/asd_figure_1_crop.png)
-    
 
 ## Data & Scripts
 
@@ -60,6 +52,23 @@ Let's navigate to our project in our home directory and open up our workshop scr
 - Click on the `scripts` folder
 - Click on the `trajectory_analysis.Rmd` script
 
+## Today's Data
+
+Today we will be working with data from  [Paulson et al. 2022](https://www.nature.com/articles/s41586-021-04358-6) which found cell-type-specific neurodevelopmental abnormalities that were shared across ASD risk genes. To this end they leveraged organoid single-cell RNA-seq data to investigate these abnormalities:
+
+!!! info "[Paulson et al. 2022](https://www.nature.com/articles/s41586-021-04358-6)"
+
+    ![](images/asd_figure_1_crop.png)
+    
+
+## Monocle3 Cell Data Objects
+
+- We will be working with single-cell RNA-seq data in R today. Today, we will be performing trajectory analysis using the R package Monocle3. Monocle3 stores single-cell RNA-seq data as a cell data set object, which has the following structure:
+
+!!! info "Monocle3's Cell Data Set Object"
+
+    ![](images/cell_data_set.png)
+    
 ## Loading Libraries and Data
 
 Before we analyze our single-cell RNA-Seq data we will need to load the libraries needed for our analysis:
@@ -71,14 +80,6 @@ LIB='/cluster/tufts/hpc/tools/R/4.0.0/'
 library(monocle3)
 library(tidyverse)
 ```
-
-## Monocle3 Cell Data Objects
-
-- We will be working with single-cell RNA-seq data in R today. Today, we will be performing trajectory analysis using the R package Monocle3. Monocle3 stores single-cell RNA-seq data as a cell data set object, which has the following structure:
-
-!!! info "Monocle3's Cell Data Set Object"
-
-    ![](images/cell_data_set.png)
 
 - Let's start by loading the input matrices we need to create our cell data set object!
 
