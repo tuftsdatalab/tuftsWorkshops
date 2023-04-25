@@ -16,8 +16,8 @@
 
 **Lecture**
 
-1. Introduction to Single cell RNA-Seq analysis
-2. Introduction to Trajectory Analysis
+1. [Introduction to Single cell RNA-Seq](slides/scrnaseq_intro_lecture.pdf)
+2. [Introduction to Trajectory Analysis](slides/ti_intro_lecture.pdf)
 
 **Hands On Activity**
 
