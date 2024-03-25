@@ -1,5 +1,5 @@
 # Run AlphaFold2 on Tufts HPC with Open OnDemand App           
-This tutorial will guide the reader through the process of running AlphaFold2 on Tufts High Performance Computing (HPC) system using Open Ondemand app.    
+This tutorial will guide the user through the process of running AlphaFold2 on Tufts High Performance Computing (HPC) system using Open Ondemand app.    
 
 ## Prerequisites
 - Access to Tufts HPC: You can apply for a HPC account by submitting this [form](https://tufts.qualtrics.com/jfe/form/SV_5bUmpFT0IXeyEfj).
