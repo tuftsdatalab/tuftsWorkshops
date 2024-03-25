@@ -65,7 +65,7 @@ enable 5xus
 select resi 863+952+965+1214 and name CA
 ```
 
-> !NOTE          
+> [!NOTE]          
 > Note we are only selecting the alpha carbons so that when we label these residues we only have one label per residue
 
 - To label these residues we can use the following:
@@ -86,7 +86,7 @@ color red, sele
 zoom sele
 ```
 
-- Use your mouse to drag and rotate the structure to take a look at differen angles of it. Locate V893, can you see the difference between wild type protein structure `5XUS` and our predicted structure `ranked_0`?
+- Use your mouse to drag and rotate the structure to take a look at differen angles of it. Locate V863, can you see the difference between wild type protein structure `5XUS` and our predicted structure `ranked_0`?
 ![](images/pymol_V863.png)
 
 - To capture this image we can go to `File > Export Image As > PNG... > Save PNG image as ...` and enter a name for your image!
