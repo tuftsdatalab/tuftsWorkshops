@@ -52,7 +52,11 @@ You will need to replace the path to your own path.
 
 To submit your job to gpu node, type the following command     
 ```
-sbatch runaf.sh 
+sbatch /cluster/home/your_utln/cas12a_af2_sp24/script/runaf.sh
 ```
 
 ## Check the results      
+```
+cd /cluster/home/your_utln/cas12a_af2_sp24/out/
+```
+![](images/cluster_screenshot_afoutput.png)
