@@ -1,0 +1,12 @@
+# 2024 Workshops       
+The TTS Research Technology Bioinformatics Team has prepared the following workshops and lectures:
+
+## Lectures:  
+- Introduction to AlphaFold2 (Sp24-CHBE-0165-01-Biomolecular Eng and Design)
+
+## Workshops:      
+- nfcore RNASeq Analysis
+
+
+If you have suggestions for future workshops, please reach out to tts-research@tufts.edu.        
+Additionally, if you'd like to be kept up to date on current workshops consider subscribing to our e-list: best@elist.tufts.edu
