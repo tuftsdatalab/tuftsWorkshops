@@ -1,4 +1,4 @@
-## Visualize alphafold2 predicted structure with PYMOL
+# Visualize alphafold2 predicted structure with PYMOL
 
 - In the previous slide we plotted our MSA alignment, the pLDDT scores, and the predicted alignement error. However, it is also useful to visualize the actual predicted protein structure and compare it to the known structure if there is one. Here we use a software called PyMOL to do just that:
 
@@ -42,7 +42,7 @@ fetch 5xus
 align ranked_0, 5xus
 ```
 
-## Viewing/Coloring Structures
+## Viewing Structures
 
 - To view one structure at a time, you can use the `disable` command to hide one of the structures:
 
@@ -95,4 +95,9 @@ zoom sele
 
 
 - Reference Paper: 
-[Ma et al. 2022](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9825149/) 
+[Ma et al. 2022](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9825149/)      
+
+
+
+> [!NOTE]
+> If you encounter any issues or this doesn't work as expected, please feel free to reach out to Shirley Li, xue.li37@tufts.edu    
