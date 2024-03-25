@@ -1,8 +1,8 @@
 # Run AlphaFold2 on Tufts HPC with Open OnDemand App           
-This tutorial will guide the reader through the process of running AlphaFold2 on the Tufts High Performance Computing (HPC) system using open ondemand app.    
+This tutorial will guide the reader through the process of running AlphaFold2 on Tufts High Performance Computing (HPC) system using Open Ondemand app.    
 
 ## Prerequisites
-- [Access to Tufts HPC](https://tufts.qualtrics.com/jfe/form/SV_5bUmpFT0IXeyEfj).
+- Access to Tufts HPC: You can apply for a HPC account by submitting this [form](https://tufts.qualtrics.com/jfe/form/SV_5bUmpFT0IXeyEfj).
 
 
 
@@ -18,7 +18,7 @@ Navigate to: [https://ondemand.pax.tufts.edu/](https://ondemand.pax.tufts.edu/)
     ```bash
     cp -r /cluster/tufts/bio/tools/training/cas12a_af2_sp24/ ./ 
     ```
-- Type `ls` to list the files in your current directory after copying the files.       
+- Type `ls` to list the files in your current directory after copying the files, you can now see the `cas12a_af2_sp24/` folder.        
     ![](images/cluster_screenshot_homedir.png)
 
 
@@ -70,12 +70,12 @@ Directory (*msas*): A folder containing multiple sequence alignments related to 
 - Pickle Files (*result_model_*): Serialized files containing comprehensive results from each model prediction.
 
 **`ranked_0.pdb` is your best predicted structure.**           
-This file contains the highest-ranked prediction based on the analysis, indicating it is considered the most accurate or reliable structure prediction from the set of models used.
+This file contains the highest-ranked prediction based on the analysis, indicating it is considered the most accurate or reliable structure prediction from the set of models used. You should be able to download this file with the `download` button.    
 
 
 
 ## AlphaFold2 Accuracy Assessment   
-> !NOTE    
+> [!NOTE]    
 > To continue with this section, you will need to know some linux basics. More information can be found [here](https://it.tufts.edu/file/introduction-basic-linux).     
 
 We can assess the accuracy of the AlphaFold prediction using:
@@ -144,13 +144,16 @@ srun -p batch --time=3:00:00 -n 2 --mem=4g --pty bash
 
 ### Set Up For Analysis
 
-- Navigate to the folder that we just ran alphafold with:
+- Navigate to the folder that we just ran alphafold with:           
+  *Remember to replace `your_utln` with your own utln!!!*           
 
 ```bash
 cd /cluster/home/your_utln/cas12a_af2_sp24 
 ```
 
 - Given that AlphaFold2 can take anywhere from a few hours to a few days to run - AlphaFold2 predictions have already been generated for the Cas12a-CWF mutants from our study. We will use a script from the [VIB Bioinformatics Core](https://elearning.bits.vib.be/courses/alphafold/lessons/alphafold-on-the-hpc/topic/alphafold-outputs/) to visualize the accuracy of AlphaFold2's predictions. First we will need to load the software needed to run that script:
+> [!WARNING]
+> Do not change the module version. Stick with `alphafold/2.1.1`.        
 
 
 ```bash
@@ -166,6 +169,9 @@ module load alphafold/2.1.1
     - `--name` optional prefix to add to our file names
 
 
+> [!NOTE]
+> Before you run the script, make sure you are at `/cluster/home/your_utln/cas12a_af2_sp24`
+> 
 ```bash
 python script/af2_accuracy_viz.py --input_dir ./5XUS_mut2cwf_modified_prerun --output_dir ./ --name mut2cwf_modified
 ```
@@ -177,13 +183,17 @@ python script/af2_accuracy_viz.py --input_dir ./5XUS_mut2cwf_modified_prerun --o
     - `mut2cwf_modified_coverage_LDDT.png` - plots of your msa coverage and pLDDT scores per residue per model
     - `mut2cwf_modified_PAE.png` - plots of your predicted alignment error 
 
-- The following is are the pLDDT and PAE scores for the Cas12a-CWF mutant:    
+- The following are the pLDDT and PAE scores for the Cas12a-CWF mutant:    
 
     `mut2cwf_modified_coverage_LDDT.png`
-    ![](images/mut2cwf_modified_coverage_LDDT.png)
+    ![](images/mut2cwf_modified_coverage_LDDT.png)      
+    The left-side heat map showcases the Multiple Sequence Alignment (MSA), with each sequence aligned against the input sequences. The color scale reflects the identity score, arranging sequences from top (highest identity) to bottom (lowest identity). Uncovered areas appear white, indicative of subsequences in the database that do not fully align. A black line delineates the extent of sequence coverage relative to the total number of sequences aligned.
+   The right-side plot displays the predicted LDDT per residue position. 
+
+ 
 
     `mut2cwf_modified_PAE.png` 
     ![](images/mut2cwf_modified_PAE.png)
-
-- You'll note that for the pLDDT plots, that the multiple sequence alignment is plotted with a bar on the side to tell you how similar those sequences were to your query sequence.   
+    
+    The PAE (Pairwise Absolute Error) plot visually represents the absolute error in the relative positioning of residues, measured in Ångströms, through pairwise comparison. Utilizing a color gradient from blue to red, dark blue indicates an error of 0 Å, while larger errors shift towards dark red. Typically, along the heat map's diagonal, values are anticipated to be near 0 Å, signifying minimal error. An optimal model is characterized by a predominantly dark blue heat map, denoting very low error across all comparisons.
 
