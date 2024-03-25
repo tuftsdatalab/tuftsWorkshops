@@ -57,7 +57,7 @@ Then, hit `launch`
 
 ### Check output files         
 Go back to the main page of open ondemand, on the top menu bar choose `Files -> Home Directory`     
-Click `cas12a_af2_sp24`, then click `5XUS_mut2cwf_modified`, you will see the output
+Click `cas12a_af2_sp24`, then click `5XUS_mut2cwf_modified`, you will see the output. Given that this task requires a few hours to complete, proceed to the `5XUS_mut2cwf_modified_prerun` folder. This location contains the pre-executed results of AlphaFold2 along with the stored output files.    
 ![](images/ondemand_screenshot_afoutput.png)    
 
 Here's the explanation of the file categories listed:
