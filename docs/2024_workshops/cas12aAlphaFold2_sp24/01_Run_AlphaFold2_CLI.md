@@ -1,5 +1,5 @@
 
-> !NOTE         
+> [!NOTE]         
 > This material is currently under development. Check back later for updates.    
 > To run AlphaFold2, use the Open OnDemand app for now.  
 
