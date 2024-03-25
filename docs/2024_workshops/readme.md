@@ -2,7 +2,7 @@
 The TTS Research Technology Bioinformatics Team has prepared the following workshops and lectures:
 
 ## Lectures:  
-- Introduction to AlphaFold2 (Sp24-CHBE-0165-01-Biomolecular Eng and Design)
+- [Introduction to AlphaFold2](https://github.com/tuftsdatalab/tuftsWorkshops/tree/main/docs/2024_workshops/cas12aAlphaFold2_sp24) (Sp24-CHBE-0165-01-Biomolecular Eng and Design)
 
 ## Workshops:      
 - nfcore RNASeq Analysis
