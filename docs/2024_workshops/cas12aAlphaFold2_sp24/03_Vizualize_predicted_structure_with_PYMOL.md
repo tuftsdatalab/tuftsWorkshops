@@ -4,7 +4,7 @@
 
 ![](images/pymolOverview.png)
 
-- Here we see that PyMOL takes either the PDB ID or a PDB file and creates a vizualization for us to examine. If you have not done so already please [download PyMOL](https://access.tufts.edu/pymol){:target="_blank" rel="noopener"} and open the app. You should see a window like the follwing:
+- Here we see that PyMOL takes either the PDB ID or a PDB file and creates a vizualization for us to examine. If you have not done so already please [download PyMOL](https://access.tufts.edu/pymol) and open the app. You should see a window like the follwing:
 
 ![](images/pymolSession.png)
 
