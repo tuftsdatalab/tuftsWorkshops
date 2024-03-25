@@ -197,3 +197,6 @@ python script/af2_accuracy_viz.py --input_dir ./5XUS_mut2cwf_modified_prerun --o
     
     The PAE (Pairwise Absolute Error) plot visually represents the absolute error in the relative positioning of residues, measured in Ångströms, through pairwise comparison. Utilizing a color gradient from blue to red, dark blue indicates an error of 0 Å, while larger errors shift towards dark red. Typically, along the heat map's diagonal, values are anticipated to be near 0 Å, signifying minimal error. An optimal model is characterized by a predominantly dark blue heat map, denoting very low error across all comparisons.
 
+
+> [!NOTE]
+> If you encounter any issues or this doesn't work as expected, please feel free to reach out to Shirley Li, xue.li37@tufts.edu      
