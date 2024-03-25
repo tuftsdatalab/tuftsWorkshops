@@ -1,14 +1,3 @@
-
-> [!NOTE]         
-> This material is currently under development. Check back later for updates.    
-> To run AlphaFold2, use the Open OnDemand app for now.  
-
-
-
-
-
-
-
 # Run AlphaFold2 on Tufts HPC with Command Line Interface (CLI)     
 This tutorial will guide the reader through the process of running AlphaFold2 on the Tufts High Performance Computing (HPC) system using the command line interface.
 
@@ -56,7 +45,14 @@ sbatch /cluster/home/your_utln/cas12a_af2_sp24/script/runaf.sh
 ```
 
 ## Check the results      
+**ranked_0.pdb** is your best predicted structure.
+This file contains the highest-ranked prediction based on the analysis, indicating it is considered the most accurate or reliable structure prediction from the set of models used.     
 ```
 cd /cluster/home/your_utln/cas12a_af2_sp24/out/
 ```
-![](images/cluster_screenshot_afoutput.png)
+![](images/cluster_screenshot_afoutput.png)       
+
+
+
+> [!NOTE]
+> If you encounter any issues or this doesn't work as expected, please feel free to reach out to Shirley Li, xue.li37@tufts.edu   
