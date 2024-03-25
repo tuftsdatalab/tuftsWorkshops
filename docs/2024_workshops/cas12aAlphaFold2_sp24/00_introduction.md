@@ -21,7 +21,7 @@ Content developed by TTS Research Technology
 
 ## Schedule
 
-1. [Run AlphaFold2 on Tufts HPC CLI](./01_Run_AlphaFold2_CLI.md) (Under development)
+1. [Run AlphaFold2 on Tufts HPC CLI](./01_Run_AlphaFold2_CLI.md)
 2. [Run AlphaFold2 on Tufts HPC with Open OnDemand and Accuracy Assessment](./02_Run_AlphaFold2_OpenOndemandApp.md)
 3. [Vizualize Predicted Structure with PYMOL](./03_Vizualize_predicted_structure_with_PYMOL.md)
 
