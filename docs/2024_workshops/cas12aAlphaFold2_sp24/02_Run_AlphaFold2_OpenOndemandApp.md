@@ -27,7 +27,7 @@ Navigate to: [https://ondemand.pax.tufts.edu/](https://ondemand.pax.tufts.edu/)
 Input data for AlphaFold2 typically includes the amino acid sequences of the proteins you wish to model.    
 
 Your input data should be located here: `/cluster/home/your_utln/cas12a_af2_sp24/5XUS_mut2cwf_modified.fasta`    
-*Remember to replace `your_utln` with your own tufts credentia*
+*Remember to replace `your_utln` with your own tufts credential*
 
 ## Run AlphaFold2     
 ### Navigate to: [https://ondemand.pax.tufts.edu/](https://ondemand.pax.tufts.edu/)
