@@ -1,8 +1,8 @@
 # Run AlphaFold2 on Tufts HPC with Open OnDemand App           
-This tutorial will guide the user through the process of running AlphaFold2 on Tufts High Performance Computing (HPC) system using Open Ondemand app.    
+This tutorial will guide the user through the process of running AlphaFold2 on Tufts High Performance Computing (HPC) system using Open Ondemand app, a graphical interface to the HPC.     
 
 ## Prerequisites
-- Access to Tufts HPC: You can apply for a HPC account by submitting this [form](https://tufts.qualtrics.com/jfe/form/SV_5bUmpFT0IXeyEfj).
+- Access to Tufts HPC: If you don't already have an account, you can apply for a HPC account by submitting this [form](https://tufts.qualtrics.com/jfe/form/SV_5bUmpFT0IXeyEfj).
 
 
 
@@ -56,7 +56,7 @@ Then, hit `launch`
 
 
 ### Check output files         
-Go back to the main page of open ondemand, on the top menu bar choose `Files -> Home Directory`     
+To check the output files, go back to the main page of Open Ondemand, on the top menu bar choose `Files -> Home Directory`     
 Click `cas12a_af2_sp24`, then click `5XUS_mut2cwf_modified`, you will see the output. Given that this task requires a few hours to complete, proceed to the `5XUS_mut2cwf_modified_prerun` folder. This location contains the pre-executed results of AlphaFold2 along with the stored output files.    
 ![](images/ondemand_screenshot_afoutput.png)    
 
