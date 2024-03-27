@@ -147,3 +147,10 @@ nav:
                 - "Setup and Monocle3 Objects": 2023_workshops/trajectoryAnalysis/01_setup_and_monocle.md
                 - "Monocle3 Workflow and Trajectory Analysis": 2023_workshops/trajectoryAnalysis/02_monocle_setup_and_trajectory_analysis.md
                 - "Pseudotime and Differential Expression": 2023_workshops/trajectoryAnalysis/03_pseudotime_and_differential_expression.md
+    - 2024 Workshops: 
+        - "Schedule": 2024_workshops/readme.md
+        - Spring 2024:
+            - Running RNA-Seq analysis with nextflow & nf-core:
+                - "nf-core fetchngs": 2024_workshops/nfcore_rnaseq_sp24/hands-on/01_fetchngs.md
+                - "nf-core rnaseq": 2024_workshops/nfcore_rnaseq_sp24/hands-on/02_rnaseq.md
+                - "nf-core differentialabundance": 2024_workshops/nfcore_rnaseq_sp24/hands-on/03_differentialabundance.md
