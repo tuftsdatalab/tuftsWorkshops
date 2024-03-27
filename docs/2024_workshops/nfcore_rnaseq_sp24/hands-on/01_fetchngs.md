@@ -6,23 +6,23 @@ In this workshop, users will be guided through the practical application of the 
 In this workshop, we will analyze RNAseq data from a [study (Asberry et al., 2022)](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c01000) on the human epigenetic regulator `PRMT5` and its cofactor `MEP50`.
 
 - Paper: Discovery and Biological Characterization of PRMT5:MEP50 Protein–Protein Interaction Inhibitors
-<img src="../images/PRMT5_paper.png" alt="PRMT5 Paper" width="700" height="250"/>
+<img src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/PRMT5_paper.png" alt="PRMT5 Paper" width="700" height="250"/>
 
 - According to the paper, the raw data can be found on Gene Expression Omnibus database at `GSE80182`.
-<img src="../images/accession.png" alt="accession" width="45%">
+<img src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/accession.png" alt="accession" width="45%">
 
 ## Gene exression omnibus (GEO)
 
 The [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) is a public repository that archives and freely distributes comprehensive sets of microarray, next-generation sequencing, and other forms of high-throughput functional genomic data.
 
 You can find the page for the specific example dataset at [this link](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE80182).           
-<img src="../images/geo.png" alt="GEO" width="50%">                         
+<img src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/geo.png" alt="GEO" width="50%">                         
 <br>       
 The `fetchngs` pipeline is an extremely powerful tool that is capable of working with various types of IDs, such as SRA, ENA, DDBJ, and GEO IDs. You can use `GSE80182` on its own to download all available datasets. However, for this workshop, we only require 6 out of the 9 available samples. In order to obtain the necessary IDs for each of these samples, simply click on `SRA`.
 
 The required 6 samples are from `PRMT50kd` and `GTFkd` groups, with accession numbers ranging from `SRX1693951` to `SRX1693956`. For this demo, we will exclude the remaining 3 `MEP50kd` samples.
 
-<img src="../images/sra.png" alt="SRA" width="40%">
+<img src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/geo.png" alt="SRA" width="40%">
 
 ## nf-core Fetchngs
 
@@ -89,7 +89,7 @@ Below are the arguments we will use:
 
 
 A screenshot of the Open OnDemand fetchngs app.          
-![fetchngs](../images/fetchngs.png)          
+![fetchngs](https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/fetchngs.png)          
 
 <br>
 
@@ -245,10 +245,10 @@ Cleaning up...
 ```
 ## Check the output files       
 Once your job is completed, you should be able to see the following output files in your output directory.          
-<img src="../images/fetchngs_out.png" width="25%">
+<img src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/fetchngs_out.png" width="25%">
 
 In the `fastq/` directory, the downloaded FASTQ files are located.                        
-<img src="../images/fetchngs_out2.png" width="40%">
+<img src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/fetchngs_out2.png" width="40%">
 
 Within the `samplesheet/` directory, there's a file called `samplesheet.csv` that holds all the essential information needed for the subsequent nf-core/rnaseq pipeline.           
 
@@ -260,7 +260,7 @@ Within the `samplesheet/` directory, there's a file called `samplesheet.csv` tha
 ### Check the size of the output files    
 If you check the size of your output files through `du -sh *`, you can see the work/ directory occupies significant storage space. 
 
-<img src="../images/work_dir_large.png" width="30%">
+<img src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/work_dir_large.png" width="30%">
 
 ### nextflow clean
 
