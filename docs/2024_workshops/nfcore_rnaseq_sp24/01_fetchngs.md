@@ -89,7 +89,7 @@ Below are the arguments we will use:
 
 
 A screenshot of the Open OnDemand fetchngs app.          
-![fetchngs](https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/fetchngs.png)          
+![fetchngs](images/fetchngs.png)          
 
 <br>
 
@@ -245,10 +245,10 @@ Cleaning up...
 ```
 ## Check the output files       
 Once your job is completed, you should be able to see the following output files in your output directory.          
-<img src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/fetchngs_out.png" width="25%">
+![fetchngs_out](images/fetchngs_out.png)
 
 In the `fastq/` directory, the downloaded FASTQ files are located.                        
-<img src="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/nfcore_rnaseq_sp24/images/fetchngs_out2.png" width="40%">
+![fetchngs_out2](images/fetchngs_out2.png)
 
 Within the `samplesheet/` directory, there's a file called `samplesheet.csv` that holds all the essential information needed for the subsequent nf-core/rnaseq pipeline.           
 
@@ -260,7 +260,7 @@ Within the `samplesheet/` directory, there's a file called `samplesheet.csv` tha
 ### Check the size of the output files    
 If you check the size of your output files through `du -sh *`, you can see the work/ directory occupies significant storage space. 
 
-![work_dir](images/work_dir_large.png)
+![work_dir](images/work_dir.png)
 
 ### nextflow clean
 
