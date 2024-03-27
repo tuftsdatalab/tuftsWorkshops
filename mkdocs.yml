@@ -152,6 +152,6 @@ nav:
         - Spring 2024:
             - Running RNA-Seq analysis with nextflow & nf-core:
                 - "Introduction": 2024_workshops/nfcore_rnaseq_sp24/00_introduction.md
-                - "nf-core fetchngs": 2024_workshops/nfcore_rnaseq_sp24/hands-on/01_fetchngs.md
-                - "nf-core rnaseq": 2024_workshops/nfcore_rnaseq_sp24/hands-on/02_rnaseq.md
-                - "nf-core differentialabundance": 2024_workshops/nfcore_rnaseq_sp24/hands-on/03_differentialabundance.md
+                - "nf-core fetchngs": 2024_workshops/nfcore_rnaseq_sp24/01_fetchngs.md
+                - "nf-core rnaseq": 2024_workshops/nfcore_rnaseq_sp24/02_rnaseq.md
+                - "nf-core differentialabundance": 2024_workshops/nfcore_rnaseq_sp24/03_differentialabundance.md
