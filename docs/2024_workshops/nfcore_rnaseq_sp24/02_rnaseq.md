@@ -60,7 +60,7 @@ cat /cluster/tufts/biocontainers/workshop/Spring2024/rnaseq/samplesheet.csv
 ```
 
 !!! note
-   Please note that the `fastq_1` and `fastq_2` columns in the data contain the location of fastq files. However, these paths are **relative** rather than **absolute**. To ensure the `rnaseq` pipeline can locate these fastq files, we can create a soft link for `fetchngsOut` in the working directory of `rnaseq` pipeline.
+    Please note that the `fastq_1` and `fastq_2` columns in the data contain the location of fastq files. However, these paths are **relative** rather than **absolute**. To ensure the `rnaseq` pipeline can locate these fastq files, we can create a soft link for `fetchngsOut` in the working directory of `rnaseq` pipeline.
 
 ```
 cd /cluster/tufts/biocontainers/workshop/Spring2024/rnaseq/

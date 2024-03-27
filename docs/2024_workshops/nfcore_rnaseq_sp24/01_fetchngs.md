@@ -35,8 +35,8 @@ For example, you can create a directory similar to this:
 `/cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/`.
 If you belong to a group, you can create a folder in your group directory and use it as the working directory. **However, please DO NOT use your `$HOME` directory**.      
 
-!!! note      
-   nf-core pipeline requires a lot of storage to run, please do not run within your $HOME directory. 
+!!! note
+    nf-core pipeline requires a lot of storage to run, please do not run within your $HOME directory. 
 
 ```
 mkdir -p /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/ ## Change it to your directory!!!
