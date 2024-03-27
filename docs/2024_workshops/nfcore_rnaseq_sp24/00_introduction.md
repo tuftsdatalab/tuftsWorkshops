@@ -51,3 +51,4 @@ nf-core is a community effort to collect a curated set of analysis pipelines bui
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+[Next: fetchngs](01_fetchngs.md)

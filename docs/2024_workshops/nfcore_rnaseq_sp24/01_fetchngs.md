@@ -1,9 +1,9 @@
 # nf-core/fetchngs
 In this workshop, users will be guided through the practical application of the [nf-core fetchngs pipeline](https://nf-co.re/fetchngs/1.12.0), focusing specifically on downloading raw sequencing reads from the [NCBI database](https://www.ncbi.nlm.nih.gov/). Participants will gain insights into utilizing this powerful tool within the nf-core framework with [Open OnDemand](https://ondemand.pax.tufts.edu/) to efficiently download necessary data for bioinformatics analyses. 
 
-## Example Dataset and Reference paper
+## Example dataset and reference paper
 
-In this workshop, we will analyze RNAseq data from a [study (Asberry et al., 2022)](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c01000) on the human epigenetic regulator `PRMT5` and its cofactor `MEP50`.
+In this workshop, we will analyze RNA-Seq data from the [study (Asberry et al., 2022)](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c01000) on the human epigenetic regulator `PRMT5` and its cofactor `MEP50`.
 
 - Paper: Discovery and Biological Characterization of PRMT5:MEP50 Protein–Protein Interaction Inhibitors
 ![PRMT5_paper](images/PRMT5_paper.png)
@@ -25,7 +25,6 @@ The required 6 samples are from `PRMT50kd` and `GTFkd` groups, with accession nu
 ![SRA](images/sra.png)
 
 ## nf-core fetchngs
-
 
 nf-core/fetchngs is a bioinformatics pipeline to fetch metadata and raw FastQ files from both public databases. At present, the pipeline supports SRA / ENA / DDBJ / GEO ids.             
 <img src="https://raw.githubusercontent.com/nf-core/fetchngs/1.12.0//docs/images/nf-core-fetchngs_metro_map_grey.png" alt="nf-core/fetchngs" width="85%">
@@ -254,8 +253,6 @@ In the `fastq/` directory, the downloaded FASTQ files are located.
 Within the `samplesheet/` directory, there's a file called `samplesheet.csv` that holds all the essential information needed for the subsequent nf-core/rnaseq pipeline.           
 
 
-
-
 ## Clean up
 
 ### Check the size of the output files    
@@ -314,3 +311,6 @@ You also clean the `work/` directory by `rm -r work/`
 ### Summary       
 After successfully running this pipeline, your specified output directory will contain the FASTQ files that were downloaded from the NCBI database. These files will be the raw sequencing reads that you will use for the next pipeline, nf-core/rnaseq. Next, we will proceed with the [nf-core/rnaseq](https://nf-co.re/rnaseq/3.14.0) pipeline to further process this dataset and conduct RNA-Seq data analysis.
 
+[Next: rnaseq](02_rnaseq.md)
+
+[Previous: Introduction](00_introduction.md)

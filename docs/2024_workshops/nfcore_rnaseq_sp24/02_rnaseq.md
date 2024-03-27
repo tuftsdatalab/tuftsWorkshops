@@ -299,3 +299,6 @@ You can clean the `work` directory, by mannualy run
 ```
 rm -rf work
 ```
+[Next: Differentialabuandance](03_differentialabundance.md)
+
+[Previous: fetchngs](01_fetchngs.md)
