@@ -1,18 +1,18 @@
-# nextflow and nf-core at Tufts HPC
-This repository stores the slides and hands-on sessions for nf-core and Nextflow training workshops provided by Tufts Research Technology in April 2024.
+# Nextflow and nf-core at Tufts HPC
+This repository stores the slides and hands-on sessions for nf-core and nextflow training workshops provided by Tufts Research Technology in April 2024.
 
 ## Nextflow
 
 [Nextflow](https://www.nextflow.io) is a software tool used to design and run scientific workflows, particularly in bioinformatics. It allows researchers to automate complex data analysis processes by chaining together smaller tasks. Here are some key features:
 
 - Scalability: It can handle large datasets and run on various computing environments, including local machines, clusters, and clouds.
-- Reproducibility: By using containers, Nextflow ensures that workflows run the same way every time, regardless of the computing environment.
-- Portability: Workflows written in Nextflow can be easily run on different platforms without modification.
+- Reproducibility: By using containers, nextflow ensures that workflows run the same way every time, regardless of the computing environment.
+- Portability: Workflows written in nextflow can be easily run on different platforms without modification.
 - Fast Prototyping: It allows for quick assembly of complex pipelines by reusing existing scripts and tools.
 
 ## nf-core
 
-nf-core is a community effort to collect a curated set of analysis pipelines built using Nextflow. There are currently around 100 pipelines available as of April 2024. Below are some of the most popular nf-core pipelines:
+nf-core is a community effort to collect a curated set of analysis pipelines built using nextflow. There are currently around 100 pipelines available as of April 2024. Below are some of the most popular nf-core pipelines:
 
 - [rnaseq](https://nf-co.re/rnaseq)
 - [sarek](https://nf-co.re/sarek)
