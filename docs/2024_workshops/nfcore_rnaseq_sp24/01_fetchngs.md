@@ -24,7 +24,7 @@ The required 6 samples are from `PRMT50kd` and `GTFkd` groups, with accession nu
 
 ![SRA](images/sra.png)
 
-## nf-core Fetchngs
+## nf-core fetchngs
 
 
 nf-core/fetchngs is a bioinformatics pipeline to fetch metadata and raw FastQ files from both public databases. At present, the pipeline supports SRA / ENA / DDBJ / GEO ids.             
@@ -34,8 +34,9 @@ In order to execute the `fetchngs` pipeline, let's start by creating a working d
 For example, you can create a directory similar to this:
 `/cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/`.
 If you belong to a group, you can create a folder in your group directory and use it as the working directory. **However, please DO NOT use your `$HOME` directory**.      
-> [!WARNING]       
-> nf-core pipeline requires a lot of storage to run, please do not run within your $HOME directory. 
+
+!!! note      
+   nf-core pipeline requires a lot of storage to run, please do not run within your $HOME directory. 
 
 ```
 mkdir -p /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/ ## Change it to your directory!!!

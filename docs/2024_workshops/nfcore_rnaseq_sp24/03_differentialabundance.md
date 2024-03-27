@@ -128,82 +128,63 @@ Click `differentialabundance` in `Bioinformatics Apps`.
   nf-core/differentialabundance v1.4.0
 ------------------------------------------------------
 Core Nextflow options
-  runName                      : cheesy_almeida
-  containerEngine              : singularity
-  container                    : [RMARKDOWNNOTEBOOK:biocontainers/r-shinyngs:1.8.4--r43hdfd78af_0]
-  launchDir                    : /cluster/tufts/biocontainers/workshop/Spring2024/differentialabundance
-  workDir                      : /cluster/tufts/biocontainers/workshop/Spring2024/differentialabundance/work
-  projectDir                   : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0
-  userName                     : yzhang85
-  profile                      : tufts
-  configFiles                  :
+  runName                     : maniac_mcclintock
+  containerEngine             : singularity
+  container                   : [RMARKDOWNNOTEBOOK:biocontainers/r-shinyngs:1.8.4--r43hdfd78af_0]
+  launchDir                   : /cluster/tufts/biocontainers/workshop/Spring2024/differentialabundance
+  workDir                     : /cluster/tufts/biocontainers/workshop/Spring2024/differentialabundance/work
+  projectDir                  : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0
+  userName                    : yzhang85
+  profile                     : tufts
+  configFiles                 : 
 
 Input/output options
-  input                        : samplesheet.csv
-  contrasts                    : contrast.csv
-  outdir                       : DEGout
+  input                       : samplesheet.csv
+  contrasts                   : contrast.csv
+  outdir                      : DEGout
 
 Abundance values
-  matrix                       : salmon.merged.gene_counts.tsv
-  affy_cel_files_archive       : null
-  querygse                     : null
+  matrix                      : salmon.merged.gene_counts.tsv
+  affy_cel_files_archive      : null
+  querygse                    : null
 
 Affy input options
-  affy_background              : false
-  affy_cdfname                 : null
-  affy_build_annotation        : false
-
-Proteus input options
-  proteus_plotmv_loess         : false
-
-Filtering
-  filtering_min_abundance      : 1
-  filtering_min_samples        : 1
+  affy_cdfname                : null
 
 Differential analysis
-  differential_min_fold_change : 1.5
-
-DESeq2 specific options (RNA-seq only)
-  deseq2_independent_filtering : false
-  deseq2_shrink_lfc            : false
-  deseq2_vs_blind              : false
+  differential_min_fold_change: 1.5
 
 Limma specific options (microarray only)
-  limma_spacing                : null
-  limma_block                  : null
-  limma_correlation            : null
+  limma_spacing               : null
+  limma_block                 : null
+  limma_correlation           : null
 
 GSEA
-  gsea_run                     : true
-  gsea_gene_sets               : /cluster/tufts/biocontainers/workshop/Spring2024/gsea/h.all.v2023.2.Hs.symbols.gmt.txt
+  gsea_run                    : true
+  gsea_gene_sets              : /cluster/tufts/biocontainers/workshop/Spring2024/gsea/h.all.v2023.2.Hs.symbols.gmt.txt
 
 Shiny app settings
-  shinyngs_shinyapps_account   : null
-  shinyngs_shinyapps_app_name  : null
-  shinyngs_guess_unlog_matrices: false
+  shinyngs_shinyapps_account  : null
+  shinyngs_shinyapps_app_name : null
 
 Reporting options
-  report_file                  : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0/assets/differentialabundance_report.Rmd
-  logo_file                    : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0/docs/images/nf-core-differentialabundance_logo_light.png
-  css_file                     : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0/assets/nf-core_style.css
-  citations_file               : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0/CITATIONS.md
-  report_title                 : PRMT5kd vs. GFPkd
-  report_author                : Yuhceng Zhang
-  report_description           : null
-  report_scree                 : false
-
-Reference genome options
-  gtf                          : Homo_sapiens.GRCh38.111.gtf
+  report_file                 : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0/assets/differentialabundance_report.Rmd
+  logo_file                   : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0/docs/images/nf-core-differentialabundance_logo_light.png
+  css_file                    : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0/assets/nf-core_style.css
+  citations_file              : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0/CITATIONS.md
+  report_title                : PRMT5kd vs. GFPkd
+  report_author               : Yucheng Zhang
+  report_description          : null
 
 Institutional config options
-  config_profile_description   : The Tufts University HPC cluster profile provided by nf-core/configs.
-  config_profile_contact       : Yucheng Zhang
-  config_profile_url           : https://it.tufts.edu/high-performance-computing
+  config_profile_description  : The Tufts University HPC cluster profile provided by nf-core/configs.
+  config_profile_contact      : Yucheng Zhang
+  config_profile_url          : https://it.tufts.edu/high-performance-computing
 
 Max job request options
-  max_cpus                     : 72
-  max_memory                   : 120 GB
-  max_time                     : 7d
+  max_cpus                    : 72
+  max_memory                  : 120 GB
+  max_time                    : 7d
 
 !! Only displaying parameters that differ from the pipeline defaults !!
 ------------------------------------------------------
@@ -236,25 +217,26 @@ If you use nf-core/differentialabundance for your analysis please cite:
 .
 .
 
-executor >  slurm (15)
-[af/6ca92c] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[08/da4d86] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[9e/ed2886] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[5e/f9baa7] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[93/b8a70c] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[82/d70bae] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[29/056e2d] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[70/cf23b6] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[dd/999607] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[24/38a2b9] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[06/a30630] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[5f/c153b2] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[0a/a0e8a9] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[b5/3b4b1d] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
-[04/12d84a] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+executor >  slurm (14)
+[3c/aa1431] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[73/374104] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[64/cc51c4] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[c8/7b9eb7] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[bf/0ac8f6] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[f3/85ca6e] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[1c/37c98b] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[3b/8585ca] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[12/f7dac7] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[c3/a75051] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[3f/7f671c] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[51/a37574] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[21/f74ad3] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
+[28/fbb019] process > NFCORE_DIFFERENTIALABUNDANC... [100%] 1 of 1 ✔
 -[nf-core/differentialabundance] Pipeline completed successfully-
-Completed at: 15-Mar-2024 14:56:20
-Duration    : 17m 11s
-CPU hours   : 0.3
-Succeeded   : 15
+Completed at: 27-Mar-2024 14:02:23
+Duration    : 25m 13s
+CPU hours   : 0.5
+Succeeded   : 14
+
+Cleaning up...
 ```
