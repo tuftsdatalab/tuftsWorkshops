@@ -33,7 +33,8 @@ nf-core is a community effort to collect a curated set of analysis pipelines bui
 - [fetchngs](01_fetchngs.md)
 - [rnaseq](02_rnaseq.md)
 - [differentialabundance](03_differentialabundance.md)
-- [Final report](04_report.html)
+- [Multiqc report](04_multiqc_report.html)
+- [differentialabundance report](05_differentialabundance_report.html)
 
 ## Presenters
 
