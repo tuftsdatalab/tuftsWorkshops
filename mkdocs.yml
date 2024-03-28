@@ -155,3 +155,4 @@ nav:
                 - "nf-core fetchngs": 2024_workshops/nfcore_rnaseq_sp24/01_fetchngs.md
                 - "nf-core rnaseq": 2024_workshops/nfcore_rnaseq_sp24/02_rnaseq.md
                 - "nf-core differentialabundance": 2024_workshops/nfcore_rnaseq_sp24/03_differentialabundance.md
+                - "Final reort": 2024_workshops/nfcore_rnaseq_sp24/04_report.html
