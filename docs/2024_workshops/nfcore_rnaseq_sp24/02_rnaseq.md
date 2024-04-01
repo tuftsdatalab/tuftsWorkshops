@@ -5,7 +5,7 @@ nf-core/rnaseq is a bioinformatics pipeline that can be used to analyse RNA sequ
 <img src="https://raw.githubusercontent.com/nf-core/rnaseq/3.14.0//docs/images/nf-core-rnaseq_metro_map_grey.png" alt="nf-core/rnaseq" width="100%">
 
 !!! note
-    Before proceeding with the code sections provided below, ensure you replace `/cluster/tufts/biocontainers/workshop/Spring2024/` with the path to your own directory!`
+    Before proceeding with the code sections provided below, ensure you replace `/cluster/tufts/biocontainers/workshop/Spring2024/` with the path to your own directory!
 
 ## Create the working directory
 
