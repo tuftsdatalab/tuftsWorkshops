@@ -156,5 +156,5 @@ nav:
                 - "nf-core rnaseq": 2024_workshops/nfcore_rnaseq_sp24/02_rnaseq.md
                 - "nf-core differentialabundance": 2024_workshops/nfcore_rnaseq_sp24/03_differentialabundance.md
                 - "multiqc report": 2024_workshops/nfcore_rnaseq_sp24/04_multiqc_report.html
-                - "differentialabundance reort": 2024_workshops/nfcore_rnaseq_sp24/05_differentialabundance_report.html
+                - "differentialabundance report": 2024_workshops/nfcore_rnaseq_sp24/05_differentialabundance_report.html
 
