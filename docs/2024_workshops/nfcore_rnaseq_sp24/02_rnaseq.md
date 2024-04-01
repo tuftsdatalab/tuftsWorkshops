@@ -4,11 +4,16 @@ nf-core/rnaseq is a bioinformatics pipeline that can be used to analyse RNA sequ
 
 <img src="https://raw.githubusercontent.com/nf-core/rnaseq/3.14.0//docs/images/nf-core-rnaseq_metro_map_grey.png" alt="nf-core/rnaseq" width="100%">
 
+> [!WARNING]
+> Before proceeding with the code sections provided below, ensure you replace `/cluster/tufts/biocontainers/workshop/Spring2024/` with the path to your own directory!`
+
 ## Create the working directory
+
 
 ```
 mkdir -p /cluster/tufts/biocontainers/workshop/Spring2024/rnaseq
 ```
+
 
 ## Prepare the input samplesheet
 
@@ -100,7 +105,7 @@ In this workshop, we will guide you on how to download your own reference genome
 - iGenomes: None
 - fasta: https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 - gtf: https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz
-- trimmer: trimgalor
+- trimmer: trimgalore
 - extra_fastp_args: -q 35 --paired
 - aligner: star_salmon
 - save_reference: true
