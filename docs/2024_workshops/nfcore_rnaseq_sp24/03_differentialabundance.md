@@ -7,7 +7,7 @@ nf-core/differentialabundance is a bioinformatics pipeline that can be used to a
 ## Create the working directory
 
 ```
-mkdir -p /cluster/tufts/workshop/differentialabundance
+mkdir -p /cluster/tufts/workshop/UTLN/differentialabundance
 ```
 
 ## reference genome gtf
@@ -15,7 +15,7 @@ mkdir -p /cluster/tufts/workshop/differentialabundance
 In the last RNAseq workshop, we selected `save_reference`. So that all refereneced data will be saved for our future use. Today we can reuse the gtf file for human genome.
 
 ```
-ls -1 /cluster/tufts/workshop/rnaseq/rnaseqOut/genome/
+ls -1 /cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/genome/
 ```
 
 You can see the GRCh38 reference genome's gtf and fasta files. In addition, you can see the newly created STAR `index` and `rsem` folders that can be used for your future RNA-Seq analysis.
@@ -35,8 +35,8 @@ rsem/
 Let's create a softlink of the gtf to our `differentialabundance` folder
 
 ```
-cd /cluster/tufts/workshop/differentialabundance
-ln -s /cluster/tufts/workshop/rnaseq/rnaseqOut/genome/Homo_sapiens.GRCh38.111.gtf .
+cd /cluster/tufts/workshop/UTLN/differentialabundance
+ln -s /cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/genome/Homo_sapiens.GRCh38.111.gtf .
 ```
 
 ## matrix
@@ -44,26 +44,26 @@ ln -s /cluster/tufts/workshop/rnaseq/rnaseqOut/genome/Homo_sapiens.GRCh38.111.gt
 In the output folder of RNAseq workshop, you can find the count file we need `salmon.merged.gene_counts.tsv` via `ls`.
 
 ```
-$ ls -1 /cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/*.tsv
+$ ls -1 /cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/*.tsv
 ```
 
 ```
-/cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_counts.tsv
-/cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_counts_length_scaled.tsv
-/cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_counts_scaled.tsv
-/cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_lengths.tsv
-/cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_tpm.tsv
-/cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.transcript_counts.tsv
-/cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.transcript_lengths.tsv
-/cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.transcript_tpm.tsv
-/cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/tx2gene.tsv
+/cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_counts.tsv
+/cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_counts_length_scaled.tsv
+/cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_counts_scaled.tsv
+/cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_lengths.tsv
+/cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_tpm.tsv
+/cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.transcript_counts.tsv
+/cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.transcript_lengths.tsv
+/cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.transcript_tpm.tsv
+/cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/tx2gene.tsv
 ```
 
 We can create a soft link of `salmon.merged.gene_counts.tsv` into our differentialabundance folder
 
 ```
-cd /cluster/tufts/workshop/differentialabundance
-ln -s /cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_counts.tsv .
+cd /cluster/tufts/workshop/UTLN/differentialabundance
+ln -s /cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_counts.tsv .
 ```
 
 ## samplesheet.csv
@@ -79,8 +79,8 @@ ln -s /cluster/tufts/workshop/rnaseq/rnaseqOut/star_salmon/salmon.merged.gene_co
 
 You can copy my samplesheet.csv to your workding directory.
 ```
-cd /cluster/tufts/workshop/differentialabundance
-cp /cluster/tufts/workshop/differentialabundance/samplesheet.csv .
+cd /cluster/tufts/workshop/UTLN/differentialabundance
+cp /cluster/tufts/workshop/UTLN/differentialabundance/samplesheet.csv .
 ```
 ## contrast.csv
 
@@ -90,8 +90,8 @@ cp /cluster/tufts/workshop/differentialabundance/samplesheet.csv .
 
 You can copy my contrast.csv to your workding directory.
 ```
-cd /cluster/tufts/workshop/differentialabundance
-cp /cluster/tufts/workshop/differentialabundance/contrast.csv .
+cd /cluster/tufts/workshop/UTLN/differentialabundance
+cp /cluster/tufts/workshop/UTLN/differentialabundance/contrast.csv .
 ```
 ## Open OnDemand
 
@@ -103,7 +103,7 @@ Click `differentialabundance` in `Bioinformatics Apps`.
 - Select cpu parition: batch
 - Reservation for class, training, workshop: Default
 - Version: 1.4.0
-- Working Directory: `/cluster/tufts/workshop/differentialabundance` ## Change this to your own directory
+- Working Directory: `/cluster/tufts/workshop/UTLN/differentialabundance` ## Change this to your own directory
 - outdir: DEGout
 - study_type: rnaseq
 - input: samplesheet.csv
@@ -113,7 +113,7 @@ Click `differentialabundance` in `Bioinformatics Apps`.
 - observations_id_col: sample
 - observations_name_col: sample
 - gsea_run: true
-- gsea_gene_sets: /cluster/tufts/workshop/gsea/h.all.v2023.2.Hs.symbols.gmt.txt
+- gsea_gene_sets: /cluster/tufts/workshop/shared/gsea/h.all.v2023.2.Hs.symbols.gmt.txt
 - shinyngs_build_app: true
 - report_title: PRMT5kd vs. GFPkd
 - report_author: Yucheng Zhang ## You can put your name as the author
@@ -131,8 +131,8 @@ Core Nextflow options
   runName                     : maniac_mcclintock
   containerEngine             : singularity
   container                   : [RMARKDOWNNOTEBOOK:biocontainers/r-shinyngs:1.8.4--r43hdfd78af_0]
-  launchDir                   : /cluster/tufts/workshop/differentialabundance
-  workDir                     : /cluster/tufts/workshop/differentialabundance/work
+  launchDir                   : /cluster/tufts/workshop/UTLN/differentialabundance
+  workDir                     : /cluster/tufts/workshop/UTLN/differentialabundance/work
   projectDir                  : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-differentialabundance/1.4.0/1_4_0
   userName                    : yzhang85
   profile                     : tufts
@@ -161,7 +161,7 @@ Limma specific options (microarray only)
 
 GSEA
   gsea_run                    : true
-  gsea_gene_sets              : /cluster/tufts/workshop/gsea/h.all.v2023.2.Hs.symbols.gmt.txt
+  gsea_gene_sets              : /cluster/tufts/workshop/shared/gsea/h.all.v2023.2.Hs.symbols.gmt.txt
 
 Shiny app settings
   shinyngs_shinyapps_account  : null
