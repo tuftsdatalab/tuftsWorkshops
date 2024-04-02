@@ -30,16 +30,44 @@ nf-core/fetchngs is a bioinformatics pipeline to fetch metadata and raw FastQ fi
 <img src="https://raw.githubusercontent.com/nf-core/fetchngs/1.12.0//docs/images/nf-core-fetchngs_metro_map_grey.png" alt="nf-core/fetchngs" width="85%">
 
 In order to execute the `fetchngs` pipeline, let's start by creating a working directory where the pipeline will run.
-For example, you can create a directory similar to this:
-`/cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/`.
-If you belong to a group, you can create a folder in your group directory and use it as the working directory. **However, please DO NOT use your `$HOME` directory**.      
 
-!!! note
-    nf-core pipeline requires a lot of storage to run, please do not run within your $HOME directory. 
+We created the `/cluster/tufts/workshop` folder to provide storage for users to run jobs during the workshop. Inside the `workshop` folder, each user has your own folder with your Tufts UTLN as the folder name.
 
 ```
-mkdir -p /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/ ## Change it to your directory!!!
-cd /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/
+ls -1 /cluster/tufts/workshop/
+amarti45/
+atai01/
+bcarso02/
+blin01/
+fvilch01/
+gwidme01/
+hgardn02/
+hli25/
+hyan01/
+isanog01/
+jfinne04/
+kmegqu01/
+kreyno07/
+mcalde03/
+mlehr01/
+rsaid01/
+shared/
+smosta03/
+spasch03/
+xli37/
+ylee02/
+ymalon01/
+yzhang85/
+yzhao12/
+zwatso01/
+```
+
+Let's create the working directory for fetchngs. 
+
+```
+cd /cluster/tufts/workshop/UTLN ## replace UTLN with your own UTLN
+mkdir fetchngs
+cd fetchngs
 ```
 
 ### Create a samplesheet.csv as input
@@ -80,7 +108,7 @@ Below are the arguments we will use:
 - Select cpu partition: batch
 - Resveration for class, training, workshop: default
 - Version: 1.12.0
-- Working Directory: The direcotry your created above. For me, it is `/cluster/tufts/biocontainers/workshop/Spring2024/fetchngs`
+- Working Directory: The direcotry your created above. For me, it is `/cluster/tufts/workshop/yzhang85/fetchngs`
 - Output directory Name: fetchngsOut
 - Input: samplesheet.csv
 - nf_core_pipeline: rnaseq
@@ -109,8 +137,8 @@ When the job starts, you can click the link next to `Session ID:` to view `outpu
 Core Nextflow options
   runName                   : irreverent_rutherford
   containerEngine           : singularity
-  launchDir                 : /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs
-  workDir                   : /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work
+  launchDir                 : /cluster/tufts/workshop/yzhang85/fetchngs
+  workDir                   : /cluster/tufts/workshop/yzhang85/fetchngs/work
   projectDir                : /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-fetchngs/1.12.0/1_12_0
   userName                  : yzhang85
   profile                   : tufts
@@ -264,7 +292,7 @@ If you check the size of your output files through `du -sh *`, you can see the w
 
 Let's check the log file first.       
 ```
-cd /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs
+cd /cluster/tufts/workshop/yzhang85/fetchngs
 module load nextflow
 nextflow log
 ```
@@ -278,31 +306,31 @@ TIMESTAMP          	DURATION	RUN NAME             	STATUS	REVISION ID	SESSION ID
 
 ```
 $ nextflow clean -f irreverent_rutherford
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/f5/74497ebf3f36efad09ebee8519ecef
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/7b/178457f133774858a5d10e852523f6
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/98/7ddfa1cf4613615bfcecb6ecf167c6
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/cc/902cb642aed4dd1850839a7fe75071
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/d4/32dbdf8949e9f0d4587be17d4fc389
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/81/8a2aaa2778e136340e164d0bb3b32b
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/79/ed8e515c7254f134a3ce64c7950338
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/6d/0f7a5dda1757f73707679db3679a6c
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/94/89f0f178a6c8d4c89f002488ef7210
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/0d/7d12d9af85cb90948451ce8c0b19c9
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/9e/c00aee33d6aef6a0a89da09c9e5cd9
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/4f/ee3a77e70b291a6e25dae4585df441
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/fc/5fb242a14185a9436cce712e2b6c0e
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/18/9177c2cb956a008bb56aeaa2a3a017
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/5b/ea1a20f00545b992bd1859c5610491
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/26/a54f3214a0027f03a1fe283cae9a27
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/28/bd7c27332450b8bece51e146095f93
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/54/cf3d1d89eb40b606212f258fb67952
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/37/ef25f395f24219da52ac358b28e3da
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/9e/2d06e438872212d93e3d8bb6c62cb6
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/57/81810c59f69ae020ea55fc06dc8f34
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/a7/64edfa8692cf35cb95604635b24d89
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/18/9486c4cb3ffb0e1692b032757d012e
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/cb/3d036ddc1e77fde9620839c3c0c733
-Removed /cluster/tufts/biocontainers/workshop/Spring2024/fetchngs/work/0f/409afa1c6ded02885970255b88da06
+Removed /cluster/tufts/workshop/fetchngs/work/f5/74497ebf3f36efad09ebee8519ecef
+Removed /cluster/tufts/workshop/fetchngs/work/7b/178457f133774858a5d10e852523f6
+Removed /cluster/tufts/workshop/fetchngs/work/98/7ddfa1cf4613615bfcecb6ecf167c6
+Removed /cluster/tufts/workshop/fetchngs/work/cc/902cb642aed4dd1850839a7fe75071
+Removed /cluster/tufts/workshop/fetchngs/work/d4/32dbdf8949e9f0d4587be17d4fc389
+Removed /cluster/tufts/workshop/fetchngs/work/81/8a2aaa2778e136340e164d0bb3b32b
+Removed /cluster/tufts/workshop/fetchngs/work/79/ed8e515c7254f134a3ce64c7950338
+Removed /cluster/tufts/workshop/fetchngs/work/6d/0f7a5dda1757f73707679db3679a6c
+Removed /cluster/tufts/workshop/fetchngs/work/94/89f0f178a6c8d4c89f002488ef7210
+Removed /cluster/tufts/workshop/fetchngs/work/0d/7d12d9af85cb90948451ce8c0b19c9
+Removed /cluster/tufts/workshop/fetchngs/work/9e/c00aee33d6aef6a0a89da09c9e5cd9
+Removed /cluster/tufts/workshop/fetchngs/work/4f/ee3a77e70b291a6e25dae4585df441
+Removed /cluster/tufts/workshop/fetchngs/work/fc/5fb242a14185a9436cce712e2b6c0e
+Removed /cluster/tufts/workshop/fetchngs/work/18/9177c2cb956a008bb56aeaa2a3a017
+Removed /cluster/tufts/workshop/fetchngs/work/5b/ea1a20f00545b992bd1859c5610491
+Removed /cluster/tufts/workshop/fetchngs/work/26/a54f3214a0027f03a1fe283cae9a27
+Removed /cluster/tufts/workshop/fetchngs/work/28/bd7c27332450b8bece51e146095f93
+Removed /cluster/tufts/workshop/fetchngs/work/54/cf3d1d89eb40b606212f258fb67952
+Removed /cluster/tufts/workshop/fetchngs/work/37/ef25f395f24219da52ac358b28e3da
+Removed /cluster/tufts/workshop/fetchngs/work/9e/2d06e438872212d93e3d8bb6c62cb6
+Removed /cluster/tufts/workshop/fetchngs/work/57/81810c59f69ae020ea55fc06dc8f34
+Removed /cluster/tufts/workshop/fetchngs/work/a7/64edfa8692cf35cb95604635b24d89
+Removed /cluster/tufts/workshop/fetchngs/work/18/9486c4cb3ffb0e1692b032757d012e
+Removed /cluster/tufts/workshop/fetchngs/work/cb/3d036ddc1e77fde9620839c3c0c733
+Removed /cluster/tufts/workshop/fetchngs/work/0f/409afa1c6ded02885970255b88da06
 ```
 
 You also clean the `work/` directory by `rm -r work/`    
