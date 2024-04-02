@@ -74,9 +74,8 @@ ls -l
 Please verify that we have successfully linked `fetchngsOut` to the current directory.
 
 ```
-ls
-  lrwxrwxrwx 1 yzhang85 biotools   69 Mar  1 14:18 fetchngsOut -> /cluster/tufts/workshop/UTLN/fetchngs/fetchngsOut/
-  -rw-rw---- 1 yzhang85 biotools 1163 Mar  1 14:16 samplesheet.csv
+lrwxrwxrwx 1 yzhang85 workshop  53 Apr  2 18:19 fetchngsOut -> /cluster/tufts/workshop/yzhang85/fetchngs/fetchngsOut/
+-rw-rw---- 1 yzhang85 workshop 788 Apr  2 18:18 samplesheet.csv
 ```
 
 ## rnaseq on Open OnDemand
