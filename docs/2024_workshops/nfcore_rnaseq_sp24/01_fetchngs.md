@@ -125,6 +125,7 @@ Once you fill in the required fields, you can launch the job.
 
 When the job starts, you can click the link next to `Session ID:` to view `output.log` and check the running processes of nextflow.
 
+![sessionid](images/sessionid.png) 
 ```
 ------------------------------------------------------
                                         ,--./,-.
