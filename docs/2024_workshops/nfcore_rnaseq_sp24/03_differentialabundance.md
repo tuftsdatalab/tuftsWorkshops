@@ -88,10 +88,11 @@ cp /cluster/tufts/workshop/UTLN/differentialabundance/samplesheet.csv .
 | ---------------- | --------- | --------- | ------- | -------- |
 | PRMT5kd_vs_GFPkd | treatment | GFPkd     | PRMT5kd |          |
 
-You can copy my contrast.csv to your workding directory.
+You can copy my contrast.csv to your working directory.
 ```
 cd /cluster/tufts/workshop/UTLN/differentialabundance
-cp /cluster/tufts/workshop/UTLN/differentialabundance/contrast.csv .
+cp /cluster/tufts/workshop/shared/contrast.csv .
+cp /cluster/tufts/workshop/shared/samplesheet.csv .
 ```
 ## Open OnDemand
 
