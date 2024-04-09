@@ -241,5 +241,18 @@ Succeeded   : 14
 Cleaning up...
 ```
 
-[Previous: rnaseq](02_rnaseq.md)
+### Check the output files        
+Under the output folder, you will see subfolders listed as below:
+```
+other
+shinyngs_app
+tables
+plots
+report
+pipeline_info
+```
+* Under `report` folder, you will see a *html file which will be the report file.     
+* Under `shinyngs_app/` folder, you will see a subfolder which stores the `app.R` shiny app for interactive visualization. You can then view `app.R` with Open OnDemand `shinyngs` app. 
+
+[Previous: rnaseq](02_rnaseq.md)           
 [Next: report](04_report.md)
