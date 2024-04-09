@@ -39,7 +39,7 @@ cd /cluster/tufts/workshop/UTLN/differentialabundance
 ln -s /cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/genome/Homo_sapiens.GRCh38.111.gtf .
 ```
 
-## matrix
+## gene expression count matrix
 
 In the output folder of RNAseq workshop, you can find the count file we need `salmon.merged.gene_counts.tsv` via `ls`.
 
@@ -80,7 +80,7 @@ ln -s /cluster/tufts/workshop/UTLN/rnaseq/rnaseqOut/star_salmon/salmon.merged.ge
 You can copy my samplesheet.csv to your workding directory.
 ```
 cd /cluster/tufts/workshop/UTLN/differentialabundance
-cp /cluster/tufts/workshop/UTLN/differentialabundance/samplesheet.csv .
+cp /cluster/tufts/workshop/shared/samplesheet.csv .
 ```
 ## contrast.csv
 
@@ -92,7 +92,6 @@ You can copy my contrast.csv to your working directory.
 ```
 cd /cluster/tufts/workshop/UTLN/differentialabundance
 cp /cluster/tufts/workshop/shared/contrast.csv .
-cp /cluster/tufts/workshop/shared/samplesheet.csv .
 ```
 ## Open OnDemand
 
