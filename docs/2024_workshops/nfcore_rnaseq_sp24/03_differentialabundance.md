@@ -110,6 +110,7 @@ Click `differentialabundance` in `Bioinformatics Apps`.
 - contrasts: contrast.csv
 - matrix: salmon.merged.gene_counts.tsv
 - differential_min_fold_change: 1.5
+- deseq2_vs_method: rlog
 - observations_id_col: sample
 - observations_name_col: sample
 - gsea_run: true
