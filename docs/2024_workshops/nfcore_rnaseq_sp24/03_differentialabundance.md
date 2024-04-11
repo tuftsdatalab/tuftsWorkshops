@@ -118,6 +118,7 @@ Click `differentialabundance` in `Bioinformatics Apps`.
 - shinyngs_build_app: true
 - report_title: PRMT5kd vs. GFPkd
 - report_author: Yucheng Zhang ## You can put your name as the author
+- gtf: Homo_sapiens.GRCh38.111.gtf
 
 ```
 ------------------------------------------------------
