@@ -101,7 +101,7 @@ Click `differentialabundance` in `Bioinformatics Apps`.
 
 - Number of hours: 2
 - Select cpu parition: batch
-- Reservation for class, training, workshop: Default
+- Reservation for class, training, workshop: Bioinformatics Workshop
 - Version: 1.4.0
 - Working Directory: `/cluster/tufts/workshop/UTLN/differentialabundance` ## Change this to your own directory
 - outdir: DEGout
@@ -109,10 +109,10 @@ Click `differentialabundance` in `Bioinformatics Apps`.
 - input: samplesheet.csv
 - contrasts: contrast.csv
 - matrix: salmon.merged.gene_counts.tsv
-- differential_min_fold_change: 1.5
-- deseq2_vs_method: rlog
 - observations_id_col: sample
 - observations_name_col: sample
+- differential_min_fold_change: 1.5
+- deseq2_vs_method: rlog
 - gsea_run: true
 - gsea_gene_sets: /cluster/tufts/workshop/shared/gsea/h.all.v2023.2.Hs.symbols.gmt.txt
 - shinyngs_build_app: true
