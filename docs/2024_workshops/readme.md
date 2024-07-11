@@ -2,6 +2,7 @@
 The TTS Research Technology Bioinformatics Team has prepared the following workshops and lectures:
 
 ## Lectures:  
+- [Introduction to Metagenomics] (./IGDH-1001_2024Feb/Hands-on_session.md)
 - [Introduction to AlphaFold2](./cas12aAlphaFold2_sp24/00_introduction.md) (Sp24-CHBE-0165-01-Biomolecular Eng and Design)
 
 ## Workshops:      
