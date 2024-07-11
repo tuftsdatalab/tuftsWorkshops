@@ -150,6 +150,13 @@ nav:
     - 2024 Workshops: 
         - "Schedule": 2024_workshops/readme.md
         - Spring 2024:
+            - Introduction to Metagenomics:
+                - "In class hands-on session": 2024_workshops/IGDH-1001_2024Feb/Hands-on_session.md
+                - "Take out exercise": 2024_workshops/IGDH-1001_2024Feb/Take-home_exercise.md
+                - "Take-home exercise announcement.md": 2024_workshops/IGDH-1001_2024Feb/Take-home_exercise_announcement.md
+                - "Exercise Hint": 2024_workshops/IGDH-1001_2024Feb/Exercise2_hints.pdf
+                - "Example Report": 2024_workshops/IGDH-1001_2024Feb/Exercise3_Example_Report.pdf
+            
             - Introduction to AlphaFold2:
                 - "Introduction": 2024_workshops/cas12aAlphaFold2_sp24/00_introduction.md
                 - "Run AlphaFold2_CLI": 2024_workshops/cas12aAlphaFold2_sp24/01_Run_AlphaFold2_CLI.md
