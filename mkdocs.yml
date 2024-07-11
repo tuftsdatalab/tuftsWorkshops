@@ -150,6 +150,13 @@ nav:
     - 2024 Workshops: 
         - "Schedule": 2024_workshops/readme.md
         - Spring 2024:
+            - Introduction to AlphaFold2:
+                - "Introduction": 2024_workshops/cas12aAlphaFold2_sp24/00_introduction.md
+                - "Run AlphaFold2_CLI": 2024_workshops/cas12aAlphaFold2_sp24/01_Run_AlphaFold2_CLI.md
+                - "Run AlphaFold2 OpenOndemandApp": 2024_workshops/cas12aAlphaFold2_sp24/02_Run_AlphaFold2_OpenOndemandApp.md
+                - "Vizualize with PYMOL": 2024_workshops/cas12aAlphaFold2_sp24/03_Vizualize_predicted_structure_with_PYMOL.md
+                - "Slides": 2024_workshops/cas12aAlphaFold2_sp24/Alphafold_ShirleyLi_CHBE0165_2024-03.pdf
+
             - Running RNA-Seq analysis with nextflow & nf-core:
                 - "Introduction": 2024_workshops/nfcore_rnaseq_sp24/00_introduction.md
                 - "nf-core fetchngs": 2024_workshops/nfcore_rnaseq_sp24/01_fetchngs.md
