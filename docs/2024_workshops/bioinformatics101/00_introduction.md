@@ -1,8 +1,14 @@
-# Getting started running bioinformatics analysis at Tufts HPC
-This repository stores the slides and hands-on sessions for bioinformatics training workshops provided by Tufts Research Technology in October 2024.
+# Beginner's guide for conducting bioinformatics analysis on Tufts HPC
+
+## Welcome
+The goals of this workshop are to:
+
+- Help users get started with bioinformatics analysis, especially command-line bioinformatics, on Tufts HPC.
+
+- Familiarise with bioinformatics resources/tools available on Tufts HPC.
 
 
-## Agenda
+## Outline
 
 - [Intro to Linux/Unix](01_linux101.md)
 - [Available bioinformatics resources/tools](02_bioinformatics_resources.md)
@@ -27,4 +33,4 @@ This repository stores the slides and hands-on sessions for bioinformatics train
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-[Next: fetchngs](01_fetchngs.md)
+[Next: Intro to Linux/Unix](01_linux101.md)
