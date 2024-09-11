@@ -1,5 +1,6 @@
-## Everything is a file
+# Files and File system
 
+## Everything is a file
 **A file is an addressable location that contains some data which can take many forms.**
 
 - Text data 
@@ -46,9 +47,7 @@
 
 - Stick to alphanumeric characters, underscores, and hyphens.
 
-
 ## File organization
-
 Everything is mounted to the root directory 
 
 Files are referred to by their location called the **path** 
@@ -59,4 +58,4 @@ Files are referred to by their location called the **path**
 - Relative Path (From my current location)
   - user01/file01
 
-<img src="../images/file_system.png" alt="file_system" style="zoom:50%;" />
+<img src="images/file_system.png" alt="file_system" style="zoom:50%;" />
