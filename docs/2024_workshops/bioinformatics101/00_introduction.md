@@ -10,7 +10,7 @@ The goals of this workshop are to:
 
 ## Outline
 
-- [Intro to Linux/Unix](01_linux101.md)
+- [Intro to Linux/Unix](linux/00_overview.md)
 - [Available bioinformatics resources/tools](02_bioinformatics_resources.md)
 - [Common bioinformatics data formats](03_bioinformatics_formats.md)
 - [Submit bioinformatics jobs to Tufts HPC](04_bioinformatics_jobs.md)
