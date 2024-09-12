@@ -25,7 +25,7 @@
 
 ## File permissions
 
-<img src="images/file_permission.png" alt="file permission" style="zoom:50%;" />
+<img src="../images/file_permission.png" alt="file permission" style="zoom:50%;" />
 
 ## File names
 
@@ -58,4 +58,4 @@ Files are referred to by their location called the **path**
 - Relative Path (From my current location)
   - user01/file01
 
-<img src="images/file_system.png" alt="file_system" style="zoom:50%;" />
+<img src="../images/file_system.png" alt="file_system" style="zoom:50%;" />
