@@ -54,7 +54,7 @@ mv [options] source destination
 - **-i**: Prompts for confirmation before overwriting an existing file. Useful to avoid accidental data loss.- 
 - **-f**: Forces the operation without prompting, even if an existing file would be overwritten. Use with caution!
 
-### cp: copy a file/directory**
+### cp: copy a file/directory
 #### Usage
 ```
 cp [options] source destination
@@ -62,7 +62,7 @@ cp [options] source destination
 #### Common option
 - **-r**:  To copy directory
 
-### rm: remove files/directories**
+### rm: remove files/directories
 #### Usage 
 ```
 rm [options] file/directory
@@ -103,9 +103,27 @@ cut -f1,3 -d, file.csv ##(Extract columns 1 and 3 from a comma-separated file)
 ```
 
 ### sort: Sort lines of text files
+ `sort` is designed to sort plain-text data with columns. Running `sort` without any arguments simply sorts a file alphabetically.
+ By default, sort treats blank characters (like tab or spaces) as field delimiters. If your file uses another delimiter (such as a comma for CSV files), you can specify the field separator with `-t` (e.g., `-t","`). 
+
 #### Usage
+##### Sort lines alphabetically
 ```
 sort file.txt
+```
+##### Sort lines numerically
+```
+sort -n file.txt
+```
+
+##### Sort by a specific column
+```
+sort -k 2 file.txt  # Sort by the second column
+```
+
+##### Sort by multiple columns
+```
+sort -k 1,2 file.txt  # Sort by the first column, then the second
 ```
 
 ### uniq: Report or filter out repeated lines in a file.
