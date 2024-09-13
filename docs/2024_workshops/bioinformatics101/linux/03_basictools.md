@@ -1,162 +1,153 @@
-## Must-known Linux/Unix tools
+# Must-known Linux/Unix tools
 
-###  **File and Directory Management**
+##  File and Directory Management
+Linux provides powerful tools for managing files and file systems. Here we will introduce a few essential commands. 
 
-#### pwd: print the current working directory
-
+### pwd: print the current working directory
+#### Usage
 ```
-[yzhang85@login-prod-02 ~]$ pwd
+$ pwd
 /cluster/home/yzhang85
-[yzhang85@login-prod-02 ~]$ cd /cluster/tufts/rt/yzhang85/
-[yzhang85@login-prod-02 yzhang85]$ pwd
+$ cd /cluster/tufts/rt/yzhang85/
+$ pwd
 /cluster/tufts/rt/yzhang85
 ```
 
-#### cd: change directory
-
-Usage: cd [directory]
-
-If a directory is not supplied as an argument, it will default to your home directory. 
-
+### cd: change directory
+#### Usage 
 ```
-[yzhang85@login-prod-02 yzhang85]$ pwd
+cd [directory]
+```
+If a directory is not supplied as an argument, it will default to your **home** directory. 
+```
+$ pwd
 /cluster/tufts/rt/yzhang85
-[yzhang85@login-prod-02 yzhang85]$ cd ..
-[yzhang85@login-prod-02 rt]$ pwd
+$ cd ..
+$ pwd
 /cluster/tufts/rt
-[yzhang85@login-prod-02 rt]$ cd 
-[yzhang85@login-prod-02 ~]$ pwd
+$ cd  
+$ pwd
 /cluster/home/yzhang85
 ```
 
+### mkdir: create new directory
+#### Usage 
+```
+mkdir [options] dir_name
+```
 
+#### Common option
+​- **-p**: Creates parent directories if they don't exist.
 
-If a directory is not supplied as an argument, it will default to your home directory. 
+```
+$ mkdir -p rnaseq/output 
+```
+This will create output folder as well as its parent folder rnaseq if it doesn't exist.
 
- #### mkdir: create new directory
+### mv: move a file/directory to a new location or rename it
 
-**Usage:** mkdir [options] dir_name
+#### Usage
+```
+mv [options] source destination
+```
+#### Common option
+- **-i**: Prompts for confirmation before overwriting an existing file. Useful to avoid accidental data loss.- 
+- **-f**: Forces the operation without prompting, even if an existing file would be overwritten. Use with caution!
 
-Common option:
+### cp: copy a file/directory**
+#### Usage
+```
+cp [options] source destination
+```
+#### Common option
+- **-r**:  To copy directory
 
-​	-p: Creates parent directories if they don't exist.
-
-#### **mv:** move a file/directory to a new location or rename it
-
-**Usage:** mv [options] source destination
-
-Common option:
-
-- -i: Prompts for confirmation before overwriting an existing file. Useful to avoid accidental data loss.- 
-- -f: Forces the operation without prompting, even if an existing file would be overwritten. Use with caution!
-
-#### **cp:** **copy a file/directory**
-
-**Usage:** cp [options] source destination
-
-Common option:
-
-- -r:  To copy directory
-
-#### **rm:** **remove files/directories**
-
-**Usage:** rm [options] file/directory …
-
-Can delete multiple files
-
-Common option:
-
+### rm: remove files/directories**
+#### Usage 
+```
+rm [options] file/directory
+```
+#### Common option
 - **-r:** Deletes recursively any file and subdirectories contained within the given directory
 
+## Text processing
+Linux command-line tools are invaluable for bioinformatics text processing due to their efficiency and flexibility. They allow for rapid manipulation and analysis of large biological datasets, such as DNA sequences, protein structures, and gene expression data. Commands like grep, sed, awk, and cut are essential for filtering, extracting, and reformatting text-based biological information.
 
-
-### **File Viewing and Manipulation**
-
-####  **cat:** **Catenate files (joins their contents)**
-
-**Usage:** cat [options] file1 file2 …
-
-Common option:
-
+### cat: Catenate files (joins their contents)**
+#### Usage
+```
+cat [options] file1 file2 …
+```
+#### Common option
 - **-n:** tells cat to **number each line of the output**. This is helpful for debugging scripts.
 
-#### **head/tail**: Displays the beginning/end of a file
-
-**Usage:** head/tail [options] file
-
-Common option:
-
+### head/tail: Displays the beginning/end of a file
+#### Usage
+```
+head/tail [options] file
+```
+#### Common option
 - **-n** [number]: Specifies the number of lines to display (default: 10).
 
-#### **less/more**: View the content of a file page by page
-
+### less/more: View the content of a file page by page
+#### Usage
 ```
 less largefile.txt
 more largefile.txt
 ```
 
-#### cut: Extract sections from each line of files
-
+### cut: Extract sections from each line of files
+#### Usgae
 ```
 cut -f1,3 -d, file.csv ##(Extract columns 1 and 3 from a comma-separated file)
 ```
 
-#### sort: Sort lines of text files
-
+### sort: Sort lines of text files
+#### Usage
 ```
 sort file.txt
 ```
 
-#### uniq: Report or filter out repeated lines in a file.
-
+### uniq: Report or filter out repeated lines in a file.
+#### Usage
 ```
 sort file.txt | uniq
 ```
 
-
-
-#### **grep:** **Extracting lines matching (not matching) a pattern**
-
-**Usage:** grep [options] PATTERN file
-
-Common option:
-
+### grep:Extracting lines matching (not matching) a pattern**
+#### Usage
+ ```
+ grep [options] PATTERN file
+```
+#### Common option
 - **-i**: ignore cases
-
 - **-v**: select non-matching lines.
-
 - **-A NUM:** Print **NUM** lines of trailing context after matching lines.
-
 - **-B NUM:** Print **NUM** lines of leading context before matching lines.
 
+### sed: Stream editor for modifying file content
+
+### join
 
 
-#### sed: Stream editor for modifying file content
-
-#### join
-
-
-
-### **Data Compression and Archiving**
-
-#### gzip**/**gunzip: Compress and decompress files.
-
+## Data Compression and Archiving
+### gzip/gunzip: Compress and decompress files.
+#### Usage
 ```
 gzip file.txt
 ```
 
-#### tar: Archive multiple files into one or extract them.
-
+### tar: Archive multiple files into one or extract them.
+#### Usage
 ```
 tar -cvf archive.tar directory/ ## Create an archive
 tar -xvf archive.tar ## Extract an archive
 ```
 
-### 
+ 
+## Other useful tools
 
-### Other useful tools
-
-### **Redirection:** >, >>, <
+### Redirection: >, >>, <
 
 - `>`: Overwrites the contents of a file with the command's output
 
@@ -170,18 +161,17 @@ tar -xvf archive.tar ## Extract an archive
 
 ​	`sort < names.txt`
 
-#### Pipe: |
+### Pipe: |
 
 Pipes in Linux are a powerful feature that allows you to connect the output of one command directly as the input to another command. This is a key concept in Unix/Linux philosophy, which promotes the use of small, modular tools that can be combined to perform complex tasks.
 
 A pipe is represented by the `|` symbol. When you place a pipe between two commands, the standard output (`stdout`) of the command on the left of the pipe becomes the standard input (`stdin`) for the command on the right.
 
-##### Syntax
+#### Usage
 
 ```
 command1 | command2
 ```
-
 
 
 ```
@@ -193,10 +183,9 @@ sort file.txt | uniq
 ​	•	uniq: Removes duplicate lines from the sorted output.
 
 
+### Wildcards: selecting multiple files/directories based on patterns
 
-#### Wildcards: selecting multiple files/directories based on patterns
-
-- *****: Represents zero or more characters.
+- **\***: Represents zero or more characters.
 
  		*.fastq.gz  matches all fastq.gz files
 
