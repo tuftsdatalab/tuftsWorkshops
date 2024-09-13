@@ -39,8 +39,8 @@ Linux is a free, open-source, and Unix-like operating system kernel that was ori
 
 **Shell** is like a translator and bridge between you and the operating system's core, the **kernel**. It takes the commands you type and interprets them, telling the kernel what actions to perform. 
 
-<img src="../img/shell.png" width="200">
+<img src="../images/shell.png" width="200">
 
-[Next: Files and File system](02_files.md)
+[Previous: Overview](00_overview.md)                          [Next: Files and File system](02_files.md)
 
-[Previous: Overview](00_overview.md)
+
