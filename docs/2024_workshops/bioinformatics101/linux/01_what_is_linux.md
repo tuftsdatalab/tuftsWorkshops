@@ -41,6 +41,8 @@ Linux is a free, open-source, and Unix-like operating system kernel that was ori
 
 <img src="../images/shell.png" width="200">
 
-[Previous: Overview](00_overview.md)                                                                      [Next: Files and File system](02_files.md)
+[Previous: Overview ](00_overview.md)                                                                    
+
+[Next: Files and File system](02_files.md)
 
 

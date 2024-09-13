@@ -9,4 +9,4 @@ In this section, we will briefly introduce the history and features of Linux/Uni
 - [Loops](04_loops.md)
 - [Advanced Linux/Unix tools](05_advanced_tools.md)
 
-<a href="01_what_is_linux.md" style="float: right;">Next &raquo;</a>
+[Next: Linux](01_what_is_linux.md)
