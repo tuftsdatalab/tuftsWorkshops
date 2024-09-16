@@ -171,4 +171,9 @@ nav:
                 - "nf-core differentialabundance": 2024_workshops/nfcore_rnaseq_sp24/03_differentialabundance.md
                 - "multiqc report": 2024_workshops/nfcore_rnaseq_sp24/04_multiqc_report.html
                 - "differentialabundance report": 2024_workshops/nfcore_rnaseq_sp24/05_differentialabundance_report.html
-
+        - Fall 2024:
+            - Beginner's guide for conducting bioinformatics analysis on Tufts HPC:
+                - "Linux/Unix command line basics": 2024_workshops/bioinformatics101/linux/00_overview.md
+                - "Available bioinformatics resources/tools on Tufts HPC": 2024_workshops/bioinformatics101/01_bioinformatics_resources.md
+                - "Common bioinformatics data formats": 2024_workshops/bioinformatics101/03_bioinformatics_formats.md
+                - "How to submit bioinformatics jobs to Tufts HPC": 2024_workshops/bioinformatics101/04_bioinformatics_jobs.md     
