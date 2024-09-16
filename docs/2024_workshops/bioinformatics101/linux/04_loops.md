@@ -96,7 +96,10 @@ else
     echo "Variant calling complete. Results saved to $output_vcf"
 fi
 ```
+
 This if statement ensures that the variant calling process is skipped if the output file already exists, preventing unnecessary computations and saving processing time. This approach is useful in bioinformatics workflows where redundant analyses can be avoided by checking for existing results.
+
+
 
 
 [Previous: Commands](03_basictools.md)                                                                 
