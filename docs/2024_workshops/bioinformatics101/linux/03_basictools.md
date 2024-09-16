@@ -30,6 +30,17 @@ $ pwd
 /cluster/home/yzhang85
 ```
 
+### touch: create new files and update timestamps
+touch is used to create new files or to update the timestamps (access and modification times) of existing files. 
+#### Create new file
+```
+touch newfile.txt
+```
+#### Update Timestamps of Existing Files
+```
+touch existingfile.txt
+```
+
 ### mkdir: create new directory
 #### Usage 
 ```
@@ -97,7 +108,17 @@ more largefile.txt
 ```
 
 ### cut: Extract sections from each line of files
-#### Usgae
+cut is a text-processing utility used to extract specific sections of lines from a file or standard input. It is commonly used to split lines of text based on delimiters, extract columns of data, and work with fixed-width fields. The cut command is helpful for manipulating text files like TSVs and CSVs.
+
+#### Usage
+```
+cut [OPTIONS] [FILE...]
+```
+#### Common options
+- **-d**: Specifies the delimiter for field extraction. Default is TAB. Example: `-d,` (use a comma as the delimiter).
+- **-f**: Selects specific fields, used with a delimiter (default is TAB). Example: `-f 1,3` (extract fields 1 and 3).
+
+#### Example
 ```
 cut -f1,3 -d, file.csv ##(Extract columns 1 and 3 from a comma-separated file)
 ```
@@ -144,16 +165,63 @@ sort file.txt | uniq
 - **-B NUM:** Print **NUM** lines of leading context before matching lines.
 
 ### sed: Stream editor for modifying file content
+sed (short for stream editor) is a powerful text-processing tool in Bash that allows you to parse and transform text in files or streams. It is commonly used to perform basic text manipulations like search and replace, insert and delete lines, and apply regular expressions on text data.
+#### Substitution (Search and Replace)
+Replace the first occurrence of **old** with **new** in each line:
+```
+sed 's/old/new/' filename.txt
+```
+Replace **all** occurrences of **old** with **new** in each line:
+```
+sed 's/old/new/g' filename.txt
+```
 
-### join
+#### In-Place Substitution
+```
+sed -i 's/old/new/g' filename.txt
+```
+Warning: Use this command with caution as it directly modifies the original file. To create a backup, use `-i.bak`:
+```
+sed -i.bak 's/old/new/g' filename.txt
+```
+#### Delete Lines
+```
+sed '/pattern/d' filename.txt
+```
 
+`sed` and `awk` that we will introduce later are very powerful bash commands. If you have interest in learning more about their usage, below is a very good book.
+![se and awk](https://m.media-amazon.com/images/I/916OGXYyYVL._SL1500_.jpg)
 
 ## Data Compression and Archiving
-### gzip/gunzip: Compress and decompress files.
+When working with files on Linux, compressing them to save space and bundling multiple files into a single archive is a common practice. The commands gzip, gunzip, and tar are essential tools for file compression and archiving in Bash.
+### gzip: Compress files
+gzip is used to compress files in Linux. It reduces file sizes using the **DEFLATE** algorithm, resulting in files with the `.gz` extension.
 #### Usage
+##### Compress file/files
 ```
-gzip file.txt
+gzip file.txt ## Compress file.txt and replace it with file.txt.gz.
+gzip file1.txt file2.txt file3.txt ## Each file will be compressed and replaced with a .gz version.
 ```
+
+##### Keep the Original File
+```
+gzip -k file.txt ## Create file.txt.gz while preserving the original file.txt.
+```
+##### Compress the folder
+```
+gzip -r directory_name
+```
+### gunzip: decompress .gz files
+##### Decompress files
+```
+gunzip file.txt.gz
+gunzip file1.txt.gz file2.txt.gz
+```
+##### Keep the Compressed File
+```
+gunzip -k file.txt.gz
+```
+
 
 ### tar: Archive multiple files into one or extract them.
 #### Usage
@@ -266,6 +334,15 @@ total 31
 
 
 ### ln -s: softlink
+A `soft link` (also known as a symbolic link or symlink) is a type of file in Linux that points to another file or directory. It’s essentially a shortcut that references the location of another file, allowing you to access it from a different location in the filesystem.
+#### Usage
+To create a soft link, you use the `ln` command with the `-s` option:
+```
+ln -s target_file link_name
+```
+- target_file: The file or directory you want to link to.
+- link_name: The name of the symlink that will point to the target.
+
 
 [Previous: Files and File system](02_files.md)                                                                 
 
