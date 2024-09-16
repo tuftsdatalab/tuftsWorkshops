@@ -2,22 +2,16 @@
 
 ## Welcome
 The goals of this workshop are to:
-
 - Help users get started with bioinformatics analysis, especially command-line bioinformatics, on Tufts HPC.
-
 - Familiarise with bioinformatics resources/tools available on Tufts HPC.
 
-
-## Outline
-
-- [Intro to Linux/Unix](linux/00_overview.md)
-- [Available bioinformatics resources/tools](02_bioinformatics_resources.md)
-- [Common bioinformatics data formats](03_bioinformatics_formats.md)
-- [Submit bioinformatics jobs to Tufts HPC](04_bioinformatics_jobs.md)
-
+## Agenda
+- [Linux/Unix command line basics](linux/00_overview.md)
+- [Available bioinformatics resources/tools on Tufts HPC](01_bioinformatics_resources.md)
+- [Common bioinformatics data formats](02_bioinformatics_formats.md)
+- [How to submit bioinformatics jobs to Tufts HPC](03_bioinformatics_jobs.md)
 
 ## Presenters
-
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
