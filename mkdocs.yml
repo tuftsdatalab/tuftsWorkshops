@@ -171,6 +171,7 @@ nav:
         - Fall 2024:
             - Beginner's guide for conducting bioinformatics analysis on Tufts HPC:
                 - "Linux/Unix command line basics": 2024_workshops/bioinformatics101/linux/00_overview.md
+                    - "Introduction to Linux/Unix": 2024_workshops/bioinformatics101/linux/01_what_is_linux.md
                 - "Available bioinformatics resources/tools on Tufts HPC": 2024_workshops/bioinformatics101/01_bioinformatics_resources.md
                 - "Common bioinformatics data formats": 2024_workshops/bioinformatics101/03_bioinformatics_formats.md
                 - "How to submit bioinformatics jobs to Tufts HPC": 2024_workshops/bioinformatics101/04_bioinformatics_jobs.md     
