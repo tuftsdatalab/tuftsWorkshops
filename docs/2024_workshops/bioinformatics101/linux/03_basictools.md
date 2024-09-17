@@ -237,13 +237,26 @@ gunzip -k file.txt.gz
 ```
 
 ### tar: Archive multiple files into one or extract them.
-#### Usage
+tar is used to create, extract, and manipulate archive files. However, tar itself does not compress files; it only archives them by combining multiple files and directories into a single file. This file usually has a `.tar` extension. However, tar can be used in combination with other compression utilities (like `gzip` or `bzip2`) to compress the archive.
+#### Create a .tar archive without compression
 ```
-tar -cvf archive.tar directory/ ## Create an archive
-tar -xvf archive.tar ## Extract an archive
+tar -cvf archive.tar my_folder
+```
+#### Extract a tar file
+```
+tar -xvf archive.tar
 ```
 
- 
+#### Creating a compressed archive(.tar.gz)
+```
+tar -cvzf archive.tar.gz my_folder
+```
+
+#### Extracting a compressed archive(.tar.gz) 
+```
+tar -xvzf archive.tar.gz
+```
+
 ## Other useful tools
 
 ### Redirection: >, >>, <
