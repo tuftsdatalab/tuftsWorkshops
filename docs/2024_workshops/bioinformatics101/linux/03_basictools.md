@@ -258,7 +258,7 @@ tar -xvzf archive.tar.gz
 ```
 
 ## Other useful tools
-
+___
 ### Redirection: >, >>, <
 
 - `>`: Overwrites the contents of a file with the command's output
@@ -285,55 +285,46 @@ A pipe is represented by the `|` symbol. When you place a pipe between two comma
 command1 | command2
 ```
 
-
 ```
 sort file.txt | uniq
 ```
 
-​	•	sort file.txt: Sorts the lines in file.txt.
+- **sort file.txt**: Sorts the lines in file.txt.   
 
-​	•	uniq: Removes duplicate lines from the sorted output.
+- **uniq**: Removes duplicate lines from the sorted output.
 
 
 ### Wildcards: selecting multiple files/directories based on patterns
 
-- **\***: Represents zero or more characters.
-
- 		*.fastq.gz  matches all fastq.gz files
+- **\***: Represents zero or more characters.   
+   
+   **\*.fastq.gz**  matches all fastq.gz files
 
 - **?**: Represents a single character.
-
- 		file?.txt matches "file1.txt", "fileA.txt", but not "file12.txt".
+   
+   **file?.txt** matches "file1.txt", "fileA.txt", but not "file12.txt".
 
 - **[]**: Represents a single character within a specified range or set.
 
-​		 [abc]at matches "bat", "cat", or "aat”.
+   **[abc]at** matches "bat", "cat", or "aat”.
 
 - **[0-9]** matches any single digit.
 
 ### Alias
-
 An alias in Linux is a custom shortcut or abbreviation for a command or a series of commands. Once defined, you can use the alias in place of the original command.
-
 #### Creating an alias
-
 To create an alias, use the alias command followed by the name you want to give the alias and the command it should execute.
-
 ```
 alias alias_name='command'
 ```
-
 #### Example
-
 ```
 alias ll='ls -l'
 alias la='ls -a'
 alias mav='module avail'
 alias ml='module load'
 ```
-
 #### Using alias
-
 ```
 [yzhang85@login-prod-03 MPI]$ ll
 total 31
@@ -357,15 +348,14 @@ total 31
    D:  Default Module
 ```
 
-
-
 ### ln -s: softlink
-A `soft link` (also known as a symbolic link or symlink) is a type of file in Linux that points to another file or directory. It’s essentially a shortcut that references the location of another file, allowing you to access it from a different location in the filesystem.
+A **soft link** (also known as a symbolic link or symlink) is a type of file in Linux that points to another file or directory. It’s essentially a shortcut that references the location of another file, allowing you to access it from a different location in the filesystem.
 #### Usage
 To create a soft link, you use the `ln` command with the `-s` option:
 ```
 ln -s target_file link_name
 ```
+
 - target_file: The file or directory you want to link to.
 - link_name: The name of the symlink that will point to the target.
 
