@@ -1,6 +1,7 @@
 # Must-known Linux/Unix tools
 
 ##  File and Directory Management
+___
 Linux provides powerful tools for managing files and file systems. Here we will introduce a few essential commands. 
 
 ### pwd: print the current working directory
@@ -29,6 +30,10 @@ $ cd
 $ pwd
 /cluster/home/yzhang85
 ```
+#### Shortcuts
+- **..**	cd to the parent directory.	`cd ..`
+- **~**	cd to the home directory.	`cd ~`
+- **-**	cd to the previous directory.	`cd -`
 
 ### touch: create new files and update timestamps
 touch is used to create new files or to update the timestamps (access and modification times) of existing files. 
@@ -36,7 +41,7 @@ touch is used to create new files or to update the timestamps (access and modifi
 ```
 touch newfile.txt
 ```
-#### Update Timestamps of Existing Files
+#### Update timestamps of existing files
 ```
 touch existingfile.txt
 ```
@@ -46,24 +51,22 @@ touch existingfile.txt
 ```
 mkdir [options] dir_name
 ```
-
-#### Common option
-​- **-p**: Creates parent directories if they don't exist.
+#### Common option   
+- **-p**: Creates parent directories if they don't exist.
 
 ```
 $ mkdir -p rnaseq/output 
 ```
-This will create output folder as well as its parent folder rnaseq if it doesn't exist.
+This will create `output` folder as well as its parent folder `rnaseq` if it doesn't exist.
 
 ### mv: move a file/directory to a new location or rename it
-
 #### Usage
 ```
 mv [options] source destination
 ```
 #### Common option
-- **-i**: Prompts for confirmation before overwriting an existing file. Useful to avoid accidental data loss.- 
-- **-f**: Forces the operation without prompting, even if an existing file would be overwritten. Use with caution!
+- **-i**: Prompts for confirmation before overwriting an existing file. Useful to avoid accidental data loss.
+- **-f**: Forces the operation without prompting, even if an existing file would be overwritten. **Use with caution**!
 
 ### cp: copy a file/directory
 #### Usage
@@ -79,12 +82,14 @@ cp [options] source destination
 rm [options] file/directory
 ```
 #### Common option
-- **-r:** Deletes recursively any file and subdirectories contained within the given directory
+- **-r:** Deletes recursively any file and subdirectories contained within the given directory.
+
 
 ## Text processing
+___
 Linux command-line tools are invaluable for bioinformatics text processing due to their efficiency and flexibility. They allow for rapid manipulation and analysis of large biological datasets, such as DNA sequences, protein structures, and gene expression data. Commands like grep, sed, awk, and cut are essential for filtering, extracting, and reformatting text-based biological information.
 
-### cat: Catenate files (joins their contents)**
+### cat: catenate files (joins their contents)**
 #### Usage
 ```
 cat [options] file1 file2 …
@@ -92,7 +97,7 @@ cat [options] file1 file2 …
 #### Common option
 - **-n:** tells cat to **number each line of the output**. This is helpful for debugging scripts.
 
-### head/tail: Displays the beginning/end of a file
+### head/tail: display the beginning/end of a file
 #### Usage
 ```
 head/tail [options] file
@@ -100,16 +105,28 @@ head/tail [options] file
 #### Common option
 - **-n** [number]: Specifies the number of lines to display (default: 10).
 
-### less/more: View the content of a file page by page
+### less/more: view the content of a file page by page
 #### Usage
 ```
 less largefile.txt
 more largefile.txt
 ```
+#### Navigation with less
+- **Arrow Keys**: Use the up and down arrow keys to scroll line by line.
+- **Spacebar**: Move forward one page.
+- **b**: Move backward one page.
+- **q**: Quit and exit less.
+- **/search_term**: Search for search_term within the file. Press n to go to the next occurrence.
+- **g**: Go to the beginning of the file.
+- **G**: Go to the end of the file.
+#### Navigation with more
+- **Spacebar**: Move forward one page.
+- **Enter**: Move forward one line.
+- **q**: Quit and exit more.
+- **/search_term**: Search for search_term within the file (forward only).
 
 ### cut: Extract sections from each line of files
-cut is a text-processing utility used to extract specific sections of lines from a file or standard input. It is commonly used to split lines of text based on delimiters, extract columns of data, and work with fixed-width fields. The cut command is helpful for manipulating text files like TSVs and CSVs.
-
+cut is a text-processing utility used to extract specific sections of lines from a file or standard input. It is commonly used to split lines of text based on delimiters, extract columns of data, and work with fixed-width fields. The cut command is helpful for manipulating text files like **TSVs** and **CSVs**.
 #### Usage
 ```
 cut [OPTIONS] [FILE...]
@@ -117,7 +134,6 @@ cut [OPTIONS] [FILE...]
 #### Common options
 - **-d**: Specifies the delimiter for field extraction. Default is TAB. Example: `-d,` (use a comma as the delimiter).
 - **-f**: Selects specific fields, used with a delimiter (default is TAB). Example: `-f 1,3` (extract fields 1 and 3).
-
 #### Example
 ```
 cut -f1,3 -d, file.csv ##(Extract columns 1 and 3 from a comma-separated file)
@@ -126,7 +142,6 @@ cut -f1,3 -d, file.csv ##(Extract columns 1 and 3 from a comma-separated file)
 ### sort: Sort lines of text files
  `sort` is designed to sort plain-text data with columns. Running `sort` without any arguments simply sorts a file alphabetically.
  By default, sort treats blank characters (like tab or spaces) as field delimiters. If your file uses another delimiter (such as a comma for CSV files), you can specify the field separator with `-t` (e.g., `-t","`). 
-
 #### Usage
 ##### Sort lines alphabetically
 ```
@@ -136,24 +151,23 @@ sort file.txt
 ```
 sort -n file.txt
 ```
-
 ##### Sort by a specific column
 ```
 sort -k 2 file.txt  # Sort by the second column
 ```
-
 ##### Sort by multiple columns
 ```
 sort -k 1,2 file.txt  # Sort by the first column, then the second
 ```
 
 ### uniq: Report or filter out repeated lines in a file.
+uniq is used to filter out or identify duplicate lines in a sorted file. It removes adjacent duplicate lines, so it’s often combined with the `sort` command to find unique lines in a file effectively.
 #### Usage
 ```
 sort file.txt | uniq
 ```
 
-### grep:Extracting lines matching (not matching) a pattern**
+### grep:Extracting lines matching (not matching) a pattern
 #### Usage
  ```
  grep [options] PATTERN file
@@ -176,7 +190,7 @@ Replace **all** occurrences of **old** with **new** in each line:
 sed 's/old/new/g' filename.txt
 ```
 
-#### In-Place Substitution
+#### In-place substitution
 ```
 sed -i 's/old/new/g' filename.txt
 ```
@@ -184,15 +198,16 @@ Warning: Use this command with caution as it directly modifies the original file
 ```
 sed -i.bak 's/old/new/g' filename.txt
 ```
-#### Delete Lines
+#### Delete lines
 ```
 sed '/pattern/d' filename.txt
 ```
 
 `sed` and `awk` that we will introduce later are very powerful bash commands. If you have interest in learning more about their usage, below is a very good book.
-![se and awk](https://m.media-amazon.com/images/I/916OGXYyYVL._SL1500_.jpg)
+<img src="https://m.media-amazon.com/images/I/916OGXYyYVL._SL1500_.jpg" width="400">
 
 ## Data Compression and Archiving
+___
 When working with files on Linux, compressing them to save space and bundling multiple files into a single archive is a common practice. The commands gzip, gunzip, and tar are essential tools for file compression and archiving in Bash.
 ### gzip: Compress files
 gzip is used to compress files in Linux. It reduces file sizes using the **DEFLATE** algorithm, resulting in files with the `.gz` extension.
@@ -202,7 +217,6 @@ gzip is used to compress files in Linux. It reduces file sizes using the **DEFLA
 gzip file.txt ## Compress file.txt and replace it with file.txt.gz.
 gzip file1.txt file2.txt file3.txt ## Each file will be compressed and replaced with a .gz version.
 ```
-
 ##### Keep the Original File
 ```
 gzip -k file.txt ## Create file.txt.gz while preserving the original file.txt.
@@ -221,7 +235,6 @@ gunzip file1.txt.gz file2.txt.gz
 ```
 gunzip -k file.txt.gz
 ```
-
 
 ### tar: Archive multiple files into one or extract them.
 #### Usage

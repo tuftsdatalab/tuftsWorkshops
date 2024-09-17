@@ -58,7 +58,7 @@ Files are referred to by their location called the **path**
 - Relative Path (From my current location)
   - user01/file01
 
-<img src="../images/file_system.png" width="500">
+<img src="../images/file_system.png" width="600">
 
 [Previous: Linux/Unix ](01_what_is_linux.md)                                                                    
 
