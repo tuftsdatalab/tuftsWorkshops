@@ -172,18 +172,18 @@ nav:
             - Getting started with Bioinformatics on Tufts HPC:
                 - "Linux/Unix command line basics":
                     - "Overview": 2024_workshops/bioinformatics201/linux/00_overview.md
-                    - "Introduction to Linux/Unix": 2024_workshops/bioinformatics201/linux/01_what_is_linux.md
-                - "Available bioinformatics resources/tools on Tufts HPC": 2024_workshops/bioinformatics201/01_bioinformatics_resources.md
-                - "Common bioinformatics data formats": 2024_workshops/bioinformatics201/03_bioinformatics_formats.md
-                - "How to submit bioinformatics jobs to Tufts HPC": 2024_workshops/bioinformatics201/04_bioinformatics_jobs.md     
+                    - "Introduction to Linux/Unix": 2024_workshops/2024_bioinformatics201/linux/01_what_is_linux.md
+                - "Available bioinformatics resources/tools on Tufts HPC": 2024_workshops/2024_bioinformatics201/01_bioinformatics_resources.md
+                - "Common bioinformatics data formats": 2024_workshops/2024_bioinformatics201/03_bioinformatics_formats.md
+                - "How to submit bioinformatics jobs to Tufts HPC": 2024_workshops/2024_bioinformatics201/04_bioinformatics_jobs.md     
             - Software installation and environment management in HPC:
                 - "TBD":
-                    - "Overview": 2024_workshops/bioinformatics301/00_introduction.md
+                    - "Overview": 2024_workshops/2024_bioinformatics301/00_introduction.md
             - Advanced HPC workflows and job management:
                 - "Array jobs": 
-                    - "Overview": 2024_workshops/bioinformatics401/array/00_introduction.md
+                    - "Overview": 2024_workshops/2024_bioinformatics401/array/00_introduction.md
                 - "Nextflow and nf-core":
-                    - "Overview": 2024_workshops/bioinformatics401/nfcore/00_introduction.md
+                    - "Overview": 2024_workshops/2024_bioinformatics401/nfcore/00_introduction.md
 
 
 
