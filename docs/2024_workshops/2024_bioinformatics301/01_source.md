@@ -1,7 +1,5 @@
 # Installation from source codes
 
-## Can I have sudo privilege?
-
 ![permission](images/permission.png)
 
 ## make
@@ -24,13 +22,9 @@ By default, **make install** will install applications into `/usr/local`, but re
 The best way is to install applications into your home directory or /depot by passing the option `--prefix=TargetDirName` to `./configure`. 
 
 
-
 ### bwa
-
-#### Installation guide from README
-
-https://github.com/lh3/bwa
-
+[BWA](https://bio-bwa.sourceforge.net/) is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM. The first algorithm is designed for Illumina sequence reads up to 100bp, while the rest two for longer sequences ranged from 70bp to 1Mbp. BWA-MEM and BWA-SW share similar features such as long-read support and split alignment, but BWA-MEM, which is the latest, is generally recommended for high-quality queries as it is faster and more accurate. BWA-MEM also has better performance than BWA-backtrack for 70-100bp Illumina reads.
+#### Installation guide from [README](https://github.com/lh3/bwa)
 ```
 git clone https://github.com/lh3/bwa.git
 cd bwa; make
@@ -85,11 +79,8 @@ Note: To use BWA, you need to first index the genome with `bwa index'.
 ```
 
 ### hmmer
-
-#### Installation guide from README
-
-https://github.com/EddyRivasLab/hmmer
-
+[HMMER](http://hmmer.org)) is used for searching sequence databases for sequence homologs, and for making sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs).
+#### Installation guide from [README](https://github.com/EddyRivasLab/hmmer)
 ```
 wget http://eddylab.org/software/hmmer/hmmer.tar.gz
 tar zxf hmmer.tar.gz
@@ -134,9 +125,7 @@ Usage: hmmsearch [options] <hmmfile> <seqdb>
 Installation of some bioinformatics applications requires both **make** and **cmake**.
 
 ### RegTools
-#### Installation guide from the developer
-
-https://regtools.readthedocs.io/en/latest/
+#### Installation [guide](https://regtools.readthedocs.io/en/latest/) from the developer 
 
 ```
 git clone https://github.com/griffithlab/regtools
@@ -176,8 +165,7 @@ $ make
 $ export PATH=$PATH:$HOME/apps/regtools/build
 ```
 
-**DCMAKE_INSTALL_PREFIX**
-
+### DCMAKE_INSTALL_PREFIX
 Some applications' installation also has install stage, which will have `make intall` as the last step. For these installations, we have to include `-DCMAKE_INSTALL_PREFIX` in the `cmake ..` step. Below are the common steps for such installations:
 
 ```
