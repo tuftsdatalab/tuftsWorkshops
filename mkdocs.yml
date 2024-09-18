@@ -186,7 +186,8 @@ nav:
             - Advanced HPC workflows and job management: 
                 - "Overview": 2024_workshops/2024_bioinformatics401/00_introduction.md
                 - "Array jobs": 2024_workshops/2024_bioinformatics401/01_array_jobs.md
-                - "Nextflow and nf-core": 2024_workshops/2024_bioinformatics401/02_nfcore.md
+                - "Nextflow Overview": 2024_workshops/2024_bioinformatics401/02_nextflow.md
+                - "How to run nf-core pipelines": 2024_workshops/2024_bioinformatics401/03_nfcore.md
 
 
 
