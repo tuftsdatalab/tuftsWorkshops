@@ -2,7 +2,7 @@
 
 ## Can I have sudo privilege?
 
-![permission](/Users/yucheng/Documents/GitHub/Tufts_2024Fall_Training/images/permission.png)
+![permission](images/permission.png)
 
 ## make
 GNU Make is a program often used for compiling software. It uses a plain text file named **makefile** or **Makefile**.
