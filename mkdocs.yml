@@ -171,7 +171,7 @@ nav:
         - Fall 2024:
             - Getting started with Bioinformatics on Tufts HPC:
                 - "Linux/Unix command line basics":
-                    - "Overview": 2024_workshops/bioinformatics201/linux/00_overview.md
+                    - "Overview": 2024_workshops/2024_bioinformatics201/linux/00_overview.md
                     - "Introduction to Linux/Unix": 2024_workshops/2024_bioinformatics201/linux/01_what_is_linux.md
                     - "Files and File system": 2024_workshops/2024_bioinformatics201/linux/02_files.md
                     - "Must-known Linux/Unix tools": 2024_workshops/2024_bioinformatics201/linux/03_basictools.md
