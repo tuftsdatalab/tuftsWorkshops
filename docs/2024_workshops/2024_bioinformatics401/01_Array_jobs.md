@@ -8,7 +8,6 @@ Job arrays offer a mechanism for submitting and managing collections of similar 
 - I need to run a simulation 1000 times with a different set of parameters.
 
 
-
 **Why not use serial jobs?** 
 
 A common approach is to use bash loops to submit jobs one by one, but this is not efficient for large numbers of tasks. For example:
@@ -18,7 +17,6 @@ for fq in *.fastq.gz; do
   fastqc -t 4 $fq
 done
 ```
-
 
 
 <img src="/Users/yucheng/Documents/GitHub/Tufts_2024Fall_Training/images/serial_job.png" alt="serial_job" style="zoom:40%;" />
