@@ -1,13 +1,12 @@
-# Speeding up your bioinformatics analysis
+# Software Installation and Environment Management in HPC
 This repository stores the slides and hands-on sessions for bioinformatics training workshops provided by Tufts Research Technology in October 2024.
 
 
 ## Agenda
 
-- [Intro to Linux/Unix](01_linux101.md)
-- [Available bioinformatics resources/tools](02_bioinformatics_resources.md)
-- [Common bioinformatics data formats](03_bioinformatics_formats.md)
-- [Submit bioinformatics jobs to Tufts HPC](04_bioinformatics_jobs.md)
+- [Application installation from source coes](01_source.md)
+- [R package installation](02_R.md)
+- [Conda enivronment management, Jupyer kernel and modulefiles](03_conda.md)
 
 
 ## Presenters
