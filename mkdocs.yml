@@ -176,13 +176,13 @@ nav:
                 - "Available bioinformatics resources/tools on Tufts HPC": 2024_workshops/bioinformatics201/01_bioinformatics_resources.md
                 - "Common bioinformatics data formats": 2024_workshops/bioinformatics201/03_bioinformatics_formats.md
                 - "How to submit bioinformatics jobs to Tufts HPC": 2024_workshops/bioinformatics201/04_bioinformatics_jobs.md     
-           - Software installation and environment management in HPC:
-               - "TBD":
+            - Software installation and environment management in HPC:
+                - "TBD":
                     - "Overview": 2024_workshops/bioinformatics301/00_introduction.md
-           - Advanced HPC workflows and job management:
-               - "Array jobs": 
+            - Advanced HPC workflows and job management:
+                - "Array jobs": 
                     - "Overview": 2024_workshops/bioinformatics401/array/00_introduction.md
-               - "Nextflow and nf-core":
+                - "Nextflow and nf-core":
                     - "Overview": 2024_workshops/bioinformatics401/nfcore/00_introduction.md
 
 
