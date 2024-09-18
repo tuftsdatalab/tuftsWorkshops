@@ -43,6 +43,8 @@ $ awk 'BEGIN { FS="\t"; OFS="\t" } $6 < 0.05 && $3 > 1 { print $1, $3, $6 }' des
 
 ## GNU Parallel
 
+GNU Parallel is a command-line tool designed to execute shell commands or scripts in parallel on a local or remote system. It is especially useful for bioinformatics, data processing, and other fields that involve repetitive command execution, as it can significantly speed up tasks by utilizing multiple CPU cores.
+
 ```
 parallel -j N "fastqc {}" ::: *.fastq.gz
 ```
@@ -52,3 +54,6 @@ parallel -j N "fastqc {}" ::: *.fastq.gz
 - ***.fastq.gz**: Wildcard pattern to match all FASTQ files with the .fastq.gz extension in the current directory. Modify as needed for different file extensions or locations.
 
  <img src="http://i.stack.imgur.com/17FsG.png" alt="GNU parallel" style="height:500px;" />
+
+<!-- Embedding a YouTube video -->
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=OpaiGYxkSuQ&list=PL284C9FF2488BC6D1&index=1" frameborder="0" allowfullscreen></iframe>

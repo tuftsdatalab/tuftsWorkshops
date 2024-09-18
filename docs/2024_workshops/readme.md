@@ -8,6 +8,7 @@ The TTS Research Technology Bioinformatics Team has prepared the following works
 ## Workshops:      
 - [nextflow and nf-core RNA-Seq](./nfcore_rnaseq_sp24/00_introduction.md) 
 - [Getting Started with Bioinformatics on HPC](./2024_bioinformatics201/00_introduction.md)
-
+- [Software Installation and Environment Management in HPC](./2024_bioinformatics301/00_introduction.md)
+- [Advanced HPC Workflows and Job Management](./2024_bioinformatics401/00_introduction.md)
 If you have suggestions for future workshops, please reach out to tts-research@tufts.edu.        
 Additionally, if you'd like to be kept up to date on current workshops consider subscribing to our e-list: best@elist.tufts.edu
