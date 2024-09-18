@@ -183,12 +183,10 @@ nav:
             - Software installation and environment management in HPC:
                 - "TBD":
                     - "Overview": 2024_workshops/2024_bioinformatics301/00_introduction.md
-            - Advanced HPC workflows and job management:
-                - "Array jobs": 
-                    - "Overview": 2024_workshops/2024_bioinformatics401/array/00_introduction.md
-                - "Nextflow and nf-core":
-                    - "Overview": 2024_workshops/2024_bioinformatics401/nfcore/00_introduction.md
-
+            - Advanced HPC workflows and job management: 
+                - "Overview": 2024_workshops/2024_bioinformatics401/00_introduction.md
+                - "Array jobs": 2024_workshops/2024_bioinformatics401/01_array_jobs.md
+                - "Nextflow and nf-core": 2024_workshops/2024_bioinformatics401/02_nfcore.md
 
 
 
