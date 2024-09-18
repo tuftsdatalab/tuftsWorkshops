@@ -1,10 +1,8 @@
 # Advanced Linux/Unix tools
 ## Awk
-
 Awk is a powerful text-processing tool in Unix/Linux that allows you to manipulate and analyze text files and streams. It’s named after its creators (Aho, Weinberger, and Kernighan) and is commonly used for pattern scanning, processing, and reporting.
 
 #### Syntax
-
 ```
 awk 'pattern { action }' file
 ```
@@ -15,14 +13,9 @@ awk 'pattern { action }' file
 
 - **file**: The text file to be processed.
 
-  
-
   Awk processes input data a record at a time. Each record is composed of fields, separate chunks that awk automatically separates. Because awk was designed to work with `tabular data` each record is a line, and each field is a column’s entry for that record. The clever part about awk is that it automatically assigns the entire record to the variable `$0`, and field one’s value is assigned to `$1`, field two’s value is assigned to `$2`, field three’s value is assigned to `$3`, and so forth.	
 
-
-
 #### Example
-
 ```
 $ head -n 6 
 gene_id	baseMean	log2FoldChange	lfcSE	pvalue	padj
@@ -36,24 +29,20 @@ $ awk 'BEGIN { FS="\t"; OFS="\t" } $6 < 0.05 && $3 > 1 { print $1, $3, $6 }' des
 ```
 
 - **BEGIN { FS="\t"; OFS="\t" }**: Sets the input (`FS`) and output (`OFS`) field separators to tab (`\t`) since your file is a TSV (tab-separated values).
-
 - **$6 < 0.05 && $3 > 1**: Filters rows where the padj (6th column) is less than 0.05 and the log2FoldChange (3rd column) is greater than 1.
-
 - **{ print $1, $3, $6 }**: Prints the gene_id (1st column), log2FoldChange (3rd column), and padj (6th column).
 
 ## GNU Parallel
-
 GNU Parallel is a command-line tool designed to execute shell commands or scripts in parallel on a local or remote system. It is especially useful for bioinformatics, data processing, and other fields that involve repetitive command execution, as it can significantly speed up tasks by utilizing multiple CPU cores.
 
 ```
 parallel -j N "fastqc {}" ::: *.fastq.gz
 ```
+
 - **-j N**: Specifies the number of parallel jobs to run (replace N with the desired number, considering available CPU cores).
 - **"fastqc {}"**: The FastQC command to execute in parallel, with {} representing each input file.
 - **:::** Separates the command from the list of files.
 - ***.fastq.gz**: Wildcard pattern to match all FASTQ files with the .fastq.gz extension in the current directory. Modify as needed for different file extensions or locations.
 
+Highly recommeded to read this article written by the developer Ole Tange in [Biostars](https://www.biostars.org/p/63816/). 
  <img src="http://i.stack.imgur.com/17FsG.png" alt="GNU parallel" style="height:500px;" />
-
-<!-- Embedding a YouTube video -->
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=OpaiGYxkSuQ&list=PL284C9FF2488BC6D1&index=1" frameborder="0" allowfullscreen></iframe>
