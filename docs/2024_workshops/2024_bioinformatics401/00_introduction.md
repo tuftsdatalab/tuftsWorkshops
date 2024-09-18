@@ -6,7 +6,7 @@ This repository stores the slides and hands-on sessions for bioinformatics train
 
 - [Parallelizing Workflows with Slurm Job Arrays](01_array_jobs.md)
 - [Bioinformatics Workflow Manager Nextflow](02_nextflow.md)
-- [nf-core: Community Curated Bioinformatics Pipelines](03_nf-core.md)
+- [nf-core: Community Curated Bioinformatics Pipelines](03_nfcore.md)
 
 
 ## Presenters
