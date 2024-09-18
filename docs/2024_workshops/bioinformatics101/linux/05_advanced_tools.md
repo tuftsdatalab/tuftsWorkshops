@@ -42,8 +42,8 @@ $ awk 'BEGIN { FS="\t"; OFS="\t" } $6 < 0.05 && $3 > 1 { print $1, $3, $6 }' des
 - **{ print $1, $3, $6 }**: Prints the gene_id (1st column), log2FoldChange (3rd column), and padj (6th column).
 
 ## GNU Parallel
-parallel (also called GNU parallel ) is a tool that constructs and runs a program based on patterns we provide. The default pattern substitution symbol is `{}` . For example:
-
+parallel (also called GNU parallel ) is a tool that constructs and runs a program based on patterns we provide. The default pattern substitution symbol is `{}` . 
+For example:
 ```
 parallel -j N "fastqc {}" ::: *.fastq.gz
 ```
@@ -51,5 +51,3 @@ parallel -j N "fastqc {}" ::: *.fastq.gz
 - **"fastqc {}"**: The FastQC command to execute in parallel, with {} representing each input file.
 - **:::** Separates the command from the list of files.
 - ***.fastq.gz**: Wildcard pattern to match all FASTQ files with the .fastq.gz extension in the current directory. Modify as needed for different file extensions or locations.
-
- <img src="http://i.stack.imgur.com/17FsG.png" alt="GNU parallel" style="height:500px;" />

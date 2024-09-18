@@ -4,9 +4,9 @@ This repository stores the slides and hands-on sessions for bioinformatics train
 
 ## Agenda
 
-- [Application installation from source coes](01_source.md)
-- [R package installation](02_R.md)
-- [Conda enivronment management, Jupyer kernel and modulefiles](03_conda.md)
+- [Application Installation from Source Codes](01_source.md)
+- [R package Installation](02_R.md)
+- [Conda Enivronment Management, Jupyer Kernel and Modules](03_conda.md)
 
 
 ## Presenters
