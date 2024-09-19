@@ -17,6 +17,9 @@ EnvironmentNotWritableError: The current user does not have write permissions to
   uid: 33874
   gid: 7593
 ```
+## Conda modules
+The new versions of Anaconda are significantly faster in solving dependencies thanks to the integration of `libmamba`, a highly efficient package management library that outperforms Conda’s traditional solver. Not recommend to use old anaconda modules.
+
 
 ### conda channels
 
@@ -32,7 +35,6 @@ EnvironmentNotWritableError: The current user does not have write permissions to
   $ conda install -c pytorch pytorch 
   $ conda install -c conda-forge r-base
   ```
-
 
 ### .condarc
 
