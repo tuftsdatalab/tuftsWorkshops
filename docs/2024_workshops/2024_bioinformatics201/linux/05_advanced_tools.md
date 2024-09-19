@@ -1,4 +1,4 @@
-# Advanced Linux/Unix tools
+# Advanced Linux/Unix Tools
 ## Awk
 Awk is a powerful text-processing tool in Unix/Linux that allows you to manipulate and analyze text files and streams. It’s named after its creators (Aho, Weinberger, and Kernighan) and is commonly used for pattern scanning, processing, and reporting.
 
@@ -36,14 +36,15 @@ $ awk 'BEGIN { FS="\t"; OFS="\t" } $6 < 0.05 && $3 > 1 { print $1, $3, $6 }' des
 GNU Parallel is a command-line tool designed to execute shell commands or scripts in parallel on a local or remote system. It is especially useful for bioinformatics, data processing, and other fields that involve repetitive command execution, as it can significantly speed up tasks by utilizing multiple CPU cores.
 
 ### Basic syntax
-#### Triple colon :::
+#### Triple colon:::
 ```
 $ parallel [options] command ::: arguments
 ```
+
 - **::: arguments**: The list of arguments passed to the command. Each argument is passed to the command in parallel.
 
 
-#### Quad colon semantics ::::
+#### Quad colon::::
 ```
 $ parallel [options] command :::: input_file
 ```
@@ -69,8 +70,8 @@ parallel -j N "fastqc {}" ::: *.fastq.gz
 
 - **-j N**: Specifies the number of parallel jobs to run (replace N with the desired number, considering available CPU cores).
 - **"fastqc {}"**: The FastQC command to execute in parallel, with {} representing each input file.
-- **:::** Separates the command from the list of files.
-- ***.fastq.gz**: Wildcard pattern to match all FASTQ files with the .fastq.gz extension in the current directory. Modify as needed for different file extensions or locations.
+- **:::**: Separates the command from the list of files.
+- ***.fastq.gz**: Wildcard pattern to match all FASTQ files with the **.fastq.gz** extension in the current directory. Modify as needed for different file extensions or locations.
 
 Highly recommeded to read this article written by the developer Ole Tange in [Biostars](https://www.biostars.org/p/63816/). 
  <img src="http://i.stack.imgur.com/17FsG.png" alt="GNU parallel" style="height:500px;" />
