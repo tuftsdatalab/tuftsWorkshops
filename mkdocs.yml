@@ -170,8 +170,8 @@ nav:
                 - "differentialabundance report": 2024_workshops/nfcore_rnaseq_sp24/05_differentialabundance_report.html
         - Fall 2024:
             - "Workshop Agenda": 2024_workshops/2024_bioinformatics_workshop_agenda.md
-            - "Introduction to HPC": 2024_workshops/2024_bioinformatics101.md
-            - Getting started with Bioinformatics on Tufts HPC:
+            - "1. Introduction to HPC": 2024_workshops/2024_bioinformatics101.md
+            - 2. Getting started with Bioinformatics on Tufts HPC:
                 - "Linux/Unix command line basics":
                     - "Overview": 2024_workshops/2024_bioinformatics201/linux/00_overview.md
                     - "Introduction to Linux/Unix": 2024_workshops/2024_bioinformatics201/linux/01_what_is_linux.md
@@ -181,13 +181,13 @@ nav:
                     - "Advanced Linux/Unix tools": 2024_workshops/2024_bioinformatics201/linux/05_advanced_tools.md
                 - "Available bioinformatics resources/tools on Tufts HPC": 2024_workshops/2024_bioinformatics201/02_tufts_bioinformatics_resources.md
                 - "How to run bioinformatics analysis on Tufts HPC": 2024_workshops/2024_bioinformatics201/03_run_bioinformatics_on_HPC.md 
-            - Software installation and environment management in HPC:
+            - 3. Software installation and environment management in HPC:
                 - "Overview": 2024_workshops/2024_bioinformatics301/00_introduction.md
                 - "Application Installation from Source Codes": 2024_workshops/2024_bioinformatics301/01_source.md
                 - "R package Installation": 2024_workshops/2024_bioinformatics301/02_Rpackage.md
                 - "Conda Environment Management, Jupyer Kernel and Modules": 2024_workshops/2024_bioinformatics301/03_conda.md
                 - "Simplying Conda Environment Management with conda-env-mod": 2024_workshops/2024_bioinformatics301/04_conda-env-mod.md
-            - Advanced HPC workflows and job management: 
+            - 4. Advanced HPC workflows and job management: 
                 - "Overview": 2024_workshops/2024_bioinformatics401/00_introduction.md
                 - "Array jobs": 2024_workshops/2024_bioinformatics401/01_array_jobs.md
                 - "Nextflow Overview": 2024_workshops/2024_bioinformatics401/02_nextflow.md
