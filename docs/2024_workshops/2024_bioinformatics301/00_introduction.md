@@ -1,5 +1,12 @@
 # Software Installation and Environment Management in HPC
-This repository stores the slides and hands-on sessions for bioinformatics training workshops provided by Tufts Research Technology in October 2024.
+For bioinformatics users, learning how to install software on HPC is very useful. 
+
+Bioinformatics workflows often require specialized software tools, many of which have complex dependencies or need to be optimized for the HPC environment. Installing and managing these tools on an HPC system allows bioinformatics users to access the latest versions of key software. 
+
+Understanding software installation on HPC ensures that users can customize their environments, streamline their analyses, and maintain reproducibility in their research, which is critical in bioinformatics given the rapid pace of data generation and evolving computational tools.
+
+In this workshop, we will introduce how to install bioinformatics softwares on HPC using different ways. 
+
 
 
 ## Agenda

@@ -35,6 +35,10 @@ $ awk 'BEGIN { FS="\t"; OFS="\t" } $6 < 0.05 && $3 > 1 { print $1, $3, $6 }' des
 ## GNU Parallel
 GNU Parallel is a command-line tool designed to execute shell commands or scripts in parallel on a local or remote system. It is especially useful for bioinformatics, data processing, and other fields that involve repetitive command execution, as it can significantly speed up tasks by utilizing multiple CPU cores.
 
+## Load module
+```
+$ module load parallel/20240822
+```
 ### Basic syntax
 #### Triple colon:::
 ```

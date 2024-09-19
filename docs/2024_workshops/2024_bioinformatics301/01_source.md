@@ -79,7 +79,7 @@ Note: To use BWA, you need to first index the genome with `bwa index'.
 ```
 
 ### hmmer
-[HMMER](http://hmmer.org)) is used for searching sequence databases for sequence homologs, and for making sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs).
+[HMMER](http://hmmer.org) is used for searching sequence databases for sequence homologs, and for making sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs).
 #### Installation guide from [README](https://github.com/EddyRivasLab/hmmer)
 ```
 wget http://eddylab.org/software/hmmer/hmmer.tar.gz
@@ -125,6 +125,8 @@ Usage: hmmsearch [options] <hmmfile> <seqdb>
 Installation of some bioinformatics applications requires both **make** and **cmake**.
 
 ### RegTools
+[RegTools](https://github.com/griffithlab/regtools) integrate DNA-seq and RNA-seq data to help interpret mutations in a regulatory and splicing context.
+
 #### Installation [guide](https://regtools.readthedocs.io/en/latest/) from the developer 
 
 ```
