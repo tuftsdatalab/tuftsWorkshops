@@ -1,4 +1,4 @@
-# Files and File system
+# Files and File System
 
 ## Everything is a file
 **A file is an addressable location that contains some data which can take many forms.**

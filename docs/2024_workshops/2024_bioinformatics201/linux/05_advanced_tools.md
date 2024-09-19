@@ -35,6 +35,34 @@ $ awk 'BEGIN { FS="\t"; OFS="\t" } $6 < 0.05 && $3 > 1 { print $1, $3, $6 }' des
 ## GNU Parallel
 GNU Parallel is a command-line tool designed to execute shell commands or scripts in parallel on a local or remote system. It is especially useful for bioinformatics, data processing, and other fields that involve repetitive command execution, as it can significantly speed up tasks by utilizing multiple CPU cores.
 
+### Basic syntax
+#### Triple colon :::
+```
+$ parallel [options] command ::: arguments
+```
+- **::: arguments**: The list of arguments passed to the command. Each argument is passed to the command in parallel.
+
+
+#### Quad colon semantics ::::
+```
+$ parallel [options] command :::: input_file
+```
+
+`-a` is alternative syntax to quadruple colon.
+```
+$ parallel [options] command -a input_file
+```
+
+Run `command` in parallel for each line in input_file
+
+#### Pipe
+```
+$ command1 | parallel [options] command2
+```
+standard output from command1 as argument
+
+
+#### Example
 ```
 parallel -j N "fastqc {}" ::: *.fastq.gz
 ```

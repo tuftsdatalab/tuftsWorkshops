@@ -1,4 +1,4 @@
-# Conditional statements and loops
+# Conditional Statements and Loops
 
 ## for
 Using `for` loop, we can execute a set of commands for a finite number of times for every item in a list.
@@ -20,14 +20,14 @@ done
 ```
 
 ## while
-The command next to `while` is evaluated. If it is successful or 0, then the commands between `do` and `done` are executed.
+The command next to `while` is evaluated. If it is evaluated to be true, then the commands between `do` and `done` are executed.
 ### Syntax
 ```
-while CONDITION
+while [ condition ]
 do
-    command1
-    command2
-    ...
+   command1
+   command2
+   command3
 done
 ```
 ### Example
@@ -66,13 +66,13 @@ sequence3.fasta
 In bioinformatics, if statements are used to make conditional decisions in scripts, such as checking whether a file or result already exists before performing data analysis or processing tasks, thus optimizing workflows and avoiding redundant computations.
 ### Syntax
 ```
-if [commands]
+if [ commands ]
 then
-  [if-statements]
+  [ if-statements ]
 elif [commands]
-  [elif-statements]
+  [ elif-statements ]
 else
-  [else-statements]
+  [ else-statements ]
 fi
 ```
 ### Example
