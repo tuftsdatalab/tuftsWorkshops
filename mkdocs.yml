@@ -169,6 +169,7 @@ nav:
                 - "multiqc report": 2024_workshops/nfcore_rnaseq_sp24/04_multiqc_report.html
                 - "differentialabundance report": 2024_workshops/nfcore_rnaseq_sp24/05_differentialabundance_report.html
         - Fall 2024:
+            - "HPC for Bioinformatics - Tufts University Bioinformatics Workshop Series - AGENDA": 2024_workshops/2024_bioinformatics_workshop_agenda.md
             - Getting started with Bioinformatics on Tufts HPC:
                 - "Linux/Unix command line basics":
                     - "Overview": 2024_workshops/2024_bioinformatics201/linux/00_overview.md
