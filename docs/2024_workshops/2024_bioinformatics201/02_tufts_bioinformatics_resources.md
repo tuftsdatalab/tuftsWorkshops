@@ -93,6 +93,8 @@ RStudio Pax, use R/4.4.1 which has the most comprehensive packages installed (13
 
 ![RStudio Pax screenshot](images/rstudio_pax.png)
 
+**We will demenstrate how to install packages in our next workshop**
+
 RStudio is available on Open OnDemand, with different versions tailored for specific tasks. For example, in `RStudio for scRNA-Seq`, the most commonly used packages for scRNA-Seq analysis are pre-installed to help streamline your workflow.
 
 **Do not copy lib.path()**
@@ -105,8 +107,15 @@ To install packages, just use the default $HOME position.
 We also provide other applications like `Jupyter Bioinfo`, `JupyterLab`, `Jupyter Notebook`, `IGV`, and `Galaxy` to support your daily research activities.
 
 
+## nf-core pipelines
 
+### modules
+```
 
+```
+
+### Open OnDemand apps
+![nfcoreapp](nfcoreapp.png)
 
 ## Contact Us
 
