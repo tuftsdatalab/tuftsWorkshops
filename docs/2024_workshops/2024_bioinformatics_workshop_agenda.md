@@ -13,7 +13,6 @@ Oct 9, 2024, 1-3pm
 Oct 10, 2024, 1-3pm
 
 - [Linux/Unix command line basics](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/00_overview/)
-(https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/05_advanced_tools/)
 - [Available bioinformatics resources/tools on Tufts HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/02_tufts_bioinformatics_resources/)
 - [How to run bioinformatics analysis on Tufts HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/03_run_bioinformatics_on_HPC/)
 
