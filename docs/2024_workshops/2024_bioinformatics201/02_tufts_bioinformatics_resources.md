@@ -9,7 +9,7 @@ To stay updated on bioinformatics education, software tools, and workshop notifi
 In the future, we will post workshop notifications and resources through this email list.
 
 ## Workshops and resources
-### New HPC documentation website (In development)
+### Tufts Research Technology Guides website (In development)
 **Coming in November 2024. Stay tuned for updates!**
 ![hpcdocu](images/hpcdocu.png)
 
@@ -97,11 +97,6 @@ RStudio Pax, use R/4.4.1 which has the most comprehensive packages installed (13
 **We will demenstrate how to install packages in our next workshop**
 
 RStudio is available on Open OnDemand, with different versions tailored for specific tasks. For example, in `RStudio for scRNA-Seq`, the most commonly used packages for scRNA-Seq analysis are pre-installed to help streamline your workflow.
-
-**Do not copy lib.path()**
-**Verify the R version before you need to define lib.path()**
-
-To install packages, just use the default $HOME position. 
 
 ### Other Apps
 
