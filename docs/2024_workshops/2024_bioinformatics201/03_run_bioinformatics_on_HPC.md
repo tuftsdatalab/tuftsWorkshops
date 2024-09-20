@@ -147,6 +147,8 @@ GGCATCCATGTTCTTGCCCAAAACCTTGGTTACAGCAATCTGATACTTCTTTTGTGTGGGCTGGCATAGGTCAATGAGGC
 
 You can also use `less` to view the file and press `Q` key to exit.  
 
+**FASTQC**
+Fastqc output
 
 
 ## GTF file
@@ -205,12 +207,18 @@ ch
 GTF files are essential for common bioinformatics analyses such as RNA-Seq analysis, genome annotation, and differential expression analysis. They provide the necessary annotation information to map reads to genomic features and to understand the functional elements of the genome.
 
 You can download human gtf file from here `https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/`
+Ensembl `https://useast.ensembl.org/index.html`
+Demonstrate how to download files. 
+GTF
+GFF3
+FASTA
 
 
 
-# Toy analysis
+# Toy analysis with interactive jobs
 
-## Alignment with bowtie2
+
+## Alignment with STAR
 
 ### Make sure you are in compute node
 
@@ -227,9 +235,8 @@ If not, do the following
 ### Load necessary modules
 
 ```
-module load bowtie2/
+module load star/...
 ```
-
 
 
 
@@ -250,7 +257,16 @@ A SAM file consists of a header section and an alignment section.
 ### Manipulate the file
 
 
+# Toy analysis with job scripts
+1. Interactive jobs
 
+2. Job scripts 
+
+
+# GPU
+Additional: gpu.
+Alphafold job scripts. 
+Clara parabricks. 
 
 
 **Materials adapted from https://hbctraining.github.io/Intro-to-shell-flipped/lessons/03_working_with_files.html**
