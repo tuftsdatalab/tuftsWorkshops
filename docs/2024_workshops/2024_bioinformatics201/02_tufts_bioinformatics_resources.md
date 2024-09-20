@@ -108,10 +108,37 @@ We also provide other applications like `Jupyter Bioinfo`, `JupyterLab`, `Jupyte
 
 
 ## nf-core pipelines
-
+Use `module avail nf-core` to get the list of nf-core pipelines deployed on cluster
 ### modules
 ```
-
+   nf-core-ampliseq/2.8.0                     nf-core-nanostring/1.3.0      (D)
+   nf-core-ampliseq/2.9.0                     nf-core-pairgenomealign/1.0.0
+   nf-core-ampliseq/2.10.0                    nf-core-pangenome/1.1.0
+   nf-core-ampliseq/2.11.0             (D)    nf-core-pangenome/1.1.1
+   nf-core-atacseq/2.1.2                      nf-core-pangenome/1.1.2       (D)
+   nf-core-bacass/2.2.0                       nf-core-proteinfold/1.1.0
+   nf-core-bacass/2.3.1                (D)    nf-core-raredisease/2.0.1
+   nf-core-bamtofastq/2.1.1                   nf-core-rnafusion/3.0.1
+   nf-core-chipseq/2.0.0                      nf-core-rnafusion/3.0.2       (D)
+   nf-core-denovotranscript/1.0.0             nf-core-rnaseq/3.14.0
+   nf-core-detaxizer/1.0.0                    nf-core-rnasplice/1.0.2
+   nf-core-differentialabundance/1.4.0        nf-core-rnasplice/1.0.3
+   nf-core-differentialabundance/1.5.0 (D)    nf-core-rnasplice/1.0.4       (D)
+   nf-core-eager/2.5.1                        nf-core-sarek/3.4.0
+   nf-core-fetchngs/1.11.0                    nf-core-sarek/3.4.1
+   nf-core-fetchngs/1.12.0             (D)    nf-core-sarek/3.4.3
+   nf-core-funcscan/1.1.4                     nf-core-sarek/3.4.4           (D)
+   nf-core-funcscan/1.1.5              (D)    nf-core-scrnaseq/2.5.1
+   nf-core-hic/2.1.0                          nf-core-scrnaseq/2.7.0
+   nf-core-mag/2.5.2                          nf-core-scrnaseq/2.7.1        (D)
+   nf-core-mag/2.5.4                          nf-core-smrnaseq/2.3.0
+   nf-core-mag/3.0.0                          nf-core-smrnaseq/2.3.1        (D)
+   nf-core-mag/3.0.2                   (D)    nf-core-taxprofiler/1.1.5
+   nf-core-metatdenovo/1.0.0                  nf-core-taxprofiler/1.1.6
+   nf-core-metatdenovo/1.0.1           (D)    nf-core-taxprofiler/1.1.7
+   nf-core-methylseq/2.6.0                    nf-core-taxprofiler/1.1.8     (D)
+   nf-core-nanoseq/3.1.0                      nf-core-viralrecon/2.6.0
+   nf-core-nanostring/1.2.1
 ```
 
 ### Open OnDemand apps
