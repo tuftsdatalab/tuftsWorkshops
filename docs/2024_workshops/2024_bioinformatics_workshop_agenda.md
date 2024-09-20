@@ -11,14 +11,14 @@ Oct 9, 2024, 1-3pm
 ## Workshop 2: Getting started with Bioinformatics on Tufts HPC
 Oct 10, 2024, 1-3pm
 
-- [Linux/Unix command line basics](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/00_overview/)
+1. [Linux/Unix command line basics](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/00_overview/)
   - [Intro to Linux/Unix](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/01_what_is_linux/)
   - [Files and File system](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/02_files/)
   - [Must-know Linux/Unix tools](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/03_basictools/)
   - [Loops](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/04_loops/)
   - [Advanced Linux/Unix tools](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/05_advanced_tools/)
-- [Available bioinformatics resources/tools on Tufts HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/02_tufts_bioinformatics_resources/)
-- [How to run bioinformatics analysis on Tufts HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/03_run_bioinformatics_on_HPC/)
+2. [Available bioinformatics resources/tools on Tufts HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/02_tufts_bioinformatics_resources/)
+3. [How to run bioinformatics analysis on Tufts HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/03_run_bioinformatics_on_HPC/)
 
 
 
