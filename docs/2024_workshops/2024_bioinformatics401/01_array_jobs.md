@@ -338,3 +338,6 @@ You can adjust the `--array` option to change the range of jobs. For example, to
 ```
 
 This would submit jobs for rows 2, 4, 6, ..., up to 1000.
+
+
+Useful links: https://blog.ronin.cloud/slurm-job-arrays/
