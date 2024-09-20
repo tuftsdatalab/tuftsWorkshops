@@ -12,10 +12,8 @@
 
 - [Linux/Unix command line basics](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/00_overview/)
 
-  - [Intro to Linux/Unix](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/01_what_is_linux/)
-
-  - [Files and File system](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/02_files/)
-
+  - [Intro to Linux/Unix]
+  - [Files and File system]
   - [Must-know Linux/Unix tools](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/03_basictools/)
 
   - [Loops](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/04_loops/)
