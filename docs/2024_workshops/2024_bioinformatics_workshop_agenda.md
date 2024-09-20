@@ -3,12 +3,13 @@
 
 
 ## Workshop 1: [Introduction to HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/) 
-
+Oct 9, 2024, 1-3pm
 
 
 
 
 ## Workshop 2: Getting started with Bioinformatics on Tufts HPC
+Oct 10, 2024, 1-3pm
 
 - [Linux/Unix command line basics](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/00_overview/)
   - [Intro to Linux/Unix](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/01_what_is_linux/)
@@ -22,6 +23,7 @@
 
 
 ## Workshop 3:
+Oct 17, 2024, 1-3pm
 
 - [Application Installation from Source Codes](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics301/01_source/)
 - [R package Installation](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics301/00_introduction/02_R.md)
@@ -31,6 +33,7 @@
 
 
 ## Workshop 4:
+Oct 24, 2024, 1-3pm
 
 - [Parallelizing Workflows with Slurm Job Arrays](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics401/01_array_jobs/)
 - [Bioinformatics Workflow Manager Nextflow](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics401/02_nextflow/)
