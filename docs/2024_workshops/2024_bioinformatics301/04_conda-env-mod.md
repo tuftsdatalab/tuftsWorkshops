@@ -71,3 +71,86 @@ This will create a conda environment to a custom directory.
 $ conda-env-mod create -p /cluster/tufts/mylab/$USER/condaenv/myenv
 ```
 
+### Create a conda environment for your research group
+```
+conda-env-mod create -p /cluster/tufts/mylab/apps/appName -m /cluster/tufts/mylab/modules
+```
+
+```
+ conda-env-mod create -p /cluster/tufts/rt/shared/apps/rnaseq -m /cluster/tufts/rt/shared/modules
+export CONDA_PREFIX=/cluster/tufts/hpc/apps/rocky9/external/miniforge/24.7.1
+requested create with arguments:  -p '/cluster/tufts/rt/shared/apps/rnaseq' -m '/cluster/tufts/rt/shared/modules' --
+conda create -q --copy --prefix /cluster/tufts/rt/shared/apps/rnaseq python=3.12.5
+Retrieving notices: ...working... done
+Channels:
+ - bioconda
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /cluster/tufts/rt/shared/apps/rnaseq
+
+  added / updated specs:
+    - python=3.12.5
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    setuptools-74.1.2          |     pyhd8ed1ab_0         766 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:         766 KB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      conda-forge/linux-64::_libgcc_mutex-0.1-conda_forge 
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-2_gnu 
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-h4bc722e_7 
+  ca-certificates    conda-forge/linux-64::ca-certificates-2024.8.30-hbcca054_0 
+  ld_impl_linux-64   conda-forge/linux-64::ld_impl_linux-64-2.40-hf3520f5_7 
+  libexpat           conda-forge/linux-64::libexpat-2.6.3-h5888daf_0 
+  libffi             conda-forge/linux-64::libffi-3.4.2-h7f98852_5 
+  libgcc             conda-forge/linux-64::libgcc-14.1.0-h77fa898_1 
+  libgcc-ng          conda-forge/linux-64::libgcc-ng-14.1.0-h69a702a_1 
+  libgomp            conda-forge/linux-64::libgomp-14.1.0-h77fa898_1 
+  libnsl             conda-forge/linux-64::libnsl-2.0.1-hd590300_0 
+  libsqlite          conda-forge/linux-64::libsqlite-3.46.1-hadc24fc_0 
+  libuuid            conda-forge/linux-64::libuuid-2.38.1-h0b41bf4_0 
+  libxcrypt          conda-forge/linux-64::libxcrypt-4.4.36-hd590300_1 
+  libzlib            conda-forge/linux-64::libzlib-1.3.1-h4ab18f5_1 
+  ncurses            conda-forge/linux-64::ncurses-6.5-he02047a_1 
+  openssl            conda-forge/linux-64::openssl-3.3.2-hb9d3cd8_0 
+  pip                conda-forge/noarch::pip-24.2-pyh8b19718_1 
+  python             conda-forge/linux-64::python-3.12.5-h2ad013b_0_cpython 
+  readline           conda-forge/linux-64::readline-8.2-h8228510_1 
+  setuptools         conda-forge/noarch::setuptools-74.1.2-pyhd8ed1ab_0 
+  tk                 conda-forge/linux-64::tk-8.6.13-noxft_h4845f30_101 
+  tzdata             conda-forge/noarch::tzdata-2024a-h8827d51_1 
+  wheel              conda-forge/noarch::wheel-0.44.0-pyhd8ed1ab_0 
+  xz                 conda-forge/linux-64::xz-5.2.6-h166bdaf_0 
+
+
+Proceed ([y]/n)? y
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
++---------------------------------------------------------------+
+| To use this environment, load the following modules:          |
+|     module use /cluster/tufts/rt/shared/modules               |
+|     module load conda-env/rnaseq-py3.12.5                     |
+| (then standard 'conda install' / 'pip install' / run scripts) |
++---------------------------------------------------------------+
+Your environment "rnaseq" was created successfully.
+
+```
+
+```
+module use /cluster/tufts/rt/shared/modules
+module load conda-env/rnaseq-py3.12.5 
+conda install -c bioconda star samtools fastqc trim-galore salmon 
+```
