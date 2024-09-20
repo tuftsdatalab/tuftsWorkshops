@@ -278,6 +278,7 @@ ENSG00000004799 1224.003        -2.199776       0.06003955      1.17799e-295    
 ENSG00000272398 2064.696        1.615232        0.04513554      2.024618e-282   2.258895e-279   CD24
 ENSG00000135046 12905.46        -0.8779134      0.02467955      1.349814e-278   1.405606e-275   ANXA1
 ```
+**Delete unused columns**
 
 The R script reads the `genename` from column 7 and `padj` from column 6 for each gene.
 
@@ -318,6 +319,14 @@ Rscript R_scatter_vis.r $GENE $Padj
 - The `awk` commands extract the `GENE` and `Padj` values from the specified row and columns (7th and 6th).
 - The script submits 10 jobs, each running the R script with different `GENE` and `Padj` values.
 
+
+### Output files
+```
+A list of files
+```
+
+![Output.pdf]() 
+1,2,3,4
 
 
 ### Customizing the Array
