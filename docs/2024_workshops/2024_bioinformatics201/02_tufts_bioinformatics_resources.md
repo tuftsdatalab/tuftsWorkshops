@@ -10,8 +10,10 @@ In the future, we will post workshop notifications and resources through this em
 
 ## Workshops and resources
 ### New HPC documentation website (In development)
+**Coming in November 2024. Stay tuned for updates!**
+![hpcdocu](images/hpcdocu.png)
 
-### Current Workshops, will retire soon. 
+### Current Workshops, stop updating once our new website is online. 
 
 Bioinformatics workshops provided by TTS Research Technology in 2022, 2023, 2024](https://tuftsdatalab.github.io/tuftsWorkshops/)
 
@@ -31,7 +33,6 @@ Bioinformatics workshops provided by TTS Research Technology in 2022, 2023, 2024
 
 **Note: Some materials may be outdated, so always verify the relevance of content before applying it to your projects.**
 
-**A new documentation website is coming in November 2024. Stay tuned for updates!**
 
 
 
