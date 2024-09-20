@@ -43,7 +43,7 @@ srun -p interactive -n 1 --time=02:00:00 --mem 4g --pty bash
 2.2 Load R modules
 
 ```
-module load R/4.4.0
+module load R/4.4.1
 ```
 
 2.3 Launch R interactive session
@@ -99,6 +99,7 @@ Since we have limited storage under home directory. We suggest to change the lib
 .libPaths("your_path_to_install_packages")
 ```
 
+Try not to use libpath, just install to your default $HOME directory
 
 
 ## R modules
