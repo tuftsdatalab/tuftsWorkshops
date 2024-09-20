@@ -1,4 +1,5 @@
-# HPC for Bioinformatics - Tufts University Bioinformatics Workshop Series - 2024 Fall
+# HPC for Bioinformatics Agenda 
+Tufts University Bioinformatics Workshop Series - 2024 Fall
 
 
 
