@@ -1,4 +1,4 @@
-# Tufts Bioinformatics Resources
+# Available bioinformatics resources/tools on Tufts HPC
 
 
 
@@ -138,7 +138,7 @@ Use `module avail nf-core` to get the list of nf-core pipelines deployed on clus
 ```
 
 ### Open OnDemand apps
-![nfcoreapp](nfcoreapp.png)
+![nfcoreapp](images/nfcoreapp.png)
 
 ## Contact Us
 
