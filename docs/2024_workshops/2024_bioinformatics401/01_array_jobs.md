@@ -17,9 +17,7 @@ for fq in *.fastq.gz; do
   fastqc -t 4 $fq
 done
 ```
-
-
-<img src="/Users/yucheng/Documents/GitHub/Tufts_2024Fall_Training/images/serial_job.png" alt="serial_job" style="zoom:40%;" />
+<img src="images/serial_job.png" alt="serial_job" style="zoom:40%;" />
 
 
 
