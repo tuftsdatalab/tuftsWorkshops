@@ -72,7 +72,31 @@ Use `module avail` to check the full list of tools available on the cluster. Bel
 
    **We will cover how to install tools from source code in our upcoming workshop. If you need to install a tool not commonly used, it's best to do it yourself to avoid issues with maintenance. Stay tuned for a detailed guide!**
 
-   
+
+
+## Open OnDemand APPs
+
+You can access Open OnDemand through [this link]( https://ondemand.pax.tufts.edu/ )
+
+
+
+### Bioinformatics Apps
+
+We offer a wide range of bioinformatics tools as apps, including `AlphaFold` and `CellProfiler`. Additionally, 31 nf-core pipelines are available as apps for ease of use, with the most popular being nf-core/rnaseq, which we will demonstrate in our final workshop.
+
+![bio app](images/bioapp.png)
+
+### RStudio and Shinyngs Apps
+
+RStudio is available on Open OnDemand, with different versions tailored for specific tasks. For example, in `RStudio for scRNA-Seq`, the most commonly used packages for scRNA-Seq analysis are pre-installed to help streamline your workflow.
+
+### Other Apps
+
+We also provide other applications like `Jupyter Bioinfo`, `JupyterLab`, `Jupyter Notebook`, `IGV`, and `Galaxy` to support your daily research activities.
+
+
+
+
 
 ## Contact Us
 
