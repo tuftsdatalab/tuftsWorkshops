@@ -168,3 +168,11 @@ pip3 install torch torchvision torchaudio
 
 conda-env-mod kernel -p /cluster/tufts/rt/shared/apps/pytorch_2.4.1
 ```
+
+
+```
+conda-env-mod create -p /cluster/tufts/rt/shared/apps/biopython -m /cluster/tufts/rt/shared/modules --jupyter
+module use /cluster/tufts/rt/shared/modules
+module load conda-env/biopython-py3.12.5
+conda install biopython
+```
