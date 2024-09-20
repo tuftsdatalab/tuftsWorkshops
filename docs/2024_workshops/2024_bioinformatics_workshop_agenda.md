@@ -10,7 +10,7 @@
 
 ## Workshop 2: Getting started with Bioinformatics on Tufts HPC
 
-- Linux/Unix command line basics
+- [Linux/Unix command line basics](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/00_overview.md)
 
   - [Intro to Linux/Unix](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/linux/01_what_is_linux/)
 
