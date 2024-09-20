@@ -2,7 +2,7 @@
 
 
 
-## Workshop 1: [Introduction to HPC](2024_workshops/2024_bioinformatics101.md)
+## Workshop 1: [Introduction to HPC](2024_bioinformatics101.md)
 
 
 
