@@ -217,17 +217,19 @@ FASTA
 
 # Toy analysis with interactive jobs
 
-
 ## Alignment with STAR
 
 ### Make sure you are in compute node
 
 ```
+utln@login-prod-02    # log in node
+utln@p1cmp017         # compute node
 ```
 
 If not, do the following
 
 ```
+srun -p interactive -n 1 --time=4:00:00 --mem=32g --cpus-per-task=8 --pty bash
 ```
 
 
@@ -235,8 +237,81 @@ If not, do the following
 ### Load necessary modules
 
 ```
-module load star/...
+module load star/2.7.11b
 ```
+
+
+
+Before aligning your FASTQ files, you need to generate an index using the reference genome (`.fa` file) and the annotation file (`.gtf` file).
+
+```
+STAR --runMode genomeGenerate \
+     --genomeDir ./reference_data/ \
+     --genomeFastaFiles ./reference_data/chr1.fa \
+     --sjdbGTFfile ./reference_data/chr1-hg19_genes.gtf \
+     --sjdbOverhang 99 \
+     --runThreadN 8
+     
+```
+
+**sjdbOverhang**  
+
+The value is set to the length of your reads minus 1. For example, if your sequencing reads are 100  base pairs long, you set `--sjdbOverhang` to 99.
+
+It helps STAR optimize splice junction detection by ensuring that the splice junction database includes enough surrounding sequence to anchor reads across exon-exon boundaries during alignment.
+
+This is particularly important for RNA-seq data where detecting splicing events is critical.
+
+
+
+You will see output log like this 
+
+```
+Sep 20 11:25:15 ..... started STAR run
+Sep 20 11:25:15 ... starting to generate Genome files
+Sep 20 11:25:20 ..... processing annotations GTF
+!!!!! WARNING: --genomeSAindexNbases 14 is too large for the genome size=249250621, which may cause seg-fault at the mapping step. Re-run geno
+me generation with recommended --genomeSAindexNbases 12
+Sep 20 11:25:22 ... starting to sort Suffix Array. This may take a long time...
+Sep 20 11:25:23 ... sorting Suffix Array chunks and saving them to disk...
+Sep 20 11:26:40 ... loading chunks from disk, packing SA...
+Sep 20 11:26:47 ... finished generating suffix array
+Sep 20 11:26:47 ... generating Suffix Array index
+Sep 20 11:27:52 ... completed Suffix Array index
+Sep 20 11:27:52 ..... inserting junctions into the genome indices
+Sep 20 11:28:17 ... writing Genome to disk ...
+Sep 20 11:28:17 ... writing Suffix Array to disk ...
+Sep 20 11:28:19 ... writing SAindex to disk
+Sep 20 11:28:22 ..... finished successfully
+```
+
+
+
+###  Align FASTQ Reads to the Reference Genome
+
+For single-end reads: 
+
+```
+STAR --genomeDir ./reference_data/ \
+     --readFilesIn /path/to/reads.fastq \
+     --outFileNamePrefix ./star_output/ \
+     --runThreadN 8
+```
+
+In our example, we use single-end reads.
+
+
+
+For paired-end reads:
+
+```
+STAR --genomeDir ./reference_data/ \
+     --readFilesIn /path/to/read1.fastq /path/to/read2.fastq \
+     --outFileNamePrefix ./star_output/ \
+     --runThreadN 8
+```
+
+
 
 
 
@@ -256,18 +331,135 @@ A SAM file consists of a header section and an alignment section.
 
 ### Manipulate the file
 
+...
+
+
 
 # Toy analysis with job scripts
-1. Interactive jobs
 
-2. Job scripts 
+Let's write a slurm script call `run_star.sh`
+
+```
+#!/bin/bash
+#SBATCH -J STAR_JOB             # Job name
+#SBATCH --time=12:00:00         # Job will run for a maximum of 12 hours (D-HH:MM:SS format)
+#SBATCH -p batch                # Partition (queue) to submit the job to
+#SBATCH -n 1                    # Number of tasks (here we only need 1 task)
+#SBATCH --mem=32g               # Allocate 32 GB of memory for this job
+#SBATCH --cpus-per-task=8       # Number of CPU cores allocated for this task
+#SBATCH --output=MyJob.%j.%N.out  # Output will be saved to a file with job ID (%j) and node name (%N)
+#SBATCH --error=MyJob.%j.%N.err   # Error will be saved to a file with job ID (%j) and node name (%N)
+#SBATCH --mail-type=ALL         # Receive email notifications for job status (ALL = start, end, fail)
+#SBATCH --mail-user=utln@tufts.edu  # Your email to receive notifications
+
+# Load the STAR module
+module load star/2.7.11b         # Load the specific version of STAR needed for the alignment
+
+# Run STAR alignment
+STAR --genomeDir ./reference_data/ \       # Specify the directory containing the genome index files
+     --readFilesIn /path/to/reads.fastq \  # Input FASTQ file(s) for alignment
+     --outFileNamePrefix ./star_output/ \  # Output files will be saved in this directory 
+     --runThreadN 8                        # Use 8 threads for faster processing
+
+```
 
 
-# GPU
-Additional: gpu.
-Alphafold job scripts. 
-Clara parabricks. 
+
+Here is the command to submit job
+
+```
+chmod +x run_star.sh    # Makes the script executable
+sbatch run_star.sh      # Submits the script to the SLURM queue
+```
 
 
-**Materials adapted from https://hbctraining.github.io/Intro-to-shell-flipped/lessons/03_working_with_files.html**
+
+Use `squeue -u yourusername` to check job status. 
+
+
+
+# Run job with GPU node
+
+### Interactive session
+
+```
+srun -p preempt -n 1 --time=04:00:00 --mem=20G --gres=gpu:1 --pty /bin/bash
+```
+
+You can also specify which gpu node you would like to run jobs on 
+
+```
+srun -p preempt -n 1 --time=04:00:00 --mem=20G --gres=gpu:a100:1 --pty /bin/bash
+```
+
+
+
+### Submit jobs to queue
+
+Example script: `align.sh`
+
+```
+#!/bin/bash
+#SBATCH -J fq2bam_alignment          # Job name
+#SBATCH -p preempt                   # Submit to the 'preempt' partition (modify based on your cluster setup)
+#SBATCH --gres=gpu:1                 # Request 1 GPU for accelerated processing
+#SBATCH -n 2                         # Number of tasks (2 in this case)
+#SBATCH --mem=60g                    # Memory allocation (60GB)
+#SBATCH --time=02:00:00              # Maximum job run time (2 hours)
+#SBATCH --cpus-per-task=20           # Number of CPU cores allocated per task
+#SBATCH --output=alignment.%j.out    # Standard output file (with job ID %j)
+#SBATCH --error=alignment.%j.err     # Standard error file (with job ID %j)
+#SBATCH --mail-type=ALL              # Email notifications for all job states (begin, end, fail)
+#SBATCH --mail-user=utln@tufts.edu   # Email address for notifications
+
+# Load necessary modules
+nvidia-smi                              # Show GPU information (optional for logging)
+module load parabricks/4.0.0-1          # Load Parabricks module for GPU-accelerated alignment
+
+# Define variables
+genome_reference="/path/to/reference_genome"      # Path to the reference genome (.fasta)
+input_fastq1="/path/to/input_read1.fastq"         # Path to the first paired-end FASTQ file
+input_fastq2="/path/to/input_read2.fastq"         # Path to the second paired-end FASTQ file
+sample_name="sample_identifier"                  # Sample identifier
+known_sites_vcf="/path/to/known_sites.vcf"        # Known sites VCF file for BQSR (optional, if available)
+output_directory="/path/to/output_directory"      # Directory for the output BAM file and reports
+output_bam="${output_directory}/${sample_name}.bam"            # Output BAM file path
+output_bqsr_report="${output_directory}/${sample_name}.BQSR-report.txt"  # Output BQSR report path
+
+# Run the Parabricks fq2bam alignment pipeline
+pbrun fq2bam \
+    --ref ${genome_reference} \                # Reference genome (.fasta)
+    --in-fq ${input_fastq1} ${input_fastq2} \  # Input paired-end FASTQ files
+    --read-group-sm ${sample_name} \           # Sample name for read group
+    --knownSites ${known_sites_vcf} \          # Known sites for BQSR 
+    --out-bam ${output_bam} \                  # Output BAM file
+    --out-recal-file ${output_bqsr_report}     # Output Base Quality Score Recalibration (BQSR) report
+
+
+```
+
+
+
+Here is the command to submit job
+
+```
+chmod +x align.sh    # Makes the script executable
+sbatch align.sh      # Submits the script to the SLURM queue
+```
+
+
+
+Use `squeue -u yourusername` to check job status. 
+
+
+
+
+
+
+
+**Materials adapted from: **
+
+https://hbctraining.github.io/Intro-to-shell-flipped/lessons/03_working_with_files.html
+
+https://hbctraining.github.io/Intro-to-rnaseq-hpc-O2/lessons/03_alignment.html 
 
