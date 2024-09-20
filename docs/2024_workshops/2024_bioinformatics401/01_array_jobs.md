@@ -211,7 +211,12 @@ GPU: 20
 
 
 
-# Array jobs with R script
+
+
+# Create a contig file for your array tasks (Change the title)
+Use R script as an example. 
+In most cases, your script will loop through different input parameters, which are usually not number 1-10, 1-100. In this situation, we would like to a config file with input parameters for each job.  (Will revise later)
+
 
 ## Required files
 
