@@ -6,7 +6,9 @@ The TTS Research Technology Bioinformatics Team has prepared the following works
 - [Introduction to AlphaFold2](./cas12aAlphaFold2_sp24/00_introduction.md) (Sp24-CHBE-0165-01-Biomolecular Eng and Design) 
 - [nextflow and nf-core RNA-Seq](./nfcore_rnaseq_sp24/00_introduction.md) 
 
-## 2024 Fall
+## [2024 Fall](2024_bioinformatics_workshop_agenda.md)
+
+- [Introduction to HPC](./2024_bioinformatics101.md)
 - [Getting Started with Bioinformatics on HPC](./2024_bioinformatics201/00_introduction.md)
 - [Software Installation and Environment Management in HPC](./2024_bioinformatics301/00_introduction.md)
 - [Advanced HPC Workflows and Job Management](./2024_bioinformatics401/00_introduction.md)
