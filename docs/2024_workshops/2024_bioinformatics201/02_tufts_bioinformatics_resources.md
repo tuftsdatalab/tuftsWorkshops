@@ -9,8 +9,9 @@ To stay updated on bioinformatics education, software tools, and workshop notifi
 In the future, we will post workshop notifications and resources through this email list.
 
 ## Workshops and resources
+### New HPC documentation website (In development)
 
-### Current Workshops
+### Current Workshops, will retire soon. 
 
 Bioinformatics workshops provided by TTS Research Technology in 2022, 2023, 2024](https://tuftsdatalab.github.io/tuftsWorkshops/)
 
@@ -88,7 +89,16 @@ We offer a wide range of bioinformatics tools as apps, including `AlphaFold` and
 
 ### RStudio and Shinyngs Apps
 
+RStudio Pax, use R/4.4.1 which has the most comprehensive packages installed (1300+). 
+
+![RStudio Pax screenshot](images/rstudio_pax.png)
+
 RStudio is available on Open OnDemand, with different versions tailored for specific tasks. For example, in `RStudio for scRNA-Seq`, the most commonly used packages for scRNA-Seq analysis are pre-installed to help streamline your workflow.
+
+**Do not copy lib.path()**
+**Verify the R version before you need to define lib.path()**
+
+To install packages, just use the default $HOME position. 
 
 ### Other Apps
 
