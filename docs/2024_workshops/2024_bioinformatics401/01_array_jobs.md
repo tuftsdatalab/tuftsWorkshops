@@ -191,10 +191,12 @@ Submitting too many jobs
 
 To query `MaxArraySize` , you can use 
 
-```scontrol show conf | grep MaxArraySize
+```
+scontrol show conf | grep MaxArraySize
 $ scontrol show config | grep -i array
 MaxArraySize            = 2000
 ```
+
 
 
 
