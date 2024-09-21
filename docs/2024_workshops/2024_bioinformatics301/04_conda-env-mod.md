@@ -71,104 +71,6 @@ This will create a conda environment to a custom directory.
 $ conda-env-mod create -p /cluster/tufts/mylab/$USER/condaenv/myenv
 ```
 
-### Create a conda environment for your research group
-```
-conda-env-mod create -p /cluster/tufts/mylab/apps/appName -m /cluster/tufts/mylab/modules
-```
-
-```
- conda-env-mod create -p /cluster/tufts/rt/shared/apps/rnaseq -m /cluster/tufts/rt/shared/modules
-export CONDA_PREFIX=/cluster/tufts/hpc/apps/rocky9/external/miniforge/24.7.1
-requested create with arguments:  -p '/cluster/tufts/rt/shared/apps/rnaseq' -m '/cluster/tufts/rt/shared/modules' --
-conda create -q --copy --prefix /cluster/tufts/rt/shared/apps/rnaseq python=3.12.5
-Retrieving notices: ...working... done
-Channels:
- - bioconda
- - conda-forge
-Platform: linux-64
-Collecting package metadata (repodata.json): ...working... done
-Solving environment: ...working... done
-
-## Package Plan ##
-
-  environment location: /cluster/tufts/rt/shared/apps/rnaseq
-
-  added / updated specs:
-    - python=3.12.5
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    setuptools-74.1.2          |     pyhd8ed1ab_0         766 KB  conda-forge
-    ------------------------------------------------------------
-                                           Total:         766 KB
-
-The following NEW packages will be INSTALLED:
-
-  _libgcc_mutex      conda-forge/linux-64::_libgcc_mutex-0.1-conda_forge 
-  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-2_gnu 
-  bzip2              conda-forge/linux-64::bzip2-1.0.8-h4bc722e_7 
-  ca-certificates    conda-forge/linux-64::ca-certificates-2024.8.30-hbcca054_0 
-  ld_impl_linux-64   conda-forge/linux-64::ld_impl_linux-64-2.40-hf3520f5_7 
-  libexpat           conda-forge/linux-64::libexpat-2.6.3-h5888daf_0 
-  libffi             conda-forge/linux-64::libffi-3.4.2-h7f98852_5 
-  libgcc             conda-forge/linux-64::libgcc-14.1.0-h77fa898_1 
-  libgcc-ng          conda-forge/linux-64::libgcc-ng-14.1.0-h69a702a_1 
-  libgomp            conda-forge/linux-64::libgomp-14.1.0-h77fa898_1 
-  libnsl             conda-forge/linux-64::libnsl-2.0.1-hd590300_0 
-  libsqlite          conda-forge/linux-64::libsqlite-3.46.1-hadc24fc_0 
-  libuuid            conda-forge/linux-64::libuuid-2.38.1-h0b41bf4_0 
-  libxcrypt          conda-forge/linux-64::libxcrypt-4.4.36-hd590300_1 
-  libzlib            conda-forge/linux-64::libzlib-1.3.1-h4ab18f5_1 
-  ncurses            conda-forge/linux-64::ncurses-6.5-he02047a_1 
-  openssl            conda-forge/linux-64::openssl-3.3.2-hb9d3cd8_0 
-  pip                conda-forge/noarch::pip-24.2-pyh8b19718_1 
-  python             conda-forge/linux-64::python-3.12.5-h2ad013b_0_cpython 
-  readline           conda-forge/linux-64::readline-8.2-h8228510_1 
-  setuptools         conda-forge/noarch::setuptools-74.1.2-pyhd8ed1ab_0 
-  tk                 conda-forge/linux-64::tk-8.6.13-noxft_h4845f30_101 
-  tzdata             conda-forge/noarch::tzdata-2024a-h8827d51_1 
-  wheel              conda-forge/noarch::wheel-0.44.0-pyhd8ed1ab_0 
-  xz                 conda-forge/linux-64::xz-5.2.6-h166bdaf_0 
-
-
-Proceed ([y]/n)? y
-
-Preparing transaction: ...working... done
-Verifying transaction: ...working... done
-Executing transaction: ...working... done
-+---------------------------------------------------------------+
-| To use this environment, load the following modules:          |
-|     module use /cluster/tufts/rt/shared/modules               |
-|     module load conda-env/rnaseq-py3.12.5                     |
-| (then standard 'conda install' / 'pip install' / run scripts) |
-+---------------------------------------------------------------+
-Your environment "rnaseq" was created successfully.
-
-```
-
-```
-module use /cluster/tufts/rt/shared/modules
-module load conda-env/rnaseq-py3.12.5 
-conda install -c bioconda star samtools fastqc trim-galore salmon 
-```
-
-```
-module load miniforge/24.7.1-py312 
-module use /cluster/tufts/rt/shared/modules  
-module load conda-env/scrnaseq-py3.12.5
-conda-env-mod create -p /cluster/tufts/rt/shared/apps/pytorch_2.4.1 -m /cluster/tufts/rt/shared/modules --jupyter
-
-module use /cluster/tufts/rt/shared/modules 
-module load conda-env/pytorch_2.4.1-py3.12.5  
-
-pip3 install torch torchvision torchaudio
-
-conda-env-mod kernel -p /cluster/tufts/rt/shared/apps/pytorch_2.4.1
-```
-
 
 ```
 conda-env-mod create -p /cluster/tufts/rt/shared/apps/biopython -m /cluster/tufts/rt/shared/modules --jupyter
@@ -176,3 +78,108 @@ module use /cluster/tufts/rt/shared/modules
 module load conda-env/biopython-py3.12.5
 conda install biopython
 ```
+
+## Creating and managing shared conda environment for the whole lab
+Users can create conda environments in lab's project folder, and share them with the whole lab/
+### The PI or lab manager
+##### Create conda environment and module file(once)
+```
+$ module purge
+$ module load anaconda
+$ conda-env-mod create -p /cluster/tufts/mylab/apps/mypackage -m /cluster/tufts/mylab/modules --jupyter
+```
+
+`--jupyter` is only needed if you plan to use the conda environment on jupyter notebook/lab. 
+
+#### Install packages into the environment
+```
+$ module use /cluster/tufts/mylab/modules
+$ module load conda-env/mypackage-py3.xx.xx 
+$ conda install  .......                     
+$ pip install ...
+```
+
+#### Confirm the access permissions
+To allow all group members to use the newly built environment, PI or lab managers need to confirm the group has read and execute permissions on the conda environments and modulefile folder. 
+If permissions are not correctly set up, they can be modified by:
+
+```
+$ chmod -R g=rx /cluster/tufts/mylab/apps
+$ chmod -R g=rx /cluster/tufts/mylab/modules 
+```
+
+- `-R` stands for **recursive**. It allows you to apply the permission change to directories and all of their contents, including subdirectories and files.
+- `g=rx` means the group members can read and execute files and directories, but not modify them (**no write permission**).
+
+### Group members
+Once the conda environment has been created, all members can start using the environment simply by loading the corresponding module:
+```
+$ module use /cluster/tufts/mylab/modules
+$ module load conda-env/mypackage-py3.xx.xx 
+$ python my_script.py .....
+```
+### Jupyter notebook/lab
+To use the conda environment in Jupyter notebook/lab, each lab member will need to create his/her own Jupyter kernel (once). This is because Jupyter kernels are private to individuals. By default, Jupyter will only search for kernels in users' `$HOME/.local/share/jupyter/kernels`.
+
+```
+$ conda-env-mod kernel -p /cluster/tufts/mylab/apps/mypackage
+```
+
+## Conda enivronment for the class
+The instructor can follow a similar process to create conda environment and install packages that can be used by all students. 
+
+
+## Examples
+### RNAseq environment for the lab
+#### Load required modules
+Users can choose either anaconda or miniforge. 
+```
+$ module load miniforge/24.7.1-py312 
+$ module load conda-env-mod
+```
+#### Create conda environment and generate modulefile
+```
+ $ conda-env-mod create -p /cluster/tufts/rt/shared/apps/rnaseq -m /cluster/tufts/rt/shared/modules
+```
+
+After the installation completes, you will see the below instructions about how to use the environment and module:
+
+```
++---------------------------------------------------------------+
+| To use this environment, load the following modules:          |
+|     module use /cluster/tufts/rt/shared/modules               |
+|     module load conda-env/rnaseq-py3.12.5                     |
+| (then standard 'conda install' / 'pip install' / run scripts) |
++---------------------------------------------------------------+
+Your environment "rnaseq" was created successfully.
+```
+#### Load the module and install applications
+```
+module use /cluster/tufts/rt/shared/modules
+module load conda-env/rnaseq-py3.12.5 
+conda install -c bioconda star samtools fastqc trim-galore salmon 
+```
+
+### PyTorch for the lab
+#### Load required modules
+```
+$ module load miniforge/24.7.1-py312 
+$ module load conda-env-mod
+```
+#### Create conda environment and generate modulefile
+```
+conda-env-mod create -p /cluster/tufts/rt/shared/apps/pytorch_2.4.1 -m /cluster/tufts/rt/shared/modules --jupyter
+```
+#### Install PyTorch
+```
+module use /cluster/tufts/rt/shared/modules 
+module load conda-env/pytorch_2.4.1-py3.12.5  
+pip3 install torch torchvision torchaudio
+```
+#### Running the kernel in Jupyter Notebook on Open OnDemand 
+When you open Jupyter notebook/lab, you can see the PyTorch kernel `My pytorch_2.4.1 Kernel`. 
+![torch_kernel](images/torch_kernel.png)
+
+Let's try to use the PyTorch package to run a simple analysis. You can see that it successfully run on Jupyter Notebook with Nvidia A100 GPU.
+
+![torch_kernel](images/torch_kernel.png)
