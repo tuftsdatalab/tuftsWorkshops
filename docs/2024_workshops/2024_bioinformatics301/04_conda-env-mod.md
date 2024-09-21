@@ -182,4 +182,4 @@ When you open Jupyter notebook/lab, you can see the PyTorch kernel `My pytorch_2
 
 Let's try to use the PyTorch package to run a simple analysis. You can see that it successfully run on Jupyter Notebook with Nvidia A100 GPU.
 
-![torch_kernel](images/torch_kernel.png)
+![torch_kernel](images/torch_gpu.png)
