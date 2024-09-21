@@ -159,10 +159,10 @@ conda install -c bioconda star samtools fastqc trim-galore salmon
 module load miniforge/24.7.1-py312 
 module use /cluster/tufts/rt/shared/modules  
 module load conda-env/scrnaseq-py3.12.5
-conda-env-mod create -p /cluster/tufts/rt/shared/apps/pytorch_2.4.1 -m /cluster/tufts/rt/shared/modules
+conda-env-mod create -p /cluster/tufts/rt/shared/apps/pytorch_2.4.1 -m /cluster/tufts/rt/shared/modules --jupyter
 
 module use /cluster/tufts/rt/shared/modules 
-module load conda-env/pytorch_2.4.1-py3.12.4 
+module load conda-env/pytorch_2.4.1-py3.12.5  
 
 pip3 install torch torchvision torchaudio
 
