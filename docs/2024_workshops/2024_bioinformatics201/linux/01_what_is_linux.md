@@ -35,7 +35,7 @@ Linux is a free, open-source, and Unix-like operating system kernel that was ori
 
 ​	•	**Kali Linux:** A distribution designed for penetration testing and security research.
 
-<img src="../images/linux_distros.png" width="500">
+<img src="../images/linux_distros.png" width="800">
 
 ## Shell
 
