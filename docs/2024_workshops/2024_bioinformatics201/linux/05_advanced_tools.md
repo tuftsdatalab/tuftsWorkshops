@@ -75,7 +75,7 @@ parallel -j N "fastqc {}" ::: *.fastq.gz
 - **-j N**: Specifies the number of parallel jobs to run (replace N with the desired number, considering available CPU cores).
 - **"fastqc {}"**: The FastQC command to execute in parallel, with {} representing each input file.
 - **:::**: Separates the command from the list of files.
-- ***.fastq.gz**: Wildcard pattern to match all FASTQ files with the **.fastq.gz** extension in the current directory. Modify as needed for different file extensions or locations.
+- **\*.fastq.gz**: Wildcard pattern to match all FASTQ files with the **\*.fastq.gz** extension in the current directory. Modify as needed for different file extensions or locations.
 
 Highly recommeded to read this article written by the developer Ole Tange in [Biostars](https://www.biostars.org/p/63816/). 
  <img src="http://i.stack.imgur.com/17FsG.png" alt="GNU parallel" style="height:500px;" />
