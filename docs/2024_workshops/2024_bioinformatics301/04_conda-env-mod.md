@@ -101,7 +101,9 @@ $ conda-env-mod create -p /cluster/tufts/mylab/$USER/condaenv/myenv --jupyter
 ### 1. Create a Biopython conda environment for yourself
 #### Create conda environment, modulefile, and jupyter kernel
 ```
-conda-env-mod create -n biopython --jupyter
+$ module load miniforge/24.7.1-py312
+$ module load conda-env-mod
+$ conda-env-mod create -n biopython --jupyter
 ```
 
 #### Load module and install packages
@@ -113,7 +115,7 @@ conda install -c bioconda biopython
 
 #### Using biopython in command line or scripts
 ```
-[yzhang85@d1cmp003 ~]$ which python
+$ which python
 /cluster/tufts/yzhang85/conda/condaenv/biopython/bin/python
 $ python
 Python 3.12.5 | packaged by conda-forge | (main, Aug  8 2024, 18:36:51) [GCC 12.4.0] on linux
@@ -141,31 +143,33 @@ Sequence length: 340777
 ID: NZ_LFXA01000008.1
 Sequence length: 126449
 ```
+
 #### Using biopython as a jupyter kernel in jupyter notebook/lab on Open OnDemand
 ![biopython](images/biopython.png)
 
-## 2. Create and manage shared conda environment for the whole lab
-Users can create conda environments in lab's project folder, and share them with the whole lab/
+## 2. Create and manage shared conda environments for the group
+Users can create conda environments in lab's project folder, and share them with the whole group.
 ### The PI or lab manager
-##### Create conda environment and module file(once)
+##### Create conda environment(once)
 ```
 $ module purge
 $ module load anaconda
 $ conda-env-mod create -p /cluster/tufts/mylab/apps/mypackage -m /cluster/tufts/mylab/modules --jupyter
 ```
+In the example code, `mylab` is my group name. I created two folders `apps` and `modules` to store packages installations, and module files, respectively.
 
 `--jupyter` is only needed if you plan to use the conda environment on jupyter notebook/lab. 
 
 #### Install packages into the environment
 ```
 $ module use /cluster/tufts/mylab/modules
-$ module load conda-env/mypackage-py3.xx.xx 
+$ module load conda-env/mypackage-py3.12.5
 $ conda install  .......                     
 $ pip install ...
 ```
 
 #### Confirm the access permissions
-To allow all group members to use the newly built environment, PI or lab managers need to confirm the group has read and execute permissions on the conda environments and modulefile folder. 
+To allow all group members to use the newly built environment, PI or lab managers need to confirm the group has read and execute permissions to the conda environments and modulefile folder. 
 If permissions are not correctly set up, they can be modified by:
 
 ```
@@ -180,7 +184,7 @@ $ chmod -R g=rx /cluster/tufts/mylab/modules
 Once the conda environment has been created, all members can start using the environment simply by loading the corresponding module:
 ```
 $ module use /cluster/tufts/mylab/modules
-$ module load conda-env/mypackage-py3.xx.xx 
+$ module load conda-env/mypackage-py3.12.5
 $ python my_script.py .....
 ```
 ### Jupyter notebook/lab
@@ -202,7 +206,7 @@ Users can choose either anaconda or miniforge.
 $ module load miniforge/24.7.1-py312 
 $ module load conda-env-mod
 ```
-#### Create conda environment and generate modulefile
+#### Create conda environment
 ```
  $ conda-env-mod create -p /cluster/tufts/rt/shared/apps/rnaseq -m /cluster/tufts/rt/shared/modules
 ```
@@ -218,11 +222,11 @@ After the installation completes, you will see the below instructions about how 
 +---------------------------------------------------------------+
 Your environment "rnaseq" was created successfully.
 ```
-#### Load the module and install applications
+#### Load the module and install applications for RNAseq analysis
 ```
-module use /cluster/tufts/rt/shared/modules
-module load conda-env/rnaseq-py3.12.5 
-conda install -c bioconda star samtools fastqc trim-galore salmon 
+$ module use /cluster/tufts/rt/shared/modules
+$ module load conda-env/rnaseq-py3.12.5 
+$ conda install -c bioconda star samtools fastqc trim-galore salmon 
 ```
 
 ### PyTorch for the lab
@@ -231,10 +235,12 @@ conda install -c bioconda star samtools fastqc trim-galore salmon
 $ module load miniforge/24.7.1-py312 
 $ module load conda-env-mod
 ```
-#### Create conda environment and generate modulefile
+#### Create conda environment
 ```
 conda-env-mod create -p /cluster/tufts/rt/shared/apps/pytorch_2.4.1 -m /cluster/tufts/rt/shared/modules --jupyter
 ```
+Since PyTorch is a python package, running it using Jupyter notebook/lab is convenient. That's why `--jupyter` is used. 
+
 #### Install PyTorch
 ```
 module use /cluster/tufts/rt/shared/modules 
@@ -245,6 +251,6 @@ pip3 install torch torchvision torchaudio
 When you open Jupyter notebook/lab, you can see the PyTorch kernel `My pytorch_2.4.1 Kernel`. 
 ![torch_kernel](images/torch_kernel.png)
 
-Let's try to use the PyTorch package to run a simple analysis. You can see that it successfully run on Jupyter Notebook with Nvidia A100 GPU.
+Let's try to use the PyTorch package to run a simple analysis. You can see that it successfully run on Jupyter notebook with Nvidia A100 GPU.
 
 ![torch_kernel](images/torch_gpu.png)
