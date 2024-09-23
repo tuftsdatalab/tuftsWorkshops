@@ -31,9 +31,20 @@ $ pwd
 /cluster/home/yzhang85
 ```
 #### Shortcuts
-- **..**	cd to the parent directory.	`cd ..`
-- **~**	cd to the home directory.	`cd ~`
-- **-**	cd to the previous directory.	`cd -`
+- **..**:	cd to the parent directory.	`cd ..`
+- **~**:	cd to the home directory.	`cd ~`
+- **-**:	cd to the previous directory.	`cd -`
+
+### ls: list all the files in the given directory
+#### Usage
+```
+ls [options] [directory]
+```
+#### Common options:
+- **-1**: list each file/directory on a separate line
+- **-l**: lists files/directories with their most common metadata 
+- **-a**: include hidden files /directories (files’ name begins with a dot .)
+- **-h**: print size of files/directories in human readable format 
 
 ### touch: create new files and update timestamps
 touch is used to create new files or to update the timestamps (access and modification times) of existing files. 
