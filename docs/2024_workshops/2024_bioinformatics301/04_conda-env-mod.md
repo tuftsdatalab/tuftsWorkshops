@@ -47,9 +47,7 @@ anaconda/bio35  anaconda/2020.02   anaconda/2021.05   anaconda/2021.11   anacond
 
 module load anaconda/2024.06-py312
 ```
-!!! note "Anaconda updated its terms of service"
-
-> **Note: _Anaconda updated their [term of service (TOS)](https://www.anaconda.com/blog/anaconda-commercial-edition-faq) 
+!!! note "Anaconda updated its terms of service([TOS](https://www.anaconda.com/blog/anaconda-commercial-edition-faq))"
    We clarified our definition of commercial usage in our Terms of Service in an update on Sept. 30, 2020. The new language states that use by individual hobbyists, students, universities, non-profit organizations, or businesses with less than 200 employees is allowed, and all other usage is considered commercial and thus requires a business relationship with Anaconda.
 
 Due to this updated TOS, it's likely we will have to uninstall anaconda from Tufts HPC and other Tufts-owned computers, and migrate to miniforge. Right now, we are sitting tight to see whether Anaconda Inc. will make some updates. In the meantime, I do recommend users to use miniforge instead of anaconda. 
@@ -57,18 +55,18 @@ Due to this updated TOS, it's likely we will have to uninstall anaconda from Tuf
 
 ```
 $ module avail miniforge
- ----------------------/cluster/tufts/hpc/tools/module--------------------------------------------------
+ ----------------------/cluster/tufts/hpc/tools/module-----------------------
    miniforge/24.3.0-py310    miniforge/24.7.1-py312 (D)
 
 $ module load miniforge/24.7.1-py312
 ```
 
-
+### Step2: Load conda-env-mod
 ```
 $ module load conda-env-mod
 ```
 
-### Step 2: Create a conda environment
+### Step 3: Create a conda environment
 
 Users can use the `conda-env-mod`  to create an empty conda environment. It needs either a name or a path for the desired environment. After the environment is created, it generates a module file for using it in future. Detailed instructions for using `conda-env-mod` can be found with the command `conda-env-mod --help`.
 
@@ -80,8 +78,6 @@ Users can use the `conda-env-mod`  to create an empty conda environment. It need
 $ conda-env-mod create -n myenv
 ```
 
-
-
 #### Create a conda environment with -p
 
 This will create a conda environment to a custom directory. 
@@ -90,9 +86,9 @@ This will create a conda environment to a custom directory.
 $ conda-env-mod create -p /cluster/tufts/mylab/$USER/condaenv/myenv
 ```
 
-
+#### Example: create a Biopython conda enironment for yourself
 ```
-conda-env-mod create -p /cluster/tufts/rt/shared/apps/biopython -m /cluster/tufts/rt/shared/modules --jupyter
+conda-env-mod create -n biopython --jupyter
 module use /cluster/tufts/rt/shared/modules
 module load conda-env/biopython-py3.12.5
 conda install biopython
