@@ -18,7 +18,31 @@ EnvironmentNotWritableError: The current user does not have write permissions to
   gid: 7593
 ```
 ## Conda modules
+```
+$ module avail anaconda
+
+--------------------- /opt/shared/Modules/modulefiles-rhel6 ------------------------------------------
+   anaconda/2  anaconda/3
+
+-------------------- /cluster/tufts/hpc/tools/module --------------------------------------------------
+anaconda/bio35  anaconda/2020.02   anaconda/2021.05   anaconda/2021.11   anaconda/2023.07.tuftsai   anaconda/2024.06-py312 (D)
+```
+
 The new versions of Anaconda are significantly faster in solving dependencies thanks to the integration of `libmamba`, a highly efficient package management library that outperforms Conda’s traditional solver. Not recommend to use old anaconda modules.
+
+
+!!! note "Anaconda updated its terms of service([TOS](https://www.anaconda.com/blog/anaconda-commercial-edition-faq))"
+   
+      We clarified our definition of commercial usage in our Terms of Service in an update on Sept. 30, 2020. The new       language states that use by individual hobbyists, students, universities, non-profit organizations, or businesses with less than 200 employees is allowed, and all other usage is considered commercial and thus requires a business relationship with Anaconda.
+
+Due to this updated TOS, it's likely we will have to uninstall anaconda from Tufts HPC and other Tufts-owned computers, and migrate to miniforge. Right now, we are sitting tight to see whether Anaconda Inc. will make some updates. In the meantime, I do recommend users to use miniforge instead of anaconda. 
+
+```
+$ module avail miniforge
+ ----------------------/cluster/tufts/hpc/tools/module-----------------------
+   miniforge/24.3.0-py310    miniforge/24.7.1-py312 (D)
+```
+
 
 
 ### conda channels

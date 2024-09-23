@@ -87,15 +87,53 @@ This will create a conda environment to a custom directory.
 $ conda-env-mod create -p /cluster/tufts/mylab/$USER/condaenv/myenv
 ```
 
-#### Example: create a Biopython conda enironment for yourself
+## Examples
+
+### 1. Create a Biopython conda environment for yourself
+#### Create conda environment, modulefile, and jupyter kernel
 ```
 conda-env-mod create -n biopython --jupyter
-module use /cluster/tufts/rt/shared/modules
-module load conda-env/biopython-py3.12.5
-conda install biopython
 ```
 
-## Creating and managing shared conda environment for the whole lab
+#### Load module and install packages
+```
+module load use.own
+module load conda-env/biopython-py3.12.5
+conda install -c bioconda biopython
+```
+
+#### Using biopython in command line or scripts
+```
+[yzhang85@d1cmp003 ~]$ which python
+/cluster/tufts/yzhang85/conda/condaenv/biopython/bin/python
+$ python
+Python 3.12.5 | packaged by conda-forge | (main, Aug  8 2024, 18:36:51) [GCC 12.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from Bio import SeqIO
+>>> fasta_file = "genome.fa"
+>>> for seq_record in SeqIO.parse(fasta_file, "fasta"):
+...     print(f"ID: {seq_record.id}")
+...     print(f"Sequence length: {len(seq_record)}")
+... 
+ID: NZ_LFXA01000001.1
+Sequence length: 199691
+ID: NZ_LFXA01000002.1
+Sequence length: 1310906
+ID: NZ_LFXA01000003.1
+Sequence length: 232631
+ID: NZ_LFXA01000004.1
+Sequence length: 719325
+ID: NZ_LFXA01000005.1
+Sequence length: 109134
+ID: NZ_LFXA01000006.1
+Sequence length: 17068
+ID: NZ_LFXA01000007.1
+Sequence length: 340777
+ID: NZ_LFXA01000008.1
+Sequence length: 126449
+```
+
+## 2. Create and manage shared conda environment for the whole lab
 Users can create conda environments in lab's project folder, and share them with the whole lab/
 ### The PI or lab manager
 ##### Create conda environment and module file(once)
