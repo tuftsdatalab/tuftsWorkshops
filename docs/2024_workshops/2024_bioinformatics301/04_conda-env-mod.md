@@ -87,6 +87,14 @@ This will create a conda environment to a custom directory.
 $ conda-env-mod create -p /cluster/tufts/mylab/$USER/condaenv/myenv
 ```
 
+#### Create a conda environment as well as jupyter kernel
+You just need to add `--jupyter` when you run `conda-env-mod create -n` or `conda-env-mod create -p`.
+```
+$ conda-env-mod create -n myenv --jupyter
+$ conda-env-mod create -p /cluster/tufts/mylab/$USER/condaenv/myenv --jupyter
+```
+
+
 ## Examples
 
 ### 1. Create a Biopython conda environment for yourself
@@ -132,6 +140,8 @@ Sequence length: 340777
 ID: NZ_LFXA01000008.1
 Sequence length: 126449
 ```
+#### Using biopython as a jupyter kernel in jupyter notebook/lab on Open OnDemand
+![biopython](images/biopython.png)
 
 ## 2. Create and manage shared conda environment for the whole lab
 Users can create conda environments in lab's project folder, and share them with the whole lab/
