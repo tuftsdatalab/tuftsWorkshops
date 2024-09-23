@@ -349,15 +349,15 @@ sort file.txt | uniq
 
 - **\***: Represents zero or more characters.   
    
-   **\*.fastq.gz**  matches all fastq.gz files
+- **\*.fastq.gz**  matches all fastq.gz files
 
 - **?**: Represents a single character.
    
-   **file?.txt** matches "file1.txt", "fileA.txt", but not "file12.txt".
+- **file?.txt** matches "file1.txt", "fileA.txt", but not "file12.txt".
 
 - **[]**: Represents a single character within a specified range or set.
 
-   **[abc]at** matches "bat", "cat", or "aat”.
+- **[abc]at** matches "bat", "cat", or "aat”.
 
 - **[0-9]** matches any single digit.
 
