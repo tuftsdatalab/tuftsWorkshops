@@ -15,17 +15,16 @@
 
 - Timestamps
 
-- Permission
+- Permission:
 
-- Read(r)
-
-- Write (w)
-
-- Execute(x)
+    1. Read(r)
+    2. Write(w)
+    3. Execute(x)
+    4. no permission(-)
 
 ## File permissions
 
-<img src="../images/file_permission.png" alt="file permission" style="zoom:50%;" />
+<img src="../images/permission.png" alt="file permission" style="zoom:50%;" />
 
 ## File names
 
@@ -52,11 +51,9 @@ Everything is mounted to the root directory
 
 Files are referred to by their location called the **path** 
 
-- Absolute Path (From the root) 
-  - /cluster/tufts/pi01/user01
+- Absolute Path (From the root): /cluster/tufts/pi01/user01
 
-- Relative Path (From my current location)
-  - user01/file01
+- Relative Path (From my current location）： user01/file01
 
 <img src="../images/file_system.png" width="600">
 
