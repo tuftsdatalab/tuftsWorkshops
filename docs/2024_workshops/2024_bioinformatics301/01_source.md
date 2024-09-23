@@ -5,6 +5,8 @@
 ## make
 GNU Make is a program often used for compiling software. It uses a plain text file named **makefile** or **Makefile**.
 
+`make` and `Makefile` are also widely used in building reproducible workflows. This [ariticle](http://www.bioinformaticszen.com/post/makefiles/) is a good introduction.
+
 ### Steps
 
 1. Unpack the source code archive. 
