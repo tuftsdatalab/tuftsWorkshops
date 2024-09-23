@@ -314,15 +314,15 @@ $VARIABLE     ## echo $VARIABLE
 
 - `>`: Overwrites the contents of a file with the command's output
 
- 	`cat file1 file2 > files`
+      `cat file1 file2 > files`
 
 - `>>`: Appends the output to the end of an existing file
 
-​        `cat file3 >> files`
+​     `cat file3 >> files`
 
 - `<`: Uses the contents of a file as input to a command
 
-​	`sort < names.txt`
+​     `sort < names.txt`
 
 ### Pipe: |
 
