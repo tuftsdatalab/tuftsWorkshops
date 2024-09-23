@@ -4,9 +4,9 @@
 
 Unix is a powerful, multiuser, multitasking operating system that was originally developed in the 1960s and 1970s at **Bell Labs** by **Ken Thompson**, **Dennis Ritchie**, and others. It has since become one of the most influential operating systems in the history of computing, serving as the foundation for many modern operating systems, including Linux, macOS, and various BSDs. **Dennis Ritchie** is also the creator of C. 
 <div style="display: flex; align-items: center;">
-  <img src="https://www.redhat.com/sysadmin/sites/default/files/styles/full/public/2022-11/Ken_Thompson_Dennis_Ritchie_PDP-11_0.jpg?itok=D9Au5qnp" alt="Ken Thompson (sitting) and Dennis Ritchie at PDP-11" style="height:400px; margin-right: 10px;"/>
+  <img src="https://www.redhat.com/sysadmin/sites/default/files/styles/full/public/2022-11/Ken_Thompson_Dennis_Ritchie_PDP-11_0.jpg?itok=D9Au5qnp" alt="Ken Thompson (sitting) and Dennis Ritchie at PDP-11" style="height:300px; margin-right: 10px;"/>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/The_C_Programming_Language%2C_First_Edition_Cover.svg" alt="The C Programming Language - Wikipedia" style="height:400px;" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/The_C_Programming_Language%2C_First_Edition_Cover.svg" alt="The C Programming Language - Wikipedia" style="height:300px;" />
 </div>
 
 ## Key features
@@ -25,10 +25,6 @@ Linux is a free, open-source, and Unix-like operating system kernel that was ori
   <img src="../images/git.png" alt="Linus Torvalds" style="height:300px;" />
 </div>
 
-
-
-<img src="https://fossbytes.com/wp-content/uploads/2016/08/linus-torvald-first-linux-email.png" alt="Linus Torvalds's Famous Email — The First Linux Announcement" width="1000">
-<img src="https://media.licdn.com/dms/image/v2/D5612AQHNUVhyAZO6BA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1693106715409?e=1732752000&v=beta&t=qddDOg1IPPZp7IaXbaIDsa5lAJe-cOrz1t8dX9CiT4Q" alt="Linus Torvalds" width="500">
 
 **Popular Linux Distributions:**
 
@@ -49,6 +45,8 @@ Linux is a free, open-source, and Unix-like operating system kernel that was ori
 ## Shell
 
 **Shell** is like a translator and bridge between you and the operating system's core, the **kernel**. It takes the commands you type and interprets them, telling the kernel what actions to perform. 
+
+Tufts HPC only supports `bash`, short for Bourne-Again SHell.
 
 <img src="../images/shell.png" width="500">
 
