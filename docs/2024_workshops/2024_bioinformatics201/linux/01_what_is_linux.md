@@ -12,14 +12,17 @@ Unix is a powerful, multiuser, multitasking operating system that was originally
 ## Key features
 - **Multiuser**: Unix allows multiple users to access the system simultaneously, each with their own environment, files, and processes.
 - **Multitasking**:  Unix is capable of running multiple processes at the same time. This means that it can handle several tasks concurrently, like running applications, performing background tasks, and processing commands.
-- **Hierarchical File System**: Unix uses a hierarchical file system structure, where files are organized in directories (folders), starting from a root directory (/). 
-- **Simple and Consistent Interface:** Unix provides a command-line interface (CLI) where users interact with the system by typing commands. The Unix philosophy emphasizes small, simple, and modular commands that can be combined in scripts to perform complex tasks.
+- **Hierarchical File System**: Unix uses a hierarchical file system structure, where files are organized in directories (folders), starting from a root directory (`/`). 
+- **Simple and Consistent Interface:** Unix provides a command-line interface (CLI) where users interact with the system by typing commands. **The Unix philosophy emphasizes small, simple, and modular commands that can be combined in scripts to perform complex tasks**.
 
 ## What is Linux?
 
 Linux is a free, open-source, and Unix-like operating system kernel that was originally created by **Linus Torvalds** in 1991. Over time, Linux has grown into a full-fledged operating system used worldwide across various types of devices, from servers and desktop computers to smartphones and embedded systems.
 
-![Linus Torvalds's Famous Email — The First Linux Announcement](https://fossbytes.com/wp-content/uploads/2016/08/linus-torvald-first-linux-email.png)
+<img src="https://fossbytes.com/wp-content/uploads/2016/08/linus-torvald-first-linux-email.png" alt="Linus Torvalds's Famous Email — The First Linux Announcement" width="600">
+
+
+![Linus Torvalds](https://media.licdn.com/dms/image/v2/D5612AQHNUVhyAZO6BA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1693106715409?e=1732752000&v=beta&t=qddDOg1IPPZp7IaXbaIDsa5lAJe-cOrz1t8dX9CiT4Q)
 
 **Popular Linux Distributions:**
 
