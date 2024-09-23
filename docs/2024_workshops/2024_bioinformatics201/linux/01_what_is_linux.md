@@ -4,9 +4,9 @@
 
 Unix is a powerful, multiuser, multitasking operating system that was originally developed in the 1960s and 1970s at **Bell Labs** by **Ken Thompson**, **Dennis Ritchie**, and others. It has since become one of the most influential operating systems in the history of computing, serving as the foundation for many modern operating systems, including Linux, macOS, and various BSDs. **Dennis Ritchie** is also the creator of C. 
 <div style="display: flex; align-items: center;">
-  <img src="https://www.redhat.com/sysadmin/sites/default/files/styles/full/public/2022-11/Ken_Thompson_Dennis_Ritchie_PDP-11_0.jpg?itok=D9Au5qnp" alt="Ken Thompson (sitting) and Dennis Ritchie at PDP-11" style="height:320px; margin-right: 10px;"/>
+  <img src="https://www.redhat.com/sysadmin/sites/default/files/styles/full/public/2022-11/Ken_Thompson_Dennis_Ritchie_PDP-11_0.jpg?itok=D9Au5qnp" alt="Ken Thompson (sitting) and Dennis Ritchie at PDP-11" style="height:340px; margin-right: 10px;"/>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/The_C_Programming_Language%2C_First_Edition_Cover.svg" alt="The C Programming Language - Wikipedia" style="height:320px;" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/The_C_Programming_Language%2C_First_Edition_Cover.svg" alt="The C Programming Language - Wikipedia" style="height:340px;" />
 </div>
 
 ## Key features
