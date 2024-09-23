@@ -19,10 +19,16 @@ Unix is a powerful, multiuser, multitasking operating system that was originally
 
 Linux is a free, open-source, and Unix-like operating system kernel that was originally created by **Linus Torvalds** in 1991. Over time, Linux has grown into a full-fledged operating system used worldwide across various types of devices, from servers and desktop computers to smartphones and embedded systems.
 
-<img src="https://fossbytes.com/wp-content/uploads/2016/08/linus-torvald-first-linux-email.png" alt="Linus Torvalds's Famous Email — The First Linux Announcement" width="600">
+<div style="display: flex; align-items: center;">
+  <img src="https://fossbytes.com/wp-content/uploads/2016/08/linus-torvald-first-linux-email.png" alt="The First Linux Announcement" style="height:500px; margin-right: 10px;"/>
+
+  <img src="https://media.licdn.com/dms/image/v2/D5612AQHNUVhyAZO6BA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1693106715409?e=1732752000&v=beta&t=qddDOg1IPPZp7IaXbaIDsa5lAJe-cOrz1t8dX9CiT4Q" alt="Linus Torvalds" style="height:500px;" />
+</div>
 
 
-![Linus Torvalds](https://media.licdn.com/dms/image/v2/D5612AQHNUVhyAZO6BA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1693106715409?e=1732752000&v=beta&t=qddDOg1IPPZp7IaXbaIDsa5lAJe-cOrz1t8dX9CiT4Q)
+
+<img src="https://fossbytes.com/wp-content/uploads/2016/08/linus-torvald-first-linux-email.png" alt="Linus Torvalds's Famous Email — The First Linux Announcement" width="1000">
+<img src="https://media.licdn.com/dms/image/v2/D5612AQHNUVhyAZO6BA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1693106715409?e=1732752000&v=beta&t=qddDOg1IPPZp7IaXbaIDsa5lAJe-cOrz1t8dX9CiT4Q" alt="Linus Torvalds" width="500">
 
 **Popular Linux Distributions:**
 
