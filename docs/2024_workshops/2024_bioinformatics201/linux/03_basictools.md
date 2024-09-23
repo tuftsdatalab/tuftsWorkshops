@@ -55,9 +55,17 @@ ls [options] [directory]
 - **+**: add permission
 - **-**: remove permission
 - **=**: set exact permission
-#### Usage
+#### Examples
 ```
-
+$ chmod g+w filename ## Give the group write permission 
+$ chmod u+x filename ## Give user execute permission
+$ chmod a+r filename ## Give all users read access
+$ chmod u=rw,g=r,o=r filename ## Give user read and write permission, group and other only read permission.
+```
+#### Recursive rermissions with -R
+To apply permissions recursively to all files and subdirectories within a directory, use the -R option:
+```
+$ chmod -R g+rx /path/to/directory
 ```
 
 ### touch: create new files and update timestamps
@@ -112,7 +120,7 @@ rm [options] file/directory
 
 ## Text processing
 ___
-Linux command-line tools are invaluable for bioinformatics text processing due to their efficiency and flexibility. They allow for rapid manipulation and analysis of large biological datasets, such as DNA sequences, protein structures, and gene expression data. Commands like grep, sed, awk, and cut are essential for filtering, extracting, and reformatting text-based biological information.
+Linux command-line tools are invaluable for bioinformatics text processing due to their efficiency and flexibility. They allow for rapid manipulation and analysis of large biological datasets, such as DNA sequences, protein structures, and gene expression data. Commands like `grep`, `sed`, `awk`, and `cut` are essential for filtering, extracting, and reformatting text-based biological information.
 
 ### cat: catenate files (joins their contents)**
 #### Usage
@@ -284,6 +292,24 @@ tar -xvzf archive.tar.gz
 
 ## Other useful tools
 ___
+
+### Environment variables
+#### Define variables: 
+```
+VARIABLE=value    ## No space around =
+```
+
+#### Variable reference
+```
+$VARIABLE     ## echo $VARIABLE
+```
+#### Commonly used environment variables
+- **$USER**: the login user
+- **$HOME**: the home directory
+- **$PWD**: the current directory
+- **$PATH**: A list of directories which will be checked for executable files 
+
+
 ### Redirection: >, >>, <
 
 - `>`: Overwrites the contents of a file with the command's output
@@ -383,6 +409,10 @@ ln -s target_file link_name
 
 - target_file: The file or directory you want to link to.
 - link_name: The name of the symlink that will point to the target.
+
+
+### Text Editor
+<img src="../images/editor.png" width="600">
 
 
 [Previous: Files and File system](02_files.md)                                                                 
