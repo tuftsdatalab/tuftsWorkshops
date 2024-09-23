@@ -43,8 +43,22 @@ ls [options] [directory]
 #### Common options:
 - **-1**: list each file/directory on a separate line
 - **-l**: lists files/directories with their most common metadata 
-- **-a**: include hidden files /directories (files’ name begins with a dot .)
+- **-a**: include hidden files /directories (files’ name begins with a dot `.`)
 - **-h**: print size of files/directories in human readable format 
+
+### chmod: manage file permissions
+#### Symbolic Notation
+- **u**: user (owner)
+- **g**: group
+- **o**: others
+- **a**: all (user, group, others)
+- **+**: add permission
+- **-**: remove permission
+- **=**: set exact permission
+#### Usage
+```
+
+```
 
 ### touch: create new files and update timestamps
 touch is used to create new files or to update the timestamps (access and modification times) of existing files. 
