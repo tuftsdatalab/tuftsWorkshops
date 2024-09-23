@@ -35,6 +35,8 @@ Linux is a free, open-source, and Unix-like operating system kernel that was ori
 
 ​	•	**Kali Linux:** A distribution designed for penetration testing and security research.
 
+<img src="../images/linux_distros.png" width="500">
+
 ## Shell
 
 **Shell** is like a translator and bridge between you and the operating system's core, the **kernel**. It takes the commands you type and interprets them, telling the kernel what actions to perform. 
