@@ -21,11 +21,11 @@ GNU Make is a program often used for compiling software. It uses a plain text fi
 
 By default, **make install** will install applications into `/usr/local`, but regular users do not have permission to write into `/usr/lobcal`. 
 
-The best way is to install applications into your home directory or /depot by passing the option `--prefix=TargetDirName` to `./configure`. 
+The best way is to install applications into your home directory or your group's shared directory by passing the option `--prefix=TargetDirName` to `./configure`. 
 
 
 ### bwa
-[BWA](https://bio-bwa.sourceforge.net/) is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM. The first algorithm is designed for Illumina sequence reads up to 100bp, while the rest two for longer sequences ranged from 70bp to 1Mbp. BWA-MEM and BWA-SW share similar features such as long-read support and split alignment, but BWA-MEM, which is the latest, is generally recommended for high-quality queries as it is faster and more accurate. BWA-MEM also has better performance than BWA-backtrack for 70-100bp Illumina reads.
+[BWA](https://bio-bwa.sourceforge.net/) is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. 
 #### Installation guide from [README](https://github.com/lh3/bwa)
 ```
 git clone https://github.com/lh3/bwa.git
@@ -102,7 +102,7 @@ $ wget http://eddylab.org/software/hmmer/hmmer-3.4.tar.gz
 $ tar -xvf hmmer-3.4.tar.gz
 $ cd hmmer-3.4
 # compile the code
-./configure --prefix=$HOME/myapps 
+./configure --prefix=$HOME/apps 
 make
 make check
 make install
