@@ -254,14 +254,6 @@ Creates a new conda environment named myenv without specifying a python version.
 
 **By default, this environment will likely use the base Python installation on your system.** If you install python modules using pip, their location will depend on the default python installation's configuration (usually it is user’s home directory: `$HOME/.local/`), which can lead to potential conflicts and inconsistencies. 
 
-### Recommended process
-```
-$ module load anaconda/2024.06-py312 
-$ conda install -c myenv python=3.12
-$ conda activate myenv
-$ conda install xxx
-$ pip install xxx
-```
 
 ## Using Conda environments in Jupyter
 
@@ -297,7 +289,23 @@ If you would like to use JupyterNotebook or JupyterLab from OnDemand, you can fo
 
 - :)
 
+## Recommended workflow
+```
+$ conda config --append envs_dirs /cluster/tufts/XXXXlab/$USER/condaenv/ # Once
+$ conda config --append pkgs_dirs /cluster/tufts/XXXXlab/$USER/condapkg/ $ Once
+$ conda config –remove channel defaults  # Once
+$ conda config --add channels bioconda   # Once
+$ conda config --add channels conda-forge # Once
+$ module load miniforge/24.7.1-py312  
+$ conda create -n myenv python=3.12
+$ conda activate myenv
+$ conda install xxx
+$ pip install xxx
+$ conda deactivate # After your job/analysis is complete
+```
+
 ## Caveats
+- Do not run `conda init`
 - Do not install python modules with `pip install --user`
 - Watch for disk usage in your $HOME
   ```
@@ -313,4 +321,4 @@ If you would like to use JupyterNotebook or JupyterLab from OnDemand, you can fo
   Press q to quit
   ## You can select 6 to check your $HOME disk usage
   ```
-- Do not run `conda init`
+
