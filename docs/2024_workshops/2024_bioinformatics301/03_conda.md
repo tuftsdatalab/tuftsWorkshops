@@ -33,9 +33,9 @@ The new versions of Anaconda are significantly faster in solving dependencies th
 
 !!! note "Anaconda updated its terms of service([TOS](https://www.anaconda.com/blog/anaconda-commercial-edition-faq))"
    
-      We clarified our definition of commercial usage in our Terms of Service in an update on Sept. 30, 2020. The new       language states that use by individual hobbyists, students, universities, non-profit organizations, or businesses with less than 200 employees is allowed, and all other usage is considered commercial and thus requires a business relationship with Anaconda.
+      We clarified our definition of commercial usage in our Terms of Service in an update on Sept. 30, 2020. The new language states that use by individual hobbyists, students, universities, non-profit organizations, or businesses with **less than 200 employees** is allowed, and all other usage is considered commercial and thus requires a business relationship with Anaconda.
 
-Due to this updated TOS, it's likely we will have to uninstall anaconda from Tufts HPC and other Tufts-owned computers, and migrate to miniforge. Right now, we are sitting tight to see whether Anaconda Inc. will make some updates. In the meantime, I do recommend users to use miniforge instead of anaconda. 
+Due to the updated Terms of Service, it is likely that we will need to uninstall Anaconda from Tufts HPC and other Tufts-owned computers and migrate to Miniforge in the future. For now, we are waiting to see if Anaconda Inc. will introduce any further changes. While anaconda is still available for use, I recommend that users begin transitioning to Miniforge.
 
 ![conda-env-mod-workflow](images/conda_vs_anaconda.png)
 
@@ -44,11 +44,10 @@ Due to this updated TOS, it's likely we will have to uninstall anaconda from Tuf
 |-----------------------|-----------------------------------------------|-----------------------------------------------|------------------------------------------------|
 | **Size**              | ~3 GB                                         | ~400 MB                                       | ~400 MB                                        |
 | **Package Manager**    | Conda                                         | Conda                                         | Conda      |
-| **Default Channels**   | Anaconda (proprietary + open-source packages) | Anaconda (proprietary + open-source packages) | `conda-forge` (community-driven open-source)   |
+| **Default Channels**   | Anaconda's `default`  | Anaconda's `default`  | `conda-forge` (community-driven open-source)   |
 | **Included Packages**  | Over 300 scientific packages pre-installed  | Minimal installation (essential tools only)   | Minimal installation (essential tools only)    |
 | **Target Audience**    | Data scientists needing full environment      | Developers who want a lightweight version     | Developers focused on open-source solutions    |
 | **Ease of Use**        | Easy with pre-installed packages              | Requires manual installation of most packages | Similar to Miniconda, but optimized for `mamba`|
-| **Default channel**    | Anaconda's default                | Anaconda's default              | conda-forge                             |
 | **Solver**             | Mamba                                         | Mamba                                         | Mamba   |
 
 ```
@@ -56,8 +55,6 @@ $ module avail miniforge
  ----------------------/cluster/tufts/hpc/tools/module-----------------------
    miniforge/24.3.0-py310    miniforge/24.7.1-py312 (D)
 ```
-
-
 
 ### conda channels
 
@@ -161,14 +158,13 @@ $ source activate /cluster/tufts/zhanglab/condaenv/myenv2
 $ source deactivate
 ```
 
-#### conda activate and deactivate
 
-Since `anaconda/2024.06-py312`, our anaconda module will support `conda activate` and `conda deactivate`. 
+!!! note "**conda activate** is supported"
 
-```
-$ conda activate myenv1
-$ conda deactivate
-```
+  Since `anaconda/2024.06-py312`, our anaconda and miniforge modules will support both `conda activate` and `source activate`: 
+  $ conda activate myenv1
+  $ conda deactivate
+  You still need to use **source activate** in old anaconda modules. 
 
 #### Do not run `conda init`
 
