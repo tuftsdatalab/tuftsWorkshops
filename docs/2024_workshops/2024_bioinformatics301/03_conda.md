@@ -37,6 +37,20 @@ The new versions of Anaconda are significantly faster in solving dependencies th
 
 Due to this updated TOS, it's likely we will have to uninstall anaconda from Tufts HPC and other Tufts-owned computers, and migrate to miniforge. Right now, we are sitting tight to see whether Anaconda Inc. will make some updates. In the meantime, I do recommend users to use miniforge instead of anaconda. 
 
+![conda-env-mod-workflow](images/conda_vs_anaconda.png)
+
+
+| Feature               | Anaconda                                      | Miniconda                                     | Miniforge                                      |
+|-----------------------|-----------------------------------------------|-----------------------------------------------|------------------------------------------------|
+| **Size**              | ~3 GB                                         | ~400 MB                                       | ~400 MB                                        |
+| **Package Manager**    | Conda                                         | Conda                                         | Conda      |
+| **Default Channels**   | Anaconda (proprietary + open-source packages) | Anaconda (proprietary + open-source packages) | `conda-forge` (community-driven open-source)   |
+| **Included Packages**  | Over 300 scientific packages pre-installed  | Minimal installation (essential tools only)   | Minimal installation (essential tools only)    |
+| **Target Audience**    | Data scientists needing full environment      | Developers who want a lightweight version     | Developers focused on open-source solutions    |
+| **Ease of Use**        | Easy with pre-installed packages              | Requires manual installation of most packages | Similar to Miniconda, but optimized for `mamba`|
+| **Default channel**    | Anaconda's default                | Anaconda's default              | conda-forge                             |
+| **Solver**             | Mamba                                         | Mamba                                         | Mamba   |
+
 ```
 $ module avail miniforge
  ----------------------/cluster/tufts/hpc/tools/module-----------------------
