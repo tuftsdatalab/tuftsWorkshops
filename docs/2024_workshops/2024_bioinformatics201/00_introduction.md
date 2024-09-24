@@ -11,6 +11,9 @@ The goals of this workshop are to:
 - [Common bioinformatics data formats](02_bioinformatics_formats.md)
 - [How to submit bioinformatics jobs to Tufts HPC](03_bioinformatics_jobs.md)
 
+
+  <img src="../images/bioinformatics_hpc.png" alt="Linus Torvalds" style="height:300px;" />
+
 ## Presenters
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
