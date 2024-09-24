@@ -1,4 +1,4 @@
-# conda-env-mod
+# Simplying Conda Environment Management with conda-env-mod
 
 ## Introduction
 `conda-env-mod` is a tool for simplifying Python package installation on HPC clusters. **It can be used in the installation and management of not only Python packages but also packages that support Conda install**.
