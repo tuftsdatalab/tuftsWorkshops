@@ -300,7 +300,17 @@ If you would like to use JupyterNotebook or JupyterLab from OnDemand, you can fo
 ## Caveats
 - Do not install python modules with `pip install --user`
 - Watch for disk usage in your $HOME
-  - module load hpctools
-  - hpctools
-  - Select 6
+  ```
+   $ module load hpctools
+   $ hpctools
+   Please select from the following options:
+  1. Checking Free Resources On Each Node in Given Partition(s)
+  2. Checking Free GPU Resources On Each Node in Given Partition(s)
+  3. Checking Past Completed Jobs in Given Time Period
+  4. Checking Active Job informantion
+  5. Checking Project Space Storage Quota Informantion
+  6. Checking Any Directory Storage Usage Informantion
+  Press q to quit
+  ## You can select 6 to check your $HOME disk usage
+  ```
 - Do not run `conda init`
