@@ -1,4 +1,4 @@
-# Conda and pip install
+# Package Installation Using Conda Environment
 
 
 ![Python Environment](https://imgs.xkcd.com/comics/python_environment.png)
@@ -294,7 +294,7 @@ If you would like to use JupyterNotebook or JupyterLab from OnDemand, you can fo
 $ module load miniforge/24.7.1-py312  
 $ conda config --append envs_dirs /cluster/tufts/XXXXlab/$USER/condaenv/ # Once
 $ conda config --append pkgs_dirs /cluster/tufts/XXXXlab/$USER/condapkg/ $ Once
-$ conda config –remove channel defaults  # Once
+$ conda config --remove channels defaults  # Once
 $ conda config --add channels bioconda   # Once
 $ conda config --add channels conda-forge # Once
 $ conda create -n myenv python=3.12
