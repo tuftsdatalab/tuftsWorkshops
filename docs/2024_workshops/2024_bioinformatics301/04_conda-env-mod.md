@@ -69,13 +69,9 @@ $ module load conda-env-mod
 ```
 
 ### Step 3: Create a conda environment
-
 Users can use the `conda-env-mod`  to create an empty conda environment. It needs either a name or a path for the desired environment. After the environment is created, it generates a module file for using it in future. Detailed instructions for using `conda-env-mod` can be found with the command `conda-env-mod --help`.
 
-
-
 #### Create a conda environment with -n
-
 ```shell-session
 $ conda-env-mod create -n myenv
 ```
@@ -95,59 +91,7 @@ $ conda-env-mod create -n myenv --jupyter
 $ conda-env-mod create -p /cluster/tufts/mylab/$USER/condaenv/myenv --jupyter
 ```
 
-
-## Examples
-
-### 1. Create a Biopython conda environment for yourself
-#### Create conda environment, modulefile, and jupyter kernel
-```
-$ module load miniforge/24.7.1-py312
-$ module load conda-env-mod
-$ conda-env-mod create -n biopython --jupyter
-```
-
-#### Load module and install packages
-```
-module load use.own
-module load conda-env/biopython-py3.12.5
-conda install -c bioconda biopython
-```
-
-#### Using biopython in command line or scripts
-```
-$ which python
-/cluster/tufts/yzhang85/conda/condaenv/biopython/bin/python
-$ python
-Python 3.12.5 | packaged by conda-forge | (main, Aug  8 2024, 18:36:51) [GCC 12.4.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> from Bio import SeqIO
->>> fasta_file = "genome.fa"
->>> for seq_record in SeqIO.parse(fasta_file, "fasta"):
-...     print(f"ID: {seq_record.id}")
-...     print(f"Sequence length: {len(seq_record)}")
-... 
-ID: NZ_LFXA01000001.1
-Sequence length: 199691
-ID: NZ_LFXA01000002.1
-Sequence length: 1310906
-ID: NZ_LFXA01000003.1
-Sequence length: 232631
-ID: NZ_LFXA01000004.1
-Sequence length: 719325
-ID: NZ_LFXA01000005.1
-Sequence length: 109134
-ID: NZ_LFXA01000006.1
-Sequence length: 17068
-ID: NZ_LFXA01000007.1
-Sequence length: 340777
-ID: NZ_LFXA01000008.1
-Sequence length: 126449
-```
-
-#### Using biopython as a jupyter kernel in jupyter notebook/lab on Open OnDemand
-![biopython](images/biopython.png)
-
-## 2. Create and manage shared conda environments for the group
+## Create and manage shared conda environments for the group
 Users can create conda environments in lab's project folder, and share them with the whole group.
 ### The PI or lab manager
 ##### Create conda environment(once)
@@ -199,7 +143,56 @@ The instructor can follow a similar process to create conda environment and inst
 
 
 ## Examples
-### RNAseq environment for the lab
+### Example 1: Create a Biopython conda environment for yourself
+#### Create conda environment, modulefile, and jupyter kernel
+```
+$ module load miniforge/24.7.1-py312
+$ module load conda-env-mod
+$ conda-env-mod create -n biopython --jupyter
+```
+
+#### Load module and install packages
+```
+module load use.own
+module load conda-env/biopython-py3.12.5
+conda install -c bioconda biopython
+```
+
+#### Using biopython in command line or scripts
+```
+$ which python
+/cluster/tufts/yzhang85/conda/condaenv/biopython/bin/python
+$ python
+Python 3.12.5 | packaged by conda-forge | (main, Aug  8 2024, 18:36:51) [GCC 12.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from Bio import SeqIO
+>>> fasta_file = "genome.fa"
+>>> for seq_record in SeqIO.parse(fasta_file, "fasta"):
+...     print(f"ID: {seq_record.id}")
+...     print(f"Sequence length: {len(seq_record)}")
+... 
+ID: NZ_LFXA01000001.1
+Sequence length: 199691
+ID: NZ_LFXA01000002.1
+Sequence length: 1310906
+ID: NZ_LFXA01000003.1
+Sequence length: 232631
+ID: NZ_LFXA01000004.1
+Sequence length: 719325
+ID: NZ_LFXA01000005.1
+Sequence length: 109134
+ID: NZ_LFXA01000006.1
+Sequence length: 17068
+ID: NZ_LFXA01000007.1
+Sequence length: 340777
+ID: NZ_LFXA01000008.1
+Sequence length: 126449
+```
+
+#### Using biopython as a jupyter kernel in jupyter notebook/lab on Open OnDemand
+![biopython](images/biopython.png)
+
+### Example 2: RNAseq environment for the lab
 #### Load required modules
 Users can choose either anaconda or miniforge. 
 ```
@@ -229,7 +222,7 @@ $ module load conda-env/rnaseq-py3.12.5
 $ conda install -c bioconda star samtools fastqc trim-galore salmon 
 ```
 
-### PyTorch for the lab
+### Example 3: PyTorch for the lab
 #### Load required modules
 ```
 $ module load miniforge/24.7.1-py312 
