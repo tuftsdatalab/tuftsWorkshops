@@ -110,6 +110,26 @@ Submitted batch job 7456347
          7456478_6   preempt   fastqc yzhang85  R       1:30      1 s1cmp004
 ```
 
+### Limiting the number of tasks to run simultaneously
+By default, if sufficient resources are available, all tasks in a job array will run simultaneously. However, if you wish to limit the number of tasks running at once, you can use the `%N` parameter with the `--array` option (where N specifies the maximum number of tasks to execute concurrently). 
+
+In the following example, I used `--array=0-999%10`, which creates a total of 1000 tasks. By appending `%10`, I limited the number of tasks that can run concurrently to 10, meaning that instead of all 1000 tasks running simultaneously, only 10 tasks will be executed at any given time. This helps manage resource usage on the cluster.
+
+```
+         JOBID       PARTITION  NAME     USER  ST       TIME  NODES NODELIST(REASON)
+7689847_[10-999%10   preempt array_te yzhang85 PD       0:00      1 (JobArrayTaskLimit)
+         7689847_0   preempt array_te yzhang85  R       0:03      1 p1cmp029
+         7689847_1   preempt array_te yzhang85  R       0:03      1 p1cmp029
+         7689847_2   preempt array_te yzhang85  R       0:03      1 p1cmp043
+         7689847_3   preempt array_te yzhang85  R       0:03      1 p1cmp043
+         7689847_4   preempt array_te yzhang85  R       0:03      1 p1cmp043
+         7689847_5   preempt array_te yzhang85  R       0:03      1 p1cmp043
+         7689847_6   preempt array_te yzhang85  R       0:03      1 p1cmp043
+         7689847_7   preempt array_te yzhang85  R       0:03      1 p1cmp043
+         7689847_8   preempt array_te yzhang85  R       0:03      1 p1cmp045
+         7689847_9   preempt array_te yzhang85  R       0:03      1 p1cmp045
+```
+
 ### Example job scripts
 
 In the following example, I have many `fastq.gz` files in the folder `fastq`. I need to run `fastqc`  to check the quality of each of these `fastq.gz` files. 
@@ -195,9 +215,6 @@ $ scontrol show config | grep -i array
 MaxArraySize            = 2000
 ```
 
-
-
-
 Public Partitions (batch+mpi+largemem+gpu)
 CPU: 1000 cores
 RAM: 4000 GB
@@ -209,7 +226,12 @@ GPU: 20
 
 
 
-
+If you submit too many array jobs and exceed the limits, you will get the below error message:
+```
+$ sbatch array.sub 
+sbatch: error: AssocMaxSubmitJobLimit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+```
 
 # Create a contig file for your array tasks (Change the title)
 Use R script as an example. 
