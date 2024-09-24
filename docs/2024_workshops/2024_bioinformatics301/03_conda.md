@@ -291,12 +291,12 @@ If you would like to use JupyterNotebook or JupyterLab from OnDemand, you can fo
 
 ## Recommended workflow
 ```
+$ module load miniforge/24.7.1-py312  
 $ conda config --append envs_dirs /cluster/tufts/XXXXlab/$USER/condaenv/ # Once
 $ conda config --append pkgs_dirs /cluster/tufts/XXXXlab/$USER/condapkg/ $ Once
 $ conda config –remove channel defaults  # Once
 $ conda config --add channels bioconda   # Once
 $ conda config --add channels conda-forge # Once
-$ module load miniforge/24.7.1-py312  
 $ conda create -n myenv python=3.12
 $ conda activate myenv
 $ conda install xxx
