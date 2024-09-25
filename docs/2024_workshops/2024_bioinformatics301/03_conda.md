@@ -137,9 +137,17 @@ Conda environments are a useful way to install packages with specific versions a
 **It is recommended to always use conda environments**. By default, conda environments are located in `./conda/envs` of $HOME. If you have created `.condarc` following the above steps, conda environment will be stored in other directories.
 
 ### conda create -n
-
+To create a new Conda environment named `myenv`, you can use the following command:
 ```
 $ conda create -n myenv
+```
+You can also use this way:
+```shell-session
+$ conda create --name myenv
+```
+This will create a new environment called `myenv` without installing any specific packages. If you want to create the environment with specific packages (e.g., Python, NumPy, etc.), you can specify them as follows:
+```
+$ conda create -n myenv python=3.11 numpy
 ```
 
 ### conda create -p
