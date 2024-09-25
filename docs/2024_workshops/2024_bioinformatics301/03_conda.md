@@ -112,7 +112,7 @@ $ conda config --add channels conda-forge
 
 **According to Anaconda's updated terms of service, you cannot download and install packages from Anaconda's `defaults` channel without a paid license**. You'd better remove this `defaults` channel from your `.condarc` by:
 ```
-$ conda config –remove channel defaults 
+$ conda config --remove channels defaults 
 ```
 
 After this, your `.condarc`file should look like this
@@ -191,7 +191,7 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
 
 You can run the below command to avoid `conda init`
 ```
-eval "$(conda shell.bash hook)"
+$ eval "$(conda shell.bash hook)"
 ```
 
 We do not recommend using `conda init`, it permanently alters your `.bashrc` so that the `base` environment is always activated in new shells. 

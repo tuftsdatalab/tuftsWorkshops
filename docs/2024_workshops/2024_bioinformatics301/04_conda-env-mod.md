@@ -153,9 +153,9 @@ $ conda-env-mod create -n biopython --jupyter
 
 #### Load module and install packages
 ```
-module load use.own
-module load conda-env/biopython-py3.12.5
-conda install -c bioconda biopython
+$ module load use.own
+$ module load conda-env/biopython-py3.12.5
+$ conda install -c bioconda biopython
 ```
 
 #### Using biopython in command line or scripts
@@ -201,7 +201,7 @@ $ module load conda-env-mod
 ```
 #### Create conda environment
 ```
- $ conda-env-mod create -p /cluster/tufts/rt/shared/apps/rnaseq -m /cluster/tufts/rt/shared/modules
+$ conda-env-mod create -p /cluster/tufts/rt/shared/apps/rnaseq -m /cluster/tufts/rt/shared/modules
 ```
 
 After the installation completes, you will see the below instructions about how to use the environment and module:
@@ -230,15 +230,15 @@ $ module load conda-env-mod
 ```
 #### Create conda environment
 ```
-conda-env-mod create -p /cluster/tufts/rt/shared/apps/pytorch_2.4.1 -m /cluster/tufts/rt/shared/modules --jupyter
+$ conda-env-mod create -p /cluster/tufts/rt/shared/apps/pytorch_2.4.1 -m /cluster/tufts/rt/shared/modules --jupyter
 ```
 Since PyTorch is a python package, running it using Jupyter notebook/lab is convenient. That's why `--jupyter` is used. 
 
 #### Install PyTorch
 ```
-module use /cluster/tufts/rt/shared/modules 
-module load conda-env/pytorch_2.4.1-py3.12.5  
-pip3 install torch torchvision torchaudio
+$ module use /cluster/tufts/rt/shared/modules 
+$ module load conda-env/pytorch_2.4.1-py3.12.5  
+$ pip3 install torch torchvision torchaudio
 ```
 #### Running the kernel in Jupyter Notebook on Open OnDemand 
 When you open Jupyter notebook/lab, you can see the PyTorch kernel `My pytorch_2.4.1 Kernel`. 
