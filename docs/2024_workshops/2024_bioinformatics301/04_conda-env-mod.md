@@ -72,10 +72,18 @@ $ module load conda-env-mod
 Users can use the `conda-env-mod`  to create an empty conda environment. It needs either a name or a path for the desired environment. After the environment is created, it generates a module file for using it in future. Detailed instructions for using `conda-env-mod` can be found with the command `conda-env-mod --help`.
 
 #### Create a conda environment with -n
+To create a new Conda environment named `myenv`, you can use the following command:
 ```shell-session
 $ conda-env-mod create -n myenv
 ```
-
+You can also use this way:
+```shell-session
+$ conda-env-mod create --name myenv
+```
+This will create a new environment called `myenv` without installing any specific packages. If you want to create the environment with specific packages (e.g., Python, NumPy, etc.), you can specify them as follows:
+```
+$ conda create -n myenv python=3.11 numpy
+```
 #### Create a conda environment with -p
 
 This will create a conda environment to a custom directory. 
