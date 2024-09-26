@@ -32,11 +32,11 @@ anaconda/bio35  anaconda/2020.02   anaconda/2021.05   anaconda/2021.11   anacond
 `Libmamba` became the default solver for Conda starting with version **23.10.0**, released in November 2023. The new versions of anaconda modules(2024.06-py312) are significantly faster in solving dependencies thanks to the integration of `libmamba`, a highly efficient package management library that outperforms Conda’s traditional solver. **Not recommend to use old anaconda modules**.
 
 
-!!! note "Anaconda updated its terms of service([TOS](https://www.anaconda.com/blog/anaconda-commercial-edition-faq))"
+!!! note "Anaconda has updated its terms of service([TOS](https://www.anaconda.com/blog/anaconda-commercial-edition-faq)), as below: "
    
-      We clarified our definition of commercial usage in our Terms of Service in an update on Sept. 30, 2020. The new language states that use by individual hobbyists, students, universities, non-profit organizations, or businesses with **less than 200 employees** is allowed, and all other usage is considered commercial and thus requires a business relationship with Anaconda.
+      "We clarified our definition of commercial usage in our Terms of Service in an update on Sept. 30, 2020. The new language states that use by individual hobbyists, students, universities, non-profit organizations, or businesses with **less than 200 employees** is allowed, and all other usage is considered commercial and thus requires a business relationship with Anaconda."
 
-Due to the updated Terms of Service, it is likely that we will need to uninstall Anaconda from Tufts HPC and other Tufts-owned computers and migrate to Miniforge in the future. For now, we are waiting to see if Anaconda Inc. will introduce any further changes. While anaconda is still available for use, I recommend that users begin transitioning to Miniforge.
+Due to this updated TOS, it's likely we will have to uninstall anaconda from Tufts HPC and other Tufts-owned computers, and migrate to miniforge. **[Miniforge](https://github.com/conda-forge/miniforge) provides a similar repository of packages and software to enable your install and use of Python for your research workflows. Right now, we are waiting to see what Anaconda Inc. decides. In the meantime, you can still use Anaconda, but we recommend new users to use miniforge instead.**
 
 ![conda-env-mod-workflow](images/conda_vs_anaconda.png)
 
@@ -79,7 +79,11 @@ $ conda install -c conda-forge r-base
 By default, Conda stores packages in your $HOME directory. Since each user has a storage limit of 30GB in $HOME, we recommend avoiding package installations there to prevent exceeding your quota. If you are a member of the XXXXlab group on the cluster, we suggest using the group’s research storage space for this purpose.
 
 To change the default location to your group's project directory, use a text editor to create a hidden file called `.condarc`. The path to that file should be `$HOME/.condarc`. 
-
+```
+$ cd 
+$ ls -a # -a will reveal hidden files starting with .
+$ touch .condarc # If you haven't created .condarc before, you can create it using the touch command
+```
 Create two directories in your group research storage space (one for storing the `envs`, one for storing the `pkgs`, for example: condaenv, condapkg)
 
 ```
@@ -99,6 +103,7 @@ pkgs_dirs:
 **OR** you can do so from command line with the following commands:
 
 ```
+$ module load miniforge # or module load anaconda
 $ conda config --append envs_dirs /cluster/tufts/XXXXlab/$USER/condaenv/
 $ conda config --append pkgs_dirs /cluster/tufts/XXXXlab/$USER/condapkg/
 ```
