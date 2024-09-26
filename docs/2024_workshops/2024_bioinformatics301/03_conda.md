@@ -73,7 +73,8 @@ $ module avail miniforge
 $ conda install -c pytorch pytorch 
 $ conda install -c conda-forge r-base
 ```
-
+[Bioconda](https://bioconda.github.io/#) is a community-enabled conda channel of thousands of bioinformatics packages.
+![bioconda](https://bioconda.github.io/_images/bioconda.png)
 ### .condarc
 
 By default, Conda stores packages in your $HOME directory. Since each user has a storage limit of 30GB in $HOME, we recommend avoiding package installations there to prevent exceeding your quota. If you are a member of the XXXXlab group on the cluster, we suggest using the group’s research storage space for this purpose.
