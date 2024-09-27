@@ -72,6 +72,7 @@ $ module avail miniforge
 ```
 $ conda install -c pytorch pytorch 
 $ conda install -c conda-forge r-base
+$ conda install -c bioconda samtools
 ```
 [Bioconda](https://bioconda.github.io/#) is a community-enabled conda channel of thousands of bioinformatics packages.
 ![bioconda](https://bioconda.github.io/_images/bioconda.png)
@@ -179,8 +180,11 @@ $ source deactivate
 !!! note "**conda activate** is supported"
 
   Since `anaconda/2024.06-py312`, our anaconda and miniforge modules will support both `conda activate` and `source activate`: 
+  
+  ```
   $ conda activate myenv1
   $ conda deactivate
+  ```
   You still need to use **source activate** in old anaconda modules. 
 
 ### Do not run `conda init`
