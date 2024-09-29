@@ -2,6 +2,7 @@
 
 ## Welcome
 The goals of this workshop are to:
+
 - Help users get started with bioinformatics analysis, especially command-line bioinformatics, on Tufts HPC.
 - Familiarise with bioinformatics resources/tools available on Tufts HPC.
 
@@ -12,7 +13,7 @@ The goals of this workshop are to:
 - [How to submit bioinformatics jobs to Tufts HPC](03_bioinformatics_jobs.md)
 
 
-  <img src="../images/bioinformatics_hpc.png" alt="Linus Torvalds" style="height:300px;" />
+  <img src="../images/bioinformatics_hpc.png" alt="Linus Torvalds" style="height:500px;" />
 
 ## Presenters
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
