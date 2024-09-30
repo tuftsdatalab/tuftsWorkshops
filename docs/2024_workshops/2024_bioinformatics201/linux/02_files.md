@@ -28,13 +28,13 @@
 
 ## File names
 
-- **Case-sensitive:** "myfile.txt" is different from "MyFile.txt".
+- **Case-sensitive:** **myfile.txt** is different from **MyFile.txt**.
 
-- **Hidden files**: Filenames starting with a dot (.) are hidden by default.
+- **Hidden files**: Filenames starting with a dot (**.**) are hidden by default.
 
 - **File extensions:** Not mandatory, but using them helps identify file types.
 
-- **Spaces**: Allowed but not recommended, use `_` or `–` instead.
+- **Spaces**: Allowed but not recommended, use **_** or **–** instead.
 
 ### Best practices of file names
  
@@ -51,9 +51,9 @@ Everything is mounted to the root directory
 
 Files are referred to by their location called the **path** 
 
-- Absolute Path (From the root): /cluster/tufts/pi01/user01
+- Absolute Path (From the root): **/cluster/tufts/pi01/user01**
 
-- Relative Path (From my current location）： user01/file01
+- Relative Path (From my current location）：**user01/file01**
 
 <img src="../images/file_system.png" width="600">
 

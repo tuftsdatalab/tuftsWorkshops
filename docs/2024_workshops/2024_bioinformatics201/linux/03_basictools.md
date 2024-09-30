@@ -31,9 +31,9 @@ $ pwd
 /cluster/home/yzhang85
 ```
 #### Shortcuts
-- **..**:	cd to the parent directory.	`cd ..`
-- **~**:	cd to the home directory.	`cd ~`
-- **-**:	cd to the previous directory.	`cd -`
+- **..**:	cd to the parent directory. **cd ..**
+- **~**:	cd to the home directory.	**cd ~**
+- **-**:	cd to the previous directory.	**cd -**
 
 ### ls: list all the files in the given directory
 #### Usage
@@ -43,7 +43,7 @@ ls [options] [directory]
 #### Common options:
 - **-1**: list each file/directory on a separate line
 - **-l**: lists files/directories with their most common metadata 
-- **-a**: include hidden files /directories (files’ name begins with a dot `.`)
+- **-a**: include hidden files /directories (files’ name begins with a dot **.**)
 - **-h**: print size of files/directories in human readable format 
 
 ### chmod: manage file permissions
@@ -62,8 +62,8 @@ $ chmod u+x filename ## Give user execute permission
 $ chmod a+r filename ## Give all users read access
 $ chmod u=rw,g=r,o=r filename ## Give user read and write permission, group and other only read permission.
 ```
-#### Recursive rermissions with -R
-To apply permissions recursively to all files and subdirectories within a directory, use the -R option:
+#### Recursive updating permissions with -R
+To apply permissions recursively to all files and subdirectories within a directory, use the **-R** option:
 ```
 $ chmod -R g+rx /path/to/directory
 ```
