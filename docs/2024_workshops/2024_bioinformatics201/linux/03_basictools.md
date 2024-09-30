@@ -68,7 +68,7 @@ To apply permissions recursively to all files and subdirectories within a direct
 $ chmod -R g+rx /path/to/directory
 ```
 
-### touch: create new files and update timestamps
+### touch: create new files or update timestamps
 touch is used to create new files or to update the timestamps (access and modification times) of existing files. 
 #### Create new file
 ```
@@ -122,7 +122,7 @@ rm [options] file/directory
 ___
 Linux command-line tools are invaluable for bioinformatics text processing due to their efficiency and flexibility. They allow for rapid manipulation and analysis of large biological datasets, such as DNA sequences, protein structures, and gene expression data. Commands like `grep`, `sed`, `awk`, and `cut` are essential for filtering, extracting, and reformatting text-based biological information.
 
-### cat: catenate files (joins their contents)**
+### cat: catenate files(joins their contents)
 #### Usage
 ```
 cat [options] file1 file2 …
@@ -165,16 +165,16 @@ cut is a text-processing utility used to extract specific sections of lines from
 cut [OPTIONS] [FILE...]
 ```
 #### Common options
-- **-d**: Specifies the delimiter for field extraction. Default is TAB. Example: `-d,` (use a comma as the delimiter).
-- **-f**: Selects specific fields, used with a delimiter (default is TAB). Example: `-f 1,3` (extract fields 1 and 3).
+- **-d**: Specifies the delimiter for field extraction. Default is TAB. Example: **-d,** (use a comma as the delimiter).
+- **-f**: Selects specific fields, used with a delimiter (default is TAB). Example: **-f 1,3** (extract fields 1 and 3).
 #### Example
 ```
 cut -f1,3 -d, file.csv ##(Extract columns 1 and 3 from a comma-separated file)
 ```
 
 ### sort: Sort lines of text files
- `sort` is designed to sort plain-text data with columns. Running `sort` without any arguments simply sorts a file alphabetically.
- By default, sort treats blank characters (like tab or spaces) as field delimiters. If your file uses another delimiter (such as a comma for CSV files), you can specify the field separator with `-t` (e.g., `-t","`). 
+ `sort` is designed to sort plain-text data with columns. Running **sort** without any arguments simply sorts a file alphabetically.
+ By default, sort treats **blank characters** (like tab or spaces) as field delimiters. If your file uses another delimiter (such as a comma for CSV files), you can specify the field separator with **-t** (e.g., **-t ","**). 
 #### Usage
 ##### Sort lines alphabetically
 ```
