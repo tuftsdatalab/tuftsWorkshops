@@ -17,7 +17,7 @@ awk 'pattern { action }' file
 
 #### Example
 ```
-$ head -n 6 
+$ head -n 6 deseq2.results.tsv 
 gene_id	baseMean	log2FoldChange	lfcSE	pvalue	padj
 ENSG00000000003	782.8404	-0.06662793	0.05691688	0.2130615	0.3800412
 ENSG00000000419	746.4319	-0.1265914	0.06250695	0.02873058	0.07811519
