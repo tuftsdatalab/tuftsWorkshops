@@ -16,9 +16,10 @@ In this workshop, we will introduce how to install bioinformatics softwares on H
 - [Conda Environment Management, Jupyer Kernel and Modules](03_conda.md)
 - [Simplying Conda Environment Management with conda-env-mod](04_conda-env-mod.md)
 
-> **Note:** Containerization is an easier and recommended way.
+!!! note "Containerization is an easier and recommended way" 
 
 In this workshop, we will focus on R package installation and package installation from source codes or using a Conda environment. Actually, there is an easier way to run applications on clusters without any installation steps; this method involves containerization using Singularity/Apptainer. We will not introduce containerization in this workshop but plan to conduct a container workshop in Spring 2025. If you are interested in containers, you can check out our [Spring, 2024 container workshop](https://zhan4429.github.io/TuftsContainers.github.io/).
+
 
 <div style="display: flex; align-items: center;">
   <img src="https://docs.sylabs.io/guides/3.8/user-guide/_static/logo.png" alt="singularityCE" style="height:200px; margin-right: 10px;"/>
