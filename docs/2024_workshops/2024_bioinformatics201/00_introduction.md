@@ -9,8 +9,8 @@ The goals of this workshop are to:
 ## Agenda
 - [Linux/Unix command line basics](linux/00_overview.md)
 - [Available bioinformatics resources/tools on Tufts HPC](02_tufts_bioinformatics_resources.md)
-- [Common bioinformatics data formats](02_bioinformatics_formats.md)
-- [How to submit bioinformatics jobs to Tufts HPC](03_bioinformatics_jobs.md)
+- [How to run bioinformatics analysis on Tufts HPC](03_run_bioinformatics_on_HPC.md)
+
 
 
   <img src="../images/bioinformatics_hpc.png" alt="Linus Torvalds" style="height:500px;" />
