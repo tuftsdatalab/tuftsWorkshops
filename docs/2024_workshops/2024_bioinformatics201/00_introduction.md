@@ -13,7 +13,7 @@ The goals of this workshop are to:
 
 
 
-  <img src="../images/bioinformatics_hpc.png" alt="Linus Torvalds" style="height:500px;" />
+<img src="../images/bioinformatics_hpc.png" alt="Linus Torvalds" style="height:500px;" />
 
 ## Presenters
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
