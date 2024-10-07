@@ -110,7 +110,7 @@ grep -c "^>" other/rcsb_pdb_5XUS.fasta
 
   
 
-## FASTQ
+## FASTQ file
 
 - FASTQ is a text-based format used to store both nucleotide sequences and their corresponding quality scores. It is widely used in bioinformatics, particularly for storing data from high-throughput sequencing technologies.
 - Structure of a FASTQ File A FASTQ file consists of a series of entries, each representing a single read. Each entry has four lines: 
@@ -264,18 +264,9 @@ STAR --runMode genomeGenerate \
      --genomeDir ./reference_data/ \
      --genomeFastaFiles ./reference_data/chr1.fa \
      --sjdbGTFfile ./reference_data/chr1-hg19_genes.gtf \
-     --sjdbOverhang 99 \
      --runThreadN 8
-     
+   
 ```
-
-**sjdbOverhang**  
-
-The value is set to the length of your reads minus 1. For example, if your sequencing reads are 100  base pairs long, you set `--sjdbOverhang` to 99.
-
-It helps STAR optimize splice junction detection by ensuring that the splice junction database includes enough surrounding sequence to anchor reads across exon-exon boundaries during alignment.
-
-This is particularly important for RNA-seq data where detecting splicing events is critical.
 
 
 
@@ -300,15 +291,25 @@ Sep 20 11:28:19 ... writing SAindex to disk
 Sep 20 11:28:22 ..... finished successfully
 ```
 
+If you do `ls -lhtr reference_data` , you will see the genome index you just generated. 
+
 
 
 ###  Align FASTQ Reads to the Reference Genome
+
+First, let's create an folder to store output from STAR:
+
+```
+mkdir star_output
+```
+
+
 
 For single-end reads: 
 
 ```
 STAR --genomeDir ./reference_data/ \
-     --readFilesIn /path/to/reads.fastq \
+     --readFilesIn ./raw_fastq/Irrel_kd_1.subset.fq \
      --outFileNamePrefix ./star_output/ \
      --runThreadN 8
 ```
@@ -333,7 +334,26 @@ STAR --genomeDir ./reference_data/ \
 
 ## Output 
 
-### SAM/BAM file
+Check the outputs:
+
+```
+cd star_output
+ls
+```
+
+You will see the following:
+
+```
+Aligned.out.sam  Log.final.out  Log.out  Log.progress.out  SJ.out.tab
+```
+
+
+
+`Aligned.out.sam` contains the aligned information. 
+
+
+
+### SAM
 
 SAM (Sequence Alignment/Map) is a text-based format for storing biological sequences aligned to a reference sequence. It is widely used in bioinformatics for storing large-scale sequencing data, such as that from next-generation sequencing technologies.
 
@@ -342,11 +362,40 @@ A SAM file consists of a header section and an alignment section.
 1. **Header Section**: Optional. Contains metadata about the alignments and reference sequences. Header lines start with the '@' character. 
 2. **Alignment Section**: Contains the aligned sequences and their corresponding information. Each line represents a single alignment and consists of 11 mandatory fields and optional fields.
 
+```
+@HD     VN:1.4
+@SQ     SN:chr1 LN:249250621
+@PG     ID:STAR PN:STAR VN:2.7.11b      CL:/usr/local/bin/STAR-avx2   --runThreadN 8   --genomeDir ./reference_data/   --readFilesIn ./raw_fastq/Irrel_kd_1.subset.fq      --outFileNamePrefix ./star_output/
+@CO     user command line: /usr/local/bin/STAR-avx2 --genomeDir ./reference_data/ --readFilesIn ./raw_fastq/Irrel_kd_1.subset.fq --outFileNamePrefix ./star_output/ --runThreadN 8
+HWI-ST330:304:H045HADXX:2:1102:9621:48866       0       chr1    115266503       255     100M    *       0       0       CCCTCCTCCACAATCTCAATCATTCCTTGGTACTCAGTCTGTGTTGGATCAACACTCCTCAGGGGGCGAATTACTTTGCCAGAGTAAATGGTGGGATCAG    CCCFFFFFHHHHHJJJJJJJJJJJJJJJJJHIIIJJJGIJJIJJJJJJJJJGJJJJJJJJIIIJJJFDDDDDDDDDEDDDDDBB>CDDEEDCDDDDDDDD    NH:i:1  HI:i:1  AS:i:98 nM:i:0
+HWI-ST330:304:H045HADXX:2:1104:16192:61086      0       chr1    115266503       255     100M    *       0       0       CCCTCCTCCACAATCTCAATCATTCCTTGGTACTCAGTCTGTGTTGGATCAACACTCCTCAGGGGGCGAATTACTTTGCCAGAGTAAATGGTGGCATCAG    @BCFFFFFHHHHHJJJJJJJJJJJJJJJJJIJJIJJJIIJJJIIJJJJJJIJJHJJJJJJJJJJJJFDDDDDDDDDEDDDDDDD@CCDEED:ABDDDDDD    NH:i:1  HI:i:1  AS:i:96 nM:i:1
+HWI-ST330:304:H045HADXX:2:1107:5712:34356       0       chr1    115266503       255     100M    *       0       0       CCCTCCTCCACAATCTCAATCATTCCTTGGTACTCAGTCTGTGTTGGATCAACACTCCTCAGGGGGCGAATTACTTTGCCAGAGTAAATGGTGGGATCAG    @B@FFDFFHFFHHIGIIIGIHJJIJJJJJJCEHIJJJFGHIIJIJJJJJIIJJJJJJJIJJJJIIJFDBBBDDDDDEDDDDDDD>CCDEED>ADDDDDDD    NH:i:1  HI:i:1  AS:i:98 nM:i:0
+HWI-ST330:304:H045HADXX:2:1113:8407:74596       0       chr1    115266503       255     100M    *       0       0 
+```
+
+Check this [article](https://samtools.github.io/hts-specs/SAMv1.pdf) about how to interpret sam files. 
+
+### BAM file
+
+The **BAM** (Binary Alignment/Map) file format is a binary version of the **SAM** (Sequence Alignment/Map) format. It is used to store aligned sequence data in a more efficient and compressed form.
+
+Convert sam file to bam file:
+
+```
+module load samtools/1.17
+samtools view -S -b Aligned.out.sam > Aligned.out.bam
+```
 
 
-### Manipulate the file
 
-...
+Bam file cannot be read directly, we have to use samtools to view it:
+
+```
+module load samtools/1.17
+samtools view Aligned.out.bam | head -n 20
+```
+
+
 
 
 
@@ -370,12 +419,13 @@ Let's write a slurm script call `run_star.sh`
 # Load the STAR module
 module load star/2.7.11b         # Load the specific version of STAR needed for the alignment
 
+mkdir star_output
+
 # Run STAR alignment
 STAR --genomeDir ./reference_data/ \       # Specify the directory containing the genome index files
-     --readFilesIn /path/to/reads.fastq \  # Input FASTQ file(s) for alignment
+     --readFilesIn ./raw_fastq/Irrel_kd_1.subset.fq \  # Input FASTQ file(s) for alignment
      --outFileNamePrefix ./star_output/ \  # Output files will be saved in this directory 
      --runThreadN 8                        # Use 8 threads for faster processing
-
 ```
 
 
@@ -411,7 +461,7 @@ srun -p preempt -n 1 --time=04:00:00 --mem=20G --gres=gpu:a100:1 --pty /bin/bash
 
 ### Submit jobs to queue
 
-Example script: `align.sh`
+Example script: `align.sh` using parabricks to do the alignment.
 
 ```
 #!/bin/bash
@@ -470,11 +520,8 @@ Use `squeue -u yourusername` to check job status.
 
 
 
-
-
 **Materials adapted from: **
 
 https://hbctraining.github.io/Intro-to-shell-flipped/lessons/03_working_with_files.html
 
 https://hbctraining.github.io/Intro-to-rnaseq-hpc-O2/lessons/03_alignment.html 
-
