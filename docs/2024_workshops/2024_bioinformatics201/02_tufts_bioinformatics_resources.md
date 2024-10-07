@@ -91,6 +91,7 @@ We offer a wide range of bioinformatics tools as apps, including `AlphaFold` and
 ### RStudio and Shinyngs Apps
 
 RStudio Pax, use R/4.4.1 which has the most comprehensive packages installed (1300+). 
+![rstudio](images/rstudio.png)
 
 ![RStudio Pax screenshot](images/rstudio_pax.png)
 
