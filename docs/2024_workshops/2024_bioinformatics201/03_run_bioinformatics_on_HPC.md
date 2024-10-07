@@ -78,14 +78,13 @@ Date: 2024-10-07
 - A typical FASTA file has the following structure: 
   - **Header Line**: This line starts with a '>' character, followed by a description or identifier of the sequence. 
   - **Sequence Data**: The nucleotide or amino acid sequence, which can span multiple lines.
+- Example:
 
-1. Example
+```
+cat other/rcsb_pdb_5XUS.fasta
+```
 
-   ```
-   cat other/rcsb_pdb_5XUS.fasta
-   ```
-
-   What does this file contain?
+What does this file contain?
 
 ```
 >5XUS_1|Chain A|LbCpf1|Lachnospiraceae bacterium ND2006 (1410628)
@@ -103,13 +102,15 @@ CGTCCTTTA
 
 Counting the number of sequencies in a FASTA file:
 
+``` 
+grep -c "^>" other/rcsb_pdb_5XUS.fasta
 ```
-grep -c "^>" sequences.fasta
-```
+
+- Common Use: The FASTA format is typically used to store reference genome sequences, which can be for a whole genome, specific chromosomes, or individual genes. This format is essential for tasks like sequence alignment, variant calling, and genome assembly.
+
+  
 
 ## FASTQ
-
-
 
 - FASTQ is a text-based format used to store both nucleotide sequences and their corresponding quality scores. It is widely used in bioinformatics, particularly for storing data from high-throughput sequencing technologies.
 - Structure of a FASTQ File A FASTQ file consists of a series of entries, each representing a single read. Each entry has four lines: 
@@ -117,8 +118,7 @@ grep -c "^>" sequences.fasta
   - **Sequence Line**: The raw sequence of nucleotides (A, T, C, G).  
   - **Separator Line**: Starts with a '+' character and can optionally be followed by the same sequence identifier and description as in the header line. 
   - **Quality Line**: Encodes the quality scores for the sequence in the sequence line, using ASCII characters.
-
-Example:
+- Example:
 
 ```
 head raw_fastq/Irrel_kd_1.subset.fq
@@ -142,16 +142,27 @@ GGCATCCATGTTCTTGCCCAAAACCTTGGTTACAGCAATCTGATACTTCTTTTGTGTGGGCTGGCATAGGTCAATGAGGC
 You can also use `less` to view the file and press `Q` key to exit.  
 
 **FASTQC**
-Fastqc output
+
+A quality control tool used in bioinformatics to assess the quality of high-throughput sequencing data, typically for next-generation sequencing (NGS) reads, like those in **FASTQ** files. It provides a series of quality checks on raw sequence data, helping researchers identify issues before proceeding with downstream analysis like alignment, variant calling, or transcript quantification.
+
+Example usage:
+
+```
+module load fastqc/0.12.1
+fastqc raw_fastq/Irrel_kd_1.subset.fq  # It will generate a html report 
+```
+
+[Fastqc output](materials/Irrel_kd_1.subset_fastqc.html)
+
+Check this [article](https://rtsf.natsci.msu.edu/sites/_rtsf/assets/File/FastQC_TutorialAndFAQ_080717.pdf) for how to interpret fastqc result.
+
 
 
 ## GTF file
 
-
-
 GTF (Gene Transfer Format) is a file format used to hold information about gene structure. It is widely used in genomics to store annotations of genomic features such as genes, exons, and regulatory elements. GTF is similar to GFF (General Feature Format) but includes additional standardized attributes. 
 
-Structure of a GTF File 
+Structure of a GTF File:
 
 A GTF file is a tab-delimited text file with one line per feature. Each line consists of nine fields: 
 
@@ -168,8 +179,6 @@ A GTF file is a tab-delimited text file with one line per feature. Each line con
 ```
 less reference_data/chr1-hg19_genes.gtf 
 ```
-
-
 
 
 
@@ -198,14 +207,26 @@ chr1    unknown stop_codon      70006   70008   .       +       .       gene_id 
 ch
 ```
 
+
+
 GTF files are essential for common bioinformatics analyses such as RNA-Seq analysis, genome annotation, and differential expression analysis. They provide the necessary annotation information to map reads to genomic features and to understand the functional elements of the genome.
 
-You can download human gtf file from here `https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/`
-Ensembl `https://useast.ensembl.org/index.html`
-Demonstrate how to download files. 
-GTF
-GFF3
-FASTA
+You can download human gtf file from UCSC Genome Browser  `https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/` or Ensembl Genome Browser `https://ftp.ensembl.org/pub/release-112/gtf/homo_sapiens/`
+
+
+
+## How to donwload your own reference genome file
+
+- Navigate to ensembl website:  `https://useast.ensembl.org/index.html`
+- Select the organisms you are working on. Ex: `Human`
+
+![ensembl](images/ensembl.png)
+
+- Choose the file you would like to download
+  - FASTA
+  - GTF or GFF3
+  - Others
+- Always keep an eye on the genome build. `GRCh38` is the latest for human genome. 
 
 
 
