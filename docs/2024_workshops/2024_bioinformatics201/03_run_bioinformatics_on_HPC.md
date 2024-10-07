@@ -219,7 +219,7 @@ You can download human gtf file from UCSC Genome Browser  `https://hgdownload.so
 
 ## How to donwload your own reference genome file
 
-- Navigate to ensembl website:  `https://useast.ensembl.org/index.html`
+- Navigate to [ensembl website](https://useast.ensembl.org/index.html):  `https://useast.ensembl.org/index.html`
 - Select the organisms you are working on. Ex: `Human`
 
 ![ensembl](images/ensembl.png)
