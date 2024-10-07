@@ -1,12 +1,8 @@
-Shirley Li
+# How to run bioinformatics analysis on Tufts HPC
 
-Date: 2024-10-
+Author: xue.li37@tufts.edu                 
 
-xue.li37@tufts.edu
-
-
-
-[TOC]
+Date: 2024-10-07
 
 
 
@@ -34,44 +30,42 @@ xue.li37@tufts.edu
 
 ## Setup
 
-1. **Connecting to the Cluster** 
-   1. Instructions for accessing the cluster (e.g., SSH login)
-   2. Overview of the cluster environment
+1. Connecting to the Cluster through terminal or Open OnDemand.  
 
-2. **Setting Up the Environment**
+2. Start an interactive session, go from log in mode to compute mode. 
 
-   1. Start an interactive session, go from log in mode to compute mode. 
-   2. Creating and managing directories for the tutorial
+   ```
+   srun -p interactive -n 1 --time=4:00:00 --mem=32g --cpus-per-task=8 --pty bash
+   ```
 
-3. **Copying Sample Data**
+3. Copying Sample Data
 
-   1. Go to your directory (Do not use Home directory). 
+   You can use your lab storage or your home directory (only for this workshop). 
 
-      You can use your lab storage 
+   ```
+   cd /cluster/tufts/XXlab/utln/
+   ```
 
-      ```
-      cd /cluster/tufts/XXlab/utln/
-      ```
+   
 
-      or the dedicated space for workshops (Warning: This directory is accessible for many users and files will be deleted if keep untouched for 2 months.)
+   Copy example data to your directory. 
 
-      ```
-      cd /cluster/tufts/workshop/yourutln/
-      ```
+   ```
+   cp -r /cluster/tufts/workshop/demo/bio_2024 ./
+   cd bio_2024
+   ```
 
-      Contact us at tts-research@tufts.edu if your lab doesn't have storage or you don't belong to any research lab, we will add you to `/cluster/tufts/workshop/`.
+   Let's take a look at the files using `ls`
 
-   2. Copy example data to your directory. 
+   ```
+   genomics_data  other  raw_fastq  README.txt  reference_data
+   ```
 
-      ```
-      cp /cluster/tufts/workshop/exampledata/ ./
-      ```
+   
 
-      or 
+​	**For this workshop, we will store the data in our home directory since it’s small in size. However, in the future, avoid using your home directory for data storage. Always utilize your lab's designated storage space instead. Otherwise, your home directory will fill up quickly, limiting your ability to perform various tasks.**
 
-      ```
-      cp -r /cluster/tufts/workshop/demo/bio_2024/week1/ /cluster/tufts/workshop/yourutln/
-      ```
+
 
 # Overview of the input files
 
