@@ -102,7 +102,7 @@ CGTCCTTTA
 
 Counting the number of sequencies in a FASTA file:
 
-``` 
+```
 grep -c "^>" other/rcsb_pdb_5XUS.fasta
 ```
 
