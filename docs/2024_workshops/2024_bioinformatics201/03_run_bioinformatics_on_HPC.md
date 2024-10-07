@@ -6,7 +6,7 @@ Date: 2024-10-07
 
 
 
-# Objectives
+## Objectives
 
 
 
@@ -16,19 +16,15 @@ Date: 2024-10-07
 
 
 
-# Getting Started
+## Getting Started
 
-
-
-## Prerequisites
+### Prerequisites
 
 - Basic understanding of biology and bioinformatics 
 - Familiarity with the command line 
-- Access to an HPC cluster (e.g., login credentials, necessary software installations)
+- Access to an HPC cluster (e.g., login credentials, necessary software installations)                    
 
-
-
-## Setup
+### Setup 
 
 1. Connecting to the Cluster through terminal or Open OnDemand.  
 
@@ -67,11 +63,11 @@ Date: 2024-10-07
 
 
 
-# Overview of the input files
 
 
+## Overview of the input files
 
-## FASTA file
+### FASTA file
 
 FASTA is a text-based format for representing **nucleotide** sequences or **protein** sequences. It is widely used in bioinformatics for sequence data storage and analysis. Each sequence in a FASTA file is represented by a header line starting with a '>', followed by lines of sequence data.
 
@@ -110,7 +106,7 @@ grep -c "^>" other/rcsb_pdb_5XUS.fasta
 
   
 
-## FASTQ file
+### FASTQ file
 
 FASTQ is a text-based format used to store both nucleotide sequences and their corresponding quality scores. It is widely used in bioinformatics, particularly for storing data from high-throughput sequencing technologies.            
 - Structure of a FASTQ File A FASTQ file consists of a series of entries, each representing a single read. Each entry has four lines:            
@@ -160,7 +156,7 @@ Check this [article](https://rtsf.natsci.msu.edu/sites/_rtsf/assets/File/FastQC_
 
 
 
-## GTF file
+### GTF file 
 
 GTF (Gene Transfer Format) is a file format used to hold information about gene structure. It is widely used in genomics to store annotations of genomic features such as genes, exons, and regulatory elements. GTF is similar to GFF (General Feature Format) but includes additional standardized attributes. 
 
@@ -217,7 +213,7 @@ You can download human gtf file from UCSC Genome Browser  `https://hgdownload.so
 
 
 
-## How to donwload your own reference genome file
+### How to donwload your own reference genome file
 
 - Navigate to [ensembl website](https://useast.ensembl.org/index.html):  `https://useast.ensembl.org/index.html`
 - Select the organisms you are working on. Ex: `Human`
@@ -225,15 +221,16 @@ You can download human gtf file from UCSC Genome Browser  `https://hgdownload.so
 ![ensembl](images/ensembl.png)
 
 - Choose the file you would like to download: FASTA, GTF or GFF3, ...
+
 - Always keep an eye on the genome build. `GRCh38` is the latest for human genome. 
 
+  
 
+## Toy analysis with interactive jobs
 
-# Toy analysis with interactive jobs
+### Alignment with STAR
 
-## Alignment with STAR
-
-### Make sure you are in compute node
+**Make sure you are in compute node**
 
 ```
 utln@login-prod-02    # log in node
@@ -396,9 +393,7 @@ samtools view Aligned.out.bam | head -n 20
 
 
 
-
-
-# Toy analysis with job scripts
+## Toy analysis with job scripts
 
 Let's write a slurm script call `run_star.sh`
 
@@ -442,7 +437,7 @@ Use `squeue -u yourusername` to check job status.
 
 
 
-# Run job with GPU node
+## Run job with GPU node
 
 ### Interactive session
 
@@ -519,7 +514,7 @@ Use `squeue -u yourusername` to check job status.
 
 
 
-**Materials adapted from:**
+**Useful links:**
 
 https://hbctraining.github.io/Intro-to-shell-flipped/lessons/03_working_with_files.html
 
