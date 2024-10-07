@@ -519,7 +519,7 @@ Use `squeue -u yourusername` to check job status.
 
 
 
-**Materials adapted from: **
+**Materials adapted from:**
 
 https://hbctraining.github.io/Intro-to-shell-flipped/lessons/03_working_with_files.html
 
