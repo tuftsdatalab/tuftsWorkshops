@@ -12,7 +12,7 @@ In this workshop, we will introduce how to install bioinformatics softwares on H
 ## Agenda
 
 - [Application Installation from Source Codes](01_source.md)
-- [R package Installation](02_R.md)
+- [R package Installation](02_Rpackage.md)
 - [Conda Environment Management, Jupyer Kernel and Modules](03_conda.md)
 - [Simplying Conda Environment Management with conda-env-mod](04_conda-env-mod.md)
 
