@@ -224,10 +224,7 @@ You can download human gtf file from UCSC Genome Browser  `https://hgdownload.so
 
 ![ensembl](images/ensembl.png)
 
-- Choose the file you would like to download
-  - FASTA
-  - GTF or GFF3
-  - Others
+- Choose the file you would like to download: FASTA, GTF or GFF3, ...
 - Always keep an eye on the genome build. `GRCh38` is the latest for human genome. 
 
 
