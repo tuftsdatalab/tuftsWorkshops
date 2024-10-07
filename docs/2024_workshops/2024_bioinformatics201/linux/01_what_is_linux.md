@@ -25,7 +25,7 @@ Linux is a free, open-source, and Unix-like operating system kernel that was ori
   <img src="../images/git.png" alt="Linus Torvalds" style="height:300px;" />
 </div>
 
-<img src="https://media.licdn.com/dms/image/v2/C5612AQF_GSyWsAniHw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520141518200?e=1733961600&v=beta&t=wteWk6b8Xk8rNXRQGIriROJDp-CwtXGZ95gHY_3CqNs" width="400">
+<img src="https://media.licdn.com/dms/image/v2/C5612AQF_GSyWsAniHw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520141518200?e=1733961600&v=beta&t=wteWk6b8Xk8rNXRQGIriROJDp-CwtXGZ95gHY_3CqNs" width="600">
 
 **Popular Linux Distributions:**
 
