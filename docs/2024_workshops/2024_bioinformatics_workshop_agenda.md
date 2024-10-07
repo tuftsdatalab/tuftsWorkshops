@@ -39,4 +39,10 @@ Oct 24, 2024, 1-3pm
 
 ## Workshop Flyer
 
+## Presenters:
+Delilah Maloney, Senior HPC Specialist
+Yucheng Zhang, Bioinformatics Engineer
+Xue Li, Bioinformatician
+
+
 [Workshop flyer](image/workshop_flyer.pdf)
