@@ -352,7 +352,7 @@ Aligned.out.sam  Log.final.out  Log.out  Log.progress.out  SJ.out.tab
 
 
 
-### SAM
+### SAM file
 
 SAM (Sequence Alignment/Map) is a text-based format for storing biological sequences aligned to a reference sequence. It is widely used in bioinformatics for storing large-scale sequencing data, such as that from next-generation sequencing technologies.
 
