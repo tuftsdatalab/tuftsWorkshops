@@ -73,7 +73,7 @@ Date: 2024-10-07
 
 ## FASTA file
 
-- FASTA is a text-based format for representing **nucleotide** sequences or **protein** sequences. It is widely used in bioinformatics for sequence data storage and analysis. Each sequence in a FASTA file is represented by a header line starting with a '>', followed by lines of sequence data.
+FASTA is a text-based format for representing **nucleotide** sequences or **protein** sequences. It is widely used in bioinformatics for sequence data storage and analysis. Each sequence in a FASTA file is represented by a header line starting with a '>', followed by lines of sequence data.
 
 - A typical FASTA file has the following structure: 
   - **Header Line**: This line starts with a '>' character, followed by a description or identifier of the sequence. 
@@ -112,12 +112,14 @@ grep -c "^>" other/rcsb_pdb_5XUS.fasta
 
 ## FASTQ file
 
-- FASTQ is a text-based format used to store both nucleotide sequences and their corresponding quality scores. It is widely used in bioinformatics, particularly for storing data from high-throughput sequencing technologies.
+FASTQ is a text-based format used to store both nucleotide sequences and their corresponding quality scores. It is widely used in bioinformatics, particularly for storing data from high-throughput sequencing technologies.
 - Structure of a FASTQ File A FASTQ file consists of a series of entries, each representing a single read. Each entry has four lines: 
   - **Header Line**: Starts with '@' followed by a sequence identifier and an optional description.  
   - **Sequence Line**: The raw sequence of nucleotides (A, T, C, G).  
   - **Separator Line**: Starts with a '+' character and can optionally be followed by the same sequence identifier and description as in the header line. 
   - **Quality Line**: Encodes the quality scores for the sequence in the sequence line, using ASCII characters.
+
+
 - Example:
 
 ```
