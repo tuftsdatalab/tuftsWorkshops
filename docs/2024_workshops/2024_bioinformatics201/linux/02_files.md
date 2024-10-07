@@ -53,7 +53,7 @@ Files are referred to by their location called **path**
 
 - Absolute Path (From the root): **/cluster/tufts/pi01/user01**
 
-- Relative Path (From my current location)：**user01/file01**
+- Relative Path (From my current location)：**user01**
 
 <img src="../images/file_system.png" width="600">
 
