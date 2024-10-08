@@ -172,10 +172,10 @@ nav:
             - "Workshop Agenda": 2024_workshops/2024_bioinformatics_workshop_agenda.md
             - 1. Introduction to HPC: 
                 - "Introduction to Tufts HPC Cluster": 2024_workshops/2024_bioinformatics101/Intro2HPC/readme.md
-                - "Tufts HPC Terminologies": 2024_bioinformatics101/Intro2HPC/00_Tufts_HPC_Terminologies.md
-                - "Getting to Know Tufts HPC Cluster Resources": 2024_bioinformatics101/Intro2HPC/01_Getting_to_Know_Tufts_HPC_Cluster_Resources.md
-                - "Tufts HPC Cluster Access": 2024_bioinformatics101/Intro2HPC/02_Tufts_HPC_Cluster_Access.md
-                - "Getting Work Done on Tufts HPC Cluster with SLURM": 2024_bioinformatics101/Intro2HPC/03_Getting_Work_Done_on_Tufts_HPC_Cluster_with_SLURM.md
+                - "Tufts HPC Terminologies": 2024_workshops/2024_bioinformatics101/Intro2HPC/00_Tufts_HPC_Terminologies.md
+                - "Getting to Know Tufts HPC Cluster Resources": 2024_workshops/2024_bioinformatics101/Intro2HPC/01_Getting_to_Know_Tufts_HPC_Cluster_Resources.md
+                - "Tufts HPC Cluster Access": 2024_workshops/2024_bioinformatics101/Intro2HPC/02_Tufts_HPC_Cluster_Access.md
+                - "Getting Work Done on Tufts HPC Cluster with SLURM": 2024_workshops/2024_bioinformatics101/Intro2HPC/03_Getting_Work_Done_on_Tufts_HPC_Cluster_with_SLURM.md
             - 2. Getting started with Bioinformatics on Tufts HPC:
                 - "Linux/Unix command line basics":
                     - "Overview": 2024_workshops/2024_bioinformatics201/linux/00_overview.md
