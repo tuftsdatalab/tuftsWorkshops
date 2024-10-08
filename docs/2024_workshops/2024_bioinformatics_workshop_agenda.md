@@ -6,6 +6,10 @@ Tufts University Bioinformatics Workshop Series - 2024 Fall
 ## Workshop 1: [Introduction to HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/) 
 Oct 9, 2024, 1-3pm
 
+- [Tufts HPC Terminologies](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/Intro2HPC/00_Tufts_HPC_Terminologies/)
+- [Getting to Know Tufts HPC Cluster Resources](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/Intro2HPC/01_Getting_to_Know_Tufts_HPC_Cluster_Resources/)
+- [Tufts HPC Cluster Access](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/Intro2HPC/02_Tufts_HPC_Cluster_Access/)
+- [Getting Work Done on Tufts HPC Cluster with SLURM](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/Intro2HPC/03_Getting_Work_Done_on_Tufts_HPC_Cluster_with_SLURM/)
 
 
 
