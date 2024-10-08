@@ -79,6 +79,3 @@ parallel -j N "fastqc {}" ::: *.fastq.gz
 
 Highly recommeded to read this article written by the developer Ole Tange in [Biostars](https://www.biostars.org/p/63816/). 
 
-
-<img src="images/gnu.png" alt="GNU parallel" style="height:500px;" />
-
