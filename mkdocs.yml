@@ -170,7 +170,12 @@ nav:
                 - "differentialabundance report": 2024_workshops/nfcore_rnaseq_sp24/05_differentialabundance_report.html
         - Fall 2024:
             - "Workshop Agenda": 2024_workshops/2024_bioinformatics_workshop_agenda.md
-            - "1. Introduction to HPC": 2024_workshops/2024_bioinformatics101.md
+            - 1. Introduction to HPC: 
+                - "Introduction to Tufts HPC Cluster": 2024_workshops/2024_bioinformatics101/Intro2HPC/readme.md
+                - "Tufts HPC Terminologies": 2024_bioinformatics101/Intro2HPC/00_Tufts HPC Terminologies.md
+                - "Getting to Know Tufts HPC Cluster Resources": 2024_bioinformatics101/Intro2HPC/01_Getting to Know Tufts HPC Cluster Resources.md
+                - "Tufts HPC Cluster Access": 2024_bioinformatics101/Intro2HPC/02_Tufts HPC Cluster Access.md
+                - "Getting Work Done on Tufts HPC Cluster with SLURM": 2024_bioinformatics101/Intro2HPC/03_Getting Work Done on Tufts HPC Cluster with SLURM.md
             - 2. Getting started with Bioinformatics on Tufts HPC:
                 - "Linux/Unix command line basics":
                     - "Overview": 2024_workshops/2024_bioinformatics201/linux/00_overview.md
