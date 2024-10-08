@@ -51,7 +51,7 @@ Everything is mounted to the root directory
 
 Files are referred to by their location called **path** 
 
-- Absolute Path (From the root): **/cluster/tufts/pi01/user01**
+- Absolute Path (From the root): **/cluster/tufts/mylab/user01**
 
 - Relative Path (From my current location)：**user01**
 
