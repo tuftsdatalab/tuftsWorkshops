@@ -27,7 +27,7 @@
 >
 > **Cluster New User Guides**
 >
-> - [Table of Contents](https://tufts.box.com/v/HPC-Table-of-Contents)
+> - [Table of Contents](https://tufts.box.com/v/HPC-Table-of-Contents) - New documentation site coming soon! Look out for our emails!
 
 
 
