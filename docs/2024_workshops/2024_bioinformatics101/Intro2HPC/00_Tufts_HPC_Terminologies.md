@@ -51,7 +51,8 @@ The central processing unit (CPU) of a computer is what manipulates data by perf
 **Memory**
   - Small, fast, expensive
   - Used to store information for immediate use
-  - Volatile.
+  - Volatile
+    
 **Storage**
   - Larger, slower, cheaper
   - Non-volatile (retaining data when its power is shut off)
