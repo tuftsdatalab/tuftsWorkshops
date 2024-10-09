@@ -58,7 +58,7 @@ __`Clusters`__
 
 - If you need X11 access through OnDemand to display any GUI applications, use [OnDemand](https://ondemand.pax.tufts.edu)
   
-  **`Tufts HPC FastX11 Shell Access`** = `$ ssh -XYC your_utln@login.cluster.tufts.edu` (with X11 for GUI applications)
+  **`Tufts HPC FastX11 Shell Access`** = `$ ssh -YC your_utln@login.cluster.tufts.edu` (with X11 for GUI applications)
 
   [FastX Web/Desktop Client Setup Instructions](https://tufts.box.com/s/s1vig4km289dzx8qkq4mbhlp4es0oxu1)
 
