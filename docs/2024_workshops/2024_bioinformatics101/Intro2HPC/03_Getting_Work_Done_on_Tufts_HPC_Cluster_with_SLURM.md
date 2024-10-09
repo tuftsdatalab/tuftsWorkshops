@@ -6,7 +6,12 @@
 
 **ALL** work **MUST** to be performed on **compute nodes**!
 
-If you see prompt like this `[your_utln@login-prod-01]`, `[your_utln@login-prod-02]`, `[your_utln@login-prod-03]`, **DON'T** run any programs! **Get resource allocation first**!
+If you see prompt like this 
+`[your_utln@login-prod-01]`
+`[your_utln@login-prod-02]`
+`[your_utln@login-prod-03]`
+**DON'T** run any programs, YET! 
+**Get resource allocation first**!
 
 <img src="https://raw.githubusercontent.com/DelilahYM/ImageHost/master/Cluster_20230516.png" alt="Memory-Storage" width=70%>
 
