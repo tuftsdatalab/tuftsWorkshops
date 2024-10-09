@@ -49,13 +49,15 @@ Use your **Tufts UTLN** (Tufts username, lower case!) and **password** to login.
 
 <img src="https://raw.githubusercontent.com/DelilahYM/ImageHost/master/ondemand_menu.png" alt="Core-Node" width=70%>
 
-__`Clusters`__, start a shell access to the HPC cluster. 
+__`Clusters`__
+- Start a shell access to the HPC cluster.
 
   **`Tufts HPC Shell Access`** = `$ ssh your_utln@login.cluster.tufts.edu `= `$ ssh your_utln@login.pax.tufts.edu `
 
   > Note: the `>_Open in Terminal` button in `Files` also opens a terminal in whichever directory you navigated to.
 
-  If you need X11 access through OnDemand to display any GUI applications, use [OnDemand](https://ondemand.pax.tufts.edu)
+- If you need X11 access through OnDemand to display any GUI applications, use [OnDemand](https://ondemand.pax.tufts.edu)
+  
   **`Tufts HPC FastX11 Shell Access`** = `$ ssh -XYC your_utln@login.cluster.tufts.edu` (with X11 for GUI applications)
 
   [FastX Web/Desktop Client Setup Instructions](https://tufts.box.com/s/s1vig4km289dzx8qkq4mbhlp4es0oxu1)
