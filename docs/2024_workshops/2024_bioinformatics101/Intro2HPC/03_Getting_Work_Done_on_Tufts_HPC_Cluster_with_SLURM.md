@@ -96,7 +96,7 @@ Then follow the on-screen instructions to get desired information.
 
 - Particularly good for debugging and working with software GUI. 
 
-  `$ srun [options] --pty [command]`
+  `$ srun [options] [command (executable + arguments)]`
 
 - Command 
 
