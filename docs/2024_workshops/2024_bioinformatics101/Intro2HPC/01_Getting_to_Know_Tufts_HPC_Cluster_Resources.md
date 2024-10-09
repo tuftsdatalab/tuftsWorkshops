@@ -43,6 +43,7 @@ OR
 Created for research labs and classes. A Tufts HPC cluster research project storage share can **only** be owned by a **Tufts** **faculty**.
 
 New Storage Policies can be found on [RT Announcements](https://it.tufts.edu/research-technology/announcements) page.
+Starting July 1, 2026: 
 
   * Tier 1 (hot) for active, high-performance compute use. - 10TB quota, $85 per TB per year beyond 10 TB quota.
   * Tier 2 (cool) for inactive, infrequently accessed data, no compute on data. - 10TB quota, $35 per TB per year beyond 10 TB quota.
