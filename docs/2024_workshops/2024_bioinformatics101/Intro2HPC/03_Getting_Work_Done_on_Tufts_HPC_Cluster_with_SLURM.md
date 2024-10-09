@@ -31,15 +31,12 @@ If you see prompt like this
 - **[OnDemand (https://ondemand.pax.tufts.edu)]( https://ondemand.pax.tufts.edu/)**
 
   - **`Interactive Apps`** --> RStudio, Matlab, JupyterLab, Jupyter Notebook, .etc
+ 
+  - **`Bioinformatics Apps`** --> AlphaFold, CellProfiler, FastQC, Jupyter, QualiMap, RStudio, RELION, nf-core piplines, .etc
 
   - **`Clusters`** --> Tufts HPC Cluster  Shell Access 
 
-  - **`Files`** 
-
-  - **`Jobs`**
-
-  - [OnDemand]( https://ondemand.pax.tufts.edu/)  **`Clusters`** --> Tufts HPC Cluster FastX11 Shell Access
-
+  - **`Files`** --> Access Home and Research project storage
     
 
 ## Slurm Information
