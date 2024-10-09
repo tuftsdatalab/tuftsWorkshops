@@ -24,7 +24,7 @@ Every user has a home directory.
 
 Be aware! Your Home Directory (**30GB**, fixed) should be `/cluster/home/your_utln`
 
-If you are not sure how much storage you have used in your home directory, feel free to contact us and we can provide you the number. 
+If you are not sure how much storage you have used in your home directory, feel free to contact us and we can provide you with the number. 
 
 For self-service, you can use the following commands from a shell terminal to find out your home directory usage:
 
