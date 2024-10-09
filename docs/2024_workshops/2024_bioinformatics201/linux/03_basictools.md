@@ -347,19 +347,15 @@ sort file.txt | uniq
 
 ### Wildcards: selecting multiple files/directories based on patterns
 
-- **\***: Represents zero or more characters.   
-   
-- **\*.fastq.gz**  matches all fastq.gz files
+- **\***: Represents zero or more characters:  
+       **\*.fastq.gz**  matches all fastq.gz files
 
-- **?**: Represents a single character.
-   
-- **file?.txt** matches "file1.txt", "fileA.txt", but not "file12.txt".
+- **?**: Represents a single character:
+       **file?.txt** matches "file1.txt", "fileA.txt", but not "file12.txt".
 
-- **[]**: Represents a single character within a specified range or set.
-
-- **[abc]at** matches "bat", "cat", or "aat”.
-
-- **[0-9]** matches any single digit.
+- **[]**: Represents a single character within a specified range or set:
+       **[abc]at** matches "bat", "cat", or "aat”.
+       **[0-9]** matches any single digit.
 
 ### Alias
 An alias in Linux is a custom shortcut or abbreviation for a command or a series of commands. Once defined, you can use the alias in place of the original command.
