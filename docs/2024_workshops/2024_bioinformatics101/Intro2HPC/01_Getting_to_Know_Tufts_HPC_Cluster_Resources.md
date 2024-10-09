@@ -28,9 +28,11 @@ If you are not sure how much storage you have used in your home directory, feel 
 
 For self-service, you can use the following commands from a shell terminal to find out your home directory usage:
 
-`$ module load hpctools`
+```
+$ module load hpctools
 
-`$ hpctools` (from any node) 
+$ hpctools
+```
 
 OR 
 
@@ -56,9 +58,11 @@ Your research projet storage (from **50GB**) path should be `/cluster/tufts/your
 
 To see your **research project storage quota** by running the following command from **any node on the new cluster Pax**:
 
-`$ module load hpctools`
+```
+$ module load hpctools
 
-`$ hpctools`
+$ hpctools
+```
 
 OR 
 
@@ -247,9 +251,11 @@ __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
 
 ## Cluster Computing Resource Availability
 
-`$ module load hpctools`
+```
+$ module load hpctools
 
-`$ hpctools` 
+$ hpctools
+```
 
 Then follow the on-screen instructions to extract the information you need. 
 
