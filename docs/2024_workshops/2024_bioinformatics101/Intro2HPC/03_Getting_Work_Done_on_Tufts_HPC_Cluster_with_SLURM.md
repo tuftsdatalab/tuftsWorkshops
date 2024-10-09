@@ -117,8 +117,8 @@ Particularly good for debugging and working with software GUI.
    	- Format: DD-HH:MM:SS
       
   - Number of CPU cores `-n`
-    
-    	- Default 1 if not specified
+  
+  	- Default 1 if not specified
     
   - Memory `--mem=`
     
