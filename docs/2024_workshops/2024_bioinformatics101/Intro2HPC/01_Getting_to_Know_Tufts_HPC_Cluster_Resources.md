@@ -204,7 +204,7 @@ __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
 
     - In "preempt" partition
     - Request with: `--gres=gpu:rtx_a5000:1`(one RTX A5000 GPU, can request up to 4 on one node)
-    - `--constraint="l40s"`
+    - `--constraint="rtx_a5000"`
     - Each GPU comes with 48GB of DRAM
     - Driver supports upto CUDA 12.2
 
