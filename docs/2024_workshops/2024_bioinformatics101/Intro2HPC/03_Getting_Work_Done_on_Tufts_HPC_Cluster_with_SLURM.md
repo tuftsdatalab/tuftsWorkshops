@@ -49,7 +49,7 @@ With more specifc information and formated output:
 
 `$ sinfo -o "%20N %10P %10c %10m %85f %10G "` - NODELIST, PARTITION, CPUS, MEMORY,AVAIL_FEATURES, GRES  
 
-More  [sinfo](https://slurm.schedmd.com/sinfo.html) options
+Check out more  [sinfo](https://slurm.schedmd.com/sinfo.html) options!
 
 **You can only see the partitions you have access to.**
 
@@ -65,7 +65,6 @@ Users can use `hpctools` module to check:
 **Free CPU resources, Free GPU resources, User Past and Active jobs, and Project space quota and usage.**
 
 ```
-[tutln01@login-prod-01 ~]$ module load hpctools
 [tutln01@login-prod-01 ~]$ module load hpctools
 	 command: hpctools
 [tutln01@login-prod-01 ~]$ hpctools
@@ -89,7 +88,7 @@ Your Selection:
 
 ```
 
-Then follow the onscreen instructions to get desired information.
+Then follow the on-screen instructions to get desired information.
 
 
 
