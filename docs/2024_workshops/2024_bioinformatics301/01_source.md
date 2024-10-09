@@ -19,7 +19,7 @@ GNU Make is a program often used for compiling software. It uses a plain text fi
 
    ❌ Do not run **sudo** **make install**
 
-By default, **make install** will install applications into `/usr/local`, but regular users do not have permission to write into `/usr/lobcal`. 
+By default, **make install** will install applications into `/usr/local`, but regular users do not have permission to write into `/usr/local`. 
 
 The best way is to install applications into your home directory or your group's shared directory by passing the option `--prefix=TargetDirName` to `./configure`. 
 
@@ -182,3 +182,5 @@ make
 make install
 ```
 
+[Previous: Intro](00_introduction.md)
+[Next: R](02_Rpackage.md)

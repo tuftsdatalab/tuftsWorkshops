@@ -182,3 +182,5 @@ devtools::install_github("fanzhanglab/STew")
 
 Notice that for many R package, especially those process scRNA-Seq or spatial transcriptomics data, it often require dependencies or version-specific packages. 
 
+[Previous: Souce](01_source.md)
+[Next: Conda](03_conda.md)

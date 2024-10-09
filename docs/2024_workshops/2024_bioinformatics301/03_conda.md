@@ -340,3 +340,5 @@ $ conda deactivate # After your job/analysis is complete
   ## You can select 6 to check your $HOME disk usage
   ```
 
+[Previous: R](02_Rpackage.md)
+[Next: conda-env-mod](04_conda-env-mod.md)
