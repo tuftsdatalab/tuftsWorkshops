@@ -18,7 +18,7 @@ For Faculties ONLY: **[HPC for Classes](https://tufts.qualtrics.com/jfe/form/SV_
 
 ## Cluster Storage
 
-#### Home Directory
+### Home Directory
 
 Every user has a home directory.
 
@@ -36,7 +36,7 @@ OR
 
 `$ du -a -h --max-depth=1 ~ | sort -hr` from a **compute node** in your home directory to find out the detailed usage. 
 
-#### Reserach Project Storage
+### Reserach Project Storage
 
 **[Request research project storage](https://it.tufts.edu/research-technology/)**
 
