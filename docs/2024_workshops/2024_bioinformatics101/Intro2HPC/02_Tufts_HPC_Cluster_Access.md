@@ -19,7 +19,7 @@
 
 > **X Window System (X11)**
 >
-> - The X Window System (X11) is an open source, cross platform,  client-server computer software system that provides a **GUI** in a  distributed network environment.
+> - The X Window System (X11) is an open source, cross platform,  client-server computer software system that provides a Graphical User Interface (**GUI**) in a  distributed network environment.
 
 > **Login Hostname**
 >
