@@ -124,7 +124,7 @@ __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
 
 - `preempt` partition `-p preempt`:
 
-  - `a100`, `v100`, `p100`, ` rtx_6000`, `rtx_a6000`, `rtx_6000ada`, `rtx_a5000`, `h100`, `l40s`, `t4`
+  - `a100`, `v100`, `p100`, ` rtx_6000`, `rtx_a6000`, `rtx_6000ada`, `rtx_a5000`, `h100`, `l40s`, `t4`, `l40`
 
   - NVIDIA T4
 
@@ -224,7 +224,7 @@ __NVIDIA GPUs__ are available in `gpu` and `preempt` partitions
 
 ## Cluster Resource Limit
 
-* **Public Partitions** (batch+mpi+largemem+gpu) 
+* **Public Non-Preempt Partitions** (batch+mpi+largemem+gpu) 
 
   * CPU: 500 cores
 
