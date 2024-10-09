@@ -29,7 +29,6 @@ If you are not sure how much storage you have used in your home directory, feel 
 For self-service, you can use the following commands from a shell terminal to find out your home directory usage:
 
 `$ module load hpctools`
-
 `$ hpctools` (from any node) 
 
 OR 
@@ -42,19 +41,23 @@ OR
 
 Created for research labs and classes. A Tufts HPC cluster research project storage share can **only** be owned by a **Tufts** **faculty**.
 
-New Storage Policies can be found on [RT Announcements](https://it.tufts.edu/research-technology/announcements) page. - Tiered Storage
+New Storage Policies can be found on [RT Announcements](https://it.tufts.edu/research-technology/announcements) page.
 
+  * Tier 1 (hot) for active, high-performance compute use. - 10TB quota, $85 per TB per year beyond 10 TB quota.
+  * Tier 2 (cool) for inactive, infrequently accessed data, no compute on data. - 10TB quota, $35 per TB per year beyond 10 TB quota.
+  * Tier 3 (deep cold) for static, rarely accessed data, “attic” storage. - 0TB quota, 6 per TB per year.
+
+**Tier 1 Storage:**
 Your research projet storage (from **50GB**) path should be `/cluster/tufts/yourlabname/`, and each member of the lab group has a dedicated directory `/cluster/tufts/yourlabname/your_utln`
 
 To see your **research project storage quota** by running the following command from **any node on the new cluster Pax**:
 
-`$ df -h /cluster/tufts/yourlabname ` 
+`$ module load hpctools`
+`$ hpctools`
 
 OR 
 
-`$ module load hpctools`
-
-`$ hpctools`
+`$ df -h /cluster/tufts/yourlabname ` 
 
 **NOTE:** Accessing your research project storage space for the __first time__ in your current session, please make sure you type out the __FULL PATH__ to the directory `/cluster/tufts/yourlabname/`.
 
