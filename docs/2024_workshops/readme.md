@@ -8,7 +8,7 @@ The TTS Research Technology Bioinformatics Team has prepared the following works
 
 ## [2024 Fall](2024_bioinformatics_workshop_agenda.md)
 
-- [Introduction to HPC](./2024_bioinformatics101.md)
+- [Introduction to HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/Intro2HPC/readme/)
 - [Getting Started with Bioinformatics on HPC](./2024_bioinformatics201/00_introduction.md)
 - [Software Installation and Environment Management in HPC](./2024_bioinformatics301/00_introduction.md)
 - [Advanced HPC Workflows and Job Management](./2024_bioinformatics401/00_introduction.md)
