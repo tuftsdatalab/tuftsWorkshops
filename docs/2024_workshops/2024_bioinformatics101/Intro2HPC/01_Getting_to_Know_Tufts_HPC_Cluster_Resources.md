@@ -49,6 +49,7 @@ New Storage Policies can be found on [RT Announcements](https://it.tufts.edu/res
   * Tier 3 (deep cold) for static, rarely accessed data, “attic” storage. - 0TB quota, 6 per TB per year.
 
 **Tier 1 Storage:**
+
 Your research projet storage (from **50GB**) path should be `/cluster/tufts/yourlabname/`, and each member of the lab group has a dedicated directory `/cluster/tufts/yourlabname/your_utln`
 
 To see your **research project storage quota** by running the following command from **any node on the new cluster Pax**:
