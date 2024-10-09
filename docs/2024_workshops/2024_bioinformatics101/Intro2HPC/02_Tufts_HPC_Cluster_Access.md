@@ -319,7 +319,7 @@ Currently Loaded Modulefiles:
 
 ### Install Software/Packages
 
-** [R](https://tufts.box.com/s/qximkv5ke2y4k0vbg6m04m6fc6exh88h) ** (R command line recommanded)
+**[R](https://tufts.box.com/s/qximkv5ke2y4k0vbg6m04m6fc6exh88h)** (R command line recommanded)
 
   - Packages need to be <u>reinstalled</u> for each version of R
   - OnDemand
@@ -327,11 +327,11 @@ Currently Loaded Modulefiles:
      - Interactive Apps - RStudio Pax
      - Bioinformatics Apps - RStudio for bioinformatics, RStudio for scRNA-Seq
       
-** [Python](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics301/03_conda/) ** (Conda env recommanded)
+**[Python](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics301/03_conda/)** (Conda env recommanded)
 
   - Not recommended: anaconda/3 or anaconda/2 (older versions), only use this version when it's absolutely necessary
     
-** Other software ** compiled from source
+**Other software** compiled from source
 
   - gcc
   - cmake
