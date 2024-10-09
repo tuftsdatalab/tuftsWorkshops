@@ -201,7 +201,7 @@ Need Assistance? Contact us at tts-research@tufts.edu
 
 Local Computer: [Globus Connect Personal](https://docs.globus.org/globus-connect-personal/)
 
-Collections: 
+Tufts Collections: 
 
 - Tufts HPC Cluster Storage (Home and Project)
 
