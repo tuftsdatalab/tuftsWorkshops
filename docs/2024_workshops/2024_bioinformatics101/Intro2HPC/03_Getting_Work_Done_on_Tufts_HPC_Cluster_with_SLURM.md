@@ -61,7 +61,8 @@ How to check **GPU, Memory, CPU** availability on the cluster?
 
 ## Utilize New `hpctools` Module !!!
 
-Users can use `hpctools` module to check: **Free CPU resources, Free GPU resources, User Past and Active jobs, and Project space quota and usage. **
+Users can use `hpctools` module to check: 
+**Free CPU resources, Free GPU resources, User Past and Active jobs, and Project space quota and usage.**
 
 ```
 [tutln01@login-prod-01 ~]$ module load hpctools
