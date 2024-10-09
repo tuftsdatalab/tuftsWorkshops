@@ -33,7 +33,7 @@
 
 ## OnDemand
 
-Preferred browser: **Chrome or FireFox**
+> Preferred browser: **Chrome or FireFox**
 
 Go to [**OnDemand**](https://ondemand.pax.tufts.edu), https://ondemand.pax.tufts.edu
 
