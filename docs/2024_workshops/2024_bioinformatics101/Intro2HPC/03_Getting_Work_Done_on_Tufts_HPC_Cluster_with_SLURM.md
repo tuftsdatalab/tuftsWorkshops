@@ -141,7 +141,7 @@ Particularly good for debugging and working with software GUI.
 
 **Starting an interactive session of bash shell on preempt partition with 2 CPU cores and 2GB of RAM, with X11 forwarding for 1 day, 2 hours, and 30 minutes (use `exit` to end session and release resources).**
 
-```bash
+```
 [tutln01@login-prod-01 ~]$ srun -p preempt -t 1-2:30:00 -n 2 --mem=2g --x11=first --pty bash
 srun: job 296794 queued and waiting for resources
 srun: job 296794 has been allocated resources
@@ -152,7 +152,7 @@ Note: If you are requesting X11 forwarding with `srun`, `-XC` or`-YC` or `-XYC` 
 
 **Starting an interactive session of bash shell on preempt partition with 2 CPU cores and 4GB of RAM, with 1 A100 GPU for 1 day, 2 hours, and 30 minutes (use `exit` to end session and release resources).**
 
-```bash
+```
 [tutln01@login-prod-01 ~]$ srun -p preempt -t 1-2:30:00 -n 2 --mem=4g --gres=gpu:a100:1 --pty bash
 ```
 
@@ -164,7 +164,7 @@ Once your resource is allocated on a compute node, use `nvidia-smi` to check GPU
 
 Write a batch submission script e.g. **myjob.sh**
 
-```bash
+```
 #!/bin/bash -l
 #SBATCH -J My_Job_Name   #job name
 #SBATCH --time=00-00:20:00  #requested time (DD-HH:MM:SS)
@@ -207,7 +207,7 @@ conda deactivate
 
 - Checking your **active** jobs
 
-```bash
+```
 [tutln01@cc1gpu001 ~]$ squeue -u $USER
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON) 
             296794   preempt     bash tutln01  R       5:12      1 cc1gpu001 
@@ -232,7 +232,7 @@ To check details of your **active jobs** (running or pending):
 
 `$ scontrol show jobid -dd JOBID`
 
-```bash
+```
 [tutln01@cc1gpu001 ~]$ scontrol show jobid -dd 296794
 JobId=296794 JobName=bash
    UserId=tutln01(31003) GroupId=tutln01(5343) MCS_label=N/A
@@ -274,7 +274,7 @@ Querying finished jobs helps users make better decisions on requesting resources
 
 `$ seff JOBID`
 
-```bash
+```
 [tutln01@login-prod-01 ~]$ seff 296794
 Job ID: 296794
 Cluster: pax
@@ -294,7 +294,7 @@ Memory Efficiency: 0.06% of 2.00 GB (2.00 GB/node)
 
 `$ sacct --format=partition,state,time,start,end,elapsed,MaxRss,ReqMem,MaxVMSize,nnodes,ncpus,nodelist -j JOBID`
 
-```bash
+```
 [tutln01@login-prod-01 ~]$ sacct --format=partition,state,time,start,end,elapsed,MaxRss,ReqMem,MaxVMSize,nnodes,ncpus,nodelist -j  296794
  Partition      State  Timelimit               Start                 End    Elapsed     MaxRSS     ReqMem  MaxVMSize   NNodes      NCPUS        NodeList 
 ---------- ---------- ---------- ------------------- ------------------- ---------- ---------- ---------- ---------- -------- ---------- --------------- 
@@ -307,7 +307,7 @@ NOTE: there are more format options, see [sacct](https://slurm.schedmd.com/sacct
 
 **OR** utilize `hpctools` module on the cluster to make things a little easier
 
-```[tutln01@login-prod-01 ~]$ module load hpctools
+```
 [tutln01@login-prod-01 ~]$ module load hpctools
 	 command: hpctools
 [tutln01@login-prod-01 ~]$ hpctools
