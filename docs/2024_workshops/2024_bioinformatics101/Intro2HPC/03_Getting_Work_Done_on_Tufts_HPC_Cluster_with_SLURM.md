@@ -23,7 +23,7 @@ If you see prompt like this
 > - How many CPU cores?
 > - How long does the job need to run?
 > - Command line application? GUI?
-> - Does the program need interactions?
+> - Do you need to interact with the application at runtime?
 > - Prototyping, debugging, or production?
 
 ## OnDemand
