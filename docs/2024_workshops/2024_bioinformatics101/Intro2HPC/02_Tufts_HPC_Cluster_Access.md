@@ -69,7 +69,7 @@ __`Clusters`__
 
 ### Mac OSX & Linux
 
-- **Terminal** 
+**Terminal** 
 
   - Shell environment (default: bash):
 
@@ -91,7 +91,7 @@ __`Clusters`__
 
     `$ [your_utln@login-prod-03 ~]`
 
-  * Setting up [SSH keyless access](_https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/_) 
+  - Setting up [SSH keyless access](_https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/_) 
     * Be sure your `~/.ssh` permission is correct! Otherwise, SSH won't work properly.
     * `. ssh` directory: 700 ( drwx------ )
     * public key ( `. pub` file): 644 ( -rw-r--r-- )
