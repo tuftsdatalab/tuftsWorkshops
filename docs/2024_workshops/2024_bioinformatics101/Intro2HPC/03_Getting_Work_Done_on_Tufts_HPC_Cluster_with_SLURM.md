@@ -41,7 +41,7 @@ If you see prompt like this
 
 ## Slurm Information
 
-- View information about Slurm nodes and partitions.
+View information about Slurm nodes and partitions.
 
 `$ sinfo`
 
@@ -63,7 +63,8 @@ How to check **GPU, Memory, CPU** availability on the cluster?
 
 Users can use `hpctools` module to check: **Free CPU resources, Free GPU resources, User Past and Active jobs, and Project space quota and usage. **
 
-```[tutln01@login-prod-01 ~]$ module load hpctools
+```
+[tutln01@login-prod-01 ~]$ module load hpctools
 [tutln01@login-prod-01 ~]$ module load hpctools
 	 command: hpctools
 [tutln01@login-prod-01 ~]$ hpctools
