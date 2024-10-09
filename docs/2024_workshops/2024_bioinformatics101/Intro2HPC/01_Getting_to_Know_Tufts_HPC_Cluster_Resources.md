@@ -29,6 +29,7 @@ If you are not sure how much storage you have used in your home directory, feel 
 For self-service, you can use the following commands from a shell terminal to find out your home directory usage:
 
 `$ module load hpctools`
+
 `$ hpctools` (from any node) 
 
 OR 
@@ -53,6 +54,7 @@ Your research projet storage (from **50GB**) path should be `/cluster/tufts/your
 To see your **research project storage quota** by running the following command from **any node on the new cluster Pax**:
 
 `$ module load hpctools`
+
 `$ hpctools`
 
 OR 
