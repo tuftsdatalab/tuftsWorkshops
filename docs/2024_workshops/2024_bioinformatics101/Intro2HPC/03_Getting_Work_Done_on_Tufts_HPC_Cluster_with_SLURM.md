@@ -131,10 +131,14 @@ Particularly good for debugging and working with software GUI.
   - Features `--constraint=`
     
   	- GPU types
+
     	- OS version
-    	- CPU architecture
-    	- Instruction Set
-    	- Default none
+
+     	- CPU architecture
+
+     	- Instruction Set
+
+     	- Default none
     
   - X Window `--x11=first`
   
