@@ -28,7 +28,7 @@ https://ondemand.pax.tufts.edu/
 
 
 
-![2024-08-26 at 14.11.52](/Users/xli/Library/CloudStorage/Box-Box/Research Computing/Workshop/BinformaticsWorkshop2024Fall/markdowns/dev/images/ondemand_app.png)
+![openondemand](images/ondemand_app.png)
 
 
 
@@ -80,7 +80,7 @@ install.packages("packageName")
 
 **Rstudio** 
 
-![rstudio_install](/Users/xli/Library/CloudStorage/Box-Box/Research Computing/Workshop/BinformaticsWorkshop2024Fall/markdowns/dev/images/rstudio_install.png)
+![rstudio_install](images/rstudio_install.png)
 
 ## .libPaths()
 
