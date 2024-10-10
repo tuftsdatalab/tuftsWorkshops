@@ -1,6 +1,6 @@
 # How to run bioinformatics analysis on Tufts HPC
 
-Author: xue.li37@tufts.edu                 
+Author: Shirley Li, xue.li37@tufts.edu                 
 
 Date: 2024-10-07
 
@@ -175,7 +175,7 @@ A GTF file is a tab-delimited text file with one line per feature. Each line con
 9. **attribute**: A semicolon-separated list of key-value pairs describing the feature.
 
 ```
-less reference_data/chr1-hg19_genes.gtf 
+head reference_data/chr1-hg19_genes.gtf 
 ```
 
 
