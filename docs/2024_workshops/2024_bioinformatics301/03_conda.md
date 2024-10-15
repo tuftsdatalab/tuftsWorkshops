@@ -65,7 +65,7 @@ $ module avail miniforge
 
 - Conda search or download packages from channels. 
 
-- The default set of channels is called **defaults**. 
+- For anaconda and miniconda, the default set of channels is called **defaults**. 
 
 - To install a package that is not in **defaults**, you need to tell conda which channel contains the package. 
 
