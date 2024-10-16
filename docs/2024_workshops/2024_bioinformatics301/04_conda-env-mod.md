@@ -87,6 +87,26 @@ This will create a conda environment to a custom directory.
 $ conda-env-mod create -p /cluster/tufts/mylab/$USER/condaenv/myenv
 ```
 
+Once the conda-env-mod finishes creating the environment, you will see information similar to below:
+```
+Please make sure you initialize conda separately.
++---------------------------------------------------------------+
+| To use this environment, load the following modules:          |
+|     module load use.own                                       |
+|     module load conda-env/myenv-py3.12.5                      |
+| (then standard 'conda install' / 'pip install' / run scripts) |
++---------------------------------------------------------------+
+```
+
+By default, modulefiles are stored in `$HOME/privatemodules/conda-env`. You can load the module by:
+```
+$ module load use.own
+$ module load conda-env/myenv-py3.12.5
+$ conda install XXX
+$ pip install XXX
+$ module unload conda-env/myenv-py3.12.5
+```
+
 #### Create a conda environment as well as jupyter kernel
 You just need to add `--jupyter` when you run `conda-env-mod create -n` or `conda-env-mod create -p`.
 ```
