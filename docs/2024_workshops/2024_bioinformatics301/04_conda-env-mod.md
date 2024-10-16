@@ -100,7 +100,8 @@ Users can create conda environments in lab's project folder, and share them with
 ##### Create conda environment(once)
 ```
 $ module purge
-$ module load anaconda
+$ module load anaconda # module load miniforge
+$ module load conda-env-mod
 $ conda-env-mod create -p /cluster/tufts/mylab/apps/mypackage -m /cluster/tufts/mylab/modules --jupyter
 ```
 In the example code, `mylab` is my group name. I created two folders `apps` and `modules` to store packages installations, and module files, respectively.
@@ -138,6 +139,7 @@ $ python my_script.py .....
 To use the conda environment in Jupyter notebook/lab, each lab member will need to create his/her own Jupyter kernel (once). This is because Jupyter kernels are private to individuals. By default, Jupyter will only search for kernels in users' `$HOME/.local/share/jupyter/kernels`.
 
 ```
+$ module load conda-env-mod
 $ conda-env-mod kernel -p /cluster/tufts/mylab/apps/mypackage
 ```
 
