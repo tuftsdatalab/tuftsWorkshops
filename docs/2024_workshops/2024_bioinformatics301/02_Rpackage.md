@@ -2,7 +2,7 @@
 
 
 
-# Objectives
+## Objectives
 
 * Learn how to run R efficiently on Tufts HPC using both graphical and command-line interfaces.
 
@@ -10,11 +10,9 @@
 
 * Develop skills to run R scripts in batch mode, submit jobs to the queue, and manage multiple jobs effectively.
 
+## How to run R on Tufts HPC
 
-
-# How to run R on Tufts HPC
-
-## 1. Open OnDemand Rstudio app
+### 1. Open OnDemand Rstudio app
 
  1.1 Log in to Open OnDemand with your UTLN
 
@@ -30,9 +28,7 @@ https://ondemand.pax.tufts.edu/
 
 ![openondemand](images/ondemand_app.png)
 
-
-
-## 2. Command line interface 
+### 2. Command line interface 
 
 2.1 Make sure you are on the compute mode
 
@@ -54,9 +50,9 @@ R
 
 
 
-# R package installation
+## R package installation
 
-## Pre-installed R packages
+### Pre-installed R packages
 
 To provide convenience to users, we pre-installed many commonly used R packages used in bioinformatics analysis. Before you try to install packages, load the module for R, start R and check if the package is already installed. 
 
@@ -64,15 +60,13 @@ To provide convenience to users, we pre-installed many commonly used R packages 
 library(packageName)
 ```
 
-
-
 ### Get the list of installed R packages
 
 ```
 installed.packages()
 ```
 
-## Install R packages
+### Install R packages
 
 ```
 install.packages("packageName")
@@ -82,7 +76,7 @@ install.packages("packageName")
 
 ![rstudio_install](images/rstudio_install.png)
 
-## .libPaths()
+### .libPaths()
 
 This shows the folder where the packages are installed. 
 
@@ -101,10 +95,9 @@ Since we have limited storage under home directory. We suggest to change the lib
 
 Try not to use libpath, just install to your default $HOME directory
 
+### R modules 
 
-## R modules
-
-### r base
+#### r base
 
 ```
  R/4.0.0 
@@ -113,9 +106,7 @@ Try not to use libpath, just install to your default $HOME directory
  R/4.4.0
 ```
 
-
-
-### r-bioinformatics
+#### r-bioinformatics
 
 ```
 $ module av r-bioinformatics
@@ -126,7 +117,7 @@ $ module av r-bioinformatics
    D:  Default Module
 ```
 
-### r-scrnaseq
+#### r-scrnaseq
 
 ```
 $ module av r-scrnaseq
@@ -138,7 +129,9 @@ $ module av r-scrnaseq
    D:  Default Module
 ```
 
-# Bioconductor
+
+
+## Bioconductor
 
 [Bioconductor](https://bioconductor.org/) is both an open source project and repository for R packages related to the analysis of biological data, primarily bioinformatics and computational biology, and as such it is a great place to search for -omics packages and pipelines. 
 
@@ -154,7 +147,7 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install(version = "3.xx")
 ```
 
-## Installation with BiocManager
+### Installation with BiocManager
 
 To install specific bioconductor packages, use `BiocManager` to install. 
 
@@ -164,7 +157,7 @@ Ex: Let's install [adverSCarial](https://www.bioconductor.org/packages/release/b
 BiocManager::install("adverSCarial")
 ```
 
-## Installation with devtools
+### Installation with devtools
 
 `devtools` has been pre-installed in our R modules. You can load it to install packages require it. 
 
