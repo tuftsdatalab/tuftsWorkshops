@@ -38,67 +38,67 @@ The best way is to install applications into your home directory or your group's
 
 #### Installation on Tufts HPC 
 
-1. Go to the folder where you would like to install the tools. Ex: We create `apps` folder under $HOME to install the tools.
+Step1: Go to the folder where you would like to install the tools. Ex: We create `apps` folder under $HOME to install the tools.
 
-   ```
-   cd $HOME
-   mkdir apps
-   cd apps
-   ```
+```
+cd $HOME
+mkdir apps
+cd apps
+```
 
-2. Load the compiler. **GCC** (GNU Compiler Collection) is required for installing **BWA**. Since BWA is written in C, you need a C compiler like GCC to compile the source code. When you run the `make` command to compile BWA, it invokes the GCC compiler to build the binaries from the source code. 
+Step2: Load the compiler. **GCC** (GNU Compiler Collection) is required for installing **BWA**. Since BWA is written in C, you need a C compiler like GCC to compile the source code. When you run the `make` command to compile BWA, it invokes the GCC compiler to build the binaries from the source code. 
 
-   ```
-   module av gcc          # check which version of gcc is available. 
-   module load gcc/11.2.0 # Recommend to load the newest version of gcc
-   ```
+```
+module av gcc          # check which version of gcc is available. 
+module load gcc/11.2.0 # Recommend to load the newest version of gcc
+```
 
-3. Clone the bwa repository
+Step3: Clone the bwa repository
 
-   ```git clone https://github.com/lh3/bwa.git```
+```git clone https://github.com/lh3/bwa.git```
 
-4. Configure and build
+Step4: Configure and build
 
-   ```
-   cd bwa
-   make
-   ```
+```
+cd bwa
+make
+```
 
-5. Add the build directory to your PATH
+Step5: Add the build directory to your PATH
 
-   ```export PATH=$PATH:$HOME/apps/bwa```
+```export PATH=$PATH:$HOME/apps/bwa```
 
-6. Now bwa is read to use
+Step6: Now bwa is read to use
 
-   ```
-   $ bwa
-   Program: bwa (alignment via Burrows-Wheeler transformation)
-   Version: 0.7.18-r1243-dirty
-   Contact: Heng Li <hli@ds.dfci.harvard.edu>
-   
-   Usage:   bwa <command> [options]
-   
-   Command: index         index sequences in the FASTA format
-            mem           BWA-MEM algorithm
-            fastmap       identify super-maximal exact matches
-            pemerge       merge overlapping paired ends (EXPERIMENTAL)
-            aln           gapped/ungapped alignment
-            samse         generate alignment (single ended)
-            sampe         generate alignment (paired ended)
-            bwasw         BWA-SW for long queries (DEPRECATED)
-   
-            shm           manage indices in shared memory
-            fa2pac        convert FASTA to PAC format
-            pac2bwt       generate BWT from PAC
-            pac2bwtgen    alternative algorithm for generating BWT
-            bwtupdate     update .bwt to the new format
-            bwt2sa        generate SA from BWT and Occ
-   
-   Note: To use BWA, you need to first index the genome with `bwa index'.
-         There are three alignment algorithms in BWA: `mem', `bwasw', and
-         `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
-         first. Please `man ./bwa.1' for the manual.
-   ```
+```
+$ bwa
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.18-r1243-dirty
+Contact: Heng Li <hli@ds.dfci.harvard.edu>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries (DEPRECATED)
+
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
+```
 
 
 
@@ -107,50 +107,50 @@ The best way is to install applications into your home directory or your group's
 
 #### Installation on Tufts HPC 
 
-1. Go to the folder where you would like to install the tools. Ex: We create `apps` folder under $HOME to install the tools.
+Step1: Go to the folder where you would like to install the tools. Ex: We create `apps` folder under $HOME to install the tools.
 
-   ```
-   cd $HOME
-   mkdir apps
-   cd apps
-   ```
+```
+cd $HOME
+mkdir apps
+cd apps
+```
 
-2. Download and unpack the source code
+Step2: Download and unpack the source code
 
-   ```
-   wget http://eddylab.org/software/hmmer/hmmer-3.4.tar.gz
-   tar -xvf hmmer-3.4.tar.gz
-   cd hmmer-3.4
-   ```
+```
+wget http://eddylab.org/software/hmmer/hmmer-3.4.tar.gz
+tar -xvf hmmer-3.4.tar.gz
+cd hmmer-3.4
+```
 
-3. Configure and build the software
+Step3: Configure and build the software
 
-   ```
-   ./configure --prefix=$HOME/apps   # replace /your/install/path with what you want
-   make
-   make check                        # optional: run automated tests
-   make install                      # optional: install HMMER programs, man pages
-   ```
+```
+./configure --prefix=$HOME/apps   # replace /your/install/path with what you want
+make
+make check                        # optional: run automated tests
+make install                      # optional: install HMMER programs, man pages
+```
 
-4. Add HMMER to your PATH
+Step4: Add HMMER to your PATH
 
-   ```
-   export PATH=$PATH:$HOME/apps/bin
-   ```
+```
+export PATH=$PATH:$HOME/apps/bin
+```
 
-5. Now HMMER is read to use
+Step5: Now HMMER is read to use
 
-   ```
-   $ hmmsearch -h
-   # hmmsearch :: search profile(s) against a sequence database
-   # HMMER 3.4 (Aug 2023); http://hmmer.org/
-   # Copyright (C) 2023 Howard Hughes Medical Institute.
-   # Freely distributed under the BSD open source license.
-   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   Usage: hmmsearch [options] <hmmfile> <seqdb>
-   ```
+```
+$ hmmsearch -h
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Usage: hmmsearch [options] <hmmfile> <seqdb>
+```
 
-   
+
 
 ## What is CMake?
 **CMake** is an open-source, cross-platform family of tools designed to build, test, and package software. It controls the software compilation process by generating native build scripts (like Makefiles or project files) for a wide variety of platforms and compilers.
