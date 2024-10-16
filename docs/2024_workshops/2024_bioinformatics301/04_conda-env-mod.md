@@ -274,8 +274,8 @@ Let's try to use the PyTorch package to run a simple analysis. You can see that 
 
 ![torch_kernel](images/torch_gpu.png)
 
-#### Sharing with other members in my group 
-If other members from the group also want to run pytorch inside Jupyter, they only need to create their own kernel files:
+#### Sharing with other members in the group 
+If other members from the group also want to run pytorch inside Jupyter, they only need to create their own kernel file:
 ```
 $ module load miniforge # or module load anaconda
 $ module load conda-env-mod
