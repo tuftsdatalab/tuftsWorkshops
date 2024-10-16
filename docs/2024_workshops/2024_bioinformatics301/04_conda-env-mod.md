@@ -159,6 +159,7 @@ $ python my_script.py .....
 To use the conda environment in Jupyter notebook/lab, each lab member will need to create his/her own Jupyter kernel (once). This is because Jupyter kernels are private to individuals. By default, Jupyter will only search for kernels in users' `$HOME/.local/share/jupyter/kernels`.
 
 ```
+$ module load miniforge # or module load anaconda
 $ module load conda-env-mod
 $ conda-env-mod kernel -p /cluster/tufts/mylab/apps/mypackage
 ```
