@@ -48,8 +48,8 @@ The best way is to install applications into your home directory or your group's
 
 !!! note "`make` and `make install`"
 
-    make: Compiles the source code and creates binaries, typically in the current directory.
-    make install: Installs the compiled program into system-wide directories, so it can be run from anywhere on the system. This step usually follows after make. 
+    **make**: Compiles the source code and creates binaries, typically in the current directory.              
+    **make install**: Installs the compiled program into system-wide directories, so it can be run from anywhere on the system. This step usually follows after make. 
 
 
 
@@ -150,7 +150,7 @@ Step3: Configure and build the software
 ./configure --prefix=$HOME/apps   # replace /your/install/path with what you want
 make
 make check                        # optional: run automated tests
-make install                      # optional: install HMMER programs, man pages
+make install                      # Install HMMER programs, a bin folder will be created under $HOME/apps 
 ```
 
 Step4: Add HMMER to your PATH
@@ -173,18 +173,35 @@ Usage: hmmsearch [options] <hmmfile> <seqdb>
 
 
 
+**Tip**: Check what has been created after each step to understand how the software is built and installed. 
+
+```
+# After "tar -xvf hmmer-3.4.tar.gz"
+ls -lhtr $HOME/apps/hmmer-3.4
+# After "make"
+ls -lhtr $HOME/apps/hmmer-3.4
+ls -lhtr $HOME/apps/
+# After "make install"
+ls -lhtr $HOME/apps/hmmer-3.4
+ls -lhtr $HOME/apps/
+```
+
+
+
+
+
 ## What is CMake?
 **CMake** is an open-source, cross-platform family of tools designed to build, test, and package software. It controls the software compilation process by generating native build scripts (like Makefiles or project files) for a wide variety of platforms and compilers.
 
 Installation of some bioinformatics applications requires both **make** and **cmake**.
 
-### Installing RegTools Using Make
+### Installing RegTools Using Make and CMake
 [RegTools](https://github.com/griffithlab/regtools) integrate DNA-seq and RNA-seq data to help interpret mutations in a regulatory and splicing context. Installation guide from the developer can be found [HERE](https://regtools.readthedocs.io/en/latest/)
 
 #### Installation on Tufts HPC
 
 ```
- $ module avail cmake
+module avail cmake         # Always use the latest version
 
 --------------------- /opt/shared/Modules/modulefiles-rhel6 ------------------------------
    cmake/2.8    cmake/2.8.11.2    cmake/3.2.1    cmake/3.4.3
@@ -195,19 +212,34 @@ Installation of some bioinformatics applications requires both **make** and **cm
 ```
 
 ```
-$ module load gcc/11.2.0
-$ module load cmake/3.23_gui ## Recommand to use the latest version of cmake
-$ cd $HOME/apps
-$ git clone https://github.com/griffithlab/regtools
-$ cd regtools/
-$ mkdir build
-$ cd build/
-$ cmake ..
-$ make
+# Load modules
+module load gcc/11.2.0
+module load cmake/3.23_gui ## Recommand to use the latest version of cmake
+
+# Go to the folder where you would like to install tools
+cd $HOME/apps
+
+# Clone the github repo
+git clone https://github.com/griffithlab/regtools
+
+# Create a folder called `build`. 
+# cmake is designed to work well with out-of-source builds, where the build directory contains all the generated files (e.g., Makefiles, binaries, configuration files). 
+# It's a common practice to create build folder
+
+cd regtools/
+mkdir build
+cd build/
+
+# Run cmake first and then make
+cmake ..
+make
 ```
 
 ```
-$ export PATH=$PATH:$HOME/apps/regtools/build
+export PATH=$PATH:$HOME/apps/regtools/build
+
+# The tool is now successfully installed. 
+regtools --help
 ```
 
 ### DCMAKE_INSTALL_PREFIX
@@ -215,8 +247,8 @@ $ export PATH=$PATH:$HOME/apps/regtools/build
 Some applications' installation also has install stage, which will have `make intall` as the last step. For these installations, we have to include `-DCMAKE_INSTALL_PREFIX` in the `cmake ..` step. Below are the common steps for such installations:
 
 ```
-module load gcc
-module load cmake
+module load gcc/11.2.0
+module load cmake/3.23_gui
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=/path/to/install ..
