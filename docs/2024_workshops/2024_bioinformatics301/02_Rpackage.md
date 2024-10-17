@@ -78,11 +78,14 @@ install.packages("packageName")
 
 ### .libPaths()
 
-This shows the folder where the packages are installed. 
+This shows the folders where the packages are installed. 
 
 ```
 > .libPaths()
-[1] "/cluster/home/xli37/R/x86_64-pc-linux-gnu-library/4.4"
+[1] "/home/user/R/x86_64-pc-linux-gnu-library/4.4" # Personal library
+[2] "/usr/local/lib/R/site-library"                # System-wide library
+[3] "/usr/lib/R/library"                           # Default R library
+
 ```
 
 
@@ -93,7 +96,9 @@ You can change the libpath to folder under lab storage or research projects.
 .libPaths("your_path_to_install_packages")
 ```
 
-Try not to use libpath, just install to your default $HOME directory. 
+**For R/4.4.1, try not to change libpath, just install to your default $HOME directory. **
+
+
 
 ### R modules 
 
@@ -181,6 +186,7 @@ library(devtools)
 Ex: Install an R package [STew](https://github.com/fanzhanglab/STew) used to jointly characterize the gene expression variation and spatial information.
 
 ```
+.libPaths("/home/user/R/x86_64-pc-linux-gnu-library/4.4")
 devtools::install_github("fanzhanglab/STew")
 ```
 
