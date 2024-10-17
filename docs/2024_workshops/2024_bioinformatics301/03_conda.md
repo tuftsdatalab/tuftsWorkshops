@@ -55,7 +55,7 @@ Due to this updated TOS, it's likely we will have to uninstall anaconda from Tuf
 | **Included Packages**  | Over 300 scientific packages pre-installed  | Minimal installation (essential tools only)   | Minimal installation (essential tools only)    |
 | **Target Audience**    | Data scientists needing full environment      | Developers who want a lightweight version     | Developers focused on open-source solutions    |
 | **Ease of Use**        | Easy with pre-installed packages              | Requires manual installation of most packages | Similar to Miniconda, but optimized for `mamba`|
-| **Solver**             | Mamba                                         | Mamba                                         | Mamba   |
+| **Solver**             | libmamba                                         | libmamba                                         | libmamba   |
 
 
 ## miniforge modules
