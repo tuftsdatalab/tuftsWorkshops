@@ -96,7 +96,7 @@ You can change the libpath to folder under lab storage or research projects.
 .libPaths("your_path_to_install_packages")
 ```
 
-**For R/4.4.1, try not to change libpath, just install to your default $HOME directory. **
+**For R/4.4.1, try not to change libpath, just install to your default $HOME directory.**
 
 
 
