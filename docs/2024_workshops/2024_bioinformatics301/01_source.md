@@ -12,19 +12,25 @@ This guide will help you understand how **GNU Make** and **CMake** are used in s
 
 ## What is Make?
 
-GNU Make is a program often used for compiling software. It uses a plain text file named **makefile** or **Makefile**.
+[GNU Make](https://www.gnu.org/software/make/) is a program often used for compiling software. It uses a plain text file named **makefile** or **Makefile**, which lists each of the non-source files and how to compute it from other files.
 
 `make` and `Makefile` are also widely used in building reproducible workflows. This [ariticle](http://www.bioinformaticszen.com/post/makefiles/) is a good introduction.
+
+
+
+!!! note "What is complier? "
+
+    A compiler is a program that translates source code written in a high-level programming language (such as C, C++, or Java) into machine code or bytecode that a computer's processor can understand and execute. This process involves several steps, including lexical analysis, syntax analysis, optimization, and code generation.
 
 ### Steps for software installation using make
 
 1. Unpack the source code archive. 
 
-2. **Configure** the package. ## Some packages do not have the **configure** file
+2. **Configure** the package.                                # Some packages do not have the **configure** file
 
 3. Run **make** to build the programs. 
 
-4. Run **make install** to install the package. # Optional
+4. Run **make install** to install the package.  # Optional
 
    ❌ Do not run **sudo** **make install**
 
@@ -33,7 +39,22 @@ GNU Make is a program often used for compiling software. It uses a plain text fi
 The best way is to install applications into your home directory or your group's shared directory by passing the option `--prefix=TargetDirName` to `./configure`. 
 
 
+
+!!! note "What is configuration?"
+
+    **Configuration** refers to the arrangement or setup of various components and settings within a system, software, or device to achieve a specific behavior or function. It involves specifying options and parameters that control how the system or software operates.
+
+
+
+!!! note "`make` and `make install`"
+
+    make: Compiles the source code and creates binaries, typically in the current directory.
+    make install: Installs the compiled program into system-wide directories, so it can be run from anywhere on the system. This step usually follows after make. 
+
+
+
 ### Installing bwa using make
+
 [BWA](https://bio-bwa.sourceforge.net/) is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. **Installation guide from the developer can be found [HERE](https://github.com/lh3/bwa).** 
 
 #### Installation on Tufts HPC 
