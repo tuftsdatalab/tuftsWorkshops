@@ -128,6 +128,14 @@ Note: To use BWA, you need to first index the genome with `bwa index'.
 
 #### Installation on Tufts HPC 
 
+Make sure you are on compute mode by running the command below
+
+```
+srun -p interactive -n 1 --time=02:00:00 --mem 4g --pty bash
+```
+
+
+
 Step1: Go to the folder where you would like to install the tools. Ex: We create `apps` folder under $HOME to install the tools.
 
 ```

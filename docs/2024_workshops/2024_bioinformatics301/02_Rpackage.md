@@ -87,13 +87,13 @@ This shows the folder where the packages are installed.
 
 
 
-Since we have limited storage under home directory. We suggest to change the libpath to folder under lab storage or research projects. 
+You can change the libpath to folder under lab storage or research projects. 
 
 ```
 .libPaths("your_path_to_install_packages")
 ```
 
-Try not to use libpath, just install to your default $HOME directory
+Try not to use libpath, just install to your default $HOME directory. 
 
 ### R modules 
 
@@ -104,6 +104,7 @@ Try not to use libpath, just install to your default $HOME directory
  R/4.1.1 
  R/4.3.0 
  R/4.4.0
+ R/4.4.1    # Recommend to use this version
 ```
 
 #### r-bioinformatics
@@ -131,15 +132,21 @@ $ module av r-scrnaseq
 
 
 
+!!! note "TIPS"
+
+    For new projects, it's recommended to use the latest version, R/4.4.1, as it comes with the most comprehensive set of installed packages (1300+).
+    
+    For older scripts, either those you created some time ago or inherited from a colleague, be mindful of the R version and `libPaths()` used in those scripts. Do not run it without paying attention to the version. 
+
+
+
 ## Bioconductor
 
 [Bioconductor](https://bioconductor.org/) is both an open source project and repository for R packages related to the analysis of biological data, primarily bioinformatics and computational biology, and as such it is a great place to search for -omics packages and pipelines. 
 
 **Do not run the belew code to install bioconductor core packages**
 
-
-
-We have pre-installed bioconductor core packages for users. You do not need to run the below command to re-install it. 
+We have pre-installed bioconductor core packages for users. 
 
 ```
 if (!require("BiocManager", quietly = TRUE))
@@ -157,7 +164,11 @@ Ex: Let's install [adverSCarial](https://www.bioconductor.org/packages/release/b
 BiocManager::install("adverSCarial")
 ```
 
-### Installation with devtools
+
+
+## devtools
+
+**devtools** is an R package designed to simplify the process of developing, testing, and installing R packages from various sources.
 
 `devtools` has been pre-installed in our R modules. You can load it to install packages require it. 
 
