@@ -203,17 +203,33 @@ drwxrws--- 2 yzhang85 workshop 4.0K Aug 30 11:39 fastqcOut/
 
 ## Limits
 
-Submitting too many jobs 
+High-Performance Computing (HPC) system is a valuable shared resource that allows multiple users to perform complex calculations simultaneously. To ensure a productive and fair environment for everyone, we have implemented policies and practices that promote equitable access to our computational resources.
+
+There are several limits for array jobs. 
+
+If you submit too many array jobs and exceed the limits, you will get the below error message:
+```
+$ sbatch array.sub 
+sbatch: error: AssocMaxSubmitJobLimit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+```
 
 #### MaxArraySize
 
-To query `MaxArraySize` , you can use 
+The array index should be smaller than `MaxArraySize`. To query `MaxArraySize`, you can use 
 
 ```
 scontrol show conf | grep MaxArraySize
 $ scontrol show config | grep -i array
 MaxArraySize            = 2000
 ```
+
+Since `MaxArraySize` is set as 2000, the maximum array index you can use is 1999. So "1000-1999" is valid, but "1001-2000" is invalid. 
+
+#### MaxSubmit
+Our cluster does not allow users to submit > 1000 jobs. As a result, the maximum array size is 1000. So "0-999" and "1-1000" is valid, but "1-1001" or "0-1000" is invalid. 
+
+#### CPUs, RAM and GPUs
 
 Public Partitions (batch+mpi+largemem+gpu)
 CPU: 1000 cores
@@ -224,14 +240,7 @@ CPU: 2000 cores
 RAM: 8000 GB
 GPU: 20
 
-
-
-If you submit too many array jobs and exceed the limits, you will get the below error message:
-```
-$ sbatch array.sub 
-sbatch: error: AssocMaxSubmitJobLimit
-sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
-```
+Please note that the above limits are subject to change in the future. To ensure optimal resource allocation, the limit value is dynamic and may change as we evaluate system demands.
 
 # Create a contig file for your array tasks (Change the title)
 Use R script as an example. 
