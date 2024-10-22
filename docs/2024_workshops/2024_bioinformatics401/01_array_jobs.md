@@ -288,7 +288,7 @@ The following shell script submits the jobs to the SLURM scheduler as an array o
 #SBATCH -N 1        # Number of nodes
 #SBATCH -n 1        # Number of tasks per node
 #SBATCH -c 4        # Number of CPU cores per task
-#SBATCH --mem=2G    # Memory required per node
+#SBATCH --mem=8G    # Memory required per node
 #SBATCH --array=1-6 # An array of 10 jobs
 #SBATCH --job-name=fastqc
 #SBATCH --mail-type=FAIL,BEGIN,END
@@ -317,10 +317,24 @@ fastqc ${fastq_R1} ${fastq_R2} -o fastqcOut
 #### Output files
 
 ```
-A list of files
+-rw-rw---- 1 yzhang85 workshop 386K Oct 22 14:40 SRX1693951_SRR3362661_1_fastqc.zip
+-rw-rw---- 1 yzhang85 workshop 590K Oct 22 14:40 SRX1693951_SRR3362661_1_fastqc.html
+-rw-rw---- 1 yzhang85 workshop 386K Oct 22 14:40 SRX1693954_SRR3362664_1_fastqc.zip
+-rw-rw---- 1 yzhang85 workshop 588K Oct 22 14:40 SRX1693954_SRR3362664_1_fastqc.html
+-rw-rw---- 1 yzhang85 workshop 379K Oct 22 14:40 SRX1693953_SRR3362663_1_fastqc.zip
+-rw-rw---- 1 yzhang85 workshop 585K Oct 22 14:40 SRX1693953_SRR3362663_1_fastqc.html
+-rw-rw---- 1 yzhang85 workshop 385K Oct 22 14:41 SRX1693952_SRR3362662_1_fastqc.zip
+-rw-rw---- 1 yzhang85 workshop 590K Oct 22 14:41 SRX1693952_SRR3362662_1_fastqc.html
+-rw-rw---- 1 yzhang85 workshop 383K Oct 22 14:41 SRX1693956_SRR3362666_1_fastqc.zip
+-rw-rw---- 1 yzhang85 workshop 588K Oct 22 14:41 SRX1693956_SRR3362666_1_fastqc.html
+-rw-rw---- 1 yzhang85 workshop 386K Oct 22 14:41 SRX1693955_SRR3362665_1_fastqc.zip
+-rw-rw---- 1 yzhang85 workshop 589K Oct 22 14:41 SRX1693955_SRR3362665_1_fastqc.html
 ```
 
-![Output.pdf]() 
+
+
+ 
+
 
 
 ### Customizing the Array
