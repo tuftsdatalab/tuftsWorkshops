@@ -314,6 +314,22 @@ fastqc ${fastq_R1} ${fastq_R2} -o fastqcOut
 - The `awk` commands extract the `ID`, `fastq_R1` and `fastq_R2` values from the specified row and columns (1st, 2nd and 3rd).
 - The script submits 6 jobs, each running the FASTQC command with different `fastq_R1` and `fastq_R2` values.
 
+
+
+After the array jobs are submitted, we can see that 6 separate jobs are running, with ***\*SLURM_ARRAY_TASK_ID\**** from 1-6.
+
+```
+JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+         7975940_1   preempt   fastqc     utln  R       4:35      1 d1cmp024
+         7975940_2   preempt   fastqc     utln  R       4:35      1 d1cmp032
+         7975940_3   preempt   fastqc     utln  R       4:35      1 d1cmp031
+         7975940_4   preempt   fastqc     utln  R       4:35      1 d1cmp031
+         7975940_5   preempt   fastqc     utln  R       4:35      1 d1cmp022
+         7975940_6   preempt   fastqc     utln  R       4:35      1 d1cmp022
+```
+
+
+
 #### Output files
 
 ```
@@ -328,12 +344,8 @@ fastqc ${fastq_R1} ${fastq_R2} -o fastqcOut
 -rw-rw---- 1 yzhang85 workshop 383K Oct 22 14:41 SRX1693956_SRR3362666_1_fastqc.zip
 -rw-rw---- 1 yzhang85 workshop 588K Oct 22 14:41 SRX1693956_SRR3362666_1_fastqc.html
 -rw-rw---- 1 yzhang85 workshop 386K Oct 22 14:41 SRX1693955_SRR3362665_1_fastqc.zip
--rw-rw---- 1 yzhang85 workshop 589K Oct 22 14:41 SRX1693955_SRR3362665_1_fastqc.html
+-rw-rw---- 1 yzhang85 workshop 589K Oct 22 14:41 SRX1693955_SRR3362665_1_fastqc.html 
 ```
-
-
-
- 
 
 
 
