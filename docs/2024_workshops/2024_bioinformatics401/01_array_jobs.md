@@ -351,18 +351,6 @@ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 
 
 
-### Customizing the Array
-
-You can adjust the `--array` option to change the range of jobs. For example, to run jobs for every other line from 2 to 1000, you can specify:
-
-```
-#SBATCH --array=2-1000:2
-```
-
-This would submit jobs for rows 2, 4, 6, ..., up to 1000.
-
-
-
 ## Useful links:  
 
 https://blog.ronin.cloud/slurm-job-arrays/ 
