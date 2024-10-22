@@ -1,4 +1,4 @@
-# How to run nf-core/rnaseq pipeline on Tufts HPC
+# Running nf-core/rnaseq pipeline on Tufts HPC
 
 Author: Shirley Li
 
@@ -15,8 +15,56 @@ Email: xue.li37@tufts.edu
 
 
 ```
-mkdir -p /cluster/tufts/workshop/UTLN/rnaseq  ## Replace UTLN with your own UTLN
+mkdir -p /cluster/tufts/workshop/demo/rnaseq  
+# Change the working directory to your own, DO NOT USE home directory
 ```
+
+
+
+## Prepare Input files
+
+- fastq files: `/cluster/tufts/workshop/demo/rnaseq/input/fastq/`
+
+  ```
+  -rw-r--r-- 1 xli37 workshop 3.6G Oct 22 13:39 SRX1693954_SRR3362664_2.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 3.7G Oct 22 13:39 SRX1693954_SRR3362664_1.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 3.6G Oct 22 13:41 SRX1693953_SRR3362663_2.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 3.8G Oct 22 13:41 SRX1693953_SRR3362663_1.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 3.4G Oct 22 13:42 SRX1693951_SRR3362661_2.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 3.5G Oct 22 13:42 SRX1693951_SRR3362661_1.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 4.1G Oct 22 13:44 SRX1693952_SRR3362662_1.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 4.0G Oct 22 13:44 SRX1693952_SRR3362662_2.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 4.2G Oct 22 13:46 SRX1693956_SRR3362666_2.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 4.3G Oct 22 13:46 SRX1693956_SRR3362666_1.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 4.5G Oct 22 13:46 SRX1693955_SRR3362665_1.fastq.gz
+  -rw-r--r-- 1 xli37 workshop 4.3G Oct 22 13:46 SRX1693955_SRR3362665_2.fastq.gz
+  ```
+
+  The raw fastq files were downloaded using `fetchngs` pipeline, you can refer to the our [previous workshop material](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/nfcore_rnaseq_sp24/01_fetchngs/) to learn the details. 
+
+
+
+For conducting RNAseq analysis, we also need the reference genome `fasta` file and `gtf` annotation file. Since these are human samples, we require the human reference genome. We can obtain the human reference genome from public databases such as [Ensembl](https://useast.ensembl.org/Homo_sapiens/Info/Index) or [UCSC genome browser](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/).
+
+
+
+- reference genome: fastq file (We do not need to download it locally)
+
+  ```
+  https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+  ```
+
+- reference genome annotation: gtf file
+
+  ```
+  https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz
+  ```
+
+!!! note "No need to download reference files locally"
+
+    Many bioinformatics tools and workflows allow for cloud-based or remote server access, which can pull data directly from URLs like the Ensembl FTP site. This is especially useful when you have limited local storage or want to ensure you're always using the most updated version.
+    
+    **Adjust it to other organisms or different versions as needed for your analysis.**
 
 ## Prepare the input samplesheet
 
@@ -32,71 +80,64 @@ There are two ways to create this file.
 Once your created this file, use `cat` to check the contents. Please remember the path where the samplesheet is stored, you will need this as input for nf-core/rnaseq pipeline. 
 
 ```
-cat /cluster/tufts/workshop/UTLN/rnaseq/samplesheet.csv
+cat /cluster/tufts/workshop/demo/rnaseq/samplesheet.csv
 ```
 
 ```
-"sample","fastq_1","fastq_2","strandedness"
-"GFPkd_1","fetchngsOut/fastq/SRX1693951_SRR3362661_1.fastq.gz","fetchngsOut/fastq/SRX1693951_SRR3362661_2.fastq.gz","auto"
-"GFPkd_2","fetchngsOut/fastq/SRX1693952_SRR3362662_1.fastq.gz","fetchngsOut/fastq/SRX1693952_SRR3362662_2.fastq.gz","auto"
-"GFPkd_3","fetchngsOut/fastq/SRX1693953_SRR3362663_1.fastq.gz","fetchngsOut/fastq/SRX1693953_SRR3362663_2.fastq.gz","auto"
-"PRMT5kd_1","fetchngsOut/fastq/SRX1693954_SRR3362664_1.fastq.gz","fetchngsOut/fastq/SRX1693954_SRR3362664_2.fastq.gz","auto"
-"PRMT5kd_2","fetchngsOut/fastq/SRX1693955_SRR3362665_1.fastq.gz","fetchngsOut/fastq/SRX1693955_SRR3362665_2.fastq.gz","auto"
-"PRMT5kd_3","fetchngsOut/fastq/SRX1693956_SRR3362666_1.fastq.gz","fetchngsOut/fastq/SRX1693956_SRR3362666_2.fastq.gz","auto"
+sample,fastq_1,fastq_2,strandednes,auto
+GFPkd_1,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693954_SRR3362664_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693954_SRR3362664_2.fastq.gz,auto
+GFPkd_2,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693953_SRR3362663_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693953_SRR3362663_2.fastq.gz,auto
+GFPkd_3,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693951_SRR3362661_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693951_SRR3362661_2.fastq.gz,auto
+PRMT5kd_1,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693952_SRR3362662_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693952_SRR3362662_2.fastq.gz,auto
+PRMT5kd_2,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693956_SRR3362666_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693956_SRR3362666_2.fastq.gz,auto
+PRMT5kd_3,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693955_SRR3362665_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693955_SRR3362665_2.fastq.gz,auto
 ```
 
 
 
-## rnaseq on Open OnDemand
-
-Copy input files to your own folder. 
-
-Create a folder to store the input and output for today's analysis. 
-
-```
-mkdir /cluster/tufts/workshop/UTLN/rnaseq/
-```
-
-```
-cp -R /cluster/tufts/workshop/shared/rnaseq/input/fastq ./ 
-```
-
-The raw fastq files are downloaded using `fetchngs` pipeline, you can refer to the our [previous workshop material](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/nfcore_rnaseq_sp24/01_fetchngs/) to know the details. 
-
-For conducting RNAseq analysis, we also need the reference genome `fasta` file and `gtf` annotation file. Since these are human samples, we require the human reference genome.
-
-We can obtain the human reference genome from public databases such as [Ensembl](https://useast.ensembl.org/Homo_sapiens/Info/Index) or [UCSC genome browser](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/).
-
-We have downloaded the reference genome which is located in 
-
-`/cluster/tufts/workshop/shared/rnaseq/input/reference/GRCH38.gtf` 
-
-`/cluster/tufts/workshop/shared/rnaseq/input/reference/GRCH38.fa` 
-
-There is no need to copy these files to your directory, you can just use these two pathes as input for nf-core/rnaseq pipeline. 
+## nf-core/rnaseq on Open OnDemand
 
 
 
 ### Open OnDemand Arguments
 
 - Number of hours: 24
+
 - Select cpu partition: batch
+
 - Reservation for class, training, workshop: Default
-- Version: 3.14.0
-- Working Directory: `/cluster/tufts/workshop/UTLN/rnaseq/` ## Replace UTLN with your own UTLN
-- outdir: rnaseqOut
-- input: samplesheet.csv
+
+- Version: 3.16.0
+
+- Working Directory: `/cluster/tufts/workshop/demo/rnaseq/` 
+
+- outdir: `/cluster/tufts/workshop/demo/rnaseq/out/` 
+
+- input: `/cluster/tufts/workshop/demo/rnaseq/samplesheet.csv`
+
 - multiqc_title: PRMT5kd vs. GFPkd
-- iGenomes: None
+
+- iGenomes: None                                # We do not recommend to use iGenomes, they are outdated. 
+
 - fasta: https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+
 - gtf: https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz
-- trimmer: trimgalore
-- extra_fastp_args: -q 35 --paired
+
+- trimmer: fastp
+
+- extra_fastp_args: -q 35 --paired      # It tells `fastp` to discard bases in reads with a Phred quality score lower than 35.
+
 - aligner: star_salmon
+
 - save_reference: true
+
 - skip_umi_extract: true
+
 - skip_pseudo_alignment: true
+
 - skip_stringtie: true
+
+  
 
 ```
 ------------------------------------------------------
@@ -245,20 +286,31 @@ Succeeded   : 209
 Cleaning up...
 ```
 
-## Running pipeline on the command line
+## nf-core/rnaseq on the command line interface
 
 If you prefer to run the pipelines using the command line interface, you can submit a slurm jobscript with the following code.
 
-#### Run the pipeline directly
+#### Run the pipeline using `nextflow run`. 
 
 ```
+#!/bin/bash
+#SBATCH --time=24:00:00
+#SBATCH -p batch
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 2
+#SBATCH --output=MyJob.%j.%N.out
+#SBATCH --error=MyJob.%j.%N.err
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=utln@tufts.edu
+
 module load nf-core
 export NXF_SINGULARITY_CACHEDIR=/cluster/tufts/biocontainers/nf-core/singularity-images
 
-nextflow run /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-rnaseq/3.14.0/3_14_0
+nextflow run /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-rnaseq/3.16.0/3_16_0
   -profile tufts \
-  --input  samplesheet.csv \
-  --outdir rnaseqOut \
+  --input  /cluster/tufts/workshop/demo/rnaseq/samplesheet.csv \
+  --outdir /cluster/tufts/workshop/demo/rnaseq/out/ \
   --gtf "https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz" \
   --fasta "https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz" \
   --extra_trimgalore_args "-q 35 --paired" \
@@ -266,19 +318,32 @@ nextflow run /cluster/tufts/biocontainers/nf-core/pipelines/nf-core-rnaseq/3.14.
   --save_reference
 ```
 
-#### Another easier way
+#### Run the pipeline using our modules.
 
 ```
-module load nf-core-rnaseq/3.14.0
+#!/bin/bash
+#SBATCH --time=24:00:00
+#SBATCH -p batch
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 2
+#SBATCH --output=MyJob.%j.%N.out
+#SBATCH --error=MyJob.%j.%N.err
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=utln@tufts.edu
+
+module load nf-core-rnaseq/3.16.0
 rnaseq -profile tufts \
-  --input  samplesheet.csv \
-  --outdir rnaseqOut \
+  --input  /cluster/tufts/workshop/demo/rnaseq/samplesheet.csv \
+  --outdir /cluster/tufts/workshop/demo/rnaseq/out/ \
   --gtf "https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz" \
   --fasta "https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz" \
   --extra_trimgalore_args "-q 35 --paired" \
   --skip_pseudo_alignment \
   --save_reference
 ```
+
+
 
 ## Nextflow clean
 
