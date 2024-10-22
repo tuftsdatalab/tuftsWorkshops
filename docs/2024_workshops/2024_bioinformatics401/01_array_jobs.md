@@ -244,7 +244,9 @@ Please note that the above limits are subject to change in the future. To ensure
 ## Using parameter file to manage array tasks
 
 
-In most cases, your script will loop through different input parameters, which are usually not number 1-10, 1-100. In this situation, we would like to a parameter file with input parameters for each job. 
+In most cases, your script will loop through different input parameters, which are usually not number 1-10 or 1-100. 
+
+In this situation, we would like to use a parameter file with input parameters for each job.  
 
 ### Required files
 
