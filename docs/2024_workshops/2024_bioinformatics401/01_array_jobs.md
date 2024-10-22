@@ -239,80 +239,45 @@ GPU: 20
 
 Please note that the above limits are subject to change in the future. To ensure optimal resource allocation, the limit value is dynamic and may change as we evaluate system demands.
 
-# Create a contig file for your array tasks (Change the title)
-Use R script as an example. 
-In most cases, your script will loop through different input parameters, which are usually not number 1-10, 1-100. In this situation, we would like to a config file with input parameters for each job.  (Will revise later)
+# Using parameter file to manage array tasks
+
+In most cases, your script will loop through different input parameters, which are usually not number 1-10, 1-100. In this situation, we would like to a parameter file with input parameters for each job. 
 
 
 ## Required files
 
 1. **Parameter File:** A file containing the parameters that your array job will iterate through. This file could include different variables or data that each array task will process individually.
-2. **Script (R, Shell, Python, etc.):** The main script that will perform the analysis or visualization tasks. While the example here is in R, the same structure applies to other languages like shell, Python, or Perl. Adapt the script according to the specific tool or language you are using for the job.
-3. **Wrapper Shell Script:** A simple shell script that sends your jobs to the SLURM scheduler. This script makes it easy to run multiple tasks automatically, with each task using different parameters from the parameter file.
+3. **Slurm Shell Script:** A simple shell script that sends your jobs to the SLURM scheduler. This script makes it easy to run multiple tasks automatically, with each task using different parameters from the parameter file.
 
 
 
-## R Script Example
+## Fastqc Command
 
-Here is n example of an R script that generates scatter plots of gene expression based on raw RNA-seq count data:
+Here is an example of fastqc command that generates html report for each pair of fastq files
 
 ```r
-# Load libraries
-library(tidyverse)
-library(ggrepel)
-
-# Read in parameters
-args <- commandArgs(trailingOnly = TRUE)
-gene <- as.character(args[1])
-padj <- as.numeric(args[2])
-
-# Subset the gene of interest
-dt <- read.table("salmon.merged.gene_counts.tsv", header=T)
-d <- dt[match(gene, dt$gene_name),]
-d <- gather(d, key = "condition", value = "expression", GFPkd_1:PRMT5kd_3)
-
-# Reformat for ggplot
-d_long <- separate(d, col = "condition", into = c("treatment", "replicate"), sep = "_")
-
-# Ggplot to visualize
-p <- ggplot(d_long, aes(treatment, expression)) +
-        geom_point(size=5, color="steelblue", alpha=0.5) +
-        geom_label_repel(aes(label=replicate)) +
-        theme_classic() +
-        xlab("Treatment") +
-        ylab("Gene expression") +
-        ggtitle(paste0(gene,": padj ", padj))
-
-# Save plot to a pdf file
-ggsave(plot=p, file=paste0(gene, ".pdf"), width=4, height=4)
+fastqc ${fastq_R1} ${fastq_R2}
 ```
 
 
 
-### Script Purpose
+## Parameter File
 
-This R script creates scatter plots for gene expression levels between control and treated groups from an RNA-seq analysis. It reads in two parameters from the command line: the gene name (`genename`) and the adjusted p-value (`padj`). The input data file is `salmon.merged.gene_counts.tsv`.
-
-
-
-## Example Parameter File
-
-Here’s an example of the parameter file (`table.tsv`) used in the job array. Each row contains gene expression information, and the R script will extract specific columns for each job.
+Here’s an example of the parameter file `id_sample.tsv` used in the job array. Each row includes a sample ID, along with the corresponding forward and reverse read FASTQ files.
 
 ```
-gene_id baseMean        log2FoldChange  lfcSE   pvalue  padj    genename
-ENSG00000078018 1126.709        -2.161184       0.05810824      1.578201e-304   2.054292e-301   MAP2
-ENSG00000004799 1224.003        -2.199776       0.06003955      1.17799e-295    1.4154e-292     PDK4
-ENSG00000272398 2064.696        1.615232        0.04513554      2.024618e-282   2.258895e-279   CD24
-ENSG00000135046 12905.46        -0.8779134      0.02467955      1.349814e-278   1.405606e-275   ANXA1
+1     SRX1693953_SRR3362663_1.fastq.gz SRX1693953_SRR3362663_2.fastq.gz
+2     SRX1693956_SRR3362666_1.fastq.gz SRX1693956_SRR3362666_2.fastq.gz
+3     SRX1693952_SRR3362662_1.fastq.gz SRX1693952_SRR3362662_2.fastq.gz
+4     SRX1693955_SRR3362665_1.fastq.gz SRX1693955_SRR3362665_2.fastq.gz
+5     SRX1693951_SRR3362661_1.fastq.gz SRX1693951_SRR3362661_2.fastq.gz
+6     SRX1693954_SRR3362664_1.fastq.gz SRX1693954_SRR3362664_2.fastq.gz
 ```
-**Delete unused columns**
 
-The R script reads the `genename` from column 7 and `padj` from column 6 for each gene.
 
-## Shell Wrapper Script
+## Slurm Script
 
-The following shell script submits the jobs to the SLURM scheduler as an array of tasks. Each task processes a different gene from the parameter file.
+The following shell script submits the jobs to the SLURM scheduler as an array of tasks. Each task processes a sample. 
 
 ```bash
 #!/bin/bash
@@ -322,30 +287,32 @@ The following shell script submits the jobs to the SLURM scheduler as an array o
 #SBATCH -n 1        # Number of tasks per node
 #SBATCH -c 4        # Number of CPU cores per task
 #SBATCH --mem=2G    # Memory required per node
-#SBATCH --array=2-11 # An array of 10 jobs
-#SBATCH --job-name=Rplot
+#SBATCH --array=1-6 # An array of 10 jobs
+#SBATCH --job-name=fastqc
 #SBATCH --mail-type=FAIL,BEGIN,END
-#SBATCH --mail-user=xue.li37@tufts.edu
+#SBATCH --mail-user=utln@tufts.edu
 #SBATCH --error=%x-%A_%a.err   # Standard error file: <job_name>-<job_id>-<taskid>.err
 #SBATCH --output=%x-%A_%a.out  # Standard output file: <job_name>-<job_id>-<taskid>.out
 
 echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 
-module load R/4.4.0
-GENE=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$7}" table.tsv) 
-Padj=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$6}" table.tsv)
+module load fastqc/0.12.1
+ID=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$1}" id_sample.tsv) 
+fastq_R1=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$2}" id_sample.tsv) 
+fastq_R2=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$3}" id_sample.tsv)
 
-echo $GENE $Padj
-Rscript R_scatter_vis.r $GENE $Padj  
+echo $ID ${fastq_R1} ${fastq_R2}
+fastqc ${fastq_R1} ${fastq_R2} -o fastqcOut
+
 ```
 
 
 
 ### Script Details
 
-- `SBATCH --array=2-11` tells SLURM to run jobs for rows 2 to 11 of the parameter file.
-- The `awk` commands extract the `GENE` and `Padj` values from the specified row and columns (7th and 6th).
-- The script submits 10 jobs, each running the R script with different `GENE` and `Padj` values.
+- `SBATCH --array=1-6` tells SLURM to run jobs for rows 1 to 6 of the parameter file.
+- The `awk` commands extract the `ID`, `fastq_R1` and `fastq_R2` values from the specified row and columns (1st, 2nd and 3rd).
+- The script submits 6 jobs, each running the FASTQC command with different `fastq_R1` and `fastq_R2` values.
 
 
 ### Output files
@@ -354,7 +321,7 @@ A list of files
 ```
 
 ![Output.pdf]() 
-1,2,3,4
+
 
 
 ### Customizing the Array
@@ -368,4 +335,8 @@ You can adjust the `--array` option to change the range of jobs. For example, to
 This would submit jobs for rows 2, 4, 6, ..., up to 1000.
 
 
-Useful links: https://blog.ronin.cloud/slurm-job-arrays/
+
+Useful links: 
+
+https://blog.ronin.cloud/slurm-job-arrays/ 
+
