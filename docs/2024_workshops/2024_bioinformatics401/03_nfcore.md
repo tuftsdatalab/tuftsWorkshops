@@ -85,12 +85,12 @@ cat /cluster/tufts/workshop/demo/rnaseq/samplesheet.csv
 
 ```
 sample,fastq_1,fastq_2,strandednes,auto
-GFPkd_1,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693954_SRR3362664_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693954_SRR3362664_2.fastq.gz,auto
-GFPkd_2,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693953_SRR3362663_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693953_SRR3362663_2.fastq.gz,auto
-GFPkd_3,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693951_SRR3362661_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693951_SRR3362661_2.fastq.gz,auto
-PRMT5kd_1,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693952_SRR3362662_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693952_SRR3362662_2.fastq.gz,auto
-PRMT5kd_2,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693956_SRR3362666_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693956_SRR3362666_2.fastq.gz,auto
-PRMT5kd_3,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693955_SRR3362665_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastqSRX1693955_SRR3362665_2.fastq.gz,auto
+GFPkd_1,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693954_SRR3362664_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693954_SRR3362664_2.fastq.gz,auto
+GFPkd_2,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693953_SRR3362663_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693953_SRR3362663_2.fastq.gz,auto
+GFPkd_3,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693951_SRR3362661_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693951_SRR3362661_2.fastq.gz,auto
+PRMT5kd_1,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693952_SRR3362662_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693952_SRR3362662_2.fastq.gz,auto
+PRMT5kd_2,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693956_SRR3362666_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693956_SRR3362666_2.fastq.gz,auto
+PRMT5kd_3,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693955_SRR3362665_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693955_SRR3362665_2.fastq.gz,auto
 ```
 
 
@@ -355,3 +355,8 @@ You can clean the `work` directory, by mannualy run
 rm -rf work
 ```
 
+
+
+## Next Step
+
+For differential abundance analysis, please refer to our previous tutorial on [nf-core/differentialabundance pipeline](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/nfcore_rnaseq_sp24/03_differentialabundance/). 
