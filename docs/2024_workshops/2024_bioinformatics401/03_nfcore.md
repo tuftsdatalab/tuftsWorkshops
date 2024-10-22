@@ -84,7 +84,7 @@ cat /cluster/tufts/workshop/demo/rnaseq/samplesheet.csv
 ```
 
 ```
-sample,fastq_1,fastq_2,strandednes,auto
+sample,fastq_1,fastq_2,strandednes
 GFPkd_1,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693954_SRR3362664_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693954_SRR3362664_2.fastq.gz,auto
 GFPkd_2,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693953_SRR3362663_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693953_SRR3362663_2.fastq.gz,auto
 GFPkd_3,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693951_SRR3362661_1.fastq.gz,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693951_SRR3362661_2.fastq.gz,auto
