@@ -239,29 +239,31 @@ GPU: 20
 
 Please note that the above limits are subject to change in the future. To ensure optimal resource allocation, the limit value is dynamic and may change as we evaluate system demands.
 
-# Using parameter file to manage array tasks
+
+
+## Using parameter file to manage array tasks
+
 
 In most cases, your script will loop through different input parameters, which are usually not number 1-10, 1-100. In this situation, we would like to a parameter file with input parameters for each job. 
 
-
-## Required files
+### Required files
 
 1. **Parameter File:** A file containing the parameters that your array job will iterate through. This file could include different variables or data that each array task will process individually.
-3. **Slurm Shell Script:** A simple shell script that sends your jobs to the SLURM scheduler. This script makes it easy to run multiple tasks automatically, with each task using different parameters from the parameter file.
+3. **Slurm Script:** A simple shell script that sends your jobs to the SLURM scheduler. This script makes it easy to run multiple tasks automatically, with each task using different parameters from the parameter file.
 
 
 
-## Fastqc Command
+### Fastqc Command 
 
 Here is an example of fastqc command that generates html report for each pair of fastq files
 
 ```r
-fastqc ${fastq_R1} ${fastq_R2}
+fastqc ${fastq_R1} ${fastq_R2} -o ${output_folder}
 ```
 
 
 
-## Parameter File
+### Parameter File
 
 Here’s an example of the parameter file `id_sample.tsv` used in the job array. Each row includes a sample ID, along with the corresponding forward and reverse read FASTQ files.
 
@@ -275,7 +277,7 @@ Here’s an example of the parameter file `id_sample.tsv` used in the job array.
 ```
 
 
-## Slurm Script
+### Slurm Script
 
 The following shell script submits the jobs to the SLURM scheduler as an array of tasks. Each task processes a sample. 
 
@@ -306,22 +308,19 @@ fastqc ${fastq_R1} ${fastq_R2} -o fastqcOut
 
 ```
 
-
-
-### Script Details
+#### Script Details
 
 - `SBATCH --array=1-6` tells SLURM to run jobs for rows 1 to 6 of the parameter file.
 - The `awk` commands extract the `ID`, `fastq_R1` and `fastq_R2` values from the specified row and columns (1st, 2nd and 3rd).
 - The script submits 6 jobs, each running the FASTQC command with different `fastq_R1` and `fastq_R2` values.
 
+#### Output files
 
-### Output files
 ```
 A list of files
 ```
 
 ![Output.pdf]() 
-
 
 
 ### Customizing the Array
@@ -336,7 +335,7 @@ This would submit jobs for rows 2, 4, 6, ..., up to 1000.
 
 
 
-Useful links: 
+## Useful links:  
 
 https://blog.ronin.cloud/slurm-job-arrays/ 
 
