@@ -123,9 +123,7 @@ PRMT5kd_3,/cluster/tufts/workshop/demo/rnaseq/input/fastq/SRX1693955_SRR3362665_
 
 - gtf: https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz
 
-- trimmer: fastp
-
-- extra_fastp_args: -q 35 --paired      # It tells `fastp` to discard bases in reads with a Phred quality score lower than 35.
+- trimmer: trimgalore
 
 - aligner: star_salmon
 
