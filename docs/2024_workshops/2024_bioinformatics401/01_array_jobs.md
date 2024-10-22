@@ -318,7 +318,7 @@ fastqc ${fastq_R1} ${fastq_R2} -o fastqcOut
 
 
 
-After the array jobs are submitted, we can see that 6 separate jobs are running, with ***\*SLURM_ARRAY_TASK_ID\**** from 1-6.
+After the array jobs are submitted, we can see that 6 separate jobs are running, with **SLURM_ARRAY_TASK_ID** from 1-6.
 
 ```
 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
