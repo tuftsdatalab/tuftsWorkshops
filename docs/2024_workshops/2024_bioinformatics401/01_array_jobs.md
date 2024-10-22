@@ -353,5 +353,7 @@ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 
 ## Useful links:  
 
+https://slurm.schedmd.com/job_array.html          
+
 https://blog.ronin.cloud/slurm-job-arrays/ 
 
