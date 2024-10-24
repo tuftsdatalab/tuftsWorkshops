@@ -36,7 +36,7 @@ Oct 17, 2024, 1-3pm
 Oct 24, 2024, 1-3pm
 
 - [Parallelizing Workflows with Slurm Job Arrays](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics401/01_array_jobs/)
-- [Bioinformatics Workflow Manager Nextflow](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics401/02_nextflow/)
+- [Nextflow and nf-core](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics401/02_nextflow_tufts-2024Fall.pdf)
 - [nf-core: Community Curated Bioinformatics Pipelines](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics401/03_nfcore/)
 
 
