@@ -25,3 +25,7 @@ Questions, Issues, Requests?
 - [Tufts HPC Cluster Access](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/Intro2HPC/02_Tufts_HPC_Cluster_Access/)
 - [Getting Work Done on Tufts HPC Cluster with SLURM](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/Intro2HPC/03_Getting_Work_Done_on_Tufts_HPC_Cluster_with_SLURM/)
 
+
+
+### [Recording](https://tufts.box.com/s/vr0yi7260dzc483rsw1jmqduy7adkrni)
+

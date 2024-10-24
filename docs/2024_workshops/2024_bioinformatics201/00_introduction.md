@@ -15,6 +15,14 @@ The goals of this workshop are to:
 
 <img src="../images/bioinformatics_hpc.png" alt="Linus Torvalds" style="height:500px;" />
 
+
+
+## [Recording](https://tufts.box.com/s/6azplqpvjkofihtm0rqev6u3nxw46c81)
+
+
+
+
+
 ## Presenters
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
