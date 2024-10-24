@@ -30,7 +30,7 @@ Oct 17, 2024, 1-3pm
 - [Conda Environment Management, Jupyer Kernel and Modules](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics301/03_conda/)
 - [Simplying Conda Environment Management with conda-env-mod](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics301/04_conda-env-mod/)
 
-
+[Recording](https://tufts.box.com/s/vr0yi7260dzc483rsw1jmqduy7adkrni)
 
 ## Workshop 4:
 Oct 24, 2024, 1-3pm
