@@ -11,7 +11,7 @@ Oct 9, 2024, 1-3pm
 - [Tufts HPC Cluster Access](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/Intro2HPC/02_Tufts_HPC_Cluster_Access/)
 - [Getting Work Done on Tufts HPC Cluster with SLURM](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics101/Intro2HPC/03_Getting_Work_Done_on_Tufts_HPC_Cluster_with_SLURM/)
 
-
+[Recording](https://tufts.box.com/s/vr0yi7260dzc483rsw1jmqduy7adkrni)
 
 ## Workshop 2: Getting started with Bioinformatics on Tufts HPC
 Oct 10, 2024, 1-3pm
@@ -20,7 +20,7 @@ Oct 10, 2024, 1-3pm
 - [Available bioinformatics resources/tools on Tufts HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/02_tufts_bioinformatics_resources/)
 - [How to run bioinformatics analysis on Tufts HPC](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics201/03_run_bioinformatics_on_HPC/)
 
-
+[Recording](https://tufts.box.com/s/6azplqpvjkofihtm0rqev6u3nxw46c81)
 
 ## Workshop 3:
 Oct 17, 2024, 1-3pm
