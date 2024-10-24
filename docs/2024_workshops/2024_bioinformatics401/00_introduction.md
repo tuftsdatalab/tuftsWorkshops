@@ -5,6 +5,7 @@ This repository stores the slides and hands-on sessions for bioinformatics train
 ## Agenda
 
 - [Parallelizing Workflows with Slurm Job Arrays](01_array_jobs.md)
+- [Nextflow and nf-core](02_nextflow_tufts-2024Fall.pdf)
 - [nf-core: Community Curated Bioinformatics Pipelines](03_nfcore.md)
 
 
