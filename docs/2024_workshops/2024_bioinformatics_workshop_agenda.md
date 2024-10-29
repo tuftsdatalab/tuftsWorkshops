@@ -39,7 +39,7 @@ Oct 24, 2024, 1-3pm
 - [Nextflow and nf-core](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics401/02_nextflow_tufts-2024Fall.pdf)
 - [nf-core: Community Curated Bioinformatics Pipelines](https://tuftsdatalab.github.io/tuftsWorkshops/2024_workshops/2024_bioinformatics401/03_nfcore/)
 
-
+[Recording](https://tufts.box.com/s/qk15uz8o59vp37bc23plitl4blgall0a)
 
 ## Workshop Flyer
 
