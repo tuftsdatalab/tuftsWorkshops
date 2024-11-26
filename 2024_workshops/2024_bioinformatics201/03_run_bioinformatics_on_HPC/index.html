@@ -1,0 +1,4689 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../02_tufts_bioinformatics_resources/">
+      
+      
+        <link rel="next" href="../../2024_bioinformatics301/00_introduction/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>How to run bioinformatics analysis on Tufts HPC - Tufts TTS Research Technology Bioinformatics Workshops</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775m1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25m13.274 9.537zl-4.557 4.45a.75.75 0 0 1-1.055-.008l-1.943-1.95a.75.75 0 0 1 1.062-1.058l1.419 1.425 4.026-3.932a.75.75 0 1 1 1.048 1.074M4.75 4h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5M4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75M8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.5 4.5 0 0 1-.563-1.191 3.84 3.84 0 0 1-.05-2.063 4.65 4.65 0 0 1-2.025-.293.75.75 0 0 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.747.747 0 0 1 1.06 0 .75.75 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4 2.4 0 0 1-.507-.441 3.1 3.1 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19.01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7 5.527c-.814-.68-1.75-1.462-2.692-2.619a3.7 3.7 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.76 2.76 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6 6 0 0 0-.26.16 1 1 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1 1 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.61.61 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1 1 0 0 0-.34.398M9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0M9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.344 2.343za8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746m1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275M6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L6.94 8 4.97 6.03a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005 0-.009.004"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.5 3.5 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327q0 .15-.025.292c.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5q-.002.615-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A5 5 0 0 1 8 16a5 5 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5 5 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.7 1.7 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06m.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.17.17 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--prerequisite:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5m4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5m0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5M2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-run-bioinformatics-analysis-on-tufts-hpc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Tufts TTS Research Technology Bioinformatics Workshops" class="md-header__button md-logo" aria-label="Tufts TTS Research Technology Bioinformatics Workshops" data-md-component="logo">
+      
+  <img src="../../../img/logo2.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tufts TTS Research Technology Bioinformatics Workshops
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to run bioinformatics analysis on Tufts HPC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tuftsdatalab/tuftsWorkshops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../2022_workshops/2022_workshops/" class="md-tabs__link">
+          
+  
+  2022 Workshops
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../2023_workshops/2023_workshops/" class="md-tabs__link">
+          
+  
+  2023 Workshops
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../readme/" class="md-tabs__link">
+          
+  
+  2024 Workshops
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Tufts TTS Research Technology Bioinformatics Workshops" class="md-nav__button md-logo" aria-label="Tufts TTS Research Technology Bioinformatics Workshops" data-md-component="logo">
+      
+  <img src="../../../img/logo2.png" alt="logo">
+
+    </a>
+    Tufts TTS Research Technology Bioinformatics Workshops
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tuftsdatalab/tuftsWorkshops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2022 Workshops
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            2022 Workshops
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/2022_workshops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fall 2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fall 2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Intro to HPC/Slurm For Life Sciences
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Intro to HPC/Slurm For Life Sciences
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/01_hpc-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/02_request-account/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cluster Account and Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/03_login/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Login
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/04_file-transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/05_what-is-the-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terninologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/06_compute-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/07_software-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software on the Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/08_tmux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tmux Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/09_interactive-session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interactive Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/10_job-status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/11_intro-to-unix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro To Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/12_start-w-shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Starting with Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/13_bash-parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bash Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/14_shell-navigation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell Navigation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/15_create-manipulate-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating & Manipulating Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/16_going-home/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Going Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/17_running-interactive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running an Interactive Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/18_blast-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example with BLAST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introHpcSlurm/19_blast-batch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BLAST Batch Script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Intro to RStudio For Life Sciences
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Intro to RStudio For Life Sciences
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introRStudio/01_r-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introRStudio/02_r-ondemand/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introRStudio/03_r-workshop-markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro To R Script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Intro To 16S Metabarcoding
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Intro To 16S Metabarcoding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/intro16S/01_metabarcoding-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/intro16S/02_background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Background
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/intro16S/03_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/intro16S/04_quality-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quality Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/intro16S/05_error-asv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Error Model & ASVs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/intro16S/06_merging-chimeras-taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merging, Chimeras & Taxonomy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/intro16S/07_diversity-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diversity Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/intro16S/08_differential-abundance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Differential Abundance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Intro To Metagenomics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Intro To Metagenomics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introMetagenomics/01_intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introMetagenomics/02_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introMetagenomics/03_Metagenomics.nb.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workshop Notebook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Intro To Genome Technology
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Intro To Genome Technology
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introGenomeTech/01_intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introGenomeTech/Rhodes_BioE291.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slides
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Intro To AlphaFold2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Intro To AlphaFold2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introAlphaFold/00_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introAlphaFold/01_background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Background
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introAlphaFold/02_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introAlphaFold/03_af2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AlphaFold2 Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introAlphaFold/05_af2_output/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AlphaFold2 Output
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introAlphaFold/06_pymol_viz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyMOL Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022_workshops/introAlphaFold/07_af2_batch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optional: AlphaFold2 Batch Script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023 Workshops
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2023 Workshops
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/2023_workshops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Spring 2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Spring 2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Finding & Analyzing Metagenomics Data
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Finding & Analyzing Metagenomics Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/metagenomeData/00_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/metagenomeData/01_searchSRA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Searching For SRA Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/metagenomeData/02_stat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STAT Taxonomic Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/metagenomeData/03_kraken/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kraken2 Taxonomic Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/metagenomeData/04_compareStatKraken/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compare STAT & Kraken2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RNA-Seq with Galaxy
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            RNA-Seq with Galaxy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/galaxyRNASeq/00_Galaxy_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/galaxyRNASeq/01_Introduction_and_Setup_noqual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processing Raw Reads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/galaxyRNASeq/03_Read_alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Read Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/galaxyRNASeq/04_Gene_quantification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gene Quantification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/galaxyRNASeq/05_Diff_expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Differential Expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cas12a Variant Structural Predictions With AlphaFold2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cas12a Variant Structural Predictions With AlphaFold2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/cas12aAlphaFold2/00_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/cas12aAlphaFold2/01_CRISPR-Cas_Structural_Predictions_with_AlphaFold2.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction To Cas12a Variant Structural Predictions With AlphaFold2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/cas12aAlphaFold2/02_AlphaFold2_Accuracy_Assessment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AlphaFold2 Accuracy Assessment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/cas12aAlphaFold2/03_Cas12a_Variant_Vizualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cas12a Variant Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Trajectory Analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Trajectory Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/trajectoryAnalysis/00_background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/trajectoryAnalysis/01_setup_and_monocle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup and Monocle3 Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/trajectoryAnalysis/02_monocle_setup_and_trajectory_analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monocle3 Workflow and Trajectory Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2023_workshops/trajectoryAnalysis/03_pseudotime_and_differential_expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pseudotime and Differential Expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2024 Workshops
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2024 Workshops
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../readme/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Spring 2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Spring 2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction to Metagenomics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction to Metagenomics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IGDH-1001_2024Feb/Hands-on_session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    In class hands-on session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IGDH-1001_2024Feb/Take-home_exercise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Take-home exercise
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IGDH-1001_2024Feb/Take-home_exercise_announcement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Take-home exercise announcement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IGDH-1001_2024Feb/Exercise2_hints.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercise Hint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IGDH-1001_2024Feb/Exercise3_Example_Report.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction to AlphaFold2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction to AlphaFold2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cas12aAlphaFold2_sp24/00_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cas12aAlphaFold2_sp24/01_Run_AlphaFold2_CLI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run AlphaFold2_CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cas12aAlphaFold2_sp24/02_Run_AlphaFold2_OpenOndemandApp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run AlphaFold2 OpenOndemandApp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cas12aAlphaFold2_sp24/03_Vizualize_predicted_structure_with_PYMOL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vizualize with PYMOL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cas12aAlphaFold2_sp24/Alphafold_ShirleyLi_CHBE0165_2024-03.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slides
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Running RNA-Seq analysis with nextflow & nf-core
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Running RNA-Seq analysis with nextflow & nf-core
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nfcore_rnaseq_sp24/00_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nfcore_rnaseq_sp24/01_fetchngs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nf-core fetchngs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nfcore_rnaseq_sp24/02_rnaseq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nf-core rnaseq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nfcore_rnaseq_sp24/03_differentialabundance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nf-core differentialabundance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nfcore_rnaseq_sp24/04_multiqc_report.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    multiqc report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nfcore_rnaseq_sp24/05_differentialabundance_report.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    differentialabundance report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Fall 2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fall 2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics_workshop_agenda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workshop Agenda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1. Introduction to Tufts HPC Cluster
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. Introduction to Tufts HPC Cluster
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics101/Intro2HPC/readme/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Tufts HPC Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics101/Intro2HPC/00_Tufts_HPC_Terminologies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tufts HPC Terminologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics101/Intro2HPC/01_Getting_to_Know_Tufts_HPC_Cluster_Resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting to Know Tufts HPC Cluster Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics101/Intro2HPC/02_Tufts_HPC_Cluster_Access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tufts HPC Cluster Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics101/Intro2HPC/03_Getting_Work_Done_on_Tufts_HPC_Cluster_with_SLURM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Work Done on Tufts HPC Cluster with SLURM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. Getting started with Bioinformatics on Tufts HPC
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Getting started with Bioinformatics on Tufts HPC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_3_1" id="__nav_4_3_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux/Unix command line basics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux/Unix command line basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/00_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/01_what_is_linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Linux/Unix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/02_files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files and File system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/03_basictools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Must-known Linux/Unix tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/04_loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conditional statements and loops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/05_advanced_tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Linux/Unix tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_tufts_bioinformatics_resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Available bioinformatics resources/tools on Tufts HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How to run bioinformatics analysis on Tufts HPC
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    How to run bioinformatics analysis on Tufts HPC
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-input-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of the input files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of the input files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fasta-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      FASTA file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastq-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      FASTQ file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gtf-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      GTF file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-donwload-your-own-reference-genome-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to donwload your own reference genome file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toy-analysis-with-interactive-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toy analysis with interactive jobs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Toy analysis with interactive jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alignment-with-star" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alignment with STAR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-necessary-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load necessary modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align-fastq-reads-to-the-reference-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Align FASTQ Reads to the Reference Genome
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sam-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAM file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bam-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      BAM file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toy-analysis-with-job-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toy analysis with job scripts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-job-with-gpu-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run job with GPU node
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run job with GPU node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive session
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submit-jobs-to-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submit jobs to queue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_4" id="__nav_4_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. Software installation and environment management in HPC
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Software installation and environment management in HPC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics301/00_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics301/01_source/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Installation from Source Codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics301/02_Rpackage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R package Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics301/03_conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conda Environment Management, Jupyer Kernel and Modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics301/04_conda-env-mod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simplying Conda Environment Management with conda-env-mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_5" id="__nav_4_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Advanced HPC workflows and job management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            4. Advanced HPC workflows and job management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics401/00_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics401/01_array_jobs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Array jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics401/02_nextflow_tufts-2024Fall.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nextflow Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024_bioinformatics401/03_nfcore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to run nf-core pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-input-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of the input files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of the input files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fasta-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      FASTA file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastq-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      FASTQ file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gtf-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      GTF file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-donwload-your-own-reference-genome-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to donwload your own reference genome file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toy-analysis-with-interactive-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toy analysis with interactive jobs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Toy analysis with interactive jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alignment-with-star" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alignment with STAR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-necessary-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load necessary modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align-fastq-reads-to-the-reference-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Align FASTQ Reads to the Reference Genome
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sam-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAM file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bam-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      BAM file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toy-analysis-with-job-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toy analysis with job scripts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-job-with-gpu-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run job with GPU node
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run job with GPU node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive session
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submit-jobs-to-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submit jobs to queue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/tuftsdatalab/tuftsWorkshops/blob/main/docs/2024_workshops/2024_bioinformatics201/03_run_bioinformatics_on_HPC.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="how-to-run-bioinformatics-analysis-on-tufts-hpc">How to run bioinformatics analysis on Tufts HPC</h1>
+<p>Author: Shirley Li, xue.li37@tufts.edu                 </p>
+<p>Date: 2024-10-07</p>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>The primary goal of this tutorial is to introduce participants to bioinformatics on a high-performance computing (HPC) cluster.</li>
+<li>By the end of this tutorial, participants will: Understand basic command-line operations.  </li>
+<li>Be familiar with common bioinformatics file formats (e.g., FASTA, FASTQ, SAM, BAM). - Gain hands-on experience with bioinformatics tools and workflows.</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Basic understanding of biology and bioinformatics </li>
+<li>Familiarity with the command line </li>
+<li>Access to an HPC cluster (e.g., login credentials, necessary software installations)                    </li>
+</ul>
+<h3 id="setup">Setup</h3>
+<ol>
+<li>
+<p>Connecting to the Cluster through terminal or Open OnDemand.  </p>
+</li>
+<li>
+<p>Start an interactive session, go from log in mode to compute mode. </p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>srun -p interactive -n 1 --time=4:00:00 --mem=32g --cpus-per-task=8 --pty bash
+</code></pre></div>
+<ol>
+<li>Copying Sample Data</li>
+</ol>
+<p>You can use your lab storage or your home directory (only for this workshop). </p>
+<div class="highlight"><pre><span></span><code>cd /cluster/tufts/XXlab/utln/
+</code></pre></div>
+<p>Copy example data to your directory. </p>
+<div class="highlight"><pre><span></span><code>cp -r /cluster/tufts/workshop/demo/bio_2024 ./
+cd bio_2024
+</code></pre></div>
+<p>Let's take a look at the files using <code>ls</code></p>
+<div class="highlight"><pre><span></span><code>genomics_data  other  raw_fastq  README.txt  reference_data
+</code></pre></div>
+<p>​   <strong>For this workshop, we will store the data in our home directory since it’s small in size. However, in the future, avoid using your home directory for data storage. Always utilize your lab's designated storage space instead. Otherwise, your home directory will fill up quickly, limiting your ability to perform various tasks.</strong></p>
+<h2 id="overview-of-the-input-files">Overview of the input files</h2>
+<h3 id="fasta-file">FASTA file</h3>
+<p>FASTA is a text-based format for representing <strong>nucleotide</strong> sequences or <strong>protein</strong> sequences. It is widely used in bioinformatics for sequence data storage and analysis. Each sequence in a FASTA file is represented by a header line starting with a '&gt;', followed by lines of sequence data.</p>
+<ul>
+<li>A typical FASTA file has the following structure: </li>
+<li><strong>Header Line</strong>: This line starts with a '&gt;' character, followed by a description or identifier of the sequence. </li>
+<li><strong>Sequence Data</strong>: The nucleotide or amino acid sequence, which can span multiple lines.</li>
+<li>Example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>cat other/rcsb_pdb_5XUS.fasta
+</code></pre></div>
+<p>What does this file contain?</p>
+<div class="highlight"><pre><span></span><code>&gt;5XUS_1|Chain A|LbCpf1|Lachnospiraceae bacterium ND2006 (1410628)
+GSHMSKLEKFTNCYSLSKTLRFKAIPVGKTQENIDNKRLLVEDEKRAEDYKGVKKLLDRYYLSFINDVLHSIKLKNLNNYISLFRKKTRTEKENKELENLEINLRKEIAKAFKGNEGYKSLFKKDIIETILPEFLDDKDEIALVNSFNGFTTAFTGFFDNRENMFSEEAKSTSIAFRCINENLTRYISNMDIFEKVDAIFDKHEVQEIKEKILNSDYDVEDFFEGEFFNFVLTQEGIDVYNAIIGGFVTESGEKIKGLNEYINLYNQKTKQKLPKFKPLYKQVLSDRESLSFYGEGYTSDEEVLEVFRNTLNKNSEIFSSIKKLEKLFKNFDEYSSAGIFVKNGPAISTISKDIFGEWNVIRDKWNAEYDDIHLKKKAVVTEKYEDDRRKSFKKIGSFSLEQLQEYADADLSVVEKLKEIIIQKVDEIYKVYGSSEKLFDADFVLEKSLKKNDAVVAIMKDLLDSVKSFENYIKAFFGEGKETNRDESFYGDFVLAYDILLKVDHIYDAIRNYVTQKPYSKDKFKLYFQNPQFMGGWDKDKETDYRATILRYGSKYYLAIMDKKYAKCLQKIDKDDVNGNYEKINYKLLPGPNKMLPKVFFSKKWMAYYNPSEDIQKIYKNGTFKKGDMFNLNDCHKLIDFFKDSISRYPKWSNAYDFNFSETEKYKDIAGFYREVEEQGYKVSFESASKKEVDKLVEEGKLYMFQIYNKDFSDKSHGTPNLHTMYFKLLFDENNHGQIRLSGGAELFMRRASLKKEELVVHPANSPIANKNPDNPKKTTTLSYDVYKDKRFSEDQYELHIPIAINKCPKNIFKINTEVRVLLKHDDNPYVIGIDRGERNLLYIVVVDGKGNIVEQYSLNEIINNFNGIRIKTDYHSLLDKKEKERFEARQNWTSIENIKELKAGYISQVVHKICELVEKYDAVIALEDLNSGFKNSRVKVEKQVYQKFEKMLIDKLNYMVDKKSNPCATGGALKGYQITNKFESFKSMSTQNGFIFYIPAWLTSKIDPSTGFVNLLKTKYTSIADSKKFISSFDRIMYVPEEDLFEFALDYKNFSRTDADYIKKWKLYSYGNRIRIFRNPKKNNVFDWEEVCLTSAYKELFNKYGINYQQGDIRALLCEQSDKAFYSSFMALMSLMLQMRNSITGRTDVDFLISPVKNSDGIFYDSRNYEAQENAILPKNADANGAYNIARKVLWAIGQFKKAEDEKLDKVKIAISNKEWLEYAQTSVKH
+
+&gt;5XUS_2|Chain B|crRNA|synthetic construct (32630)
+AAUUUCUACUAAGUGUAGAUGGAAAUUAGGUGCGCUUGGC
+
+&gt;5XUS_3|Chain C|DNA (29-MER)|synthetic construct (32630)
+GCCAAGCGCACCTAATTTCCTAAAGGACG
+
+&gt;5XUS_4|Chain D|DNA (5&#39;-D(*CP*GP*TP*CP*CP*TP*TP*TP*A)-3&#39;)|synthetic construct (32630)
+CGTCCTTTA
+</code></pre></div>
+<p>Counting the number of sequencies in a FASTA file:</p>
+<div class="highlight"><pre><span></span><code>grep -c &quot;^&gt;&quot; other/rcsb_pdb_5XUS.fasta
+</code></pre></div>
+<ul>
+<li>Common Use: The FASTA format is typically used to store reference genome sequences, which can be for a whole genome, specific chromosomes, or individual genes. This format is essential for tasks like sequence alignment, variant calling, and genome assembly.</li>
+</ul>
+<h3 id="fastq-file">FASTQ file</h3>
+<p>FASTQ is a text-based format used to store both nucleotide sequences and their corresponding quality scores. It is widely used in bioinformatics, particularly for storing data from high-throughput sequencing technologies.          <br />
+- Structure of a FASTQ File A FASTQ file consists of a series of entries, each representing a single read. Each entry has four lines:          <br />
+  - <strong>Header Line</strong>: Starts with '@' followed by a sequence identifier and an optional description.          <br />
+  - <strong>Sequence Line</strong>: The raw sequence of nucleotides (A, T, C, G).          <br />
+  - <strong>Separator Line</strong>: Starts with a '+' character and can optionally be followed by the same sequence identifier and description as in the header line.          <br />
+  - <strong>Quality Line</strong>: Encodes the quality scores for the sequence in the sequence line, using ASCII characters.         </p>
+<ul>
+<li>Example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>head raw_fastq/Irrel_kd_1.subset.fq
+</code></pre></div>
+<p>Warning: Do not use <code>cat</code> to view fq files, as they are often very large. </p>
+<div class="highlight"><pre><span></span><code>@HWI-ST330:304:H045HADXX:1:1214:19169:32660
+CTTTTTTGCTGGAACTTTAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGTACCCTTAGTACCAGGTGCTTTTTTGGGAGAAGCT
++
+CCCFFFFFGGHGHJJJJJJJIEHIIIIIGIIIJJHIJIIJJJJJGGGIJJJJJJJJJJGHGHHFBCEFFEEEEE;@@CDDD5&gt;ACDDDDDDBB?BDDDCA
+@HWI-ST330:304:H045HADXX:2:1212:14280:80867
+CCCTAATGATGATATATGGATCAAAAGTCTTCTTTGTAGTACAAACAGTCATGCTGCCTTCGATCAGGTCCAGGGTTGCATTAACATGATGTTCATTTAA
++
+:?@DDDDFDHHGHJIGBFGIGIIIGDE:CFIHIIJE1?&gt;CEFGCEGFG?FGI?F@FHCCGIHIIJGHC@FHHGEB@9AEEHFFFEDFCCACEEEEDDDDD
+@HWI-ST330:304:H045HADXX:2:2111:14933:89958
+GGCATCCATGTTCTTGCCCAAAACCTTGGTTACAGCAATCTGATACTTCTTTTGTGTGGGCTGGCATAGGTCAATGAGGCAGATCGGAAGAGCACACGTC
+</code></pre></div>
+<p>You can also use <code>less</code> to view the file and press <code>Q</code> key to exit.  </p>
+<p><strong>FASTQC</strong></p>
+<p>A quality control tool used in bioinformatics to assess the quality of high-throughput sequencing data, typically for next-generation sequencing (NGS) reads, like those in <strong>FASTQ</strong> files. It provides a series of quality checks on raw sequence data, helping researchers identify issues before proceeding with downstream analysis like alignment, variant calling, or transcript quantification.</p>
+<p>Example usage:</p>
+<div class="highlight"><pre><span></span><code>module load fastqc/0.12.1
+fastqc raw_fastq/Irrel_kd_1.subset.fq  # It will generate a html report 
+</code></pre></div>
+<p><a href="../materials/Irrel_kd_1.subset_fastqc.html">Fastqc output</a></p>
+<p>Check this <a href="https://rtsf.natsci.msu.edu/sites/_rtsf/assets/File/FastQC_TutorialAndFAQ_080717.pdf">article</a> for how to interpret fastqc result.</p>
+<h3 id="gtf-file">GTF file</h3>
+<p>GTF (Gene Transfer Format) is a file format used to hold information about gene structure. It is widely used in genomics to store annotations of genomic features such as genes, exons, and regulatory elements. GTF is similar to GFF (General Feature Format) but includes additional standardized attributes. </p>
+<p>Structure of a GTF File:</p>
+<p>A GTF file is a tab-delimited text file with one line per feature. Each line consists of nine fields: </p>
+<ol>
+<li><strong>seqname</strong>: Name of the sequence (e.g., chromosome). </li>
+<li><strong>source</strong>: Name of the program that generated the feature. </li>
+<li><strong>feature</strong>: Type of feature (e.g., gene, exon, CDS). </li>
+<li><strong>start</strong>: Start position of the feature. </li>
+<li><strong>end</strong>: End position of the feature. </li>
+<li><strong>score</strong>: Score value (can be a dot if not used). </li>
+<li><strong>strand</strong>: Strand of the feature (+ or -). </li>
+<li><strong>frame</strong>: Frame for coding sequences (0, 1, or 2). </li>
+<li><strong>attribute</strong>: A semicolon-separated list of key-value pairs describing the feature.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>head reference_data/chr1-hg19_genes.gtf 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>chr1    unknown exon    14362   14829   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    14970   15038   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    15796   15947   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    16607   16765   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    16858   17055   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    17233   17368   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    17606   17742   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    17915   18061   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    18268   18366   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    24738   24891   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    29321   29370   .       -       .       gene_id &quot;WASH7P&quot;; gene_name &quot;WASH7P&quot;; transcript_id &quot;NR_024540&quot;; tss_id &quot;TSS7245&quot;;
+chr1    unknown exon    34611   35174   .       -       .       gene_id &quot;FAM138F&quot;; gene_name &quot;FAM138F&quot;; transcript_id &quot;NR_026820&quot;; tss_id &quot;TSS8099&quot;;
+chr1    unknown exon    34611   35174   .       -       .       gene_id &quot;FAM138A&quot;; gene_name &quot;FAM138A&quot;; transcript_id &quot;NR_026818&quot;; tss_id &quot;TSS8099&quot;;
+chr1    unknown exon    35277   35481   .       -       .       gene_id &quot;FAM138F&quot;; gene_name &quot;FAM138F&quot;; transcript_id &quot;NR_026820&quot;; tss_id &quot;TSS8099&quot;;
+chr1    unknown exon    35277   35481   .       -       .       gene_id &quot;FAM138A&quot;; gene_name &quot;FAM138A&quot;; transcript_id &quot;NR_026818&quot;; tss_id &quot;TSS8099&quot;;
+chr1    unknown exon    35721   36081   .       -       .       gene_id &quot;FAM138F&quot;; gene_name &quot;FAM138F&quot;; transcript_id &quot;NR_026820&quot;; tss_id &quot;TSS8099&quot;;
+chr1    unknown exon    35721   36081   .       -       .       gene_id &quot;FAM138A&quot;; gene_name &quot;FAM138A&quot;; transcript_id &quot;NR_026818&quot;; tss_id &quot;TSS8099&quot;;
+chr1    unknown CDS     69091   70005   .       +       0       gene_id &quot;OR4F5&quot;; gene_name &quot;OR4F5&quot;; p_id &quot;P9488&quot;; transcript_id &quot;NM_001005484&quot;; tss_id &quot;TSS13903&quot;;
+chr1    unknown exon    69091   70008   .       +       .       gene_id &quot;OR4F5&quot;; gene_name &quot;OR4F5&quot;; p_id &quot;P9488&quot;; transcript_id &quot;NM_001005484&quot;; tss_id &quot;TSS13903&quot;;
+chr1    unknown start_codon     69091   69093   .       +       .       gene_id &quot;OR4F5&quot;; gene_name &quot;OR4F5&quot;; p_id &quot;P9488&quot;; transcript_id &quot;NM_001005484&quot;; tss_id &quot;TSS13903&quot;;
+chr1    unknown stop_codon      70006   70008   .       +       .       gene_id &quot;OR4F5&quot;; gene_name &quot;OR4F5&quot;; p_id &quot;P9488&quot;; transcript_id &quot;NM_001005484&quot;; tss_id &quot;TSS13903&quot;;
+ch
+</code></pre></div>
+<p>GTF files are essential for common bioinformatics analyses such as RNA-Seq analysis, genome annotation, and differential expression analysis. They provide the necessary annotation information to map reads to genomic features and to understand the functional elements of the genome.</p>
+<p>You can download human gtf file from UCSC Genome Browser  <code>https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/</code> or Ensembl Genome Browser <code>https://ftp.ensembl.org/pub/release-112/gtf/homo_sapiens/</code></p>
+<h3 id="how-to-donwload-your-own-reference-genome-file">How to donwload your own reference genome file</h3>
+<ul>
+<li>Navigate to <a href="https://useast.ensembl.org/index.html">ensembl website</a>:  <code>https://useast.ensembl.org/index.html</code></li>
+<li>Select the organisms you are working on. Ex: <code>Human</code></li>
+</ul>
+<p><img alt="ensembl" src="../images/ensembl.png" /></p>
+<ul>
+<li>
+<p>Choose the file you would like to download: FASTA, GTF or GFF3, ...</p>
+</li>
+<li>
+<p>Always keep an eye on the genome build. <code>GRCh38</code> is the latest for human genome. </p>
+</li>
+</ul>
+<h2 id="toy-analysis-with-interactive-jobs">Toy analysis with interactive jobs</h2>
+<h3 id="alignment-with-star">Alignment with STAR</h3>
+<p><strong>Make sure you are in compute node</strong></p>
+<div class="highlight"><pre><span></span><code>utln@login-prod-02    # log in node
+utln@p1cmp017         # compute node
+</code></pre></div>
+<p>If not, do the following</p>
+<div class="highlight"><pre><span></span><code>srun -p interactive -n 1 --time=4:00:00 --mem=32g --cpus-per-task=8 --pty bash
+</code></pre></div>
+<h3 id="load-necessary-modules">Load necessary modules</h3>
+<div class="highlight"><pre><span></span><code>module load star/2.7.11b
+</code></pre></div>
+<p>Before aligning your FASTQ files, you need to generate an index using the reference genome (<code>.fa</code> file) and the annotation file (<code>.gtf</code> file).</p>
+<div class="highlight"><pre><span></span><code>STAR --runMode genomeGenerate \
+     --genomeDir ./reference_data/ \
+     --genomeFastaFiles ./reference_data/chr1.fa \
+     --sjdbGTFfile ./reference_data/chr1-hg19_genes.gtf \
+     --runThreadN 8
+</code></pre></div>
+<p>You will see output log like this </p>
+<div class="highlight"><pre><span></span><code>Sep 20 11:25:15 ..... started STAR run
+Sep 20 11:25:15 ... starting to generate Genome files
+Sep 20 11:25:20 ..... processing annotations GTF
+!!!!! WARNING: --genomeSAindexNbases 14 is too large for the genome size=249250621, which may cause seg-fault at the mapping step. Re-run geno
+me generation with recommended --genomeSAindexNbases 12
+Sep 20 11:25:22 ... starting to sort Suffix Array. This may take a long time...
+Sep 20 11:25:23 ... sorting Suffix Array chunks and saving them to disk...
+Sep 20 11:26:40 ... loading chunks from disk, packing SA...
+Sep 20 11:26:47 ... finished generating suffix array
+Sep 20 11:26:47 ... generating Suffix Array index
+Sep 20 11:27:52 ... completed Suffix Array index
+Sep 20 11:27:52 ..... inserting junctions into the genome indices
+Sep 20 11:28:17 ... writing Genome to disk ...
+Sep 20 11:28:17 ... writing Suffix Array to disk ...
+Sep 20 11:28:19 ... writing SAindex to disk
+Sep 20 11:28:22 ..... finished successfully
+</code></pre></div>
+<p>If you do <code>ls -lhtr reference_data</code> , you will see the genome index you just generated. </p>
+<h3 id="align-fastq-reads-to-the-reference-genome">Align FASTQ Reads to the Reference Genome</h3>
+<p>First, let's create an folder to store output from STAR:</p>
+<div class="highlight"><pre><span></span><code>mkdir star_output
+</code></pre></div>
+<p>For single-end reads: </p>
+<div class="highlight"><pre><span></span><code>STAR --genomeDir ./reference_data/ \
+     --readFilesIn ./raw_fastq/Irrel_kd_1.subset.fq \
+     --outFileNamePrefix ./star_output/ \
+     --runThreadN 8
+</code></pre></div>
+<p>In our example, we use single-end reads.</p>
+<p>For paired-end reads:</p>
+<div class="highlight"><pre><span></span><code>STAR --genomeDir ./reference_data/ \
+     --readFilesIn /path/to/read1.fastq /path/to/read2.fastq \
+     --outFileNamePrefix ./star_output/ \
+     --runThreadN 8
+</code></pre></div>
+<h2 id="output">Output</h2>
+<p>Check the outputs:</p>
+<div class="highlight"><pre><span></span><code>cd star_output
+ls
+</code></pre></div>
+<p>You will see the following:</p>
+<div class="highlight"><pre><span></span><code>Aligned.out.sam  Log.final.out  Log.out  Log.progress.out  SJ.out.tab
+</code></pre></div>
+<p><code>Aligned.out.sam</code> contains the aligned information. </p>
+<h3 id="sam-file">SAM file</h3>
+<p>SAM (Sequence Alignment/Map) is a text-based format for storing biological sequences aligned to a reference sequence. It is widely used in bioinformatics for storing large-scale sequencing data, such as that from next-generation sequencing technologies.</p>
+<p>A SAM file consists of a header section and an alignment section. </p>
+<ol>
+<li><strong>Header Section</strong>: Optional. Contains metadata about the alignments and reference sequences. Header lines start with the '@' character. </li>
+<li><strong>Alignment Section</strong>: Contains the aligned sequences and their corresponding information. Each line represents a single alignment and consists of 11 mandatory fields and optional fields.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>@HD     VN:1.4
+@SQ     SN:chr1 LN:249250621
+@PG     ID:STAR PN:STAR VN:2.7.11b      CL:/usr/local/bin/STAR-avx2   --runThreadN 8   --genomeDir ./reference_data/   --readFilesIn ./raw_fastq/Irrel_kd_1.subset.fq      --outFileNamePrefix ./star_output/
+@CO     user command line: /usr/local/bin/STAR-avx2 --genomeDir ./reference_data/ --readFilesIn ./raw_fastq/Irrel_kd_1.subset.fq --outFileNamePrefix ./star_output/ --runThreadN 8
+HWI-ST330:304:H045HADXX:2:1102:9621:48866       0       chr1    115266503       255     100M    *       0       0       CCCTCCTCCACAATCTCAATCATTCCTTGGTACTCAGTCTGTGTTGGATCAACACTCCTCAGGGGGCGAATTACTTTGCCAGAGTAAATGGTGGGATCAG    CCCFFFFFHHHHHJJJJJJJJJJJJJJJJJHIIIJJJGIJJIJJJJJJJJJGJJJJJJJJIIIJJJFDDDDDDDDDEDDDDDBB&gt;CDDEEDCDDDDDDDD    NH:i:1  HI:i:1  AS:i:98 nM:i:0
+HWI-ST330:304:H045HADXX:2:1104:16192:61086      0       chr1    115266503       255     100M    *       0       0       CCCTCCTCCACAATCTCAATCATTCCTTGGTACTCAGTCTGTGTTGGATCAACACTCCTCAGGGGGCGAATTACTTTGCCAGAGTAAATGGTGGCATCAG    @BCFFFFFHHHHHJJJJJJJJJJJJJJJJJIJJIJJJIIJJJIIJJJJJJIJJHJJJJJJJJJJJJFDDDDDDDDDEDDDDDDD@CCDEED:ABDDDDDD    NH:i:1  HI:i:1  AS:i:96 nM:i:1
+HWI-ST330:304:H045HADXX:2:1107:5712:34356       0       chr1    115266503       255     100M    *       0       0       CCCTCCTCCACAATCTCAATCATTCCTTGGTACTCAGTCTGTGTTGGATCAACACTCCTCAGGGGGCGAATTACTTTGCCAGAGTAAATGGTGGGATCAG    @B@FFDFFHFFHHIGIIIGIHJJIJJJJJJCEHIJJJFGHIIJIJJJJJIIJJJJJJJIJJJJIIJFDBBBDDDDDEDDDDDDD&gt;CCDEED&gt;ADDDDDDD    NH:i:1  HI:i:1  AS:i:98 nM:i:0
+HWI-ST330:304:H045HADXX:2:1113:8407:74596       0       chr1    115266503       255     100M    *       0       0 
+</code></pre></div>
+<p>Check this <a href="https://samtools.github.io/hts-specs/SAMv1.pdf">article</a> about how to interpret sam files. </p>
+<h3 id="bam-file">BAM file</h3>
+<p>The <strong>BAM</strong> (Binary Alignment/Map) file format is a binary version of the <strong>SAM</strong> (Sequence Alignment/Map) format. It is used to store aligned sequence data in a more efficient and compressed form.</p>
+<p>Convert sam file to bam file:</p>
+<div class="highlight"><pre><span></span><code>module load samtools/1.17
+samtools view -S -b Aligned.out.sam &gt; Aligned.out.bam
+</code></pre></div>
+<p>Bam file cannot be read directly, we have to use samtools to view it:</p>
+<div class="highlight"><pre><span></span><code>module load samtools/1.17
+samtools view Aligned.out.bam | head -n 20
+</code></pre></div>
+<h2 id="toy-analysis-with-job-scripts">Toy analysis with job scripts</h2>
+<p>Let's write a slurm script call <code>run_star.sh</code></p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH -J STAR_JOB             # Job name
+#SBATCH --time=12:00:00         # Job will run for a maximum of 12 hours (D-HH:MM:SS format)
+#SBATCH -p batch                # Partition (queue) to submit the job to
+#SBATCH -n 1                    # Number of tasks (here we only need 1 task)
+#SBATCH --mem=32g               # Allocate 32 GB of memory for this job
+#SBATCH --cpus-per-task=8       # Number of CPU cores allocated for this task
+#SBATCH --output=MyJob.%j.%N.out  # Output will be saved to a file with job ID (%j) and node name (%N)
+#SBATCH --error=MyJob.%j.%N.err   # Error will be saved to a file with job ID (%j) and node name (%N)
+#SBATCH --mail-type=ALL         # Receive email notifications for job status (ALL = start, end, fail)
+#SBATCH --mail-user=utln@tufts.edu  # Your email to receive notifications
+
+# Load the STAR module
+module load star/2.7.11b         # Load the specific version of STAR needed for the alignment
+
+mkdir star_output
+
+# Run STAR alignment
+STAR --genomeDir ./reference_data/ \       # Specify the directory containing the genome index files
+     --readFilesIn ./raw_fastq/Irrel_kd_1.subset.fq \  # Input FASTQ file(s) for alignment
+     --outFileNamePrefix ./star_output/ \  # Output files will be saved in this directory 
+     --runThreadN 8                        # Use 8 threads for faster processing
+</code></pre></div>
+<p>Here is the command to submit job</p>
+<div class="highlight"><pre><span></span><code>chmod +x run_star.sh    # Makes the script executable
+sbatch run_star.sh      # Submits the script to the SLURM queue
+</code></pre></div>
+<p>Use <code>squeue -u yourusername</code> to check job status. </p>
+<h2 id="run-job-with-gpu-node">Run job with GPU node</h2>
+<h3 id="interactive-session">Interactive session</h3>
+<div class="highlight"><pre><span></span><code>srun -p preempt -n 1 --time=04:00:00 --mem=20G --gres=gpu:1 --pty /bin/bash
+</code></pre></div>
+<p>You can also specify which gpu node you would like to run jobs on </p>
+<div class="highlight"><pre><span></span><code>srun -p preempt -n 1 --time=04:00:00 --mem=20G --gres=gpu:a100:1 --pty /bin/bash
+</code></pre></div>
+<h3 id="submit-jobs-to-queue">Submit jobs to queue</h3>
+<p>Example script: <code>align.sh</code> using parabricks to do the alignment.</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH -J fq2bam_alignment          # Job name
+#SBATCH -p preempt                   # Submit to the &#39;preempt&#39; partition (modify based on your cluster setup)
+#SBATCH --gres=gpu:1                 # Request 1 GPU for accelerated processing
+#SBATCH -n 2                         # Number of tasks (2 in this case)
+#SBATCH --mem=60g                    # Memory allocation (60GB)
+#SBATCH --time=02:00:00              # Maximum job run time (2 hours)
+#SBATCH --cpus-per-task=20           # Number of CPU cores allocated per task
+#SBATCH --output=alignment.%j.out    # Standard output file (with job ID %j)
+#SBATCH --error=alignment.%j.err     # Standard error file (with job ID %j)
+#SBATCH --mail-type=ALL              # Email notifications for all job states (begin, end, fail)
+#SBATCH --mail-user=utln@tufts.edu   # Email address for notifications
+
+# Load necessary modules
+nvidia-smi                              # Show GPU information (optional for logging)
+module load parabricks/4.0.0-1          # Load Parabricks module for GPU-accelerated alignment
+
+# Define variables
+genome_reference=&quot;/path/to/reference_genome&quot;      # Path to the reference genome (.fasta)
+input_fastq1=&quot;/path/to/input_read1.fastq&quot;         # Path to the first paired-end FASTQ file
+input_fastq2=&quot;/path/to/input_read2.fastq&quot;         # Path to the second paired-end FASTQ file
+sample_name=&quot;sample_identifier&quot;                  # Sample identifier
+known_sites_vcf=&quot;/path/to/known_sites.vcf&quot;        # Known sites VCF file for BQSR (optional, if available)
+output_directory=&quot;/path/to/output_directory&quot;      # Directory for the output BAM file and reports
+output_bam=&quot;${output_directory}/${sample_name}.bam&quot;            # Output BAM file path
+output_bqsr_report=&quot;${output_directory}/${sample_name}.BQSR-report.txt&quot;  # Output BQSR report path
+
+# Run the Parabricks fq2bam alignment pipeline
+pbrun fq2bam \
+    --ref ${genome_reference} \                # Reference genome (.fasta)
+    --in-fq ${input_fastq1} ${input_fastq2} \  # Input paired-end FASTQ files
+    --read-group-sm ${sample_name} \           # Sample name for read group
+    --knownSites ${known_sites_vcf} \          # Known sites for BQSR 
+    --out-bam ${output_bam} \                  # Output BAM file
+    --out-recal-file ${output_bqsr_report}     # Output Base Quality Score Recalibration (BQSR) report
+</code></pre></div>
+<p>Here is the command to submit job</p>
+<div class="highlight"><pre><span></span><code>chmod +x align.sh    # Makes the script executable
+sbatch align.sh      # Submits the script to the SLURM queue
+</code></pre></div>
+<p>Use <code>squeue -u yourusername</code> to check job status. </p>
+<p><strong>Useful links:</strong></p>
+<p>https://hbctraining.github.io/Intro-to-shell-flipped/lessons/03_working_with_files.html</p>
+<p>https://hbctraining.github.io/Intro-to-rnaseq-hpc-O2/lessons/03_alignment.html </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02_tufts_bioinformatics_resources/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Available bioinformatics resources/tools on Tufts HPC">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Available bioinformatics resources/tools on Tufts HPC
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../2024_bioinformatics301/00_introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.action.edit", "navigation.footer", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
